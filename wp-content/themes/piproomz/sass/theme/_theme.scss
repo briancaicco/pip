@@ -1,0 +1,125 @@
+// Global
+/////////////////////////////////////////////////////////////////////////
+
+
+
+
+// Typography
+/////////////////////////////////////////////////////////////////////////
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600');
+
+$btn-font: "Raleway", Helvetica, Arial, sans-serif;
+$h-font: 'Nunito', sans-serif;
+$p-font: 'Raleway', sans-serif;
+$default-font: 'Raleway', sans-serif;
+
+body{
+	font-family: $default-font;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+	font-family: $h-font;
+	font-weight: $font-weight-light
+}
+
+p{
+	font-family: $p-font;
+}
+
+// Buttons
+/////////////////////////////////////////////////////////////////////////
+
+.btn{
+	box-shadow: $el-1;
+	text-transform: uppercase;
+	font-size: $font-size-sm;
+	font-family: $btn-font;
+	font-weight: $font-weight-bold;
+	letter-spacing: .16rem;
+	&:hover{
+		box-shadow: $el-3;
+		transform: translateY(-1px);
+		transition: $transition-base;
+	}
+}
+
+
+.btn-primary:hover{
+	background: $blue;
+	border-color: $blue;
+
+}
+
+.btn-success{
+	color: #fff !important;
+}
+
+.btn-success:hover{
+	background: $green;
+	border-color: $green;
+}
+
+
+// Cards
+/////////////////////////////////////////////////////////////////////////
+
+.card{
+	box-shadow: $el-9;
+	padding: 20px;
+}
+
+.card-title{
+	color: $gray-700;
+}
+
+.card-body{
+	color: $gray-500;
+	min-height: 400px;
+}
+
+
+// Primary Nav
+/////////////////////////////////////////////////////////////////////////
+.navbar{
+	background: $white;
+	z-index: 999;
+}
+
+// Home Page
+/////////////////////////////////////////////////////////////////////////
+
+.home-page {
+	.jumbotron{
+		position: relative;
+		color: $white;
+		border-radius: 0px;
+		z-index: 1;
+		background: transparent;
+	}
+	.card-wrap{
+		position: relative;
+		z-index: 1;
+			.card{
+				position: absolute;
+				top:40px;
+			}
+	}
+	.gradient-bg{
+		width: 100%;
+		height: 120%;
+		left: 0px;
+		top: 0px;
+		overflow: hidden;
+		transform: skewY(-8deg);
+		transform-origin: 0;
+		background-color: #1b60d8;
+		position: absolute;
+		z-index: 0;
+		background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%);
+		background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%);
+		background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%);
+		background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%);
+	}
+}
+
