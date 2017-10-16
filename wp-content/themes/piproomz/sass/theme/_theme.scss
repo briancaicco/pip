@@ -1,7 +1,9 @@
 // Global
 /////////////////////////////////////////////////////////////////////////
 
-
+.modal-content{
+	box-shadow: none !important;
+}
 
 
 // Typography
@@ -16,6 +18,7 @@ $default-font: 'Raleway', sans-serif;
 
 body{
 	font-family: $default-font;
+	background: #f2f2f2;
 }
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
@@ -101,8 +104,11 @@ p{
 		position: relative;
 		z-index: 1;
 			.card{
+				box-shadow: 0 0 0 0 !important;
+				background-color: transparent !important;
+				border: none !important;
 				position: absolute;
-				top:40px;
+				top: -20px;
 			}
 	}
 	.gradient-bg{

@@ -4337,7 +4337,9 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .gallery-caption { display: block; }
 
-body { font-family: "Raleway", sans-serif; }
+.modal-content { box-shadow: none !important; }
+
+body { font-family: "Raleway", sans-serif; background: #f2f2f2; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sans-serif; font-weight: 300; }
 
@@ -4365,7 +4367,7 @@ p { font-family: "Raleway", sans-serif; }
 
 .home-page .card-wrap { position: relative; z-index: 1; }
 
-.home-page .card-wrap .card { position: absolute; top: 40px; }
+.home-page .card-wrap .card { box-shadow: 0 0 0 0 !important; background-color: transparent !important; border: none !important; position: absolute; top: -20px; }
 
 .home-page .gradient-bg { width: 100%; height: 120%; left: 0px; top: 0px; overflow: hidden; transform: skewY(-8deg); transform-origin: 0; background-color: #1b60d8; position: absolute; z-index: 0; background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); }
 

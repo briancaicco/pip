@@ -35,6 +35,532 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/buddypress\/activity\/activity-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/activity\/activity-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/activity\/comment.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/activity\/comment.php",
+		"oF": 0
+		},
+	"\/buddypress\/activity\/entry.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/activity\/entry.php",
+		"oF": 0
+		},
+	"\/buddypress\/activity\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/activity\/index.php",
+		"oF": 0
+		},
+	"\/buddypress\/activity\/post-form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/activity\/post-form.php",
+		"oF": 0
+		},
+	"\/buddypress\/activity\/single\/home.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/activity\/single\/home.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/_attachments\/avatars\/camera.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/_attachments\/avatars\/camera.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/_attachments\/avatars\/crop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/_attachments\/avatars\/crop.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/_attachments\/avatars\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/_attachments\/avatars\/index.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/_attachments\/cover-images\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/_attachments\/cover-images\/index.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/_attachments\/uploader.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/_attachments\/uploader.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/emails\/single-bp-email.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/emails\/single-bp-email.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/embeds\/activity.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/embeds\/activity.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/embeds\/footer.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/embeds\/footer.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/embeds\/header-activity.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/embeds\/header-activity.php",
+		"oF": 0
+		},
+	"\/buddypress\/assets\/embeds\/header.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/assets\/embeds\/header.php",
+		"oF": 0
+		},
+	"\/buddypress\/blogs\/blogs-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/blogs\/blogs-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/blogs\/create.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/blogs\/create.php",
+		"oF": 0
+		},
+	"\/buddypress\/blogs\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/blogs\/index.php",
+		"oF": 0
+		},
+	"\/buddypress\/common\/search\/dir-search-form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/common\/search\/dir-search-form.php",
+		"oF": 0
+		},
+	"\/buddypress\/css\/buddypress.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/buddypress\/css\/buddypress-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/buddypress\/forums\/forums-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/forums\/forums-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/forums\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/forums\/index.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/create.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/create.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/groups-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/groups-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/index.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/activity.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/activity.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin\/delete-group.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin\/delete-group.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin\/edit-details.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin\/edit-details.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin\/group-avatar.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin\/group-avatar.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin\/group-cover-image.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin\/group-cover-image.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin\/group-settings.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin\/group-settings.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin\/manage-members.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin\/manage-members.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/admin\/membership-requests.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/admin\/membership-requests.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/cover-image-header.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/cover-image-header.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/forum.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/forum.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/forum\/edit.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/forum\/edit.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/forum\/topic.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/forum\/topic.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/group-header.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/group-header.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/home.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/home.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/invites-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/invites-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/members.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/members.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/plugins.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/plugins.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/request-membership.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/request-membership.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/requests-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/requests-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/groups\/single\/send-invites.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/groups\/single\/send-invites.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/activate.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/activate.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/index.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/members-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/members-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/register.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/register.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/activity.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/activity.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/blogs.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/blogs.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/cover-image-header.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/cover-image-header.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/forums.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/forums.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/forums\/topics.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/forums\/topics.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/friends.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/friends.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/friends\/requests.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/friends\/requests.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/groups.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/groups.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/groups\/invites.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/groups\/invites.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/home.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/home.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/member-header.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/member-header.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/messages.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/messages.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/messages\/compose.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/messages\/compose.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/messages\/message.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/messages\/message.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/messages\/messages-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/messages\/messages-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/messages\/notices-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/messages\/notices-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/messages\/single.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/messages\/single.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/notifications.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/notifications.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/notifications\/feedback-no-notifications.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/notifications\/feedback-no-notifications.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/notifications\/notifications-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/notifications\/notifications-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/notifications\/read.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/notifications\/read.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/notifications\/unread.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/notifications\/unread.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/plugins.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/plugins.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/profile.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/profile.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/profile\/change-avatar.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/profile\/change-avatar.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/profile\/change-cover-image.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/profile\/change-cover-image.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/profile\/edit.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/profile\/edit.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/profile\/profile-loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/profile\/profile-loop.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/profile\/profile-wp.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/profile\/profile-wp.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/settings.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/settings.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/settings\/capabilities.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/settings\/capabilities.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/settings\/delete-account.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/settings\/delete-account.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/settings\/general.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/settings\/general.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/settings\/notifications.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/settings\/notifications.php",
+		"oF": 0
+		},
+	"\/buddypress\/members\/single\/settings\/profile.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/single\/settings\/profile.php",
+		"oF": 0
+		},
+	"\/buddypress\/page.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/page.php",
+		"oF": 0
+		},
 	"\/CHANGELOG.md": {
 		"cS": 0,
 		"eF": 1,
@@ -228,6 +754,27 @@
 		"oAP": "\/header.php",
 		"oF": 0
 		},
+	"\/img\/app-mockup.png": {
+		"ft": 32768,
+		"iS": 422592,
+		"oA": 0,
+		"oAP": "\/img\/app-mockup.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/app-mockup.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/app-mockup.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/img\/header.jpg": {
 		"ft": 16384,
 		"iS": 207482,
@@ -247,6 +794,31 @@
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/inc\/ajax-login-register\/ajax-login-register.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/ajax-login-register\/ajax-login-register.php",
+		"oF": 0
+		},
+	"\/inc\/ajax-login-register\/user-login.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/inc\/ajax-login-register\/user-login-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/inc\/ajax-login-register\/user-login.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/inc\/ajax-login-register\/user-login-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
 		},
 	"\/inc\/bootstrap-wp-navwalker.php": {
 		"ft": 8192,
@@ -615,6 +1187,918 @@
 		"oAP": "\/loop-templates\/content.php",
 		"oF": 0
 		},
+	"\/memberpress\/account\/home.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/home.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_in_template.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_in_template.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_in_widget.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_in_widget.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_out_template.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_out_template.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_out_widget.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_out_widget.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/nav.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/nav.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/password.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/password.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/payments.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/payments.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/subscriptions.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/subscriptions.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/about\/1-2-4.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/about\/1-2-4.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/about\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/about\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/coupons\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/coupons\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/coupons\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/coupons\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/db\/upgrade_error.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/db\/upgrade_error.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/db\/upgrade_needed.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/db\/upgrade_needed.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/db\/upgrade_not_needed.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/db\/upgrade_not_needed.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/db\/upgrade_success.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/db\/upgrade_success.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/emails\/options.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/emails\/options.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/errors.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/errors.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/groups\/custom_page_template_form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/groups\/custom_page_template_form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/groups\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/groups\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/help\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/help\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/help\/ui.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/help\/ui.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/members\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/members\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/members\/list.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/members\/list.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/members\/member_profile.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/members\/member_profile.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/members\/new_member.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/members\/new_member.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/members\/row.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/members\/row.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/members\/search_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/members\/search_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/members\/trans_form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/members\/trans_form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/must_configure.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/must_configure.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/options\/custom_fields_row.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/options\/custom_fields_row.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/options\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/options\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/options\/gateway.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/options\/gateway.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/options\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/options\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/options\/options_saved.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/options\/options_saved.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/popups\/senddata.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/popups\/senddata.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/advanced.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/advanced.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/custom_page_template_form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/custom_page_template_form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/permissions.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/permissions.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/price_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/price_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/product_options_meta_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/product_options_meta_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/products\/registration.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/products\/registration.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reminders\/emails.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reminders\/emails.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reminders\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reminders\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reminders\/trigger.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reminders\/trigger.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reports\/all_time_info_blocks.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reports\/all_time_info_blocks.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reports\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reports\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reports\/main.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reports\/main.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reports\/month_info_blocks.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reports\/month_info_blocks.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reports\/month_table.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reports\/month_table.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reports\/year_info_blocks.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reports\/year_info_blocks.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/reports\/year_table.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/reports\/year_table.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/rules\/drip_form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/rules\/drip_form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/rules\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/rules\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/rules\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/rules\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/rules\/rules_meta_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/rules\/rules_meta_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/rules\/unauth_meta_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/rules\/unauth_meta_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/subscriptions\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/subscriptions\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/subscriptions\/list.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/subscriptions\/list.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/subscriptions\/row.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/subscriptions\/row.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/subscriptions\/search.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/subscriptions\/search.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/subscriptions\/search_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/subscriptions\/search_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/subscriptions\/tabs.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/subscriptions\/tabs.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/table_controls.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/table_controls.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/table_footer.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/table_footer.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/taxes\/avalara_options.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/taxes\/avalara_options.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/taxes\/options.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/taxes\/options.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/taxes\/vat_options.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/taxes\/vat_options.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/taxes\/vat_profile_fields.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/taxes\/vat_profile_fields.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/transactions\/edit_trans.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/transactions\/edit_trans.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/transactions\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/transactions\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/transactions\/list.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/transactions\/list.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/transactions\/new_trans.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/transactions\/new_trans.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/transactions\/row.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/transactions\/row.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/transactions\/search_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/transactions\/search_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/transactions\/trans_form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/transactions\/trans_form.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/unauthorized_meta_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/unauthorized_meta_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/update\/activation_warning.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/update\/activation_warning.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/update\/addon_popup.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/update\/addon_popup.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/update\/addons.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/update\/addons.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/update\/edge_updates.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/update\/edge_updates.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/update\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/update\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/update\/license.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/update\/license.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/update\/ui.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/update\/ui.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/usage\/option.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/usage\/option.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/users\/extra_profile_fields.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/users\/extra_profile_fields.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/users\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/users\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/users\/login_page_meta_box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/users\/login_page_meta_box.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/users\/search.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/users\/search.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/widgets\/admin_stats_widget.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/widgets\/admin_stats_widget.php",
+		"oF": 0
+		},
+	"\/memberpress\/admin\/widgets\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/admin\/widgets\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/checkout\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/checkout\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/checkout\/ga_ecommerce_tracking.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/checkout\/ga_ecommerce_tracking.php",
+		"oF": 0
+		},
+	"\/memberpress\/checkout\/invoice.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/checkout\/invoice.php",
+		"oF": 0
+		},
+	"\/memberpress\/checkout\/signup_row.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/checkout\/signup_row.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_cancelled_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_cancelled_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_cc_expires_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_cc_expires_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_cc_expiring.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_cc_expiring.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_downgraded_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_downgraded_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_failed_txn.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_failed_txn.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_member_signup_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_member_signup_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_new_one_off.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_new_one_off.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_new_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_new_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_receipt.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_receipt.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_refunded_txn.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_refunded_txn.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_resumed_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_resumed_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_signup.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_signup.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_signup_abandoned_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_signup_abandoned_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_sub_expires_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_sub_expires_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_sub_renews_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_sub_renews_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_suspended_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_suspended_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/admin_upgraded_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/admin_upgraded_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/template.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/template.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_cancelled_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_cancelled_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_cc_expires_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_cc_expires_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_cc_expiring.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_cc_expiring.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_downgraded_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_downgraded_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_failed_txn.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_failed_txn.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_member_signup_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_member_signup_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_product_welcome.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_product_welcome.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_receipt.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_receipt.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_refunded_txn.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_refunded_txn.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_resumed_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_resumed_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_signup_abandoned_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_signup_abandoned_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_sub_expires_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_sub_expires_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_sub_renews_reminder.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_sub_renews_reminder.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_suspended_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_suspended_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_upgraded_sub.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_upgraded_sub.php",
+		"oF": 0
+		},
+	"\/memberpress\/emails\/user_welcome.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/emails\/user_welcome.php",
+		"oF": 0
+		},
+	"\/memberpress\/groups\/front_groups_page.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/groups\/front_groups_page.php",
+		"oF": 0
+		},
+	"\/memberpress\/groups\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/groups\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/already_logged_in.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/already_logged_in.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/forgot_password.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/forgot_password.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/forgot_password_requested.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/forgot_password_requested.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/reset_password.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/reset_password.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/reset_password_thankyou.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/reset_password_thankyou.php",
+		"oF": 0
+		},
+	"\/memberpress\/shared\/errors.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shared\/errors.php",
+		"oF": 0
+		},
+	"\/memberpress\/shared\/has_errors.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shared\/has_errors.php",
+		"oF": 0
+		},
+	"\/memberpress\/shared\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shared\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/shared\/unauthorized.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shared\/unauthorized.php",
+		"oF": 0
+		},
+	"\/memberpress\/shared\/unauthorized_comments.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shared\/unauthorized_comments.php",
+		"oF": 0
+		},
+	"\/memberpress\/shared\/unauthorized_message.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shared\/unauthorized_message.php",
+		"oF": 0
+		},
+	"\/memberpress\/shared\/unknown_error.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shared\/unknown_error.php",
+		"oF": 0
+		},
+	"\/memberpress\/shortcodes\/list_users_subscriptions.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/shortcodes\/list_users_subscriptions.php",
+		"oF": 0
+		},
+	"\/memberpress\/taxes\/vat_signup.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/taxes\/vat_signup.php",
+		"oF": 0
+		},
 	"\/package.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -669,6 +2153,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page.php",
+		"oF": 0
+		},
+	"\/partials\/form-register.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/form-register.php",
 		"oF": 0
 		},
 	"\/README.md": {

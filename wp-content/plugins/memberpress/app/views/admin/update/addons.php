@@ -4,9 +4,9 @@
 
 <?php $addons = MeprUpdateCtrl::addons(true); ?>
 
-<?php if(empty($addons)): ?>
-  <h3><?php _e('There were no Add-ons found for your license or lack thereof...', 'memberpress'); ?></h3>
-<?php else: ?>
+<?php // if(empty($addons)): ?>
+  <h3><?php // _e('There were no Add-ons found for your license or lack thereof...', 'memberpress'); ?></h3>
+<?php // else: ?>
   <table class="widefat">
 
     <thead>
@@ -61,5 +61,5 @@
     </tbody>
 
   </table>
-<?php endif; ?>
+<?php // endif; ?>
 

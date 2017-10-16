@@ -9,6 +9,8 @@
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+
+//if( ! is_user_logged_in() ){
 ?>
 
 <div class="wrapper pt-0 pb-0" id="full-width-page-wrapper"> 
@@ -22,22 +24,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="col-12 col-md-7 py-3 py-md-5 mb-md-3">
 
 					<h1 class="h2">The community where traders learn from other traders.</h1>
-					<p>Piproomz helps traders of any experience level connect with other traders, resources, and tools to dominate the markets.</p>
-					<a href="#" class="btn btn-lg btn-success">Join For Free</a>
+					<p>Piproomz helps traders of any experience level connect with other traders, resources, and tools so they can dominate the markets.</p>
+					<a href="#pt-login" class="btn btn-lg btn-success">Join For Free</a>
 
 				</div>
 				<div class="col-12 col-md-5 card-wrap">
-					<div class="card">
-					  <div class="card-body">
-					    <h4 class="card-title">Card title</h4>
-					    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-					    <p class="card-text">
-					      Some quick example text to build on the card title
-					      and make up the bulk of the card's content.
-					    </p>
-					    <a href="#!" class="card-link">Card link</a>
-					    <a href="#!" class="card-link">Another link</a>
-					  </div>
+					<div class="card w-100">
+						<img src="<?php echo get_stylesheet_directory_uri() ?>/img/app-mockup.png" class=" mx-auto" />
 					</div>
 				</div>
 
@@ -84,4 +77,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- Wrapper end -->
 
-<?php get_footer(); ?>
+<?php 
+
+//} else {
+	//echo "<script>window.location.href = '" . home_url() . "/activity';</script>";
+	//exit();
+//}
+
+get_footer(); ?>

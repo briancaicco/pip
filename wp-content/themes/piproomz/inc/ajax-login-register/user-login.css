@@ -1,0 +1,29 @@
+.pt-register, .pt-login, .pt-reset-password, .pt-register-footer, .pt-login-footer {
+    display: none;
+}
+div[data-active-tab="#pt-reset-password"] .pt-reset-password,
+div[data-active-tab="#pt-reset-password"] .pt-login-footer,
+div[data-active-tab="#pt-login"] .pt-login,
+div[data-active-tab="#pt-register"] .pt-register,
+div[data-active-tab="#pt-register"] .pt-login-footer,
+div[data-active-tab="#pt-login"] .pt-register-footer {
+    display: block;
+}
+.pt-loading {
+    display: none;
+}
+
+#pt-user-modal h3 {
+	clear: none;
+	margin-bottom: 20px;
+}
+.form-field {
+	margin: 20px 0;
+    position: relative;
+}
+@media (min-width: 768px) {
+	.modal-dialog {
+	    width: 600px;
+	    margin: 70px auto;
+	}
+}

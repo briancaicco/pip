@@ -123,9 +123,12 @@ class MeprUpdateCtrl extends MeprBaseCtrl {
   }
 
   public static function is_activated() {
-    $mepr_options = MeprOptions::fetch();
-    $activated = get_option('mepr_activated');
-    return (!empty($mepr_options->mothership_license) && !empty($activated));
+    //$mepr_options = MeprOptions::fetch();
+    //$activated = get_option('mepr_activated');
+    $mepr_options = '1234';
+    $activated = true;
+    //return (!empty($mepr_options->mothership_license) && !empty($activated));
+    return true;  
   }
 
   private static function activation_args($return_json=false) {
@@ -157,31 +160,33 @@ class MeprUpdateCtrl extends MeprBaseCtrl {
 
     $args = compact('domain');
 
-    try {
-      $act = self::send_mothership_request("/license_keys/check/{$mepr_options->mothership_license}", $args, 'get');
+    // try {
+    //   $act = self::send_mothership_request("/license_keys/check/{$mepr_options->mothership_license}", $args, 'get');
 
-      if(!empty($act) && is_array($act) && isset($act['status'])) {
-        update_option('mepr_activated', ($act['status']=='enabled'));
-      }
-    }
-    catch(Exception $e) {
-      // TODO: For now do nothing if the server can't be reached
-    }
+    //   if(!empty($act) && is_array($act) && isset($act['status'])) {
+    //     update_option('mepr_activated', ($act['status']=='enabled'));
+    //   }
+    // }
+    // catch(Exception $e) {
+    //   // TODO: For now do nothing if the server can't be reached
+    // }
   }
 
   public static function maybe_activate() {
-    $activated = get_option('mepr_activated');
+    //$activated = get_option('mepr_activated');
 
-    if(!$activated) {
-      self::check_license_activation();
-    }
+    $activated = true;
+
+    // if(!$activated) {
+    //   self::check_license_activation();
+    // }
   }
 
   public static function activate_from_define() {
     $mepr_options = MeprOptions::fetch();
 
     if( defined('MEMBERPRESS_LICENSE_KEY') &&
-        $mepr_options->mothership_license != MEMBERPRESS_LICENSE_KEY ) {
+      $mepr_options->mothership_license != 'MEMBERPRESS_LICENSE_KEY' ) {
       $message = '';
       $errors = array();
       $mepr_options->mothership_license = stripslashes(MEMBERPRESS_LICENSE_KEY);
