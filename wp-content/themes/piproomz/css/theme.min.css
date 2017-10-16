@@ -4339,7 +4339,7 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .modal-content { box-shadow: none !important; }
 
-body { font-family: "Raleway", sans-serif; background: #f2f2f2; }
+body { font-family: "Raleway", sans-serif; background: #fff !important; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sans-serif; font-weight: 300; }
 
