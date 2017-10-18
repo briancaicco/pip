@@ -1,13 +1,4 @@
 <?php
-/**
-* BuddyPress - Members Register
-*
-* @package BuddyPress
-* @subpackage bp-legacy
-*/
-
-?>
-<?php
 
 /**
  * Fires at the top of the BuddyPress member registration page template.
@@ -94,7 +85,7 @@ do_action( 'bp_before_register_page' ); ?>
 
 								<?php /***** Basic Account Details ******/ ?>
 								<div class="form-group">
-									<label for="signup_username"><?php _e( 'Username', 'buddypress' ); ?><?php _e( '*', 'buddypress' ); ?></label>
+									<label for="signup_username"><?php _e( 'Username', 'buddypress' ); ?></label>
 									<?php do_action( 'bp_signup_username_errors' ); ?>
 									<input class="form-control" type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value(); ?>" <?php bp_form_field_attributes( 'username' ); ?>/>
 								</div>
