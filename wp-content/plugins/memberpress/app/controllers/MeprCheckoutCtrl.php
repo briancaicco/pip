@@ -3,6 +3,7 @@
 class MeprCheckoutCtrl extends MeprBaseCtrl {
   public function load_hooks() {
     add_action('wp_enqueue_scripts', array($this,'enqueue_scripts'));
+    add_filter('mepr_signup_form_payment_description', array($this, 'maybe_render_payment_form'), 10, 3);
     add_shortcode('mepr-ga-ecommerce-tracking', array($this, 'ga_ecommerce_tracking'));
   }
 
@@ -65,6 +66,22 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
         $pm->enqueue_payment_form_scripts();
       }
     }
+  }
+
+  /**
+  * Renders the payment form if SPC is enabled and supported by the payment method
+  * Called from: mepr_signup_form_payment_description filter
+  * Returns: description includding form for SPC if enabled
+  */
+  public function maybe_render_payment_form($description, $payment_method, $first) {
+    $mepr_options = MeprOptions::fetch();
+    if($mepr_options->enable_spc && $payment_method::$has_spc_form) {
+      // TODO: Maybe we queue these up from wp_enqueue_scripts?
+      wp_register_script('mepr-checkout-js', MEPR_JS_URL . '/checkout.js', array('jquery', 'jquery.payment'), MEPR_VERSION);
+      wp_enqueue_script('mepr-checkout-js');
+      $description = MeprView::get_string("/checkout/payment_form", get_defined_vars());
+    }
+    return $description;
   }
 
   public function display_signup_form($product) {
@@ -130,8 +147,8 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
     }
     else { // If new user we've got to create them and sign them in
       $usr = new MeprUser();
-      $usr->user_login = ($mepr_options->username_is_email)?$_POST['user_email']:$_POST['user_login'];
-      $usr->user_email = $_POST['user_email'];
+      $usr->user_login = ($mepr_options->username_is_email)?sanitize_email($_POST['user_email']):sanitize_user($_POST['user_login']);
+      $usr->user_email = sanitize_email($_POST['user_email']);
 
       //Have to use rec here because we unset user_pass on __construct
       $usr->set_password($_POST['mepr_user_password']);
@@ -162,7 +179,7 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
     $txn->user_id = $usr->ID;
 
     // Get the membership in place
-    $txn->product_id = $_POST['mepr_product_id'];
+    $txn->product_id = sanitize_text_field($_POST['mepr_product_id']);
     $prd = $txn->product();
 
     // If we're showing the fields on logged in purchases, let's save them here
@@ -180,7 +197,7 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
     // Adjust membership price from the coupon code
     if(isset($_POST['mepr_coupon_code']) && !empty($_POST['mepr_coupon_code'])) {
       // Coupon object has to be loaded here or else txn create will record a 0 for coupon_id
-      $cpn = MeprCoupon::get_one_from_code($_POST['mepr_coupon_code']);
+      $cpn = MeprCoupon::get_one_from_code(sanitize_text_field($_POST['mepr_coupon_code']));
 
       if(($cpn !== false) || ($cpn instanceof MeprCoupon)) {
         $price = $prd->adjusted_price($cpn->post_title);
@@ -194,7 +211,7 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
 
     // Figure out the Payment Method
     if(isset($_POST['mepr_payment_method']) && !empty($_POST['mepr_payment_method'])) {
-      $txn->gateway = $_POST['mepr_payment_method'];
+      $txn->gateway = sanitize_text_field($_POST['mepr_payment_method']);
     }
     else {
       $txn->gateway = MeprTransaction::$free_gateway_str;

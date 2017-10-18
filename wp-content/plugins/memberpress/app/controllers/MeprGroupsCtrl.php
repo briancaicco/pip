@@ -181,14 +181,14 @@ class MeprGroupsCtrl extends MeprCptCtrl {
       $group->is_upgrade_path = isset($_POST[MeprGroup::$is_upgrade_path_str]);
       $group->upgrade_path_reset_period = isset($_POST[MeprGroup::$upgrade_path_reset_period_str]);
       //$group->group_page_style_options = self::get_style_options_array();
-      $group->group_theme = $_POST[MeprGroup::$group_theme_str];
-      $group->page_button_class = $_POST[MeprGroup::$page_button_class_str];
-      $group->page_button_highlighted_class = $_POST[MeprGroup::$page_button_highlighted_class_str];
-      $group->page_button_disabled_class = $_POST[MeprGroup::$page_button_disabled_class_str];
-      $group->alternate_group_url = stripslashes($_POST[MeprGroup::$alternate_group_url_str]);
+      $group->group_theme = sanitize_text_field($_POST[MeprGroup::$group_theme_str]);
+      $group->page_button_class = sanitize_text_field($_POST[MeprGroup::$page_button_class_str]);
+      $group->page_button_highlighted_class = sanitize_text_field($_POST[MeprGroup::$page_button_highlighted_class_str]);
+      $group->page_button_disabled_class = sanitize_text_field($_POST[MeprGroup::$page_button_disabled_class_str]);
+      $group->alternate_group_url = sanitize_text_field(wp_unslash($_POST[MeprGroup::$alternate_group_url_str]));
       self::store_chosen_products($group->ID);
       $group->use_custom_template = isset($_POST['_mepr_use_custom_template']);
-      $group->custom_template = isset($_POST['_mepr_custom_template'])?$_POST['_mepr_custom_template']:'';
+      $group->custom_template = isset($_POST['_mepr_custom_template'])?sanitize_text_field($_POST['_mepr_custom_template']):'';
 
       $group->store_meta();
 
@@ -222,7 +222,7 @@ class MeprGroupsCtrl extends MeprCptCtrl {
       self::zero_out_old_products($group_id);
 
       for($index=0; $index < (count($_POST[MeprGroup::$products_str]['product']) - 1); $index++) {
-        $product_id = $_POST[MeprGroup::$products_str]['product'][$index];
+        $product_id = (int)sanitize_key($_POST[MeprGroup::$products_str]['product'][$index]);
         $prd = new MeprProduct($product_id);
 
         if($prd->ID) {
@@ -263,13 +263,11 @@ class MeprGroupsCtrl extends MeprCptCtrl {
     global $current_screen;
 
     if($current_screen->post_type == MeprGroup::$cpt) {
-      wp_register_style('mepr-settings-table', MEPR_CSS_URL.'/settings_table.css', array(), MEPR_VERSION);
-      wp_enqueue_style('mepr-groups-css', MEPR_CSS_URL.'/admin-groups.css', array('mepr-settings-table'), MEPR_VERSION);
+      wp_enqueue_style('mepr-groups-css', MEPR_CSS_URL.'/admin-groups.css', array('mepr-settings-table-css'), MEPR_VERSION);
 
       wp_dequeue_script('autosave'); //Disable auto-saving
 
-      wp_register_script('mepr-settings-table', MEPR_JS_URL.'/settings_table.js', array(), MEPR_VERSION);
-      wp_enqueue_script('mepr-groups-js', MEPR_JS_URL.'/admin_groups.js', array('jquery','jquery-ui-sortable','mepr-settings-table'), MEPR_VERSION);
+      wp_enqueue_script('mepr-groups-js', MEPR_JS_URL.'/admin_groups.js', array('jquery','jquery-ui-sortable','mepr-settings-table-js'), MEPR_VERSION);
     }
   }
 
@@ -279,7 +277,7 @@ class MeprGroupsCtrl extends MeprCptCtrl {
       die();
     }
 
-    $groups = get_posts(array('numberposts' => -1, 'post_type' => MeprGroup::$cpt, 'post_status' => 'publish'));
+    $groups = MeprCptModel::all('MeprGroup');
 
     if(empty($groups)) { die(); }
 

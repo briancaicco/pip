@@ -160,6 +160,9 @@ class MeprReminder extends MeprCptModel {
        // Lifetimes don't expire or renew
        "WHERE tr.expires_at <> %s\n" .
 
+         //Make sure only real users are grabbed
+         "AND tr.user_id > 0\n" .
+
          // Make sure that only transactions that are
          // complete or confirmed and in a trial get picked up
          "AND ( tr.status = %s

@@ -130,6 +130,7 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
   }
 
   public function validate() {
+    $this->validate_not_empty($this->post_title, 'title');
     $this->validate_is_currency($this->price, 0.00, null, 'price');
     $this->validate_is_numeric($this->period, 1, 12, 'period');
     $this->validate_is_in_array($this->period_type, $this->period_types, 'period_type');
@@ -324,30 +325,37 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
 
       if($old_sub = $current_user->subscription_in_group($grp->ID)) {
         $lt = $old_sub->latest_txn();
-        $r  = MeprUtils::calculate_proration($lt->amount,
-                                            $product_price,
-                                            $old_sub->days_in_this_period(),
-                                            $days_in_new_period,
-                                            $old_sub->days_till_expiration(),
-                                            $grp->upgrade_path_reset_period,
-                                            $old_sub);
 
-        //Don't update this below if the latest payment was for 0.00
-        if(MeprUtils::format_float($lt->amount) > 0.00) {
-          $product_price = $r->proration;
+        if($lt != false && $lt instanceof MeprTransaction && $lt->id > 0) {
+          $r = MeprUtils::calculate_proration(
+            $lt->amount,
+            $product_price,
+            $old_sub->days_in_this_period(),
+            $days_in_new_period,
+            $old_sub->days_till_expiration(),
+            $grp->upgrade_path_reset_period,
+            $old_sub
+          );
+
+          //Don't update this below if the latest payment was for 0.00
+          if(MeprUtils::format_float($lt->amount) > 0.00) {
+            $product_price = $r->proration;
+          }
         }
       }
       //Don't update this below if the latest payment was for 0.00
       elseif(($txn = $current_user->lifetime_subscription_in_group($grp->ID)) && MeprUtils::format_float($txn->amount) > 0.00) {
-        $r = MeprUtils::calculate_proration($txn->amount, $product_price, $txn->days_in_this_period(), $days_in_new_period, $txn->days_till_expiration(), $grp->upgrade_path_reset_period);
+        $r = MeprUtils::calculate_proration(
+          $txn->amount,
+          $product_price,
+          $txn->days_in_this_period(),
+          $days_in_new_period,
+          $txn->days_till_expiration(),
+          $grp->upgrade_path_reset_period
+        );
+
         $product_price = $r->proration;
       }
-
-      //Gah this is all over the frickin place!
-      // if(isset($r->days) && $r->days) {
-        // $this->period       = $r->days;
-        // $this->period_type  = 'days';
-      // }
     }
 
     //Note to future self, we do not want to validate the coupon
@@ -384,6 +392,7 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
 
     if(is_null($created_at)) { $created_at = time(); }
 
+    $user = MeprUtils::get_currentuserinfo();
     $expires_at = $created_at;
     $period = $this->period;
 
@@ -404,8 +413,6 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
       default: // one-time payment
           if($this->expire_type=='delay') {
             if(MeprUtils::is_user_logged_in()) {
-              $user = MeprUtils::get_currentuserinfo();
-
               //Handle renewals
               if($this->is_renewal() && ($last_txn = $this->get_last_active_txn($user->ID))) {
                 $expires_at = $created_at = strtotime($last_txn->expires_at);
@@ -426,8 +433,19 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
                 $expires_at += MeprUtils::years($this->expire_after, $created_at);
             }
           }
-          else if($this->expire_type=='fixed') {
+          elseif($this->expire_type=='fixed') {
             $expires_at = strtotime( $this->expire_fixed );
+            $now = time();
+            //Make sure we adjust the year if the membership is a renewable type and the user forgot to bump up the year
+            if($this->allow_renewal) {
+              while($now > $expires_at) {
+                $expires_at += MeprUtils::years(1);
+              }
+            }
+            //Actually handle renewals
+            if($this->is_renewal() && ($last_txn = $this->get_last_active_txn($user->ID))) {
+              $expires_at = strtotime($last_txn->expires_at) + MeprUtils::years(1);
+            }
           }
           else { // lifetime
             $expires_at = null;
@@ -458,7 +476,7 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
   //Just for checking if the membership type is a renewable type
   //Not to be used when is_renewal() should be used instead
   public function is_renewable() {
-    return ($this->expire_type=='delay' && $this->allow_renewal);
+    return (($this->expire_type=='delay' || $this->expire_type=='fixed') && $this->allow_renewal);
   }
 
   public function is_renewal() {
@@ -470,7 +488,7 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
 
     return (MeprUtils::is_user_logged_in() &&
             $user->is_already_subscribed_to($this->ID) &&
-            $this->expire_type=='delay' &&
+            ($this->expire_type=='delay' || $this->expire_type=='fixed') &&
             $this->allow_renewal);
   }
 
@@ -779,10 +797,10 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
     if( is_object($post) &&
         ( ( $post->post_type == MeprProduct::$cpt &&
             $prd = new MeprProduct($post->ID) ) ||
-          ( preg_match( '~\[mepr-(product|membership)-registration-form\s+product_id=[\"\\\'](\d+)[\"\\\']~',
+          ( preg_match( '~\[mepr-(product|membership)-registration-form\s+(product_)?id=[\"\\\'](\d+)[\"\\\']~',
                         $post->post_content, $m ) &&
             isset($m[1]) &&
-            $prd = new MeprProduct( $m[1] ) ) ) ) {
+            ( $prd = new MeprProduct( $m[1] ) ) ) ) ) {
       return $prd;
     }
 

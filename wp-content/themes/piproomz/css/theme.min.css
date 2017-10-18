@@ -1,7 +1,25 @@
 @charset "UTF-8";
-/*! Bootstrap v4.0.0-beta (https://getbootstrap.com) Copyright 2011-2017 The Bootstrap Authors Copyright 2011-2017 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
 @import url("https://fonts.googleapis.com/css?family=Nunito:300,400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600");
+.el-1 { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); }
+
+.el-2 { box-shadow: 0 0 2px rgba(22, 22, 34, 0.12), 0 2px 4px rgba(22, 22, 34, 0.24); }
+
+.el-3 { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); }
+
+.el-4 { box-shadow: 0 0 4px rgba(22, 22, 34, 0.14), 0 4px 8px rgba(22, 22, 34, 0.28); }
+
+.el-5 { box-shadow: 0 0 5px rgba(22, 22, 34, 0.15), 0 5px 10px rgba(22, 22, 34, 0.3); }
+
+.el-6 { box-shadow: 0 0 6px rgba(22, 22, 34, 0.16), 0 6px 12px rgba(22, 22, 34, 0.32); }
+
+.el-7 { box-shadow: 0 0 7px rgba(22, 22, 34, 0.17), 0 7px 14px rgba(22, 22, 34, 0.34); }
+
+.el-8 { box-shadow: 0 0 14px rgba(22, 22, 34, 0.17), 0 14px 28px rgba(22, 22, 34, 0.07); }
+
+.el-9 { box-shadow: 0 0 18px rgba(22, 22, 34, 0.17), 0 18px 32px rgba(22, 22, 34, 0.07); }
+
+/*! Bootstrap v4.0.0-beta (https://getbootstrap.com) Copyright 2011-2017 The Bootstrap Authors Copyright 2011-2017 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
 @media print { *, *::before, *::after { text-shadow: none !important; box-shadow: none !important; }
   a, a:visited { text-decoration: underline; }
   abbr[title]::after { content: " (" attr(title) ")"; }
@@ -4345,9 +4363,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sa
 
 p { font-family: "Raleway", sans-serif; }
 
+.form-control, .wpcf7 input[type=text], .wpcf7 input[type=search], .wpcf7 input[type=url], .wpcf7 input[type=tel], .wpcf7 input[type=number], .wpcf7 input[type=range], .wpcf7 input[type=date], .wpcf7 input[type=month], .wpcf7 input[type=week], .wpcf7 input[type=time], .wpcf7 input[type=datetime], .wpcf7 input[type=datetime-local], .wpcf7 input[type=color], .wpcf7 input[type=email], .wpcf7 input[type=file], .wpcf7 input[type=submit], .wpcf7 select, .wpcf7 textarea, .wpcf7 .wpcf7-validation-errors { display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #495057; background-color: #fff; background-image: none; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 0rem; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; box-shadow: none; }
+
 .btn, .wpcf7 input[type=submit] { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.875rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; }
 
-.btn:hover, .wpcf7 input[type=submit]:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; }
+.btn:hover, .wpcf7 input[type=submit]:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; }
 
 .btn-primary:hover { background: #57c3f0; border-color: #57c3f0; }
 
@@ -4369,7 +4389,15 @@ p { font-family: "Raleway", sans-serif; }
 
 .home-page .card-wrap .card { box-shadow: 0 0 0 0 !important; background-color: transparent !important; border: none !important; position: absolute; top: -20px; }
 
-.home-page .gradient-bg { width: 100%; height: 120%; left: 0px; top: 0px; overflow: hidden; transform: skewY(-8deg); transform-origin: 0; background-color: #1b60d8; position: absolute; z-index: 0; background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); }
+.home-page .gradient-bg { width: 100%; height: 120%; left: 0px; top: 0px; overflow: hidden; transform: skewY(-8deg); transform-origin: 0; position: absolute; z-index: 0; background-color: #1b60d8; background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); }
+
+.register .page-title { display: none; }
+
+.register #profile-details-section { display: none !important; }
+
+.register section { display: block; background-color: #fff; height: 100%; position: absolute; width: 100%; bottom: 0; left: 0; right: 0; z-index: 1; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: #1b60d8; background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); }
+
+.register footer { display: none; }
 
 /* Use existing Bootstrap 4 classes and variables to extend - override CF7 style Useful CF7 classes: .wpcf7 the wrapper element .wpcf7-form .wpcf7-form-control .wpcf7-text .wpcf7-email .wpcf7-textarea .wpcf7-submit */
 .wpcf7 { max-width: 600px; margin: 0 auto !important; }

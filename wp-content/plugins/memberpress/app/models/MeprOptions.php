@@ -189,6 +189,9 @@ class MeprOptions {
     if(!isset($this->pro_rated_upgrades))
       $this->pro_rated_upgrades = true;
 
+    if(!isset($this->enable_spc))
+      $this->enable_spc = false;
+
     if(!isset($this->coupon_field_enabled))
       $this->coupon_field_enabled = true;
 
@@ -369,6 +372,7 @@ class MeprOptions {
     $this->disable_wp_registration_form_str         = 'mepr-disable-wp-registration-form';
     $this->disable_wp_admin_bar_str                 = 'mepr-disable-wp-admin-bar';
     $this->pro_rated_upgrades_str                   = 'mepr-pro-rated-upgrades';
+    $this->enable_spc_str                           = 'mepr-enable-spc';
     $this->coupon_field_enabled_str                 = 'mepr-coupon-field-enabled';
     $this->require_tos_str                          = 'mepr-require-tos';
     $this->tos_url_str                              = 'mepr-tos-url';
@@ -533,6 +537,7 @@ class MeprOptions {
     $this->disable_wp_registration_form  = isset($params[$this->disable_wp_registration_form_str]);
     $this->disable_wp_admin_bar          = isset($params[$this->disable_wp_admin_bar_str]);
     $this->pro_rated_upgrades            = isset($params[$this->pro_rated_upgrades_str]);
+    $this->enable_spc                    = isset($params[$this->enable_spc_str]);
     $this->coupon_field_enabled          = isset($params[$this->coupon_field_enabled_str]);
     $this->require_tos                   = isset($params[$this->require_tos_str]);
     $this->tos_url                       = (isset($params[$this->tos_url_str]))?stripslashes($params[$this->tos_url_str]):'';
@@ -610,6 +615,8 @@ class MeprOptions {
   }
 
   public function get_custom_field($field_key) {
+    $custom_field = null;
+
     foreach($this->custom_fields as $custom_field) {
       if($custom_field->field_key==$field_key) {
         return $custom_field;
@@ -631,6 +638,7 @@ class MeprOptions {
         $type = $params[$this->custom_fields_str][$i]['type'];
         $default = isset($params[$this->custom_fields_str][$i]['default'])?$params[$this->custom_fields_str][$i]['default']:'';
         $signup = isset($params[$this->custom_fields_str][$i]['signup']);
+        $show_in_account = isset($params[$this->custom_fields_str][$i]['show_in_account']);
         $required = isset($params[$this->custom_fields_str][$i]['required']);
         $dropdown_ops = array();
 
@@ -657,6 +665,7 @@ class MeprOptions {
                             'field_type' => $type,
                             'default_value' => $default,
                             'show_on_signup' => $signup,
+                            'show_in_account' => $show_in_account,
                             'required' => $required,
                             'options' => $dropdown_ops);
       }

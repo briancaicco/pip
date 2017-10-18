@@ -1,5 +1,7 @@
 <?php if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');} ?>
 
+<?php do_action('mepr-above-checkout-form', $product->ID); ?>
+
 <div class="mp_wrapper">
   <form class="mepr-signup-form mepr-form" method="post" action="<?php echo $_SERVER['REQUEST_URI'].'#mepr_errors'; ?>" novalidate>
     <input type="hidden" id="mepr_process_signup_form" name="mepr_process_signup_form" value="Y" />
@@ -7,6 +9,7 @@
 
     <?php if(MeprUtils::is_user_logged_in()): ?>
       <input type="hidden" name="logged_in_purchase" value="1" />
+      <?php wp_nonce_field( 'logged_in_purchase', 'mepr_checkout_nonce' ); ?>
     <?php endif; ?>
 
     <?php if( ($product->register_price_action != 'hidden') && MeprHooks::apply_filters('mepr_checkout_show_terms',true) ): ?>
@@ -48,7 +51,7 @@
         MeprUsersHelper::render_custom_fields($product);
       }
       elseif(!MeprUtils::is_user_logged_in()) { // We only pass the 'signup' flag on initial Signup
-        MeprUsersHelper::render_custom_fields($product, true);
+        MeprUsersHelper::render_custom_fields($product, 'initial_signup');
       }
     ?>
 
@@ -121,7 +124,7 @@
     <?php if(!MeprUtils::is_user_logged_in()): ?>
       <?php if($mepr_options->require_tos): ?>
         <div class="mp-form-row mepr_tos">
-          <label for="mepr_agree_to_tos" class="mepr-checkbox-field mepr-form-input" required>
+          <label for="mepr_agree_to_tos" class="mepr-checkbox-field mepr-form-input"><!-- don't mark this required, we'll let PHP validate it -->
             <input type="checkbox" name="mepr_agree_to_tos" id="mepr_agree_to_tos" <?php checked(isset($mepr_agree_to_tos)); ?> />
             <a href="<?php echo stripslashes($mepr_options->tos_url); ?>" target="_blank"><?php echo stripslashes($mepr_options->tos_title); ?></a>*
           </label>
@@ -137,9 +140,10 @@
 
     <div class="mepr_spacer">&nbsp;</div>
 
-    <input type="submit" class="mepr-submit" value="<?php echo stripslashes($product->signup_button_text); ?>" />
-    <img src="<?php echo admin_url('images/loading.gif'); ?>" style="display: none;" class="mepr-loading-gif" />
-    <?php MeprView::render('/shared/has_errors', get_defined_vars()); ?>
+    <div class="mp-form-submit">
+      <input type="submit" class="mepr-submit" value="<?php echo stripslashes($product->signup_button_text); ?>" />
+      <img src="<?php echo admin_url('images/loading.gif'); ?>" style="display: none;" class="mepr-loading-gif" />
+      <?php MeprView::render('/shared/has_errors', get_defined_vars()); ?>
+    </div>
   </form>
 </div>
-

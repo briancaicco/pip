@@ -140,29 +140,49 @@ class MeprUtils {
     return $n * self::days(7);
   }
 
-  public static function months($n, $month_timestamp=false, $backwards=false) {
-    $month_timestamp = empty($month_timestamp) ? time() : $month_timestamp;
-    $seconds = 0;
+  public static function months($n, $month_ts=false, $backwards=false, $ts_day=false) {
+    $month_ts = empty($month_ts) ? time() : $month_ts;
 
-    // If backward we start in the previous month
+    // Get the day for the ts_day
+    $ts_day = empty($ts_day) ? date('j', $month_ts) : $ts_day;
+
+    // Get the month number for the timestamp
+    $ts_month = (int)date('n', $month_ts);
+
+    // ts_month +/- number of months and then mod by 12 to get the right target month
     if($backwards) {
-      $month_timestamp -= self::days((int)date('t', $month_timestamp));
+      $month = ($ts_month - $n) % 12;
+    }
+    else {
+      $month = ($ts_month + $n) % 12;
     }
 
-    for($i=0; $i < $n; $i++) {
-      $month_seconds = self::days((int)date('t', $month_timestamp));
-      $seconds += $month_seconds;
+    // Get the year for the timestamp
+    $ts_year = (int)date('Y', $month_ts);
 
-      // We want the months going into the past
-      if($backwards) {
-        $month_timestamp -= $month_seconds;
-      }
-      else { // We want the months going into the past
-        $month_timestamp += $month_seconds;
-      }
+    // ts_month +/- number of months and then divide by 12 to get the right target month
+    // round down no matter what then either +/- by the ts_year to get the right target year
+    if($backwards) {
+      $year = $ts_year - abs(floor(($ts_month - $n) / 12));
+    }
+    else {
+      $year = $ts_year + abs(floor(($ts_month + $n) / 12));
     }
 
-    return $seconds;
+    $days_in_month = date('t', mktime(0,0,0,$month,1,$year));
+
+    $day = ($ts_day > $days_in_month) ? $days_in_month : $ts_day;
+
+    $new_month_ts = mktime(
+      date('H',$month_ts),
+      date('i',$month_ts),
+      date('s',$month_ts),
+      $month,
+      $day,
+      $year
+    );
+
+    return abs($new_month_ts - $month_ts);
   }
 
   public static function years($n, $year_timestamp=false, $backwards=false) {
@@ -272,7 +292,7 @@ class MeprUtils {
   public static function replace_vals($content, $params, $start_token="\\\\{\\\\$", $end_token="\\\\}") {
     if(!is_array($params)) { return $content; }
 
-    $callback = create_function('$k','$k = preg_quote($k, "/"); return "/' . $start_token . '\w*{$k}\w*' . $end_token . '/";');
+    $callback = create_function('$k','$k = preg_quote($k, "/"); return "/' . $start_token . '[^\W_]*{$k}[^\W_]*' . $end_token . '/";');
     $patterns = array_map( $callback, array_keys($params) );
     $replacements = array_values( $params );
 
@@ -416,13 +436,15 @@ class MeprUtils {
     $expiring_txn = $old_sub->expiring_txn();
 
     // If no money has changed hands then no proration
-    if($expiring_txn->txn_type == MeprTransaction::$subscription_confirmation_str) {
+    if( $expiring_txn != false && $expiring_txn instanceof MeprTransaction &&
+        $expiring_txn->txn_type == MeprTransaction::$subscription_confirmation_str ) {
       return (object)array('proration' => 0.00, 'days' => 0);
     }
 
     // If the subscription has a trial and we're in that first trial payment ...
     // and it's not a proration then we need the trial amount rather than the sub price
-    if($old_sub->txn_count == 1 && $old_sub->trial && !$old_sub->prorated_trial) {
+    if( $expiring_txn != false && $expiring_txn instanceof MeprTransaction &&
+        $old_sub->txn_count == 1 && $old_sub->trial && !$old_sub->prorated_trial ) {
       $old_price = $expiring_txn->amount;
     }
     else {
@@ -447,12 +469,12 @@ class MeprUtils {
                                               $new_period    ='lifetime',
                                               $old_days_left ='lifetime',
                                               $reset_period  = false,
-                                              $old_sub       = false, /*Not used, but valuable for the filter*/
-                                              $new_sub       = false  /*Not used, but valuable for the filter*/ ) {
+                                              $old_sub       = false, /*These will be false on non auto-recurring*/
+                                              $new_sub       = false  /*These will be false on non auto-recurring*/ ) {
     // By default days left in the new sub are equal to the days left in the old
     $new_days_left = $old_days_left;
 
-    if(is_numeric($old_period) and is_numeric($new_period)) {
+    if(is_numeric($old_period) && is_numeric($new_period) && $new_sub !== false) {
       // recurring to recurring
       if($old_days_left > $new_period || $reset_period) {
         // What if the days left exceed the $new_period?
@@ -477,7 +499,7 @@ class MeprUtils {
         $proration = 0;
       }
     }
-    elseif(is_numeric($old_period) && is_numeric($old_days_left) && $new_period == 'lifetime') {
+    elseif(is_numeric($old_period) && is_numeric($old_days_left) && ($new_period == 'lifetime' || $new_sub === false)) {
       // recurring to lifetime
       // apply outstanding amount to lifetime purchase
       // calculate amount of money left on old sub
@@ -948,7 +970,7 @@ class MeprUtils {
   }
 
   public static function countries($prioritize_my_country=true) {
-    $countries = require( MEPR_I18N_PATH . '/countries.php' );
+    $countries = require(MEPR_I18N_PATH . '/countries.php');
 
     if($prioritize_my_country) {
       $country_code = get_option('mepr_biz_country');
@@ -960,7 +982,11 @@ class MeprUtils {
       }
     }
 
-    return $countries;
+    return MeprHooks::apply_filters(
+      'mepr_countries',
+      $countries,
+      $prioritize_my_country
+    );
   }
 
   public static function country_name($code) {
@@ -1489,6 +1515,89 @@ class MeprUtils {
     return $verified;
   }
 
+  public static function build_query_string( $add_params=array(),
+                                             $include_query_string=false,
+                                             $exclude_params=array(),
+                                             $exclude_referer=true ) {
+    $query_string = '';
+    if($include_query_string) {
+      $query_string = $_SERVER['QUERY_STRING'];
+    }
+
+    if(empty($query_string)) {
+      $query_string = http_build_query($add_params);
+    }
+    else {
+      $query_string = $query_string . '&' . http_build_query($add_params);
+    }
+
+    if($exclude_referer) {
+      $exclude_params[] = '_wp_http_referer';
+    }
+
+    foreach($exclude_params as $param) {
+      $query_string = preg_replace('!&?' . preg_quote($param,'!') . '=[^&]*!', '', $query_string);
+    }
+
+    return $query_string;
+  }
+
+  // $add_nonce = [$action,$name]
+  public static function admin_url( $path,
+                                    $add_nonce=array(),
+                                    $add_params=array(),
+                                    $include_query_string=false,
+                                    $exclude_params=array(),
+                                    $exclude_referer=true ) {
+    $delim = MeprUtils::get_delim($path);
+
+    // Automatically exclude the nonce if it's present
+    if(!empty($add_nonce)) {
+      $nonce_action = $add_nonce[0];
+      $nonce_name = (isset($add_nonce[1]) ? $add_nonce[1] : '_wpnonce');
+      $exclude_params[] = $nonce_name;
+    }
+
+    $url = admin_url($path.$delim.self::build_query_string($add_params,$include_query_string,$exclude_params,$exclude_referer));
+
+    if(empty($add_nonce)) {
+      return $url;
+    }
+    else {
+      return html_entity_decode(wp_nonce_url($url,$nonce_action,$nonce_name));
+    }
+  }
+
+  public static function pretty_permalinks_using_index() {
+    $permalink_structure = get_option('permalink_structure');
+    return preg_match('!^/index.php!',$permalink_structure);
+  }
+
+  /** This returns the structure for all of the gateway notify urls.
+    * It can even account for folks unlucky enough to have to prepend
+    * their URLs with '/index.php'.
+    * NOTE: This function is only applicable if pretty permalinks are enabled.
+    */
+  public static function gateway_notify_url_structure() {
+    $pre_slug_index = '';
+    if(self::pretty_permalinks_using_index()) {
+      $pre_slug_index = '/index.php';
+    }
+
+    return MeprHooks::apply_filters(
+      'mepr_gateway_notify_url_structure',
+      "{$pre_slug_index}/mepr/notify/%gatewayid%/%action%"
+    );
+  }
+
+  /** This modifies the gateway notify url structure to be matched against a uri.
+    * By default it will generate this: /mepr/notify/([^/\?]+)/([^/\?]+)/?
+    * However, this could change depending on what gateway_notify_url_structure returns
+    */
+  public static function gateway_notify_url_regex_pattern() {
+    return preg_replace('!(%gatewayid%|%action%)!', '([^/\?]+)', self::gateway_notify_url_structure()) . '/?';
+  }
+
 /* PLUGGABLE FUNCTIONS AS TO NOT STEP ON OTHER PLUGINS' CODE */
   public static function get_currentuserinfo() {
     self::include_pluggables('wp_get_current_user');
@@ -1522,6 +1631,9 @@ class MeprUtils {
 
   public static function wp_mail($recipient, $subject, $message, $headers = '') {
     self::include_pluggables('wp_mail');
+
+    // Parse shortcodes in the message body
+    $message = do_shortcode($message);
 
     add_filter('wp_mail_from_name', 'MeprUtils::set_mail_from_name');
     add_filter('wp_mail_from',      'MeprUtils::set_mail_from_email');
@@ -1694,6 +1806,61 @@ class MeprUtils {
     }
 
     return $url;
+  }
+
+  public static function get_formatted_usermeta($user_id) {
+    $mepr_options = MeprOptions::fetch();
+    $ums = get_user_meta($user_id);
+    $new_ums = array();
+    $return_ugly_val = MeprHooks::apply_filters('mepr-return-ugly-usermeta-vals', false);
+
+    if(!empty($ums)) {
+      foreach($ums as $umkey => $um) {
+        // Only support first val for now and yes some of these will be serialized values
+        $val = maybe_unserialize($um[0]);
+        $strval = $val;
+
+        if(is_array($val)) { //Handle array type custom fields like multi-select, checkboxes etc we'll unsanitize the vals
+          if(!empty($val)) {
+            foreach($val as $i => $k) {
+              if(is_int($i)) { //Multiselects (indexed array)
+                if(!$return_ugly_val) { $k = self::unsanitize_title($k); }
+                $strval = (is_array($strval))?"{$k}":$strval.", {$k}";
+              }
+              else { //Checkboxes (associative array)
+                if(!$return_ugly_val) { $i = self::unsanitize_title($i); }
+                $strval = (is_array($strval))?"{$i}":$strval.", {$i}";
+              }
+            }
+          }
+          else { //convert empty array to empty string
+            $strval = '';
+          }
+        }
+        elseif($val == 'on') { //Single checkbox
+          $strval = _x('Checked', 'ui', 'memberpress');
+        }
+        elseif($return_ugly_val) { //Return the ugly value
+          $strval = $val;
+        }
+        else { //We need to check for checkboxes and radios and match them up with MP custom fields
+          $mepr_field = $mepr_options->get_custom_field($umkey);
+
+          if(!is_null($mepr_field) && !empty($mepr_field->options)) {
+            foreach($mepr_field->options as $option) {
+              if($option->option_value == $val) {
+                $strval = stripslashes($option->option_name);
+                break; //Found a match, so stop here
+              }
+            }
+          }
+        }
+
+        $new_ums["{$umkey}"] = $strval;
+      }
+    }
+
+    return $new_ums;
   }
 
   // purely for backwards compatibility (deprecated)

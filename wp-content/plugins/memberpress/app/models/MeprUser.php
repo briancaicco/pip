@@ -55,8 +55,13 @@ class MeprUser extends MeprBaseModel {
     }
     else {
       $wp_user_obj = MeprUtils::get_user_by('id', $id);
-      $this->load_wp_user($wp_user_obj);
-      $this->load_meta();
+      if($wp_user_obj instanceof WP_User) {
+        $this->load_wp_user($wp_user_obj);
+        $this->load_meta();
+      }
+      else {
+        $this->initialize_new_user();
+      }
     }
 
     // This must be here to ensure that we don't pull an encrypted
@@ -70,8 +75,13 @@ class MeprUser extends MeprBaseModel {
     }
     else {
       $wp_user_obj = MeprUtils::get_user_by('login', $login);
-      $this->load_wp_user($wp_user_obj);
-      $this->load_meta($wp_user_obj);
+      if($wp_user_obj instanceof WP_User) {
+        $this->load_wp_user($wp_user_obj);
+        $this->load_meta($wp_user_obj);
+      }
+      else {
+        $this->initialize_new_user();
+      }
     }
 
     // This must be here to ensure that we don't pull an encrypted
@@ -85,8 +95,13 @@ class MeprUser extends MeprBaseModel {
     }
     else {
       $wp_user_obj = MeprUtils::get_user_by('email', $email);
-      $this->load_wp_user($wp_user_obj);
-      $this->load_meta($wp_user_obj);
+      if($wp_user_obj instanceof WP_User) {
+        $this->load_wp_user($wp_user_obj);
+        $this->load_meta($wp_user_obj);
+      }
+      else {
+        $this->initialize_new_user();
+      }
     }
 
     // This must be here to ensure that we don't pull an encrypted
@@ -261,7 +276,7 @@ class MeprUser extends MeprBaseModel {
     if(!isset($items) || !is_array($items)) { $items = array(); }
 
     // Setup caching array for this user
-    if(!isset($items[$user_id]) || !is_array($items[$user_id])) { $item[$user_id] = array(); }
+    if(!isset($items[$user_id]) || !is_array($items[$user_id])) { $items[$user_id] = array(); }
 
     //I'm assuming we may run into instances where we need to force the query to run
     //so $force should allow that
@@ -313,6 +328,23 @@ class MeprUser extends MeprBaseModel {
     }
 
     return $formatted_titles;
+  }
+
+  //Gets the product_id's of the subscriptions this user has which are marked as "Enabled"
+  //This does NOT mean they are active, just that they are recurring and marked as "Enabled"
+  public function get_enabled_product_ids($prd_id = null) {
+    global $wpdb;
+    $mepr_db = new MeprDb();
+
+    $q = $wpdb->prepare("SELECT product_id FROM {$mepr_db->subscriptions} WHERE status = %s AND user_id = %d", MeprSubscription::$active_str, $this->ID);
+
+    if(isset($prd_id) && $prd_id) {
+      $q .= " " . $wpdb->prepare("AND product_id = %d", $prd_id);
+    }
+
+    $res = $wpdb->get_col($q);
+
+    return array_unique($res);
   }
 
   // $who should be 1 (row) object in the $product->who_can_purchase array.
@@ -405,7 +437,12 @@ class MeprUser extends MeprBaseModel {
     $_REQUEST['mepr_get_real_payment'] = true; //Try to get a real payment instead of a confirmation txn
     $first_txn = $sub->first_txn();
 
-    return $first_txn->created_at;
+    if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+      return false;
+    }
+    else {
+      return $first_txn->created_at;
+    }
   }
 
   public static function get_user_product_expires_at_date($user_id, $product_id, $return_txn = false) {
@@ -499,10 +536,15 @@ class MeprUser extends MeprBaseModel {
     /* translators: In this string, %s is the Blog Name/Title */
     $subject = sprintf( __("[%s] Password Reset", 'memberpress'), $mepr_blogname);
 
-    /* translators: In this string, %1$s is the user's username, %2$s is the blog's name/title, %3$s is the blog's url, %4$s the reset password link */
-    $message = sprintf(__("Someone requested to reset your password for %1\$s on %2\$s at %3\$s\n\nTo reset your password visit the following address, otherwise just ignore this email and nothing will happen.\n\n%4\$s", 'memberpress'), $this->user_login, $mepr_blogname, $mepr_blogurl, $reset_password_link);
+    ob_start();
+    ?>
+      <p><?php echo sprintf(_x("Someone requested to reset your password for %1\$s on %2\$s at %3\$s", 'ui', 'memberpress'), $this->user_login, $mepr_blogname, $mepr_blogurl); ?></p>
+      <p><?php echo _x("To reset your password visit the following address, otherwise just ignore this email and nothing will happen.", 'ui', 'memberpress'); ?></p>
+      <p><a href="<?php echo $reset_password_link; ?>"><?php echo $reset_password_link; ?></a></p>
+    <?php
+    $message = ob_get_clean();
 
-    MeprUtils::wp_mail($recipient, $subject, $message);
+    MeprUtils::wp_mail($recipient, $subject, $message, array("Content-Type: text/html"));
   }
 
   public function set_password_and_send_notifications($key, $password) {
@@ -541,13 +583,26 @@ class MeprUser extends MeprBaseModel {
       $recipient = $this->formatted_email();
 
       /* translators: In this string, %s is the Blog Name/Title */
-      $subject = sprintf(__("[%s] Your new Password", 'memberpress'), $mepr_blogname);
-      $password_message = __('Successfully reset', 'memberpress');
+      $subject = sprintf(_x("[%s] Your new Password", 'ui', 'memberpress'), $mepr_blogname);
+      $password_message = _x('', 'ui', 'memberpress');
 
-      /* translators: In this string, %1$s is the user's first name, %2$s is the blog's name/title, %3$s is the user's username, %4$s is the user's password, and %5$s is the blog's URL... */
-      $message = sprintf(__("%1\$s,\n\nYour password was successfully reset on %2\$s!\n\nUsername: %3\$s\nPassword: *** %4\$s ***\n\nYou can login here: %5\$s", 'memberpress'), (empty($this->first_name)?$this->user_login:$this->first_name), $mepr_blogname, $this->user_login, $password_message, $login_link);
+      ob_start();
+      ?>
+        <p>
+          <?php echo (empty($this->first_name)?$this->user_login:$this->first_name); ?>,
+          <br/>
+          <?php echo sprintf(_x("Your password was successfully reset on %1\$s!", 'ui', 'memberpress'), $mepr_blogname); ?>
+        </p>
+        <p>
+          <?php echo sprintf(_x("Username: %1\$s", 'ui', 'memberpress'), $this->user_login); ?>
+          <br/>
+          <?php echo _x("Password: *** Successfully Reset ***", 'ui', 'memberpress'); ?>
+        </p>
+        <p><?php echo sprintf(_x("You can now login here: %1\$s", 'ui', 'memberpress'), $login_link); ?></p>
+      <?php
+      $message = ob_get_clean();
 
-      MeprUtils::wp_mail($recipient, $subject, $message);
+      MeprUtils::wp_mail($recipient, $subject, $message, array("Content-Type: text/html"));
 
       return true;
     }
@@ -594,8 +649,12 @@ class MeprUser extends MeprBaseModel {
       if(!preg_match('#^[a-zA-Z0-9_@\.\-\+]+$#', $user_login))
         $errors[] = __('Username must only contain letters, numbers and/or underscores', 'memberpress');
 
-      if(username_exists($user_login))
-        $errors[] = __('Username is Already Taken.', 'memberpress');
+      if(username_exists($user_login)) {
+        $current_url = urlencode($_SERVER['REQUEST_URI']);
+        $login_url = $mepr_options->login_page_url("redirect_to={$current_url}");
+
+        $errors[] = sprintf(__('This username has already been taken. If you are an existing user, please %sLogin%s first to complete your purchase.', 'memberpress'), "<a href=\"{$login_url}\"><strong>", "</strong></a>");
+      }
 
       if(!is_email($user_email))
         $errors[] = __('Email must be a real and properly formatted email address', 'memberpress');
@@ -604,7 +663,7 @@ class MeprUser extends MeprBaseModel {
         $current_url = urlencode($_SERVER['REQUEST_URI']);
         $login_url = $mepr_options->login_page_url("redirect_to={$current_url}");
 
-        $errors[] = sprintf(__('This email address has already been used. Please %sLogin%s to complete your purchase.', 'memberpress'), "<a href=\"{$login_url}\"><strong>", "</strong></a>");
+        $errors[] = sprintf(__('This email address has already been used. If you are an existing user, please %sLogin%s to complete your purchase.', 'memberpress'), "<a href=\"{$login_url}\"><strong>", "</strong></a>");
       }
 
       if(empty($mepr_user_password))
@@ -1034,12 +1093,12 @@ class MeprUser extends MeprBaseModel {
   }
 
   public function set_address($params) {
-    update_user_meta($this->ID, 'mepr-address-one',     $params['mepr-address-one']);
-    update_user_meta($this->ID, 'mepr-address-two',     $params['mepr-address-two']);
-    update_user_meta($this->ID, 'mepr-address-city',    $params['mepr-address-city']);
-    update_user_meta($this->ID, 'mepr-address-state',   $params['mepr-address-state']);
-    update_user_meta($this->ID, 'mepr-address-zip',     $params['mepr-address-zip']);
-    update_user_meta($this->ID, 'mepr-address-country', $params['mepr-address-country']);
+    update_user_meta($this->ID, 'mepr-address-one',     sanitize_text_field(wp_unslash($params['mepr-address-one'])));
+    update_user_meta($this->ID, 'mepr-address-two',     sanitize_text_field(wp_unslash($params['mepr-address-two'])));
+    update_user_meta($this->ID, 'mepr-address-city',    sanitize_text_field(wp_unslash($params['mepr-address-city'])));
+    update_user_meta($this->ID, 'mepr-address-state',   sanitize_text_field(wp_unslash($params['mepr-address-state'])));
+    update_user_meta($this->ID, 'mepr-address-zip',     sanitize_text_field(wp_unslash($params['mepr-address-zip'])));
+    update_user_meta($this->ID, 'mepr-address-country', sanitize_text_field(wp_unslash($params['mepr-address-country'])));
   }
 
   public function full_address($fallback_to_biz_addr=true) {
@@ -1271,7 +1330,7 @@ class MeprUser extends MeprBaseModel {
 
   public function update_txn_meta() {
     $latest_txn = $this->latest_txn;
-    if(!is_bool($latest_txn)) {
+    if($latest_txn != false && $latest_txn instanceof MeprTransaction && $latest_txn->id > 0) {
       update_user_meta($this->ID, 'mepr_latest_txn_date', $latest_txn->created_at);
     }
     else {
@@ -1315,6 +1374,7 @@ class MeprUser extends MeprBaseModel {
       'txn_count' => 'IFNULL(m.txn_count,0)',
       'active_txn_count' => 'IFNULL(m.active_txn_count,0)',
       'expired_txn_count' => 'IFNULL(m.expired_txn_count,0)',
+      'trial_txn_count' => 'IFNULL(m.trial_txn_count,0)',
       'sub_count' => 'IFNULL(m.sub_count,0)',
       'active_sub_count' => 'IFNULL(m.active_sub_count,0)',
       'pending_sub_count' => 'IFNULL(m.pending_sub_count,0)',
@@ -1322,7 +1382,7 @@ class MeprUser extends MeprBaseModel {
       'cancelled_sub_count' => 'IFNULL(m.cancelled_sub_count,0)',
       'latest_txn_date' => 'IFNULL(latest_txn.created_at,NULL)',
       'first_txn_date' => 'IFNULL(first_txn.created_at,NULL)',
-      'status' => 'IF(active_txn_count>0,"active",IF(expired_txn_count>0,"expired","none"))',
+      'status' => 'CASE WHEN active_txn_count>0 THEN "active" WHEN trial_txn_count>0 THEN "active" WHEN expired_txn_count>0 THEN "expired" ELSE "none" END',
       'memberships' => 'IFNULL(m.memberships,"")',
       'last_login_date' => 'IFNULL(last_login.created_at, NULL)',
       'login_count' => 'IFNULL(m.login_count,0)',
@@ -1361,7 +1421,7 @@ class MeprUser extends MeprBaseModel {
 
     if(isset($params['status']) && $params['status'] != 'all') {
       if($params['status']=='active') {
-        $args[] = 'm.active_txn_count > 0';
+        $args[] = 'm.active_txn_count > 0 OR m.trial_txn_count > 0';
       }
       else if($params['status']=='expired') {
         $args[] = 'm.active_txn_count <= 0';
@@ -1439,7 +1499,7 @@ class MeprUser extends MeprBaseModel {
         );
 
         $id = $wpdb->get_var($q);
-        return !empty($id) ? new MeprTransaction($id) : false;
+        return empty($id) ? false : new MeprTransaction($id);
       default:
         return false;
     }
@@ -1465,7 +1525,7 @@ class MeprUser extends MeprBaseModel {
         );
 
         $id = $wpdb->get_var($q);
-        return !empty($id) ? new MeprTransaction($id) : false;
+        return empty($id) ? false : new MeprTransaction($id);
       default:
         return false;
     }
@@ -1949,6 +2009,7 @@ class MeprUser extends MeprBaseModel {
     if(empty($cols) || in_array('txn_count',$cols))           { $select_cols['txn_count']           = self::member_col_txn_count(); }
     if(empty($cols) || in_array('expired_txn_count',$cols))   { $select_cols['expired_txn_count']   = self::member_col_expired_txn_count(); }
     if(empty($cols) || in_array('active_txn_count',$cols))    { $select_cols['active_txn_count']    = self::member_col_active_txn_count(); }
+    if(empty($cols) || in_array('trial_txn_count',$cols))     { $select_cols['trial_txn_count']     = self::member_col_trial_txn_count(); }
     if(empty($cols) || in_array('sub_count',$cols))           { $select_cols['sub_count']           = self::member_col_sub_count(); }
     if(empty($cols) || in_array('pending_sub_count',$cols))   { $select_cols['pending_sub_count']   = self::member_col_sub_count(MeprSubscription::$pending_str); }
     if(empty($cols) || in_array('active_sub_count',$cols))    { $select_cols['active_sub_count']    = self::member_col_sub_count(MeprSubscription::$active_str); }
@@ -2031,10 +2092,8 @@ class MeprUser extends MeprBaseModel {
         SELECT COUNT(*)
           FROM {$mepr_db->transactions} AS t
          WHERE t.user_id=u.ID
-           AND t.status = %s
            AND t.txn_type = %s
       )",
-      MeprTransaction::$complete_str,
       MeprTransaction::$payment_str
     );
   }
@@ -2081,6 +2140,32 @@ class MeprUser extends MeprBaseModel {
       )",
       MeprTransaction::$complete_str,
       MeprTransaction::$payment_str,
+      MeprUtils::db_lifetime(),
+      MeprUtils::db_now()
+    );
+  }
+
+  private static function member_col_trial_txn_count() {
+    global $wpdb;
+
+    $mepr_db = MeprDb::fetch();
+
+    return $wpdb->prepare("(
+        SELECT COUNT(*)
+          FROM {$mepr_db->transactions} AS t
+          JOIN {$mepr_db->subscriptions} AS sub
+            ON t.subscription_id = sub.id
+         WHERE t.user_id=u.ID
+           AND t.txn_type = %s
+           AND (
+             t.expires_at IS NULL
+             OR t.expires_at = %s
+             OR t.expires_at > %s
+           )
+           AND sub.trial IS TRUE
+           AND sub.trial_amount = 0.00
+      )",
+      MeprTransaction::$subscription_confirmation_str,
       MeprUtils::db_lifetime(),
       MeprUtils::db_now()
     );
@@ -2185,16 +2270,19 @@ class MeprUser extends MeprBaseModel {
     );
   }
 
-  public function update_member_data() {
+  public function update_member_data($cols=array()) {
     global $wpdb;
     $mepr_db = MeprDb::fetch();
+
+    // Does the table even exist? (fix for Multisite)
+    if(!$mepr_db->table_exists($mepr_db->members)) { return; }
 
     if(!isset($this->ID) || empty($this->ID)) {
       MeprUtils::debug_log("UPDATE_MEMBER_DATA: \$this->ID is either unset or empty or zero");
       return false;
     }
 
-    $data = self::member_data($this->ID);
+    $data = self::member_data($this->ID,$cols);
 
     MeprUtils::debug_log("Member Data for {$this->ID}");
     MeprUtils::debug_log("MEMBER DATA: ".MeprUtils::object_to_string($data));
@@ -2220,7 +2308,7 @@ class MeprUser extends MeprBaseModel {
   }
 
   // Update all member data that has already been updated or not yet
-  public static function update_all_member_data($exclude_already_updated=false, $limit='') {
+  public static function update_all_member_data($exclude_already_updated=false, $limit='', $cols=array()) {
     global $wpdb;
     $mepr_db = MeprDb::fetch();
 
@@ -2269,7 +2357,7 @@ class MeprUser extends MeprBaseModel {
       // We just set the ID here to avoid looking up the ID and
       // it's the only thing we care about in updat_member_data
       $u->ID = $uid;
-      $u->update_member_data();
+      $u->update_member_data($cols);
     }
   }
 
@@ -2359,4 +2447,3 @@ class MeprUser extends MeprBaseModel {
     return $where;
   }
 } //End class
-

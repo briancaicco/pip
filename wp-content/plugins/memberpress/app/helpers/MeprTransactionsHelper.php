@@ -183,7 +183,7 @@ class MeprTransactionsHelper {
       $sub_params = MeprSubscriptionsHelper::get_email_params($sub);
     }
     else { // Get as much info out there as we can
-      $cc = (object)array( 'cc_last4' => '', 'cc_exp_month' => '', 'cc_exp_year' => '' );
+      $cc = (object)array( 'cc_last4' => '****', 'cc_exp_month' => '', 'cc_exp_year' => '' );
 
       if( !empty($txn->response) &&
           ($res = json_decode($txn->response)) &&
@@ -201,7 +201,7 @@ class MeprTransactionsHelper {
         'subscr_expires_at'           => $expires_at,
         'subscr_terms'                => $params['payment_amount'],
         'subscr_next_billing_amount'  => $params['payment_amount'],
-        'subscr_cc_last4'             => $cc->cc_last4,
+        'subscr_cc_num'               => MeprUtils::cc_num($cc->cc_last4),
         'subscr_cc_month_exp'         => $cc->cc_exp_month,
         'subscr_cc_year_exp'          => $cc->cc_exp_year,
         'subscr_renew_url'            => $mepr_options->login_page_url( 'redirect_to=' . urlencode($prd->url()) ),
@@ -209,40 +209,18 @@ class MeprTransactionsHelper {
         'subscr_upgrade_url'          => $mepr_options->login_page_url( 'redirect_to=' . urlencode($prd->group_url()) )
       );
     }
-    $params = array_merge( $params, $sub_params );
-    $ums = get_user_meta( $usr->ID );
 
-    if(isset($ums) and is_array($ums)) {
-      foreach( $ums as $umkey => $um ) {
-        // Only support first val for now and yes some of these will be serialized values
-        $val = maybe_unserialize($um[0]);
-        $strval = $val;
+    $params = array_merge($params, $sub_params);
+    $ums    = MeprUtils::get_formatted_usermeta($usr->ID);
 
-        //Handle array type custom fields like multi-select, checkboxes etc
-        if(is_array($val)) {
-          if(!empty($val)) {
-            foreach($val as $i => $k) {
-              if(is_int($i)) { //Multiselects (indexed array)
-                $k = MeprUtils::unsanitize_title($k);
-                $strval = (is_array($strval))?"{$k}":$strval.", {$k}";
-              }
-              else { //Checkboxes (associative array)
-                $i = MeprUtils::unsanitize_title($i);
-                $strval = (is_array($strval))?"{$i}":$strval.", {$i}";
-              }
-            }
-          }
-          else { //convert empty array to empty string
-            $strval = '';
-          }
-        }
-
-        $params["usermeta:{$umkey}"] = $strval;
+    if(!empty($ums)) {
+      foreach($ums as $umkey => $umval) {
+        $params["usermeta:{$umkey}"] = $umval;
       }
     }
 
     // You know we're just going to lump the user record fields in here no problem
-    foreach( (array)$usr->rec as $ukey => $uval ) {
+    foreach((array)$usr->rec as $ukey => $uval) {
       $params["usermeta:{$ukey}"] = $uval;
     }
 
@@ -354,7 +332,7 @@ class MeprTransactionsHelper {
   public static function transaction_membership_field( $field, $value='', $expires_at_field_id='', $id='', $classes='' ) {
     if(empty($id)) { $id = $field; }
 
-    $products = get_posts(array('post_type' => 'memberpressproduct', 'post_status' => 'publish', 'numberposts' => -1));
+    $products = MeprCptModel::all('MeprProduct');
 
     ?>
 

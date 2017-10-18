@@ -189,6 +189,7 @@
           $('#_mepr_expire_after').val(1);
           $('#_mepr_expire_unit').val('days');
           $('#_mepr_allow_renewal').prop('checked', false);
+          $('#_mepr_allow_renewal-fixed').prop('checked', false); //Same as above really
         }});
         $('.mepr-product-expire-fixed').slideUp({complete: function() {
           $('#_mepr_expire_fixed').val(today);

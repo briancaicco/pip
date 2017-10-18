@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 </script>
 
 <div id="mepr-senddata-popup" class="mfp-hide mepr-popup mepr-auto-open">
-  <p><img src="<?php echo MEPR_IMAGES_URL . '/memberpress-32@2x.png'; ?>" width="266.5" height="32" /></p>
+  <p><img src="<?php echo MEPR_IMAGES_URL . '/memberpress-logo.svg'; ?>" width="400" height="64" /></p>
   <h2><?php _e('Help Us Improve MemberPress', 'memberpress'); ?></h2>
   <p><?php _e('Did you know that you can do something very easily to help us continue to improve MemberPress?', 'memberpress'); ?></p>
   <p><?php _e('Click "I Agree" below to enable MemberPress to send <em>anonymous</em> usage data back to our developers so you can help us continue to refine this awesome membership plugin.', 'memberpress'); ?></p>

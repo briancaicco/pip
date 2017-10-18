@@ -6,6 +6,7 @@
   <form action="" class="mepr-newpassword-form mepr-form" method="post" novalidate>
     <input type="hidden" name="plugin" value="mepr" />
     <input type="hidden" name="action" value="updatepassword" />
+    <?php wp_nonce_field( 'update_password', 'mepr_account_nonce' ); ?>
 
     <div class="mp-form-row mepr_new_password">
       <label for="mepr-new-password"><?php _ex('New Password', 'ui', 'memberpress'); ?></label>

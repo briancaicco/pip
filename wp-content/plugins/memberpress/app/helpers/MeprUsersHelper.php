@@ -61,16 +61,16 @@ class MeprUsersHelper {
       'login_url'          => $mepr_options->login_page_url()
     );
 
-    $ums = get_user_meta( $usr->ID );
-    if(isset($ums) and is_array($ums)) {
-      foreach( $ums as $umkey => $um ) {
-        // Only support first val for now and yes some of these will be serialized values
-        $params["usermeta:{$umkey}"] = $um[0];
+    $ums = MeprUtils::get_formatted_usermeta($usr->ID);
+
+    if(!empty($ums)) {
+      foreach($ums as $umkey => $umval) {
+        $params["usermeta:{$umkey}"] = $umval;
       }
     }
 
     // You know we're just going to lump the user record fields in here no problem
-    foreach( (array)$usr->rec as $ukey => $uval ) {
+    foreach((array)$usr->rec as $ukey => $uval) {
       $params["usermeta:{$ukey}"] = $uval;
     }
 
@@ -203,6 +203,8 @@ class MeprUsersHelper {
               <?php
             }
             else {
+              if(!is_array($value)) { $value = array(); } //Suppress some errors here
+
               $value[$o->option_value] = isset($value[$o->option_value]) ? true : false;
 
               ?>
@@ -244,7 +246,7 @@ class MeprUsersHelper {
     }
   }
 
-  public static function render_custom_fields( $product=null, $is_signup=false ) {
+  public static function render_custom_fields( $product=null, $from_page=null ) {
     $mepr_options = MeprOptions::fetch();
 
     if($logged_in = MeprUtils::is_user_logged_in()) {
@@ -280,7 +282,8 @@ class MeprUsersHelper {
     $custom_fields = MeprHooks::apply_filters('mepr_render_custom_fields', $custom_fields);
 
     foreach($custom_fields as $line) {
-      if($is_signup && !$line->show_on_signup) { continue; }
+      if('initial_signup' == $from_page && !$line->show_on_signup) { continue; }
+      if('account' == $from_page && isset($line->show_in_account) && !$line->show_in_account) { continue; }
 
       $required = ($line->required?'*':'');
       $value    = ($logged_in) ? get_user_meta($user->ID, $line->field_key, true) : '';
@@ -340,4 +343,3 @@ class MeprUsersHelper {
     }
   }
 }
-

@@ -47,9 +47,10 @@ class MeprUsersCtrl extends MeprBaseCtrl {
   }
 
   public static function resend_welcome_email_callback() {
+    $ajax_nonce = $_REQUEST['nonce'];
     $mepr_options = MeprOptions::fetch();
 
-    if(wp_verify_nonce($_REQUEST['_mepr_nonce'], 'mepr-resend-welcome-email')) {
+    if(wp_verify_nonce($ajax_nonce, 'mepr_resend_welcome_email')) {
       if(MeprUtils::is_logged_in_and_an_admin()) {
         $usr = new MeprUser($_REQUEST['uid']);
 
@@ -131,7 +132,7 @@ class MeprUsersCtrl extends MeprBaseCtrl {
     $user = new MeprUser($user_id);
 
     if(isset($_POST[MeprUser::$user_message_str])) {
-      update_user_meta($user_id, MeprUser::$user_message_str, (string)$_POST[MeprUser::$user_message_str]);
+      update_user_meta($user_id, MeprUser::$user_message_str, (string)wp_kses_post($_POST[MeprUser::$user_message_str]));
     }
 
     //Get the right custom fields
@@ -152,11 +153,11 @@ class MeprUsersCtrl extends MeprBaseCtrl {
 
     //Since we use user_* for these, we need to artifically set the $_POST keys correctly for this to work
     if(!isset($_POST['first_name']) || empty($_POST['first_name'])) {
-      $_POST['first_name'] = (isset($_POST['user_first_name']))?stripslashes($_POST['user_first_name']):'';
+      $_POST['first_name'] = (isset($_POST['user_first_name']))?sanitize_text_field(wp_unslash($_POST['user_first_name'])):'';
     }
 
     if(!isset($_POST['last_name']) || empty($_POST['last_name'])) {
-      $_POST['last_name'] = (isset($_POST['user_last_name']))?stripslashes($_POST['user_last_name']):'';
+      $_POST['last_name'] = (isset($_POST['user_last_name']))?sanitize_text_field(wp_unslash($_POST['user_last_name'])):'';
     }
 
     $custom_fields[] = (object)array('field_key' => 'first_name', 'field_type' => 'text');
@@ -175,15 +176,22 @@ class MeprUsersCtrl extends MeprBaseCtrl {
     if(empty($errors)) {
       // TODO: move this somewhere it makes more sense
       if(isset($_POST['mepr-geo-country'])) {
-        update_user_meta($user_id, 'mepr-geo-country', $_POST['mepr-geo-country']);
+        update_user_meta($user_id, 'mepr-geo-country', sanitize_text_field($_POST['mepr-geo-country']));
       }
 
       foreach($custom_fields as $line) {
         //Don't do anything if this field isn't shown during signup, and this is a signup
         if($is_signup && isset($line->show_on_signup) && !$line->show_on_signup) { continue; }
+        //Only allow admin to update if it is not shown in account
+        if(!is_admin() && !$is_signup && isset($line->show_in_account) && !$line->show_in_account) { continue; }
 
         if(isset($_POST[$line->field_key]) && !empty($_POST[$line->field_key])) {
-          update_user_meta($user_id, $line->field_key, $_POST[$line->field_key]);
+          if(in_array($line->field_type, array('checkboxes', 'multiselect'))) {
+            update_user_meta($user_id, $line->field_key, array_map('sanitize_text_field', $_POST[$line->field_key]));
+          }
+          else {
+            update_user_meta($user_id, $line->field_key, sanitize_text_field($_POST[$line->field_key]));
+          }
         }
         else {
           if($line->field_type === 'checkbox') {
@@ -270,8 +278,9 @@ class MeprUsersCtrl extends MeprBaseCtrl {
       die('-1');
     }
 
-    $s = $_GET['q']; // is this slashed already?
-    $s = trim($s);
+    // jQuery suggest plugin has already trimmed and escaped user input (\ becomes \\)
+    // so we just need to sanitize the username
+    $s = sanitize_user($_GET['q']);
 
     if(strlen($s) < 2) {
       die; // require 2 chars for matching

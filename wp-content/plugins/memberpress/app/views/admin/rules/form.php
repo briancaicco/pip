@@ -1,18 +1,18 @@
 <?php
 if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');}
 
-$products = get_posts(array('numberposts' => -1, 'post_type' => 'memberpressproduct', 'post_status' => 'publish'));
-if($products != null)
-{
+$products = MeprCptModel::all('MeprProduct');
 ?>
+
+<?php if(!empty($products)): ?>
   <div id="mepr-rules-form">
     <div class="mepr-main-pane">
       <?php if($server == 'apache' and !$htaccess_writable): ?>
-        <div class="error"><ul><li><strong><?php _e('Note:', 'memberpress'); ?></strong> <?php printf(__('%1$s isn\'t writable so <strong>Custom URIs</strong> won\'t be able to be locked until you add some %2$scustom rules%3$s to your .htaccess file. If you\'ve already installed these rules then you can ignore this message. <strong>All other rules should work normally.</strong>', 'memberpress'), $htaccess, '<a href="http://memberpress.com/user-manual/rewrite" target="_blank">', '</a>'); ?></li></ul></div>
+        <div class="error"><ul><li><strong><?php _e('Note:', 'memberpress'); ?></strong> <?php printf(__('%1$s isn\'t writable so <strong>Custom URIs</strong> won\'t be able to be locked until you add some %2$scustom rules%3$s to your .htaccess file. If you\'ve already installed these rules then you can ignore this message. <strong>All other rules should work normally.</strong>', 'memberpress'), $htaccess, '<a href="http://memberpress.helpscoutdocs.com/article/179-understanding-rewrite-rules" target="_blank">', '</a>'); ?></li></ul></div>
       <?php elseif($server == 'nginx'): ?>
-        <div class="error"><ul><li><strong><?php _e('Note:', 'memberpress'); ?></strong> <?php printf(__('It appears that your website is running Nginx as it\'s webserver. In order for Custom URI rules to work you\'ll need to add some %1$scustom rules%2$s to your Nginx configuration. If you\'ve already installed these rules then you can ignore this message. <strong>All other rules should work normally.</strong>', 'memberpress'), '<a href="http://memberpress.com/user-manual/rewrite" target="_blank">', '</a>'); ?></li></ul></div>
+        <div class="error"><ul><li><strong><?php _e('Note:', 'memberpress'); ?></strong> <?php printf(__('It appears that your website is running Nginx as it\'s webserver. In order for Custom URI rules to work you\'ll need to add some %1$scustom rules%2$s to your Nginx configuration. If you\'ve already installed these rules then you can ignore this message. <strong>All other rules should work normally.</strong>', 'memberpress'), '<a href="http://memberpress.helpscoutdocs.com/article/179-understanding-rewrite-rules" target="_blank">', '</a>'); ?></li></ul></div>
       <?php elseif($server == 'unknown'): ?>
-        <div class="error"><ul><li><strong><?php _e('Note:', 'memberpress'); ?></strong> <?php printf(__('MemberPress doesn\'t recognize the webserver you\'re using and until you add additional %1$scustom rules%2$s to your webserver\'s configuration Custom URI rules won\'t work properly. If you\'ve already installed these rules then you can ignore this message. <strong>All other rules should work normally.</strong>', 'memberpress'), '<a href="http://memberpress.com/user-manual/rewrite" target="_blank">', '</a>'); ?></li></ul></div>
+        <div class="error"><ul><li><strong><?php _e('Note:', 'memberpress'); ?></strong> <?php printf(__('MemberPress doesn\'t recognize the webserver you\'re using and until you add additional %1$scustom rules%2$s to your webserver\'s configuration Custom URI rules won\'t work properly. If you\'ve already installed these rules then you can ignore this message. <strong>All other rules should work normally.</strong>', 'memberpress'), '<a href="http://memberpress.helpscoutdocs.com/article/179-understanding-rewrite-rules" target="_blank">', '</a>'); ?></li></ul></div>
       <?php elseif($server == 'whocares'): ?>
         <div class="error"><ul><li><strong><?php _e('Note:', 'memberpress'); ?></strong> <?php _e('You have disabled the .htaccess rewrite rules in your MemberPress Options. This means you will not be able to protect static files from your local filesystem (PDF, ZIP, DOCX etc) using Custom URI Rules. This only affects Custom URI Rules which are protecting static files on your filesystem, and will not affect any of your other Rules.', 'memberpress'); ?></li></ul></div>
       <?php endif; ?>
@@ -44,16 +44,11 @@ if($products != null)
     <div id="save-rule-helper" style="display:none;" data-value="<?php _e('Save Rule', 'memberpress'); ?>"></div>
     <div id="rule-message-helper" style="display:none;" data-value="<?php _e('Rule Saved', 'memberpress'); ?>"></div>
   </div>
-<?php
-}
-else
-{
-?>
+<?php else: ?>
   <div id="mepr-rules-form">
     <strong><?php _e('You cannot create rules until you have added at least 1 Membership.', 'memberpress'); ?></strong>
     <!-- jQuery i18n data -->
     <div id="save-rule-helper" style="display:none;" data-value="<?php _e('Save Rule', 'memberpress'); ?>"></div>
     <div id="rule-message-helper" style="display:none;" data-value="<?php _e('Rule Saved', 'memberpress'); ?>"></div>
   </div>
-<?php
-}
+<?php endif;

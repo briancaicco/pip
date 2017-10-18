@@ -11,7 +11,7 @@
       <td>
         <?php
           if($geo_country = get_user_meta($user->ID, 'mepr-geo-country', true)) {
-            $countries = require(MEPR_I18N_PATH.'/countries.php');
+            $countries = MeprUtils::countries(false);
             printf($countries[$geo_country]);
           }
           else {
@@ -38,7 +38,11 @@
       </tr>
       <tr>
         <td colspan="2">
-          <a class="button mepr-resend-welcome-email" href="#" user-id="<?php echo $user->ID; ?>" mepr-nonce="<?php echo wp_create_nonce('mepr-resend-welcome-email'); ?>"><?php _e('Resend MemberPress Welcome Email', 'memberpress'); ?></a>&nbsp;&nbsp;<img src="<?php echo admin_url('images/loading.gif'); ?>" alt="<?php _e('Loading...', 'memberpress'); ?>" class="mepr-resend-welcome-email-loader" />&nbsp;&nbsp;<span class="mepr-resend-welcome-email-message">&nbsp;</span>
+          <a class="button mepr-resend-welcome-email" href="#"
+             data-uid="<?php echo $user->ID; ?>"
+             data-nonce="<?php echo wp_create_nonce('mepr_resend_welcome_email'); ?>"> <?php _e('Resend MemberPress Welcome Email', 'memberpress'); ?>
+          </a>&nbsp;&nbsp;
+          <img src="<?php echo admin_url('images/loading.gif'); ?>" alt="<?php _e('Loading...', 'memberpress'); ?>" class="mepr-resend-welcome-email-loader" />&nbsp;&nbsp;<span class="mepr-resend-welcome-email-message">&nbsp;</span>
         </td>
       </tr>
       <tr>

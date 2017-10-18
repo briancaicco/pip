@@ -6,9 +6,7 @@ class MeprInvoicesCtrl extends MeprBaseCtrl {
     if(MeprUpdateCtrl::is_activated() && get_option('mepr_enable_invoice_downloads')) {
       add_action('mepr_account_payments_table_header', array($this,'table_header'));
       add_action('mepr_account_payments_table_row', array($this,'table_row'));
-
       add_action('wp_ajax_mepr_download_invoice', array($this,'ajax_download_invoice'));
-      add_action('wp_ajax_nopriv_mepr_download_invoice', array($this,'ajax_download_invoice'));
     }
   }
 
@@ -17,7 +15,19 @@ class MeprInvoicesCtrl extends MeprBaseCtrl {
   }
 
   public function table_row($payment) {
-    ?><td data-label="<?php _ex('Download', 'ui', 'memberpress'); ?>"><a href="<?php echo admin_url("admin-ajax.php?action=mepr_download_invoice&t={$payment->id}"); ?>"><?php _ex('PDF', 'ui', 'memberpress'); ?></td><?php
+    ?>
+    <td data-label="<?php _ex('Download', 'ui', 'memberpress'); ?>">
+      <a href="<?php
+        echo MeprUtils::admin_url(
+          'admin-ajax.php',
+          array('download_invoice', 'mepr_invoices_nonce'),
+          array(
+            'action' => 'mepr_download_invoice',
+            't' => $payment->id
+          )
+        ); ?>"><?php _ex('PDF', 'ui', 'memberpress'); ?></a>
+    </td>
+    <?php
   }
 
   private function get_invoice_locale() {
@@ -52,7 +62,10 @@ class MeprInvoicesCtrl extends MeprBaseCtrl {
   }
 
   public function ajax_download_invoice() {
+    check_ajax_referer('download_invoice', 'mepr_invoices_nonce');
+
     $url = 'https://mp-invoices.herokuapp.com/invoice/generate';
+
     if(!MeprUtils::is_user_logged_in()) { MeprUtils::exit_with_status(403,__('Forbidden', 'memberpress')); }
 
     if(!isset($_REQUEST['t'])) { MeprUtils::exit_with_status(400,__('No transaction specified', 'memberpress')); }
@@ -116,8 +129,8 @@ class MeprInvoicesCtrl extends MeprBaseCtrl {
       'bill_to' => $bill_to,
       'notes' => sprintf(__('For your purchase on %s','memberpress'), $blog_name),
       //'shipping_description' => "Well Not sure what youre shipping ... but here it is.",
-      //'tax_rate' => 0.0678,
-      //'tax_description' => 'VAT Tax',
+      'tax_rate' => $txn->tax_rate,
+      'tax_description' => $txn->tax_desc,
       'paid_at' => strftime('%D',$created_ts),
       'invoice_date' => strftime('%D',$created_ts),
       'items' => array(

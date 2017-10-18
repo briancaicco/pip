@@ -76,4 +76,4 @@ require get_template_directory() . '/inc/editor.php';
 /**
  * Load custom registration functions.
  */
-require get_template_directory() . '/inc/ajax-login-register/ajax-login-register.php';
+//require get_template_directory() . '/inc/ajax-login-register/ajax-login-register.php';

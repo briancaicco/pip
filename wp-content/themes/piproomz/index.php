@@ -13,24 +13,19 @@
 
 get_header();
 
-$container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
-
+<!-- ******************* The Main Content Area ******************* -->
 <?php if ( is_front_page() && is_home() ) : ?>
 	<?php get_template_part( 'global-templates/hero', 'none' ); ?>
 <?php endif; ?>
 
-<div class="wrapper" id="wrapper-index">
-
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="container" id="content" tabindex="-1">
 
 		<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
 			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
-
-			<main class="site-main" id="main">
 
 				<?php if ( have_posts() ) : ?>
 
@@ -56,12 +51,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php endif; ?>
 
-			</main><!-- #main -->
-
 			<!-- The pagination component -->
 			<?php understrap_pagination(); ?>
 
-		</div><!-- #primary -->
+		</div><!-- .row -->
 
 		<!-- Do the right sidebar check -->
 		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
@@ -70,10 +63,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 		<?php endif; ?>
 
-	</div><!-- .row -->
-
-</div><!-- Container end -->
-
-</div><!-- Wrapper end -->
+	</div><!-- Container end -->
 
 <?php get_footer(); ?>

@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: MemberPress Developer Edition
+Plugin Name: MemberPress Plus
 Plugin URI: http://www.memberpress.com/
 Description: The membership plugin that makes it easy to accept payments for access to your content and digital products.
-Version: 1.3.6
+Version: 1.3.17
 Author: Caseproof, LLC
 Author URI: http://caseproof.com/
 Text Domain: memberpress
@@ -43,9 +43,10 @@ define('MEPR_CSS_URL',MEPR_URL.'/css');
 define('MEPR_JS_URL',MEPR_URL.'/js');
 define('MEPR_GATEWAYS_URL',MEPR_URL.'/app/gateways');
 define('MEPR_VENDOR_LIB_URL',MEPR_URL.'/vendor/lib');
-define('MEPR_SCRIPT_URL',get_option('home').'/index.php?plugin=mepr');
+define('MEPR_SCRIPT_URL',site_url('/index.php?plugin=mepr'));
 define('MEPR_OPTIONS_SLUG', 'mepr_options');
-define('MEPR_EDITION', 'developer');
+define('MEPR_EDITION', 'memberpress-plus');
+define('MEPR_MIN_PHP_VERSION', 5.3);
 
 /**
  * Returns current plugin version.
@@ -141,9 +142,6 @@ if(is_array(spl_autoload_functions()) and in_array('__autoload', spl_autoload_fu
 
 // Add the autoloader
 spl_autoload_register('mepr_autoloader');
-
-// Gotta load the language before everything else
-MeprAppCtrl::load_language();
 
 // Load our controllers
 MeprCtrlFactory::all();

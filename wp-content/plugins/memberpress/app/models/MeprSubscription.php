@@ -49,6 +49,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
         'cc_last4'            => null,
         'cc_exp_month'        => null,
         'cc_exp_year'         => null,
+        'token'               => null,
       ),
       $obj
     );
@@ -165,7 +166,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
 
     $res = $mepr_db->delete_records($mepr_db->subscriptions, $args);
 
-    MeprHooks::do_action('mepr_subscription_deleted', $subscription_id);
+    MeprHooks::do_action('mepr_subscription_deleted', $this);
 
     return $res;
   }
@@ -759,21 +760,18 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
   }
 
   public function first_txn() {
-    //Don't do static caching stuff here
-
-    return new MeprTransaction($this->first_txn_id);
+    $first_txn_id = $this->first_txn_id;
+    return empty($first_txn_id) ? false : new MeprTransaction($this->first_txn_id);
   }
 
   public function latest_txn() {
-    //Don't do static caching stuff here
-
-    return new MeprTransaction($this->latest_txn_id);
+    $latest_txn_id = $this->latest_txn_id;
+    return empty($latest_txn_id) ? false : new MeprTransaction($this->latest_txn_id);
   }
 
   public function expiring_txn() {
-    //Don't do static caching stuff here
-
-    return new MeprTransaction($this->expiring_txn_id);
+    $expiring_txn_id = $this->expiring_txn_id;
+    return empty($expiring_txn_id) ? false : new MeprTransaction($this->expiring_txn_id);
   }
 
   public function transactions($return_objects = true, $where = "", $order = "created_at") {
@@ -836,8 +834,11 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
 
     if($this->limit_cycles_action == 'lifetime') {
       $txn = $this->latest_txn();
-      $txn->expires_at = 0; // Zero for lifetime expiration
-      $txn->store();
+
+      if(!empty($txn) && $txn instanceof MeprTransaction) {
+        $txn->expires_at = 0; // Zero for lifetime expiration
+        $txn->store();
+      }
     }
 
     MeprHooks::do_action('mepr-limit-payment-cycles-reached', $this);
@@ -918,7 +919,9 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
 
       //The subscription hasn't been cancelled, and it doesn't have any "payment" txn's yet
       //So let's check the confirmation expiration now (using 25 hours as a bit of a leway for the 24 hour grace period)
-      if( $first_txn->txn_type == MeprTransaction::$subscription_confirmation_str &&
+      if( $first_txn != false &&
+          $first_txn instanceof MeprTransaction &&
+          $first_txn->txn_type == MeprTransaction::$subscription_confirmation_str &&
           strtotime($first_txn->expires_at) >= time() &&
           (strtotime($first_txn->expires_at) - strtotime($first_txn->created_at)) <= MeprUtils::hours(25) ) {
         return true;
@@ -941,6 +944,11 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     else {
       if((int)$this->id > 0) {
         $latest_txn = $this->latest_txn();
+
+        if($latest_txn == false || !($latest_txn instanceof MeprTransaction)) {
+          $latest_txn = new MeprTransaction();
+          $latest_txn->created_at = MeprUtils::ts_to_mysql_date(time());
+        }
       }
       else {
         //this could happen when checking upgrade prorated price on a new sub
@@ -953,7 +961,13 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
           $period_seconds = MeprUtils::weeks($this->period);
           break;
         case 'months':
-          $period_seconds = MeprUtils::months($this->period, strtotime($latest_txn->created_at));
+          if(!$this->id) {
+            $period_seconds = MeprUtils::months($this->period, time()); //probably an upgrade calculation, x months from now
+          }
+          else {
+            $renewal_dom = date('j', strtotime($this->renewal_base_date));
+            $period_seconds = MeprUtils::months($this->period, strtotime($latest_txn->created_at), false, $renewal_dom);
+          }
           break;
         case 'years':
           $period_seconds = MeprUtils::years($this->period, strtotime($latest_txn->created_at));
@@ -990,7 +1004,13 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     global $wpdb;
     $mepr_db = new MeprDb();
 
-    $status = $wpdb->get_var("SELECT status FROM {$mepr_db->transactions} WHERE subscription_id = {$this->id} ORDER BY id DESC LIMIT 1");
+    $status = $wpdb->get_var("
+      SELECT status
+        FROM {$mepr_db->transactions}
+       WHERE subscription_id = {$this->id}
+       ORDER BY id DESC
+       LIMIT 1
+    ");
 
     return ($status == MeprTransaction::$failed_str);
   }
@@ -1095,8 +1115,10 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
       if($evt_txn !== false && $evt_txn instanceof MeprTransaction) {
         $latest_txn = $this->latest_txn();
 
-        // We just catch the hooks from these events
-        MeprEvent::record('subscription-changed', $evt_txn, $latest_txn->id);
+        if($latest_txn != false && $latest_txn instanceof MeprTransaction && $latest_txn->id > 0) {
+          // We just catch the hooks from these events
+          MeprEvent::record('subscription-changed', $evt_txn, $latest_txn->id);
+        }
       }
     }
     catch(Exception $e) {
@@ -1105,12 +1127,12 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
   }
 
   /** Gets the value for 'expires_at' for the given created_at time for this membership. */
-  public function get_expires_at($created_at = null) {
+  public function get_expires_at($created_ts=null) {
     $mepr_options = MeprOptions::fetch();
 
-    if(is_null($created_at)) { $created_at = time(); }
+    if(is_null($created_ts)) { $created_ts = time(); }
 
-    $expires_at = $created_at;
+    $expires_at = $created_ts;
     $period = $this->period;
 
     switch($this->period_type) {
@@ -1121,10 +1143,26 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
           $expires_at += MeprUtils::weeks($period) + MeprUtils::days($mepr_options->grace_expire_days);
           break;
       case 'months':
-          $expires_at += MeprUtils::months($period, $created_at) + MeprUtils::days($mepr_options->grace_expire_days);
+          $renewal_date = strtotime($this->renewal_base_date);
+          if($this->trial) {
+            $renewal_date += MeprUtils::days($this->trial_days);
+          }
+          $renewal_dom = date('j', $renewal_date);
+          $expires_at += MeprUtils::months($period, $created_ts, false, $renewal_dom);
+          //Fixes bug 1136 early/late renewals
+          $created_expires_diff_in_days = abs(floor(($expires_at - $created_ts)/(60*60*24)));
+          if($created_expires_diff_in_days > 32) {
+            //This is a late renewal. We gave too much. Take away the extra month
+            $expires_at -= MeprUtils::months('1', $expires_at, true, $renewal_dom);
+          }
+          elseif($created_expires_diff_in_days < 27) {
+            //This is an early renewal. Give them 1 month
+            $expires_at += MeprUtils::months('1', $expires_at, false, $renewal_dom);
+          }
+          $expires_at += MeprUtils::days($mepr_options->grace_expire_days);
           break;
       case 'years':
-          $expires_at += MeprUtils::years($period, $created_at) + MeprUtils::days($mepr_options->grace_expire_days);
+          $expires_at += MeprUtils::years($period, $created_ts) + MeprUtils::days($mepr_options->grace_expire_days);
           break;
       default:
           $expires_at = null;
@@ -1153,7 +1191,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     $this->limit_cycles_num = $prd->limit_cycles_num;
     $this->limit_cycles_action = $prd->limit_cycles_action;
     $this->trial = $prd->trial;
-    $this->trial_days = $prd->trial_days;
+    $this->trial_days = $prd->trial ? $prd->trial_days : 0;
     $this->trial_amount = $prd->trial_amount;
 
     if($set_subtotal) {
@@ -1275,10 +1313,8 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
       return false;
     }
 
-    $latest_txn = $this->latest_txn();
-
     // Calculate Next billing time
-    $expired_at = strtotime($latest_txn->expires_at);
+    $expired_at = strtotime($this->expires_at);
     $now = time();
     $time_elapsed = $now - $expired_at;
     $periods_elapsed = (int)ceil($time_elapsed / MeprUtils::days($this->days_in_this_period())); //We want to round this up to INT
@@ -1295,7 +1331,8 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
         $next_billing = $expired_at + MeprUtils::weeks($periods_elapsed);
         break;
       case 'months':
-        $next_billing = $expired_at + MeprUtils::months($periods_elapsed, $expired_at);
+        $renewal_dom = date('j', strtotime($this->renewal_base_date));
+        $next_billing = $expired_at + MeprUtils::months($periods_elapsed, $expired_at, false, $renewal_dom);
         break;
       case 'years':
         $next_billing = $expired_at + MeprUtils::years($periods_elapsed, $expired_at);
@@ -1428,29 +1465,35 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
           $where = $wpdb->prepare("AND t.txn_type = %s AND t.status = %s", MeprTransaction::$payment_str, MeprTransaction::$complete_str);
         }
 
-        $q = $wpdb->prepare( "SELECT t.id
-                                FROM {$mepr_db->transactions} AS t
-                                WHERE t.subscription_id = %d
-                                {$where}
-                              ORDER BY t.id ASC
-                              LIMIT 1",
-                             $this->rec->id );
+        $q = $wpdb->prepare("
+            SELECT t.id
+              FROM {$mepr_db->transactions} AS t
+             WHERE t.subscription_id = %d
+                   {$where}
+             ORDER BY t.id ASC
+             LIMIT 1
+          ",
+          $this->rec->id
+        );
 
         $txn_id = $wpdb->get_var($q);
 
         //No real payments yet, so let's look for a confirmation?
-        if(!$txn_id) {
-          $q = $wpdb->prepare( "SELECT t.id
-                                  FROM {$mepr_db->transactions} AS t
-                                  WHERE t.subscription_id = %d
-                                ORDER BY t.id ASC
-                                LIMIT 1",
-                               $this->rec->id );
+        if(empty($txn_id)) {
+          $q = $wpdb->prepare("
+              SELECT t.id
+                FROM {$mepr_db->transactions} AS t
+               WHERE t.subscription_id = %d
+               ORDER BY t.id ASC
+               LIMIT 1
+            ",
+            $this->rec->id
+          );
 
           $txn_id = $wpdb->get_var($q);
         }
 
-        return $txn_id;
+        return empty($txn_id) ? false : $txn_id;
       default:
         return true;
     }
@@ -1462,15 +1505,21 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
 
     switch($mgm) {
       case 'get':
-        $q = $wpdb->prepare("SELECT t.id " .
-                              "FROM {$mepr_db->transactions} AS t " .
-                              "WHERE t.subscription_id = %d " .
-                              "AND t.status IN (%s, %s) " .
-                            "ORDER BY t.id DESC " .
-                            "LIMIT 1",
-                            $this->rec->id, MeprTransaction::$complete_str, MeprTransaction::$confirmed_str);
+        $q = $wpdb->prepare("
+            SELECT t.id
+              FROM {$mepr_db->transactions} AS t
+             WHERE t.subscription_id = %d
+               AND t.status IN (%s, %s)
+             ORDER BY t.id DESC
+             LIMIT 1
+          ",
+          $this->rec->id,
+          MeprTransaction::$complete_str,
+          MeprTransaction::$confirmed_str
+        );
 
-        return $wpdb->get_var($q);
+        $id = $wpdb->get_var($q);
+        return empty($id) ? false : $id;
       default:
         return true;
     }
@@ -1488,17 +1537,19 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
            WHERE t.subscription_id=%d
              AND t.status IN (%s,%s)
              AND ( t.expires_at = %s
-                   OR ( t.expires_at <> %s
-                        AND t.expires_at=( SELECT MAX(t2.expires_at)
-                                             FROM {$mepr_db->transactions} as t2
-                                            WHERE t2.subscription_id=%d
-                                              AND t2.status IN (%s,%s)
-                                         )
-                      )
-                 ) " .
+               OR ( t.expires_at <> %s
+                 AND t.expires_at=(
+                   SELECT MAX(t2.expires_at)
+                     FROM {$mepr_db->transactions} as t2
+                    WHERE t2.subscription_id=%d
+                      AND t2.status IN (%s,%s)
+                 )
+               )
+             ) " .
           // If there's a lifetime and an expires at, favor the lifetime
-          "ORDER BY t.expires_at
-           LIMIT 1
+          "
+            ORDER BY t.expires_at
+            LIMIT 1
           ",
           $this->rec->id,
           MeprTransaction::$confirmed_str,
@@ -1510,7 +1561,8 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
           MeprTransaction::$complete_str
         );
 
-        return $wpdb->get_var($q);
+        $id = $wpdb->get_var($q);
+        return empty($id) ? false : $id;
       default:
         return true;
     }
@@ -1523,12 +1575,15 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
 
     switch($mgm) {
       case 'get':
-        $q = $wpdb->prepare("SELECT COUNT(*) " .
-                              "FROM {$mepr_db->transactions} AS t " .
-                              "WHERE t.subscription_id=%d " .
-                                "AND t.status=%s",
-                            $this->rec->id,
-                            MeprTransaction::$complete_str);
+        $q = $wpdb->prepare("
+            SELECT COUNT(*)
+              FROM {$mepr_db->transactions} AS t
+             WHERE t.subscription_id=%d
+               AND t.status=%s
+          ",
+          $this->rec->id,
+          MeprTransaction::$complete_str
+        );
 
         return $wpdb->get_var($q);
       default:
@@ -1549,14 +1604,15 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
            WHERE t.subscription_id=%d
              AND t.status IN (%s,%s)
              AND ( t.expires_at = %s
-                   OR ( t.expires_at <> %s
-                        AND t.expires_at=( SELECT MAX(t2.expires_at)
-                                              FROM {$mepr_db->transactions} as t2
-                                             WHERE t2.subscription_id=%d
-                                               AND t2.status IN (%s,%s)
-                                         )
-                      )
+               OR ( t.expires_at <> %s
+                 AND t.expires_at=(
+                   SELECT MAX(t2.expires_at)
+                     FROM {$mepr_db->transactions} as t2
+                    WHERE t2.subscription_id=%d
+                      AND t2.status IN (%s,%s)
                  )
+               )
+             )
         " .
         // If there's a lifetime and an expires at, favor the lifetime
         "
@@ -1616,6 +1672,29 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
         return $this->rec->id;
       case 'set':
         $this->rec->id = $value;
+      default:
+        return true;
+    }
+  }
+
+  /** This is the effective start date for the subscription. Under normal circumstances
+    * this is just the created_at date but when a subscription is paused and resumed
+    * the startdate will reset to whenever the latest resume_at date occurs.
+    */
+  protected function mgm_renewal_base_date($mgm, $value = '') {
+    global $wpdb;
+
+    $mepr_db = new MeprDb();
+
+    switch($mgm) {
+      case 'get':
+        $pm = $this->payment_method();
+        if($pm instanceof MeprBaseGateway) {
+          return $pm->get_renewal_base_date($this);
+        }
+        return $this->created_at;
+      case 'set':
+        return false;
       default:
         return true;
     }
@@ -1806,4 +1885,3 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
   }
 
 } //End class
-

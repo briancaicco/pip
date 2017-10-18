@@ -7,8 +7,9 @@ class MeprAccountCtrl extends MeprBaseCtrl {
   public $id_base = 'mepr_account_links_widget';
 
   public function load_hooks() {
-    add_action('wp_enqueue_scripts',  array($this,'enqueue_scripts'));
-    add_action('init',                array($this, 'maybe_update_username')); //Need to use init for cookie stuff and to get old and new emails
+    add_action('wp_enqueue_scripts',        array($this,  'enqueue_scripts'));
+    add_action('init',                      array($this,  'maybe_update_username')); //Need to use init for cookie stuff and to get old and new emails
+    add_action('mepr-above-checkout-form',  array($this,  'maybe_show_broken_sub_message')); //Show message on checkout form with link to update broken sub
 
     //Shortcodes
     add_shortcode('mepr-account-form',          array($this, 'account_form_shortcode'));
@@ -18,30 +19,66 @@ class MeprAccountCtrl extends MeprBaseCtrl {
     add_shortcode('mepr-offline-instructions',  array($this, 'offline_gateway_instructions')); //Offline gateway instructions shortcode
   }
 
+  //What if a user has a failed payment on a subscription, and instead of updating their CC
+  //They accidentally go to purchase a new subscription instead? This could lead to a double billing
+  //So let's warn them here
+  public function maybe_show_broken_sub_message($prd_id) {
+    $mepr_options   = MeprOptions::fetch();
+    $user           = MeprUtils::get_currentuserinfo();
+    $errors         = array();
+
+    if($user !== false) {
+      $enabled_prd_ids = $user->get_enabled_product_ids($prd_id);
+
+      if(!empty($enabled_prd_ids)) { //If it's not empty, then the user already has an Enabled subscription for this membership
+        $prd = new MeprProduct($prd_id);
+
+        if(!$prd->simultaneous_subscriptions) {
+          $errors[] = sprintf(_x('You already have a subscription to this Membership. Please %1$supdate your payment details%2$s on the existing subscription instead of purchasing again.', 'ui', 'memberpress'), '<a href="'.$mepr_options->account_page_url("action=subscriptions").'">', '</a>');
+          MeprView::render('/shared/errors', get_defined_vars());
+          ?>
+          <!-- Hidden signup form -->
+          <style>
+            form.mepr-signup-form {
+              display:none;
+            }
+          </style>
+          <?php
+        }
+      }
+    }
+  }
+
   //Update username if username is email address and email address is changing
   public function maybe_update_username() {
-    if(!isset($_POST['mepr-process-account']) || $_POST['mepr-process-account'] != 'Y') { return; }
+    if( MeprUtils::is_post_request() &&
+        isset($_POST['mepr-process-account']) && $_POST['mepr-process-account'] == 'Y' &&
+        isset($_POST['mepr_account_nonce']) && wp_verify_nonce($_POST['mepr_account_nonce'], 'update_account') ) {
 
-    global $wpdb;
-    $mepr_options = MeprOptions::fetch();
+      global $wpdb;
+      $mepr_options = MeprOptions::fetch();
 
-    $mepr_user = MeprUtils::get_currentuserinfo();
-    $old_email = $mepr_user->user_email;
-    $new_email = stripslashes($_POST['user_email']);
+      $mepr_user = MeprUtils::get_currentuserinfo();
+      $old_email = $mepr_user->user_email;
+      $new_email = sanitize_email($_POST['user_email']);
 
-    if( $mepr_user !== false &&
-        $mepr_options->username_is_email &&
-        is_email($new_email) && //make sure this isn't sql injected or something
-        is_email($mepr_user->user_login) && //make sure we're not overriding a non-email username
-        $old_email == $mepr_user->user_login && //Make sure old email and old username match up
-        $old_email != $new_email ) {
-      //Some trickery here to keep the user logged in
-      $wpdb->query($wpdb->prepare("UPDATE {$wpdb->users} SET user_login = %s WHERE ID = %d", $new_email, $mepr_user->ID));
-      clean_user_cache($mepr_user->ID); //Get rid of the user cache
-      wp_clear_auth_cookie(); //Clear their old cookie
-      wp_set_current_user($mepr_user->ID); //Set the current user again
-      wp_set_auth_cookie($mepr_user->ID, true, false); //Log the user back in w/out knowing their password
-      update_user_caches(new WP_User($mepr_user->ID));
+      //Make sure no one else has this email as their username
+      if(is_email($new_email) && username_exists($new_email)) { return; } //BAIL
+
+      if( $mepr_user !== false &&
+          $mepr_options->username_is_email &&
+          is_email($new_email) && //make sure this isn't sql injected or something
+          is_email($mepr_user->user_login) && //make sure we're not overriding a non-email username
+          $old_email == $mepr_user->user_login && //Make sure old email and old username match up
+          $old_email != $new_email ) {
+        //Some trickery here to keep the user logged in
+        $wpdb->query($wpdb->prepare("UPDATE {$wpdb->users} SET user_login = %s WHERE ID = %d", $new_email, $mepr_user->ID));
+        clean_user_cache($mepr_user->ID); //Get rid of the user cache
+        wp_clear_auth_cookie(); //Clear their old cookie
+        wp_set_current_user($mepr_user->ID); //Set the current user again
+        wp_set_auth_cookie($mepr_user->ID, true, false); //Log the user back in w/out knowing their password
+        update_user_caches(new WP_User($mepr_user->ID));
+      }
     }
   }
 
@@ -138,14 +175,16 @@ class MeprAccountCtrl extends MeprBaseCtrl {
     $saved = false;
     $welcome_message = wpautop(stripslashes($mepr_options->custom_message));
 
-    if(isset($_POST['mepr-process-account']) && $_POST['mepr-process-account'] == 'Y') {
+    if( MeprUtils::is_post_request() &&
+        isset($_POST['mepr-process-account']) && $_POST['mepr-process-account'] == 'Y' ) {
+      check_admin_referer( 'update_account', 'mepr_account_nonce' );
       $errors = MeprUsersCtrl::validate_extra_profile_fields(null, null, $mepr_current_user);
       $errors = MeprUser::validate_account($_POST, $errors);
       $errors = MeprHooks::apply_filters('mepr-validate-account', $errors, $mepr_current_user);
 
       if(empty($errors)) {
         //Need to find a better way to do this eventually but for now update the user's email
-        $new_email = stripslashes($_POST['user_email']);
+        $new_email = sanitize_email($_POST['user_email']);
 
         if($mepr_current_user->user_email != $new_email) {
           $mepr_current_user->user_email = $new_email;
@@ -449,36 +488,44 @@ class MeprAccountCtrl extends MeprBaseCtrl {
       return '';
     }
 
-    static $usermeta;
+    $ums      = MeprUtils::get_formatted_usermeta($user_ID);
+    $usermeta = array();
 
-    if(!isset($usermeta) || !empty($usermeta)) {
-      $userdata = get_userdata($user_ID);
-      $usermeta = get_user_meta($user_ID);
+    if(!empty($ums)) {
+      foreach($ums as $umkey => $umval) {
+        $usermeta["{$umkey}"] = $umval;
+      }
     }
 
+    //Get some additional params yo
+    $userdata = get_userdata($user_ID);
+
     foreach($userdata->data as $key => $value) {
-      $usermeta[$key] = array($value);
+      $usermeta[$key] = $value;
     }
 
     //We can begin to define more custom return cases in here...
     switch($atts['field']) {
       case 'full_name':
-        return ucfirst($usermeta['first_name'][0]) . ' ' . ucfirst($usermeta['last_name'][0]);
+        return ucfirst($usermeta['first_name']) . ' ' . ucfirst($usermeta['last_name']);
         break;
       case 'full_name_last_first':
-        return ucfirst($usermeta['last_name'][0]) . ', ' . ucfirst($usermeta['first_name'][0]);
+        return ucfirst($usermeta['last_name']) . ', ' . ucfirst($usermeta['first_name']);
         break;
       case 'first_name_last_initial':
-        return ucfirst($usermeta['first_name'][0]) . ' ' . ucfirst($usermeta['last_name'][0][0]) . '.';
+        return ucfirst($usermeta['first_name']) . ' ' . ucfirst($usermeta['last_name'][0]) . '.';
         break;
       case 'last_name_first_initial':
-        return ucfirst($usermeta['last_name'][0]) . ', ' . ucfirst($usermeta['first_name'][0][0]) . '.';
+        return ucfirst($usermeta['last_name']) . ', ' . ucfirst($usermeta['first_name'][0]) . '.';
         break;
       case 'user_registered':
-        return MeprAppHelper::format_date($usermeta[$atts['field']][0]);
+        return MeprAppHelper::format_date($usermeta[$atts['field']]);
+        break;
+      case 'mepr_user_message': //Parse shortcodes in this message
+        return do_shortcode($usermeta[$atts['field']]);
         break;
       default:
-        return $usermeta[$atts['field']][0];
+        return $usermeta[$atts['field']];
         break;
     }
   }
@@ -517,4 +564,3 @@ class MeprAccountCtrl extends MeprBaseCtrl {
     return $content;
   }
 }
-

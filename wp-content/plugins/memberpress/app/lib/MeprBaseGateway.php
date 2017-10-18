@@ -102,16 +102,26 @@ abstract class MeprBaseGateway {
   }
 
   /** Returns the url of a given notifier for the current gateway */
-  public function notify_url($action) {
+  public function notify_url($action, $force_ssl=false) {
     if(isset($this->notifiers[$action])) {
       $permalink_structure = get_option('permalink_structure');
+      $force_ugly_urls = get_option('mepr_force_ugly_gateway_notify_urls');
 
-      if(empty($permalink_structure)) {
-        return MEPR_SCRIPT_URL."&pmt={$this->id}&action={$action}";
+      if($force_ugly_urls || empty($permalink_structure)) {
+        $url = MEPR_SCRIPT_URL."&pmt={$this->id}&action={$action}";
       }
       else {
-        return site_url("/mepr/notify/{$this->id}/{$action}");
+        $notify_url = preg_replace('!%gatewayid%!', $this->id, MeprUtils::gateway_notify_url_structure());
+        $notify_url = preg_replace('!%action%!', $action, $notify_url);
+
+        $url = site_url($notify_url);
       }
+
+      if($force_ssl) {
+        $url = preg_replace('/^http:/','https:',$url);
+      }
+
+      return $url;
     }
 
     return false;
@@ -370,11 +380,15 @@ abstract class MeprBaseGateway {
         <?php if( $mepr_options->allow_suspend_subs and
                   $this->can('suspend-subscriptions') and
                   $subscription->status == MeprSubscription::$active_str ): ?>
-          <a href="<?php echo "{$account_url}{$account_delim}action=suspend&sub={$subscription->id}"; ?>" class="mepr-account-row-action mepr-account-suspend" onclick="return confirm('<?php _e('Are you sure you want to pause this subscription?', 'memberpress'); ?>');"><?php _e('Pause', 'memberpress'); ?></a>
+          <?php ob_start(); ?>
+            <a href="<?php echo "{$account_url}{$account_delim}action=suspend&sub={$subscription->id}"; ?>" class="mepr-account-row-action mepr-account-suspend" onclick="return confirm('<?php _e('Are you sure you want to pause this subscription?', 'memberpress'); ?>');"><?php _e('Pause', 'memberpress'); ?></a>
+          <?php echo MeprHooks::apply_filters('mepr_custom_pause_link', ob_get_clean(), $subscription); ?>
         <?php elseif( $mepr_options->allow_suspend_subs and
                       $this->can('suspend-subscriptions') and
                       $subscription->status==MeprSubscription::$suspended_str ): ?>
-          <a href="<?php echo "{$account_url}{$account_delim}action=resume&sub={$subscription->id}"; ?>" class="mepr-account-row-action mepr-account-resume"><?php _e('Resume', 'memberpress'); ?></a>
+          <?php ob_start(); ?>
+            <a href="<?php echo "{$account_url}{$account_delim}action=resume&sub={$subscription->id}"; ?>" class="mepr-account-row-action mepr-account-resume"><?php _e('Resume', 'memberpress'); ?></a>
+          <?php echo MeprHooks::apply_filters('mepr_custom_resume_link', ob_get_clean(), $subscription); ?>
         <?php endif; ?>
 
         <?php if($mepr_options->allow_cancel_subs and $this->can('cancel-subscriptions') && $subscription->status == MeprSubscription::$active_str): ?>
@@ -388,7 +402,7 @@ abstract class MeprBaseGateway {
             </div>
           </div>
           <?php ob_start(); ?>
-          <a href="#mepr-cancel-sub-<?php echo $subscription->id; ?>" class="mepr-open-cancel-confirm mepr-account-row-action mepr-account-cancel"><?php _e('Cancel', 'memberpress'); ?></a>
+            <a href="#mepr-cancel-sub-<?php echo $subscription->id; ?>" class="mepr-open-cancel-confirm mepr-account-row-action mepr-account-cancel"><?php _e('Cancel', 'memberpress'); ?></a>
           <?php echo MeprHooks::apply_filters('mepr_custom_cancel_link', ob_get_clean(), $subscription); ?>
         <?php endif; ?>
       <?php endif; ?>
@@ -533,8 +547,8 @@ abstract class MeprBaseGateway {
     }
 
     //Let's also make sure the first txn is still a confirmation type
-    $first_txn = new MeprTransaction($sub->first_txn_id);
-    if($first_txn->txn_type != MeprTransaction::$subscription_confirmation_str) {
+    $first_txn = $sub->first_txn();
+    if($first_txn == false || !($first_txn instanceof MeprTransaction) || $first_txn->txn_type != MeprTransaction::$subscription_confirmation_str) {
       return false;
     }
 
@@ -554,6 +568,13 @@ abstract class MeprBaseGateway {
     $count = $wpdb->get_var($q);
 
     return ((int)$count == 0);
+  }
+
+  /** Get the renewal base date for a given subscription. This is the date MemberPress will use to calculate expiration dates.
+    * Of course this method is meant to be overridden when a gateway requires it.
+    */
+  public function get_renewal_base_date(MeprSubscription $sub) {
+    return $sub->created_at;
   }
 
   public function upgraded_sub($sub) {

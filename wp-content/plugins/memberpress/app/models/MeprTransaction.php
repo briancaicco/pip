@@ -20,7 +20,7 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
         'status'          => self::$pending_str,
         'txn_type'        => self::$payment_str,
         'response'        => '',
-        'gateway'         => 'MeprPayPalGateway',
+        'gateway'         => 'manual',
         'prorated'        => null,
         'ip_addr'         => $_SERVER['REMOTE_ADDR'],
         'created_at'      => null,
@@ -78,7 +78,7 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
   public static function create($txn) {
     $mepr_db = new MeprDb();
 
-    if(is_null($txn->created_at)) {
+    if(is_null($txn->created_at) || empty($txn->created_at)) {
       $txn->created_at = MeprUtils::ts_to_mysql_date(time());
     }
 
@@ -92,7 +92,7 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
 
       $expires_at_ts = $obj->get_expires_at(strtotime($txn->created_at));
 
-      if(is_null($expires_at_ts)) {
+      if(is_null($expires_at_ts) || empty($expires_at_ts)) {
         $txn->expires_at = MeprUtils::db_lifetime();
       }
       else {
@@ -283,16 +283,9 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
 
   public static function completed_transactions_by_date_range($start_date, $end_date) {
     global $wpdb;
-
     $mepr_db = new MeprDb();
-    $products = get_posts(array('numberposts' => -1, 'post_type' => 'memberpressproduct', 'post_status' => 'publish'));
-    $selects = array();
 
-    foreach($products as $product) {
-      $selects[] = $wpdb->prepare("SELECT * FROM {$mepr_db->transactions} WHERE status='complete' AND created_at >= %s AND created_at <= %s", $start_date, $end_date);
-    }
-
-    $query = implode(" UNION ", $selects);
+    $query = $wpdb->prepare("SELECT * FROM {$mepr_db->transactions} WHERE status='complete' AND created_at >= %s AND created_at <= %s", $start_date, $end_date);
 
     return $wpdb->get_results($query);
   }
@@ -346,6 +339,14 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
   public function store() {
     $old_txn = new self($this->id);
 
+    //TODO - Add real validation here
+    if((int)$this->user_id <= 0) { return $this->id; }
+
+    //Force 23:59:59 to help cover some overlaps
+    if(isset($this->expires_at) && !empty($this->expires_at) && $this->expires_at != MeprUtils::db_lifetime()) {
+      $this->expires_at = MeprUtils::ts_to_mysql_date(strtotime($this->expires_at), 'Y-m-d 23:59:59');
+    }
+
     if(isset($this->id) && !is_null($this->id) && (int)$this->id > 0) {
       $this->id = self::update($this);
     }
@@ -374,23 +375,23 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
 
     $mepr_options = MeprOptions::fetch();
     $mepr_db = new MeprDb();
-    $pm_ids = array();
 
-    $pms = $mepr_options->integrations;
-
-    //foreach($pms as $pm)
-    //  if(isset($pm['recurrence_type']) && $pm['recurrence_type']=='manual')
-    //    $pm_ids[] = $pm['id'];
-
-    $query = "SELECT txn.* FROM {$mepr_db->transactions} AS txn " .
-              "WHERE txn.status='complete' AND txn.expires_at <= %s " .
-                //"AND txn.gateway IN ('" . implode("','", $pm_ids) . "') " .
-                "AND txn.id NOT IN ( SELECT CAST( meta.meta_value AS UNSIGNED INTEGER ) " .
-                                      "FROM {$wpdb->usermeta} AS meta " .
-                                     "WHERE meta.user_id=txn.user_id " .
-                                       "AND meta.meta_key='mepr_renewal' )";
-
-    $query = $wpdb->prepare($query, MeprUtils::ts_to_mysql_date(time()));
+    // TODO: Modify this function and query to work for expiring trials as well.
+    $query = $wpdb->prepare("
+      SELECT txn.*
+      FROM {$mepr_db->transactions} AS txn
+        LEFT JOIN {$mepr_db->events} AS e
+          ON e.evt_id = txn.id
+          AND e.event = 'transaction-expired'
+          AND e.evt_id_type = 'transactions'
+      WHERE txn.status='complete'
+        AND txn.user_id > 0
+        AND txn.expires_at BETWEEN DATE_SUB(%s,INTERVAL 2 DAY) AND %s
+        AND e.id IS NULL
+      ",
+      MeprUtils::now(),
+      MeprUtils::ts_to_mysql_date(time())
+    );
 
     return $wpdb->get_results($query);
   }
@@ -437,6 +438,7 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
       'product_id' => 'tr.product_id',
       'product_name' => 'p.post_title',
       'gateway' => $pmt_method,
+      'gateway_id' => 'tr.gateway',
       'subscr_id' => $wpdb->prepare('IFNULL(sub.subscr_id, %s)', __('None','memberpress')),
       'sub_id' => 'tr.subscription_id',
       'trans_num' => 'tr.trans_num',
@@ -446,7 +448,8 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
       'tax_rate' => 'tr.tax_rate',
       'tax_class' => 'tr.tax_class',
       'tax_desc' => 'tr.tax_desc',
-      'status' => 'tr.status'
+      'status' => 'tr.status',
+      'coupon_id' => 'tr.coupon_id'
     );
 
     if(isset($params['month']) && is_numeric($params['month'])) {
@@ -745,7 +748,7 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
           $evt_txn = $old_lifetime_txn;
         }
 
-        if($evt_txn !== false && $evt_txn instanceof MeprTransaction) {
+        if($evt_txn !== false && $evt_txn instanceof MeprTransaction && $evt_txn->id != 0) {
           // We just catch the hooks from these events
           MeprEvent::record('subscription-changed', $evt_txn, $this->id);
         }
@@ -862,6 +865,7 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
                   AND ev.evt_id_type='transactions'
                   AND (ev.event='expired' OR ev.event='transaction-expired')
                 LIMIT 1 ) IS NULL
+         AND tr.user_id > 0
        ORDER BY tr.expires_at
       ",
       MeprUtils::db_lifetime(),
@@ -990,4 +994,3 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
   }
 
 } //End class
-

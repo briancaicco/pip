@@ -3,6 +3,7 @@ if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');
 
 class MeprStripeGateway extends MeprBaseRealGateway {
   public static $stripe_plan_id_str = '_mepr_stripe_plan_id';
+  public static $has_spc_form = true;
 
   /** Used in the view to identify the gateway */
   public function __construct() {
@@ -24,7 +25,10 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     );
 
     // Setup the notification actions for this gateway
-    $this->notifiers = array( 'whk' => 'listener' );
+    $this->notifiers = array(
+      'whk' => 'listener',
+      'update-billing.html' => 'churn_buster'
+    );
   }
 
   public function load($settings) {
@@ -50,6 +54,9 @@ class MeprStripeGateway extends MeprBaseRealGateway {
         'force_ssl' => false,
         'debug' => false,
         'test_mode' => false,
+        'use_stripe_checkout' => false,
+        'churn_buster_enabled' => false,
+        'churn_buster_uuid' => '',
         'api_keys' => array(
           'test' => array(
             'public' => '',
@@ -72,19 +79,13 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     //$this->recurrence_type = $this->settings->recurrence_type;
 
     if($this->is_test_mode()) {
-      $this->settings->public_key = $this->settings->api_keys['test']['public'];
-      $this->settings->secret_key = $this->settings->api_keys['test']['secret'];
+      $this->settings->public_key = trim($this->settings->api_keys['test']['public']);
+      $this->settings->secret_key = trim($this->settings->api_keys['test']['secret']);
     }
     else {
-      $this->settings->public_key = $this->settings->api_keys['live']['public'];
-      $this->settings->secret_key = $this->settings->api_keys['live']['secret'];
+      $this->settings->public_key = trim($this->settings->api_keys['live']['public']);
+      $this->settings->secret_key = trim($this->settings->api_keys['live']['secret']);
     }
-
-    // An attempt to correct people who paste in spaces along with their credentials
-    $this->settings->api_keys['test']['secret'] = trim($this->settings->api_keys['test']['secret']);
-    $this->settings->api_keys['test']['public'] = trim($this->settings->api_keys['test']['public']);
-    $this->settings->api_keys['live']['secret'] = trim($this->settings->api_keys['live']['secret']);
-    $this->settings->api_keys['live']['public'] = trim($this->settings->api_keys['live']['public']);
   }
 
   /** Used to send data to a given payment gateway. In gateways which redirect
@@ -116,8 +117,8 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     ), $txn);
 
     // get the credit card details submitted by the form
-    if(isset($_REQUEST['stripe_token'])) {
-      $args['card'] = $_REQUEST['stripe_token'];
+    if(isset($_REQUEST['stripeToken'])) {
+      $args['card'] = $_REQUEST['stripeToken'];
     }
     else if(isset($_REQUEST['stripe_customer'])) {
       $args['customer'] = $_REQUEST['stripe_customer'];
@@ -163,14 +164,21 @@ class MeprStripeGateway extends MeprBaseRealGateway {
       $charge = (object)$_REQUEST['data'];
 
       // Make sure there's a valid subscription for this request and this payment hasn't already been recorded
-      if( !isset($charge) or !isset($charge->customer) or
-          !($sub = MeprSubscription::get_one_by_subscr_id($charge->customer)) or
-          ( isset($charge->id) and MeprTransaction::txn_exists($charge->id) ) ) {
+      if( !isset($charge) || !isset($charge->customer) ||
+          !($sub = MeprSubscription::get_one_by_subscr_id($charge->customer)) ||
+          ( isset($charge->id) && MeprTransaction::txn_exists($charge->id) ) ) {
         return false;
       }
 
       $sub->subscr_id = $charge->customer; //Needs to be here to get around some funky GoDaddy caching issue
       $first_txn = $txn = $sub->first_txn();
+
+      if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+        $coupon_id = $sub->coupon_id;
+      }
+      else {
+        $coupon_id = $first_txn->coupon_id;
+      }
 
       $this->email_status( "record_subscription_payment:" .
                            "\nSubscription: " . MeprUtils::object_to_string($sub, true) .
@@ -181,7 +189,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
       $txn->user_id    = $sub->user_id;
       $txn->product_id = $sub->product_id;
       $txn->status     = MeprTransaction::$complete_str;
-      $txn->coupon_id  = $first_txn->coupon_id;
+      $txn->coupon_id  = $coupon_id;
       $txn->response   = json_encode($charge);
       $txn->trans_num  = $charge->id;
       $txn->gateway    = $this->id;
@@ -248,12 +256,18 @@ class MeprStripeGateway extends MeprBaseRealGateway {
       }
       elseif(isset($charge) && isset($charge->customer) && ($sub = MeprSubscription::get_one_by_subscr_id($charge->customer))) {
         $first_txn = $sub->first_txn();
-        $latest_txn = $sub->latest_txn();
+
+        if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+          $coupon_id = $sub->coupon_id;
+        }
+        else {
+          $coupon_id = $first_txn->coupon_id;
+        }
 
         $txn = new MeprTransaction();
         $txn->user_id = $sub->user_id;
         $txn->product_id = $sub->product_id;
-        $txn->coupon_id = $first_txn->coupon_id;
+        $txn->coupon_id = $coupon_id;
         $txn->txn_type = MeprTransaction::$payment_str;
         $txn->status = MeprTransaction::$failed_str;
         $txn->subscription_id = $sub->id;
@@ -270,7 +284,13 @@ class MeprStripeGateway extends MeprBaseRealGateway {
 
         $txn->store();
 
-        $sub->status = MeprSubscription::$active_str;
+        //If first payment fails, Stripe will not set up the subscription, so we need to mark it as cancelled in MP
+        if($sub->txn_count == 0) {
+          $sub->status = MeprSubscription::$cancelled_str;
+        }
+        else {
+          $sub->status = MeprSubscription::$active_str;
+        }
         $sub->gateway = $this->id;
         $sub->expire_txns(); //Expire associated transactions for the old subscription
         $sub->store();
@@ -389,8 +409,8 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     $sub = $txn->subscription();
 
     // get the credit card details submitted by the form
-    if(isset($_REQUEST['stripe_token']))
-      $card = $_REQUEST['stripe_token'];
+    if(isset($_REQUEST['stripeToken']))
+      $card = $_REQUEST['stripeToken'];
     elseif(isset($_REQUEST['mepr_cc_num'])) {
       $card = array( 'number'    => $_REQUEST['mepr_cc_num'],
                      'exp_month' => $_REQUEST['mepr_cc_exp_month'],
@@ -407,7 +427,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     $txn->set_subtotal($sub->trial_amount);
     $txn->status = MeprTransaction::$pending_str;
 
-    unset($_REQUEST['stripe_token']);
+    unset($_REQUEST['stripeToken']);
     $_REQUEST['stripe_customer'] = $customer->id;
 
     //Attempt processing the payment here - the send_aim_request will throw the exceptions for us
@@ -451,8 +471,8 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     }
     else {
       // get the credit card details submitted by the form
-      if(isset($_REQUEST['stripe_token'])) {
-        $card = $_REQUEST['stripe_token'];
+      if(isset($_REQUEST['stripeToken'])) {
+        $card = $_REQUEST['stripeToken'];
       }
       elseif(isset($_REQUEST['mepr_cc_num'])) {
         $card = array( 'number'    => $_REQUEST['mepr_cc_num'],
@@ -523,6 +543,12 @@ class MeprStripeGateway extends MeprBaseRealGateway {
       $sub->maybe_cancel_old_sub();
 
       $txn = $sub->first_txn();
+      if($txn == false || !($txn instanceof MeprTransaction)) {
+        $txn = new MeprTransaction();
+        $txn->user_id = $sub->user_id;
+        $txn->product_id = $sub->product_id;
+      }
+
       $old_total = $txn->total;
 
       // If no trial or trial amount is zero then we've got to make
@@ -570,7 +596,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     static $subscr;
     if(!is_null($subscr)) { return $subscr; }
 
-    if(!isset($_REQUEST['stripe_token'])) {
+    if(!isset($_REQUEST['stripeToken'])) {
       ob_start();
       print_r($_REQUEST);
       $err = ob_get_clean();
@@ -578,7 +604,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     }
 
     // get the credit card details submitted by the form
-    $token    = $_REQUEST['stripe_token'];
+    $token    = $_REQUEST['stripeToken'];
     $customer = $this->stripe_customer($sub_id, $token);
 
     //TODO check for $customer === false - do better error handling here
@@ -653,6 +679,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     */
   public function process_resume_subscription($sub_id) {
     $mepr_options = MeprOptions::fetch();
+    MeprHooks::do_action('mepr-pre-stripe-resume-subscription', $sub_id); //Allow users to change the subscription programatically before resuming it
     $sub = new MeprSubscription($sub_id);
 
     $customer = $this->stripe_customer($sub_id);
@@ -665,11 +692,12 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     $orig_trial_amount = $sub->trial_amount;
 
     if( $sub->is_expired() and !$sub->is_lifetime()) {
-      $exptxn = $sub->expiring_txn();
+      $expiring_txn = $sub->expiring_txn();
 
       // if it's already expired with a real transaction
       // then we want to resume immediately
-      if($exptxn->status!=MeprTransaction::$confirmed_str) {
+      if( $expiring_txn != false && $expiring_txn instanceof MeprTransaction &&
+          $expiring_txn->status!=MeprTransaction::$confirmed_str ) {
         $sub->trial = false;
         $sub->trial_days = 0;
         $sub->trial_amount = 0.00;
@@ -725,7 +753,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
 
       //Check if prior txn is expired yet or not, if so create a temporary txn so the user can access the content immediately
       $prior_txn = $sub->latest_txn();
-      if(strtotime($prior_txn->expires_at) < time()) {
+      if($prior_txn == false || !($prior_txn instanceof MeprTransaction) || strtotime($prior_txn->expires_at) < time()) {
         $txn = new MeprTransaction();
         $txn->subscription_id = $sub->id;
         $txn->trans_num  = $sub->subscr_id . '-' . uniqid();
@@ -827,8 +855,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     $txn = new MeprTransaction($txn_id);
 
     //Artifically set the price of the $prd in case a coupon was used
-    if($prd->price != $amount)
-    {
+    if($prd->price != $amount) {
       $coupon = true;
       $prd->price = $amount;
     }
@@ -837,10 +864,55 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     echo $invoice;
 
     ?>
-    <div class="mp_wrapper mp_payment_form_wrapper">
-      <form action="<?php //echo $prd->url('',true); //COMMENTING THIS OUT FOR https://github.com/caseproof/memberpress/issues/790  ?>" method="post" id="payment-form" class="mepr-checkout-form mepr-form mepr-card-form" novalidate>
+      <div class="mp_wrapper mp_payment_form_wrapper">
+        <?php
+          if(!$this->settings->use_stripe_checkout) {
+            $this->display_on_site_form($txn);
+          }
+          else {
+            $this->display_stripe_checkout_form($txn);
+          }
+        ?>
+      </div>
+    <?php
+  }
+
+  //In the future, this could open the door to Apple Pay and Bitcoin?
+  //Bitcoin can NOT be used for auto-recurring subs though - not sure about Apple Pay
+  public function display_stripe_checkout_form($txn) {
+    $mepr_options = MeprOptions::fetch();
+    $user         = $txn->user();
+    $prd          = $txn->product();
+    ?>
+      <form action="" method="POST">
         <input type="hidden" name="mepr_process_payment_form" value="Y" />
-        <input type="hidden" name="mepr_transaction_id" value="<?php echo $txn_id; ?>" />
+        <input type="hidden" name="mepr_transaction_id" value="<?php echo $txn->id; ?>" />
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="<?php echo $this->settings->public_key; ?>"
+          data-image="<?php //TODO ?>"
+          data-name="<?php echo esc_attr($prd->post_title); ?>"
+          data-panel-label="<?php _ex('Submit', 'ui', 'memberpress'); ?>"
+          data-label="<?php _ex('Pay Now', 'ui', 'memberpress'); ?>"
+          data-zip-code="true"
+          data-billing-address="<?php echo ($mepr_options->show_address_fields && $mepr_options->require_address_fields)?'true':'false'; ?>"
+          data-email="<?php echo esc_attr($user->user_email); ?>"
+          data-currency="<?php echo $mepr_options->currency_code; ?>"
+          data-locale="<?php echo $mepr_options->language_code; ?>"
+          data-bitcoin="false"> <!-- Eventually we will add bitcoin for non-recurring? -->
+        </script>
+      </form>
+    <?php
+  }
+
+  public function display_on_site_form($txn) {
+    $mepr_options = MeprOptions::fetch();
+    $user         = $txn->user();
+    ?>
+      <form action="" method="post" id="payment-form" class="mepr-checkout-form mepr-form mepr-card-form" novalidate>
+        <input type="hidden" name="mepr_process_payment_form" value="Y" />
+        <input type="hidden" name="mepr_transaction_id" value="<?php echo $txn->id; ?>" />
         <input type="hidden" class="card-name" value="<?php echo $user->get_full_name(); ?>" />
 
         <?php if($mepr_options->show_address_fields && $mepr_options->require_address_fields): ?>
@@ -893,7 +965,6 @@ class MeprStripeGateway extends MeprBaseRealGateway {
 
         <noscript><p class="mepr_nojs"><?php _e('Javascript is disabled in your browser. You will not be able to complete your purchase until you either enable JavaScript in your browser, or switch to a browser that supports it.', 'memberpress'); ?></p></noscript>
       </form>
-    </div>
     <?php
   }
 
@@ -906,50 +977,124 @@ class MeprStripeGateway extends MeprBaseRealGateway {
   public function display_options_form() {
     $mepr_options = MeprOptions::fetch();
 
-    $test_secret_key = trim($this->settings->api_keys['test']['secret']);
-    $test_public_key = trim($this->settings->api_keys['test']['public']);
-    $live_secret_key = trim($this->settings->api_keys['live']['secret']);
-    $live_public_key = trim($this->settings->api_keys['live']['public']);
-    $force_ssl       = ($this->settings->force_ssl == 'on' or $this->settings->force_ssl == true);
-    $debug           = ($this->settings->debug == 'on' or $this->settings->debug == true);
-    $test_mode       = ($this->settings->test_mode == 'on' or $this->settings->test_mode == true);
+    $test_secret_key      = trim($this->settings->api_keys['test']['secret']);
+    $test_public_key      = trim($this->settings->api_keys['test']['public']);
+    $live_secret_key      = trim($this->settings->api_keys['live']['secret']);
+    $live_public_key      = trim($this->settings->api_keys['live']['public']);
+    $force_ssl            = ($this->settings->force_ssl == 'on' or $this->settings->force_ssl == true);
+    $debug                = ($this->settings->debug == 'on' or $this->settings->debug == true);
+    $test_mode            = ($this->settings->test_mode == 'on' or $this->settings->test_mode == true);
+    $use_stripe_checkout  = ($this->settings->use_stripe_checkout == 'on' or $this->settings->use_stripe_checkout == true);
+    $churn_buster_enabled = ($this->settings->churn_buster_enabled == 'on' or $this->settings->churn_buster_enabled == true);
+    $churn_buster_uuid    = trim($this->settings->churn_buster_uuid);
+
+    $test_secret_key_str      = "{$mepr_options->integrations_str}[{$this->id}][api_keys][test][secret]";
+    $test_public_key_str      = "{$mepr_options->integrations_str}[{$this->id}][api_keys][test][public]";
+    $live_secret_key_str      = "{$mepr_options->integrations_str}[{$this->id}][api_keys][live][secret]";
+    $live_public_key_str      = "{$mepr_options->integrations_str}[{$this->id}][api_keys][live][public]";
+    $force_ssl_str            = "{$mepr_options->integrations_str}[{$this->id}][force_ssl]";
+    $debug_str                = "{$mepr_options->integrations_str}[{$this->id}][debug]";
+    $test_mode_str            = "{$mepr_options->integrations_str}[{$this->id}][test_mode]";
+    $use_stripe_checkout_str  = "{$mepr_options->integrations_str}[{$this->id}][use_stripe_checkout]";
+    $churn_buster_enabled_str = "{$mepr_options->integrations_str}[{$this->id}][churn_buster_enabled]";
+    $churn_buster_uuid_str    = "{$mepr_options->integrations_str}[{$this->id}][churn_buster_uuid]";
 
     ?>
-    <table id="mepr-stripe-test-keys-<?php echo $this->id; ?>" class="mepr-stripe-test-keys mepr-hidden">
-      <tr>
-        <td><?php _e('Test Secret Key*:', 'memberpress'); ?></td>
-        <td><input type="text" class="mepr-auto-trim" name="<?php echo $mepr_options->integrations_str; ?>[<?php echo $this->id;?>][api_keys][test][secret]" value="<?php echo $test_secret_key; ?>" /></td>
+    <table id="mepr-stripe-test-keys-<?php echo $this->id; ?>" class="form-table mepr-stripe-test-keys mepr-hidden">
+      <tbody>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $test_secret_key_str; ?>"><?php _e('Test Secret Key*:', 'memberpress'); ?></label></th>
+        <td><input type="text" class="mepr-auto-trim" name="<?php echo $test_secret_key_str; ?>" value="<?php echo $test_secret_key; ?>" /></td>
       </tr>
-      <tr>
-        <td><?php _e('Test Publishable Key*:', 'memberpress'); ?></td>
-        <td><input type="text" class="mepr-auto-trim" name="<?php echo $mepr_options->integrations_str; ?>[<?php echo $this->id;?>][api_keys][test][public]" value="<?php echo $test_public_key; ?>" /></td>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $test_public_key_str; ?>"><?php _e('Test Publishable Key*:', 'memberpress'); ?></label></th>
+        <td><input type="text" class="mepr-auto-trim" name="<?php echo $test_public_key_str; ?>" value="<?php echo $test_public_key; ?>" /></td>
       </tr>
+      </tbody>
     </table>
-    <table id="mepr-stripe-live-keys-<?php echo $this->id; ?>" class="mepr-stripe-live-keys mepr-hidden">
-      <tr>
-        <td><?php _e('Live Secret Key*:', 'memberpress'); ?></td>
-        <td><input type="text" class="mepr-auto-trim" name="<?php echo $mepr_options->integrations_str; ?>[<?php echo $this->id;?>][api_keys][live][secret]" value="<?php echo $live_secret_key; ?>" /></td>
+    <table id="mepr-stripe-live-keys-<?php echo $this->id; ?>" class="form-table mepr-stripe-live-keys mepr-hidden">
+      <tbody>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $live_secret_key_str; ?>"><?php _e('Live Secret Key*:', 'memberpress'); ?></label></th>
+        <td><input type="text" class="mepr-auto-trim" name="<?php echo $live_secret_key_str; ?>" value="<?php echo $live_secret_key; ?>" /></td>
       </tr>
-      <tr>
-        <td><?php _e('Live Publishable Key*:', 'memberpress'); ?></td>
-        <td><input type="text" class="mepr-auto-trim" name="<?php echo $mepr_options->integrations_str; ?>[<?php echo $this->id;?>][api_keys][live][public]" value="<?php echo $live_public_key; ?>" /></td>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $live_public_key_str; ?>"><?php _e('Live Publishable Key*:', 'memberpress'); ?></label></th>
+        <td><input type="text" class="mepr-auto-trim" name="<?php echo $live_public_key_str; ?>" value="<?php echo $live_public_key; ?>" /></td>
       </tr>
+      </tbody>
     </table>
-    <table>
-      <tr>
-        <td colspan="2"><input class="mepr-stripe-testmode" data-integration="<?php echo $this->id; ?>" type="checkbox" name="<?php echo $mepr_options->integrations_str; ?>[<?php echo $this->id;?>][test_mode]"<?php echo checked($test_mode); ?> />&nbsp;<?php _e('Test Mode', 'memberpress'); ?></td>
+    <table class="form-table">
+      <tbody>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $use_stripe_checkout_str; ?>"><?php _e('Use Stripe Checkout (Beta)', 'memberpress'); ?></label></th>
+        <td><input class="mepr-stripe-checkout" type="checkbox" name="<?php echo $use_stripe_checkout_str; ?>"<?php echo checked($use_stripe_checkout); ?> /></td>
       </tr>
-      <tr>
-        <td colspan="2"><input type="checkbox" name="<?php echo $mepr_options->integrations_str; ?>[<?php echo $this->id;?>][force_ssl]"<?php echo checked($force_ssl); ?> />&nbsp;<?php _e('Force SSL', 'memberpress'); ?></td>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $test_mode_str; ?>"><?php _e('Test Mode', 'memberpress'); ?></label></th>
+        <td><input class="mepr-stripe-testmode" data-integration="<?php echo $this->id; ?>" type="checkbox" name="<?php echo $test_mode_str; ?>"<?php echo checked($test_mode); ?> /></td>
       </tr>
-      <tr>
-        <td colspan="2"><input type="checkbox" name="<?php echo $mepr_options->integrations_str; ?>[<?php echo $this->id;?>][debug]"<?php echo checked($debug); ?> />&nbsp;<?php _e('Send Debug Emails', 'memberpress'); ?></td>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $force_ssl_str; ?>"><?php _e('Force SSL', 'memberpress'); ?></label></th>
+        <td><input type="checkbox" name="<?php echo $force_ssl_str; ?>"<?php echo checked($force_ssl); ?> /></td>
       </tr>
-      <tr>
-        <td><?php _e('Stripe Webhook URL:', 'memberpress'); ?></td>
+      <tr valign="top">
+        <th scope="row"><label for="<?php echo $debug_str; ?>"><?php _e('Send Debug Emails', 'memberpress'); ?></label></th>
+        <td><input type="checkbox" name="<?php echo $debug_str; ?>"<?php echo checked($debug); ?> /></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row"><label><?php _e('Stripe Webhook URL:', 'memberpress'); ?></label></th>
         <td><input type="text" onfocus="this.select();" onclick="this.select();" readonly="true" class="clippy_input" value="<?php echo $this->notify_url('whk'); ?>" /><span class="clippy"><?php echo $this->notify_url('whk'); ?></span></td>
       </tr>
+      <tr valign="top">
+        <th scope="row">
+          <label for="<?php echo $churn_buster_enabled_str; ?>"><?php _e('Enable Churn Buster', 'memberpress'); ?></label>
+          <?php MeprAppHelper::info_tooltip('mepr-stripe-enable-churn-buster',
+             __('Enable Churn Buster', 'memberpress'),
+             __('Churn Buster is a 3rd party service that allows you to automatically respond to failed payments in Stripe with email campaigns, card update pages, and real-time insights to reduce churn by up to 50%.', 'memberpress'));
+          ?>
+        </th>
+        <td>
+          <input type="checkbox" class="mepr-toggle-checkbox" data-box="mepr_stripe_churn_buster_<?php echo $this->id; ?>_box" name="<?php echo $churn_buster_enabled_str; ?>" <?php checked($churn_buster_enabled); ?> />
+        </td>
+      </tr>
+      </tbody>
     </table>
+    <div id="mepr_stripe_churn_buster_<?php echo $this->id; ?>_box" class="mepr-sub-box mepr_stripe_churn_buster_<?php echo $this->id; ?>_box">
+      <div class="mepr-arrow mepr-gray mepr-up mepr-sub-box-arrow"> </div>
+      <h3 class="mepr-page-heading"><?php _e('Recover failed payments with Churn Buster', 'memberpress'); ?></h3>
+      <table class="form-table">
+        <tbody>
+          <tr valign="top">
+            <th scope="row">
+              <label for="<?php echo $churn_buster_uuid_str; ?>"><?php _e('Churn Buster Account ID', 'memberpress'); ?></label>
+              <?php MeprAppHelper::info_tooltip('mepr-stripe-churn-buster-uuid',
+                __('Churn Buster Account ID', 'memberpress'),
+                __('This is the account id that is linked to your Churn Buster account. If you don\'t have a Churn Buster account yet, click the \'Create a Churn Buster Account\' link below.', 'memberpress')); ?>
+            </th>
+            <td>
+              <input type="text" name="<?php echo $churn_buster_uuid_str; ?>" class="regular-text" value="<?php echo $churn_buster_uuid; ?>" />
+              <?php if(empty($churn_buster_uuid)): ?>
+                <div><em><a href="https://app.churnbuster.io/accounts/new?plan=v6_m_9900_25000&coupon=memberpress"><?php _e('Use this link to start with a free trial month >>', 'memberpress'); ?></a></em></div>
+              <?php endif; ?>
+            </td>
+          </tr>
+          <?php if(!empty($churn_buster_uuid)): /** Only show the Churn Buster Update Billing URL if a UUID has been configured */ ?>
+            <tr valign="top">
+              <th scope="row">
+                <label><?php _e('Update Billing URL:', 'memberpress'); ?></label>
+                <?php MeprAppHelper::info_tooltip('mepr-stripe-churn-buster-update-card-url',
+                  __('Update Billing URL', 'memberpress'),
+                  __('You\'ll give this URL to Churn Buster to use in dunning emails so that your customers can update their billing information.', 'memberpress')); ?>
+              </th>
+              <td>
+                <input type="text" onfocus="this.select();" onclick="this.select();" readonly="true" class="clippy_input" value="<?php echo $this->notify_url('update-billing.html', true); ?>" /><span class="clippy"><?php echo $this->notify_url('update-billing.html', true); ?></span>
+              </td>
+            </tr>
+          <?php endif; ?>
+        </tbody>
+      </table>
+    </div>
     <?php
   }
 
@@ -1081,6 +1226,33 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     return (isset($this->settings->force_ssl) and ($this->settings->force_ssl == 'on' or $this->settings->force_ssl == true));
   }
 
+  /** Get the renewal base date for a given subscription. This is the date MemberPress will use to calculate expiration dates.
+    * Of course this method is meant to be overridden when a gateway requires it.
+    */
+  public function get_renewal_base_date(MeprSubscription $sub) {
+    global $wpdb;
+    $mepr_db = MeprDb::fetch();
+
+    $q = $wpdb->prepare("
+        SELECT e.created_at
+          FROM {$mepr_db->events} AS e
+         WHERE e.event='subscription-resumed'
+           AND e.evt_id_type='subscriptions'
+           AND e.evt_id=%d
+         ORDER BY e.created_at DESC
+         LIMIT 1
+      ",
+      $sub->id
+    );
+
+    $renewal_base_date = $wpdb->get_var($q);
+    if(!empty($renewal_base_date)) {
+      return $renewal_base_date;
+    }
+
+    return $sub->created_at;
+  }
+
   /** STRIPE SPECIFIC METHODS **/
 
   public function listener() {
@@ -1095,7 +1267,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
       $event = (object)$this->send_stripe_request( "events/{$event_json->id}", array(), 'get' );
     }
     catch( Exception $e ) {
-      http_response_code(500); //Throw a 500 here so Stripe will try to resend Webhook again
+      http_response_code(202); //Throw a 202 here so stripe doesn't send out a billion webhook broken emails
       die($e->getMessage()); // Do nothing
     }
     //$event = $event_json;
@@ -1132,6 +1304,26 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     }
     else if($event->type=='customer.subscription.trial_will_end') {
       // We may want to implement this feature at some point
+    }
+  }
+
+  /** Renders a custom page where a credit card can be updated */
+  public function churn_buster() {
+    $churn_buster_enabled = ($this->settings->churn_buster_enabled == 'on' || $this->settings->churn_buster_enabled == true);
+    $uuid = trim($this->settings->churn_buster_uuid);
+
+    if($churn_buster_enabled && !empty($uuid)) {
+      $mepr_options = MeprOptions::fetch();
+      $company = $mepr_options->attr('biz_name');
+
+      if(empty($company)) {
+        $company = get_option('blogname');
+      }
+
+      MeprView::render('account/churn_buster', compact('uuid','company'));
+    }
+    else {
+      MeprUtils::exit_with_status(404);
     }
   }
 
@@ -1188,18 +1380,21 @@ class MeprStripeGateway extends MeprBaseRealGateway {
   }
 
   public function get_plan_id($sub) {
-    $meta_plan_id = get_post_meta($sub->id, self::$stripe_plan_id_str, true);
+    $meta_plan_id = $sub->token;
 
-    if($meta_plan_id == '')
+    if(is_null($meta_plan_id)) {
       return $sub->id;
-    else
+    }
+    else {
       return $meta_plan_id;
+    }
   }
 
   public function create_new_plan_id($sub) {
     $parse = parse_url(home_url());
     $new_plan_id = $sub->id . '-' . $parse['host'] . '-' . uniqid();
-    update_post_meta($sub->id, self::$stripe_plan_id_str, $new_plan_id);
+    $sub->token = $new_plan_id;
+    $sub->store();
     return $new_plan_id;
   }
 
@@ -1332,4 +1527,3 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     }
   }
 }
-

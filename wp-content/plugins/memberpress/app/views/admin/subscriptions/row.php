@@ -63,22 +63,22 @@ if(!empty($records))
 
                 ?>
                 <span class="mepr-suspend-sub-action<?php echo $hide_suspend; ?>">
-                  <a href="#" class="mepr-suspend-sub" title="<?php _e('Pause Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Pause', 'memberpress'); ?></a> |
+                  <a href="" class="mepr-suspend-sub" title="<?php _e('Pause Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Pause', 'memberpress'); ?></a> |
                 </span>
                 <span class="mepr-resume-sub-action<?php echo $hide_resume; ?>">
-                  <a href="#" class="mepr-resume-sub" title="<?php _e('Resume Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Resume', 'memberpress'); ?></a> |
+                  <a href="" class="mepr-resume-sub" title="<?php _e('Resume Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Resume', 'memberpress'); ?></a> |
                 </span>
                 <?php
               endif;
               if($sub->status==MeprSubscription::$active_str and $sub->can('cancel-subscriptions')):
               ?>
                 <span class="mepr-cancel-sub-action">
-                  <a href="#" class="mepr-cancel-sub" title="<?php _e('Cancel Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Cancel', 'memberpress'); ?></a> |
+                  <a href="" class="mepr-cancel-sub" title="<?php _e('Cancel Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Cancel', 'memberpress'); ?></a> |
                 </span>
               <?php
               endif;
               ?>
-              <a href="#" class="remove-sub-row" title="<?php _e('Delete Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Delete', 'memberpress'); ?></a>
+              <a href="" class="remove-sub-row" title="<?php _e('Delete Subscription', 'memberpress'); ?>" data-value="<?php echo $rec->id; ?>"><?php _e('Delete', 'memberpress'); ?></a>
             </div>
           </td>
           <?php
@@ -147,7 +147,7 @@ if(!empty($records))
               $txn = new MeprTransaction($rec->id);
               echo MeprAppHelper::format_currency($txn->amount) . ($txn->prorated?__(' (prorated)','memberpress'):'');
             }
-            elseif($sub->status == MeprSubscription::$pending_str) {
+            elseif($rec->status == MeprSubscription::$pending_str) {
               $prd = new MeprProduct($rec->product_id);
               $sub = new MeprSubscription();
               $sub->load_product_vars($prd);
@@ -157,7 +157,13 @@ if(!empty($records))
             else {
               $sub = new MeprSubscription($rec->id);
               $txn = $sub->latest_txn();
-              echo MeprTransactionsHelper::format_currency($txn);
+
+              if(false != $txn && $txn instanceof MeprTransaction) {
+                echo MeprTransactionsHelper::format_currency($txn);
+              }
+              else {
+                echo MeprSubscriptionsHelper::format_currency($sub);
+              }
             }
           ?>
           </td>
@@ -173,8 +179,11 @@ if(!empty($records))
         case 'col_txn_expires_at':
           $expire_ts = strtotime($rec->expires_at);
           $lifetime = (MeprAppHelper::format_date($rec->expires_at, 0) == 0);
+
           $expired_class = '';
-          if(!$lifetime and $expire_ts < current_time('timestamp')) { $expired_class = 'class="mepr-inactive"'; }
+          if(!$lifetime and $expire_ts < current_time('timestamp')) {
+            $expired_class = 'class="mepr-inactive"';
+          }
 
           if($table->lifetime) {
             $default = __('Never','memberpress');
@@ -183,10 +192,15 @@ if(!empty($records))
             $sub = new MeprSubscription($rec->id);
             $txn = $sub->latest_txn();
 
-            if(trim($txn->expires_at) == MeprUtils::db_lifetime() or empty($txn->expires_at))
-              $default = __('Never','memberpress');
-            else
+            if($txn == false || !($txn instanceof MeprSubscription) || $txn->id <= 0) {
               $default = __('Unknown','memberpress');
+            }
+            else if(trim($txn->expires_at) == MeprUtils::db_lifetime() || empty($txn->expires_at)) {
+              $default = __('Never','memberpress');
+            }
+            else {
+              $default = __('Unknown','memberpress');
+            }
           }
 
           ?>
@@ -196,7 +210,7 @@ if(!empty($records))
         case 'col_status':
           ?>
           <td <?php echo $attributes; ?>>
-            <a href="#" id="status-row-<?php echo $rec->id; ?>" class="status_editable" data-value="<?php echo $rec->id; ?>"><?php echo MeprAppHelper::human_readable_status($rec->status,'subscription'); ?></a>
+            <a href="" id="status-row-<?php echo $rec->id; ?>" class="status_editable" data-value="<?php echo $rec->id; ?>"><?php echo MeprAppHelper::human_readable_status($rec->status,'subscription'); ?></a>
             <div id="status-hidden-<?php echo $rec->id; ?>" class="status_hidden">
               <?php
                 MeprAppHelper::info_tooltip('mepr-subscriptions-status-'.$rec->id,
@@ -209,8 +223,8 @@ if(!empty($records))
                 <option value="<?php echo MeprSubscription::$suspended_str; ?>"><?php _e('Paused', 'memberpress'); ?></option>
                 <option value="<?php echo MeprSubscription::$cancelled_str; ?>"><?php _e('Cancelled', 'memberpress'); ?></option>
               </select><br/>
-              <a href="#" class="button status_save" data-value="<?php echo $rec->id; ?>"><?php _e('Save', 'memberpress'); ?></a>
-              <a href="#" class="button cancel_change" data-value="<?php echo $rec->id; ?>"><?php _e('Cancel', 'memberpress'); ?></a>
+              <a href="" class="button status_save" data-value="<?php echo $rec->id; ?>"><?php _e('Save', 'memberpress'); ?></a>
+              <a href="" class="button cancel_change" data-value="<?php echo $rec->id; ?>"><?php _e('Cancel', 'memberpress'); ?></a>
             </div>
 
             <div id="status-saving-<?php echo $rec->id; ?>" class="status_saving">

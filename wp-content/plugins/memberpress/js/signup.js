@@ -50,13 +50,36 @@
         var data = {
           action: 'mepr_validate_coupon',
           code: $(obj).val(),
-          prd_id: $(obj).attr("data-prd-id")
+          prd_id: $(obj).attr("data-prd-id"),
+          coupon_nonce: MeprSignup.coupon_nonce
         };
 
         $.post(MeprI18n.ajaxurl, data, function(res) {
           $(obj).prev('.mp-form-label').find('.mepr-coupon-loader').hide();
           res = res.trim();
           mpToggleFieldValidation($(obj), (res.toString() == 'true'));
+
+          if(res.toString() == 'true') {
+            var data_two = {
+              action: 'mepr_update_price_string_with_coupon',
+              code: $(obj).val(),
+              prd_id: $(obj).attr("data-prd-id"),
+              coupon_nonce: MeprSignup.coupon_nonce
+            };
+
+            $.post(MeprI18n.ajaxurl, data_two, function(res_two) {
+              res_two = res_two.trim();
+              if(res_two.toString() != 'false') {
+                form.find('div.mepr_price_cell').text(res_two);
+                $('body').animate( {
+                  scrollTop: form.find('div.mepr_price_cell').offset().top
+                }, 200, function() {
+                  form.find('div.mepr_price_cell').parent().hide();
+                  form.find('div.mepr_price_cell').parent().fadeIn(1000);
+                });
+              }
+            });
+          }
         });
       }
 

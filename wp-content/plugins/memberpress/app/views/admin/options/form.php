@@ -2,13 +2,13 @@
 
 <div class="wrap">
   <div class="icon32"></div>
-  <h2><?php _e('Options', 'memberpress'); ?><a href="http://www.memberpress.com/user-manual/" class="add-new-h2" target="_blank"><?php _e('User Manual', 'memberpress'); ?></a></h2>
+  <h2><?php _e('Options', 'memberpress'); ?><a href="http://memberpress.helpscoutdocs.com/" class="add-new-h2" target="_blank"><?php _e('User Manual', 'memberpress'); ?></a></h2>
 
   <?php MeprView::render('/admin/errors', get_defined_vars()); ?>
 
   <form name="mepr_options_form" id="mepr_options_form" class="mepr-form" method="post" action="" enctype="multipart/form-data">
     <input type="hidden" name="action" value="process-form">
-    <?php wp_nonce_field('update-options'); ?>
+    <?php wp_nonce_field('mepr_update_options', 'mepr_options_nonce'); ?>
 
     <h2 id="mepr-reports-column-selector" class="nav-tab-wrapper">
       <a class="nav-tab nav-tab-active" id="pages" href="#"><?php _e('Pages', 'memberpress'); ?></a>
@@ -221,9 +221,19 @@
                                                __('1 Day Grace Period', 'memberpress'),
                                                __('PayPal, Stripe, and Authorize.net can sometimes take up to 24 hours to process the first payment on a members recurring subscription. By default MemberPress allows a 1 day grace period after a member signs up, so they can access the site immediately rather than wait for their payment to clear.', 'memberpress') . '<br/><br/>' . __('If you would like to make them wait for the payment to clear before they are allowed to access the site, then enable this option.', 'memberpress') ); ?>
           </div>
+          <?php /* Temporarily disable the SPC checkbox until release
           <div class="mp-col-5">
-            <?php //Nothing here for now ?>
+            <label for="<?php echo $mepr_options->enable_spc_str; ?>">
+              <input type="checkbox" name="<?php echo $mepr_options->enable_spc_str; ?>" id="<?php echo $mepr_options->enable_spc_str; ?>" <?php checked($mepr_options->enable_spc); ?> />
+              <span><?php _e('Enable Single Page Checkout', 'memberpress'); ?></span>
+            </label>
+            <?php MeprAppHelper::info_tooltip( 'mepr-enable-spc',
+                                               __('Single Page Checkout', 'memberpress'),
+                                               __('Enabling this will eliminate the second step of the checkout process. Users will be able to enter their personal and payment details during the first step instead. This setting has no effect for PayPal Standard or Express Checkout gateways.', 'memberpress')
+                                             );
+            ?>
           </div>
+           */ ?>
         </div>
         <div class="mp-row">
           <div class="mp-col-9">

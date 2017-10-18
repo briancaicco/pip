@@ -119,7 +119,7 @@ class MeprProductsHelper {
   }
 
   public static function get_products_dropdown($chosen = null, $my_ID = null) {
-    $products = get_posts(array('numberposts' => -1, 'post_type' => MeprProduct::$cpt, 'post_status' => 'publish'));
+    $products = MeprCptModel::all('MeprProduct');
 
     ?>
       <select name="<?php echo MeprProduct::$who_can_purchase_str.'-product_id'; ?>[]">

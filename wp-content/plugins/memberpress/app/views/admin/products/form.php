@@ -67,7 +67,9 @@
                id="<?php echo MeprProduct::$allow_renewal_str; ?>"
                name="<?php echo MeprProduct::$allow_renewal_str; ?>"
                <?php checked($product->allow_renewal); ?> />
-        <?php _e('Allow Renewals', 'memberpress'); ?>
+        <label for="<?php echo MeprProduct::$allow_renewal_str; ?>">
+          <?php _e('Allow Renewals', 'memberpress'); ?>
+        </label>
       </p>
     </div>
     <div class="mepr-product-expire-fixed mepr-sub-box">
@@ -81,6 +83,15 @@
                name="<?php echo MeprProduct::$expire_fixed_str; ?>"
                id="<?php echo MeprProduct::$expire_fixed_str; ?>"
                value="<?php echo $product->expire_fixed; ?>" />
+      </p>
+      <p>
+        <input type="checkbox"
+               id="<?php echo MeprProduct::$allow_renewal_str; ?>-fixed"
+               name="<?php echo MeprProduct::$allow_renewal_str; ?>-fixed"
+               <?php checked($product->allow_renewal); ?> />
+        <label for="<?php echo MeprProduct::$allow_renewal_str; ?>-fixed">
+          <?php _e('Allow Annual Renewals', 'memberpress'); ?>
+        </label>
       </p>
     </div>
   </div>

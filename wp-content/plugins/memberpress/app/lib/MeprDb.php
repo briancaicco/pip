@@ -276,6 +276,7 @@ class MeprDb {
            cc_last4 varchar(10) DEFAULT '4242',
            cc_exp_month varchar(10) DEFAULT '01',
            cc_exp_year varchar(10) DEFAULT '1999',
+           token varchar(64) DEFAULT NULL,
            PRIMARY KEY  (id),
            KEY mp_user_id (user_id),
            KEY mp_product_id (product_id),
@@ -295,7 +296,8 @@ class MeprDb {
            KEY mp_created_at (created_at),
            KEY mp_cc_last4 (cc_last4),
            KEY mp_cc_exp_month (cc_exp_month),
-           KEY mp_cc_exp_year (cc_exp_year)
+           KEY mp_cc_exp_year (cc_exp_year),
+           KEY mp_token (token)
         ) {$char_col};";
 
       dbDelta($subscriptions);
@@ -320,6 +322,7 @@ class MeprDb {
           total_spent decimal(16,2) DEFAULT 0,
           created_at datetime NOT NULL,
           updated_at datetime NOT NULL,
+          trial_txn_count bigint(20),
           PRIMARY KEY  (id),
           UNIQUE KEY mp_user_id (user_id),
           KEY mp_first_txn_id (latest_txn_id),
@@ -336,7 +339,8 @@ class MeprDb {
           KEY mp_login_count (login_count),
           KEY mp_total_spent (total_spent),
           KEY mp_created_at (created_at),
-          KEY mp_updated_at (updated_at)
+          KEY mp_updated_at (updated_at),
+          KEY mp_trial_txn_count (trial_txn_count)
         ) {$char_col};
       ";
 
@@ -368,13 +372,6 @@ class MeprDb {
   public function after_upgrade($from_version) {
     global $wpdb;
 
-    // Forcably take care of the user_id column
-    if($this->column_exists($this->events,'user_id')) {
-      $wpdb->query("UPDATE `{$this->events}` SET evt_id_type='users', evt_id=user_id");
-      $this->remove_column($this->events,'event_user_id','KEY');
-      $this->remove_column($this->events,'user_id');
-    }
-
     MeprDbMigrations::run($from_version, MEPR_VERSION);
 
     return true;
@@ -393,6 +390,17 @@ class MeprDb {
     $res = $wpdb->get_results( $query );
 
     return !empty($res);
+  }
+
+  public function add_column($table, $column, $type, $index=false) {
+    global $wpdb;
+
+    $query = "ALTER TABLE {$table} ADD COLUMN {$column} {$type}";
+    if($index) {
+      $query .= ", ADD INDEX mp_{$column} ({$column})";
+    }
+
+    return $wpdb->query($query);
   }
 
   public function remove_column($table, $column, $type='COLUMN') {
@@ -723,6 +731,18 @@ class MeprDb {
         $important_join_str = $join_str;
       }
       else {
+        $search_join = explode('.', $search_field);
+        $search_join_str = $search_join[0];
+        if(strpos($important_join_str, "AS {$search_join_str}") === false) {
+          //we know we have find the join
+          foreach($normal_joins as $join) {
+            if(strpos($join, $search_join_str) !== false) {
+              //include it in importants
+              $important_joins[] = $join;
+            }
+          }
+          $important_join_str = " " . implode(" ", $important_joins);
+        }
         $search_str = $searches[] = $wpdb->prepare("{$search_field} LIKE %s", "%{$search}%");
       }
     }
@@ -828,4 +848,3 @@ class MeprDb {
     return false;
   }
 }
-

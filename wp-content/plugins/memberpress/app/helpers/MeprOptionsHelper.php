@@ -56,7 +56,7 @@ class MeprOptionsHelper {
   }
 
   public static function payment_currencies_dropdown($field_name, $payment_currency) {
-    $payment_currencies = MeprHooks::apply_filters('mepr-currency-symbols', array('$', '£', '€', '¥', 'kr', 'Kn', 'R$', '฿', '₹', 'zł', ' лв', ' Ft', 'Rp', 'R', '₪', '﷼', 'CHF', 'KSh', 'RM', 'руб', 'NT$', 'Mex$', 'P', 'lei', 'JOD', '₺', 'S/.', '₱', 'د.إ', 'Kč', '₦', '₩'));
+    $payment_currencies = MeprHooks::apply_filters('mepr-currency-symbols', array('$', '£', '€', '¥', 'kr', 'Kn', 'R$', '฿', '₹', 'zł', ' лв', ' Ft', 'Rp', 'R', '₪', '﷼', 'CHF', 'KSh', 'RM', 'руб', 'NT$', 'Mex$', 'P', 'lei', 'JOD', '₺', 'S/.', '₱', 'د.إ', 'Kč', '₦', '₩', '₫'));
     $field_value = isset($_POST[$field_name])?$_POST[$field_name]:null;
 
     ?>
@@ -73,7 +73,7 @@ class MeprOptionsHelper {
   }
 
   public static function payment_currency_code_dropdown($field_name, $code) {
-    $codes = MeprHooks::apply_filters('mepr-currency-codes', array('USD', 'AED', 'AUD', 'BGN', 'BRL', 'BWP', 'CAD', 'CHF', 'COP', 'CZK', 'DKK', 'EUR', 'GBP', 'HKD', 'HRK', 'HUF', 'HUN', 'IDR', 'ILS', 'INR', 'JOD', 'JPY', 'KES', 'KRW', 'MXN', 'MYR', 'NGN', 'NOK', 'NZD', 'PEN', 'PHP', 'PLN', 'RON', 'RUB', 'SAR', 'SEK', 'SGD', 'THB', 'TRY', 'TWN', 'ZAR'));
+    $codes = MeprHooks::apply_filters('mepr-currency-codes', array('USD', 'AED', 'AUD', 'BGN', 'BRL', 'BWP', 'CAD', 'CHF', 'COP', 'CZK', 'DKK', 'EUR', 'GBP', 'HKD', 'HRK', 'HUF', 'HUN', 'IDR', 'ILS', 'INR', 'JOD', 'JPY', 'KES', 'KRW', 'MXN', 'MYR', 'NGN', 'NOK', 'NZD', 'PEN', 'PHP', 'PLN', 'RON', 'RUB', 'SAR', 'SEK', 'SGD', 'THB', 'TRY', 'TWN', 'VND', 'ZAR'));
     $field_value = isset($_POST[$field_name])?$_POST[$field_name]:null;
 
     ?>
@@ -90,7 +90,7 @@ class MeprOptionsHelper {
   }
 
   public static function payment_language_code_dropdown($field_name, $code) {
-    $codes = MeprHooks::apply_filters('mepr-language-codes', array('US', 'AE', 'AR', 'AU', 'BG', 'BR', 'CH', 'CN', 'CO', 'CZ', 'DE', 'DK', 'EN', 'ES', 'FI', 'FR', 'GB', 'HE', 'HR', 'HU', 'ID', 'IT', 'JP', 'KR', 'MS', 'MX', 'NL', 'NO', 'PE', 'PH', 'PL', 'PT', 'RO', 'RU', 'SE', 'SK', 'SR', 'SW', 'TH', 'TN', 'TR', 'TW', 'ZA'));
+    $codes = MeprHooks::apply_filters('mepr-language-codes', array('US', 'AE', 'AR', 'AU', 'BG', 'BR', 'CH', 'CN', 'CO', 'CZ', 'DE', 'DK', 'EN', 'ES', 'FI', 'FR', 'GB', 'HE', 'HR', 'HU', 'ID', 'IT', 'JP', 'KR', 'MS', 'MX', 'NL', 'NO', 'PE', 'PH', 'PL', 'PT', 'RO', 'RU', 'SE', 'SK', 'SR', 'SW', 'TH', 'TN', 'TR', 'TW', 'VI', 'ZA'));
     $field_value = isset($_POST[$field_name])?$_POST[$field_name]:null;
 
     ?>
@@ -131,6 +131,7 @@ class MeprOptionsHelper {
                                       'field_type'      => 'text',
                                       'default_value'   => '',
                                       'show_on_signup'  => false,
+                                      'show_in_account' => true,
                                       'required'        => false,
                                       'options'         => array()));
 
@@ -358,4 +359,3 @@ class MeprOptionsHelper {
     <?php
   }
 } //End class
-

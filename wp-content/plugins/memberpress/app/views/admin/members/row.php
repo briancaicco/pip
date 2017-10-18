@@ -98,6 +98,61 @@ if(!empty($records)) {
           <td <?php echo $attributes; ?>><a href="<?php echo admin_url('admin.php?page=memberpress-subscriptions&member=' . urlencode($rec->username)); ?>"><?php echo $rec->sub_count; ?></a></td>
           <?php
           break;
+        case 'col_sub_info':
+          $admin_sub_url = admin_url('admin.php?page=memberpress-subscriptions&member=' . urlencode($rec->username));
+          $sub_counts = array(
+            __('Enabled', 'memberpress') => 'active',
+            __('Stopped', 'memberpress') => 'cancelled',
+            __('Pending', 'memberpress') => 'pending',
+            __('Paused', 'memberpress')  => 'suspended',
+          );
+          ?>
+          <td <?php echo $attributes; ?>>
+          <?php
+          foreach($sub_counts as $label => $status) {
+            $status_count = "{$status}_sub_count";
+            if($rec->$status_count > 0) {
+              ?>
+                <div><a href="<?php echo $admin_sub_url . '&status=' . $status; ?>"><?php echo "{$rec->$status_count} {$label}"; ?></a></div>
+              <?php
+            }
+          }
+          ?>
+          </td>
+          <?php
+          break;
+        case 'col_txn_info':
+          $admin_txn_url = admin_url('admin.php?page=memberpress-trans&member=' . urlencode($rec->username));
+          $other_count = $rec->txn_count;
+          ?>
+          <td <?php echo $attributes; ?>>
+          <?php
+          if($rec->active_txn_count > 0) {
+            $other_count = $other_count - $rec->active_txn_count;
+            ?>
+              <div><a href="<?php echo $admin_txn_url . '&status=complete'; ?>"><?php printf("%d %s", $rec->active_txn_count, __('Complete', 'memberpress')); ?></a></div>
+            <?php
+          }
+          if($rec->expired_txn_count > 0) {
+            $other_count = $other_count - $rec->expired_txn_count;
+            ?>
+              <div><a href="<?php echo $admin_txn_url; ?>"><?php printf("%d %s", $rec->expired_txn_count, __('Expired', 'memberpress')); ?></a></div>
+            <?php
+          }
+          if($rec->trial_txn_count > 0) {
+            ?>
+              <div><?php printf("%d %s", $rec->trial_txn_count, __('Trial', 'memberpress')); ?></div>
+            <?php
+          }
+          if($other_count > 0) {
+            ?>
+              <div><a href="<?php echo $admin_txn_url; ?>"><?php printf("%d %s", $other_count, __('Other', 'memberpress')); ?></a></div>
+            <?php
+          }
+          ?>
+          </td>
+          <?php
+          break;
         case 'col_info':
           ?>
           <td <?php echo $attributes; ?>>

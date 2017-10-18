@@ -14,7 +14,6 @@ class MeprDbMigrations {
 
     foreach($migration_versions as $migration_version) {
       $config = $mig->get_migration($migration_version);
-
       foreach($config['migrations'] as $callbacks) {
         // Store current migration config in the database so the
         // progress AJAX endpoint can see what's going on
@@ -33,7 +32,9 @@ class MeprDbMigrations {
 
     foreach($migration_versions as $migration_version) {
       $config = $mig->get_migration($migration_version);
-      if(call_user_func(array($mig, $config['show_ui']))) {
+      if( isset($config['show_ui']) &&
+          $config['show_ui'] !== false &&
+          call_user_func(array($mig, $config['show_ui'])) ) {
         return true;
       }
     }
@@ -59,6 +60,31 @@ class MeprDbMigrations {
           ),
         ),
       ),
+      '1.3.9' => array(
+        'show_ui' => false,
+        'migrations' => array(
+          array(
+            'migration' => 'add_trial_txn_count_column_to_members_table_003',
+            'check'     => false,
+            'message'   => false,
+          ),
+          array(
+            'migration' => 'sub_post_meta_to_table_token_004',
+            'check'     => false,
+            'message'   => false,
+          ),
+        ),
+      ),
+      '1.3.11' => array(
+        'show_ui' => false,
+        'migrations' => array(
+          array(
+            'migration' => 'fix_all_the_expires_006',
+            'check'     => false,
+            'message'   => false,
+          )
+        )
+      )
     );
   }
 
@@ -182,24 +208,73 @@ class MeprDbMigrations {
     MeprUser::update_all_member_data(true);
   }
 
-  //public function create_and_migrate_reports_tables_003() {
-  //  // TODO: This will happen in a future release
-  //}
+  public function add_trial_txn_count_column_to_members_table_003() {
+    MeprUser::update_all_member_data(false, '', array('txn_count', 'active_txn_count', 'expired_txn_count', 'trial_txn_count'));
+  }
 
-  //public function delete_old_subscriptions_004() {
-  //  //// Do we really want to do this destructive action? Maybe not yet :) ...
-  //  //$res = $wpdb->query("DELETE FROM {$wpdb->postmeta} WHERE post_id IN (SELECT p.ID FROM {$wpdb->posts} AS p WHERE p.post_type='mepr-subscriptions')");
-  //  //if(MeprUtils::is_wp_error($res)) {
-  //  //  set_transient('mepr_migration_error',$res->get_error_message(),(60*60));
-  //  //  $wpdb->query('ROLLBACK');
-  //  //  return false;
-  //  //}
-  //  //$wpdb->query("DELETE FROM {$wpdb->posts} WHERE post_type='mepr-subscriptions'");
-  //  //if(MeprUtils::is_wp_error($res)) {
-  //  //  set_transient('mepr_migration_error',$res->get_error_message(),(60*60));
-  //  //  $wpdb->query('ROLLBACK');
-  //  //  return false;
-  //  //}
-  //}
+  public function sub_post_meta_to_table_token_004() {
+    global $wpdb;
+
+    $mepr_db = MeprDb::fetch();
+
+    $q = $wpdb->prepare("
+        SELECT *
+          FROM {$wpdb->postmeta}
+         WHERE meta_key IN (%s,%s,%s,%s)
+      ",
+      '_mepr_authnet_order_invoice', //Use actual string here, becasue Authorize.net Class doens't exist in business edition and what if we change the class names in the future?
+      '_mepr_paypal_token',
+      '_mepr_paypal_pro_token',
+      '_mepr_stripe_plan_id'
+    );
+
+    $tokens = $wpdb->get_results($q);
+
+    foreach($tokens as $token) {
+      $q = $wpdb->prepare("
+          UPDATE {$mepr_db->subscriptions}
+             SET token=%s
+           WHERE id=%d
+        ",
+        $token->meta_value,
+        $token->post_id
+      );
+
+      $wpdb->query($q);
+    }
+  }
+
+  public function fix_all_the_expires_006() {
+    global $wpdb;
+    $mepr_db = MeprDb::fetch();
+
+    //Gimme all the transactions since 2017-07-15 with trials
+    $query = $wpdb->prepare("
+      SELECT t.id
+      FROM {$mepr_db->transactions} t
+      JOIN {$mepr_db->subscriptions} s
+        ON s.id = t.subscription_id
+      WHERE s.trial_days > 0
+        AND t.status = %s
+        AND t.created_at > '2017-07-15'
+    ",
+    MeprTransaction::$complete_str
+    );
+
+    $transactions = $wpdb->get_results($query);
+    foreach($transactions as $transaction_id) {
+      $transaction = new MeprTransaction($transaction_id->id);
+      $subscription = $transaction->subscription();
+      //Get the expiratoin with the bug fix
+      $txn_created_at = strtotime($transaction->created_at);
+      $expected_expiration = $subscription->get_expires_at($txn_created_at);
+      $expires_at = MeprUtils::ts_to_mysql_date($expected_expiration);
+      //Do we actually need to fix anything?
+      if($expires_at != $transaction->expires_at) {
+        //We're just going to do this via SQL to skip hooks
+        MeprUtils::debug_log("Found transaction {$transaction->id} to update from {$transaction->expires_at} to {$expires_at}");
+        $wpdb->update($mepr_db->transactions, array('expires_at' => $expires_at), array('id' => $transaction->id));
+      }
+    }
+  }
 }
-

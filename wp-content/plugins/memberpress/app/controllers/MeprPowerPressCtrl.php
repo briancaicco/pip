@@ -7,7 +7,7 @@ class MeprPowerPressCtrl extends MeprBaseCtrl {
   }
 
   public function powerpress_caps($caps) {
-    $products = get_posts(array('posts_per_page'=>-1,'post_type'=>MeprProduct::$cpt));
+    $products = MeprCptModel::all('MeprProduct');
 
     $caps['mepr-active'] = __('MemberPress Active Member', 'memberpress');
 

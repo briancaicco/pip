@@ -29,27 +29,27 @@
     ?>
       <tr class="<?php echo $alternate; ?>">
         <td>
-          <a href="<?php echo admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year); ?>">
+          <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year), 'customize_transactions', 'mepr_transactions_nonce'); ?>">
             <?php echo MeprReports::make_table_date($curr_month, $r->day, $curr_year); ?>
           </a>
         </td>
         <td>
-          <a href="<?php echo admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=pending'); ?>">
+          <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=pending'), 'customize_transactions', 'mepr_transactions_nonce'); ?>">
             <?php echo $r->p; $pTotal += $r->p; ?>
           </a>
         </td>
         <td>
-          <a href="<?php echo admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=failed'); ?>">
+          <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=failed'), 'customize_transactions', 'mepr_transactions_nonce'); ?>">
             <?php echo $r->f; $fTotal += $r->f; ?>
           </a>
         </td>
         <td>
-          <a href="<?php echo admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=complete'); ?>">
+          <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=complete'), 'customize_transactions', 'mepr_transactions_nonce'); ?>">
             <?php echo $r->c; $cTotal += $r->c; ?>
           </a>
         </td>
         <td>
-          <a href="<?php echo admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=refunded'); ?>">
+          <a href="<?php echo wp_nonce_url(admin_url('admin.php?page=memberpress-trans&membership='.$curr_product.'&month='.$curr_month.'&day='.$r->day.'&year='.$curr_year.'&status=refunded'), 'customize_transactions', 'mepr_transactions_nonce'); ?>">
             <?php echo $r->r; $rTotal += $r->r; ?>
           </a>
         </td>
@@ -79,7 +79,17 @@
 </table>
 <div>&nbsp;</div>
 <div>
-  <a class="button" href="<?php echo admin_url( "admin-ajax.php?action=mepr_export_report&export=monthly&{$_SERVER['QUERY_STRING']}" ); ?>"><?php _e('Export as CSV', 'memberpress'); ?></a>
+  <a class="button" href="<?php
+    echo MeprUtils::admin_url(
+      "admin-ajax.php", // $path
+      array('export_report','mepr_reports_nonce'), // $nonce
+      array( // $add_params
+        'action'=>'mepr_export_report',
+        'export'=>'monthly'
+      ),
+      true, // $include_query_string
+      array('page','main-view') // $exclude_params
+    ); ?>"><?php _e('Export as CSV', 'memberpress'); ?></a>
   <?php MeprHooks::do_action('mepr-report-footer','monthly'); ?>
 </div>
 

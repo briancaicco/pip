@@ -5,7 +5,7 @@ class MeprCouponsCtrl extends MeprCptCtrl {
   public function load_hooks() {
     add_filter('bulk_actions-edit-memberpresscoupon', 'MeprCouponsCtrl::disable_bulk');
     add_filter('post_row_actions', 'MeprCouponsCtrl::disable_row', 10, 2);
-    add_action('admin_enqueue_scripts', 'MeprCouponsCtrl::enqueue_scripts');
+    add_action('admin_enqueue_scripts', 'MeprCouponsCtrl::admin_enqueue_scripts');
     add_action('manage_posts_custom_column', 'MeprCouponsCtrl::custom_columns', 10, 2);
     add_filter('manage_edit-memberpresscoupon_columns', 'MeprCouponsCtrl::columns');
     add_action('init', 'MeprCoupon::expire_old_coupons_and_cleanup_db');
@@ -21,6 +21,8 @@ class MeprCouponsCtrl extends MeprCptCtrl {
     //Ajax coupon validation
     add_action('wp_ajax_mepr_validate_coupon', 'MeprCouponsCtrl::validate_coupon_ajax');
     add_action('wp_ajax_nopriv_mepr_validate_coupon', 'MeprCouponsCtrl::validate_coupon_ajax');
+    add_action('wp_ajax_mepr_update_price_string_with_coupon', 'MeprCouponsCtrl::update_price_string_with_coupon_ajax');
+    add_action('wp_ajax_nopriv_mepr_update_price_string_with_coupon', 'MeprCouponsCtrl::update_price_string_with_coupon_ajax');
   }
 
   public function register_post_type() {
@@ -161,8 +163,8 @@ class MeprCouponsCtrl extends MeprCptCtrl {
         $coupon->usage_amount = 0;
       }
 
-      $coupon->discount_type = isset($_POST[MeprCoupon::$discount_type_str])?$_POST[MeprCoupon::$discount_type_str]:'percent';
-      $coupon->discount_amount = isset($_POST[MeprCoupon::$discount_amount_str])?$_POST[MeprCoupon::$discount_amount_str]:0;
+      $coupon->discount_type = isset($_POST[MeprCoupon::$discount_type_str])?sanitize_text_field($_POST[MeprCoupon::$discount_type_str]):'percent';
+      $coupon->discount_amount = isset($_POST[MeprCoupon::$discount_amount_str])?(float)sanitize_text_field($_POST[MeprCoupon::$discount_amount_str]):0;
 
       if($coupon->discount_type == 'percent' && $coupon->discount_amount > 100) {
         $coupon->discount_amount = 100; //Make sure percent is never > 100
@@ -224,7 +226,7 @@ class MeprCouponsCtrl extends MeprCptCtrl {
     return $actions;
   }
 
-  public static function enqueue_scripts($hook) {
+  public static function admin_enqueue_scripts($hook) {
     global $current_screen;
 
     $l10n = array('mepr_no_products_message' => __('Please select at least one Membership before saving.', 'memberpress'));
@@ -251,14 +253,16 @@ class MeprCouponsCtrl extends MeprCptCtrl {
   }
 
   public static function validate_coupon_ajax($code = null, $product_id = null) {
+    check_ajax_referer('mepr_coupons', 'coupon_nonce');
+
     if(empty($code) || empty($product_id)) {
       if(!isset($_POST['code']) || empty($_POST['code']) || !isset($_POST['prd_id']) || empty($_POST['prd_id'])) {
         echo 'false';
         die();
       }
       else {
-        $code = stripslashes($_POST['code']);
-        $product_id = stripslashes($_POST['prd_id']);
+        $code = wp_unslash($_POST['code']);
+        $product_id = wp_unslash($_POST['prd_id']);
       }
     }
 
@@ -271,6 +275,23 @@ class MeprCouponsCtrl extends MeprCptCtrl {
       echo 'false';
     }
 
+    die();
+  }
+
+  //Coupon code should have already been validated with validate_coupon_ajax() above before calling this
+  public static function update_price_string_with_coupon_ajax() {
+    check_ajax_referer('mepr_coupons', 'coupon_nonce');
+
+    if(!isset($_POST['code']) || empty($_POST['code']) || !isset($_POST['prd_id']) || empty($_POST['prd_id'])) {
+      echo 'false';
+      die();
+    }
+    else {
+      $code = sanitize_text_field(wp_unslash($_POST['code']));
+      $product = new MeprProduct(sanitize_key(wp_unslash($_POST['prd_id'])));
+    }
+
+    echo MeprProductsHelper::display_invoice( $product, $code );
     die();
   }
 

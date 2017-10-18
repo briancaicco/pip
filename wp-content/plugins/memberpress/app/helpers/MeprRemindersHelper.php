@@ -108,7 +108,7 @@ class MeprRemindersHelper {
   public static function products_multiselect($field_name, $selected) {
     $formatted = array();
 
-    $all_products = get_posts(array('numberposts' => -1, 'post_type' => 'memberpressproduct', 'post_status' => 'publish'));
+    $all_products = MeprCptModel::all('MeprProduct');
 
     foreach($all_products as $prd) {
       $formatted[$prd->ID] = $prd->post_title;

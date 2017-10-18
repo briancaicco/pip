@@ -107,7 +107,7 @@ class MeprUpdateCtrl extends MeprBaseCtrl {
 
     $message = '';
     $errors = array();
-    $mepr_options->mothership_license = stripslashes($_POST[$mepr_options->mothership_license_str]);
+    $mepr_options->mothership_license = sanitize_text_field(wp_unslash($_POST[$mepr_options->mothership_license_str]));
 
     try {
       $act = self::send_mothership_request("/license_keys/jactivate/{$mepr_options->mothership_license}", self::activation_args(true), 'post');
@@ -123,12 +123,9 @@ class MeprUpdateCtrl extends MeprBaseCtrl {
   }
 
   public static function is_activated() {
-    //$mepr_options = MeprOptions::fetch();
-    //$activated = get_option('mepr_activated');
-    $mepr_options = '1234';
-    $activated = true;
-    //return (!empty($mepr_options->mothership_license) && !empty($activated));
-    return true;  
+    $mepr_options = MeprOptions::fetch();
+    $activated = get_option('mepr_activated');
+    return (!empty($mepr_options->mothership_license) && !empty($activated));
   }
 
   private static function activation_args($return_json=false) {
@@ -160,33 +157,31 @@ class MeprUpdateCtrl extends MeprBaseCtrl {
 
     $args = compact('domain');
 
-    // try {
-    //   $act = self::send_mothership_request("/license_keys/check/{$mepr_options->mothership_license}", $args, 'get');
+    try {
+      $act = self::send_mothership_request("/license_keys/check/{$mepr_options->mothership_license}", $args, 'get');
 
-    //   if(!empty($act) && is_array($act) && isset($act['status'])) {
-    //     update_option('mepr_activated', ($act['status']=='enabled'));
-    //   }
-    // }
-    // catch(Exception $e) {
-    //   // TODO: For now do nothing if the server can't be reached
-    // }
+      if(!empty($act) && is_array($act) && isset($act['status'])) {
+        update_option('mepr_activated', ($act['status']=='enabled'));
+      }
+    }
+    catch(Exception $e) {
+      // TODO: For now do nothing if the server can't be reached
+    }
   }
 
   public static function maybe_activate() {
-    //$activated = get_option('mepr_activated');
+    $activated = get_option('mepr_activated');
 
-    $activated = true;
-
-    // if(!$activated) {
-    //   self::check_license_activation();
-    // }
+    if(!$activated) {
+      self::check_license_activation();
+    }
   }
 
   public static function activate_from_define() {
     $mepr_options = MeprOptions::fetch();
 
     if( defined('MEMBERPRESS_LICENSE_KEY') &&
-      $mepr_options->mothership_license != 'MEMBERPRESS_LICENSE_KEY' ) {
+        $mepr_options->mothership_license != MEMBERPRESS_LICENSE_KEY ) {
       $message = '';
       $errors = array();
       $mepr_options->mothership_license = stripslashes(MEMBERPRESS_LICENSE_KEY);
@@ -441,11 +436,8 @@ class MeprUpdateCtrl extends MeprBaseCtrl {
     // toplevel_page_memberpress will only be accessible if the plugin is not enabled
     if($hook == 'memberpress_page_memberpress-updates' ||
        (!MeprUpdateCtrl::is_activated() && $hook == 'toplevel_page_memberpress')) {
-      wp_register_style('mepr-settings-table', MEPR_CSS_URL.'/settings_table.css', array(), MEPR_VERSION);
-      wp_enqueue_style('mepr-activate-css', MEPR_CSS_URL.'/admin-activate.css', array('mepr-settings-table'), MEPR_VERSION);
-
-      wp_register_script('mepr-settings-table', MEPR_JS_URL.'/settings_table.js', array(), MEPR_VERSION);
-      wp_enqueue_script('mepr-activate-js', MEPR_JS_URL.'/admin_activate.js', array('mepr-settings-table'), MEPR_VERSION);
+      wp_enqueue_style('mepr-activate-css', MEPR_CSS_URL.'/admin-activate.css', array('mepr-settings-table-css'), MEPR_VERSION);
+      wp_enqueue_script('mepr-activate-js', MEPR_JS_URL.'/admin_activate.js', array('mepr-settings-table-js'), MEPR_VERSION);
     }
   }
 

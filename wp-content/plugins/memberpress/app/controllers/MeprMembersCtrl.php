@@ -19,6 +19,10 @@ class MeprMembersCtrl extends MeprBaseCtrl {
     add_action('profile_update', array($this, 'update_member_meta'));
     add_action('delete_user', array($this, 'delete_member_meta'));
     add_action('mepr_table_controls_search', array($this, 'table_search_box'));
+    add_action('mepr_subscription_deleted', array($this, 'update_member_data_from_subscription'));
+    add_action('mepr_subscription_status_cancelled', array($this, 'update_member_data_from_subscription'));
+    add_action('mepr_subscription_status_suspended', array($this, 'update_member_data_from_subscription'));
+    add_action('mepr-transaction-expired', array($this, 'update_txn_meta'));
 
     if(is_multisite()) {
       add_action('add_user_to_blog', array($this, 'update_member_meta'));
@@ -27,7 +31,7 @@ class MeprMembersCtrl extends MeprBaseCtrl {
 
     // Export members
     add_action('wp_ajax_mepr_members', array($this, 'csv'));
-    add_action('mepr_control_table_footer', array($this, 'export_footer_link'), 10, 2);
+    add_action('mepr_control_table_footer', array($this, 'export_footer_link'), 10, 3);
 
     // Keeping members up to date
 
@@ -70,19 +74,17 @@ class MeprMembersCtrl extends MeprBaseCtrl {
       wp_register_script('mepr-table-controls-js', MEPR_JS_URL.'/table_controls.js', array('jquery'), MEPR_VERSION);
       wp_register_script('mepr-timepicker-js', MEPR_JS_URL.'/jquery-ui-timepicker-addon.js', array('jquery-ui-datepicker'));
       wp_register_script('mepr-date-picker-js', MEPR_JS_URL.'/date_picker.js', array('mepr-timepicker-js'), MEPR_VERSION);
-      wp_register_script('mp-settings-table', MEPR_JS_URL.'/settings_table.js', array(), MEPR_VERSION);
       wp_register_script('mphelpers', MEPR_JS_URL.'/mphelpers.js', array('suggest'), MEPR_VERSION);
       wp_enqueue_script(
         'mepr-members-js',
         MEPR_JS_URL.'/admin_members.js',
-        array('mepr-table-controls-js','jquery','mphelpers','mepr-date-picker-js','mp-settings-table'),
+        array('mepr-table-controls-js','jquery','mphelpers','mepr-date-picker-js','mepr-settings-table-js'),
         MEPR_VERSION
       );
 
       wp_register_style('mepr-jquery-ui-smoothness', $url);
       wp_register_style('jquery-ui-timepicker-addon', MEPR_CSS_URL.'/jquery-ui-timepicker-addon.css', array('mepr-jquery-ui-smoothness'));
-      wp_register_style('mp-settings-table', MEPR_CSS_URL.'/settings_table.css', array(), MEPR_VERSION);
-      wp_enqueue_style('mepr-members-css', MEPR_CSS_URL.'/admin-members.css', array('mp-settings-table','jquery-ui-timepicker-addon'), MEPR_VERSION);
+      wp_enqueue_style('mepr-members-css', MEPR_CSS_URL.'/admin-members.css', array('mepr-settings-table-css','jquery-ui-timepicker-addon'), MEPR_VERSION);
     }
   }
 
@@ -91,11 +93,8 @@ class MeprMembersCtrl extends MeprBaseCtrl {
     if($action == 'new') {
       $this->new_member();
     }
-    else if($action == 'create') {
+    else if(MeprUtils::is_post_request() && $action == 'create') {
       $this->create_member();
-    }
-    else if($action == 'edit') {
-      $this->edit_member();
     }
     else {
       $this->display_list();
@@ -111,8 +110,10 @@ class MeprMembersCtrl extends MeprBaseCtrl {
       'col_email' => __('Email', 'memberpress'),
       'col_status' => __('Status', 'memberpress'),
       'col_name' => __('Name', 'memberpress'),
-      'col_info' => __('Info', 'memberpress'),
-      //'col_txn_count' => __('Transactions', 'memberpress'),
+      'col_sub_info' => __('Subscriptions', 'memberpress'),
+      'col_txn_info' => __('Transactions', 'memberpress'),
+      // 'col_info' => __('Info', 'memberpress'),
+      // 'col_txn_count' => __('Transactions', 'memberpress'),
       //'col_expired_txn_count' => __('Expired Transactions'),
       //'col_active_txn_count' => __('Active Transactions'),
       //'col_sub_count' => __('Subscriptions', 'memberpress'),
@@ -156,6 +157,8 @@ class MeprMembersCtrl extends MeprBaseCtrl {
   }
 
   public function create_member() {
+    check_admin_referer('mepr_create_member', 'mepr_members_nonce');
+
     $mepr_options = MeprOptions::fetch();
     $errors = $this->validate_new_member();
     $message = '';
@@ -183,8 +186,19 @@ class MeprMembersCtrl extends MeprBaseCtrl {
         $transaction->user_id = $member->ID;
         $transaction->store();
 
+        //Trigger the right events here yo
+        MeprEvent::record('transaction-completed', $transaction);
+        MeprEvent::record('non-recurring-transaction-completed', $transaction);
+
+        //Run the signup hooks
+        MeprHooks::do_action("mepr-non-recurring-signup", $transaction);
+        MeprHooks::do_action('mepr-signup', $transaction);
+
         if($transaction->send_welcome) {
           MeprUtils::send_signup_notices($transaction, true);
+        }
+        else { //Trigger the event for this yo, as it's normally triggered in send_signup_notices
+          MeprEvent::record('member-signup-completed', $member, (object)$transaction->rec); //have to use ->rec here for some reason
         }
 
         $message = __('Your new member was created successfully.', 'memberpress');
@@ -197,11 +211,6 @@ class MeprMembersCtrl extends MeprBaseCtrl {
     }
 
     $this->new_member($member,$transaction,$errors,$message);
-  }
-
-  public function edit_member($user_id) {
-    $mepr_options = MeprOptions::fetch();
-    MeprView::render('/admin/members/edit_member', compact('mepr_options'));
   }
 
   public function add_screen_options() {
@@ -241,7 +250,12 @@ class MeprMembersCtrl extends MeprBaseCtrl {
 
   public function update_member_meta($user_id) {
     $u = new MeprUser($user_id);
-    $u->update_member_data($user_id);
+    $u->update_member_data();
+  }
+
+  public function update_member_data_from_subscription($subscription) {
+    $member = $subscription->user();
+    $member->update_member_data();
   }
 
   public function delete_member_meta($user_id) {
@@ -303,6 +317,8 @@ class MeprMembersCtrl extends MeprBaseCtrl {
   }
 
   public function csv() {
+    check_ajax_referer('export_members', 'mepr_members_nonce');
+
     $filename = 'members-'.time();
 
     // Since we're running WP_List_Table headless we need to do this
@@ -360,12 +376,11 @@ class MeprMembersCtrl extends MeprBaseCtrl {
     return $field;
   }
 
-  public function export_footer_link($action, $totalitems) {
+  public function export_footer_link($action, $totalitems, $itemcount) {
     if($action=='mepr_members') {
-      ?>
-      |
-      <a href="<?php echo admin_url('admin-ajax.php?action=' . $action . '&all=1&' . $_SERVER['QUERY_STRING']); ?>"><?php printf(__('Export all as CSV (%s records)', 'memberpress'), MeprAppHelper::format_number($totalitems)); ?></a>
-      <?php
+      MeprAppHelper::export_table_link($action, 'export_members', 'mepr_members_nonce', $itemcount);
+      ?> | <?php
+      MeprAppHelper::export_table_link($action, 'export_members', 'mepr_members_nonce', $totalitems, true);
     }
   }
 

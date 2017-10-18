@@ -7,20 +7,30 @@ abstract class MeprBaseModel {
   public function __get($name) {
     $value = null;
 
-    if($this->magic_method_handler_exists($name))
+    if($this->magic_method_handler_exists($name)) {
       $value = $this->call_magic_method_handler('get',$name);
+    }
 
     $object_vars = array_keys(get_object_vars($this));
     $rec_array = (array)$this->rec;
 
-    if(in_array($name, $object_vars))
+    if(in_array($name, $object_vars)) {
       $value = $this->$name;
+    }
     else if(array_key_exists($name, $rec_array))
     {
-      if(is_array($this->rec))
+      if(is_array($this->rec)) {
         $value = $this->rec[$name];
-      else
+      }
+      else {
         $value = $this->rec->$name;
+      }
+    }
+
+    // Alternative way to filter results through an sub class method
+    $extend_fn = "get_extend_{$name}";
+    if(method_exists($this,$extend_fn)) {
+      $value = call_user_func(array($this,$extend_fn), $value);
     }
 
     return MeprHooks::apply_filters('mepr-get-model-attribute-'.$name, $value, $this);
@@ -29,8 +39,15 @@ abstract class MeprBaseModel {
   public function __set($name, $value) {
     $value = MeprHooks::apply_filters('mepr-set-model-attribute-'.$name, $value, $this);
 
-    if($this->magic_method_handler_exists($name))
+    // Alternative way to filter results through an sub class method
+    $extend_fn = "set_extend_{$name}";
+    if(method_exists($this,$extend_fn)) {
+      $value = call_user_func(array($this,$extend_fn), $value);
+    }
+
+    if($this->magic_method_handler_exists($name)) {
       return $this->call_magic_method_handler('set', $name, $value);
+    }
 
     $object_vars = array_keys(get_object_vars($this));
     $rec_array = (array)$this->rec;
@@ -39,10 +56,12 @@ abstract class MeprBaseModel {
       $this->$name = $value;
     }
     else if(array_key_exists($name, $rec_array)) {
-      if(is_array($this->rec))
+      if(is_array($this->rec)) {
         $this->rec[$name] = $value;
-      else
+      }
+      else {
         $this->rec->$name = $value;
+      }
     }
     else {
       $this->$name = $value;
@@ -196,7 +215,7 @@ abstract class MeprBaseModel {
   }
 
   protected function validate_not_empty($var, $field='') {
-    if($var === '' || $var === '0' || $var === 0 || $var === false) {
+    if(empty($var)) {
       throw new MeprCreateException(sprintf(__('%s must not be empty', 'memberpress'),$field));
     }
   }

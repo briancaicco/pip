@@ -508,12 +508,12 @@ class MeprRule extends MeprCptModel {
     $post_rules = array();
 
     if(!isset($all_rules)) {
-      $all_rule_posts = get_posts(array('numberposts' => -1, 'post_type' => self::$cpt, 'post_status' => 'publish'));
+      $all_rule_posts = MeprCptModel::all('MeprRule');
 
       $all_rules = array();
 
       foreach($all_rule_posts as $curr_post) {
-        if($curr_post->post_type == self::$cpt) { //pre_get_posts filter can override our post_type above in get_posts()
+        if($curr_post->post_type == self::$cpt) { //pre_get_posts filter can override our post_type above in get_posts() - I think this is FALSE because get_posts should supress filters
           $all_rules[] = new MeprRule($curr_post->ID);
         }
       }
@@ -778,7 +778,7 @@ class MeprRule extends MeprCptModel {
 
     if($this->drip_after == 'fixed' && !empty($this->drip_after_fixed)) {
       $fixed_ts = strtotime($this->drip_after_fixed);
-      $has_dripped_fixed = $this->has_time_passed($fixed_ts, $this->drip_unit, $this->drip_amount);
+      $has_dripped_fixed = $this->has_time_passed($fixed_ts, $this->drip_unit, $this->drip_amount, true);
 
       return MeprHooks::apply_filters('mepr-rule-has-dripped-fixed', $has_dripped_fixed, $this);
     }
@@ -844,7 +844,7 @@ class MeprRule extends MeprCptModel {
     if($this->expires_after == 'fixed' && !empty($this->expires_after_fixed)) {
       $fixed_ts = strtotime($this->expires_after_fixed);
 
-      return $this->has_time_passed($fixed_ts, $this->drip_unit, $this->drip_amount);
+      return $this->has_time_passed($fixed_ts, $this->drip_unit, $this->drip_amount, true);
     }
 
     //Any product associated with this rule
@@ -878,11 +878,13 @@ class MeprRule extends MeprCptModel {
   }
 
   //Should probably put this in Utils at some point
-  public function has_time_passed($ts, $unit, $amount) {
+  public function has_time_passed($ts, $unit, $amount, $is_fixed = false) {
     //TODO -- should make this use local WP timezone instead
     //Convert $ts to the start of the day, so drips/expirations don't come in at odd hours throughout the day
-    $datetime = gmdate('Y-m-d 00:00:01', $ts);
-    $ts = strtotime($datetime);
+    if(!$is_fixed) {
+      $datetime = gmdate('Y-m-d 00:00:01', $ts);
+      $ts = strtotime($datetime);
+    }
 
     switch($unit) {
       case 'days':

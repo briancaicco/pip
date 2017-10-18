@@ -20,12 +20,16 @@ class MeprAppCtrl extends MeprBaseCtrl {
     add_action('add_meta_boxes', 'MeprAppCtrl::add_meta_boxes', 10, 2);
     add_action('save_post', 'MeprAppCtrl::save_meta_boxes');
     add_action('admin_notices', 'MeprAppCtrl::protected_notice');
+    add_action('admin_notices', 'MeprAppCtrl::php_min_version_check');
     add_action('wp_ajax_mepr_todays_date', 'MeprAppCtrl::todays_date');
     add_action('wp_ajax_mepr_close_about_notice', 'MeprAppCtrl::close_about_notice');
 
     // add_action('wp_ajax_mepr_load_css', 'MeprAppCtrl::load_css');
     // add_action('wp_ajax_nopriv_mepr_load_css', 'MeprAppCtrl::load_css');
     add_action('plugins_loaded', 'MeprAppCtrl::load_css');
+
+    //Load language - must be done after plugins are loaded to work with PolyLang/WPML
+    add_action('plugins_loaded', 'MeprAppCtrl::load_language');
 
     add_filter('months_dropdown_results', array($this, 'cleanup_list_table_month_dropdown'), 10, 2);
 
@@ -171,6 +175,20 @@ class MeprAppCtrl extends MeprBaseCtrl {
 
     if(!empty($rules)) {
       MeprView::render('/admin/errors', get_defined_vars());
+    }
+  }
+
+  public static function php_min_version_check() {
+    $current_php_version = phpversion();
+    if (version_compare($current_php_version, MEPR_MIN_PHP_VERSION, '<')) {
+      $message = __('<strong>MemberPress: Your PHP version (%s) is out of date!</strong> ' .
+                    'This version has reached official End Of Life and as such may expose your site to security vulnerabilities. ' .
+                    'Please contact your web hosting provider to update to %s or newer', 'memberpress');
+      ?>
+     <div class="notice notice-warning is-dismissible">
+         <p><?php printf($message, $current_php_version, MEPR_MIN_PHP_VERSION); ?></p>
+     </div>
+     <?php
     }
   }
 
@@ -400,10 +418,6 @@ class MeprAppCtrl extends MeprBaseCtrl {
 
   // Routes for wordpress pages -- we're just replacing content here folks.
   public static function page_route($content) {
-    //Fix for themes using G1 Framework (Stupid)
-    //Prevents multiple emails from being sent out
-    if(strpos($content, '###G1_START') !== false) { return $content; }
-
     $current_post = MeprUtils::get_current_post();
 
     //This isn't a post? Just return the content then
@@ -475,6 +489,14 @@ class MeprAppCtrl extends MeprBaseCtrl {
             if($action and $action == 'mepr_unauthorized') {
               $resource = isset($_REQUEST['redirect_to']) ? $_REQUEST['redirect_to'] : __('the requested resource.','memberpress');
               $unauth_message = wpautop(MeprHooks::apply_filters('mepr-unauthorized-message', do_shortcode($mepr_options->unauthorized_message), $current_post));
+
+              //Maybe override the message if a page id is set
+              if(isset($_GET['mepr-unauth-page'])) {
+                $unauth_post = get_post((int)$_GET['mepr-unauth-page']);
+                $unauth = MeprRule::get_unauth_settings_for($unauth_post);
+                $unauth_message = $unauth->message;
+              }
+
               $message = '<p id="mepr-unauthorized-for-resource">' . __('Unauthorized for', 'memberpress') . ': <span id="mepr-unauthorized-resource-url">' . $resource . '</span></p>' . $unauth_message;
             }
 
@@ -574,6 +596,12 @@ class MeprAppCtrl extends MeprBaseCtrl {
       );
 
       wp_enqueue_script('mp-signup', MEPR_JS_URL.'/signup.js', $prereqs);
+
+      $local_data = array(
+        'coupon_nonce' => wp_create_nonce('mepr_coupons')
+      );
+
+      wp_localize_script('mp-signup', 'MeprSignup', $local_data);
     }
 
     if($global_styles || $is_group_page) {
@@ -589,9 +617,12 @@ class MeprAppCtrl extends MeprBaseCtrl {
     $popup_ctrl = new MeprPopupCtrl();
     wp_enqueue_style('jquery-magnific-popup', $popup_ctrl->popup_css);
 
+    wp_register_style( 'mepr-settings-table-css',
+                        MEPR_CSS_URL.'/settings_table.css',
+                        array(), MEPR_VERSION );
     wp_enqueue_style( 'mepr-admin-shared-css',
                       MEPR_CSS_URL.'/admin-shared.css',
-                      array('wp-pointer','jquery-magnific-popup'), MEPR_VERSION );
+                      array('wp-pointer','jquery-magnific-popup','mepr-settings-table-css'), MEPR_VERSION );
     wp_enqueue_style( 'mepr-fontello-animation',
                       MEPR_VENDOR_LIB_URL.'/fontello/css/animation.css',
                       array(), MEPR_VERSION );
@@ -609,13 +640,17 @@ class MeprAppCtrl extends MeprBaseCtrl {
     wp_enqueue_script('mepr-tooltip', MEPR_JS_URL.'/tooltip.js', array('jquery','wp-pointer','jquery-magnific-popup'), MEPR_VERSION);
     wp_localize_script('mepr-tooltip', 'MeprTooltip', array( 'show_about_notice' => self::show_about_notice(),
                                                              'about_notice' => self::about_notice() ));
-    wp_enqueue_script('mepr-admin-shared-js', MEPR_JS_URL.'/admin_shared.js', array('jquery', 'jquery-magnific-popup'), MEPR_VERSION);
+    wp_register_script('mepr-settings-table-js', MEPR_JS_URL.'/settings_table.js', array('jquery'), MEPR_VERSION);
+    wp_enqueue_script('mepr-admin-shared-js', MEPR_JS_URL.'/admin_shared.js', array('jquery', 'jquery-magnific-popup', 'mepr-settings-table-js'), MEPR_VERSION);
 
     //Widget in the dashboard stuff
-    if($hook == 'index.php')
-    {
+    if($hook == 'index.php') {
+      $local_data = array(
+        'report_nonce' => wp_create_nonce('mepr_reports')
+      );
       wp_enqueue_script('mepr-google-jsapi', 'https://www.google.com/jsapi', array(), MEPR_VERSION);
       wp_enqueue_script('mepr-widgets-js', MEPR_JS_URL.'/admin_widgets.js', array('jquery', 'mepr-google-jsapi'), MEPR_VERSION, true);
+      wp_localize_script('mepr-widgets-js', 'MeprWidgetData', $local_data);
       wp_enqueue_style('mepr-widgets-css', MEPR_CSS_URL.'/admin-widgets.css', array(), MEPR_VERSION);
     }
   }
@@ -631,14 +666,21 @@ class MeprAppCtrl extends MeprBaseCtrl {
     $request_uri = $_SERVER['REQUEST_URI'];
 
     // Pretty Mepr Notifier ... prevents POST vars from being mangled
-    if(MeprUtils::match_uri('/mepr/notify/([^/]+)/([^/\?]+)/?',$request_uri,$m)) {
+    $notify_url_pattern = MeprUtils::gateway_notify_url_regex_pattern();
+    if(MeprUtils::match_uri($notify_url_pattern,$request_uri,$m)) {
       $plugin = 'mepr';
       $_REQUEST['pmt'] = $m[1];
       $action = $m[2];
     }
 
     try {
-      if(isset($_POST) && isset($_POST['mepr_process_signup_form'])) {
+      if(MeprUtils::is_post_request() && isset($_POST['mepr_process_signup_form'])) {
+        if( MeprUtils::is_user_logged_in() &&
+            isset($_POST['logged_in_purchase']) &&
+            $_POST['logged_in_purchase'] == 1 ) {
+          check_admin_referer( 'logged_in_purchase', 'mepr_checkout_nonce' );
+        }
+
         $checkout_ctrl = MeprCtrlFactory::fetch('checkout');
         $checkout_ctrl->process_signup_form();
       }
@@ -663,8 +705,9 @@ class MeprAppCtrl extends MeprBaseCtrl {
         $login_ctrl = MeprCtrlFactory::fetch('login');
         $login_ctrl->process_login_form();
       }
-      else if($plugin=='mepr' && $action=='updatepassword' &&
-              isset($_POST['mepr-new-password']) && isset($_POST['mepr-confirm-password'])) {
+      else if( MeprUtils::is_post_request() && $plugin=='mepr' && $action=='updatepassword' &&
+               isset($_POST['mepr-new-password']) && isset($_POST['mepr-confirm-password']) ) {
+        check_admin_referer( 'update_password', 'mepr_account_nonce' );
         $account_ctrl = MeprCtrlFactory::fetch('account');
         $account_ctrl->save_new_password($user_ID, $_POST['mepr-new-password'], $_POST['mepr-confirm-password']);
       }
@@ -702,8 +745,7 @@ class MeprAppCtrl extends MeprBaseCtrl {
     }
   }
 
-  public static function load_language()
-  {
+  public static function load_language() {
     /*
     * Allow add-ons and such to load .po/mo files from outside directories using this filter hook
     * WordPress will merge transalations if the textdomain is the same from multiple locations
@@ -713,20 +755,24 @@ class MeprAppCtrl extends MeprBaseCtrl {
     $paths[] = str_replace(WP_PLUGIN_DIR, '', MEPR_I18N_PATH);
 
     //Have to use WP_PLUGIN_DIR because load_plugin_textdomain doesn't accept abs paths
-    if(!file_exists(WP_PLUGIN_DIR . '/' . 'mepr-i18n'))
-    {
+    if(!file_exists(WP_PLUGIN_DIR . '/' . 'mepr-i18n')) {
       @mkdir(WP_PLUGIN_DIR . '/' . 'mepr-i18n');
 
       if(file_exists(WP_PLUGIN_DIR . '/' . 'mepr-i18n'))
         $paths[] = '/mepr-i18n';
     }
-    else
+    else {
       $paths[] = '/mepr-i18n';
+    }
 
     $paths = MeprHooks::apply_filters('mepr-textdomain-paths', $paths);
 
-    foreach($paths as $path)
+    foreach($paths as $path) {
       load_plugin_textdomain('memberpress', false, $path);
+    }
+
+    //Force a refresh of the $mepr_options so those strings can be marked as translatable in WPML/Polylang type plugins
+    MeprOptions::fetch(true);
   }
 
   // Utility function to grab the parameter whether it's a get or post
@@ -908,4 +954,3 @@ class MeprAppCtrl extends MeprBaseCtrl {
     exit($css);
   }
 } //End class
-

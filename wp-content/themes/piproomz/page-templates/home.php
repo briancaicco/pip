@@ -13,7 +13,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 //if( ! is_user_logged_in() ){
 ?>
 
-<div class="wrapper pt-0 pb-0" id="full-width-page-wrapper"> 
 
 	<section id="hero" class="jumbotron" >
 		
@@ -23,9 +22,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="gradient-bg"></div>
 				<div class="col-12 col-md-7 py-3 py-md-5 mb-md-3">
 
-					<h1 class="h2">The community where traders learn from other traders.</h1>
-					<p>Piproomz helps traders of any experience level connect with other traders, resources, and tools so they can dominate the markets.</p>
-					<a href="#pt-login" class="btn btn-lg btn-success">Join For Free</a>
+					<h1 class="h2 mb-3">The community where traders learn from other traders.</h1>
+					<p>Piproomz is helping traders of any experience level connect with other traders, resources, and tools so they can dominate the markets.</p>
+					<a href="<?php echo home_url (); ?>/register" class="btn btn-lg btn-success mt-3">Request Invitation</a>
 
 				</div>
 				<div class="col-12 col-md-5 card-wrap">
@@ -75,7 +74,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</section><!-- Section end -->
 
-</div><!-- Wrapper end -->
 
 <?php 
 

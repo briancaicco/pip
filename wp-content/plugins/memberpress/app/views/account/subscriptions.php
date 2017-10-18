@@ -36,7 +36,11 @@ if(!empty($subscriptions)) {
             $txn      = $sub->latest_txn();
             $pm       = $sub->payment_method();
             $prd      = $sub->product();
-            if(trim($txn->expires_at) == MeprUtils::db_lifetime() or empty($txn->expires_at)) {
+
+            if($txn == false || !($txn instanceof MeprTransaction) || $txn->id <= 0) {
+              $default = _x('Unknown', 'ui', 'memberpress');
+            }
+            else if(trim($txn->expires_at) == MeprUtils::db_lifetime() or empty($txn->expires_at)) {
               $default = _x('Never', 'ui', 'memberpress');
             }
             else {
@@ -56,14 +60,14 @@ if(!empty($subscriptions)) {
                 <div class="mepr-account-product"><?php echo MeprHooks::apply_filters('mepr-account-subscr-product-name', $prd->post_title, $txn); ?></div>
               <?php endif; ?>
 
-              <?php if(!$txn->is_sub_account()): ?>
+              <?php if($txn != false && $txn instanceof MeprTransaction && !$txn->is_sub_account()): ?>
                 <div class="mepr-account-subscr-id"><?php echo $s->subscr_id; ?></div>
               <?php endif; ?>
             </td>
             <td data-label="<?php _ex('Terms', 'ui', 'memberpress'); ?>">
               <div class="mepr-account-auto-rebill">
                 <?php
-                  if($txn->is_sub_account()) {
+                  if($txn != false && $txn instanceof MeprTransaction && $txn->is_sub_account()) {
                     ?>
                     <div class="mepr-account-sub-account-auto-rebill">
                       <?php _ex('Sub Account', 'ui', 'memberpress'); ?>
@@ -85,7 +89,7 @@ if(!empty($subscriptions)) {
               <?php if($prd->register_price_action != 'hidden'): ?>
                 <div class="mepr-account-terms">
                   <?php
-                    if($txn->is_sub_account()) {
+                    if($txn != false && $txn instanceof MeprTransaction && $txn->is_sub_account()) {
                       MeprHooks::do_action('mepr_account_subscriptions_sub_account_terms', $txn);
                     }
                     else {
@@ -102,34 +106,34 @@ if(!empty($subscriptions)) {
 
                         echo stripslashes($prd->register_price) . $coupon_str;
                       }
-                      else {
+                      else if($txn != false && $txn instanceof MeprTransaction) {
                         echo MeprTransactionsHelper::format_currency($txn);
                       }
                     }
                   ?>
                 </div>
               <?php endif; ?>
-              <?php if(!$txn->is_sub_account && $is_sub && ($nba = $sub->next_billing_at)): ?>
+              <?php if($txn != false && $txn instanceof MeprTransaction && !$txn->is_sub_account && $is_sub && ($nba = $sub->next_billing_at)): ?>
                 <div class="mepr-account-rebill"><?php printf(_x('Next Billing: %s', 'ui', 'memberpress'), MeprAppHelper::format_date($nba)); ?></div>
               <?php endif; ?>
             </td>
             <td data-label="<?php _ex('Active', 'ui', 'memberpress'); ?>"><div class="mepr-account-active"><?php echo $s->active; ?></div></td>
             <td data-label="<?php _ex('Created', 'ui', 'memberpress'); ?>">
-              <?php if($txn->is_sub_account()): ?>
+              <?php if($txn != false && $txn instanceof MeprTransaction && $txn->is_sub_account()): ?>
                 <div>--</div>
               <?php else: ?>
                 <div class="mepr-account-created-at"><?php echo MeprAppHelper::format_date($s->created_at); ?></div>
               <?php endif; ?>
             </td>
             <td data-label="<?php _ex('Expires', 'ui', 'memberpress'); ?>">
-              <?php if($txn->is_sub_account()): ?>
+              <?php if($txn != false && $txn instanceof MeprTransaction && $txn->is_sub_account()): ?>
                 <div>--</div>
               <?php else: ?>
-                <div class="mepr-account-expires-at"><?php if($txn->txn_type == MeprTransaction::$payment_str || ($is_sub && !$sub->in_grace_period())) { echo MeprAppHelper::format_date($s->expires_at, $default); } else { _ex('processing', 'ui', 'memberpress'); } ?></div>
+                <div class="mepr-account-expires-at"><?php if($txn != false && $txn instanceof MeprTransaction && $txn->txn_type == MeprTransaction::$payment_str || ($is_sub && !$sub->in_grace_period())) { echo MeprAppHelper::format_date($s->expires_at, $default); } else { _ex('processing', 'ui', 'memberpress'); } ?></div>
               <?php endif; ?>
             </td>
             <td data-label="<?php _ex('Card Expires', 'ui', 'memberpress'); ?>">
-              <?php if($txn->is_sub_account()): ?>
+              <?php if($txn != false && $txn instanceof MeprTransaction && $txn->is_sub_account()): ?>
                 <div>--</div>
               <?php else: ?>
                 <?php if( ($exp_mo = $sub->cc_exp_month) && ($exp_yr = $sub->cc_exp_year) ): ?>
@@ -143,7 +147,7 @@ if(!empty($subscriptions)) {
             <td data-label="<?php _ex('Actions', 'ui', 'memberpress'); ?>">
                 <div class="mepr-account-actions">
                   <?php
-                  if($txn->is_sub_account()) {
+                  if($txn != false && $txn instanceof MeprTransaction && $txn->is_sub_account()) {
                     echo '--';
                   }
                   else {
@@ -160,13 +164,19 @@ if(!empty($subscriptions)) {
                     elseif(!$is_sub && !empty($prd->ID)) {
                       if($prd->is_renewable()) {
                         if(($prd->is_renewal() && strpos($s->active, 'mepr-inactive') === false) || !$mepr_current_user->is_already_subscribed_to($prd->ID)) {
-                          ?>
-                            <a href="<?php echo $prd->url(); ?>" class="mepr-account-row-action mepr-account-renew"><?php _ex('Renew', 'ui', 'memberpress'); ?></a>
-                          <?php
+                          if(!$prd->group()):
+                            ?>
+                              <a href="<?php echo $prd->url(); ?>" class="mepr-account-row-action mepr-account-renew"><?php _ex('Renew', 'ui', 'memberpress'); ?></a>
+                            <?php
+                          elseif($mepr_current_user->is_already_subscribed_to($prd->ID) && strpos($s->active, 'mepr-inactive') === false): //If we're in a group and we're subscribed to this membership, and this membership is still active - show the renewal link
+                            ?>
+                              <a href="<?php echo $prd->url(); ?>" class="mepr-account-row-action mepr-account-renew"><?php _ex('Renew', 'ui', 'memberpress'); ?></a>
+                            <?php
+                          endif;
                         }
                       }
 
-                      if($prd->group() !== false && strpos($s->active, 'mepr-inactive') === false) {
+                      if($txn != false && $txn instanceof MeprTransaction && $prd->group() !== false && strpos($s->active, 'mepr-inactive') === false) {
                         MeprAccountHelper::group_link($txn);
                       }
                       elseif(!$prd->group() && strpos($s->active, 'mepr-inactive') !== false && !$prd->is_renewable()) {
@@ -180,7 +190,7 @@ if(!empty($subscriptions)) {
                         if(!($group = $prd->group())) {
                           MeprAccountHelper::purchase_link($prd);
                         }
-                        else {
+                        else if($txn != false && $txn instanceof MeprTransaction) {
                           $sub_in_group   = $mepr_current_user->subscription_in_group($group);
                           $life_in_group  = $mepr_current_user->lifetime_subscription_in_group($group);
 

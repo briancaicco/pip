@@ -41,7 +41,11 @@
   width: 15%;
 }
 
-#col_info {
+#col_txn_info {
+  width: 12%;
+}
+
+#col_sub_info {
   width: 12%;
 }
 

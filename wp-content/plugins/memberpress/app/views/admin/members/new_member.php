@@ -7,6 +7,7 @@
   <?php MeprView::render('/admin/errors', compact('errors','message')); ?>
   <form action="" method="post">
     <input type="hidden" name="action" value="create" />
+    <?php wp_nonce_field('mepr_create_member', 'mepr_members_nonce'); ?>
     <table class="form-table">
       <tbody>
         <tr valign="top">
@@ -82,7 +83,7 @@
           </th>
           <td>
             <input type="checkbox" id="member_send_notification" name="member[send_notification]" <?php checked($member->send_notification); ?> />
-            <span><?php _e('Send the new member an email with their username & password', 'memberpress'); ?></span>
+            <span><?php _e('Send the new member an email with their username', 'memberpress'); ?></span>
           </td>
         </tr>
         <tr valign="top">

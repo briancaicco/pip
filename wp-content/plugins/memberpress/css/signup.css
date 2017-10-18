@@ -64,6 +64,9 @@
   line-height: 32px;
   vertical-align: middle;
 }
+.mp_wrapper .mepr-payment-method input[type="tel"] {
+  line-height: initial;
+}
 
 .mp_wrapper .mepr-payment-method .mepr-payment-method-label-text,
 .mp_wrapper .mepr-payment-method span.mepr-payment-method-icon {
@@ -115,3 +118,7 @@
   padding: 0;
 }
 
+.mp-form-submit {
+  margin: 0;
+  padding: 0;
+}

@@ -4,6 +4,7 @@ if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');
 class MeprPayPalGateway extends MeprBasePayPalGateway {
   // This is stored with the user meta & the subscription meta
   public static $paypal_token_str = '_mepr_paypal_token';
+  public static $has_spc_form = false;
 
   /** Used in the view to identify the gateway */
   public function __construct() {
@@ -87,7 +88,7 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
 
   /** Listens for an incoming connection from PayPal and then handles the request appropriately. */
   public function listener() {
-    $_POST = stripslashes_deep($_POST);
+    $_POST = wp_unslash($_POST);
     $this->email_status("PayPal IPN Recieved\n" . MeprUtils::object_to_string($_POST, true) . "\n", $this->settings->debug);
 
     if($this->validate_ipn()) { return $this->process_ipn(); }
@@ -132,7 +133,14 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
       if($sub === false || !isset($sub->id) || (int)$sub->id <= 0) { return; } //If this isn't a sub, then why are we here (IPN fwd probably)
 
       //Just convert the confirmation into the initial payment
-      $first_txn              = new MeprTransaction($sub->first_txn_id);
+      $first_txn = $sub->first_txn();
+      if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+        $first_txn = new MeprTransaction();
+        $first_txn->user_id = $sub->user_id;
+        $first_txn->product_id = $sub->product_id;
+        $first_txn->coupon_id = $sub->coupon_id;
+      }
+
       $first_txn->trans_num   = $_POST['initial_payment_txn_id'];
       $first_txn->txn_type    = MeprTransaction::$payment_str;
       $first_txn->status      = MeprTransaction::$complete_str;
@@ -164,17 +172,27 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
     * Silent Post from Authorize.net.
     */
   public function record_subscription_payment() {
-    if(!isset($_POST['recurring_payment_id']) && !isset($_POST['subscr_id']))
+    if(!isset($_POST['recurring_payment_id']) && !isset($_POST['subscr_id'])) {
       return;
+    }
 
-    if(isset($_POST['subscr_id']) && !empty($_POST['subscr_id']))
+    if(isset($_POST['subscr_id']) && !empty($_POST['subscr_id'])) {
       $sub = MeprSubscription::get_one_by_subscr_id($_POST['subscr_id']);
-    else
+    }
+    else {
       $sub = MeprSubscription::get_one_by_subscr_id($_POST['recurring_payment_id']);
+    }
 
     if($sub) {
       $timestamp = isset($_POST['payment_date']) ? strtotime($_POST['payment_date']) : time();
-      $first_txn = new MeprTransaction($sub->first_txn_id);
+      $first_txn = $sub->first_txn();
+
+      if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+        $first_txn = new MeprTransaction();
+        $first_txn->user_id = $sub->user_id;
+        $first_txn->product_id = $sub->product_id;
+        $first_txn->coupon_id = $sub->coupon_id;
+      }
 
       //Prevent recording duplicates
       $existing_txn = MeprTransaction::get_one_by_trans_num($_POST['txn_id']);
@@ -256,6 +274,13 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
               ($sub = MeprSubscription::get_one_by_subscr_id($_POST['subscr_id'])) ) ) {
       $first_txn = $sub->first_txn();
 
+      if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+        $first_txn = new MeprTransaction();
+        $first_txn->user_id = $sub->user_id;
+        $first_txn->product_id = $sub->product_id;
+        $first_txn->coupon_id = $sub->coupon_id;
+      }
+
       $txn = new MeprTransaction();
       $txn->user_id = $sub->user_id;
       $txn->product_id = $sub->product_id;
@@ -307,6 +332,8 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
     $this->email_status("DoExpressCheckoutPayment Request:\n".MeprUtils::object_to_string($args,true)."\n", $this->settings->debug);
 
     $res = $this->send_nvp_request('DoExpressCheckoutPayment', $args);
+    // TODO - We really need to check for errors here ($res['ACK'] != 'success') - and handle appropriately. Especially the 10486 (failed payment source) error
+    // https://developer.paypal.com/docs/classic/express-checkout/ht_ec_fundingfailure10486/
 
     $this->email_status("DoExpressCheckoutPayment Response:\n".MeprUtils::object_to_string($res,true)."\n", $this->settings->debug);
 
@@ -437,7 +464,7 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
     $prd = $txn->product();
     $sub = $txn->subscription();
     $usr = $txn->user();
-    $tkn = get_post_meta($sub->id, self::$paypal_token_str, true);
+    $tkn = $sub->token;
 
     //IMPORTANT - PayPal txn will fail if the descriptions do not match exactly
     //so if you change the description here you also need to mirror it
@@ -538,6 +565,13 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
 
     if(isset($res['PROFILESTATUS']) and ( strtolower($res['PROFILESTATUS']) == 'activeprofile' || strtolower($res['PROFILESTATUS']) == 'pendingprofile' )) {
       $txn = $sub->first_txn();
+      if($txn == false || !($txn instanceof MeprTransaction)) {
+        $txn = new MeprTransaction();
+        $txn->user_id = $sub->user_id;
+        $txn->product_id = $sub->product_id;
+        $txn->coupon_id = $sub->coupon_id;
+      }
+
       $old_total = $txn->total;
       $txn->trans_num  = $res['PROFILEID'];
       $txn->status     = MeprTransaction::$confirmed_str;
@@ -672,7 +706,7 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
 
     //Check if prior txn is expired yet or not, if so create a temporary txn so the user can access the content immediately
     $prior_txn = $sub->latest_txn();
-    if(strtotime($prior_txn->expires_at) < time()) {
+    if($prior_txn == false || !($prior_txn instanceof MeprTransaction) || strtotime($prior_txn->expires_at) < time()) {
       $txn = new MeprTransaction();
       $txn->subscription_id = $sub->id;
       $txn->trans_num  = $sub->subscr_id . '-' . uniqid();
@@ -800,8 +834,9 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
         $txn->trans_num = $token = urldecode($res["TOKEN"]);
         $txn->store();
 
-        if(!$prd->is_one_time_payment()) {
-          update_post_meta($txn->subscription_id, self::$paypal_token_str, $token);
+        if(!$prd->is_one_time_payment() && ($sub = $txn->subscription())) {
+          $sub->token = $token;
+          $sub->store();
         }
 
         MeprUtils::wp_redirect("{$this->settings->url}?cmd=_express-checkout&token={$token}{$useraction}");

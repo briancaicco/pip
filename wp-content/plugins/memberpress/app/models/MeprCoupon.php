@@ -79,7 +79,7 @@ class MeprCoupon extends MeprCptModel {
   }
 
   public static function get_all_active_coupons() {
-    return get_posts(array('numberposts' => -1, 'post_type' => self::$cpt, 'post_status' => 'publish'));
+    return MeprCptModel::all('MeprCoupon');
   }
 
   public static function get_one_from_code($code, $ignore_status = false) {
@@ -166,8 +166,8 @@ class MeprCoupon extends MeprCptModel {
       $coupons = self::get_all_active_coupons();
 
       if(!empty($coupons)) {
-        foreach($coupons as $c) {
-          $coupon = new MeprCoupon($c->ID);
+        foreach($coupons as $coupon) {
+          // $coupon = new MeprCoupon($c->ID); //reduntant
 
           if($coupon->should_expire && $date > $coupon->expires_on) {
             $coupon->mark_as_expired();
@@ -204,40 +204,28 @@ class MeprCoupon extends MeprCptModel {
     $mepr_db = new MeprDb();
     $tcount = 0;
 
-    //Query unique subscriptions first and get a count
-    //Prevents counting a coupon code on multiple payments
-    //for the same subscription_id
-    $sub = "
-      SELECT sub.id
-        FROM {$mepr_db->subscriptions} AS sub
-       WHERE sub.status <> %s
-    ";
-
-    $sub = $wpdb->prepare($sub, MeprSubscription::$pending_str);
-
     $sq = "
       SELECT COUNT(DISTINCT subscription_id)
         FROM {$mepr_db->transactions}
        WHERE coupon_id = %d
          AND subscription_id > 0
-         AND subscription_id IN ({$sub})
-         AND status IN (%s, %s)
+         AND txn_type = %s;
     ";
 
-    $sq = $wpdb->prepare($sq, $this->ID, MeprTransaction::$complete_str, MeprTransaction::$confirmed_str);
+    $sq = $wpdb->prepare($sq, $this->ID, MeprTransaction::$payment_str);
 
     if($sqcount = $wpdb->get_var($sq)) { $tcount += $sqcount; }
 
-    //Query lifetime payments next
+    //Query one-time payments next
     $lq = "
       SELECT COUNT(*)
         FROM {$mepr_db->transactions}
        WHERE coupon_id = %d
-         AND (subscription_id = 0 || subscription_id IS NULL)
-         AND status = %s
+         AND (subscription_id <= 0 OR subscription_id IS NULL)
+         AND txn_type = %s
     ";
 
-    $lq = $wpdb->prepare($lq, $this->ID, MeprTransaction::$complete_str);
+    $lq = $wpdb->prepare($lq, $this->ID, MeprTransaction::$payment_str);
 
     if($lqcount = $wpdb->get_var($lq)) { $tcount += $lqcount; }
 
@@ -259,4 +247,3 @@ class MeprCoupon extends MeprCptModel {
     update_post_meta($this->ID, self::$trial_amount_str, $this->trial_amount);
   }
 } //End class
-

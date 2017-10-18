@@ -21,6 +21,7 @@
     <?php echo $message; ?>
     <!-- mp-login-form-start --> <?php //DON'T GET RID OF THIS HTML COMMENT PLEASE IT'S USEFUL FOR SOME REGEX WE'RE DOING ?>
     <form name="mepr_loginform" id="mepr_loginform" class="mepr-form" action="<?php echo $login_url; ?>" method="post">
+      <?php /* nonce not necessary on this form seeing as the user isn't logged in yet */ ?>
       <div class="mp-form-row mepr_username">
         <div class="mp-form-label">
           <?php $uname_or_email_str = MeprHooks::apply_filters('mepr-login-uname-or-email-str', _x('Username or E-mail', 'ui', 'memberpress')); ?>
@@ -37,10 +38,10 @@
         </div>
         <input type="password" name="pwd" id="user_pass" value="<?php echo (isset($_POST['pwd'])?$_POST['pwd']:''); ?>" />
       </div>
+      <?php MeprHooks::do_action('mepr-login-form-before-submit'); ?>
       <div>
         <label><input name="rememberme" type="checkbox" id="rememberme" value="forever"<?php checked(isset($_POST['rememberme'])); ?> /> <?php _ex('Remember Me', 'ui', 'memberpress'); ?></label>
       </div>
-      <?php MeprHooks::do_action('mepr-login-form-before-submit'); ?>
       <div class="mp-spacer">&nbsp;</div>
       <div class="submit">
         <input type="submit" name="wp-submit" id="wp-submit" class="button-primary mepr-share-button " value="<?php _ex('Log In', 'ui', 'memberpress'); ?>" />

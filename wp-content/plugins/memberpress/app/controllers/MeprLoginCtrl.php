@@ -52,7 +52,9 @@ class MeprLoginCtrl extends MeprBaseCtrl {
     ob_start();
 
     //BEGIN TEMP WPML FIX
-    if($shortcode && isset($_REQUEST['action']) && $_REQUEST['action'] != 'mepr_unauthorized') {
+    if( $shortcode && isset($_REQUEST['action']) &&
+        $_REQUEST['action'] != 'mepr_unauthorized' &&
+        !defined('DOING_AJAX') ) { //Don't do this if it's an ajax request. Probably loading up the form shortcode via AJAX
       //Need to check for this POST first
       if($_REQUEST['action'] == 'mepr_process_reset_password_form') {
         $this->process_reset_password_form();
@@ -99,7 +101,7 @@ class MeprLoginCtrl extends MeprBaseCtrl {
 
     // Check if we've got an unauth page set here
     // Is this even used here??? I don't think so, but leaving it here just in case
-    if(isset($_REQUEST['mepr-unauth-page'])) {
+    if(isset($_REQUEST['mepr-unauth-page']) && !isset($_REQUEST['redirect_to'])) {
       $redirect_to = MeprUtils::get_permalink($_REQUEST['mepr-unauth-page']);
     }
 

@@ -27,7 +27,7 @@ class MeprSubscriptionsHelper {
         'subscr_expires_at',
         'subscr_terms',
         'subscr_next_billing_amount',
-        'subscr_cc_last4',
+        'subscr_cc_num',
         'subscr_cc_month_exp',
         'subscr_cc_year_exp',
         'subscr_renew_url',
@@ -110,16 +110,16 @@ class MeprSubscriptionsHelper {
       'login_url'                   => $mepr_options->login_page_url()
     );
 
-    $ums = get_user_meta( $usr->ID );
-    if(is_array($ums)) {
-      foreach( $ums as $umkey => $um ) {
-        // Only support first val for now and yes some of these will be serialized values so deal with it :)
-        $params["usermeta:{$umkey}"] = $um[0];
+    $ums = MeprUtils::get_formatted_usermeta($usr->ID);
+
+    if(!empty($ums)) {
+      foreach($ums as $umkey => $umval) {
+        $params["usermeta:{$umkey}"] = $umval;
       }
     }
 
     // You know we're just going to lump the user record fields in here no problem
-    foreach( (array)$usr->rec as $ukey => $uval ) {
+    foreach((array)$usr->rec as $ukey => $uval) {
       $params["usermeta:{$ukey}"] = $uval;
     }
 

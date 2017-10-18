@@ -147,6 +147,7 @@ class MeprAppHelper {
   public static function format_price_string($obj, $price = 0.00, $show_symbol = true, $coupon_code = null, $show_prorated = true) {
     global $wp_locale;
 
+    $user = MeprUtils::get_currentuserinfo();
     $regex_dp = preg_quote($wp_locale->number_format['decimal_point'], '#');
     $mepr_options = MeprOptions::fetch();
     $coupon = false;
@@ -206,17 +207,18 @@ class MeprAppHelper {
       $price_str = $fprice;
       if( $show_prorated && $obj instanceof MeprProduct &&
           $mepr_options->pro_rated_upgrades && $obj->is_upgrade_or_downgrade() ) {
-        $user         = MeprUtils::get_currentuserinfo();
         $group        = $obj->group();
         $lt           = false;
         $old_subscr   = $user->subscription_in_group($group->ID);
         $old_lifetime = $user->lifetime_subscription_in_group($group->ID);
 
-        if($old_subscr !== false)
+        if($old_subscr !== false) {
           $lt = $old_subscr->latest_txn();
+        }
 
-        if($old_lifetime !== false)
+        if($old_lifetime !== false) {
           $lt = $old_lifetime;
+        }
 
         //Don't show prorated if the old amount is 0.00
         if($lt === false || MeprUtils::format_float($lt->amount) > 0.00) {
@@ -302,8 +304,20 @@ class MeprAppHelper {
       }
       else if($obj->expire_type == 'fixed') {
         $expire_ts = strtotime( $obj->expire_fixed );
+        $now = time();
+
+        //Make sure we adjust the year if the membership is a renewable type and the user forgot to bump up the year
+        if($product->allow_renewal) {
+          while($now > $expire_ts) { //Add a year until $now < expiration date
+            $expire_ts += MeprUtils::years(1);
+          }
+        }
+
         $expire_str = date_i18n( 'D, M j, Y', $expire_ts, true );
-        $price_str .= sprintf( __( ' for access until %s', 'memberpress' ), $expire_str );
+
+        if(!$product->is_renewal()) { //Just hide this if it's a renewal
+          $price_str .= sprintf( __( ' for access until %s', 'memberpress' ), $expire_str );
+        }
       }
     }
 
@@ -385,7 +399,7 @@ class MeprAppHelper {
     $memberships = is_array($memberships) ? $memberships : array();
     $contents = array();
 
-    $posts = get_posts(array( 'numberposts' => -1, 'post_type' => 'memberpressproduct', 'post_status' => 'publish'));
+    $posts = MeprCptModel::all('MeprProduct');
 
     foreach($posts as $post) {
       $contents[$post->ID] = $post->post_title;
@@ -399,6 +413,28 @@ class MeprAppHelper {
         }
       ?>
       </select>
+    <?php
+  }
+
+  public static function export_table_link($action, $nonce_action, $nonce_name, $itemcount, $all=false) {
+    $params = array('action' => $action);
+
+    if($all) {
+      $params['all'] = 1;
+      $label = __('Export table as CSV (%s records)', 'memberpress');
+    }
+    else {
+      $label = __('Export all as CSV (%s records)', 'memberpress');
+    }
+
+    ?>
+      <a href="<?php
+        echo MeprUtils::admin_url(
+          'admin-ajax.php',
+          array($nonce_action, $nonce_name),
+          $params,
+          true
+        ); ?>"><?php printf($label, MeprAppHelper::format_number($itemcount)); ?></a>
     <?php
   }
 } //End class

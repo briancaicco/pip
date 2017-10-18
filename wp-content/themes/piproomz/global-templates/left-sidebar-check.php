@@ -20,20 +20,20 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	if ( 'right' === $sidebar_pos || 'left' === $sidebar_pos ) {
 		$html = '<div class="';
 		if ( is_active_sidebar( 'right-sidebar' ) || is_active_sidebar( 'left-sidebar' ) ) {
-			$html .= 'col-md-8 content-area" id="primary">';
+			$html .= 'col-md-8">';
 		} else {
-			$html .= 'col-md-12 content-area" id="primary">';
+			$html .= 'col-md-12">';
 		}
 		echo $html; // WPCS: XSS OK.
 	} elseif ( is_active_sidebar( 'right-sidebar' ) && is_active_sidebar( 'left-sidebar' ) ) {
 		$html = '<div class="';
 		if ( 'both' === $sidebar_pos ) {
-			$html .= 'col-md-6 content-area" id="primary">';
+			$html .= 'col-md-6">';
 		} else {
-			$html .= 'col-md-12 content-area" id="primary">';
+			$html .= 'col-md-12">';
 		}
 		echo $html; // WPCS: XSS OK.
 	} else {
-	    echo '<div class="col-md-12 content-area" id="primary">';
+	    echo '<div class="col-md-12">';
 	}
 }

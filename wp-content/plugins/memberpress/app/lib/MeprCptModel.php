@@ -126,20 +126,26 @@ abstract class MeprCptModel extends MeprBaseModel
     return MeprHooks::apply_filters('mepr_cpt_model_url', "{$link}{$args}", $this);
   }
 
-  public static function all($class) {
-    // Not possible pre PHP 5.3 so we have to pass the class name as an argument gah
-    //$r = new ReflectionClass(get_called_class());
+  public static function all($class, $reset_transients = false) {
+    //$r = new ReflectionClass(get_called_class()); //Not possible pre PHP 5.3 so we have to pass the class name as an argument gah
+    $r          = new ReflectionClass($class);
+    $cpt        = $r->getStaticPropertyValue('cpt');
+    $models     = array();
+    $transient  = 'mepr_all_models_for_class_'.strtolower($class);
+    $cached     = get_transient($transient);
 
-    $r = new ReflectionClass($class);
-    $cpt = $r->getStaticPropertyValue('cpt');
+    if(!empty($cached) && !$reset_transients) {
+      return $cached; //Return the transient cached data
+    }
 
+    //Not cached? Let's load up the posts with get_posts then
     $posts = get_posts(array('numberposts' => -1, 'post_type' => $cpt, 'post_status' => 'publish'));
 
-    $models = array();
     foreach($posts as $post) {
       $models[] = $r->newInstance($post->ID);
     }
 
+    set_transient($transient, $models, 0); //Never expires - we'll update this during MeprCptCtrl->save_post() calls
     return $models;
   }
 

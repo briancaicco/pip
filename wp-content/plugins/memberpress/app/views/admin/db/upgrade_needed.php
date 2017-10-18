@@ -23,11 +23,21 @@
       var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
 
       var upgrade_db_success = function() {
-        window.location.href = '<?php echo admin_url('admin-ajax.php?action=mepr_db_upgrade_success'); ?>';
+        window.location.href = '<?php
+          echo MeprUtils::admin_url(
+            'admin-ajax.php',
+            array('db_upgrade_success', 'mepr_db_upgrade_nonce'),
+            array('action' => 'mepr_db_upgrade_success')
+          ); ?>';
       };
 
       var upgrade_db_not_needed = function() {
-        window.location.href = '<?php echo admin_url('admin-ajax.php?action=mepr_db_upgrade_not_needed'); ?>';
+        window.location.href = '<?php
+          echo MeprUtils::admin_url(
+            'admin-ajax.php',
+            array('db_upgrade_not_needed', 'mepr_db_upgrade_nonce'),
+            array('action' => 'mepr_db_upgrade_not_needed')
+          ); ?>';
       };
 
       var error_count = 0;
@@ -36,7 +46,12 @@
 
         // Let's only error out if we get at least 3 errors in a row
         if(error_count >= retries) {
-          window.location.href = '<?php echo admin_url('admin-ajax.php?action=mepr_db_upgrade_error'); ?>';
+          window.location.href = '<?php
+            echo MeprUtils::admin_url(
+              'admin-ajax.php',
+              array('db_upgrade_error', 'mepr_db_upgrade_nonce'),
+              array('action' => 'mepr_db_upgrade_error')
+            ); ?>';
         }
         else {
           console.info('An error occurred (' + error_count + '), retrying')
@@ -72,7 +87,8 @@
         $('#upgrade_db_trigger').attr('disabled',true);
 
         var args = {
-          'action': 'mepr_db_upgrade'
+          'action': 'mepr_db_upgrade',
+          'mepr_db_upgrade_nonce': '<?php echo wp_create_nonce('db_upgrade'); ?>'
         };
 
         $('#upgrade_db').modal({
@@ -97,7 +113,11 @@
 
         setInterval(
           function() {
-            $.get(ajaxurl, {'action': 'mepr_db_upgrade_in_progress'}, function(data) {
+            $.get(ajaxurl, {
+              'action': 'mepr_db_upgrade_in_progress',
+              'mepr_db_upgrade_nonce': '<?php echo wp_create_nonce('db_upgrade_in_progress'); ?>'
+            },
+            function(data) {
               // Do nothing until failure
               if(data['status']=='not_in_progress') {
                 upgrade_db_success();
@@ -116,7 +136,11 @@
         );
       };
 
-      $.get(ajaxurl, {'action': 'mepr_db_upgrade_in_progress'}, function(data) {
+      $.get(ajaxurl, {
+        'action': 'mepr_db_upgrade_in_progress',
+        'mepr_db_upgrade_nonce': '<?php echo wp_create_nonce('db_upgrade_in_progress'); ?>'
+      },
+      function(data) {
         // Do nothing until failure
         if(data['status']=='not_in_progress') {
           //upgrade_db_success();
@@ -151,7 +175,13 @@
             <?php
               $update_ctrl = new MeprUpdateCtrl();
             ?>
-            <!-- <p><a class="btn btn-primary" href="<?php echo admin_url('admin-ajax.php?action=mepr_db_upgrade'); ?>"><?php _e('Upgrade', 'memberpress'); ?></a></p> -->
+            <!-- <p><a class="btn btn-primary" href="<?php
+              echo MeprUtils::admin_url(
+                'admin-ajax.php',
+                array('db_upgrade', 'mepr_db_upgrade_nonce'),
+                array('action' => 'mepr_db_upgrade')
+              );
+            ?>"><?php _e('Upgrade', 'memberpress'); ?></a></p> -->
             <!-- Button trigger modal -->
             <p>
               <button type="button" class="btn btn-primary btn-lg" id="upgrade_db_trigger"><?php _e('Upgrade', 'memberpress'); ?></button> or

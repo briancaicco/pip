@@ -35,6 +35,7 @@
           $(payment_form).find('.mepr-stripe-errors').addClass('mepr_error');
           // hide the spinning gif bro
           $(payment_form).find('.mepr-loading-gif').hide();
+          $(payment_form).find('.mepr-submit').prop('disabled', false);
         } else {
           $(payment_form).find('.mepr-stripe-errors').removeClass('mepr_error');
           // token contains id, last4, and card type
@@ -46,7 +47,7 @@
             $(payment_form).addClass('mepr-payment-submitted');
 
             // insert the token into the form so it gets submitted to the server
-            payment_form.append('<input type="hidden" class="mepr-stripe-token" name="stripe_token" value="' + token + '" />');
+            payment_form.append('<input type="hidden" class="mepr-stripe-token" name="stripeToken" value="' + token + '" />');
 
             // and submit
             payment_form.get(0).submit();

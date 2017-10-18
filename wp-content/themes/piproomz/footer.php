@@ -10,12 +10,11 @@
 $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-
+<footer>
+<!-- ******************* The Footer Area ******************* -->
 <?php get_sidebar( 'footerfull' ); ?>
 
-<div class="wrapper" id="wrapper-footer">
-
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container ); ?> footer">
 
 		<div class="row">
 
@@ -35,9 +34,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- container end -->
 
-</div><!-- wrapper end -->
-
-</div><!-- #page we need this extra closing tag here -->
+</footer>
 
 <?php wp_footer(); ?>
 

@@ -2,21 +2,21 @@
   <admin-texts>
     <key name="mepr_options">
       <key name="custom_message"/>
+      <key name="logout_redirect_url"/>
       <key name="login_redirect_url"/>
+      <key name="tos_url"/>
+      <key name="tos_title"/>
+      <key name="mail_send_from_name"/>
+      <key name="unauthorized_message"/>
+      <key name="unauthorized_redirect_url"/>
+      <key name="login_page_id"/>
+      <key name="account_page_id"/>
       <key name="emails">
         <key name="*">
-           <key name="subject"/>
-           <key name="body"/>
         </key>
       </key>
       <key name="custom_fields">
         <key name="*">
-          <key name="field_name"/>
-          <key name="options">
-            <key name="*">
-              <key name="option_name"/>
-            </key>
-          </key>
         </key>
       </key>
     </key>

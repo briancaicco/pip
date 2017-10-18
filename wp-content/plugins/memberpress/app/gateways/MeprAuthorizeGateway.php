@@ -3,6 +3,7 @@ if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');
 
 class MeprAuthorizeGateway extends MeprBaseRealGateway {
   public static $order_invoice_str = '_mepr_authnet_order_invoice';
+  public static $has_spc_form = true;
 
   /** Used in the view to identify the gateway */
   public function __construct() {
@@ -152,8 +153,8 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
     $invoice = $txn->id.'-'.time();
 
     if( empty($usr->first_name) or empty($usr->last_name) ) {
-      $usr->first_name = $_POST['mepr_first_name'];
-      $usr->last_name = $_POST['mepr_last_name'];
+      $usr->first_name = sanitize_text_field(wp_unslash($_POST['mepr_first_name']));
+      $usr->last_name = sanitize_text_field(wp_unslash($_POST['mepr_last_name']));
       $usr->store();
     }
 
@@ -206,13 +207,19 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
     }
 
     $first_txn = $sub->first_txn();
+    if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+      $coupon_id = $sub->coupon_id;
+    }
+    else {
+      $coupon_id = $first_txn->coupon_id;
+    }
 
     $txn = new MeprTransaction();
     $txn->user_id = $sub->user_id;
     $txn->product_id = $sub->product_id;
     $txn->txn_type = MeprTransaction::$payment_str;
     $txn->status = MeprTransaction::$complete_str;
-    $txn->coupon_id = $first_txn->coupon_id;
+    $txn->coupon_id = $coupon_id;
     $txn->response = json_encode($_POST);
     $txn->trans_num = $_POST['x_trans_id'];
     $txn->subscription_id = $sub->id;
@@ -253,12 +260,17 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
       else if( isset($_POST['x_subscription_id']) and
                $sub = MeprSubscription::get_one_by_subscr_id($_POST['x_subscription_id']) ) {
         $first_txn = $sub->first_txn();
-        $latest_txn = $sub->latest_txn();
+        if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+          $coupon_id = $sub->coupon_id;
+        }
+        else {
+          $coupon_id = $first_txn->coupon_id;
+        }
 
         $txn = new MeprTransaction();
         $txn->user_id = $sub->user_id;
         $txn->product_id = $sub->product_id;
-        $txn->coupon_id = $first_txn->coupon_id;
+        $txn->coupon_id = $coupon_id;
         $txn->txn_type = MeprTransaction::$payment_str;
         $txn->status = MeprTransaction::$failed_str;
         $txn->subscription_id = $sub->id;
@@ -553,8 +565,8 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
     $invoice = $this->create_new_order_invoice($sub);
 
     if( empty($usr->first_name) or empty($usr->last_name) ) {
-      $usr->first_name = $_POST['mepr_first_name'];
-      $usr->last_name = $_POST['mepr_last_name'];
+      $usr->first_name = sanitize_text_field(wp_unslash($_POST['mepr_first_name']));
+      $usr->last_name = sanitize_text_field(wp_unslash($_POST['mepr_last_name']));
       $usr->store();
     }
 
@@ -887,7 +899,7 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
     ?>
     <div class="mp_wrapper mp_payment_form_wrapper">
       <?php MeprView::render('/shared/errors', get_defined_vars()); ?>
-      <form action="<?php //echo $prd->url('',true); //COMMENTING THIS OUT FOR https://github.com/caseproof/memberpress/issues/790  ?>" method="post" id="mepr_authorize_net_payment_form" class="mepr-checkout-form mepr-form mepr-card-form" novalidate>
+      <form action="" method="post" id="mepr_authorize_net_payment_form" class="mepr-checkout-form mepr-form mepr-card-form" novalidate>
         <input type="hidden" name="mepr_process_payment_form" value="Y" />
         <input type="hidden" name="mepr_transaction_id" value="<?php echo $txn_id; ?>" />
         <?php // Authorize requires a firstname / lastname so if it's hidden on the signup form ...
@@ -970,8 +982,8 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
   public function process_payment_form($txn) {
     //We're just here to update the user's name if they changed it
     $user = $txn->user();
-    $first_name = stripslashes($_POST['mepr_first_name']);
-    $last_name = stripslashes($_POST['mepr_last_name']);
+    $first_name = sanitize_text_field(wp_unslash(($_POST['mepr_first_name'])));
+    $last_name = sanitize_text_field(wp_unslash(($_POST['mepr_last_name'])));
 
     if($user->first_name != $first_name) {
       update_user_meta($user->ID, 'first_name', $first_name);
@@ -1366,12 +1378,15 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
   }
 
   protected function get_order_invoice($sub) {
-    return get_post_meta( $sub->id, self::$order_invoice_str, true );
+    return $sub->token;
   }
 
   protected function create_new_order_invoice($sub) {
     $inv = strtoupper(substr(preg_replace('/\./','',uniqid('',true)),-20));
-    update_post_meta($sub->id, self::$order_invoice_str, $inv);
+
+    $sub->token = $inv;
+    $sub->store();
+
     return $inv;
   }
 
@@ -1420,4 +1435,3 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
     return $xml;
   }
 }
-

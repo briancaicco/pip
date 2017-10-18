@@ -14,7 +14,7 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
     add_action('wp_ajax_mepr_cancel_subscription',    array($this, 'cancel_subscription'));
     add_action('wp_ajax_mepr_subscriptions',          array($this, 'csv'));
     add_action('wp_ajax_mepr_lifetime_subscriptions', array($this, 'lifetime_csv'));
-    add_action('mepr_control_table_footer',           array($this, 'export_footer_link'), 10, 2);
+    add_action('mepr_control_table_footer',           array($this, 'export_footer_link'), 10, 3);
 
     // Screen Options
     $hook = $this->get_hook();
@@ -74,7 +74,12 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
                      'resume_sub' => __("This will resume payments for this subscription.\n\nAre you sure you want to resume this Subscription?", 'memberpress'),
                      'resume_sub_error' => __('The Subscription could not be resumed here. Please login to your gateway\'s virtual terminal to resume it.', 'memberpress'),
                      'resume_sub_success' => __('The Subscription was successfully resumed.', 'memberpress'),
-                     'resume_text' => __('Enabled', 'memberpress')
+                     'resume_text' => __('Enabled', 'memberpress'),
+                     'delete_subscription_nonce' => wp_create_nonce('delete_subscription'),
+                     'suspend_subscription_nonce' => wp_create_nonce('suspend_subscription'),
+                     'update_status_subscription_nonce' => wp_create_nonce('update_status_subscription'),
+                     'resume_subscription_nonce' => wp_create_nonce('resume_subscription'),
+                     'cancel_subscription_nonce' => wp_create_nonce('cancel_subscription')
                    );
 
       wp_enqueue_style('mepr-subscriptions-css', MEPR_CSS_URL.'/admin-subscriptions.css', array(), MEPR_VERSION);
@@ -84,14 +89,15 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
     }
   }
 
-  public function edit_subscr_status()
-  {
+  public function edit_subscr_status() {
+    check_ajax_referer('update_status_subscription','mepr_subscriptions_nonce');
+
     if( !isset($_POST['id']) || empty($_POST['id']) ||
         !isset($_POST['value']) || empty($_POST['value']) )
       die(__('Save Failed', 'memberpress'));
 
-    $id = $_POST['id'];
-    $value = $_POST['value'];
+    $id = sanitize_key($_POST['id']);
+    $value = sanitize_text_field($_POST['value']);
 
     $sub = new MeprSubscription($id);
     if( empty($sub->id) )
@@ -105,6 +111,8 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
   }
 
   public function delete_subscription() {
+    check_ajax_referer('delete_subscription','mepr_subscriptions_nonce');
+
     if(!MeprUtils::is_mepr_admin()) {
       die(__('You do not have access.', 'memberpress'));
     }
@@ -120,6 +128,8 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
   }
 
   public function suspend_subscription() {
+    check_ajax_referer('suspend_subscription','mepr_subscriptions_nonce');
+
     if(!MeprUtils::is_mepr_admin()) {
       die(__('You do not have access.', 'memberpress'));
     }
@@ -135,6 +145,8 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
   }
 
   public function resume_subscription() {
+    check_ajax_referer('resume_subscription','mepr_subscriptions_nonce');
+
     if(!MeprUtils::is_mepr_admin()) {
       die(__('You do not have access.', 'memberpress'));
     }
@@ -150,6 +162,8 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
   }
 
   public function cancel_subscription() {
+    check_ajax_referer('cancel_subscription','mepr_subscriptions_nonce');
+
     if(!MeprUtils::is_mepr_admin()) {
       die(__('You do not have access.', 'memberpress'));
     }
@@ -175,8 +189,9 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
       die('-1');
     }
 
-    $s = $_GET['q']; // is this slashed already?
-    $s = trim($s);
+    // jQuery suggest plugin has already trimmed and escaped user input (\ becomes \\)
+    // so we just need to sanitize the username
+    $s = sanitize_user($_GET['q']);
 
     if(strlen($s) < 5) { die(); } // require 5 chars for matching
 
@@ -187,6 +202,8 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
   }
 
   public function csv($lifetime = false) {
+    check_ajax_referer('export_subscriptions', 'mepr_subscriptions_nonce');
+
     $filename = ( $lifetime ? 'non-recurring-' : '' ) . 'subscriptions-'.time();
 
     // Since we're running WP_List_Table headless we need to do this
@@ -239,12 +256,11 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
     $this->csv(true);
   }
 
-  public function export_footer_link($action, $totalitems) {
+  public function export_footer_link($action, $totalitems, $itemcount) {
     if($action=='mepr_subscriptions' || $action=='mepr_lifetime_subscriptions') {
-      ?>
-      |
-      <a href="<?php echo admin_url('admin-ajax.php?action=' . $action . '&all=1&' . $_SERVER['QUERY_STRING']); ?>"><?php printf(__('Export all as CSV (%s records)', 'memberpress'), MeprAppHelper::format_number($totalitems)); ?></a>
-      <?php
+      MeprAppHelper::export_table_link($action, 'export_subscriptions', 'mepr_subscriptions_nonce', $itemcount);
+      ?> | <?php
+      MeprAppHelper::export_table_link($action, 'export_subscriptions', 'mepr_subscriptions_nonce', $totalitems, true);
     }
   }
 
@@ -254,7 +270,7 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
     $cols = array(
       $prefix.'id' => __('Id', 'memberpress'),
       $prefix.'subscr_id' => __('Subscription', 'memberpress'),
-      $prefix.'active' => __('Active', 'memberpress'),
+      // $prefix.'active' => __('Active', 'memberpress'),
       $prefix.'status' => __('Auto Rebill', 'memberpress'),
       $prefix.'product' => __('Membership', 'memberpress'),
       $prefix.'product_meta' => __('Terms', 'memberpress'),
@@ -321,4 +337,3 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
     }
   }
 } //End class
-

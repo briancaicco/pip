@@ -357,24 +357,24 @@ class MeprRulesCtrl extends MeprCptCtrl {
 
     if(!empty($post) && $post->post_type == MeprRule::$cpt) {
       $rule = new MeprRule($post_id);
-      $rule->mepr_type           = $_POST[MeprRule::$mepr_type_str];
-      $rule->mepr_content        = (('partial' != $_POST[MeprRule::$mepr_type_str] && isset($_POST[MeprRule::$mepr_content_str])) ? $_POST[MeprRule::$mepr_content_str] : '');
-      $rule->mepr_access         = $_POST[MeprRule::$mepr_access_str];
+      $rule->mepr_type           = sanitize_text_field($_POST[MeprRule::$mepr_type_str]);
+      $rule->mepr_content        = (('partial' != $_POST[MeprRule::$mepr_type_str] && isset($_POST[MeprRule::$mepr_content_str])) ? sanitize_text_field($_POST[MeprRule::$mepr_content_str]) : '');
+      $rule->mepr_access         = array_map('sanitize_text_field', $_POST[MeprRule::$mepr_access_str]);
       $rule->drip_enabled        = isset($_POST[MeprRule::$drip_enabled_str]);
-      $rule->drip_amount         = $_POST[MeprRule::$drip_amount_str];
-      $rule->drip_unit           = $_POST[MeprRule::$drip_unit_str];
-      $rule->drip_after          = $_POST[MeprRule::$drip_after_str];
-      $rule->drip_after_fixed    = $_POST[MeprRule::$drip_after_fixed_str];
+      $rule->drip_amount         = sanitize_text_field($_POST[MeprRule::$drip_amount_str]);
+      $rule->drip_unit           = sanitize_text_field($_POST[MeprRule::$drip_unit_str]);
+      $rule->drip_after          = sanitize_text_field($_POST[MeprRule::$drip_after_str]);
+      $rule->drip_after_fixed    = sanitize_text_field($_POST[MeprRule::$drip_after_fixed_str]);
       $rule->expires_enabled     = isset($_POST[MeprRule::$expires_enabled_str]);
-      $rule->expires_amount      = $_POST[MeprRule::$expires_amount_str];
-      $rule->expires_unit        = $_POST[MeprRule::$expires_unit_str];
-      $rule->expires_after       = $_POST[MeprRule::$expires_after_str];
-      $rule->expires_after_fixed = $_POST[MeprRule::$expires_after_fixed_str];
-      $rule->unauth_excerpt_type = $_POST[MeprRule::$unauth_excerpt_type_str];
-      $rule->unauth_excerpt_size = $_POST[MeprRule::$unauth_excerpt_size_str];
-      $rule->unauth_message_type = $_POST[MeprRule::$unauth_message_type_str];
-      $rule->unauth_message      = $_POST[MeprRule::$unauth_message_str];
-      $rule->unauth_login        = $_POST[MeprRule::$unauth_login_str];
+      $rule->expires_amount      = sanitize_text_field($_POST[MeprRule::$expires_amount_str]);
+      $rule->expires_unit        = sanitize_text_field($_POST[MeprRule::$expires_unit_str]);
+      $rule->expires_after       = sanitize_text_field($_POST[MeprRule::$expires_after_str]);
+      $rule->expires_after_fixed = sanitize_text_field($_POST[MeprRule::$expires_after_fixed_str]);
+      $rule->unauth_excerpt_type = sanitize_text_field($_POST[MeprRule::$unauth_excerpt_type_str]);
+      $rule->unauth_excerpt_size = sanitize_text_field($_POST[MeprRule::$unauth_excerpt_size_str]);
+      $rule->unauth_message_type = sanitize_text_field($_POST[MeprRule::$unauth_message_type_str]);
+      $rule->unauth_message      = wp_kses_post(wp_unslash($_POST[MeprRule::$unauth_message_str]));
+      $rule->unauth_login        = sanitize_text_field($_POST[MeprRule::$unauth_login_str]);
       $rule->auto_gen_title      = ($_POST[MeprRule::$auto_gen_title_str] == 'true');
 
       $rule->is_mepr_content_regexp = isset($_POST[MeprRule::$is_mepr_content_regexp_str]);
@@ -512,7 +512,7 @@ class MeprRulesCtrl extends MeprCptCtrl {
 
     // File types that we will allow to be protected
     // Eventually we can maybe make this configurable by the user ...
-    $protect_types = MeprHooks::apply_filters('mepr_rewrite_rules_protect_types', array('zip','gz','tar','rar','doc','docx','xls','xlsx','xlsm','pdf','mp4','m4v','mp3'), $rules);
+    $protect_types = MeprHooks::apply_filters('mepr_rewrite_rules_protect_types', array('zip','gz','tar','rar','doc','docx','xls','xlsx','xlsm','pdf','mp4','m4v','mp3','ts','key','m3u8'), $rules);
     $ptstr = implode('|', $protect_types);
     $mepr_rules .= 'RewriteCond %{REQUEST_URI} \.('.strtolower($ptstr).'|'.strtoupper($ptstr).")$\n";
 

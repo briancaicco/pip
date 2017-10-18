@@ -2,6 +2,7 @@
 if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');}
 
 class MeprArtificialGateway extends MeprBaseRealGateway {
+  public static $has_spc_form = false;
   /** Used in the view to identify the gateway */
   public function __construct() {
     $this->name = __('Offline Payment', 'memberpress');

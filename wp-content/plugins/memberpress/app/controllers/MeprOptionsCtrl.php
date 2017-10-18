@@ -20,7 +20,8 @@ class MeprOptionsCtrl extends MeprBaseCtrl {
   public static function route() {
     $action = (isset($_REQUEST['action'])?$_REQUEST['action']:'');
 
-    if($action == 'process-form') {
+    if(MeprUtils::is_post_request() && $action == 'process-form') {
+      check_admin_referer('mepr_update_options', 'mepr_options_nonce');
       return self::process_form();
     }
     else if($action == 'queue' and isset($_REQUEST['_wpnonce']) and
@@ -40,6 +41,7 @@ class MeprOptionsCtrl extends MeprBaseCtrl {
       }
     }
     else if($action==='clear_tax_rates') {
+      check_admin_referer('clear_tax_rates', 'mepr_taxes_nonce');
       MeprTaxRate::destroy_all();
       $message = __('Tax rates have been cleared', 'memberpress');
       return self::display_form(array(),$message);
@@ -83,8 +85,7 @@ class MeprOptionsCtrl extends MeprBaseCtrl {
     if($hook == 'memberpress_page_memberpress-options') {
       $mepr_options = MeprOptions::fetch();
 
-      wp_register_style('mp-settings-table', MEPR_CSS_URL.'/settings_table.css', array(), MEPR_VERSION);
-      wp_enqueue_style('mp-options', MEPR_CSS_URL.'/admin-options.css', array('mp-settings-table'), MEPR_VERSION);
+      wp_enqueue_style('mp-options', MEPR_CSS_URL.'/admin-options.css', array('mepr-settings-table-css'), MEPR_VERSION);
       wp_enqueue_style('mp-emails', MEPR_CSS_URL.'/admin-emails.css', array('mp-options'), MEPR_VERSION);
 
       wp_register_script('jquery-clippy', MEPR_JS_URL.'/jquery.clippy.js', array('jquery'), MEPR_VERSION);
@@ -94,6 +95,7 @@ class MeprOptionsCtrl extends MeprBaseCtrl {
         'typeLabel'         => __('Type:', 'memberpress'),
         'defaultLabel'      => __('Default Value(s):', 'memberpress'),
         'signupLabel'       => __('Show at Signup', 'memberpress'),
+        'accountLabel'      => __('Show in Account', 'memberpress'),
         'requiredLabel'     => __('Required', 'memberpress'),
         'textOption'        => __('Text', 'memberpress'),
         'textareaOption'    => __('Textarea', 'memberpress'),
@@ -118,24 +120,26 @@ class MeprOptionsCtrl extends MeprBaseCtrl {
       wp_localize_script('jquery-clippy', 'MeprOptions', $js_helpers);
 
       wp_register_script('memberpress-i18n', MEPR_JS_URL.'/i18n.js', array('jquery'), MEPR_VERSION);
-      wp_localize_script(
-        'memberpress-i18n',
-        'MeprI18n',
-        array('states' => MeprUtils::states())
-      );
+      wp_localize_script('memberpress-i18n', 'MeprI18n', array('states' => MeprUtils::states()));
 
-      wp_enqueue_script(
-        'mepr-options-js',
-        MEPR_JS_URL.'/admin_options.js',
+      // Enqueue admin_options.js
+      $local_data = array(
+        'option_nonce' => wp_create_nonce('mepr_gateway_form_nonce'),
+        'tax_nonce' => wp_create_nonce('mepr_taxes')
+      );
+      wp_enqueue_script('mepr-options-js', MEPR_JS_URL.'/admin_options.js',
         array(
           'jquery',
           'jquery-clippy',
+          'mepr-settings-table-js',
           'mepr-admin-shared-js',
           'jquery-ui-sortable',
           'memberpress-i18n'
         ),
         MEPR_VERSION
       );
+      wp_localize_script('mepr-options-js', 'MeprOptionData', $local_data);
+
       wp_enqueue_script('mepr-emails-js', MEPR_JS_URL.'/admin_emails.js', array('mepr-options-js'), MEPR_VERSION);
 
       MeprHooks::do_action('mepr-options-admin-enqueue-script', $hook);
@@ -143,6 +147,8 @@ class MeprOptionsCtrl extends MeprBaseCtrl {
   }
 
   public static function gateway_form() {
+    check_ajax_referer('mepr_gateway_form_nonce', 'option_nonce');
+
     if(!is_admin()) {
       die(json_encode(array('error'=>__('Unauthorized', 'memberpress'))));
     }
@@ -177,4 +183,3 @@ class MeprOptionsCtrl extends MeprBaseCtrl {
     die( json_encode( array( 'form' => $form, 'id' => $obj->id ) ) );
   }
 } //End class
-

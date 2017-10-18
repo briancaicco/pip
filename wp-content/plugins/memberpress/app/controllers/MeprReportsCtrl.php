@@ -1,10 +1,8 @@
 <?php
 if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');}
 
-class MeprReportsCtrl extends MeprBaseCtrl
-{
-  public function load_hooks()
-  {
+class MeprReportsCtrl extends MeprBaseCtrl {
+  public function load_hooks() {
     add_action('admin_enqueue_scripts', 'MeprReportsCtrl::enqueue_scripts');
     add_action('wp_ajax_mepr_export_report', 'MeprReportsCtrl::csv');
     add_action('wp_ajax_mepr_pie_report', 'MeprReportsCtrl::load_pie');
@@ -13,9 +11,15 @@ class MeprReportsCtrl extends MeprBaseCtrl
     add_action('wp_ajax_mepr_widget_report', 'MeprReportsCtrl::load_widget');
   }
 
-  public static function main()
-  {
+  public static function main() {
     $mepr_options = MeprOptions::fetch();
+
+    if( (isset($_GET['month']) || isset($_GET['year']) || isset($_GET['product'])) &&
+        !check_admin_referer('mepr_customize_report', 'mepr_reports_nonce') ) {
+      MeprView::render("/admin/unauthorized", get_defined_vars());
+      return;
+    }
+
     $curr_month = (isset($_GET['month']) && !empty($_GET['month']))?$_GET['month']:gmdate('n');
     $curr_year = (isset($_GET['year']) && !empty($_GET['year']))?$_GET['year']:gmdate('Y');
     $curr_product = (isset($_GET['product']) && !empty($_GET['product']))?$_GET['product']:'all';
@@ -23,17 +27,25 @@ class MeprReportsCtrl extends MeprBaseCtrl
     MeprView::render("/admin/reports/main", get_defined_vars());
   }
 
-  public static function enqueue_scripts($hook)
-  {
-    if($hook == 'memberpress_page_memberpress-reports')
-    {
+  public static function enqueue_scripts($hook) {
+    $local_data = array(
+      'report_nonce' => wp_create_nonce('mepr_reports')
+    );
+
+    if($hook == 'memberpress_page_memberpress-reports') {
       wp_enqueue_script('mepr-google-jsapi', 'https://www.google.com/jsapi', array(), MEPR_VERSION);
       wp_enqueue_script('mepr-reports-js', MEPR_JS_URL.'/admin_reports.js', array('jquery', 'mepr-google-jsapi'), MEPR_VERSION, true);
       wp_enqueue_style('mepr-reports-css', MEPR_CSS_URL.'/admin-reports.css', array(), MEPR_VERSION);
+
+      wp_localize_script('mepr-reports-js', 'MeprReportData', $local_data);
     }
   }
 
   public static function csv() {
+    check_ajax_referer('export_report','mepr_reports_nonce');
+
+    if(!MeprUtils::is_mepr_admin()) { MeprUtils::exit_with_status(403,__('Forbidden', 'memberpress')); }
+
     $export = $_REQUEST['export'];
     $valid_exports = array( 'widget', 'yearly', 'monthly' );
     if( in_array( $export, $valid_exports ) ) {
@@ -51,8 +63,9 @@ class MeprReportsCtrl extends MeprBaseCtrl
     MeprUtils::render_csv( $results, $filename );
   }
 
-  public static function load_widget()
-  {
+  public static function load_widget() {
+    check_ajax_referer('mepr_reports', 'report_nonce');
+
     $mepr_options = MeprOptions::fetch();
     $currency_symbol = $mepr_options->currency_symbol;
     $results = MeprReports::get_widget_data();
@@ -71,8 +84,7 @@ class MeprReportsCtrl extends MeprBaseCtrl
         )
       );
 
-    foreach($results as $r)
-    {
+    foreach($results as $r) {
       $tooltip_date = date_i18n('M j, Y', mktime(0, 0, 0, gmdate('n'), gmdate('j', strtotime($r->date)), gmdate('Y')), true);
 
       $chart_data['rows'][] =
@@ -95,8 +107,9 @@ class MeprReportsCtrl extends MeprBaseCtrl
     die();
   }
 
-  public static function load_pie()
-  {
+  public static function load_pie() {
+    check_ajax_referer('mepr_reports', 'report_nonce');
+
     $year = (isset($_REQUEST['year']))?$_REQUEST['year']:false;
     $month = (isset($_REQUEST['month']))?$_REQUEST['month']:false;
     $results = MeprReports::get_pie_data($year, $month);
@@ -109,8 +122,7 @@ class MeprReportsCtrl extends MeprBaseCtrl
         )
       );
 
-    foreach($results as $result)
-    {
+    foreach($results as $result) {
       $product = ($result->product)?$result->product:__('Other', 'memberpress');
       $chart_data['rows'][] =
         array( 'c' =>
@@ -126,11 +138,15 @@ class MeprReportsCtrl extends MeprBaseCtrl
   }
 
   public static function export_monthly() {
-    self::load_monthly(true);
+    self::monthly_table(true);
   }
 
-  public static function load_monthly( $export = false )
-  {
+  public static function load_monthly() {
+    check_ajax_referer('mepr_reports', 'report_nonce');
+    self::monthly_table();
+  }
+
+  public static function monthly_table( $export = false ) {
     $mepr_options = MeprOptions::fetch();
     $type = (isset($_REQUEST['type']) && !empty($_REQUEST['type']))?$_REQUEST['type']:'amounts';
     $currency_symbol = ($type == 'amounts')?$mepr_options->currency_symbol:'';
@@ -164,8 +180,7 @@ class MeprReportsCtrl extends MeprBaseCtrl
         )
       );
 
-    foreach($results as $r)
-    {
+    foreach($results as $r) {
       $tooltip_date = date_i18n('M j, Y', mktime(0, 0, 0, $month, $r->day, $year), true);
 
       $chart_data['rows'][] =
@@ -189,11 +204,15 @@ class MeprReportsCtrl extends MeprBaseCtrl
   }
 
   public static function export_yearly() {
-    self::load_yearly(true);
+    self::yearly_table(true);
   }
 
-  public static function load_yearly($export=false)
-  {
+  public static function load_yearly() {
+    check_ajax_referer('mepr_reports', 'report_nonce');
+    self::yearly_table();
+  }
+
+  public static function yearly_table($export=false) {
     $mepr_options = MeprOptions::fetch();
     $type = (isset($_REQUEST['type']) && !empty($_REQUEST['type']))?$_REQUEST['type']:'amounts';
     $currency_symbol = ($type == 'amounts')?$mepr_options->currency_symbol:'';
@@ -226,8 +245,7 @@ class MeprReportsCtrl extends MeprBaseCtrl
         )
       );
 
-    foreach($results as $r)
-    {
+    foreach($results as $r) {
       $tooltip_date = date_i18n('M, Y', mktime(0, 0, 0, $r->month, 15, $year), true);
       $chart_data['rows'][] =
         array( 'c' =>

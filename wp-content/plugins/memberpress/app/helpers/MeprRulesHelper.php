@@ -106,7 +106,7 @@ class MeprRulesHelper
   {
     $contents = array();
 
-    $post_contents = get_posts(array('numberposts' => -1, 'post_type' => 'memberpressproduct', 'post_status' => 'publish'));
+    $post_contents = MeprCptModel::all('MeprProduct');
 
     foreach($post_contents as $post)
       $contents[$post->ID] = $post->post_title;
@@ -154,7 +154,7 @@ class MeprRulesHelper
 
   public static function drip_expires_after_dropdown($rule, $type)
   {
-    $products = get_posts(array('post_type' => MeprProduct::$cpt, 'post_status' => 'publish', 'numberposts' => -1));
+    $products = MeprCptModel::all('MeprProduct');
     ?>
     <select name="<?php echo $type; ?>" id="<?php echo $type; ?>">
       <option value="registers" <?php selected((($type == MeprRule::$drip_after_str && $rule->drip_after == 'registers') || ($type == MeprRule::$expires_after_str && $rule->expires_after == 'registers'))); ?>><?php _e('member registers', 'memberpress'); ?></option>

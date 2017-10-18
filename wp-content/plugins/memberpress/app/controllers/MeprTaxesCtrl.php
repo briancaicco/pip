@@ -92,6 +92,8 @@ class MeprTaxesCtrl extends MeprBaseCtrl {
   }
 
   public function export_tax_rates() {
+    check_ajax_referer('export_tax_rates', 'mepr_taxes_nonce');
+
     $tax_rates = MeprTaxRate::get_all(';',ARRAY_A);
 
     if(!empty($tax_rates) && is_array($tax_rates)) {
@@ -107,6 +109,8 @@ class MeprTaxesCtrl extends MeprBaseCtrl {
   }
 
   public function remove_tax_rate() {
+    check_ajax_referer('mepr_taxes', 'tax_nonce');
+
     if(!MeprUtils::is_mepr_admin()) {
       header('HTTP/1.0 403 Forbidden');
       exit;

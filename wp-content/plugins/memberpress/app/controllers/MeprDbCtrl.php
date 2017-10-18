@@ -52,6 +52,8 @@ class MeprDbCtrl extends MeprBaseCtrl {
   }
 
   public function ajax_db_upgrade() {
+    check_ajax_referer('db_upgrade', 'mepr_db_upgrade_nonce');
+
     // Network super admin and non-network admins will be the only ones dealing with upgrades
     if(!MeprUtils::is_mepr_admin()) {
       header('HTTP/1.1 403 Forbidden');
@@ -78,6 +80,8 @@ class MeprDbCtrl extends MeprBaseCtrl {
   }
 
   public function ajax_db_upgrade_in_progress() {
+    check_ajax_referer('db_upgrade_in_progress', 'mepr_db_upgrade_nonce');
+
     $mig = new MeprDbMigrations();
 
     // Network super admin and non-network admins will be the only ones dealing with upgrades
@@ -90,8 +94,15 @@ class MeprDbCtrl extends MeprBaseCtrl {
 
     if(!empty($version)) {
       $current_migration = get_transient('mepr_current_migration');
-      $check = call_user_func(array($mig, $current_migration['check']));
-      $message  =(empty($current_migration['message']) ? __('MemberPress is currently upgrading your database', 'memberpress') : $current_migration['message']);
+
+      if(!isset($current_migration['check']) || $current_migration['check'] == false) {
+        $check = array('completed' => 0, 'total' => 0, 'progress' => 0);
+      }
+      else {
+        $check = call_user_func(array($mig, $current_migration['check']));
+      }
+
+      $message  = ((!isset($current_migration['message']) || empty($current_migration['message'])) ? __('MemberPress is currently upgrading your database', 'memberpress') : $current_migration['message']);
 
       extract($check);
 
@@ -119,6 +130,8 @@ class MeprDbCtrl extends MeprBaseCtrl {
   }
 
   public function ajax_db_upgrade_success() {
+    check_ajax_referer('db_upgrade_success', 'mepr_db_upgrade_nonce');
+
     $error = get_transient('mepr_migration_error');
     if($error) {
       MeprView::render('admin/db/upgrade_error',compact('error'));
@@ -130,11 +143,15 @@ class MeprDbCtrl extends MeprBaseCtrl {
   }
 
   public function ajax_db_upgrade_not_needed() {
+    check_ajax_referer('db_upgrade_not_needed', 'mepr_db_upgrade_nonce');
+
     MeprView::render('admin/db/upgrade_not_needed');
     exit;
   }
 
   public function ajax_db_upgrade_error() {
+    check_ajax_referer('db_upgrade_error', 'mepr_db_upgrade_nonce');
+
     $error = get_transient('mepr_migration_error');
     MeprView::render('admin/db/upgrade_error',compact('error'));
     exit;
@@ -150,7 +167,10 @@ class MeprDbCtrl extends MeprBaseCtrl {
     global $wpdb;
     $mepr_db = MeprDb::fetch();
 
-    //Doing it this way for now as the admin ajax thing is causing way too many headaches -- probably not ideal though
+    // This is Async now so if we're already migrating this version then let's bail
+    $already_migrating = get_transient('mepr_migrating');
+    if(!empty($already_migrating)) { return; }
+
     if($mepr_db->do_upgrade()) {
       @ignore_user_abort(true);
       @set_time_limit(0);

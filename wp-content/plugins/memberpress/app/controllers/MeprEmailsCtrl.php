@@ -127,7 +127,7 @@ class MeprEmailsCtrl extends MeprBaseCtrl
     );
 
     $use_template = ( $_POST['t']=='true' );
-    $email->send($params, stripslashes($_POST['s']), stripslashes($_POST['b']), $use_template);
+    $email->send($params, sanitize_text_field(wp_unslash($_POST['s'])), wp_kses_post(wp_unslash($_POST['b'])), $use_template);
 
     die(json_encode(array('message' => __('Your test email was successfully sent.', 'memberpress'))));
   }

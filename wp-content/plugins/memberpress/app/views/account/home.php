@@ -17,6 +17,7 @@
 
   <form class="mepr-account-form mepr-form" id="mepr_account_form" action="" method="post" novalidate>
     <input type="hidden" name="mepr-process-account" value="Y" />
+    <?php wp_nonce_field( 'update_account', 'mepr_account_nonce' ); ?>
 
     <?php MeprHooks::do_action('mepr-account-home-before-name', $mepr_current_user); ?>
 
@@ -47,7 +48,7 @@
       <input type="email" id="user_email" name="user_email" class="mepr-form-input" value="<?php echo $mepr_current_user->user_email; ?>" required />
     </div>
     <?php
-      MeprUsersHelper::render_custom_fields();
+      MeprUsersHelper::render_custom_fields(null, 'account');
       MeprHooks::do_action('mepr-account-home-fields', $mepr_current_user);
     ?>
 
@@ -66,4 +67,3 @@
 
   <?php MeprHooks::do_action('mepr_account_home', $mepr_current_user); ?>
 </div>
-

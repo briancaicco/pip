@@ -44,10 +44,11 @@ abstract class MeprBasePayPalGateway extends MeprBaseRealGateway {
     return false;
   }
 
-  //Special method for formatting zero decimal currencies for PayPal (only used in PayPal Standard currently, but if tests to well should be moved to the other's)
+  //Special method for formatting zero decimal currencies for PayPal (only used in PayPal Standard currently)
   public function format_currency($amount) {
     if(MeprUtils::is_zero_decimal_currency()) {
-      return MeprAppHelper::format_currency($amount, false, false);
+      $amount = MeprAppHelper::format_currency($amount, false, false);
+      return str_replace(array(',','.'), array('',''), $amount); //Strip out all formatting
     }
 
     return MeprUtils::format_float($amount);

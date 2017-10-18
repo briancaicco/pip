@@ -908,12 +908,6 @@
 		"oAP": "\/inc\/theme-settings.php",
 		"oF": 0
 		},
-	"\/inc\/untitled.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/inc\/untitled.html",
-		"oF": 0
-		},
 	"\/inc\/widgets.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -943,6 +937,24 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/customizer-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/init-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/init-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/init.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/init-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0

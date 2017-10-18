@@ -48,7 +48,7 @@ class MeprGroupsHelper {
   }
 
   public static function get_products_dropdown($chosen = null) {
-    $products = get_posts(array('numberposts' => -1, 'post_type' => MeprProduct::$cpt, 'post_status' => 'publish'));
+    $products = MeprCptModel::all('MeprProduct');
     ?>
       <select name="<?php echo MeprGroup::$products_str; ?>[product][]" class="group_products_dropdown">
         <?php foreach($products as $p): ?>

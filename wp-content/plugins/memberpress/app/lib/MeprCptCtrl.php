@@ -1,18 +1,53 @@
 <?php
 if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');}
 
-abstract class MeprCptCtrl extends MeprBaseCtrl
-{
+abstract class MeprCptCtrl extends MeprBaseCtrl {
   public $cpt;
 
   public function __construct() {
-    add_action('init', array( $this, 'register_post_type' ), 0);
-    add_filter('post_updated_messages', array($this,'post_updated_messages'));
-    add_filter('bulk_post_updated_messages', array($this,'bulk_post_updated_messages'), 10, 2);
+    add_action('init',                        array($this, 'register_post_type'), 0);
+    add_filter('post_updated_messages',       array($this, 'post_updated_messages'));
+    add_filter('bulk_post_updated_messages',  array($this, 'bulk_post_updated_messages'), 10, 2);
+    add_action('save_post',                   array($this, 'update_all_models_for_class_transient'));
     parent::__construct();
   }
 
   abstract public function register_post_type();
+
+  public function update_all_models_for_class_transient($post_id) {
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+      return;
+    }
+
+    if(defined('DOING_AJAX') && DOING_AJAX) {
+      return;
+    }
+
+    if(wp_is_post_revision($post_id) !== false) {
+      return; //Don't bother if it's a revision
+    }
+
+    $post = get_post($post_id);
+
+    //Only do this for our own CPT's
+    switch($post->post_type) {
+      case 'memberpresscoupon':
+        MeprCptModel::all('MeprCoupon',   true);
+        break;
+      case 'memberpressgroup':
+        MeprCptModel::all('MeprGroup',    true);
+        break;
+      case 'memberpressproduct':
+        MeprCptModel::all('MeprProduct',  true);
+        break;
+      case 'mp-reminder':
+        MeprCptModel::all('MeprReminder', true);
+        break;
+      case 'memberpressrule':
+        MeprCptModel::all('MeprRule',     true);
+        break;
+    }
+  }
 
   /** Used to ensure we don't see any references to 'post' or a link when. */
   public function post_updated_messages( $messages ) {

@@ -2,6 +2,7 @@
 if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');}
 
 class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
+  public static $has_spc_form = false;
   /** Used in the view to identify the gateway */
   public function __construct() {
     $this->name = __("PayPal Standard", 'memberpress');
@@ -91,7 +92,7 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
 
   /** Listens for an incoming connection from PayPal and then handles the request appropriately. */
   public function listener() {
-    $_POST = stripslashes_deep($_POST);
+    $_POST = wp_unslash($_POST);
     $this->email_status("PayPal IPN Recieved\n" . MeprUtils::object_to_string($_POST, true) . "\n", $this->settings->debug);
 
     if($this->validate_ipn()) { return $this->process_ipn(); }
@@ -206,6 +207,13 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       $timestamp = isset($_POST['payment_date']) ? strtotime($_POST['payment_date']) : time();
       $first_txn = new MeprTransaction($sub->first_txn_id);
 
+      if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+        $first_txn = new MeprTransaction();
+        $first_txn->user_id = $sub->user_id;
+        $first_txn->product_id = $sub->product_id;
+        $first_txn->coupon_id = $sub->coupon_id;
+      }
+
       //If this is a trial payment, let's just convert the confirmation txn into a payment txn
       if($this->is_subscr_trial_payment($sub)) {
         $txn = $first_txn; //For use below in send notices
@@ -224,10 +232,12 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
         $existing = MeprTransaction::get_one_by_trans_num($_POST['txn_id']);
 
         //There's a chance this may have already happened during the return handler, if so let's just get everything up to date on the existing one
-        if($existing != null && isset($existing->id) && (int)$existing->id > 0)
+        if($existing != null && isset($existing->id) && (int)$existing->id > 0) {
           $txn = new MeprTransaction($existing->id);
-        else
+        }
+        else {
           $txn = new MeprTransaction();
+        }
 
         $txn->created_at = MeprUtils::ts_to_mysql_date($timestamp);
         $txn->user_id    = $first_txn->user_id;
@@ -278,11 +288,17 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
             ( isset($_POST['subscr_id']) &&
               ($sub = MeprSubscription::get_one_by_subscr_id($_POST['subscr_id'])) ) ) {
       $first_txn = $sub->first_txn();
+      if($first_txn == false || !($first_txn instanceof MeprTransaction)) {
+        $coupon_id = $sub->coupon_id;
+      }
+      else {
+        $coupon_id = $first_txn->coupon_id;
+      }
 
       $txn = new MeprTransaction();
       $txn->user_id = $sub->user_id;
       $txn->product_id = $sub->product_id;
-      $txn->coupon_id = $first_txn->coupon_id;
+      $txn->coupon_id = $coupon_id;
       $txn->txn_type = MeprTransaction::$payment_str;
       $txn->status = MeprTransaction::$failed_str;
       $txn->subscription_id = $sub->id;
@@ -461,8 +477,14 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
     $sub = $temp_txn->subscription();
 
     if((int)$sub->id > 0) {
-      $txn              = $sub->first_txn();
-      $old_total        = $txn->total;
+      $txn = $sub->first_txn();
+      if($txn == false || !($txn instanceof MeprTransaction)) {
+        $txn = new MeprTransaction();
+        $txn->user_id = $sub->user_id;
+        $txn->product_id = $sub->product_id;
+      }
+
+      $old_total = $txn->total;
 
       $timestamp = isset($_POST['payment_date']) ? strtotime($_POST['payment_date']) : time();
 
@@ -594,7 +616,7 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
 
     //Check if prior txn is expired yet or not, if so create a temporary txn so the user can access the content immediately
     $prior_txn = $sub->latest_txn();
-    if(strtotime($prior_txn->expires_at) < time()) {
+    if($prior_txn == false || !($prior_txn instanceof MeprTransaction) || strtotime($prior_txn->expires_at) < time()) {
       $txn = new MeprTransaction();
       $txn->subscription_id = $sub->id;
       $txn->trans_num  = $sub->subscr_id . '-' . uniqid();
@@ -757,9 +779,13 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       }
 
       //Build the URL
-      $query_str = http_build_query($payment_vars);
-      $url = $this->settings->url . '?' . $query_str;
-      MeprUtils::wp_redirect(str_replace('&amp;', '&', $url));
+      // No longer doing this yo, GET was deprecated in 2017 by PayPal.
+      // $query_str = http_build_query($payment_vars);
+      // $url = $this->settings->url . '?' . $query_str;
+      // MeprUtils::wp_redirect(str_replace('&amp;', '&', $url));
+
+      $_REQUEST['pp_standard_payment_vars'] = $payment_vars;
+      return; //Uh yeah - don't forget this or we'll trigger the exception below
     }
 
     throw new Exception(__('Sorry, we couldn\'t complete the transaction. Try back later.', 'memberpress'));
@@ -810,9 +836,47 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
   }
 
   /** This gets called on the_content and just renders the payment form
+      For PayPal Standard we're loading up a hidden form and submitting it with JS
     */
   public function display_payment_form($amount, $user, $product_id, $transaction_id) {
-    // Handled on the PayPal site so we don't have a need for it here
+    $payment_vars = isset($_REQUEST['pp_standard_payment_vars'])?$_REQUEST['pp_standard_payment_vars']:array();
+
+    if(empty($payment_vars)) {
+      echo '<p id="pp_standard_oops_message">';
+      _ex('Woops, someting went wrong. Please try your purchase again.', 'ui', 'memberpress');
+      echo '</p>';
+    }
+
+    //Show a message?
+    ?>
+      <p id="pp_standard_redirecting_message"><img src="<?php echo includes_url('js/thickbox/loadingAnimation.gif'); ?>" width="250" />
+      <br/>
+      <?php _ex('You are being redirected to PayPal now. Please wait...', 'ui', 'memberpress'); ?></p>
+    <?php
+
+    //Output the form YO
+    echo '<form id="mepr_pp_standard_form" action="'.$this->settings->url.'" method="post">';
+    foreach($payment_vars as $key => $val) {
+      if($key == 'custom'):
+        ?>
+          <textarea name="<?php echo $key; ?>" style="display:none;"><?php echo esc_textarea($val); ?></textarea>
+        <?php
+      else:
+        ?>
+          <input type="hidden" name="<?php echo $key; ?>" value="<?php echo esc_attr($val); ?>" />
+        <?php
+      endif;
+    }
+    echo '</form>';
+
+    //Javascript to force the form to submit
+    ?>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("mepr_pp_standard_form").submit();
+      }, 1000); //Let's wait one second to let some stuff load up
+    </script>
+    <?php
   }
 
   /** Validates the payment form before a payment is processed */

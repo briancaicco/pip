@@ -486,7 +486,7 @@ class MeprReports {
     $mepr_db = new MeprDb();
 
     $query = "SELECT AVG(lv) AS alv " .
-               "FROM ( SELECT (SUM(t.amount)+SUM(t.tax_amount)) AS lv " .
+               "FROM ( SELECT SUM(t.amount) AS lv " .
                         "FROM {$mepr_db->transactions} AS t " .
                        "WHERE t.txn_type = %s " .
                          "AND t.status = %s " .

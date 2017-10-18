@@ -50,7 +50,8 @@ jQuery(document).ready(function() {
       var i = jQuery(this).attr('data-value');
       var data = {
         action: 'mepr_delete_transaction',
-        id: i
+        id: i,
+        mepr_transactions_nonce: MeprTxn.delete_transaction_nonce
       };
 
       jQuery.post(ajaxurl, data, function(response) {

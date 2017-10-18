@@ -227,17 +227,17 @@ class MeprRemindersCtrl extends MeprCptCtrl {
     if(!empty($post) && $post->post_type == MeprReminder::$cpt) {
       $reminder = new MeprReminder($post_id);
 
-      $reminder->trigger_length   = $_POST[MeprReminder::$trigger_length_str];
-      $reminder->trigger_interval = $_POST[MeprReminder::$trigger_interval_str];
-      $reminder->trigger_timing   = $_POST[MeprReminder::$trigger_timing_str];
-      $reminder->trigger_event    = $_POST[MeprReminder::$trigger_event_str];
+      $reminder->trigger_length   = sanitize_text_field($_POST[MeprReminder::$trigger_length_str]);
+      $reminder->trigger_interval = sanitize_text_field($_POST[MeprReminder::$trigger_interval_str]);
+      $reminder->trigger_timing   = sanitize_text_field($_POST[MeprReminder::$trigger_timing_str]);
+      $reminder->trigger_event    = sanitize_text_field($_POST[MeprReminder::$trigger_event_str]);
       $reminder->filter_products  = false;
       $reminder->products         = array();
 
       //Override filter by products vars
       if(isset($_POST[MeprReminder::$filter_products_str]) && !empty($_POST[MeprReminder::$products_str])) {
         $reminder->filter_products  = true;
-        $reminder->products         = $_POST[MeprReminder::$products_str];
+        $reminder->products         = array_map('sanitize_text_field', $_POST[MeprReminder::$products_str]);
       }
 
       // Notification Settings
@@ -245,8 +245,8 @@ class MeprRemindersCtrl extends MeprCptCtrl {
       foreach( $_POST[MeprReminder::$emails_str] as $email => $vals ) {
         $emails[$email] = array( 'enabled'      => isset( $vals['enabled'] ),
                                  'use_template' => isset( $vals['use_template'] ),
-                                 'subject'      => stripslashes( $vals['subject'] ),
-                                 'body'         => stripslashes( $vals['body'] )
+                                 'subject'      => sanitize_text_field( wp_unslash($vals['subject']) ),
+                                 'body'         => wp_kses_post( wp_unslash($vals['body']) )
                           );
       }
 
