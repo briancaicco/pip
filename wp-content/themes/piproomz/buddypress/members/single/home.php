@@ -19,10 +19,6 @@
 	do_action( 'bp_before_member_home_content' ); ?>
 
 
-
-
-
-
 <div class="row">
 	
 	<div class="col-3">
@@ -39,7 +35,6 @@
 			</div>	
 			<div class="col-12 p-3 bg-dark">
 				<div id="item-header" role="complementary">
-
 					<?php
 					/**
 					 * If the cover image feature is enabled, use a specific header

@@ -29,6 +29,17 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:  #000 !default;
 
+.bg-grey-100{background: #f8f9fa;}
+.bg-grey-200{background: #e9ecef;}
+.bg-grey-300{background: #dee2e6;}
+.bg-grey-400{background: #ced4da;}
+.bg-grey-500{background: #adb5bd;}
+.bg-grey-600{background: #868e96;}
+.bg-grey-700{background: #495057;}
+.bg-grey-800{background: #343a40;}
+.bg-grey-900{background: #212529;}
+
+
 $grays: (
   100: $gray-100,
   200: $gray-200,

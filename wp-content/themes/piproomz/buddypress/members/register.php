@@ -21,7 +21,7 @@ do_action( 'bp_before_register_page' ); ?>
 
 <div class="row">
 	<div class="col-lg-5 mx-auto">
-		<div class="card">
+		<div class="card p-3 el-9">
 			<div class="card-title px-3 pt-3 pb-0">
 				<h4>Request Invitation</h4>
 			</div>

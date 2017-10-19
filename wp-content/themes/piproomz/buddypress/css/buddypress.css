@@ -1675,25 +1675,25 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	max-width: 185px;
 }
 
-#buddypress div.item-list-tabs ul li a,
-#buddypress div.item-list-tabs ul li span {
-	display: block;
-	padding: 5px 10px;
-	text-decoration: none;
-}
+// #buddypress div.item-list-tabs ul li a,
+// #buddypress div.item-list-tabs ul li span {
+// 	display: block;
+// 	padding: 5px 10px;
+// 	text-decoration: none;
+// }
 
-#buddypress div.item-list-tabs ul li a span {
-	background: #eee;
-	border-radius: 50%;
-	border: 1px solid #ccc;
-	color: #6c6c6c;
-	display: inline;
-	font-size: 70%;
-	margin-left: 2px;
-	padding: 3px 6px;
-	text-align: center;
-	vertical-align: middle;
-}
+// #buddypress div.item-list-tabs ul li a span {
+// 	background: #eee;
+// 	border-radius: 50%;
+// 	border: 1px solid #ccc;
+// 	color: #6c6c6c;
+// 	display: inline;
+// 	font-size: 70%;
+// 	margin-left: 2px;
+// 	padding: 3px 6px;
+// 	text-align: center;
+// 	vertical-align: middle;
+// }
 
 #buddypress div.item-list-tabs ul li.selected a,
 #buddypress div.item-list-tabs ul li.current a {

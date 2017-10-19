@@ -14,6 +14,7 @@
 	background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%);
 }
 
+
 // Typography
 /////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
@@ -38,6 +39,17 @@ p{
 	font-family: $p-font;
 }
 
+
+// Navigation
+/////////////////////////////////////////////////////////////////////////
+#buddypress div.item-list-tabs ul li.selected a, #buddypress div.item-list-tabs ul li.current a{
+	color: $white;
+	background: $gray-600;
+	border-radius: .25rem;
+	font-weight: 700;
+}
+
+
 // Forms
 /////////////////////////////////////////////////////////////////////////
 .form-control{
@@ -55,6 +67,11 @@ p{
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 	box-shadow: none;
 }
+
+.custom-select{
+	-webkit-appearance: none;
+}
+
 // Buttons
 /////////////////////////////////////////////////////////////////////////
 
@@ -94,8 +111,8 @@ p{
 /////////////////////////////////////////////////////////////////////////
 
 .card{
-	box-shadow: $el-9;
-	padding: 20px;
+	//box-shadow: $el-9;
+	//padding: 20px;
 }
 
 .card-title{
@@ -104,8 +121,13 @@ p{
 
 .card-body{
 	color: $gray-500;
-	min-height: 400px;
+	//min-height: 400px;
+
+	.current{
+		font-weight: bold;
+	}
 }
+
 
 
 // Primary Nav

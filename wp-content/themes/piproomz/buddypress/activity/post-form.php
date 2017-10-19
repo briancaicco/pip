@@ -25,7 +25,7 @@
 		</a>
 	</div>
 
-	<p class="activity-greeting"><?php if ( bp_is_group() )
+	<p class="activity-greeting text-muted h6"><?php if ( bp_is_group() )
 		printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname( bp_get_loggedin_user_fullname() ) );
 	else
 		printf( __( "What's new, %s?", 'buddypress' ), bp_get_user_firstname( bp_get_loggedin_user_fullname() ) );
@@ -33,11 +33,7 @@
 
 	<div id="whats-new-content">
 		<div id="whats-new-textarea">
-			<label for="whats-new" class="bp-screen-reader-text"><?php
-				/* translators: accessibility text */
-				_e( 'Post what\'s new', 'buddypress' );
-			?></label>
-			<textarea class="bp-suggestions form-control form-control-lg" name="whats-new" id="whats-new" cols="50" rows="10"
+			<textarea placeholder="Share a signal or update with the commnuity" class="bp-suggestions form-control form-control-lg" name="whats-new" id="whats-new" cols="50" rows="10"
 				<?php if ( bp_is_group() ) : ?>data-suggestions-group-id="<?php echo esc_attr( (int) bp_get_current_group_id() ); ?>" <?php endif; ?>
 			><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_textarea( $_GET['r'] ); ?> <?php endif; ?></textarea>
 		</div>
@@ -51,13 +47,13 @@
 
 				<div id="whats-new-post-in-box">
 
-					<?php _e( 'Post in', 'buddypress' ); ?>:
+					<?php _e( 'Post in:', 'buddypress' ); ?>
 
 					<label for="whats-new-post-in" class="bp-screen-reader-text"><?php
 						/* translators: accessibility text */
-						_e( 'Post in', 'buddypress' );
+						//_e( 'Post in', 'buddypress' );
 					?></label>
-					<select id="whats-new-post-in" name="whats-new-post-in">
+					<select class="custom-select w-50" id="whats-new-post-in" name="whats-new-post-in">
 						<option selected="selected" value="0"><?php _e( 'My Profile', 'buddypress' ); ?></option>
 
 						<?php if ( bp_has_groups( 'user_id=' . bp_loggedin_user_id() . '&type=alphabetical&max=100&per_page=100&populate_extras=0&update_meta_cache=0' ) ) :
