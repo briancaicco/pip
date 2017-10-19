@@ -36,7 +36,7 @@ do_action( 'bp_before_profile_avatar_upload_content' ); ?>
 					_e( 'Select an image', 'buddypress' );
 				?></label>
 				<input type="file" name="file" id="file" />
-				<input type="submit" name="upload" id="upload" value="<?php esc_attr_e( 'Upload Image', 'buddypress' ); ?>" />
+				<input type="submit" class="btn btn-lg btn-success" name="upload" id="upload" value="<?php esc_attr_e( 'Upload Image', 'buddypress' ); ?>" />
 				<input type="hidden" name="action" id="action" value="bp_avatar_upload" />
 			</p>
 
@@ -57,7 +57,7 @@ do_action( 'bp_before_profile_avatar_upload_content' ); ?>
 				<img src="<?php bp_avatar_to_crop(); ?>" id="avatar-crop-preview" class="avatar" alt="<?php esc_attr_e( 'Profile photo preview', 'buddypress' ); ?>" />
 			</div>
 
-			<input type="submit" name="avatar-crop-submit" id="avatar-crop-submit" value="<?php esc_attr_e( 'Crop Image', 'buddypress' ); ?>" />
+			<input type="submit" class="btn btn-lg btn-success" name="avatar-crop-submit" id="avatar-crop-submit" value="<?php esc_attr_e( 'Crop Image', 'buddypress' ); ?>" />
 
 			<input type="hidden" name="image_src" id="image_src" value="<?php bp_avatar_to_crop_src(); ?>" />
 			<input type="hidden" id="x" name="x" />

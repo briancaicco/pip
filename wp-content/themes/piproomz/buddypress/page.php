@@ -18,7 +18,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
 <section>
-	<div class="container content py-4 py-sm-6 py-lg-7 ">
+	<div class="container content pt-5 ">
 
 		<div class="row">
 

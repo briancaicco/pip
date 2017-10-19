@@ -1455,7 +1455,7 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 }
 
 #buddypress div#item-header div#item-header-content {
-	float: left;
+	//float: left;
 	margin-left: 0;
 }
 
@@ -1470,8 +1470,8 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 }
 
 #buddypress div#item-header img.avatar {
-	float: left;
-	margin: 0 15px 19px 0;
+	//float: left;
+	//margin: 0 15px 19px 0;
 }
 
 #buddypress div#item-header h2 {
@@ -1772,7 +1772,7 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 }
 
 #buddypress #item-header-cover-image {
-	padding: 0 1em;
+	//padding: 0 1em;
 	position: relative;
 	z-index: 2;
 }

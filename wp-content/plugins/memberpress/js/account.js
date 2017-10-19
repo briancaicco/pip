@@ -24,7 +24,9 @@ jQuery(document).ready(function ($) {
   });
 
   $('.mepr-upgrade-buy-now').on('click', function(e){
-    var url = $('.mepr-upgrade-dropdown').val();
+    var id = $(this).data('id');
+    var selector = 'select#mepr-upgrade-dropdown-' + id;
+    var url = $(selector).val();
     location.href = url;
   });
 });

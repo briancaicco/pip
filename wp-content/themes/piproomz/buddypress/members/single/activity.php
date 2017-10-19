@@ -15,7 +15,7 @@
 
 		<li id="activity-filter-select" class="last">
 			<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
-			<select id="activity-filter-by">
+			<select id="activity-filter-by" class="custom-select">
 				<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 
 				<?php bp_activity_show_filters(); ?>

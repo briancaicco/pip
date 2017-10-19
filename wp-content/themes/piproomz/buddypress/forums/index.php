@@ -212,7 +212,7 @@
 					do_action( 'groups_forum_new_topic_after' ); ?>
 
 					<div class="submit">
-						<input type="submit" name="submit_topic" id="submit" value="<?php esc_attr_e( 'Post Topic', 'buddypress' ); ?>" />
+						<input type="submit" class="btn btn-lg btn-success" name="submit_topic" id="submit" value="<?php esc_attr_e( 'Post Topic', 'buddypress' ); ?>" />
 						<input type="button" name="submit_topic_cancel" id="submit_topic_cancel" value="<?php esc_attr_e( 'Cancel', 'buddypress' ); ?>" />
 					</div>
 

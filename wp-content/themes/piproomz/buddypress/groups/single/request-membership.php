@@ -34,7 +34,7 @@ do_action( 'bp_before_group_request_membership_content' ); ?>
 		 */
 		do_action( 'bp_group_request_membership_content' ); ?>
 
-		<p><input type="submit" name="group-request-send" id="group-request-send" value="<?php esc_attr_e( 'Send Request', 'buddypress' ); ?>" />
+		<p><input type="submit" class="btn btn-lg btn-success" name="group-request-send" id="group-request-send" value="<?php esc_attr_e( 'Send Request', 'buddypress' ); ?>" />
 
 		<?php wp_nonce_field( 'groups_request_membership' ); ?>
 	</form><!-- #request-membership-form -->

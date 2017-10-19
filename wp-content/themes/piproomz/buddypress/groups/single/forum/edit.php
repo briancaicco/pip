@@ -89,7 +89,7 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 				 */
 				do_action( 'bp_group_after_edit_forum_topic' ); ?>
 
-				<p class="submit"><input type="submit" name="save_changes" id="save_changes" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" /></p>
+				<p class="submit"><input type="submit" class="btn btn-lg btn-success" name="save_changes" id="save_changes" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" /></p>
 
 				<?php wp_nonce_field( 'bp_forums_edit_topic' ); ?>
 
@@ -123,7 +123,7 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 				 */
 				do_action( 'bp_group_after_edit_forum_post' ); ?>
 
-				<p class="submit"><input type="submit" name="save_changes" id="save_changes" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" /></p>
+				<p class="submit"><input type="submit" class="btn btn-lg btn-success" name="save_changes" id="save_changes" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" /></p>
 
 				<?php wp_nonce_field( 'bp_forums_edit_post' ); ?>
 

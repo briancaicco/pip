@@ -25,44 +25,49 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <body <?php body_class(); ?>>
 
-<header>
-		<nav class="navbar navbar-expand-md navbar-fixed-top navbar-light el-2">
+	<header>
+			<nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
 
-			<div class="container">
+				<div class="container">
+						
+						<?php if ( ! has_custom_logo() ) { ?>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-					
-					<?php if ( ! has_custom_logo() ) { ?>
+							<?php if ( is_front_page() && is_home() ) : ?>
 
-						<?php if ( is_front_page() && is_home() ) : ?>
+								<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+								
+							<?php else : ?>
 
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+								<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
 							
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
+							<?php endif; ?>
+							
 						
-						<?php endif; ?>
-						
-					
-					<?php } else {
-						the_custom_logo();
-					} ?>
+						<?php } else {
+							the_custom_logo();
+						} ?>
 
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav ml-auto',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'walker'          => new WP_Bootstrap_Navwalker(),
-					)
-				); ?>
-			</div>
+					<?php 
 
-		</nav>
-</header>
+					// wp_nav_menu(
+					// 	array(
+					// 		'theme_location'  => 'primary',
+					// 		'container_class' => 'collapse navbar-collapse',
+					// 		'container_id'    => 'navbarNavDropdown',
+					// 		'menu_class'      => 'navbar-nav ml-auto',
+					// 		'fallback_cb'     => '',
+					// 		'menu_id'         => 'main-menu',
+					// 		'walker'          => new WP_Bootstrap_Navwalker(),
+					// 	)
+					// ); 
+
+					?>
+
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+
+			</nav>
+	</header>
+

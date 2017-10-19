@@ -260,7 +260,8 @@ class MeprVatTaxCtrl extends MeprBaseCtrl {
       array(
         'action' => 'mepr_vat_country_report',
         'export' => $type
-      )
+      ),
+      true
     );
 
     ?>

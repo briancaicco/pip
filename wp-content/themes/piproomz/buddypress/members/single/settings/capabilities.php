@@ -26,7 +26,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	</label>
 
 	<div class="submit">
-		<input type="submit" value="<?php esc_attr_e( 'Save', 'buddypress' ); ?>" id="capabilities-submit" name="capabilities-submit" />
+		<input type="submit" class="btn btn-lg btn-success" value="<?php esc_attr_e( 'Save', 'buddypress' ); ?>" id="capabilities-submit" name="capabilities-submit" />
 	</div>
 
 	<?php

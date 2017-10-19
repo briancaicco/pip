@@ -179,6 +179,11 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
                                   'x_country' => get_user_meta($usr->ID, 'mepr-address-country', true) ), $args );
     }
 
+    //If customer provided a new ZIP code let's add it here
+    if(isset($_POST['mepr_zip_post_code']) && !empty($_POST['mepr_zip_post_code'])) {
+      $args['x_zip'] = sanitize_text_field(wp_unslash($_POST['mepr_zip_post_code']));
+    }
+
     $args = MeprHooks::apply_filters('mepr_authorize_payment_args', $args, $txn);
 
     $res = $this->send_aim_request('AUTH_CAPTURE', $args);
@@ -531,6 +536,11 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
                                   'x_country' => get_user_meta($usr->ID, 'mepr-address-country', true) ), $args );
     }
 
+    //If customer provided a new ZIP code let's add it here
+    if(isset($_POST['mepr_zip_post_code']) && !empty($_POST['mepr_zip_post_code'])) {
+      $args['x_zip'] = sanitize_text_field(wp_unslash($_POST['mepr_zip_post_code']));
+    }
+
     $args = MeprHooks::apply_filters('mepr_authorize_auth_card_args', $args, $txn);
 
     $res = $this->send_aim_request('AUTH_ONLY', $args);
@@ -610,6 +620,11 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
                           "state" => get_user_meta($usr->ID, 'mepr-address-state', true),
                           "zip" => get_user_meta($usr->ID, 'mepr-address-zip', true),
                           "country" => get_user_meta($usr->ID, 'mepr-address-country', true)));
+    }
+
+    //If customer provided a new ZIP code let's add it here
+    if(isset($_POST['mepr_zip_post_code']) && !empty($_POST['mepr_zip_post_code'])) {
+      $args['subscription']['billTo']['zip'] = sanitize_text_field(wp_unslash($_POST['mepr_zip_post_code']));
     }
 
     $args = MeprHooks::apply_filters('mepr_authorize_create_subscription_args', $args, $txn, $sub);
@@ -965,6 +980,13 @@ class MeprAuthorizeGateway extends MeprBaseRealGateway {
             <span class="cc-error"><?php _e('Invalid CVC Code', 'memberpress'); ?></span>
           </div>
           <input type="tel" name="mepr_cvv_code" class="mepr-form-input card-cvc cc-cvc validation" pattern="\d*" autocomplete="off" required />
+        </div>
+
+        <div class="mp-form-row">
+          <div class="mp-form-label">
+            <label><?php _e('ZIP/Post Code', 'memberpress'); ?></label>
+          </div>
+          <input type="tel" name="mepr_zip_post_code" class="mepr-form-input" autocomplete="off" value="<?php echo (isset($_POST['mepr_zip_post_code']))?$_POST['mepr_zip_post_code']:''; ?>" required />
         </div>
 
         <div class="mepr_spacer">&nbsp;</div>

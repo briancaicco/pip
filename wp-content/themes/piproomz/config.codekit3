@@ -15,66 +15,6 @@
 		"oAP": "\/404.php",
 		"oF": 0
 		},
-	"\/___memberpress\/account\/home.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/home.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/index.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/index.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/logged_in_template.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/logged_in_template.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/logged_in_widget.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/logged_in_widget.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/logged_out_template.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/logged_out_template.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/logged_out_widget.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/logged_out_widget.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/nav.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/nav.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/password.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/password.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/payments.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/payments.php",
-		"oF": 0
-		},
-	"\/___memberpress\/account\/subscriptions.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/___memberpress\/account\/subscriptions.php",
-		"oF": 0
-		},
 	"\/___memberpress\/admin\/about\/1-2-4.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1067,6 +1007,16 @@
 		"oAP": "\/buddypress\/common\/search\/dir-search-form.php",
 		"oF": 0
 		},
+	"\/buddypress\/css\/buddypress-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/buddypress\/css\/buddypress-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/buddypress\/css\/buddypress.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1750,6 +1700,12 @@
 		"oAP": "\/inc\/custom-header.php",
 		"oF": 0
 		},
+	"\/inc\/custom-post-types.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/custom-post-types.php",
+		"oF": 0
+		},
 	"\/inc\/customizer.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -2111,6 +2067,66 @@
 		"oAP": "\/loop-templates\/content.php",
 		"oF": 0
 		},
+	"\/memberpress\/account\/home.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/home.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/index.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_in_template.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_in_template.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_in_widget.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_in_widget.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_out_template.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_out_template.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/logged_out_widget.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/logged_out_widget.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/nav.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/nav.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/password.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/password.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/payments.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/payments.php",
+		"oF": 0
+		},
+	"\/memberpress\/account\/subscriptions.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/account\/subscriptions.php",
+		"oF": 0
+		},
 	"\/package.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -2129,6 +2145,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/both-sidebarspage.php",
+		"oF": 0
+		},
+	"\/page-templates\/dashboard.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/dashboard.php",
 		"oF": 0
 		},
 	"\/page-templates\/empty.php": {

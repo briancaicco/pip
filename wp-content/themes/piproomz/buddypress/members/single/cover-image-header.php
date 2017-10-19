@@ -21,13 +21,6 @@ do_action( 'bp_before_member_header' ); ?>
 	<a id="header-cover-image" href="<?php bp_displayed_user_link(); ?>"></a>
 
 	<div id="item-header-cover-image">
-		<div id="item-header-avatar">
-			<a href="<?php bp_displayed_user_link(); ?>">
-
-				<?php bp_displayed_user_avatar( 'type=full' ); ?>
-
-			</a>
-		</div><!-- #item-header-avatar -->
 
 		<div id="item-header-content">
 
@@ -35,7 +28,9 @@ do_action( 'bp_before_member_header' ); ?>
 				<h2 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h2>
 			<?php endif; ?>
 
-			<div id="item-buttons"><?php
+			<div id="item-buttons">
+
+			<?php
 
 				/**
 				 * Fires in the member header actions section.
@@ -61,7 +56,7 @@ do_action( 'bp_before_member_header' ); ?>
 
 					<div id="latest-update">
 
-						<?php bp_activity_latest_update( bp_displayed_user_id() ); ?>
+						<?php // bp_activity_latest_update( bp_displayed_user_id() ); ?>
 
 					</div>
 
@@ -77,7 +72,8 @@ do_action( 'bp_before_member_header' ); ?>
 				  *
 				  * @since 1.2.0
 				  */
-				 do_action( 'bp_profile_header_meta' );
+				 
+				 //do_action( 'bp_profile_header_meta' );
 
 				 ?>
 

@@ -56,7 +56,7 @@
 				<input type="text" name="key" id="key" value="" />
 
 				<p class="submit">
-					<input type="submit" name="submit" value="<?php esc_attr_e( 'Activate', 'buddypress' ); ?>" />
+					<input type="submit" class="btn btn-lg btn-success" name="submit" value="<?php esc_attr_e( 'Activate', 'buddypress' ); ?>" />
 				</p>
 
 			</form>

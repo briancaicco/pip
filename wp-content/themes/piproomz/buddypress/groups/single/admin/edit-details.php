@@ -49,5 +49,5 @@ do_action( 'groups_custom_group_fields_editable' ); ?>
  */
 do_action( 'bp_after_group_details_admin' ); ?>
 
-<p><input type="submit" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" id="save" name="save" /></p>
+<p><input type="submit" class="btn btn-lg btn-success" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" id="save" name="save" /></p>
 <?php wp_nonce_field( 'groups_edit_group_details' );

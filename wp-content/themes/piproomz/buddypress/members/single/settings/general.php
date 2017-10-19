@@ -43,7 +43,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	do_action( 'bp_core_general_settings_before_submit' ); ?>
 
 	<div class="submit">
-		<input type="submit" name="submit" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" id="submit" class="auto" />
+		<input type="submit" class="btn btn-lg btn-success" name="submit" value="<?php esc_attr_e( 'Save Changes', 'buddypress' ); ?>" id="submit" class="auto" />
 	</div>
 
 	<?php

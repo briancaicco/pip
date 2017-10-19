@@ -37,14 +37,14 @@
 				/* translators: accessibility text */
 				_e( 'Post what\'s new', 'buddypress' );
 			?></label>
-			<textarea class="bp-suggestions" name="whats-new" id="whats-new" cols="50" rows="10"
+			<textarea class="bp-suggestions form-control form-control-lg" name="whats-new" id="whats-new" cols="50" rows="10"
 				<?php if ( bp_is_group() ) : ?>data-suggestions-group-id="<?php echo esc_attr( (int) bp_get_current_group_id() ); ?>" <?php endif; ?>
 			><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_textarea( $_GET['r'] ); ?> <?php endif; ?></textarea>
 		</div>
 
 		<div id="whats-new-options">
 			<div id="whats-new-submit">
-				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php esc_attr_e( 'Post Update', 'buddypress' ); ?>" />
+				<input type="submit" class="btn btn-lg btn-success" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php esc_attr_e( 'Post Update', 'buddypress' ); ?>" />
 			</div>
 
 			<?php if ( bp_is_active( 'groups' ) && !bp_is_my_profile() && !bp_is_group() ) : ?>

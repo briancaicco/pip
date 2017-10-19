@@ -349,15 +349,17 @@ abstract class MeprBaseGateway {
               </div>
               <br/>
               <div>
-                <select class="mepr-upgrade-dropdown">
+                <select id="mepr-upgrade-dropdown-<?php echo $subscription->id; ?>" class="mepr-upgrade-dropdown">
                   <?php foreach($grp->products() as $p): ?>
-                    <option value="<?php echo $p->url(); ?>"><?php printf('%1$s (%2$s)', $p->post_title, MeprProductsHelper::product_terms($p, $user)); ?></option>
+                    <?php if($p->can_you_buy_me()): ?>
+                      <option value="<?php echo $p->url(); ?>"><?php printf('%1$s (%2$s)', $p->post_title, MeprProductsHelper::product_terms($p, $user)); ?></option>
+                    <?php endif; ?>
                   <?php endforeach; ?>
                 </select>
               </div>
               <br/>
               <div class="mepr-cancel-sub-buttons">
-                <button class="mepr-btn mepr-upgrade-buy-now"><?php _e('Select Plan', 'memberpress'); ?></button>
+                <button class="mepr-btn mepr-upgrade-buy-now" data-id="<?php echo $subscription->id; ?>"><?php _e('Select Plan', 'memberpress'); ?></button>
                 <button class="mepr-btn mepr-upgrade-cancel"><?php _e('Cancel', 'memberpress'); ?></button>
               </div>
             </center>

@@ -40,7 +40,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	</label>
 
 	<div class="submit">
-		<input type="submit" disabled="disabled" value="<?php esc_attr_e( 'Delete Account', 'buddypress' ); ?>" id="delete-account-button" name="delete-account-button" />
+		<input type="submit" class="btn btn-lg btn-success" disabled="disabled" value="<?php esc_attr_e( 'Delete Account', 'buddypress' ); ?>" id="delete-account-button" name="delete-account-button" />
 	</div>
 
 	<?php

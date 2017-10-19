@@ -495,6 +495,11 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
   public function can_you_buy_me() {
     global $user_ID;
 
+    // Admins can see & purchase anything
+    if(MeprUtils::is_logged_in_and_an_admin()) {
+      return true;
+    }
+
     if(MeprUtils::is_user_logged_in()) {
       $user = new MeprUser($user_ID);
     }

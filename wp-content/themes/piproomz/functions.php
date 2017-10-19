@@ -11,6 +11,11 @@
 require get_template_directory() . '/inc/setup.php';
 
 /**
+ * Create custom post types
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar

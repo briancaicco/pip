@@ -193,7 +193,7 @@ do_action( 'bp_before_group_forum_topic' ); ?>
 					<textarea name="reply_text" id="reply_text"></textarea>
 
 					<div class="submit">
-						<input type="submit" name="submit_reply" id="submit" value="<?php esc_attr_e( 'Post Reply', 'buddypress' ); ?>" />
+						<input type="submit" class="btn btn-lg btn-success" name="submit_reply" id="submit" value="<?php esc_attr_e( 'Post Reply', 'buddypress' ); ?>" />
 					</div>
 
 					<?php
