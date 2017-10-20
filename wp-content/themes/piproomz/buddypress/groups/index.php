@@ -40,7 +40,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 			<?php bp_directory_groups_search_form(); ?>
 		</div> --><!-- #group-dir-search -->
 
-		
+
 	<?php else: ?>
 
 
@@ -63,13 +63,13 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 
 			<div class="col-12 mb-3">
 
-				<nav class="navbar bg-light mb-3">
+				<nav class="sub-nav navbar bg-light mb-3">
 					<div class="item-list-tabs" aria-label="<?php esc_attr_e( 'Groups directory main navigation', 'buddypress' ); ?>">
 						<ul class="nav nav-pills">
-							<li class="selected nav-item" id="groups-all"><a class="nav-link" href="<?php bp_groups_directory_permalink(); ?>"><?php printf( __( 'All Rooms %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_group_count() . '</span>' ); ?></a></li>
+							<li class="selected nav-item" id="groups-all"><a class="nav-link" href="<?php bp_groups_directory_permalink(); ?>"><?php printf( __( 'All Rooms %s', 'buddypress' ), '<span class="badge badge-secondary">' . bp_get_total_group_count() . '</span>' ); ?></a></li>
 
 							<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
-								<li id="groups-personal"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_groups_slug() . '/my-groups/'; ?>"><?php printf( __( 'My Rooms %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_group_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
+								<li id="groups-personal"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_groups_slug() . '/my-groups/'; ?>"><?php printf( __( 'My Rooms %s', 'buddypress' ), '<span class="badge badge-secondary">' . bp_get_total_group_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
 							<?php endif; ?>
 
 							<?php

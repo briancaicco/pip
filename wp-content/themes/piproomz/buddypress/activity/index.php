@@ -61,7 +61,7 @@ do_action( 'bp_before_directory_activity' ); ?>
 				 */
 				do_action( 'bp_before_activity_type_tab_all' ); ?>
 
-				<li class="selected nav-item" id="activity-all"><a class="nav-link" href="<?php bp_activity_directory_permalink(); ?>"><?php printf( __( 'All Members %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_member_count() . '</span>' ); ?></a></li>
+				<li class="selected nav-item" id="activity-all"><a class="nav-link" href="<?php bp_activity_directory_permalink(); ?>"><?php printf( __( 'All Members %s', 'buddypress' ), '<span class="badge badge-secondary">' . bp_get_total_member_count() . '</span>' ); ?></a></li>
 
 				<?php if ( is_user_logged_in() ) : ?>
 
@@ -78,7 +78,7 @@ do_action( 'bp_before_directory_activity' ); ?>
 
 						<?php if ( bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
 
-							<li class="nav-item" id="activity-friends"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/' . bp_get_friends_slug() . '/'; ?>"><?php printf( __( 'My Friends %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_friend_count( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
+							<li class="nav-item" id="activity-friends"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/' . bp_get_friends_slug() . '/'; ?>"><?php printf( __( 'My Friends %s', 'buddypress' ), '<span class="badge badge-secondary">' . bp_get_total_friend_count( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
 
 						<?php endif; ?>
 
@@ -97,7 +97,7 @@ do_action( 'bp_before_directory_activity' ); ?>
 
 						<?php if ( bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
 
-							<li class="nav-item" id="activity-groups"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/' . bp_get_groups_slug() . '/'; ?>"><?php printf( __( 'My Groups %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_group_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
+							<li class="nav-item" id="activity-groups"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/' . bp_get_groups_slug() . '/'; ?>"><?php printf( __( 'My Groups %s', 'buddypress' ), '<span class="badge badge-secondary">' . bp_get_total_group_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
 
 						<?php endif; ?>
 
@@ -114,7 +114,7 @@ do_action( 'bp_before_directory_activity' ); ?>
 
 					<?php if ( bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) ) : ?>
 
-						<li class="nav-item" id="activity-favorites"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/favorites/'; ?>"><?php printf( __( 'My Favorites %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
+						<li class="nav-item" id="activity-favorites"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/favorites/'; ?>"><?php printf( __( 'My Favorites %s', 'buddypress' ), '<span class="badge badge-secondary">' . bp_get_total_favorite_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
 
 					<?php endif; ?>
 
@@ -129,7 +129,7 @@ do_action( 'bp_before_directory_activity' ); ?>
 						 */
 						do_action( 'bp_before_activity_type_tab_mentions' ); ?>
 
-						<li class="nav-item" id="activity-mentions"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/mentions/'; ?>"><?php _e( 'Mentions', 'buddypress' ); ?><?php if ( bp_get_total_mention_count_for_user( bp_loggedin_user_id() ) ) : ?> <strong><span class="badge badge-pill badge-secondary"><?php printf( _nx( '%s new', '%s new', bp_get_total_mention_count_for_user( bp_loggedin_user_id() ), 'Number of new activity mentions', 'buddypress' ), bp_get_total_mention_count_for_user( bp_loggedin_user_id() ) ); ?></span></strong><?php endif; ?></a></li>
+						<li class="nav-item" id="activity-mentions"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_activity_slug() . '/mentions/'; ?>"><?php _e( 'Mentions', 'buddypress' ); ?><?php if ( bp_get_total_mention_count_for_user( bp_loggedin_user_id() ) ) : ?> <strong><span class="badge badge-secondary"><?php printf( _nx( '%s new', '%s new', bp_get_total_mention_count_for_user( bp_loggedin_user_id() ), 'Number of new activity mentions', 'buddypress' ), bp_get_total_mention_count_for_user( bp_loggedin_user_id() ) ); ?></span></strong><?php endif; ?></a></li>
 
 					<?php endif; ?>
 
@@ -161,8 +161,8 @@ do_action( 'bp_before_directory_activity' ); ?>
 			do_action( 'bp_activity_syndication_options' ); ?>
 
 			<li id="activity-filter-select" class="last">
-<!-- 				<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
--->				<select id="activity-filter-by" class="custom-select">
+
+	<select id="activity-filter-by" class="custom-select">
 	<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 
 	<?php bp_activity_show_filters(); ?>
@@ -237,9 +237,12 @@ do_action( 'bp_before_directory_activity' ); ?>
 </div> <!-- .col-md-8 -->
 <div class="col-md-4">
 
-	<?php 
+	<?php the_widget( 'BP_Show_Friends_Widget', '', 'before_widget=<div class="card bp_friends_widget p-2 el-1"><div class="card-body">&after_widget=</div></div>&before_title=<h4 class="card-title">&after_title=</h4>' ); ?>	
 
-	the_widget( 'BP_Show_Friends_Widget', '', 'before_widget=<div class="card p-2 el-1"><div class="card-body">&after_widget=</div></div>&before_title=<h4 class="card-title">&after_title=</h4>' ); ?>	
+	<?php the_widget( 'BP_Groups_Widget', 'title=Rooms', 'before_widget=<div class="card mt-4 p-2 el-1 "><div class="card-body widget widget_bp_groups_widget buddypress widget">&after_widget=</div></div>&before_title=<h4 class="card-title">&after_title=</h4>' ); ?>	
+
+
+
 
 </div><!-- .col-md-8 -->
 </div><!-- .row -->

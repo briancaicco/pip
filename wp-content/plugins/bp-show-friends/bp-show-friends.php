@@ -253,7 +253,7 @@ class BP_Show_Friends_Widget extends WP_Widget{
 		    if( bp_is_my_profile() ) 
 		    	printf( __( 'My Friends - <a href="%1$s" class="badge badge-secondary">All (%2$s)</a>', 'bp-show-friends' ), $user_all_friends_url, friends_get_total_friend_count( $user_id ) );
 		    else 
-		    	printf( __( 'Friends&nbsp;<a href="%2$s" class="badge badge-secondary badge-pill">%3$s</a>', 'bp-show-friends' ), $user_name, $user_all_friends_url, friends_get_total_friend_count( $user_id ) );
+		    	printf( __( 'Friends&nbsp;<a href="%2$s" class="badge badge-secondary">%3$s</a>', 'bp-show-friends' ), $user_name, $user_all_friends_url, friends_get_total_friend_count( $user_id ) );
 		   
 
 		    echo $after_title; ?>

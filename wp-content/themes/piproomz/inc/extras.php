@@ -149,3 +149,29 @@ endif;
 
 
 
+	// Buddypress global notifications
+	//////////////////////////////////////////////////////////////////////
+
+	function bp_get_notifcation_count( ) {
+		
+		//do not change if the user is not logged in
+		if( ! is_user_logged_in() ) 
+			return;
+		
+		$user_id = get_current_user_id();//logged in user's id
+		
+		$count = bp_notifications_get_unread_notification_count( $user_id );
+
+
+		if( $count > 0 ) {
+
+			$count = sprintf( "<span class='badge badge-danger'>%d</span>", $count );
+		
+		return $count;
+		
+		} else {};
+		
+	}
+
+
+

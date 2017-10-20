@@ -26,20 +26,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class('bg-grey-200'); ?> >
 	<?php if( !is_page('login')) { ?>
 	<header> 
-			<nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
+			<nav class="primary-nav navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
 				<div class="container">
 						
 					<?php if ( is_user_logged_in() ) { ?>
+
 
 						<?php if ( ! has_custom_logo() ) { ?>
 
 							<?php if ( is_front_page() && is_home() ) : ?>
 
-								<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>/activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+								<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 								
 							<?php else : ?>
 
-								<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>/activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
+								<a class="navbar-brand " rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
 							
 							<?php endif; ?>
 							
@@ -48,7 +49,55 @@ $container = get_theme_mod( 'understrap_container_type' );
 							the_custom_logo();
 						} ?>
 
-						<?php // bp_get_displayed_user_nav(); ?>
+
+
+						    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+						        <span class="navbar-toggler-icon"></span>
+						    </button>
+
+						    <div class="navbar-collapse collapse justify-content-stretch" id="navbarNavDropdown">
+						        
+						    	<?php 
+						    	wp_nav_menu(
+						    		array(
+						    			'theme_location'  => 'primary-logged-in',
+						    			'container_class' => '',
+						    			'container_id'    => '',
+						    			'menu_class'      => 'navbar-nav',
+						    			'fallback_cb'     => '',
+						    			'menu_id'         => 'main-menu',
+						    			'walker'          => new WP_Bootstrap_Navwalker(),
+						    		)
+						    	); 
+
+						    	?>
+
+
+						        <ul class="navbar-nav flex-row ml-auto">
+
+						            <li class="nav-item">
+						                 <a class="nav-link pr-2 notifications"><?php echo bp_get_notifcation_count(); ?></a>
+						            </li>	
+
+						            <li class="nav-item dropdown">
+						                <a class="nav-link dropdown-toggle mr-lg-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						                	<?php bp_loggedin_user_avatar( 'width=30&height=30' ); ?> <?php //echo '<span class="text-light ml-1 d-inline-block">' . bp_get_user_firstname( bp_get_loggedin_user_fullname() ) . '</span>'; ?>
+						                </a>
+						                <div class="dropdown-menu dropdown-menu-right border-0" aria-labelledby="navbarDropdownMenuLink">
+						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>messages/">Messages</a>
+						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>profile/">Profile</a>
+						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>friends/">Friends</a>
+						                    <div class="dropdown-divider"></div>
+						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>settings/">Settings</a>
+						                </div>
+						            </li>
+						        </ul>
+
+						    </div>
+
+
+
+						
 
 					<?php } else { ?>
 
@@ -65,6 +114,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						
 						<?php endif; ?>
 						<?php } ?>
+					
 					<?php 
 					wp_nav_menu(
 						array(

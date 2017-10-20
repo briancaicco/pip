@@ -154,10 +154,45 @@ p{
 
 // Primary Nav
 /////////////////////////////////////////////////////////////////////////
-.navbar{
+.primary-nav.navbar{
 	background: $white;
 	z-index: 999;
+
+	.avatar{
+		border-radius: 40px;
+		display: inline-block;
+	}
+
+	.nav-item{
+		position: relative;
+		.notifications span{
+		}
+	}
+
+	.dropdown-menu{
+		border-radius: 0px;
+		top: 121%;
+		box-shadow: $el-3;
+	}
+
+	.dropdown-toggle{
+		&:hover{
+			cursor: pointer;
+		}
+		&::after{
+		vertical-align: 0.2em;
+		}
+	}
+
 }
+
+.navbar-dark .navbar-toggler-icon{
+	$string: url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E);
+	background: str-replace( $string, "#", "%23") !important;
+}
+
+
+
 
 // Home Page
 /////////////////////////////////////////////////////////////////////////
@@ -195,6 +230,34 @@ p{
 	}
 }
 
+
+// Widgets
+/////////////////////////////////////////////////////////////////////////
+.widget_bp_groups_widget{
+	.item-options{
+		a.selected{
+			font-weight: bold;
+		}
+	}
+	.item-avatar{
+		display: none;
+	}
+
+	.item-meta{
+		margin-left: 0px !important;
+	}
+
+	.item-title{
+		a.bp-group-home-link{
+			color: $gray-600 !important;
+			font-size: 18px;
+		}
+	}
+}
+
+.bp_friends_widget{
+	margin-top: 35px;
+}
 
 // Rooms (Groups) Directory Page
 /////////////////////////////////////////////////////////////////////////
@@ -234,8 +297,8 @@ p{
 }
 
 
-.groups, .rooms{
-	.navbar{
+.groups{
+	.sub-nav{
 		ul{
 			li{
 
@@ -245,19 +308,17 @@ p{
 					border-radius: 0.25rem;
 
 					span{
+						background-color: $gray-600;
 						display: inline-block;
+						padding: 0.25em 0.4em;
 						font-size: 75%;
 						font-weight: bold;
 						line-height: 1;
 						color: #fff;
-						background-color: #868e96;
 						text-align: center;
 						white-space: nowrap;
 						vertical-align: baseline;
-						padding: 0.25em 0.4em;
-						padding-right: 0.6em;
-						padding-left: 0.6em;
-						border-radius: 10rem;
+						border-radius: 0.25rem;
 					}
 				}
 
@@ -328,12 +389,16 @@ p{
 		height: 700px;
 	}
 
+
+
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
 
-
+	.bp_friends_widget{
+		margin-top: 0px;
+	}
 }
 
 // Large devices (desktops, 992px and up)

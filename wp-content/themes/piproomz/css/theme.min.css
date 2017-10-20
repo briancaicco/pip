@@ -4415,7 +4415,19 @@ p { font-family: "Raleway", sans-serif; }
 
 #groups-list .card { min-height: 200px !important; }
 
-.navbar { background: #fff; z-index: 999; }
+.primary-nav.navbar { background: #fff; z-index: 999; }
+
+.primary-nav.navbar .avatar { border-radius: 40px; display: inline-block; }
+
+.primary-nav.navbar .nav-item { position: relative; }
+
+.primary-nav.navbar .dropdown-menu { border-radius: 0px; top: 121%; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); }
+
+.primary-nav.navbar .dropdown-toggle:hover { cursor: pointer; }
+
+.primary-nav.navbar .dropdown-toggle::after { vertical-align: 0.2em; }
+
+.navbar-dark .navbar-toggler-icon { background: "url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E)" !important; }
 
 .home-page .jumbotron { position: relative; color: #fff; border-radius: 0px; z-index: 1; background: transparent; }
 
@@ -4424,6 +4436,16 @@ p { font-family: "Raleway", sans-serif; }
 .home-page .card-wrap .card { box-shadow: 0 0 0 0 !important; background-color: transparent !important; border: none !important; position: absolute; top: -20px; }
 
 .home-page .gradient-bg { width: 100%; height: 120%; left: 0px; top: 0px; overflow: hidden; transform: skewY(-8deg); transform-origin: 0; position: absolute; z-index: 0; background-color: #1b60d8; background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); }
+
+.widget_bp_groups_widget .item-options a.selected { font-weight: bold; }
+
+.widget_bp_groups_widget .item-avatar { display: none; }
+
+.widget_bp_groups_widget .item-meta { margin-left: 0px !important; }
+
+.widget_bp_groups_widget .item-title a.bp-group-home-link { color: #868e96 !important; font-size: 18px; }
+
+.bp_friends_widget { margin-top: 35px; }
 
 .bp-group-home-link { color: #fff !important; }
 
@@ -4437,17 +4459,17 @@ p { font-family: "Raleway", sans-serif; }
 
 .trader-view { height: 520px; }
 
-.groups .navbar ul li a, .rooms .navbar ul li a { display: block; padding: 0.5rem 1rem; border-radius: 0.25rem; }
+.groups .sub-nav ul li a { display: block; padding: 0.5rem 1rem; border-radius: 0.25rem; }
 
-.groups .navbar ul li a span, .rooms .navbar ul li a span { display: inline-block; font-size: 75%; font-weight: bold; line-height: 1; color: #fff; background-color: #868e96; text-align: center; white-space: nowrap; vertical-align: baseline; padding: 0.25em 0.4em; padding-right: 0.6em; padding-left: 0.6em; border-radius: 10rem; }
+.groups .sub-nav ul li a span { background-color: #868e96; display: inline-block; padding: 0.25em 0.4em; font-size: 75%; font-weight: bold; line-height: 1; color: #fff; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; }
 
-.groups .navbar ul .selected, .rooms .navbar ul .selected { background: #868e96; border-radius: .25rem; font-weight: 700; }
+.groups .sub-nav ul .selected { background: #868e96; border-radius: .25rem; font-weight: 700; }
 
-.groups .navbar ul .selected a, .rooms .navbar ul .selected a { color: #fff !important; }
+.groups .sub-nav ul .selected a { color: #fff !important; }
 
-.groups .navbar ul .selected a:hover, .rooms .navbar ul .selected a:hover { text-decoration: none !important; }
+.groups .sub-nav ul .selected a:hover { text-decoration: none !important; }
 
-.groups .navbar ul .selected a span, .rooms .navbar ul .selected a span { color: #111; background-color: #f8f9fa; }
+.groups .sub-nav ul .selected a span { color: #111; background-color: #f8f9fa; }
 
 .register .page-title { display: none; }
 
@@ -4458,6 +4480,8 @@ p { font-family: "Raleway", sans-serif; }
 .register footer { display: none; }
 
 @media (min-width: 576px) { .trader-view { height: 700px; } }
+
+@media (min-width: 768px) { .bp_friends_widget { margin-top: 0px; } }
 
 /* Use existing Bootstrap 4 classes and variables to extend - override CF7 style Useful CF7 classes: .wpcf7 the wrapper element .wpcf7-form .wpcf7-form-control .wpcf7-text .wpcf7-email .wpcf7-textarea .wpcf7-submit */
 .wpcf7 { max-width: 600px; margin: 0 auto !important; }
