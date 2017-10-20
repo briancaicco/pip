@@ -31,23 +31,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 						
 					<?php if ( is_user_logged_in() ) { ?>
 
+							<?php if ( ! has_custom_logo() ) { ?>
 
-						<?php if ( ! has_custom_logo() ) { ?>
+								<?php if ( is_front_page() && is_home() ) : ?>
 
-							<?php if ( is_front_page() && is_home() ) : ?>
+									<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+									
+								<?php else : ?>
 
-								<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+									<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
 								
-							<?php else : ?>
-
-								<a class="navbar-brand " rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
+								<?php endif; ?>
 							
-							<?php endif; ?>
-							
-						
-						<?php } else {
-							the_custom_logo();
-						} ?>
+							<?php } ?>
 
 
 
@@ -113,22 +109,23 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
 						
 						<?php endif; ?>
-						<?php } ?>
 					
-					<?php 
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav ml-auto',
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu',
-							'walker'          => new WP_Bootstrap_Navwalker(),
-						)
-					); 
+					<?php } ?>
+					
+						<?php 
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'primary',
+								'container_class' => 'collapse navbar-collapse',
+								'container_id'    => 'navbarNavDropdown',
+								'menu_class'      => 'navbar-nav ml-auto',
+								'fallback_cb'     => '',
+								'menu_id'         => 'main-menu',
+								'walker'          => new WP_Bootstrap_Navwalker(),
+							)
+						); 
 
-					?>
+						?>
 
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
