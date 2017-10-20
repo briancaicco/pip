@@ -2127,6 +2127,42 @@
 		"oAP": "\/memberpress\/account\/subscriptions.php",
 		"oF": 0
 		},
+	"\/memberpress\/login\/already_logged_in.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/already_logged_in.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/forgot_password.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/forgot_password.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/forgot_password_requested.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/forgot_password_requested.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/form.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/reset_password.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/reset_password.php",
+		"oF": 0
+		},
+	"\/memberpress\/login\/reset_password_thankyou.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/login\/reset_password_thankyou.php",
+		"oF": 0
+		},
 	"\/package.json": {
 		"ft": 524288,
 		"oA": 1,

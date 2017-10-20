@@ -1695,24 +1695,24 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 // 	vertical-align: middle;
 // }
 
-#buddypress div.item-list-tabs ul li.selected a,
-#buddypress div.item-list-tabs ul li.current a {
-	background-color: #eee;
-	color: #555;
-	opacity: 0.9;
-	font-weight: 700;
-}
+// #buddypress div.item-list-tabs ul li.selected a,
+// #buddypress div.item-list-tabs ul li.current a {
+// 	background-color: #eee;
+// 	color: #555;
+// 	opacity: 0.9;
+// 	font-weight: 700;
+// }
 
-#buddypress div.item-list-tabs ul li.selected a span,
-#buddypress div.item-list-tabs ul li.current a span,
-#buddypress div.item-list-tabs ul li a:hover span {
-	background-color: #eee;
-}
+// #buddypress div.item-list-tabs ul li.selected a span,
+// #buddypress div.item-list-tabs ul li.current a span,
+// #buddypress div.item-list-tabs ul li a:hover span {
+// 	background-color: #eee;
+// }
 
-#buddypress div.item-list-tabs ul li.selected a span,
-#buddypress div.item-list-tabs ul li.current a span {
-	background-color: #fff;
-}
+// #buddypress div.item-list-tabs ul li.selected a span,
+// #buddypress div.item-list-tabs ul li.current a span {
+// 	background-color: #fff;
+// }
 
 #buddypress div#item-nav ul li.loading a {
 	background-position: 88% 50%;

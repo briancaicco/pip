@@ -18,6 +18,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
 <section class="bg-grey-200">
+
 	<div class="container content pt-5 ">
 
 		<div class="row">
@@ -44,6 +45,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<?php endif; ?>
 
 	</div><!-- Container end -->
+	
 </section>
 
 <?php get_footer(); ?>

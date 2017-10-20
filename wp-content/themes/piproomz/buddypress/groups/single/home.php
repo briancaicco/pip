@@ -11,52 +11,104 @@
 
 	<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
 
-	<?php
 
-	/**
-	 * Fires before the display of the group home content.
-	 *
-	 * @since 1.2.0
-	 */
-	do_action( 'bp_before_group_home_content' ); ?>
 
-	<div id="item-header" role="complementary">
-
-		<?php
-		/**
-		 * If the cover image feature is enabled, use a specific header
-		 */
-		if ( bp_group_use_cover_image_header() ) :
-			bp_get_template_part( 'groups/single/cover-image-header' );
-		else :
-			bp_get_template_part( 'groups/single/group-header' );
-		endif;
-		?>
-
-	</div><!-- #item-header -->
-
-	<div id="item-nav">
-		<div class="item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
-			<ul>
-
-				<?php bp_get_options_nav(); ?>
-
-				<?php
+				<div class="row">
+					<div class="col-12">
+						<div class="col-12 mb-3">
+							<h1><?php echo esc_attr( bp_get_group_name() ); ?></h1>
+						</div>
+						<?php
 
 				/**
-				 * Fires after the display of group options navigation.
+				 * Fires before the display of the group home content.
 				 *
 				 * @since 1.2.0
 				 */
-				do_action( 'bp_group_options_nav' ); ?>
+				do_action( 'bp_before_group_home_content' ); ?>
 
-			</ul>
+				<div id="item-header" role="complementary">
+
+					<?php
+					/**
+					 * If the cover image feature is enabled, use a specific header
+					 */
+					// if ( bp_group_use_cover_image_header() ) :
+					// 	bp_get_template_part( 'groups/single/cover-image-header' );
+					// else :
+					// 	bp_get_template_part( 'groups/single/group-header' );
+					// endif;
+					?>
+
+				</div><!-- #item-header -->
+				
+				<nav class="navbar bg-light mb-3">
+					<div id="item-nav">
+						
+						<div class="item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
+							<ul class="nav nav-pills">
+
+								<?php bp_get_options_nav(); ?>
+
+								<?php
+
+								/**
+								 * Fires after the display of group options navigation.
+								 *
+								 * @since 1.2.0
+								 */
+								do_action( 'bp_group_options_nav' ); ?>
+
+							</ul>
+						</div>
+					</div><!-- #item-nav -->
+				</nav>
+			</div>
 		</div>
-	</div><!-- #item-nav -->
 
-	<div id="item-body">
 
-		<?php
+		<div class="row">
+			<?php if ( bp_is_group_home() ) { ?>
+			<div class="col-12 trader-view">
+				<!-- TradingView Widget BEGIN -->
+				<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+				<script type="text/javascript">
+					new TradingView.widget({
+						"autosize": true,
+						"symbol": "<?php echo esc_attr( bp_get_group_name() ); ?>",
+						"interval": "D",
+						"timezone": "Etc/UTC",
+						"theme": "Light",
+						"style": "1",
+						"locale": "en",
+						"toolbar_bg": "#f1f3f6",
+						"enable_publishing": false,
+						"calendar": true,
+						"news": [
+						"headlines"
+						],
+						"hideideas": true
+					});
+				</script>
+				<!-- TradingView Widget END -->
+			</div>
+			<?php } ?>
+		</div>
+
+
+
+
+<div id="item-body">
+
+	<?php if ( bp_is_group_home() ) { ?>
+		<div class="row">
+			<div class="col-12 my-4">
+				<!-- iFly Chat Room Plugin -->
+				<div class="iflychat-embed" data-room-id="0" data-height="400px" data-width="100%"></div>
+			</div>
+		</div>
+	<?php } ?>
+	<?php
 
 		/**
 		 * Fires before the display of the group home body.
@@ -73,14 +125,14 @@
 		 */
 
 			// Looking at home location
-			if ( bp_is_group_home() ) :
+		if ( bp_is_group_home() ) :
 
-				if ( bp_group_is_visible() ) {
+			if ( bp_group_is_visible() ) {
 
 					// Load appropriate front template
-					bp_groups_front_template_part();
+				//bp_groups_front_template_part();
 
-				} else {
+			} else {
 
 					/**
 					 * Fires before the display of the group status message.
@@ -150,6 +202,6 @@
 	 */
 	do_action( 'bp_after_group_home_content' ); ?>
 
-	<?php endwhile; endif; ?>
+<?php endwhile; endif; ?>
 
 </div><!-- #buddypress -->

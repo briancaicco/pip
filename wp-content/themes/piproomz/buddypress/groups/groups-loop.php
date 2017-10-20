@@ -25,21 +25,21 @@ do_action( 'bp_before_groups_loop' ); ?>
 
 <?php if ( bp_has_groups( bp_ajax_querystring( 'groups' ) ) ) : ?>
 
-	<div id="pag-top" class="pagination">
+<!-- 	<div id="pag-top" class="pagination">
 
 		<div class="pag-count" id="group-dir-count-top">
 
-			<?php bp_groups_pagination_count(); ?>
+			<?php // bp_groups_pagination_count(); ?>
 
 		</div>
 
-		<div class="pagination-links" id="group-dir-pag-top">
+		<div class="pagination-links mb-4" id="group-dir-pag-top">
 
-			<?php bp_groups_pagination_links(); ?>
+			<?php // bp_groups_pagination_links(); ?>
 
 		</div>
 
-	</div>
+	</div> -->
 
 	<?php
 
@@ -50,61 +50,65 @@ do_action( 'bp_before_groups_loop' ); ?>
 	 */
 	do_action( 'bp_before_directory_groups_list' ); ?>
 
-	<ul id="groups-list" class="item-list" aria-live="assertive" aria-atomic="true" aria-relevant="all">
+	<div id="groups-list" class="row item-list" aria-live="assertive" aria-atomic="true" aria-relevant="all">
 
-	<?php while ( bp_groups() ) : bp_the_group(); ?>
+		<?php while ( bp_groups() ) : bp_the_group(); ?>
 
-		<li <?php bp_group_class(); ?>>
-			<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
-				<div class="item-avatar">
-					<a href="<?php bp_group_permalink(); ?>"><?php bp_group_avatar( 'type=thumb&width=50&height=50' ); ?></a>
+		<div class="col-12 col-md-3 mb-4">
+			
+			<div class="card el-2 text-white bg-dark item">
+
+				<a href="<?php  bp_group_permalink(); ?>" class="card-link"></a>
+
+				<?php do_action( 'bp_directory_groups_actions' ); ?>
+
+					<div <?php bp_group_class(); ?>>
+
+						<div class="card-body">
+
+							<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
+								<div class="item-avatar">
+									<!-- <a href="<?php // bp_group_permalink(); ?>"><?php // bp_group_avatar( 'type=thumb&width=50&height=50' ); ?></a> -->
+								</div>
+							<?php endif; ?>
+
+
+
+							<div class="item-title card-title text-center p-2 text-white h2">
+
+								<?php bp_group_link(); ?>
+
+							</div>
+
+							<!-- <div class="item-meta"><span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_group_last_active( 0, array( 'relative' => false ) ) ); ?>"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span></div> -->
+
+							<!-- <div class="item-desc"><?php bp_group_description_excerpt(); ?></div> -->
+
+							<?php
+
+							/**
+							 * Fires inside the listing of an individual group listing item.
+							 *
+							 * @since 1.1.0
+							 */
+							do_action( 'bp_directory_groups_item' ); ?>
+
+
+							<div class="action text-center">
+
+								<div class="meta mt-2">
+
+									<?php // bp_group_type(); ?><?php bp_group_member_count(); ?>
+
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			<?php endif; ?>
-
-			<div class="item">
-				<div class="item-title"><?php bp_group_link(); ?></div>
-				<div class="item-meta"><span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_group_last_active( 0, array( 'relative' => false ) ) ); ?>"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span></div>
-
-				<div class="item-desc"><?php bp_group_description_excerpt(); ?></div>
-
-				<?php
-
-				/**
-				 * Fires inside the listing of an individual group listing item.
-				 *
-				 * @since 1.1.0
-				 */
-				do_action( 'bp_directory_groups_item' ); ?>
-
-			</div>
-
-			<div class="action">
-
-				<?php
-
-				/**
-				 * Fires inside the action section of an individual group listing item.
-				 *
-				 * @since 1.1.0
-				 */
-				do_action( 'bp_directory_groups_actions' ); ?>
-
-				<div class="meta">
-
-					<?php bp_group_type(); ?> / <?php bp_group_member_count(); ?>
-
-				</div>
-
-			</div>
-
-			<div class="clear"></div>
-		</li>
-
-	<?php endwhile; ?>
-
-	</ul>
-
-	<?php
+		</div>
+		<?php endwhile; ?>
+	</div>
+<?php
 
 	/**
 	 * Fires after the listing of the groups list.
@@ -117,7 +121,7 @@ do_action( 'bp_before_groups_loop' ); ?>
 
 		<div class="pag-count" id="group-dir-count-bottom">
 
-			<?php bp_groups_pagination_count(); ?>
+			<?php // bp_groups_pagination_count(); ?>
 
 		</div>
 

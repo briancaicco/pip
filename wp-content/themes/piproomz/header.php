@@ -23,7 +23,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
  
-<body <?php body_class(); ?>>
+<body <?php body_class('bg-grey-200'); ?> >
+	<?php if( !is_page('login')) { ?>
 	<header> 
 			<nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
 				<div class="container">
@@ -87,4 +88,5 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</div>
 			</nav>
 	</header>
+	<?php } ?>
 

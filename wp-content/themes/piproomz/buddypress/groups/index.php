@@ -36,13 +36,16 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 	<?php /* Backward compatibility for inline search form. Use template part instead. */ ?>
 	<?php if ( has_filter( 'bp_directory_groups_search_form' ) ) : ?>
 
-		<div id="group-dir-search" class="dir-search" role="search">
+<!-- 		<div id="group-dir-search" class="dir-search" role="search">
 			<?php bp_directory_groups_search_form(); ?>
-		</div><!-- #group-dir-search -->
+		</div> --><!-- #group-dir-search -->
 
+		
 	<?php else: ?>
 
-		<?php bp_get_template_part( 'common/search/dir-search-form' ); ?>
+
+		<?php // bp_get_template_part( 'common/search/dir-search-form' ); ?>
+
 
 	<?php endif; ?>
 
@@ -56,42 +59,40 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 
 		</div>
 
-		<div class="item-list-tabs" aria-label="<?php esc_attr_e( 'Groups directory main navigation', 'buddypress' ); ?>">
-			<ul>
-				<li class="selected" id="groups-all"><a href="<?php bp_groups_directory_permalink(); ?>"><?php printf( __( 'All Groups %s', 'buddypress' ), '<span>' . bp_get_total_group_count() . '</span>' ); ?></a></li>
+		<div class="row">
 
-				<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
-					<li id="groups-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_groups_slug() . '/my-groups/'; ?>"><?php printf( __( 'My Groups %s', 'buddypress' ), '<span>' . bp_get_total_group_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
-				<?php endif; ?>
+			<div class="col-12 mb-3">
 
-				<?php
+				<nav class="navbar bg-light mb-3">
+					<div class="item-list-tabs" aria-label="<?php esc_attr_e( 'Groups directory main navigation', 'buddypress' ); ?>">
+						<ul class="nav nav-pills">
+							<li class="selected nav-item" id="groups-all"><a class="nav-link" href="<?php bp_groups_directory_permalink(); ?>"><?php printf( __( 'All Rooms %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_group_count() . '</span>' ); ?></a></li>
+
+							<?php if ( is_user_logged_in() && bp_get_total_group_count_for_user( bp_loggedin_user_id() ) ) : ?>
+								<li id="groups-personal"><a class="nav-link" href="<?php echo bp_loggedin_user_domain() . bp_get_groups_slug() . '/my-groups/'; ?>"><?php printf( __( 'My Rooms %s', 'buddypress' ), '<span class="badge badge-pill badge-secondary">' . bp_get_total_group_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
+							<?php endif; ?>
+
+							<?php
 
 				/**
 				 * Fires inside the groups directory group filter input.
 				 *
 				 * @since 1.5.0
 				 */
-				do_action( 'bp_groups_directory_group_filter' ); ?>
+				//do_action( 'bp_groups_directory_group_filter' ); ?>
 
 			</ul>
 		</div><!-- .item-list-tabs -->
 
-		<div class="item-list-tabs" id="subnav" aria-label="<?php esc_attr_e( 'Groups directory secondary navigation', 'buddypress' ); ?>" role="navigation">
-			<ul>
-				<?php
 
-				/**
-				 * Fires inside the groups directory group types.
-				 *
-				 * @since 1.2.0
-				 */
-				do_action( 'bp_groups_directory_group_types' ); ?>
+
+		<div class="item-list-tabs form-inline" id="subnav" aria-label="<?php esc_attr_e( 'Groups directory secondary navigation', 'buddypress' ); ?>" role="navigation">
+			<ul>
+				<?php do_action( 'bp_groups_directory_group_types' ); ?>
 
 				<li id="groups-order-select" class="last filter">
 
-					<label for="groups-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
-
-					<select id="groups-order-by">
+					<select id="groups-order-by" class="custom-select">
 						<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
 						<option value="popular"><?php _e( 'Most Members', 'buddypress' ); ?></option>
 						<option value="newest"><?php _e( 'Newly Created', 'buddypress' ); ?></option>
@@ -109,17 +110,23 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 				</li>
 			</ul>
 		</div>
+	</nav>
+</div>
 
-		<h2 class="bp-screen-reader-text"><?php
-			/* translators: accessibility text */
-			_e( 'Groups directory', 'buddypress' );
-		?></h2>
+</div>
+</div>
 
-		<div id="groups-dir-list" class="groups dir-list">
-			<?php bp_get_template_part( 'groups/groups-loop' ); ?>
-		</div><!-- #groups-dir-list -->
 
-		<?php
+
+
+<div id="groups-dir-list" class="groups dir-list ">
+	<div class="row">
+		<?php bp_get_template_part( 'groups/groups-loop' ); ?>
+	</div>
+</div><!-- #groups-dir-list -->
+
+
+<?php
 
 		/**
 		 * Fires and displays the group content.
