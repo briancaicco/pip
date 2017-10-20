@@ -45,7 +45,7 @@
 				<nav class="navbar bg-light mb-3">
 					<div id="item-nav">
 						
-						<div class="item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
+						<div class="sub-nav item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
 							<ul class="nav nav-pills">
 
 								<?php bp_get_options_nav(); ?>

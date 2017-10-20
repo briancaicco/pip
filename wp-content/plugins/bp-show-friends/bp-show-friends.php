@@ -3,7 +3,7 @@
 Plugin Name: Pip BuddyPress Show Friends Widget
 Plugin URI: 
 Description: Displays the friends of the logged in user or of the displayed user once in BuddyPress Member area
-Version: 1.0
+Version: 99999
 Requires at least: 3.7
 Tested up to: 3.8
 License: GNU/GPL 2
