@@ -256,9 +256,17 @@ p{
 }
 
 #buddypress ul.item-list li img.avatar{
-	display: none;
+	//display: none;
 }
 
+.avatar{
+	border-radius: 200px;
+}
+.bbp-user-page{
+	.avatar-500{
+		border-radius: 0px !important;
+	}
+}
 // Home Page
 /////////////////////////////////////////////////////////////////////////
 

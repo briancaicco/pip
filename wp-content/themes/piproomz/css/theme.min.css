@@ -4451,7 +4451,9 @@ p { font-family: "Raleway", sans-serif; }
 
 #buddypress .acomment-options a:hover { color: #1297cf; }
 
-#buddypress ul.item-list li img.avatar { display: none; }
+.avatar { border-radius: 200px; }
+
+.bbp-user-page .avatar-500 { border-radius: 0px !important; }
 
 .home-page .jumbotron { position: relative; color: #fff; border-radius: 0px; z-index: 1; background: transparent; }
 

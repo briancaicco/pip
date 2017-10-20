@@ -104,8 +104,7 @@
 		<div class="row">
 			<div class="col-12 my-4">
 				<!-- iFly Chat Room Plugin -->
-				<div class="iflychat-embed" data-room-id="0" data-height="400px" data-width="100%"></div>
-			</div>
+				<div data-room-id="1" data-height="400px" data-width="100%" class="iflychat-embed"></div>			</div>
 		</div>
 	<?php } ?>
 	<?php

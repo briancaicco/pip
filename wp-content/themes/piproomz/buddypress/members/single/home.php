@@ -27,14 +27,13 @@
 				<div id="item-header-cover-image">
 					<div id="item-header-avatar">
 						<a href="<?php bp_displayed_user_link(); ?>">
-							<style type="text/css">.avatar{width: 100%;}</style>
 							<?php bp_displayed_user_avatar( 'type=full&width=500' ); ?>
 						</a>
 					</div><!-- #item-header-avatar -->
 				</div>
 			</div>	
-			<div class="col-12 p-3 bg-dark">
-				<div id="item-header" role="complementary">
+			<div class="col-12 bg-dark">
+				<div id="item-header" class="px-3 pt-3 pb-0 text-light" role="complementary">
 					<?php
 					/**
 					 * If the cover image feature is enabled, use a specific header
@@ -50,9 +49,12 @@
 
 				<div id="item-nav">
 					<div class="item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Member primary navigation', 'buddypress' ); ?>" role="navigation">
-						<ul class="list-group">
+						<ul class="list-group pb-3">
 
-							<?php bp_get_displayed_user_nav(); ?>
+							<?php //bp_get_displayed_user_nav(); 
+
+								pip_edit_profile_nav_items();
+							?>
 
 							<?php
 

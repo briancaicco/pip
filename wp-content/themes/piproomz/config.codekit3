@@ -1809,6 +1809,24 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/find_replace-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/find_replace-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/find_replace.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/find_replace-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/init-min.js": {
 		"ft": 64,
 		"mi": 1,

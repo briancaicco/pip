@@ -175,35 +175,52 @@ endif;
 
 
 
+	// User  Nav Edits
+	//////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Output Buffering
-	 *
-	 * Buffers the entire WP process, capturing the final output for manipulation.
-	 */
+	function bpcodex_rename_profile_tabs() {
+	  
+	      //buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Buddy Forums', 'textdomain' ) ), 'forums' );
+	      buddypress()->members->nav->edit_nav( array( 'name' => __( 'Rooms', 'textdomain' ) ), 'groups' );
+	  
+	}
+	add_action( 'bp_actions', 'bpcodex_rename_profile_tabs' );
 
-	ob_start();
 
-	add_action('shutdown', function() {
-	    $final = '';
-
-	    // We'll need to get the number of ob levels we're in, so that we can iterate over each, collecting
-	    // that buffer's output into the final output.
-	    $levels = ob_get_level();
-
-	    for ($i = 0; $i < $levels; $i++) {
-	        $final .= ob_get_clean();
+	function bpcodex_rename_group_tabs() {
+	 
+	    if ( ! bp_is_group() ) {
+	        return;
 	    }
-
-	    // Apply any filters to the final output
-	    echo apply_filters('final_output', $final);
-	}, 0);
-
-
-	// add_filter('final_output', function($output) {
-
-	// 	//return str_replace('(\b(?<!["\'])[a-zA-Z_][a-zA-Z_0-9]*\b(?!["\']))', 'room', $output);
-
-	// });
+	    
+	    buddypress()->groups->nav->edit_nav( array( 'name' => __( 'Room Discussion', 'buddypress' ) ), 'forum', bp_current_item() );
+	}
+	add_action( 'bp_actions', 'bpcodex_rename_group_tabs' );
 
 
+
+	function pip_edit_profile_nav_items() {
+	
+		  $bp = buddypress();
+
+		  foreach ( $bp->members->nav->get_primary() as $user_nav_item ) {
+		    if ( empty( $user_nav_item->show_for_displayed_user ) && ! bp_is_my_profile() ) {
+		      continue;
+		    }
+
+		    $selected = '';
+		    if ( bp_is_current_component( $user_nav_item->slug ) ) {
+		      $selected = ' class="current selected active"';
+		    }
+
+		    if ( bp_loggedin_user_domain() ) {
+		      $link = str_replace( bp_loggedin_user_domain(), bp_displayed_user_domain(), $user_nav_item->link );
+		    } else {
+		      $link = trailingslashit( bp_displayed_user_domain() . $user_nav_item->link );
+		    }
+
+		    echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item->css_id, array( '<li class="nav-item" id="' . $user_nav_item->css_id . '-personal-li" ' . $selected . '><a class="nav-link" id="user-' . $user_nav_item->css_id . '" href="' . $link . '">' . $user_nav_item->name . '</a></li>', &$user_nav_item ) );
+		  }
+	
+	}
+	

@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
  
-<body <?php body_class('bg-grey-200'); ?> >
+<body id="piproomz" <?php body_class('bg-grey-200'); ?> >
 	<?php if( !is_page('login')) { ?>
 	<header> 
 			<nav class="primary-nav navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
@@ -35,16 +35,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 								<?php if ( is_front_page() && is_home() ) : ?>
 
-									<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>/activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+									<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 									
 								<?php else : ?>
 
-									<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>/activity" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
+									<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
 								
 								<?php endif; ?>
 							
 							<?php } ?>
-
 
 
 						    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
@@ -72,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						        <ul class="navbar-nav flex-row ml-auto">
 
 						            <li class="nav-item">
-						                 <a class="nav-link pr-2 notifications"><?php echo bp_get_notifcation_count(); ?></a>
+						                 <a href="<?php echo bp_loggedin_user_domain(); ?>notifications/" class="nav-link pr-2 notifications"><?php echo bp_get_notifcation_count(); ?></a>
 						            </li>	
 
 						            <li class="nav-item dropdown">
