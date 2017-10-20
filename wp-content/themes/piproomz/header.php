@@ -85,6 +85,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>friends/">Friends</a>
 						                    <div class="dropdown-divider"></div>
 						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>settings/">Settings</a>
+						                    <a class="dropdown-item" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
 						                </div>
 						            </li>
 						        </ul>
