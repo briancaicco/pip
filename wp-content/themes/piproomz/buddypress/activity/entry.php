@@ -16,26 +16,27 @@
  */
 do_action( 'bp_before_activity_entry' ); ?>
 
-<li class="<?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">
-	<div class="activity-avatar">
+<li class="pb-0 <?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">
+	<div class="activity-avatar ml-4">
 		<a href="<?php bp_activity_user_link(); ?>">
 
-			<?php bp_activity_avatar(); ?>
+			 <?php bp_activity_avatar(); ?>
 
 		</a>
 	</div>
 
-	<div class="activity-content">
+	<div class="activity-content ml-4  ">
 
-		<div class="activity-header">
+		<div class="activity-header text-secondary pt-1 pb-2">
 
-			<?php bp_activity_action(); ?>
+			<?php 
+			bp_activity_action('label=false'); ?>
 
 		</div>
 
 		<?php if ( bp_activity_has_content() ) : ?>
 
-			<div class="activity-inner">
+			<div class="activity-inner pt-3 ml-0 mr-0">
 
 				<?php bp_activity_content_body(); ?>
 
@@ -52,11 +53,13 @@ do_action( 'bp_before_activity_entry' ); ?>
 		 */
 		do_action( 'bp_activity_entry_content' ); ?>
 
-		<div class="activity-meta">
+		<div class="activity-meta mb-3">
+
+			<nav class="nav">
 
 			<?php if ( bp_get_activity_type() == 'activity_comment' ) : ?>
 
-				<a href="<?php bp_activity_thread_permalink(); ?>" class="button view bp-secondary-action"><?php _e( 'View Conversation', 'buddypress' ); ?></a>
+				<a href="<?php bp_activity_thread_permalink(); ?>" class="nav-link view small ml-0 pl-0"><?php _e( 'View Conversation', 'buddypress' ); ?></a>
 
 			<?php endif; ?>
 
@@ -64,7 +67,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 
 				<?php if ( bp_activity_can_comment() ) : ?>
 
-					<a href="<?php bp_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment %s', 'buddypress' ), '<span>' . bp_activity_get_comment_count() . '</span>' ); ?></a>
+					<a href="<?php bp_activity_comment_link(); ?>" class="nav-link acomment-reply small pl-0 ml-0" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment %s', 'buddypress' ), '<span class="badge badge-secondary ">' . bp_activity_get_comment_count() . '</span>' ); ?></a>
 
 				<?php endif; ?>
 
@@ -72,11 +75,11 @@ do_action( 'bp_before_activity_entry' ); ?>
 
 					<?php if ( !bp_get_activity_is_favorite() ) : ?>
 
-						<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action"><?php _e( 'Favorite', 'buddypress' ); ?></a>
+						<a href="<?php bp_activity_favorite_link(); ?>" class="nav-link fav "><i class="fa fa-heart-o"></i></a>
 
 					<?php else : ?>
 
-						<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action"><?php _e( 'Remove Favorite', 'buddypress' ); ?></a>
+						<a href="<?php bp_activity_unfavorite_link(); ?>" class="nav-link unfav "><i class="fa fa-heart"></i></a>
 
 					<?php endif; ?>
 
@@ -94,6 +97,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 				do_action( 'bp_activity_entry_meta' ); ?>
 
 			<?php endif; ?>
+			</nav>
 
 		</div>
 
@@ -110,7 +114,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 
 	<?php if ( ( bp_activity_get_comment_count() || bp_activity_can_comment() ) || bp_is_single_activity() ) : ?>
 
-		<div class="activity-comments">
+		<div class="activity-comments m-0 <?php if ( bp_activity_get_comment_count() ) echo 'bg-light pl-5 py-2'; ?> ">
 
 			<?php bp_activity_comments(); ?>
 

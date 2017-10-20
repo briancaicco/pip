@@ -17,6 +17,8 @@
 .bp-screen-reader-text{
 	display: none !important;
 }
+
+
 // Typography
 /////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
@@ -187,12 +189,75 @@ p{
 }
 
 .navbar-dark .navbar-toggler-icon{
-	$string: url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E);
-	background: str-replace( $string, "#", "%23") !important;
+	//$string: url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E);
+	//background: str-replace( $string, "#", "%23") !important;
 }
 
 
+// Activity Feeds
+/////////////////////////////////////////////////////////////////////////
+#activity-stream{
+	img.avatar{
+		border-radius: 60px;
+	}
+}
 
+#buddypress .activity-list li.mini .activity-avatar img.avatar {
+	margin-left: 0px;
+
+}
+
+
+#buddypress #activity-stream p{
+	color: $gray-600;
+	margin: 0px !important;
+	//padding-bottom: 30px;
+}
+
+#buddypress .activity-list .activity-content .activity-inner{
+	margin: 0px !important;
+}
+
+#buddypress .activity-list .joined_group .activity-meta, #buddypress .activity-list .friendship_created .activity-meta,{
+	display: none !important;
+}
+
+
+#buddypress .activity-list .joined_group .activity-header, #buddypress .activity-list .friendship_created .activity-header,{
+	padding-bottom: 10px !important;
+	.avatar{
+		display: none !important;
+	}
+	p{
+
+	}
+}
+
+#buddypress .activity-list .activity-content .activity-header img.avatar{
+	display: none !important;
+}
+
+
+#buddypress div.activity-comments div.acomment-meta{
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+
+#buddypress div.activity-comments div.acomment-content, #buddypress .acomment-options{
+	margin-left: 0px;
+}
+
+#buddypress .acomment-options a{
+	color: $link-color;
+	&:hover{
+		color: darken($link-color, 20%)
+	}
+}
+
+#buddypress ul.item-list li img.avatar{
+	display: none;
+}
 
 // Home Page
 /////////////////////////////////////////////////////////////////////////

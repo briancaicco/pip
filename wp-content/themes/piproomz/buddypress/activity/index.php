@@ -48,7 +48,7 @@ do_action( 'bp_before_directory_activity' ); ?>
 
 	</div>
 
-	<nav class="navbar bg-light mb-3">
+	<nav class="navbar bg-light py-3">
 		<div class="item-list-tabs activity-type-tabs" aria-label="<?php esc_attr_e( 'Sitewide activities navigation', 'buddypress' ); ?>" role="navigation">
 
 			<ul class="nav nav-pills">
@@ -182,7 +182,7 @@ do_action( 'bp_before_directory_activity' ); ?>
 	</div><!-- .item-list-tabs -->
 </nav>
 
-<div class="card-body p-4">
+<div class="card-body p-0">
 
 	<?php
 

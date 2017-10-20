@@ -401,17 +401,17 @@ body.activity-permalink #buddypress div.activity-meta {
 
 #buddypress a.bp-primary-action span,
 #buddypress #reply-title small a span {
-	background: #767676;
-	color: #fff;
-	font-size: 90%;
-	margin-left: 2px;
-	padding: 0 5px;
+	// background: #767676;
+	// color: #fff;
+	// font-size: 90%;
+	// margin-left: 2px;
+	// padding: 0 5px;
 }
 
 #buddypress a.bp-primary-action:hover span,
 #buddypress #reply-title small a:hover span {
-	background: #555;
-	color: #fff;
+	// background: #555;
+	// color: #fff;
 }
 
 #buddypress div.activity-comments {

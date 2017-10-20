@@ -4427,7 +4427,31 @@ p { font-family: "Raleway", sans-serif; }
 
 .primary-nav.navbar .dropdown-toggle::after { vertical-align: 0.2em; }
 
-.navbar-dark .navbar-toggler-icon { background: "url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E)" !important; }
+#activity-stream img.avatar { border-radius: 60px; }
+
+#buddypress .activity-list li.mini .activity-avatar img.avatar { margin-left: 0px; }
+
+#buddypress #activity-stream p { color: #868e96; margin: 0px !important; }
+
+#buddypress .activity-list .activity-content .activity-inner { margin: 0px !important; }
+
+#buddypress .activity-list .joined_group .activity-meta, #buddypress .activity-list .friendship_created .activity-meta { display: none !important; }
+
+#buddypress .activity-list .joined_group .activity-header, #buddypress .activity-list .friendship_created .activity-header { padding-bottom: 10px !important; }
+
+#buddypress .activity-list .joined_group .activity-header .avatar, #buddypress .activity-list .friendship_created .activity-header .avatar { display: none !important; }
+
+#buddypress .activity-list .activity-content .activity-header img.avatar { display: none !important; }
+
+#buddypress div.activity-comments div.acomment-meta { padding-top: 5px; padding-bottom: 10px; }
+
+#buddypress div.activity-comments div.acomment-content, #buddypress .acomment-options { margin-left: 0px; }
+
+#buddypress .acomment-options a { color: #57c3f0; }
+
+#buddypress .acomment-options a:hover { color: #1297cf; }
+
+#buddypress ul.item-list li img.avatar { display: none; }
 
 .home-page .jumbotron { position: relative; color: #fff; border-radius: 0px; z-index: 1; background: transparent; }
 
