@@ -4437,17 +4437,17 @@ p { font-family: "Raleway", sans-serif; }
 
 .trader-view { height: 520px; }
 
-.groups .navbar ul li a { display: block; padding: 0.5rem 1rem; border-radius: 0.25rem; }
+.groups .navbar ul li a, .rooms .navbar ul li a { display: block; padding: 0.5rem 1rem; border-radius: 0.25rem; }
 
-.groups .navbar ul li a span { display: inline-block; font-size: 75%; font-weight: bold; line-height: 1; color: #fff; background-color: #868e96; text-align: center; white-space: nowrap; vertical-align: baseline; padding: 0.25em 0.4em; padding-right: 0.6em; padding-left: 0.6em; border-radius: 10rem; }
+.groups .navbar ul li a span, .rooms .navbar ul li a span { display: inline-block; font-size: 75%; font-weight: bold; line-height: 1; color: #fff; background-color: #868e96; text-align: center; white-space: nowrap; vertical-align: baseline; padding: 0.25em 0.4em; padding-right: 0.6em; padding-left: 0.6em; border-radius: 10rem; }
 
-.groups .navbar ul .selected { background: #868e96; border-radius: .25rem; font-weight: 700; }
+.groups .navbar ul .selected, .rooms .navbar ul .selected { background: #868e96; border-radius: .25rem; font-weight: 700; }
 
-.groups .navbar ul .selected a { color: #fff !important; }
+.groups .navbar ul .selected a, .rooms .navbar ul .selected a { color: #fff !important; }
 
-.groups .navbar ul .selected a:hover { text-decoration: none !important; }
+.groups .navbar ul .selected a:hover, .rooms .navbar ul .selected a:hover { text-decoration: none !important; }
 
-.groups .navbar ul .selected a span { color: #111; background-color: #f8f9fa; }
+.groups .navbar ul .selected a span, .rooms .navbar ul .selected a span { color: #111; background-color: #f8f9fa; }
 
 .register .page-title { display: none; }
 
