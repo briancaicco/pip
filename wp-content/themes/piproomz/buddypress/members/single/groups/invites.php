@@ -17,7 +17,7 @@ do_action( 'bp_before_group_invites_content' ); ?>
 
 	<h2 class="bp-screen-reader-text"><?php
 		/* translators: accessibility text */
-		_e( 'Group invitations', 'buddypress' );
+		_e( 'Room invitations', 'buddypress' );
 	?></h2>
 
 	<ul id="group-list" class="invites item-list">
@@ -31,7 +31,7 @@ do_action( 'bp_before_group_invites_content' ); ?>
 					</div>
 				<?php endif; ?>
 
-				<h4><?php bp_group_link(); ?><span class="small"> - <?php printf( _nx( '%d member', '%d members', bp_get_group_total_members( false ),'Group member count', 'buddypress' ), bp_get_group_total_members( false )  ); ?></span></h4>
+				<h4><?php bp_group_link(); ?><span class="small"> - <?php printf( _nx( '%d member', '%d members', bp_get_group_total_members( false ),'Room member count', 'buddypress' ), bp_get_group_total_members( false )  ); ?></span></h4>
 
 				<p class="desc">
 					<?php bp_group_description_excerpt(); ?>

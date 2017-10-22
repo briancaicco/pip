@@ -293,7 +293,7 @@ class BP_Legacy extends BP_Theme_Compat {
 			'accepted'            => __( 'Accepted', 'buddypress' ),
 			'close'               => __( 'Close', 'buddypress' ),
 			'comments'            => __( 'comments', 'buddypress' ),
-			'leave_group_confirm' => __( 'Are you sure you want to leave this group?', 'buddypress' ),
+			'leave_group_confirm' => __( 'Are you sure you want to leave this room?', 'buddypress' ),
 			'mark_as_fav'	      => __( 'Favorite', 'buddypress' ),
 			'my_favs'             => __( 'My Favorites', 'buddypress' ),
 			'rejected'            => __( 'Rejected', 'buddypress' ),

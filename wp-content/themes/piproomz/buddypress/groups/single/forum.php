@@ -97,7 +97,7 @@ do_action( 'bp_after_group_forum_content' ); ?>
 				do_action( 'bp_before_group_forum_post_new' ); ?>
 
 				<?php if ( bp_groups_auto_join() && !bp_group_is_member() ) : ?>
-					<p><?php _e( 'You will auto join this group when you start a new topic.', 'buddypress' ); ?></p>
+					<p><?php _e( 'You will auto join this room when you start a new topic.', 'buddypress' ); ?></p>
 				<?php endif; ?>
 
 				<p id="post-new"></p>

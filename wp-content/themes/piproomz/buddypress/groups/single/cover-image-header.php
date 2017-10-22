@@ -1,6 +1,6 @@
 <?php
 /**
- * BuddyPress - Groups Cover Image Header.
+ * BuddyPress - Rooms Cover Image Header.
  *
  * @package BuddyPress
  * @subpackage bp-legacy
@@ -9,7 +9,7 @@
 /**
  * Fires before the display of a group's header.
  *
- * @since 1.2.0
+ * @since 1.2.0 group 
  */
 do_action( 'bp_before_group_header' ); ?>
 
@@ -71,7 +71,7 @@ do_action( 'bp_before_group_header' ); ?>
 
 			<?php if ( bp_group_is_visible() ) : ?>
 
-				<h2><?php _e( 'Group Admins', 'buddypress' ); ?></h2>
+				<h2><?php _e( 'Room Admins', 'buddypress' ); ?></h2>
 
 				<?php bp_group_list_admins();
 
@@ -91,7 +91,7 @@ do_action( 'bp_before_group_header' ); ?>
 					 */
 					do_action( 'bp_before_group_menu_mods' ); ?>
 
-					<h2><?php _e( 'Group Mods' , 'buddypress' ); ?></h2>
+					<h2><?php _e( 'Room Mods' , 'buddypress' ); ?></h2>
 
 					<?php bp_group_list_mods();
 

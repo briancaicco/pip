@@ -7,7 +7,7 @@
  */
 
 /**
- * Fires at the top of the groups creation template file.
+ * Fires at the top of the rooms creation template file.
  *
  * @since 1.7.0
  */
@@ -18,7 +18,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 	<?php
 
 	/**
-	 * Fires before the display of group creation content.
+	 * Fires before the display of room creation content.
 	 *
 	 * @since 1.6.0
 	 */
@@ -29,7 +29,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 		<?php
 
 		/**
-		 * Fires before the display of group creation.
+		 * Fires before the display of room creation.
 		 *
 		 * @since 1.2.0
 		 */
@@ -53,37 +53,37 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 		<div class="item-body" id="group-create-body">
 
-			<?php /* Group creation step 1: Basic group details */ ?>
+			<?php /* Group creation step 1: Basic room details */ ?>
 			<?php if ( bp_is_group_creation_step( 'group-details' ) ) : ?>
 
 				<h2 class="bp-screen-reader-text"><?php
 					/* translators: accessibility text */
-					_e( 'Group Details', 'buddypress' );
+					_e( 'Room Details', 'buddypress' );
 				?></h2>
 
 				<?php
 
 				/**
-				 * Fires before the display of the group details creation step.
+				 * Fires before the display of the room details creation step.
 				 *
 				 * @since 1.1.0
 				 */
 				do_action( 'bp_before_group_details_creation_step' ); ?>
 
 				<div>
-					<label for="group-name"><?php _e( 'Group Name (required)', 'buddypress' ); ?></label>
+					<label for="group-name"><?php _e( 'Room Name (required)', 'buddypress' ); ?></label>
 					<input type="text" name="group-name" id="group-name" aria-required="true" value="<?php bp_new_group_name(); ?>" />
 				</div>
 
 				<div>
-					<label for="group-desc"><?php _e( 'Group Description (required)', 'buddypress' ); ?></label>
+					<label for="group-desc"><?php _e( 'Room Description (required)', 'buddypress' ); ?></label>
 					<textarea name="group-desc" id="group-desc" aria-required="true"><?php bp_new_group_description(); ?></textarea>
 				</div>
 
 				<?php
 
 				/**
-				 * Fires after the display of the group details creation step.
+				 * Fires after the display of the room details creation step.
 				 *
 				 * @since 1.1.0
 				 */
@@ -99,13 +99,13 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<h2 class="bp-screen-reader-text"><?php
 					/* translators: accessibility text */
-					_e( 'Group Settings', 'buddypress' );
+					_e( 'Room Settings', 'buddypress' );
 				?></h2>
 
 				<?php
 
 				/**
-				 * Fires before the display of the group settings creation step.
+				 * Fires before the display of the room settings creation step.
 				 *
 				 * @since 1.1.0
 				 */
@@ -120,25 +120,25 @@ do_action( 'bp_before_create_group_page' ); ?>
 						<label for="group-status-public"><input type="radio" name="group-status" id="group-status-public" value="public"<?php if ( 'public' == bp_get_new_group_status() || !bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> aria-describedby="public-group-description" /> <?php _e( 'This is a public group', 'buddypress' ); ?></label>
 
 						<ul id="public-group-description">
-							<li><?php _e( 'Any site member can join this group.', 'buddypress' ); ?></li>
-							<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
-							<li><?php _e( 'Group content and activity will be visible to any site member.', 'buddypress' ); ?></li>
+							<li><?php _e( 'Any site member can join this room.', 'buddypress' ); ?></li>
+							<li><?php _e( 'This room will be listed in the rooms directory and in search results.', 'buddypress' ); ?></li>
+							<li><?php _e( 'Room content and activity will be visible to any site member.', 'buddypress' ); ?></li>
 						</ul>
 
 						<label for="group-status-private"><input type="radio" name="group-status" id="group-status-private" value="private"<?php if ( 'private' == bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> aria-describedby="private-group-description" /> <?php _e( 'This is a private group', 'buddypress' ); ?></label>
 
 						<ul id="private-group-description">
-							<li><?php _e( 'Only users who request membership and are accepted can join the group.', 'buddypress' ); ?></li>
-							<li><?php _e( 'This group will be listed in the groups directory and in search results.', 'buddypress' ); ?></li>
-							<li><?php _e( 'Group content and activity will only be visible to members of the group.', 'buddypress' ); ?></li>
+							<li><?php _e( 'Only users who request membership and are accepted can join the room.', 'buddypress' ); ?></li>
+							<li><?php _e( 'This room will be listed in the rooms directory and in search results.', 'buddypress' ); ?></li>
+							<li><?php _e( 'Room content and activity will only be visible to members of the room.', 'buddypress' ); ?></li>
 						</ul>
 
 						<label for="group-status-hidden"><input type="radio" name="group-status" id="group-status-hidden" value="hidden"<?php if ( 'hidden' == bp_get_new_group_status() ) { ?> checked="checked"<?php } ?> aria-describedby="hidden-group-description" /> <?php _e('This is a hidden group', 'buddypress' ); ?></label>
 
 						<ul id="hidden-group-description">
-							<li><?php _e( 'Only users who are invited can join the group.', 'buddypress' ); ?></li>
-							<li><?php _e( 'This group will not be listed in the groups directory or search results.', 'buddypress' ); ?></li>
-							<li><?php _e( 'Group content and activity will only be visible to members of the group.', 'buddypress' ); ?></li>
+							<li><?php _e( 'Only users who are invited can join the room.', 'buddypress' ); ?></li>
+							<li><?php _e( 'This room will not be listed in the rooms directory or search results.', 'buddypress' ); ?></li>
+							<li><?php _e( 'Room content and activity will only be visible to members of the room.', 'buddypress' ); ?></li>
 						</ul>
 
 					</div>
@@ -149,16 +149,16 @@ do_action( 'bp_before_create_group_page' ); ?>
 				<?php if ( $group_types = bp_groups_get_group_types( array( 'show_in_create_screen' => true ), 'objects' ) ): ?>
 
 					<fieldset class="group-create-types">
-						<legend><?php _e( 'Group Types', 'buddypress' ); ?></legend>
+						<legend><?php _e( 'Room Types', 'buddypress' ); ?></legend>
 
-						<p><?php _e( 'Select the types this group should be a part of.', 'buddypress' ); ?></p>
+						<p><?php _e( 'Select the types this room should be a part of.', 'buddypress' ); ?></p>
 
 						<?php foreach ( $group_types as $type ) : ?>
 							<div class="checkbox">
 								<label for="<?php printf( 'group-type-%s', $type->name ); ?>"><input type="checkbox" name="group-types[]" id="<?php printf( 'group-type-%s', $type->name ); ?>" value="<?php echo esc_attr( $type->name ); ?>" <?php checked( true, ! empty( $type->create_screen_checked ) ); ?> /> <?php echo esc_html( $type->labels['name'] ); ?>
 									<?php
 										if ( ! empty( $type->description ) ) {
-											/* translators: Group type description shown when creating a group. */
+											/* translators: Group type description shown when creating a room. */
 											printf( __( '&ndash; %s', 'buddypress' ), '<span class="bp-group-type-desc">' . esc_html( $type->description ) . '</span>' );
 										}
 									?>
@@ -173,17 +173,17 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<fieldset class="group-create-invitations">
 
-					<legend><?php _e( 'Group Invitations', 'buddypress' ); ?></legend>
+					<legend><?php _e( 'Room Invitations', 'buddypress' ); ?></legend>
 
-					<p><?php _e( 'Which members of this group are allowed to invite others?', 'buddypress' ); ?></p>
+					<p><?php _e( 'Which members of this room are allowed to invite others?', 'buddypress' ); ?></p>
 
 					<div class="radio">
 
-						<label for="group-invite-status-members"><input type="radio" name="group-invite-status" id="group-invite-status-members" value="members"<?php bp_group_show_invite_status_setting( 'members' ); ?> /> <?php _e( 'All group members', 'buddypress' ); ?></label>
+						<label for="group-invite-status-members"><input type="radio" name="group-invite-status" id="group-invite-status-members" value="members"<?php bp_group_show_invite_status_setting( 'members' ); ?> /> <?php _e( 'All room members', 'buddypress' ); ?></label>
 
-						<label for="group-invite-status-mods"><input type="radio" name="group-invite-status" id="group-invite-status-mods" value="mods"<?php bp_group_show_invite_status_setting( 'mods' ); ?> /> <?php _e( 'Group admins and mods only', 'buddypress' ); ?></label>
+						<label for="group-invite-status-mods"><input type="radio" name="group-invite-status" id="group-invite-status-mods" value="mods"<?php bp_group_show_invite_status_setting( 'mods' ); ?> /> <?php _e( 'Room admins and mods only', 'buddypress' ); ?></label>
 
-						<label for="group-invite-status-admins"><input type="radio" name="group-invite-status" id="group-invite-status-admins" value="admins"<?php bp_group_show_invite_status_setting( 'admins' ); ?> /> <?php _e( 'Group admins only', 'buddypress' ); ?></label>
+						<label for="group-invite-status-admins"><input type="radio" name="group-invite-status" id="group-invite-status-admins" value="admins"<?php bp_group_show_invite_status_setting( 'admins' ); ?> /> <?php _e( 'Room admins only', 'buddypress' ); ?></label>
 
 					</div>
 
@@ -191,11 +191,11 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<?php if ( bp_is_active( 'forums' ) ) : ?>
 
-					<h4><?php _e( 'Group Forums', 'buddypress' ); ?></h4>
+					<h4><?php _e( 'Room Forums', 'buddypress' ); ?></h4>
 
 					<?php if ( bp_forums_is_installed_correctly() ) : ?>
 
-						<p><?php _e( 'Should this group have a forum?', 'buddypress' ); ?></p>
+						<p><?php _e( 'Should this room have a forum?', 'buddypress' ); ?></p>
 
 						<div class="checkbox">
 							<label for="group-show-forum"><input type="checkbox" name="group-show-forum" id="group-show-forum" value="1"<?php checked( bp_get_new_group_enable_forum(), true, true ); ?> /> <?php _e( 'Enable discussion forum', 'buddypress' ); ?></label>
@@ -211,7 +211,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 				<?php
 
 				/**
-				 * Fires after the display of the group settings creation step.
+				 * Fires after the display of the room settings creation step.
 				 *
 				 * @since 1.1.0
 				 */
@@ -226,13 +226,13 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<h2 class="bp-screen-reader-text"><?php
 					/* translators: accessibility text */
-					_e( 'Group Avatar', 'buddypress' );
+					_e( 'Room Avatar', 'buddypress' );
 				?></h2>
 
 				<?php
 
 				/**
-				 * Fires before the display of the group avatar creation step.
+				 * Fires before the display of the room avatar creation step.
 				 *
 				 * @since 1.1.0
 				 */
@@ -247,7 +247,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 					</div><!-- .left-menu -->
 
 					<div class="main-column">
-						<p><?php _e( "Upload an image to use as a profile photo for this group. The image will be shown on the main group page, and in search results.", 'buddypress' ); ?></p>
+						<p><?php _e( "Upload an image to use as a profile photo for this room. The image will be shown on the main room page, and in search results.", 'buddypress' ); ?></p>
 
 						<p>
 							<label for="file" class="bp-screen-reader-text"><?php
@@ -259,7 +259,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 							<input type="hidden" name="action" id="action" value="bp_avatar_upload" />
 						</p>
 
-						<p><?php _e( 'To skip the group profile photo upload process, hit the "Next Step" button.', 'buddypress' ); ?></p>
+						<p><?php _e( 'To skip the room profile photo upload process, hit the "Next Step" button.', 'buddypress' ); ?></p>
 					</div><!-- .main-column -->
 
 					<?php
@@ -296,7 +296,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 				<?php
 
 				/**
-				 * Fires after the display of the group avatar creation step.
+				 * Fires after the display of the room avatar creation step.
 				 *
 				 * @since 1.1.0
 				 */
@@ -317,7 +317,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 				<?php
 
 				/**
-				 * Fires before the display of the group cover image creation step.
+				 * Fires before the display of the room cover image creation step.
 				 *
 				 * @since 2.4.0
 				 */
@@ -325,14 +325,14 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 				<div id="header-cover-image"></div>
 
-				<p><?php _e( 'The Cover Image will be used to customize the header of your group.', 'buddypress' ); ?></p>
+				<p><?php _e( 'The Cover Image will be used to customize the header of your room.', 'buddypress' ); ?></p>
 
 				<?php bp_attachments_get_template_part( 'cover-images/index' ); ?>
 
 				<?php
 
 				/**
-				 * Fires after the display of the group cover image creation step.
+				 * Fires after the display of the room cover image creation step.
 				 *
 				 * @since 2.4.0
 				 */
@@ -342,18 +342,18 @@ do_action( 'bp_before_create_group_page' ); ?>
 
 			<?php endif; ?>
 
-			<?php /* Group creation step 5: Invite friends to group */ ?>
+			<?php /* Group creation step 5: Invite friends to room */ ?>
 			<?php if ( bp_is_group_creation_step( 'group-invites' ) ) : ?>
 
 				<h2 class="bp-screen-reader-text"><?php
 					/* translators: accessibility text */
-					_e( 'Group Invites', 'buddypress' );
+					_e( 'Room Invites', 'buddypress' );
 				?></h2>
 
 				<?php
 
 				/**
-				 * Fires before the display of the group invites creation step.
+				 * Fires before the display of the room invites creation step.
 				 *
 				 * @since 1.1.0
 				 */
@@ -411,7 +411,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 				<?php else : ?>
 
 					<div id="message" class="info">
-						<p><?php _e( 'Once you have built up friend connections you will be able to invite others to your group.', 'buddypress' ); ?></p>
+						<p><?php _e( 'Once you have built up friend connections you will be able to invite others to your room.', 'buddypress' ); ?></p>
 					</div>
 
 				<?php endif; ?>
@@ -421,7 +421,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 				<?php
 
 				/**
-				 * Fires after the display of the group invites creation step.
+				 * Fires after the display of the room invites creation step.
 				 *
 				 * @since 1.1.0
 				 */
@@ -432,9 +432,9 @@ do_action( 'bp_before_create_group_page' ); ?>
 			<?php
 
 			/**
-			 * Fires inside the group admin template.
+			 * Fires inside the room admin template.
 			 *
-			 * Allows plugins to add custom group creation steps.
+			 * Allows plugins to add custom room creation steps.
 			 *
 			 * @since 1.1.0
 			 */
@@ -443,7 +443,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 			<?php
 
 			/**
-			 * Fires before the display of the group creation step buttons.
+			 * Fires before the display of the room creation step buttons.
 			 *
 			 * @since 1.1.0
 			 */
@@ -487,7 +487,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 			<?php
 
 			/**
-			 * Fires after the display of the group creation step buttons.
+			 * Fires after the display of the room creation step buttons.
 			 *
 			 * @since 1.1.0
 			 */
@@ -499,7 +499,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 			<?php
 
 			/**
-			 * Fires and displays the groups directory content.
+			 * Fires and displays the rooms directory content.
 			 *
 			 * @since 1.1.0
 			 */
@@ -510,7 +510,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 		<?php
 
 		/**
-		 * Fires after the display of group creation.
+		 * Fires after the display of room creation.
 		 *
 		 * @since 1.2.0
 		 */
@@ -521,7 +521,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 	<?php
 
 	/**
-	 * Fires after the display of group creation content.
+	 * Fires after the display of room creation content.
 	 *
 	 * @since 1.6.0
 	 */
@@ -532,7 +532,7 @@ do_action( 'bp_before_create_group_page' ); ?>
 <?php
 
 /**
- * Fires at the bottom of the groups creation template file.
+ * Fires at the bottom of the rooms creation template file.
  *
  * @since 1.7.0
  */

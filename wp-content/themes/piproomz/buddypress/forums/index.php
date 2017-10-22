@@ -185,7 +185,7 @@
 					<label for="topic_tags"><?php _e( 'Tags (comma separated):', 'buddypress' ); ?></label>
 					<input type="text" name="topic_tags" id="topic_tags" value="" />
 
-					<label for="topic_group_id"><?php _e( 'Post In Group Forum:', 'buddypress' ); ?></label>
+					<label for="topic_group_id"><?php _e( 'Post In Room Forum:', 'buddypress' ); ?></label>
 					<select id="topic_group_id" name="topic_group_id">
 
 						<option value=""><?php /* translators: no option picked in select box */ _e( '----', 'buddypress' ); ?></option>
@@ -224,7 +224,7 @@
 
 				<div id="message" class="info">
 
-					<p><?php printf( __( "You are not a member of any groups so you don't have any group forums you can post in. To start posting, first find a group that matches the topic subject you'd like to start. If this group does not exist, why not <a href='%s'>create a new group</a>? Once you have joined or created the group you can post your topic in that group's forum.", 'buddypress' ), trailingslashit( bp_get_groups_directory_permalink() . 'create' ) ); ?></p>
+					<p><?php printf( __( "You are not a member of any groups so you don't have any room forums you can post in. To start posting, first find a room that matches the topic subject you'd like to start. If this room does not exist, why not <a href='%s'>create a new room</a>? Once you have joined or created the room you can post your topic in that room's forum.", 'buddypress' ), trailingslashit( bp_get_groups_directory_permalink() . 'create' ) ); ?></p>
 
 				</div>
 
