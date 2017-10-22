@@ -1225,6 +1225,12 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/buddypress\/members\/___register.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/members\/___register.php",
+		"oF": 0
+		},
 	"\/buddypress\/members\/activate.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1241,12 +1247,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/members-loop.php",
-		"oF": 0
-		},
-	"\/buddypress\/members\/register.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/buddypress\/members\/register.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/activity.php": {
@@ -1847,24 +1847,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/customizer-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/js\/find_replace-min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/find_replace-min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/js\/find_replace.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/find_replace-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
