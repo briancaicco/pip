@@ -1001,6 +1001,12 @@
 		"oAP": "\/buddypress\/blogs\/index.php",
 		"oF": 0
 		},
+	"\/buddypress\/buddypress-functions.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/buddypress\/buddypress-functions.php",
+		"oF": 0
+		},
 	"\/buddypress\/common\/search\/dir-search-form.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1182,6 +1188,42 @@
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/send-invites.php",
 		"oF": 0
+		},
+	"\/buddypress\/js\/buddypress.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/buddypress\/js\/buddypress-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/buddypress\/js\/buddypress.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/buddypress\/js\/buddypress.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/buddypress\/js\/password-verify.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/buddypress\/js\/password-verify-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/buddypress\/js\/password-verify.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/buddypress\/js\/password-verify.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
 		},
 	"\/buddypress\/members\/activate.php": {
 		"ft": 8192,
