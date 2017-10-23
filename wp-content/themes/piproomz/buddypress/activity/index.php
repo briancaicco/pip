@@ -46,7 +46,6 @@ do_action( 'bp_before_directory_activity' ); ?>
 		 */
 		do_action( 'template_notices' ); ?>
 
-	</div>
 
 	<div class="item-list-tabs activity-type-tabs" aria-label="<?php esc_attr_e( 'Sitewide activities navigation', 'buddypress' ); ?>" role="navigation">
 		
