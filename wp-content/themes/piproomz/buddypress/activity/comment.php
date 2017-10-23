@@ -16,7 +16,7 @@
  */
 do_action( 'bp_before_activity_comment' ); ?>
 
-<li id="acomment-<?php bp_activity_comment_id(); ?>">
+<li class="bg-light p-2 mt-2" id="acomment-<?php bp_activity_comment_id(); ?>">
 	<div class="acomment-avatar">
 		<a href="<?php bp_activity_comment_user_link(); ?>">
 			<?php bp_activity_avatar( 'type=thumb&user_id=' . bp_get_activity_comment_user_id() ); ?>
@@ -56,7 +56,7 @@ do_action( 'bp_before_activity_comment' ); ?>
 		do_action( 'bp_activity_comment_options' ); ?>
 
 	</div>
-
+	<div class="clearfix"></div>
 	<?php bp_activity_recurse_comments( bp_activity_current_comment() ); ?>
 </li>
 

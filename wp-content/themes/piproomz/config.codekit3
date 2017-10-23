@@ -1189,6 +1189,15 @@
 		"oAP": "\/buddypress\/groups\/single\/send-invites.php",
 		"oF": 0
 		},
+	"\/buddypress\/js\/buddypress-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/buddypress\/js\/buddypress-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/buddypress\/js\/buddypress.js": {
 		"ft": 64,
 		"mi": 1,
@@ -1229,12 +1238,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/activate.php",
-		"oF": 0
-		},
-	"\/buddypress\/members\/index.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/buddypress\/members\/index.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/members-loop.php": {

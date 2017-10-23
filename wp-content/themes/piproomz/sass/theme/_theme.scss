@@ -71,6 +71,21 @@ p{
 }
 
 
+.navbar-light .navbar-toggler-icon, .navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+}
+
+
 // Forms
 /////////////////////////////////////////////////////////////////////////
 .form-control{
@@ -187,11 +202,7 @@ p{
 	}
 
 }
-
-.navbar-dark .navbar-toggler-icon{
-	//$string: url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E);
-	//background: str-replace( $string, "#", "%23") !important;
-}
+ 
 
 
 // Activity Feeds
@@ -209,13 +220,13 @@ p{
 
 
 #buddypress #activity-stream p{
-	color: $gray-600;
+	color: $gray-400;
 	margin: 0px !important;
 	//padding-bottom: 30px;
 }
 
 #buddypress .activity-list .activity-content .activity-inner{
-	margin: 0px !important;
+	//margin: 0px !important;
 }
 
 #buddypress .activity-list .joined_group .activity-meta, #buddypress .activity-list .friendship_created .activity-meta,{
@@ -262,11 +273,151 @@ p{
 .avatar{
 	border-radius: 200px;
 }
-.bbp-user-page{
-	.avatar-500{
-		border-radius: 0px !important;
+
+.directory.activity{
+	.activity-avatar img, .ac-reply-avatar img{
+		width: 45px;
+	}
+	.activity-header{
+		height: 45px;
+	}
+	.activity-meta{
+		margin-left: -5px;
+	}
+	.activity-inner, .acomment-content{
+		 p{
+			color: $gray-700 !important;
+		}
+	}
+	#buddypress a.bp-primary-action span, #buddypress #reply-title small a span {
+			color: #fff;
+			background-color: #868e96;
+			display: inline-block;
+		    padding: .25em .4em;
+		    font-size: 75%;
+		    font-weight: 700;
+		    line-height: 1;
+		    color: #fff;
+		    text-align: center;
+		    white-space: nowrap;
+		    vertical-align: baseline;
+		    border-radius: .25rem;
+		    margin-left: 3px;
+	}
+	#whats-new-avatar{
+		width: 45px;
+	}
+
+	#whats-new-textarea{
+		textarea{
+			border: none;
+		}
+
+		.bp-screen-reader-text{
+			
+		}
+
+	}
+	#buddypress div.activity-comments form .ac-textarea{
+		border: none;
 	}
 }
+
+
+// Profile Pages
+/////////////////////////////////////////////////////////////////////////
+
+.bp-user{
+	#buddypress ul.item-list li img.avatar, #buddypress div.ac-reply-avatar img, #activity-stream img.avatar{
+		width: 40px;
+		height: 40px;
+		border-radius: 50% !important;
+	}
+	#profile-primary-nav{
+			min-height: 50px !important;
+		}
+
+	.content{
+		padding-top: 0;
+	}
+	#whats-new-avatar{
+		display: none;
+	}
+
+	#buddypress form#whats-new-form #whats-new-content, #buddypress form#whats-new-form p.activity-greeting{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#buddypress form#whats-new-form p.activity-greeting{
+		margin-bottom: 20px;
+	}
+
+	#buddypress div.item-list-tabs#subnav ul li.last label{
+		display: none;
+	}
+
+	span.count{
+		display: none;
+	}
+
+	#buddypress #item-nav{
+		margin-top: 75px;
+	}
+	
+	.content{
+		padding-top: 0px !important;
+	}
+}
+
+
+
+#buddypress #item-header-avatar, #buddypress #item-header-content{
+	top: 75px;
+	max-width: 240px;
+}
+
+
+// Hide Navigation items
+#notifications-personal-li, #messages-personal-li, #settings-personal-li, #activity-personal-li, #mepr-bp-info-personal-li, #forums-personal-li {
+display:none;
+}
+
+.bp-user{
+	#subnav{
+		padding: 10px 10px;
+		ul{
+			li{
+				a{
+					border-radius: .25rem;
+					display: block;
+					padding: .3rem .6rem;
+					font-size: .9em;
+				}
+			}
+			li.current{
+				a{
+					color: #fff;
+					background-color: #007bff;
+				}
+			}
+		}
+	}
+}
+
+#buddypress div.item-list-tabs#subnav ul li#activity-filter-select{
+	margin-top: 20px;
+}
+
+
+#buddypress div.item-list-tabs ul li {
+	//float: none;
+}
+
+#buddypress #item-header-avatar{
+	z-index: 3;
+}
+
 // Home Page
 /////////////////////////////////////////////////////////////////////////
 
@@ -472,6 +623,16 @@ p{
 	.bp_friends_widget{
 		margin-top: 0px;
 	}
+
+	.bp-user{
+		.content{
+			padding-top: 0;
+		}
+	}
+
+	#buddypress #item-header-cover-image, #buddypress #header-cover-image{
+		height: 315px;
+	}
 }
 
 // Large devices (desktops, 992px and up)
@@ -486,10 +647,15 @@ p{
 
 
 // // Extra small devices (portrait phones, less than 576px)
-// @media (max-width: 575px) { 
+@media (max-width: 575px) { 
 
+#buddypress #item-header-content{
+	z-index: 1;
+	margin-top: -89px;
+	padding-top: 113px !important;
+}
 
-// }
+}
 
 // // Small devices (landscape phones, less than 768px)
 // @media (max-width: 767px) { 

@@ -17,15 +17,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
 
-<section class="bg-grey-200">
+<section class="bg-grey-200 content pt-md-5">
 
-	<div class="container content pt-5 ">
 
-		<div class="row">
-
-			<?php // Left Sidebar Check
-
-			get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -34,17 +28,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php endwhile; // end of the loop. ?>
 
-		</div><!-- .row -->
 
-		<?php // Right Sidebar Check
 
-			if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-			<?php get_sidebar( 'right' ); ?>
-
-		<?php endif; ?>
-
-	</div><!-- Container end -->
 	
 </section>
 

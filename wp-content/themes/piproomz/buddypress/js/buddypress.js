@@ -650,13 +650,13 @@ jq(document).ready( function() {
 				} else {
 					var activity_comments = form.parent();
 					form.fadeOut( 200, function() {
-						if ( 0 === activity_comments.children('ul').length ) {
-							if ( activity_comments.hasClass('activity-comments') ) {
-								activity_comments.prepend('<ul></ul>');
-							} else {
-								activity_comments.append('<ul></ul>');
-							}
-						}
+						// if ( 0 === activity_comments.children('ul').length ) {
+						// 	if ( activity_comments.hasClass('activity-comments') ) {
+						// 		//activity_comments.prepend('<ul></ul>');
+						// 	} else {
+						// 		//activity_comments.append('<ul></ul>');
+						// 	}
+						// }
 
 						/* Preceding whitespace breaks output with jQuery 1.9.0 */
 						var the_comment = jq.trim( response );

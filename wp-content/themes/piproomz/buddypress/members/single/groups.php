@@ -8,7 +8,7 @@
 
 ?>
 
-<div class="item-list-tabs no-ajax" id="subnav" aria-label="<?php esc_attr_e( 'Member secondary navigation', 'buddypress' ); ?>" role="navigation">
+<div class="item-list-tabs nav-justified" no-ajax" id="subnav" aria-label="<?php esc_attr_e( 'Member secondary navigation', 'buddypress' ); ?>" role="navigation">
 	<ul>
 		<?php if ( bp_is_my_profile() ) bp_get_options_nav(); ?>
 
@@ -16,8 +16,8 @@
 
 			<li id="groups-order-select" class="last filter">
 
-				<label for="groups-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
-				<select id="groups-order-by">
+				<!-- <label for="groups-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label> -->
+				<select id="groups-order-by" class="custom-select">
 					<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
 					<option value="popular"><?php _e( 'Most Members', 'buddypress' ); ?></option>
 					<option value="newest"><?php _e( 'Newly Created', 'buddypress' ); ?></option>

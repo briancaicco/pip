@@ -219,8 +219,98 @@ endif;
 		      $link = trailingslashit( bp_displayed_user_domain() . $user_nav_item->link );
 		    }
 
-		    echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item->css_id, array( '<li class="nav-item" id="' . $user_nav_item->css_id . '-personal-li" ' . $selected . '><a class="nav-link" id="user-' . $user_nav_item->css_id . '" href="' . $link . '">' . $user_nav_item->name . '</a></li>', &$user_nav_item ) );
+		    echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item->css_id, array( '<a class="btn btn-secondary br-0 w-100 py-3 mt-0 small" id="' . $user_nav_item->css_id . '-personal-li" ' . $selected . ' user-' . $user_nav_item->css_id . '" href="' . $link . '">' . $user_nav_item->name . '</a></button>', &$user_nav_item ) );
 		  }
 	
 	}
-	
+
+
+
+
+	// Setup Cover Images
+	//////////////////////////////////////////////////////////////////////	
+
+	function your_theme_cover_image_callback( $params = array() ) {
+	    if ( empty( $params ) ) {
+	        return;
+	    }
+	 
+	    return '
+	        /* Cover image - Do not forget this part */
+	        #buddypress #header-cover-image {
+	            height: ' . $params["height"] . 'px;
+	            background-image: url(' . $params['cover_image'] . ');
+	        }
+	    ';
+	}
+	add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_members_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_activity_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 ); 
+
+	function your_theme_cover_image_css( $settings = array() ) {
+	    /**
+	     * If you are using a child theme, use bp-child-css
+	     * as the theme handel
+	     */
+	    $theme_handle = 'bp-parent-css';
+	 
+	    $settings['theme_handle'] = $theme_handle;
+	 
+	    /**
+	     * Then you'll probably also need to use your own callback function
+	     * <a class="bp-suggestions-mention" href="https://buddypress.org/members/see/" rel="nofollow">@see</a> the previous snippet
+	     */
+	     $settings['callback'] = 'your_theme_cover_image_callback';
+	     
+	 
+	    return $settings;
+	}
+	add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_members_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_activity_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+
+	// Register the Cover Image feature for Users profiles
+	function bp_default_register_feature() {
+	    /**
+	     * You can choose to register it for Members and / or Groups by including (or not) 
+	     * the corresponding components in your feature's settings. In this example, we
+	     * chose to register it for both components.
+	     */
+	    $components = array( 'groups', 'members', 'xprofile', 'activity');
+	 
+	    // Define the feature's settings
+	    $cover_image_settings = array(
+	        'name'     => 'cover_image', // feature name
+	        'settings' => array(
+	            'components'   => $components,
+	            'width'        => 851,
+	            'height'       => 315,
+	            'callback'     => 'bp_default_cover_image',
+	            'theme_handle' => 'bp-default-main',
+	        ),
+	    );
+	 
+	 
+	    // Register the feature for your theme according to the defined settings.
+	    bp_set_theme_compat_feature( bp_get_theme_compat_id(), $cover_image_settings );
+	}
+	add_action( 'bp_after_setup_theme', 'bp_default_register_feature' );
+
+	// Example of function to customize the display of the cover image
+	function bp_default_cover_image( $params = array() ) {
+	    if ( empty( $params ) ) {
+	        return;
+	    }
+	 
+	    // The complete css rules are available here: https://gist.github.com/imath/7e936507857db56fa8da#file-bp-default-patch-L34
+	    return '
+	        /* Cover image */
+	        #header-cover-image {
+	            display: block;
+	            height: ' . $params["height"] . 'px;
+	            background-image: url(' . $params['cover_image'] . ');
+	        }
+	    ';
+	}

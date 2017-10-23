@@ -17,7 +17,7 @@ do_action( 'bp_before_activity_loop' ); ?>
 
 	<?php if ( empty( $_POST['page'] ) ) : ?>
 
-		<ul id="activity-stream" class="activity-list item-list">
+		<div id="activity-stream" class="activity-list item-list">
 
 	<?php endif; ?>
 
@@ -29,15 +29,15 @@ do_action( 'bp_before_activity_loop' ); ?>
 
 	<?php if ( bp_activity_has_more_items() ) : ?>
 
-		<li class="load-more">
+		<div class="load-more">
 			<a href="<?php bp_activity_load_more_link() ?>"><?php _e( 'Load More', 'buddypress' ); ?></a>
-		</li>
+		</div>
 
 	<?php endif; ?>
 
 	<?php if ( empty( $_POST['page'] ) ) : ?>
 
-		</ul>
+		</div>
 
 	<?php endif; ?>
 

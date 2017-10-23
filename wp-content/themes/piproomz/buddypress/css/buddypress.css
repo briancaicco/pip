@@ -370,9 +370,6 @@ body.activity-permalink #buddypress .activity-content blockquote {
 /*--------------------------------------------------------------
 3.1.2 - Activity Comments
 --------------------------------------------------------------*/
-#buddypress div.activity-meta {
-	margin: 18px 0 0;
-}
 
 body.activity-permalink #buddypress div.activity-meta {
 	margin-bottom: 6px;

@@ -9,6 +9,7 @@
 ?>
 
 <div id="buddypress">
+
 	<?php
 
 	/**
@@ -18,119 +19,101 @@
 	 */
 	do_action( 'bp_before_member_home_content' ); ?>
 
+	<div id="item-header" role="complementary">
 
-<div class="row">
-	
-	<div class="col-3">
-		<div class="row">
-			<div class="col-12 p-0">
-				<div id="item-header-cover-image">
-					<div id="item-header-avatar">
-						<a href="<?php bp_displayed_user_link(); ?>">
-							<?php bp_displayed_user_avatar( 'type=full&width=500' ); ?>
-						</a>
-					</div><!-- #item-header-avatar -->
+		<?php
+		/**
+		 * If the cover image feature is enabled, use a specific header
+		 */
+		if ( bp_displayed_user_use_cover_image_header() ) :
+			bp_get_template_part( 'members/single/cover-image-header' );
+		else :
+			bp_get_template_part( 'members/single/member-header' );
+		endif;
+		?>
+
+	</div><!-- #item-header -->
+
+	<div id="item-nav" class="mt-md-0">
+		<div class="container px-0">
+			<div class="item-list-tabs nav-justified" no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Member primary navigation', 'buddypress' ); ?>" role="navigation">
+
+				<div class="btn-group d-flex justify-content-between" role="group" aria-label="Profile Nav">
+					<?php pip_edit_profile_nav_items(); ?>
 				</div>
-			</div>	
-			<div class="col-12 bg-dark">
-				<div id="item-header" class="px-3 pt-3 pb-0 text-light" role="complementary">
-					<?php
-					/**
-					 * If the cover image feature is enabled, use a specific header
-					 */
-					if ( bp_displayed_user_use_cover_image_header() ) :
-						bp_get_template_part( 'members/single/cover-image-header' );
-					else :
-						bp_get_template_part( 'members/single/member-header' );
-					endif;
-					?>
 
-				</div><!-- #item-header -->
+				<?php
 
-				<div id="item-nav">
-					<div class="item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Member primary navigation', 'buddypress' ); ?>" role="navigation">
-						<ul class="list-group pb-3">
+				/**
+				 * Fires after the display of member options navigation.
+				 *
+				 * @since 1.2.4
+				 */
+				do_action( 'bp_member_options_nav' ); ?>
 
-							<?php //bp_get_displayed_user_nav(); 
-
-								pip_edit_profile_nav_items();
-							?>
-
-							<?php
-
-							/**
-							 * Fires after the display of member options navigation.
-							 *
-							 * @since 1.2.4
-							 */
-							do_action( 'bp_member_options_nav' ); ?>
-
-						</ul>
-					</div>
-				</div><!-- #item-nav -->
 			</div>
 		</div>
-	</div>
-	<div class="col-9 pl-4">
+	</div><!-- #item-nav -->
 
-		<div id="item-body">
 
-			<?php
+	<div id="item-body">
+	<div class="container pt-2">
 
-			/**
-			 * Fires before the display of member body content.
-			 *
-			 * @since 1.2.0
-			 */
-			do_action( 'bp_before_member_body' );
+		<?php
 
-			if ( bp_is_user_front() ) :
-				bp_displayed_user_front_template_part();
+					/**
+					 * Fires before the display of member body content.
+					 *
+					 * @since 1.2.0
+					 */
+					do_action( 'bp_before_member_body' );
 
-			elseif ( bp_is_user_activity() ) :
-				bp_get_template_part( 'members/single/activity' );
+					if ( bp_is_user_front() ) :
+						bp_displayed_user_front_template_part();
 
-			elseif ( bp_is_user_blogs() ) :
-				bp_get_template_part( 'members/single/blogs'    );
+					elseif ( bp_is_user_activity() ) :
+						bp_get_template_part( 'members/single/activity' );
 
-			elseif ( bp_is_user_friends() ) :
-				bp_get_template_part( 'members/single/friends'  );
+					elseif ( bp_is_user_blogs() ) :
+						bp_get_template_part( 'members/single/blogs'    );
 
-			elseif ( bp_is_user_groups() ) :
-				bp_get_template_part( 'members/single/groups'   );
+					elseif ( bp_is_user_friends() ) :
+						bp_get_template_part( 'members/single/friends'  );
 
-			elseif ( bp_is_user_messages() ) :
-				bp_get_template_part( 'members/single/messages' );
+					elseif ( bp_is_user_groups() ) :
+						bp_get_template_part( 'members/single/groups'   );
 
-			elseif ( bp_is_user_profile() ) :
-				bp_get_template_part( 'members/single/profile'  );
+					elseif ( bp_is_user_messages() ) :
+						bp_get_template_part( 'members/single/messages' );
 
-			elseif ( bp_is_user_forums() ) :
-				bp_get_template_part( 'members/single/forums'   );
+					elseif ( bp_is_user_profile() ) :
+						bp_get_template_part( 'members/single/profile'  );
 
-			elseif ( bp_is_user_notifications() ) :
-				bp_get_template_part( 'members/single/notifications' );
+					elseif ( bp_is_user_forums() ) :
+						bp_get_template_part( 'members/single/forums'   );
 
-			elseif ( bp_is_user_settings() ) :
-				bp_get_template_part( 'members/single/settings' );
+					elseif ( bp_is_user_notifications() ) :
+						bp_get_template_part( 'members/single/notifications' );
 
-			// If nothing sticks, load a generic template
-			else :
-				bp_get_template_part( 'members/single/plugins'  );
+					elseif ( bp_is_user_settings() ) :
+						bp_get_template_part( 'members/single/settings' );
 
-			endif;
+					// If nothing sticks, load a generic template
+					else :
+						bp_get_template_part( 'members/single/plugins'  );
 
-			/**
-			 * Fires after the display of member body content.
-			 *
-			 * @since 1.2.0
-			 */
-			do_action( 'bp_after_member_body' ); ?>
+					endif;
 
-		</div><!-- #item-body -->
-	</div>
-</div>
-	<?php
+					/**
+					 * Fires after the display of member body content.
+					 *
+					 * @since 1.2.0
+					 */
+					do_action( 'bp_after_member_body' ); ?>
+
+
+
+					<?php
 
 	/**
 	 * Fires after the display of member home content.
@@ -138,5 +121,8 @@
 	 * @since 1.2.0
 	 */
 	do_action( 'bp_after_member_home_content' ); ?>
+	</div>
+
+</div><!-- #item-body -->
 
 </div><!-- #buddypress -->

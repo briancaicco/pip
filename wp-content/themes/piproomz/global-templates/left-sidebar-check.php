@@ -18,22 +18,22 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 <?php {
 	$html = '';
 	if ( 'right' === $sidebar_pos || 'left' === $sidebar_pos ) {
-		$html = '<div class="';
+		$html = '<div';
 		if ( is_active_sidebar( 'right-sidebar' ) || is_active_sidebar( 'left-sidebar' ) ) {
-			$html .= 'col-md-8">';
+			$html .= '>';
 		} else {
-			$html .= 'col-md-12">';
+			$html .= '">';
 		}
 		echo $html; // WPCS: XSS OK.
 	} elseif ( is_active_sidebar( 'right-sidebar' ) && is_active_sidebar( 'left-sidebar' ) ) {
-		$html = '<div class="';
+		$html = '<div';
 		if ( 'both' === $sidebar_pos ) {
-			$html .= 'col-md-6">';
+			$html .= '>';
 		} else {
-			$html .= 'col-md-12">';
+			$html .= '>';
 		}
 		echo $html; // WPCS: XSS OK.
 	} else {
-	    echo '<div class="col-md-12">';
+	    echo '';
 	}
 }

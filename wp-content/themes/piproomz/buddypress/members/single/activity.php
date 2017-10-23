@@ -9,13 +9,12 @@
 ?>
 
 <div class="item-list-tabs no-ajax" id="subnav" aria-label="<?php esc_attr_e( 'Member secondary navigation', 'buddypress' ); ?>" role="navigation">
-	<ul>
-
+	
+<div class="container px-0">	<ul>
 		<?php bp_get_options_nav(); ?>
 
-		<li id="activity-filter-select" class="last">
-			<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
-			<select id="activity-filter-by" class="custom-select">
+		<li id="activity-filter-select" class="last text-center">
+			<select id="activity-filter-by" class="custom-select  mx-auto">
 				<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 
 				<?php bp_activity_show_filters(); ?>
@@ -31,8 +30,13 @@
 
 			</select>
 		</li>
-	</ul>
+	</ul></div>
+
+
 </div><!-- .item-list-tabs -->
+
+
+
 
 <?php
 
@@ -65,7 +69,7 @@ do_action( 'bp_before_member_activity_content' ); ?>
 
 	<?php bp_get_template_part( 'activity/activity-loop' ) ?>
 
-</div><!-- .activity -->
+<!-- </div> --><!-- .activity -->
 
 <?php
 
