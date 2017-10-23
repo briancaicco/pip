@@ -19,6 +19,45 @@
 }
 
 
+// Alerts
+#buddypress div#message p, #sitewide-notice p{
+	border: 0px !important;
+	background: 0px !important;
+	padding: 0px !important;
+	margin: 0px !important;
+	color: rgba(0, 0, 0, 0.7) !important;
+	margin-top: 0px !important;
+}
+
+#buddypress div#message{
+	padding-bottom: 0px;
+}
+
+#buddypress div#message.updated{
+	clear: none;
+	display: inline-block;
+}
+
+#buddypress div#message p, #sitewide-notice p{
+	padding: 0px !important;
+}
+
+.alert-updated{
+	background-color: #d4edda;
+	border-color: #c3e6cb;
+	p{
+		color: #155724;
+	}
+}
+
+.alert{
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 360px;
+	z-index: 99999;
+}
+
 // Typography
 /////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
@@ -353,6 +392,10 @@ p{
 		margin-bottom: 20px;
 	}
 
+	textarea#whats-new {
+		border: 0px;
+	}
+
 	#buddypress div.item-list-tabs#subnav ul li.last label{
 		display: none;
 	}
@@ -374,7 +417,9 @@ p{
 	}
 }
 
-
+.bp-avatar-nav ul.avatar-nav-items li.current {
+	border-bottom-color: $gray-200;
+}
 
 #buddypress #item-header-avatar, #buddypress #item-header-content{
 	top: 75px;
@@ -407,6 +452,12 @@ display:none;
 			}
 		}
 	}
+}
+
+
+#buddypress div.item-list-tabs#subnav {
+	margin-left: 0px !important;
+	padding-left: 0px !important;
 }
 
 #buddypress div.item-list-tabs#subnav ul li#activity-filter-select{

@@ -51,7 +51,10 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 
 	<form action="" method="post" id="groups-directory-form" class="dir-form">
 
-		<div id="template-notices" role="alert" aria-atomic="true">
+		<div class="alert alert-primary alert-dismissible fade show" id="template-notices" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 			<?php
 
 			/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */

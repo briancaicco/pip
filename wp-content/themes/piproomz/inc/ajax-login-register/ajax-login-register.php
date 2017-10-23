@@ -31,7 +31,6 @@ function pt_login_register_modal() {
 
 						<div class="modal-header p-4">
 							<h5 class="modal-title"><?php printf( __('Join %s', 'ptheme'), get_bloginfo('name') ); ?></h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body p-4">
 
@@ -60,7 +59,6 @@ function pt_login_register_modal() {
 					<div class="pt-login">
 						<div class="modal-header p-4">
 							<h5 class="modal-title"><?php printf( __('Login to %s', 'ptheme'), get_bloginfo('name') ); ?></h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body p-4">
 
@@ -89,7 +87,6 @@ function pt_login_register_modal() {
 
 						<div class="modal-header p-4">
 							<h5 class="modal-title"><?php printf( __('Reset Password', 'ptheme') ); ?></h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						</div>
 						<div class="modal-body p-4">
 

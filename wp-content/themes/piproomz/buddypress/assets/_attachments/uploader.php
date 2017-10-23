@@ -25,7 +25,7 @@
 					<p class="drag-drop-buttons"><label for="{{data.browse_button}}" class="<?php echo is_admin() ? 'screen-reader-text' : 'bp-screen-reader-text' ;?>"><?php
 						/* translators: accessibility text */
 						esc_html_e( 'Select your File', 'buddypress' );
-					?></label><input id="{{data.browse_button}}" type="button" value="<?php esc_attr_e( 'Select your File', 'buddypress' ); ?>" class="button" /></p>
+					?></label><input id="{{data.browse_button}}" type="button" value="<?php esc_attr_e( 'Select your File', 'buddypress' ); ?>" class="button btn btn-success" /></p>
 				</div>
 			</div>
 		</div>

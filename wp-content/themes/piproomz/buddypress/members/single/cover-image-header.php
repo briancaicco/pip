@@ -76,11 +76,8 @@ do_action( 'bp_before_member_header' ); ?>
  */
 do_action( 'bp_after_member_header' ); ?>
 
-<div id="template-notices" class="" role="alert" aria-atomic="true">
-
 	<?php
 
 	/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 	do_action( 'template_notices' ); ?>
 
-</div>

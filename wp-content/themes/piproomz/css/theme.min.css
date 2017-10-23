@@ -4377,6 +4377,20 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .bp-screen-reader-text { display: none !important; }
 
+#buddypress div#message p, #sitewide-notice p { border: 0px !important; background: 0px !important; padding: 0px !important; margin: 0px !important; color: rgba(0, 0, 0, 0.7) !important; margin-top: 0px !important; }
+
+#buddypress div#message { padding-bottom: 0px; }
+
+#buddypress div#message.updated { clear: none; display: inline-block; }
+
+#buddypress div#message p, #sitewide-notice p { padding: 0px !important; }
+
+.alert-updated { background-color: #d4edda; border-color: #c3e6cb; }
+
+.alert-updated p { color: #155724; }
+
+.alert { position: fixed; top: 20px; right: 20px; width: 360px; z-index: 99999; }
+
 body { font-family: "Raleway", sans-serif; background: #fff; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sans-serif; font-weight: 300; }
@@ -4483,6 +4497,8 @@ p { font-family: "Raleway", sans-serif; }
 
 .bp-user #buddypress form#whats-new-form p.activity-greeting { margin-bottom: 20px; }
 
+.bp-user textarea#whats-new { border: 0px; }
+
 .bp-user #buddypress div.item-list-tabs#subnav ul li.last label { display: none; }
 
 .bp-user span.count { display: none; }
@@ -4493,6 +4509,8 @@ p { font-family: "Raleway", sans-serif; }
 
 .bp-user .card { border: none; }
 
+.bp-avatar-nav ul.avatar-nav-items li.current { border-bottom-color: #e9ecef; }
+
 #buddypress #item-header-avatar, #buddypress #item-header-content { top: 75px; max-width: 240px; }
 
 #notifications-personal-li, #messages-personal-li, #settings-personal-li, #activity-personal-li, #mepr-bp-info-personal-li, #forums-personal-li { display: none; }
@@ -4502,6 +4520,8 @@ p { font-family: "Raleway", sans-serif; }
 .bp-user #subnav ul li a { border-radius: .25rem; display: block; padding: .3rem .6rem; font-size: .9em; }
 
 .bp-user #subnav ul li.current a { color: #fff; background-color: #007bff; }
+
+#buddypress div.item-list-tabs#subnav { margin-left: 0px !important; padding-left: 0px !important; }
 
 #buddypress div.item-list-tabs#subnav ul li#activity-filter-select { margin-top: 20px; }
 

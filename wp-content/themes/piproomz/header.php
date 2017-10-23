@@ -67,7 +67,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						    	?>
 
-
 						        <ul class="navbar-nav flex-row ml-auto">
 
 						            <li class="nav-item">

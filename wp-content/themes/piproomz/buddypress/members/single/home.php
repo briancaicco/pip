@@ -36,7 +36,7 @@
 
 	<div id="item-nav" class="mt-md-0">
 		<div class="container px-0">
-			<div class="item-list-tabs nav-justified" no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Member primary navigation', 'buddypress' ); ?>" role="navigation">
+			<div class="item-list-tabs nav-justified no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Member primary navigation', 'buddypress' ); ?>" role="navigation">
 
 				<div class="btn-group d-flex justify-content-between" role="group" aria-label="Profile Nav">
 					<?php pip_edit_profile_nav_items(); ?>
@@ -57,7 +57,7 @@
 
 
 	<div id="item-body">
-	<div class="container pt-2">
+	<div class="container pt-2 px-sm-0">
 
 		<?php
 

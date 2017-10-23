@@ -15,9 +15,9 @@
 
 ?>
 
-<div class="bp-cover-image"></div>
 <div class="bp-cover-image-status"></div>
-<div class="bp-cover-image-manage"></div>
+<div class="bp-cover-image"></div>
+<div class="bp-cover-image-manage my-4"></div>
 
 <?php bp_attachments_get_template_part( 'uploader' ); ?>
 

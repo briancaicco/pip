@@ -8,7 +8,7 @@
 
 ?>
 
-<h2><?php _e( 'Change Cover Image', 'buddypress' ); ?></h2>
+<h3><?php _e( 'Change Cover Image', 'buddypress' ); ?></h3>
 
 <?php
 
@@ -19,7 +19,7 @@
  */
 do_action( 'bp_before_profile_edit_cover_image' ); ?>
 
-<p><?php _e( 'For best results upload an image larger than 851 x 315 pixels.', 'buddypress' ); ?></p>
+<p><?php _e( 'Go on, make it awesome!', 'buddypress' ); ?></p>
 
 <?php bp_attachments_get_template_part( 'cover-images/index' ); ?>
 
