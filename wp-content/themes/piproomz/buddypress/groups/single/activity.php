@@ -9,8 +9,6 @@
 ?>
 <div class="item-list-tabs nav-justified no-ajax" id="subnav" aria-label="<?php esc_attr_e( 'Group secondary navigation', 'buddypress' ); ?>" role="navigation">
 	<ul>
-		<li class="feed"><a href="<?php bp_group_activity_feed_link(); ?>" class="bp-tooltip" data-bp-tooltip="<?php esc_attr_e( 'RSS Feed', 'buddypress' ); ?>" aria-label="<?php esc_attr_e( 'RSS Feed', 'buddypress' ); ?>"><?php _e( 'RSS', 'buddypress' ); ?></a></li>
-
 		<?php
 
 		/**
@@ -20,8 +18,7 @@
 		 */
 		do_action( 'bp_group_activity_syndication_options' ); ?>
 
-		<li id="activity-filter-select" class="last">
-			<label for="activity-filter-by"><?php _e( 'Show:', 'buddypress' ); ?></label>
+		<li id="activity-filter-select" class="last mb-3">
 			<select id="activity-filter-by" class="custom-select">
 				<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 

@@ -704,12 +704,17 @@ display:none;
 	text-align: center;
 }
 
-.trader-view{
-	height: 520px;
-}
-
 
 .groups{
+	#whats-new-avatar img{
+		width: 45px;
+	}
+
+	#whats-new-textarea{
+		textarea{
+			border: 0px;
+		}
+	}
 	.sub-nav{
 		ul{
 			li{
@@ -798,7 +803,8 @@ display:none;
 @media (min-width: 576px) { 
 
 	.trader-view{
-		height: 700px;
+		height: 500px;
+		margin-top: -75px !important;
 	}
 
 
@@ -837,6 +843,7 @@ display:none;
 // // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) { 
 
+
 #buddypress #item-header-content{
 	z-index: 1;
 	margin-top: -89px;
@@ -846,10 +853,14 @@ display:none;
 }
 
 // // Small devices (landscape phones, less than 768px)
-// @media (max-width: 767px) { 
+@media (max-width: 767px) { 
 
+	.trader-view{
+		height: 400px;
+		margin-top: 0px !important;
+	}
 
-// }
+}
 
 // // Medium devices (tablets, less than 992px)
 // @media (max-width: 991px) { 

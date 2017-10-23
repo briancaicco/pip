@@ -8,65 +8,9 @@
 
 ?>
 <div id="buddypress">
+	<div class="container-fluid px-0 room-chart" >
 
 	<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
-
-
-
-				<div class="row">
-					<div class="col-12">
-						<div class="col-12 mb-3">
-							<h1><?php echo esc_attr( bp_get_group_name() ); ?></h1>
-						</div>
-						<?php
-
-				/**
-				 * Fires before the display of the group home content.
-				 *
-				 * @since 1.2.0
-				 */
-				do_action( 'bp_before_group_home_content' ); ?>
-
-				<div id="item-header" role="complementary">
-
-					<?php
-					/**
-					 * If the cover image feature is enabled, use a specific header
-					 */
-					// if ( bp_group_use_cover_image_header() ) :
-					// 	bp_get_template_part( 'groups/single/cover-image-header' );
-					// else :
-					// 	bp_get_template_part( 'groups/single/group-header' );
-					// endif;
-					?>
-
-				</div><!-- #item-header -->
-				
-				<nav class="navbar bg-light mb-3">
-					<div id="item-nav">
-						
-						<div class="sub-nav item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
-							<ul class="nav nav-pills">
-
-								<?php bp_get_options_nav(); ?>
-
-								<?php
-
-								/**
-								 * Fires after the display of group options navigation.
-								 *
-								 * @since 1.2.0
-								 */
-								do_action( 'bp_group_options_nav' ); ?>
-
-							</ul>
-						</div>
-					</div><!-- #item-nav -->
-				</nav>
-			</div>
-		</div>
-
-
 		<div class="row">
 			<?php if ( bp_is_group_home() ) { ?>
 			<div class="col-12 trader-view">
@@ -78,15 +22,16 @@
 						"symbol": "<?php echo esc_attr( bp_get_group_name() ); ?>",
 						"interval": "D",
 						"timezone": "Etc/UTC",
-						"theme": "Light",
+						"theme": "light",
 						"style": "1",
 						"locale": "en",
 						"toolbar_bg": "#f1f3f6",
 						"enable_publishing": false,
-						"calendar": true,
-						"news": [
-						"headlines"
-						],
+						"hide_side_toolbar": false,
+						"calendar": false,
+						// "news": [
+						// "headlines"
+						// ],
 						"hideideas": true
 					});
 				</script>
@@ -94,16 +39,67 @@
 			</div>
 			<?php } ?>
 		</div>
+	</div>	
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-12">
+			<div class="col-12 mb-3">
+				<h1><?php echo esc_attr( bp_get_group_name() ); ?></h1>
+			</div>
+			<?php
 
+			/**
+			 * Fires before the display of the group home content.
+			 *
+			 * @since 1.2.0
+			 */
+			do_action( 'bp_before_group_home_content' ); ?>
 
+			<div id="item-header" role="complementary">
 
+				<?php
+				/**
+				 * If the cover image feature is enabled, use a specific header
+				 */
+				// if ( bp_group_use_cover_image_header() ) :
+				// 	bp_get_template_part( 'groups/single/cover-image-header' );
+				// else :
+				// 	bp_get_template_part( 'groups/single/group-header' );
+				// endif;
+				?>
 
-<div id="item-body">
+			</div><!-- #item-header -->
+			
+			<nav class="navbar bg-light mb-2">
+				<div id="item-nav">
+					
+					<div class="sub-nav item-list-tabs no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Group primary navigation', 'buddypress' ); ?>" role="navigation">
+						<ul class="nav nav-pills">
 
-	<?php if ( bp_is_group_home() ) { ?>
+							<?php bp_get_options_nav(); ?>
 
-	<?php } ?>
-	<?php
+							<?php
+
+							/**
+							 * Fires after the display of group options navigation.
+							 *
+							 * @since 1.2.0
+							 */
+							do_action( 'bp_group_options_nav' ); ?>
+
+						</ul>
+					</div>
+				</div><!-- #item-nav -->
+			</nav>
+		</div>
+	</div>
+
+		<div id="item-body">
+
+			<?php if ( bp_is_group_home() ) { ?>
+
+			<?php } ?>
+			<?php
 
 		/**
 		 * Fires before the display of the group home body.
@@ -125,7 +121,7 @@
 			if ( bp_group_is_visible() ) {
 
 					// Load appropriate front template
-				//bp_groups_front_template_part();
+				bp_groups_front_template_part();
 
 			} else {
 
@@ -198,5 +194,7 @@
 	do_action( 'bp_after_group_home_content' ); ?>
 
 <?php endwhile; endif; ?>
+
+</div><!-- Container -->
 
 </div><!-- #buddypress -->

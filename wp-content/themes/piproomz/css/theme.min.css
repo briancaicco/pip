@@ -4587,7 +4587,9 @@ p { font-family: "Raleway", sans-serif; }
 
 #groups-list .group-button { position: absolute; z-index: 2; width: 100%; bottom: 20px; margin: 0 auto; display: block; text-align: center; }
 
-.trader-view { height: 520px; }
+.groups #whats-new-avatar img { width: 45px; }
+
+.groups #whats-new-textarea textarea { border: 0px; }
 
 .groups .sub-nav ul li a { display: block; padding: 0.5rem 1rem; border-radius: 0.25rem; }
 
@@ -4607,13 +4609,15 @@ p { font-family: "Raleway", sans-serif; }
 
 .register footer { display: none; }
 
-@media (min-width: 576px) { .trader-view { height: 700px; } }
+@media (min-width: 576px) { .trader-view { height: 500px; margin-top: -75px !important; } }
 
 @media (min-width: 768px) { .bp_friends_widget { margin-top: 0px; }
   .bp-user .content { padding-top: 0; }
   #buddypress #item-header-cover-image, #buddypress #header-cover-image { height: 315px; } }
 
 @media (max-width: 575px) { #buddypress #item-header-content { z-index: 1; margin-top: -89px; padding-top: 113px !important; } }
+
+@media (max-width: 767px) { .trader-view { height: 400px; margin-top: 0px !important; } }
 
 /* Use existing Bootstrap 4 classes and variables to extend - override CF7 style Useful CF7 classes: .wpcf7 the wrapper element .wpcf7-form .wpcf7-form-control .wpcf7-text .wpcf7-email .wpcf7-textarea .wpcf7-submit */
 .wpcf7 { max-width: 600px; margin: 0 auto !important; }

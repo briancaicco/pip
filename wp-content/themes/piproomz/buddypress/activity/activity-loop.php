@@ -43,7 +43,7 @@ do_action( 'bp_before_activity_loop' ); ?>
 
 <?php else : ?>
 
-	<div id="message" class="info">
+	<div id="message" class="info my-4">
 		<p><?php _e( 'Sorry, there was no activity found. Please try a different filter.', 'buddypress' ); ?></p>
 	</div>
 
