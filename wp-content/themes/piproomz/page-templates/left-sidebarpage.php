@@ -11,8 +11,6 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="page-wrapper">
-
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
 		<div class="row">
@@ -46,6 +44,5 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- Container end -->
 
-</div><!-- Wrapper end -->
 
 <?php get_footer(); ?>

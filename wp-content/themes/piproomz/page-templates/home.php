@@ -44,29 +44,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="<?php echo esc_attr( $container ); ?>" >
 
 
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="content-area" id="primary">
+					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
-					<main class="site-main" id="main" role="main">
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
 
-						<?php while ( have_posts() ) : the_post(); ?>
+						comments_template();
 
-							<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+					endif;
+					?>
 
-							<?php
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) :
-
-								comments_template();
-
-							endif;
-							?>
-
-						<?php endwhile; // end of the loop. ?>
-
-					</main><!-- #main -->
-
-				</div><!-- #primary -->
+				<?php endwhile; // end of the loop. ?>
 
 
 

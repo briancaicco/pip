@@ -368,6 +368,10 @@ p{
 	.content{
 		padding-top: 0px !important;
 	}
+
+	.card{
+		border: none;
+	}
 }
 
 
@@ -581,7 +585,7 @@ display:none;
 	}
 	section{
 		display: block;
-		background-color: #fff;
+		//background-color: #fff;
 		height: 100%;
 		position: absolute;
 		width: 100%;
@@ -594,7 +598,7 @@ display:none;
 		background-repeat:  no-repeat;
 		background-attachment: fixed;
 		background-size:  cover;
-		@include blue-grad;
+		//@include blue-grad;
 	}
 	footer{
 		display: none;

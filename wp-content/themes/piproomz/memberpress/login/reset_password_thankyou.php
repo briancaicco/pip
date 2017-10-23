@@ -1,10 +1,10 @@
 <?php if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');} ?>
 
 
-<div class="row d-flex ">
-  <div class="col-12 col-md-5 mx-auto mt-md-5">
+<div class="row justify-content-center">
+  <div class="col-12 col-md-5 mt-3 mt-md-5">
     <div class="navbar-brand d-block text-center mb-3" >Piproomz<small style="vertical-align: super; font-size: 9px;"> beta</small></div>
-    <div class="card el-7">
+    <div class="card border-0">
       <div class="card-body">
 
 		<h5><b><?php _ex('Password successfully reset', 'ui', 'memberpress'); ?></b></h5>

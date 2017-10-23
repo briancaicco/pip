@@ -25,7 +25,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
+			<?php // get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
 				<?php if ( have_posts() ) : ?>
 
@@ -59,7 +59,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<!-- Do the right sidebar check -->
 		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-			<?php get_sidebar( 'right' ); ?>
+			<?php // get_sidebar( 'right' ); ?>
 
 		<?php endif; ?>
 
