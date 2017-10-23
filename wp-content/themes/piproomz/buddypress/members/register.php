@@ -32,10 +32,8 @@ do_action( 'bp_before_register_page' ); ?>
 
 							<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
 
-								<div class="alert alert-primary alert-dismissible fade show" id="template-notices" role="alert">
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+								
+
 									<?php
 
 									/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
@@ -68,11 +66,6 @@ do_action( 'bp_before_register_page' ); ?>
 
 								<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
 
-									<div class="alert alert-primary alert-dismissible fade show" id="template-notices" role="alert">
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-
-  </button>
 										<?php
 
 										/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
@@ -352,12 +345,6 @@ do_action( 'bp_before_register_page' ); ?>
 
 							<?php if ( 'completed-confirmation' == bp_get_current_signup_step() ) : ?>
 
-								<div class="alert alert-primary alert-dismissible fade show" id="template-notices" role="alert">
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-
-    <span aria-hidden="true">&times;</span>
-
-  </button>
 									<?php
 
 									/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
@@ -374,12 +361,7 @@ do_action( 'bp_before_register_page' ); ?>
 								 */
 								do_action( 'bp_before_registration_confirmed' ); ?>
 
-								<div class="alert alert-primary alert-dismissible fade show" id="template-notices" role="alert">
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-
-    <span aria-hidden="true">&times;</span>
-
-  </button>
+							
 									<?php if ( bp_registration_needs_activation() ) : ?>
 										<p><?php _e( 'You have successfully created your account! Please confirm your registration via the email we have just sent to your address.', 'buddypress' ); ?></p>
 									<?php else : ?>
