@@ -79,7 +79,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						                </a>
 						                <div class="dropdown-menu dropdown-menu-right border-0" aria-labelledby="navbarDropdownMenuLink">
 						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>messages/">Messages</a>
-						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>profile/">Profile</a>
+						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>">Profile</a>
 						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>friends/">Friends</a>
 						                    <div class="dropdown-divider"></div>
 						                    <a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>settings/">Settings</a>
