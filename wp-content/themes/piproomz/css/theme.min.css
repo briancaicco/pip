@@ -4527,6 +4527,30 @@ p { font-family: "Raleway", sans-serif; }
 
 #buddypress #item-header-avatar { z-index: 3; }
 
+.editfield legend { display: block; width: 100%; max-width: 100%; padding: 0; margin-bottom: .5rem; font-weight: bold; font-size: 1rem; line-height: inherit; color: inherit; white-space: normal; }
+
+.editfield .bp-required-field-label { font-size: .5em; color: #868e96; }
+
+.bp-user input[type=text] { display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #495057; background-color: #fff; background-image: none; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 0rem; transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+
+.bp-user .input-group input { position: relative; z-index: 2; flex: 1 1 auto; width: 1%; margin-bottom: 0; display: flex; align-items: center; }
+
+.bp-user .editfield { margin: 50px 0; }
+
+.bp-user .editfield legend { position: absolute; top: -35px; }
+
+.bp-user .btn, .bp-user .wpcf7 input[type=submit], .wpcf7 .bp-user input[type=submit] { position: relative; color: #fff; background-color: #868e96; border: 1px solid #868e96 !important; margin-left: -1px; display: inline-block; font-weight: 400; text-align: center; white-space: nowrap; vertical-align: middle; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem; transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; box-shadow: none; }
+
+.bp-user .btn:hover, .bp-user .wpcf7 input[type=submit]:hover, .wpcf7 .bp-user input[type=submit]:hover { transform: translateY(0px); }
+
+.bp-user input[type=radio] { box-sizing: border-box !important; padding: 0; position: absolute; margin-top: .25rem; margin-left: -1.25rem; }
+
+.bp-user .form-check .form-check-inline { display: inline-block; margin-right: .75rem; position: relative; display: block; margin-bottom: .5rem; }
+
+.bp-user .form-check-inline label { padding-left: 1.25rem; margin-bottom: 10px; margin-right: 10px; }
+
+.bp-user .description { display: none; }
+
 .home-page .jumbotron { position: relative; color: #fff; border-radius: 0px; z-index: 1; background: transparent; }
 
 .home-page .card-wrap { position: relative; z-index: 1; }
