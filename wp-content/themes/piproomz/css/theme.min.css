@@ -4551,6 +4551,14 @@ p { font-family: "Raleway", sans-serif; }
 
 .bp-user .description { display: none; }
 
+.bp-user .nav-tabs { border-bottom: 1px solid #bbb; }
+
+.bp-user .nav.nav-tabs li { margin-bottom: -1px; }
+
+.bp-user .nav.nav-tabs li a { display: block; padding: .5rem 1rem; border: 1px solid transparent; border-top-left-radius: .25rem; border-top-right-radius: .25rem; }
+
+.bp-user .nav.nav-tabs li.current a { color: #495057; background-color: #e9ecef !important; border-color: #bbb #bbb #e9ecef !important; }
+
 .home-page .jumbotron { position: relative; color: #fff; border-radius: 0px; z-index: 1; background: transparent; }
 
 .home-page .card-wrap { position: relative; z-index: 1; }

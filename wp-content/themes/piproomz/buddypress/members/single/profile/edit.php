@@ -17,26 +17,32 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 	while ( bp_profile_groups() ) : bp_the_profile_group(); ?>
 
 	<div class="row">
-		<div class="col-md-6 mb-7">
+
+		<div class="col">
+			<?php
+
+			/** This action is documented in bp-templates/bp-legacy/buddypress/members/single/profile/profile-wp.php */
+			do_action( 'bp_before_profile_field_content' ); ?>
+
+			<h3 class="pb-2"><?php printf( __( "Edit Profile ", 'buddypress' ), bp_get_the_profile_group_name() ); ?></h3>
+
+			<?php if ( bp_profile_has_multiple_groups() ) : ?>
+				<ul class="nav nav-tabs" aria-label="<?php esc_attr_e( 'Profile field groups', 'buddypress' ); ?>" role="navigation">
+
+					<?php bp_profile_group_tabs(); ?>
+
+				</ul>
+			<?php endif ;?>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 mb-7 mt-3 px-sm-4">
 			<form action="<?php bp_the_profile_group_edit_form_action(); ?>" method="post" id="profile-edit-form" class="standard-form <?php bp_the_profile_group_slug(); ?>">
 
-				<?php
-
-				/** This action is documented in bp-templates/bp-legacy/buddypress/members/single/profile/profile-wp.php */
-				do_action( 'bp_before_profile_field_content' ); ?>
-
-				<h2><?php printf( __( "Edit Profile ", 'buddypress' ), bp_get_the_profile_group_name() ); ?></h2>
-
-				<?php if ( bp_profile_has_multiple_groups() ) : ?>
-					<ul class="button-nav" aria-label="<?php esc_attr_e( 'Profile field groups', 'buddypress' ); ?>" role="navigation">
-
-						<?php bp_profile_group_tabs(); ?>
-
-					</ul>
-				<?php endif ;?>
-
-
 				<?php while ( bp_profile_fields() ) : bp_the_profile_field(); ?>
+					
 
 					<div<?php bp_field_css_class( 'editfield' ); ?>>
 					<fieldset>
@@ -67,13 +73,13 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 								<?php if ( bp_current_user_can( 'bp_xprofile_change_field_visibility' ) ) : ?>
 									<div class="field-visibility-settings-toggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
 										<span>
-										<p>Visible to: <b><?php echo  bp_get_the_profile_field_visibility_level_label();?></b></p>
-										<div class="form-check form-check-inline">
-											<?php bp_profile_visibility_radio_buttons() ?>
-										</div>
-										<button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>" aria-expanded="false" aria-controls="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
-											Save
-										</button>
+											<p>Visible to: <b><?php echo  bp_get_the_profile_field_visibility_level_label();?></b></p>
+											<div class="form-check form-check-inline">
+												<?php bp_profile_visibility_radio_buttons() ?>
+											</div>
+											<button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>" aria-expanded="false" aria-controls="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
+												Save
+											</button>
 										</span>
 									</div>
 
@@ -86,7 +92,7 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 
 
 
-						<?php
+							<?php
 
 						/**
 						 * Fires after the visibility options for a field.
@@ -105,7 +111,7 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 			/** This action is documented in bp-templates/bp-legacy/buddypress/members/single/profile/profile-wp.php */
 			do_action( 'bp_after_profile_field_content' ); ?>
 
-			<div class="submit">
+			<div class="submit text-right">
 				<input type="submit" class="btn btn-lg btn-success" name="profile-group-edit-submit" id="profile-group-edit-submit" value="<?php esc_attr_e( 'Save All Changes', 'buddypress' ); ?> " />
 			</div>
 

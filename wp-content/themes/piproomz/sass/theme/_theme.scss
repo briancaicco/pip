@@ -582,6 +582,26 @@ display:none;
 	.description{
 		display: none;
 	}
+	.nav-tabs {
+	    border-bottom: 1px solid #bbb;
+	}
+	.nav.nav-tabs{
+		li{
+			margin-bottom: -1px;
+			a{
+				display: block;
+				padding: .5rem 1rem;
+				border: 1px solid transparent;
+				border-top-left-radius: .25rem;
+				border-top-right-radius: .25rem;
+			}
+		}
+		li.current a{
+				color: #495057;
+				background-color: #e9ecef !important;
+				border-color: #bbb #bbb #e9ecef !important;
+		}
+	}
 
 }
 
