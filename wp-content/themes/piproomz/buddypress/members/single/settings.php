@@ -8,7 +8,7 @@
 
 ?>
 
-<div class="item-list-tabs nav-justified" no-ajax" id="subnav" aria-label="<?php esc_attr_e( 'Member secondary navigation', 'buddypress' ); ?>" role="navigation">
+<div class="item-list-tabs nav-justified no-ajax" id="subnav" aria-label="<?php esc_attr_e( 'Member secondary navigation', 'buddypress' ); ?>" role="navigation">
 	<ul class="nav">
 		<?php if ( bp_core_can_edit_settings() ) : ?>
 
