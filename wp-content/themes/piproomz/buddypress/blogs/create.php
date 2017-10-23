@@ -18,7 +18,7 @@ do_action( 'bp_before_create_blog_content_template' ); ?>
 	/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 	do_action( 'template_notices' ); ?>
 
-</div>
+
 
 <?php
 

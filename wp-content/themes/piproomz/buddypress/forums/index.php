@@ -175,7 +175,7 @@
 						/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 						do_action( 'template_notices' ); ?>
 
-					</div>
+
 
 					<label for="topic_title"><?php _e( 'Title:', 'buddypress' ); ?></label>
 					<input type="text" name="topic_title" id="topic_title" value="" maxlength="100" />
