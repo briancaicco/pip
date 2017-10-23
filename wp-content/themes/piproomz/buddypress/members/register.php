@@ -125,7 +125,7 @@ do_action( 'bp_before_register_page' ); ?>
 
 							<?php /***** Extra Profile Details ******/ ?>
 
-							<?php if ( bp_is_active( 'xprofile' ) ) : ?>
+							<?php if ( !bp_is_active( 'xprofile' ) ) : ?>
 
 								<?php
 
