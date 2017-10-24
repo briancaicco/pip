@@ -4377,6 +4377,8 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .bp-screen-reader-text { display: none !important; }
 
+.avatar { border-radius: 200px; width: 45px; }
+
 #buddypress div#message p, #sitewide-notice p { border: 0px !important; background: 0px !important; padding: 0px !important; margin: 0px !important; color: rgba(0, 0, 0, 0.7) !important; margin-top: 0px !important; }
 
 #buddypress div#message { padding-bottom: 0px; }
@@ -4425,9 +4427,17 @@ p { font-family: "Raleway", sans-serif; }
 
 .btn-success:hover { background: #3ecf8e; border-color: #3ecf8e; }
 
+.page-template-fullwidthpage .card-body h1, .page-template-fullwidthpage .card-body h2, .page-template-fullwidthpage .card-body h3, .page-template-fullwidthpage .card-body h4, .page-template-fullwidthpage .card-body h5, .page-template-fullwidthpage .card-body h6 { color: #495057; }
+
+.page-template-fullwidthpage .card-body p { color: #868e96; }
+
+.card { border: none; }
+
 .card-title { color: #495057; }
 
-.card-body { color: #adb5bd; }
+.card-body h1, .card-body h2, .card-body h3, .card-body h4, .card-body h5, .card-body h6 { color: #495057 !important; }
+
+.card-body p { color: #868e96 !important; }
 
 .card-body .current { font-weight: bold; }
 
@@ -4445,11 +4455,15 @@ p { font-family: "Raleway", sans-serif; }
 
 .primary-nav.navbar .dropdown-toggle::after { vertical-align: 0.2em; }
 
-#activity-stream img.avatar { border-radius: 60px; }
+#activity-stream img.avatar { border-radius: 60px; width: 45px; }
 
 #buddypress .activity-list li.mini .activity-avatar img.avatar { margin-left: 0px; }
 
-#buddypress #activity-stream p { color: #ced4da; margin: 0px !important; }
+#buddypress .activity-list .activity-content .activity-header p, #buddypress .activity-list .activity-content .comment-header p { opacity: .6 !important; }
+
+#buddypress div.activity-comments div.acomment-meta { opacity: .7; }
+
+#buddypress #activity-stream p { margin: 0px !important; text-transform: sentance; }
 
 #buddypress .activity-list .joined_group .activity-meta, #buddypress .activity-list .friendship_created .activity-meta { display: none !important; }
 
@@ -4461,13 +4475,11 @@ p { font-family: "Raleway", sans-serif; }
 
 #buddypress div.activity-comments div.acomment-meta { padding-top: 5px; padding-bottom: 10px; }
 
-#buddypress div.activity-comments div.acomment-content, #buddypress .acomment-options { margin-left: 0px; }
+#buddypress div.activity-comments div.acomment-content, #buddypress .acomment-options { margin-left: 35px; }
 
 #buddypress .acomment-options a { color: #57c3f0; }
 
 #buddypress .acomment-options a:hover { color: #1297cf; }
-
-.avatar { border-radius: 200px; }
 
 .directory.activity .activity-avatar img, .directory.activity .ac-reply-avatar img { width: 45px; }
 

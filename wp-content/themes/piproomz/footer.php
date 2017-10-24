@@ -45,7 +45,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
   gtag('config', 'UA-108382349-1');
 </script>
+<script>
+    Userback = window.Userback || {};
+    Userback.access_token = '1415|1815|AucXF44wut1BvzBB3AnGKGQ7tbnqAGsbaF8QJcmeGoQbXrN11b';
 
+    (function(id) {
+        if (document.getElementById(id)) {return;}
+        var s = document.createElement('script');
+        s.id = id;
+        s.src = 'https://static.userback.io/widget/v1.js';
+        var parent_node = document.head || document.body;
+        parent_node.appendChild(s);
+    })('userback-sdk');
+</script>
 
 <?php wp_footer(); ?>
 

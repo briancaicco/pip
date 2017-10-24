@@ -19,6 +19,13 @@
 }
 
 
+.avatar{
+	border-radius: 200px;
+	width: 45px;
+	
+}
+
+
 // Alerts
 #buddypress div#message p, #sitewide-notice p{
 	border: 0px !important;
@@ -182,12 +189,25 @@ p{
 }
 
 
+// Page Templates
+/////////////////////////////////////////////////////////////////////////
+
+.page-template-fullwidthpage{
+	.card-body{
+		h1,h2,h3,h4,h5,h6 {
+			color: $gray-700;
+		}
+		p{
+			color: $gray-600;			
+		}
+	}
+}
+
 // Cards
 /////////////////////////////////////////////////////////////////////////
 
 .card{
-	//box-shadow: $el-9;
-	//padding: 20px;
+	border: none;
 }
 
 .card-title{
@@ -195,9 +215,12 @@ p{
 }
 
 .card-body{
-	color: $gray-500;
-	//min-height: 400px;
-
+	h1,h2,h3,h4,h5,h6 {
+		color: $gray-700 !important;
+	}
+	p{
+		color: $gray-600 !important;			
+	}
 	.current{
 		font-weight: bold;
 	}
@@ -249,6 +272,7 @@ p{
 #activity-stream{
 	img.avatar{
 		border-radius: 60px;
+		width: 45px;
 	}
 }
 
@@ -257,11 +281,20 @@ p{
 
 }
 
+#buddypress .activity-list .activity-content .activity-header, #buddypress .activity-list .activity-content .comment-header{
+	p{
+		opacity: .6 !important;
+	}
+
+}
+
+#buddypress div.activity-comments div.acomment-meta{
+	opacity: .7;
+}
 
 #buddypress #activity-stream p{
-	color: $gray-400;
 	margin: 0px !important;
-	//padding-bottom: 30px;
+	text-transform: sentance;
 }
 
 #buddypress .activity-list .activity-content .activity-inner{
@@ -295,7 +328,7 @@ p{
 
 
 #buddypress div.activity-comments div.acomment-content, #buddypress .acomment-options{
-	margin-left: 0px;
+	margin-left: 35px;
 }
 
 #buddypress .acomment-options a{
@@ -309,9 +342,6 @@ p{
 	//display: none;
 }
 
-.avatar{
-	border-radius: 200px;
-}
 
 .directory.activity{
 	.activity-avatar img, .ac-reply-avatar img{
