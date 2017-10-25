@@ -20,7 +20,7 @@
 					new TradingView.widget({
 						"autosize": true,
 						"symbol": "<?php echo esc_attr( bp_get_group_name() ); ?>",
-						"interval": "D",
+						"interval": "1",
 						"timezone": "Etc/UTC",
 						"theme": "light",
 						"style": "1",
