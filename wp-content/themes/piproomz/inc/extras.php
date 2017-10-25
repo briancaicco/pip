@@ -266,3 +266,12 @@ endif;
 	}
 	add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
 	add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+
+
+
+
+	// Set avatar upload size to 1mb
+	//////////////////////////////////////////////////////////////////////
+	add_filter( 'bp_core_avatar_original_max_filesize', function() {
+	    return 1120000; // 5mb
+	} );
