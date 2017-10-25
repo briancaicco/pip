@@ -103,7 +103,7 @@ class MeprMembersCtrl extends MeprBaseCtrl {
 
   /* This is here to use wherever we want. */
   public function get_columns() {
-    return array(
+    $cols = array(
       'col_id' => __('Id', 'memberpress'),
       //'col_photo' => __('Photo'),
       'col_username' => __('Username', 'memberpress'),
@@ -127,6 +127,8 @@ class MeprMembersCtrl extends MeprBaseCtrl {
       'col_total_spent' => __('Value', 'memberpress'),
       'col_registered' => __('Registered', 'memberpress')
     );
+
+    return MeprHooks::apply_filters('mepr-admin-members-cols', $cols);
   }
 
   public function display_list($message='', $errors=array()) {

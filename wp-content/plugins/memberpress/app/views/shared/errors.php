@@ -2,7 +2,7 @@
 
 <?php if(isset($errors) && $errors != null && count($errors) > 0): ?>
 <div class="mp_wrapper">
-  <div class="mepr_error" id="mepr_errors">
+  <div class="mepr_error" id="mepr_jump">
     <ul>
       <?php foreach($errors as $error): ?>
         <li><strong><?php _ex('ERROR', 'ui', 'memberpress'); ?></strong>: <?php print $error; ?></li>

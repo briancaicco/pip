@@ -3,6 +3,13 @@
   Stripe.setPublishableKey(MeprStripeGateway.public_key);
 
   $(document).ready(function() {
+    //Trigger a click on stripe checkout automatically
+    var done = false; //Prevent double submit (for some reason)
+    if(!done) {
+      $("button.stripe-button-el").trigger("click");
+      done = true;
+    }
+
     $('body').on('mepr-checkout-submit', function(e, payment_form) {
       e.preventDefault();
 

@@ -306,8 +306,14 @@ class MeprTransactionsHelper {
 
     ob_start();
 
-    if( $sub = $txn->subscription() ) {
-      $sub_price_str = MeprSubscriptionsHelper::format_currency($sub);
+    if($sub = $txn->subscription()) {
+      $prd = $sub->product();
+      if($prd->register_price_action == 'custom' && !empty($prd->register_price) && !$txn->coupon_id && !$txn->prorated) {
+        $sub_price_str = stripslashes($prd->register_price);
+      }
+      elseif($prd->register_price_action != 'hidden') {
+        $sub_price_str = MeprSubscriptionsHelper::format_currency($sub);
+      }
     }
 
     MeprView::render('/checkout/invoice', get_defined_vars());

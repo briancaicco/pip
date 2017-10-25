@@ -157,13 +157,15 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
         $usr->store();
 
         // Log the new user in
-        wp_signon(
-          array(
-            'user_login'    => $usr->user_login,
-            'user_password' => $_POST['mepr_user_password']
-          ),
-          MeprUtils::is_ssl() //May help with the users getting logged out when going between http and https
-        );
+        if(MeprHooks::apply_filters('mepr-auto-login', true, $_POST['mepr_product_id'], $usr)) {
+          wp_signon(
+            array(
+              'user_login'    => $usr->user_login,
+              'user_password' => $_POST['mepr_user_password']
+            ),
+            MeprUtils::is_ssl() //May help with the users getting logged out when going between http and https
+          );
+        }
 
         MeprEvent::record('login', $usr); //Record the first login here
       }

@@ -189,6 +189,9 @@ class MeprUsersCtrl extends MeprBaseCtrl {
           if(in_array($line->field_type, array('checkboxes', 'multiselect'))) {
             update_user_meta($user_id, $line->field_key, array_map('sanitize_text_field', $_POST[$line->field_key]));
           }
+          elseif($line->field_type == 'textarea') {
+            update_user_meta($user_id, $line->field_key, sanitize_textarea_field($_POST[$line->field_key]));
+          }
           else {
             update_user_meta($user_id, $line->field_key, sanitize_text_field($_POST[$line->field_key]));
           }

@@ -1421,7 +1421,7 @@ class MeprUser extends MeprBaseModel {
 
     if(isset($params['status']) && $params['status'] != 'all') {
       if($params['status']=='active') {
-        $args[] = 'm.active_txn_count > 0 OR m.trial_txn_count > 0';
+        $args[] = '(m.active_txn_count > 0 OR m.trial_txn_count > 0)';
       }
       else if($params['status']=='expired') {
         $args[] = 'm.active_txn_count <= 0';

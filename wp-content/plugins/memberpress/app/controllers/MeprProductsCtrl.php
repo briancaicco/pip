@@ -456,7 +456,7 @@ class MeprProductsCtrl extends MeprCptCtrl {
     if($user_ID && !$prd->simultaneous_subscriptions && !empty($prd->access_url) &&
        ($user = new MeprUser($user_ID)) && $user->is_already_subscribed_to($prd->ID)) {
       $product_access_str = MeprHooks::apply_filters('mepr_product_access_string', sprintf(
-        __('%1$sYou have already subscribed to this item, %2$sclick here to access it%3$s', 'memberpress'),
+        __('%1$sYou have already subscribed to this item. %2$sClick here to access it%3$s', 'memberpress'),
         '<div class="mepr-product-access-url">',
         '<a href="'.stripslashes($prd->access_url).'">',
         '</a></div>'
