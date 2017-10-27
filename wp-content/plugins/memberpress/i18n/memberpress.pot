@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the MemberPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: MemberPress 1.3.18a5\n"
+"Project-Id-Version: MemberPress 1.3.18a7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/memberpress\n"
-"POT-Creation-Date: 2017-10-24 22:02:46+00:00\n"
+"POT-Creation-Date: 2017-10-26 22:12:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -149,7 +149,7 @@ msgstr[1] ""
 msgid "Click here to view"
 msgstr ""
 
-#. #-#-#-#-#  memberpress.pot (MemberPress 1.3.18a5)  #-#-#-#-#
+#. #-#-#-#-#  memberpress.pot (MemberPress 1.3.18a7)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: app/controllers/MeprAppCtrl.php:302
 msgid "MemberPress"
@@ -3817,11 +3817,11 @@ msgstr ""
 msgid "All Memberships"
 msgstr ""
 
-#: app/models/MeprRule.php:118 test/old/tests/MeprRulesTest.php:136
+#: app/models/MeprRule.php:118 test_legacy/old/tests/MeprRulesTest.php:136
 msgid "All Posts"
 msgstr ""
 
-#: app/models/MeprRule.php:119 test/old/tests/MeprRulesTest.php:133
+#: app/models/MeprRule.php:119 test_legacy/old/tests/MeprRulesTest.php:133
 msgid "A Single Post"
 msgstr ""
 
@@ -3829,19 +3829,19 @@ msgstr ""
 msgid "Posts Categorized"
 msgstr ""
 
-#: app/models/MeprRule.php:121 test/old/tests/MeprRulesTest.php:135
+#: app/models/MeprRule.php:121 test_legacy/old/tests/MeprRulesTest.php:135
 msgid "Posts Tagged"
 msgstr ""
 
-#: app/models/MeprRule.php:124 test/old/tests/MeprRulesTest.php:139
+#: app/models/MeprRule.php:124 test_legacy/old/tests/MeprRulesTest.php:139
 msgid "All Pages"
 msgstr ""
 
-#: app/models/MeprRule.php:125 test/old/tests/MeprRulesTest.php:137
+#: app/models/MeprRule.php:125 test_legacy/old/tests/MeprRulesTest.php:137
 msgid "A Single Page"
 msgstr ""
 
-#: app/models/MeprRule.php:126 test/old/tests/MeprRulesTest.php:138
+#: app/models/MeprRule.php:126 test_legacy/old/tests/MeprRulesTest.php:138
 msgid "Child Pages of"
 msgstr ""
 
@@ -3889,7 +3889,7 @@ msgstr ""
 msgid "Partial"
 msgstr ""
 
-#: app/models/MeprRule.php:189 test/old/tests/MeprRulesTest.php:140
+#: app/models/MeprRule.php:189 test_legacy/old/tests/MeprRulesTest.php:140
 msgid "Custom URI"
 msgstr ""
 
@@ -13898,7 +13898,7 @@ msgstr ""
 msgid "Bye\n"
 msgstr ""
 
-#: test/old/tests/MeprRulesTest.php:134
+#: test_legacy/old/tests/MeprRulesTest.php:134
 msgid "Posts Categorized As"
 msgstr ""
 

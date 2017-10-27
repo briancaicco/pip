@@ -224,12 +224,12 @@ class MeprUser extends MeprBaseModel {
   }
 
   // Retrieves the current subscription within a group (with upgrade paths enabled)
-  public function subscription_in_group($group_id) {
+  public function subscription_in_group($group_id, $look_for_lapsed = false) {
     if($group_id instanceof MeprGroup && isset($group_id->ID) && $group_id->ID) {
       $group_id = $group_id->ID;
     }
 
-    $subs = MeprSubscription::get_all_active_by_user_id($this->ID);
+    $subs = MeprSubscription::get_all_active_by_user_id($this->ID, "", "", false, $look_for_lapsed);
 
     if(empty($subs)) { return false; }
 

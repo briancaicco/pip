@@ -14,6 +14,23 @@
 	background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%);
 }
 
+@mixin blue-grad-hor {
+	background-color: #1b60d8;
+	background-image: -webkit-linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%);
+	background-image: -moz-linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%);
+	background-image: -o-linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%);
+	background-image: linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%);
+}
+
+
+@mixin blue-grad-hor-trans {
+	background-color: #1b60d8;
+	background-image: -webkit-linear-gradient(55deg, rgba(27, 96, 216, 0.5) 20%, rgba(42, 245, 152, 0.5) 100%);
+	background-image: -moz-linear-gradient(55deg, rgba(27, 96, 216, 0.5) 20%, rgba(42, 245, 152, 0.5) 100%);
+	background-image: -o-linear-gradient(55deg, rgba(27, 96, 216, 0.5) 20%, rgba(42, 245, 152, 0.5) 100%);
+	background-image: linear-gradient(55deg, rgba(27, 96, 216, 0.5) 20%, rgba(42, 245, 152, 0.5) 100%);
+}
+
 .bp-screen-reader-text{
 	display: none !important;
 }
@@ -294,7 +311,6 @@ p{
 
 #buddypress #activity-stream p{
 	margin: 0px !important;
-	text-transform: sentance;
 }
 
 #buddypress .activity-list .activity-content .activity-inner{
@@ -796,6 +812,9 @@ display:none;
 	.page-title{
 		display: none;
 	}
+	.primary-nav {
+		display: none !important;
+	}
 	#profile-details-section{
 		//display: none !important;
 	}
@@ -817,11 +836,178 @@ display:none;
 		background-repeat:  no-repeat;
 		background-attachment: fixed;
 		background-size:  cover;
-		//@include blue-grad;
+	}
+	.auth_form{
+		background-position: center center;
+		background-repeat:  no-repeat;
+		background-attachment: fixed;
+		background-size:  cover;
+		@include blue-grad-hor;
+	}
+	.input-group-addon {
+	    padding: 0rem 0rem;
+	    margin-bottom: 0;
+	    font-size: 1rem;
+	    font-weight: normal;
+	    line-height: 1.25;
+	    color: #495057;
+	    text-align: center;
+	    background-color: transparent;
+	    border: 0px solid rgba(0, 0, 0, 0.15);
+	    border-radius: 0rem;
+	    margin-left: 15px;
+	    padding-right: 10px;
+	}
+	.input-group{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
+	.form-control{
+		background: transparent;
+		border: 0px;
+		color: $white;
+		font-size: 1em;
+		letter-spacing: 1px;
+		&::placeholder {
+			color:$white;
+			opacity: .5;
+		}
 	}
 	footer{
 		display: none;
 	}
+
+	.fa{
+		color: rgba(255, 255, 255, 0.3)
+	}
+	.navbar-brand {
+		color: $white;
+		font-size: 28px;
+		text-align: center;
+		padding-left: 35px;
+	}
+	a:focus,
+	button:focus,
+	input:focus::-webkit-input-placeholder,
+	input:focus:-moz-placeholder,
+	input:focus::-moz-placeholder,
+	input:focus:-ms-input-placeholder,
+	input:focus,
+	textarea:focus {
+		outline: none !important;
+		transition: color ease-in-out .35s;		
+
+	}
+	input:focus::-webkit-input-placeholder { color:transparent; }
+	input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+	input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+	input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+
+	.wp-social-login-connect-with{
+		color: $white;
+		margin-bottom: 20px;
+	}
+	.wp-social-login-provider-list{
+		padding: 0px;
+	}
+	.wp-social-login-provider{
+		img{
+			display: none;
+		}
+	}
+	a.wp-social-login-provider{
+		width: 167px;
+		height: 50px;
+		display: inline-block;
+
+	}
+	a.wp-social-login-provider-facebook{
+		background: #3b5998;
+		margin-right: 10px;
+		color: $white;
+		transition: ease-in-out .35s;
+		opacity: 1;
+		position: relative;
+		&:before{
+			content: "\f09a";
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: inherit;
+			color: #white;
+			font-size: 18px;
+			position: absolute;
+			top: 13px;
+			left: 23px;
+		}
+		&:after{
+			position: absolute;
+			content: "Facebook";
+			top: 13px;
+			width: 160px;
+			left: 55px;
+		}
+		&:hover{
+			opacity: .7;
+			text-decoration: none;
+		}
+	}
+	a.wp-social-login-provider-google{
+		background: #d34837;
+		margin-right: 0px;
+		color: $white;
+		transition: ease-in-out .35s;
+		opacity: 1;
+		position: relative;
+		&:before{
+			content: "\f0d5";
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-decoration: inherit;
+			color: #white;
+			font-size: 18px;
+			padding-right: 0.5em;
+			position: absolute;
+			top: 13px;
+			left: 23px;
+		}
+		&:after{
+			position: absolute;
+			content: "Google";
+			top: 13px;
+			width: 160px;
+			left: 65px;
+		}
+		&:hover{
+			opacity: .7;
+			text-decoration: none;
+		}
+	}
+
+	a.wp-social-login-provider-twitter{
+		display: none;
+	}
+
+	.side_panel{
+		position: relative;
+		z-index: 1;
+		background-position: center center;
+		background-repeat:  no-repeat;
+		background-size:  cover;
+		opacity: .9;
+		background-image: url('../img/trader-bg5.jpg');
+		.filter{
+			position: relative;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			display: block;
+			background-color: rgba(0, 23, 60, 0.4);
+			//@include blue-grad-hor-trans;
+		}
+	}
+
 }
 
 

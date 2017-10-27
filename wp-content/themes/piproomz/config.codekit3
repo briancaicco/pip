@@ -1702,6 +1702,56 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/img\/trader-bg.jpg": {
+		"ft": 16384,
+		"iS": 86976,
+		"oA": 0,
+		"oAP": "\/img\/trader-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/trader-bg2.jpg": {
+		"ft": 16384,
+		"iS": 126756,
+		"oA": 0,
+		"oAP": "\/img\/trader-bg2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/trader-bg3.jpg": {
+		"ft": 16384,
+		"iS": 118503,
+		"oA": 0,
+		"oAP": "\/img\/trader-bg3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/trader-bg4.jpg": {
+		"ft": 16384,
+		"iS": 154893,
+		"oA": 0,
+		"oAP": "\/img\/trader-bg4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/trader-bg5.jpg": {
+		"ft": 16384,
+		"iS": 134802,
+		"oA": 0,
+		"oAP": "\/img\/trader-bg5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/inc\/ajax-login-register\/ajax-login-register.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -2244,6 +2294,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/fullwidthpage.php",
+		"oF": 0
+		},
+	"\/page-templates\/glossary.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/glossary.php",
 		"oF": 0
 		},
 	"\/page-templates\/home.php": {

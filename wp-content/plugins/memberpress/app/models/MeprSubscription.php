@@ -234,7 +234,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     return $subs;
   }
 
-  public static function get_all_active_by_user_id($user_id, $order = "", $limit = "", $count = false) {
+  public static function get_all_active_by_user_id($user_id, $order = "", $limit = "", $count = false, $look_for_lapsed = false) {
     global $wpdb;
 
     $mepr_db = new MeprDb();
@@ -243,32 +243,32 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     $limit  = empty($limit)?'':" LIMIT {$limit}";
     $fields = $count?'COUNT(*)':'sub.*';
 
-    //CANNOT USE THIS, IT DOESN'T ACCOUNT FOR CANCELLED SUBS THAT ARE STILL ACTIVE (NON EXPIRED TXN)
-    // $sql = "
-      // SELECT {$fields}
-        // FROM {$mepr_db->subscriptions} AS sub
-        // JOIN {$wpdb->users} AS u
-          // ON sub.user_id=u.ID
-         // AND u.ID = %d
-       // WHERE sub.status = %s
-       // {$order}{$limit}
-    // ";
+    if(!$look_for_lapsed) {
+      $sql = "
+        SELECT {$fields}
+          FROM {$mepr_db->subscriptions} AS sub
+            JOIN {$mepr_db->transactions} AS t
+              ON sub.id = t.subscription_id
+          WHERE t.user_id = %d
+            AND t.expires_at > %s
+            AND t.status IN(%s,%s)
+            AND sub.status <> %s
+        {$order}{$limit}
+      ";
 
-    $sql = "
-      SELECT {$fields}
-        FROM {$mepr_db->subscriptions} AS sub
-          JOIN {$mepr_db->transactions} AS t
-            ON sub.id = t.subscription_id
-        WHERE t.user_id = %d
-          AND t.expires_at > %s
-          AND t.status IN(%s,%s)
-          AND sub.status <> %s
-      {$order}{$limit}
-    ";
+      $sql = $wpdb->prepare($sql, $user_id, MeprUtils::db_now(), MeprTransaction::$complete_str, MeprTransaction::$confirmed_str, MeprSubscription::$pending_str);
+    }
+    else { //Look for lapsed subs here
+      $sql = "
+        SELECT {$fields}
+          FROM {$mepr_db->subscriptions}
+          WHERE user_id = %d
+            AND status IN (%s, %s)
+        {$order}{$limit}
+      ";
 
-    // $sql = $wpdb->prepare($sql, $user_id, self::$active_str);
-    $sql = $wpdb->prepare($sql, $user_id, MeprUtils::db_now(), MeprTransaction::$complete_str, MeprTransaction::$confirmed_str, MeprSubscription::$pending_str);
-
+      $sql = $wpdb->prepare($sql, $user_id, MeprSubscription::$active_str, MeprSubscription::$suspended_str);
+    }
     if($count) {
       return $wpdb->get_var($sql);
     }
@@ -1100,7 +1100,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     if(!$grp->is_upgrade_path) { return; }
 
     try {
-      if(($old_sub = $usr->subscription_in_group($grp->ID)) && $old_sub->id != $this->id) {
+      if(($old_sub = $usr->subscription_in_group($grp->ID, true)) && $old_sub->id != $this->id) {
         $old_sub->expire_txns(); //Expire associated transactions for the old subscription
         $_REQUEST['silent'] = true; // Don't want to send cancellation notices
         $old_sub->cancel();
@@ -1150,7 +1150,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
           $renewal_dom = date('j', $renewal_date);
           $expires_at += MeprUtils::months($period, $created_ts, false, $renewal_dom);
           //Fixes bug 1136 early/late renewals
-          $created_expires_diff_in_days = abs(floor(($expires_at - $created_ts)/(60*60*24)));
+          $created_expires_diff_in_days = abs(floor(($expires_at - $created_ts)/MeprUtils::days(1)))/$this->period;
           if($created_expires_diff_in_days > 32) {
             //This is a late renewal. We gave too much. Take away the extra month
             $expires_at -= MeprUtils::months('1', $expires_at, true, $renewal_dom);

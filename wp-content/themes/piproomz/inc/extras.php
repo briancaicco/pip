@@ -246,7 +246,7 @@ endif;
 	}
 
 
-	function your_theme_cover_image_css( $settings = array() ) {
+	function pip_theme_cover_image_css( $settings = array() ) {
 	    /**
 	     * If you are using a child theme, use bp-child-css
 	     * as the theme handel
@@ -264,8 +264,8 @@ endif;
 
 	    return $settings;
 	}
-	add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
-	add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'your_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_xprofile_cover_image_settings_parse_args', 'pip_theme_cover_image_css', 10, 1 );
+	add_filter( 'bp_before_groups_cover_image_settings_parse_args', 'pip_theme_cover_image_css', 10, 1 );
 
 
 
@@ -275,3 +275,21 @@ endif;
 	add_filter( 'bp_core_avatar_original_max_filesize', function() {
 	    return 1120000; // 5mb
 	} );
+
+
+
+
+
+	/**
+	* Redirect buddypress pages to registration page for non logged in users
+	*/
+	function pip_page_template_redirect()
+	{
+	    //if not logged in and on a bp page except registration or activation
+	    if( ! is_user_logged_in() && ! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page() ) {
+	        wp_redirect( home_url( '/register/' ) );
+	        exit();
+	    }
+	}
+	add_action( 'template_redirect', 'pip_page_template_redirect' );
+
