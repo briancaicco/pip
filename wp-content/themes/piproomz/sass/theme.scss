@@ -7,5 +7,6 @@
 @import "assets/underscores"; // <------- Underscores media styles
 
 // Any additional imported files //
+@import "theme/bootstrap_toggle";  // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
 @import "theme/theme";  // <--------- Thats where you can add your own design. Thats your part!
 @import "theme/contact-form7"; // contact form 7 - Bootatrap 4 support

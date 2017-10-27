@@ -36,6 +36,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </footer>
 
+
+
+<!-- Modal Login-->
+<div class="modal login-modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodalLabel" aria-hidden="true" style="z-index: 10000400">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content rounded-0 auth_form">
+      <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php echo do_shortcode( '[mepr-login-form]' ); ?>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108382349-1"></script>
 <script>

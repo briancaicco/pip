@@ -4373,7 +4373,149 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .gallery-caption { display: block; }
 
+.btn-switch { margin: 0 4rem; padding: 0; position: relative; border: none; height: 1.5rem; width: 3rem; border-radius: 1.5rem; color: #6b7381; background: #bdc1c8; }
+
+.btn-switch:focus, .btn-switch.focus, .btn-switch:focus.active, .btn-switch.focus.active { outline: none; }
+
+.btn-switch:before, .btn-switch:after { line-height: 1.5rem; width: 4rem; text-align: center; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; position: absolute; bottom: 0; transition: opacity .25s; }
+
+.btn-switch:before { content: 'Off'; left: -4rem; }
+
+.btn-switch:after { content: 'On'; right: -4rem; opacity: .5; }
+
+.btn-switch > .handle { position: absolute; top: 0.1875rem; left: 0.1875rem; width: 1.125rem; height: 1.125rem; border-radius: 1.125rem; background: #fff; transition: left .25s; }
+
+.btn-switch.active { transition: background-color 0.25s; }
+
+.btn-switch.active > .handle { left: 1.6875rem; transition: left .25s; }
+
+.btn-switch.active:before { opacity: .5; }
+
+.btn-switch.active:after { opacity: 1; }
+
+.btn-switch.btn-sm:before, .btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:before, .btn-switch.btn-sm:after, .btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:after { line-height: -0.5rem; color: #fff; letter-spacing: .75px; left: 0.4125rem; width: 2.325rem; }
+
+.btn-switch.btn-sm:before, .btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:before { text-align: right; }
+
+.btn-switch.btn-sm:after, .btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:after { text-align: left; opacity: 0; }
+
+.btn-switch.btn-sm.active:before, .btn-group-sm > .btn-switch.active.btn:before, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit]:before { opacity: 0; }
+
+.btn-switch.btn-sm.active:after, .btn-group-sm > .btn-switch.active.btn:after, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit]:after { opacity: 1; }
+
+.btn-switch.btn-xs:before, .btn-switch.btn-xs:after { display: none; }
+
+.btn-switch:before, .btn-switch:after { color: #6b7381; }
+
+.btn-switch.active { background-color: #2ad7a6; }
+
+.btn-switch.btn-lg, .btn-group-lg > .btn-switch.btn, .wpcf7 .btn-group-lg > input.btn-switch[type=submit] { margin: 0 5rem; padding: 0; position: relative; border: none; height: 2.5rem; width: 5rem; border-radius: 2.5rem; }
+
+.btn-switch.btn-lg:focus, .btn-group-lg > .btn-switch.btn:focus, .wpcf7 .btn-group-lg > input.btn-switch[type=submit]:focus, .btn-switch.btn-lg.focus, .btn-group-lg > .btn-switch.focus.btn, .wpcf7 .btn-group-lg > input.btn-switch.focus[type=submit], .btn-switch.btn-lg:focus.active, .btn-group-lg > .btn-switch.btn:focus.active, .wpcf7 .btn-group-lg > input.btn-switch[type=submit]:focus.active, .btn-switch.btn-lg.focus.active, .btn-group-lg > .btn-switch.focus.active.btn, .wpcf7 .btn-group-lg > input.btn-switch.focus.active[type=submit] { outline: none; }
+
+.btn-switch.btn-lg:before, .btn-group-lg > .btn-switch.btn:before, .wpcf7 .btn-group-lg > input.btn-switch[type=submit]:before, .btn-switch.btn-lg:after, .btn-group-lg > .btn-switch.btn:after, .wpcf7 .btn-group-lg > input.btn-switch[type=submit]:after { line-height: 2.5rem; width: 5rem; text-align: center; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; position: absolute; bottom: 0; transition: opacity .25s; }
+
+.btn-switch.btn-lg:before, .btn-group-lg > .btn-switch.btn:before, .wpcf7 .btn-group-lg > input.btn-switch[type=submit]:before { content: 'Off'; left: -5rem; }
+
+.btn-switch.btn-lg:after, .btn-group-lg > .btn-switch.btn:after, .wpcf7 .btn-group-lg > input.btn-switch[type=submit]:after { content: 'On'; right: -5rem; opacity: .5; }
+
+.btn-switch.btn-lg > .handle, .btn-group-lg > .btn-switch.btn > .handle, .wpcf7 .btn-group-lg > input.btn-switch[type=submit] > .handle { position: absolute; top: 0.3125rem; left: 0.3125rem; width: 1.875rem; height: 1.875rem; border-radius: 1.875rem; background: #fff; transition: left .25s; }
+
+.btn-switch.btn-lg.active, .btn-group-lg > .btn-switch.active.btn, .wpcf7 .btn-group-lg > input.btn-switch.active[type=submit] { transition: background-color 0.25s; }
+
+.btn-switch.btn-lg.active > .handle, .btn-group-lg > .btn-switch.active.btn > .handle, .wpcf7 .btn-group-lg > input.btn-switch.active[type=submit] > .handle { left: 2.8125rem; transition: left .25s; }
+
+.btn-switch.btn-lg.active:before, .btn-group-lg > .btn-switch.active.btn:before, .wpcf7 .btn-group-lg > input.btn-switch.active[type=submit]:before { opacity: .5; }
+
+.btn-switch.btn-lg.active:after, .btn-group-lg > .btn-switch.active.btn:after, .wpcf7 .btn-group-lg > input.btn-switch.active[type=submit]:after { opacity: 1; }
+
+.btn-switch.btn-lg.btn-sm:before, .btn-group-sm > .btn-switch.btn-lg.btn:before, .btn-group-lg.btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-lg.btn-group-sm > input.btn-switch[type=submit]:before, .wpcf7 .btn-group-sm > input.btn-switch.btn-lg[type=submit]:before, .btn-group-lg > .btn-switch.btn-sm.btn:before, .wpcf7 .btn-group-lg > input.btn-switch.btn-sm[type=submit]:before, .btn-switch.btn-lg.btn-sm:after, .btn-group-sm > .btn-switch.btn-lg.btn:after, .btn-group-lg.btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-lg.btn-group-sm > input.btn-switch[type=submit]:after, .wpcf7 .btn-group-sm > input.btn-switch.btn-lg[type=submit]:after, .btn-group-lg > .btn-switch.btn-sm.btn:after, .wpcf7 .btn-group-lg > input.btn-switch.btn-sm[type=submit]:after { line-height: 0.5rem; color: #fff; letter-spacing: .75px; left: 0.6875rem; width: 3.875rem; }
+
+.btn-switch.btn-lg.btn-sm:before, .btn-group-sm > .btn-switch.btn-lg.btn:before, .btn-group-lg.btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-lg.btn-group-sm > input.btn-switch[type=submit]:before, .wpcf7 .btn-group-sm > input.btn-switch.btn-lg[type=submit]:before, .btn-group-lg > .btn-switch.btn-sm.btn:before, .wpcf7 .btn-group-lg > input.btn-switch.btn-sm[type=submit]:before { text-align: right; }
+
+.btn-switch.btn-lg.btn-sm:after, .btn-group-sm > .btn-switch.btn-lg.btn:after, .btn-group-lg.btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-lg.btn-group-sm > input.btn-switch[type=submit]:after, .wpcf7 .btn-group-sm > input.btn-switch.btn-lg[type=submit]:after, .btn-group-lg > .btn-switch.btn-sm.btn:after, .wpcf7 .btn-group-lg > input.btn-switch.btn-sm[type=submit]:after { text-align: left; opacity: 0; }
+
+.btn-switch.btn-lg.btn-sm.active:before, .btn-group-sm > .btn-switch.btn-lg.active.btn:before, .btn-group-lg.btn-group-sm > .btn-switch.active.btn:before, .wpcf7 .btn-group-lg.btn-group-sm > input.btn-switch.active[type=submit]:before, .wpcf7 .btn-group-sm > input.btn-switch.btn-lg.active[type=submit]:before, .btn-group-lg > .btn-switch.btn-sm.active.btn:before, .wpcf7 .btn-group-lg > input.btn-switch.btn-sm.active[type=submit]:before { opacity: 0; }
+
+.btn-switch.btn-lg.btn-sm.active:after, .btn-group-sm > .btn-switch.btn-lg.active.btn:after, .btn-group-lg.btn-group-sm > .btn-switch.active.btn:after, .wpcf7 .btn-group-lg.btn-group-sm > input.btn-switch.active[type=submit]:after, .wpcf7 .btn-group-sm > input.btn-switch.btn-lg.active[type=submit]:after, .btn-group-lg > .btn-switch.btn-sm.active.btn:after, .wpcf7 .btn-group-lg > input.btn-switch.btn-sm.active[type=submit]:after { opacity: 1; }
+
+.btn-switch.btn-lg.btn-xs:before, .btn-group-lg > .btn-switch.btn-xs.btn:before, .wpcf7 .btn-group-lg > input.btn-switch.btn-xs[type=submit]:before, .btn-switch.btn-lg.btn-xs:after, .btn-group-lg > .btn-switch.btn-xs.btn:after, .wpcf7 .btn-group-lg > input.btn-switch.btn-xs[type=submit]:after { display: none; }
+
+.btn-switch.btn-sm, .btn-group-sm > .btn-switch.btn, .wpcf7 .btn-group-sm > input.btn-switch[type=submit] { margin: 0 0.5rem; padding: 0; position: relative; border: none; height: 1.5rem; width: 3rem; border-radius: 1.5rem; }
+
+.btn-switch.btn-sm:focus, .btn-group-sm > .btn-switch.btn:focus, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:focus, .btn-switch.btn-sm.focus, .btn-group-sm > .btn-switch.focus.btn, .wpcf7 .btn-group-sm > input.btn-switch.focus[type=submit], .btn-switch.btn-sm:focus.active, .btn-group-sm > .btn-switch.btn:focus.active, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:focus.active, .btn-switch.btn-sm.focus.active, .btn-group-sm > .btn-switch.focus.active.btn, .wpcf7 .btn-group-sm > input.btn-switch.focus.active[type=submit] { outline: none; }
+
+.btn-switch.btn-sm:before, .btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:before, .btn-switch.btn-sm:after, .btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:after { line-height: 1.5rem; width: 0.5rem; text-align: center; font-weight: 600; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 2px; position: absolute; bottom: 0; transition: opacity .25s; }
+
+.btn-switch.btn-sm:before, .btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:before { content: 'Off'; left: -0.5rem; }
+
+.btn-switch.btn-sm:after, .btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:after { content: 'On'; right: -0.5rem; opacity: .5; }
+
+.btn-switch.btn-sm > .handle, .btn-group-sm > .btn-switch.btn > .handle, .wpcf7 .btn-group-sm > input.btn-switch[type=submit] > .handle { position: absolute; top: 0.1875rem; left: 0.1875rem; width: 1.125rem; height: 1.125rem; border-radius: 1.125rem; background: #fff; transition: left .25s; }
+
+.btn-switch.btn-sm.active, .btn-group-sm > .btn-switch.active.btn, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit] { transition: background-color 0.25s; }
+
+.btn-switch.btn-sm.active > .handle, .btn-group-sm > .btn-switch.active.btn > .handle, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit] > .handle { left: 1.6875rem; transition: left .25s; }
+
+.btn-switch.btn-sm.active:before, .btn-group-sm > .btn-switch.active.btn:before, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit]:before { opacity: .5; }
+
+.btn-switch.btn-sm.active:after, .btn-group-sm > .btn-switch.active.btn:after, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit]:after { opacity: 1; }
+
+.btn-switch.btn-sm.btn-sm:before, .btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:before, .btn-switch.btn-sm.btn-sm:after, .btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:after { line-height: -0.5rem; color: #fff; letter-spacing: .75px; left: 0.4125rem; width: 2.325rem; }
+
+.btn-switch.btn-sm.btn-sm:before, .btn-group-sm > .btn-switch.btn:before, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:before { text-align: right; }
+
+.btn-switch.btn-sm.btn-sm:after, .btn-group-sm > .btn-switch.btn:after, .wpcf7 .btn-group-sm > input.btn-switch[type=submit]:after { text-align: left; opacity: 0; }
+
+.btn-switch.btn-sm.btn-sm.active:before, .btn-group-sm > .btn-switch.active.btn:before, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit]:before { opacity: 0; }
+
+.btn-switch.btn-sm.btn-sm.active:after, .btn-group-sm > .btn-switch.active.btn:after, .wpcf7 .btn-group-sm > input.btn-switch.active[type=submit]:after { opacity: 1; }
+
+.btn-switch.btn-sm.btn-xs:before, .btn-group-sm > .btn-switch.btn-xs.btn:before, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs[type=submit]:before, .btn-switch.btn-sm.btn-xs:after, .btn-group-sm > .btn-switch.btn-xs.btn:after, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs[type=submit]:after { display: none; }
+
+.btn-switch.btn-xs { margin: 0 0; padding: 0; position: relative; border: none; height: 1rem; width: 2rem; border-radius: 1rem; }
+
+.btn-switch.btn-xs:focus, .btn-switch.btn-xs.focus, .btn-switch.btn-xs:focus.active, .btn-switch.btn-xs.focus.active { outline: none; }
+
+.btn-switch.btn-xs:before, .btn-switch.btn-xs:after { line-height: 1rem; width: 0; text-align: center; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; position: absolute; bottom: 0; transition: opacity .25s; }
+
+.btn-switch.btn-xs:before { content: 'Off'; left: 0; }
+
+.btn-switch.btn-xs:after { content: 'On'; right: 0; opacity: .5; }
+
+.btn-switch.btn-xs > .handle { position: absolute; top: 0.125rem; left: 0.125rem; width: 0.75rem; height: 0.75rem; border-radius: 0.75rem; background: #fff; transition: left .25s; }
+
+.btn-switch.btn-xs.active { transition: background-color 0.25s; }
+
+.btn-switch.btn-xs.active > .handle { left: 1.125rem; transition: left .25s; }
+
+.btn-switch.btn-xs.active:before { opacity: .5; }
+
+.btn-switch.btn-xs.active:after { opacity: 1; }
+
+.btn-switch.btn-xs.btn-sm:before, .btn-group-sm > .btn-switch.btn-xs.btn:before, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs[type=submit]:before, .btn-switch.btn-xs.btn-sm:after, .btn-group-sm > .btn-switch.btn-xs.btn:after, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs[type=submit]:after { line-height: -1rem; color: #fff; letter-spacing: .75px; left: 0.275rem; width: 1.55rem; }
+
+.btn-switch.btn-xs.btn-sm:before, .btn-group-sm > .btn-switch.btn-xs.btn:before, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs[type=submit]:before { text-align: right; }
+
+.btn-switch.btn-xs.btn-sm:after, .btn-group-sm > .btn-switch.btn-xs.btn:after, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs[type=submit]:after { text-align: left; opacity: 0; }
+
+.btn-switch.btn-xs.btn-sm.active:before, .btn-group-sm > .btn-switch.btn-xs.active.btn:before, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs.active[type=submit]:before { opacity: 0; }
+
+.btn-switch.btn-xs.btn-sm.active:after, .btn-group-sm > .btn-switch.btn-xs.active.btn:after, .wpcf7 .btn-group-sm > input.btn-switch.btn-xs.active[type=submit]:after { opacity: 1; }
+
+.btn-switch.btn-xs.btn-xs:before, .btn-switch.btn-xs.btn-xs:after { display: none; }
+
+.btn-switch.btn-secondary { color: #6b7381; background: #bdc1c8; }
+
+.btn-switch.btn-secondary:before, .btn-switch.btn-secondary:after { color: #6b7381; }
+
+.btn-switch.btn-secondary.active { background-color: #ff8300; }
+
+.btn-switch.btn:hover, .wpcf7 input.btn-switch[type=submit]:hover { box-shadow: 0 0 0px rgba(22, 22, 34, 0.13), 0 0px 0px rgba(22, 22, 34, 0.26); transform: translateY(0px); cursor: pointer; }
+
 .modal-content { box-shadow: none !important; }
+
+.modal-backdrop { z-index: 10000300; }
 
 .bp-screen-reader-text { display: none !important; }
 
@@ -4393,7 +4535,9 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .alert { position: fixed; top: 20px; right: 20px; width: 360px; z-index: 99999; }
 
-body { font-family: "Raleway", sans-serif; background: #fff; }
+body:focus, body:focus.active, body.focus, body.focus.active { outline: none; }
+
+body { font-family: "Montserrat", "Lato", "Open Sans", "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif; background: #fff; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sans-serif; font-weight: 300; }
 
@@ -4417,15 +4561,57 @@ p { font-family: "Raleway", sans-serif; }
 
 .custom-select { -webkit-appearance: none; }
 
-.btn, .wpcf7 input[type=submit] { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.875rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; }
+.mp_wrapper #mepr_loginform textarea, .mp_wrapper #mepr_loginform select, .mp_wrapper #mepr_loginform input[type=text], .mp_wrapper #mepr_loginform input[type=url], .mp_wrapper #mepr_loginform input[type=email], .mp_wrapper #mepr_loginform input[type=tel], .mp_wrapper #mepr_loginform input[type=number], .mp_wrapper #mepr_loginform input[type=password] { display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #495057; background-color: transparent; background-image: none; background-clip: padding-box; border: 0px solid rgba(0, 0, 0, 0.15) !important; border-radius: 0rem; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; box-shadow: none; }
+
+.home-page .mepr-login-actions a { color: #fff !important; }
+
+.home-page .mepr-login-actions a:hover { text-decoration: none; }
+
+.btn, .wpcf7 input[type=submit] { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.875rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; border-radius: 0px; }
 
 .btn:hover, .wpcf7 input[type=submit]:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; }
+
+.btn.btn-switch, .wpcf7 input.btn-switch[type=submit] { box-shadow: none !important; }
+
+.btn.btn-switch:active, .wpcf7 input.btn-switch[type=submit]:active { box-shadow: none !important; }
+
+.btn.btn-switch:hover, .wpcf7 input.btn-switch[type=submit]:hover { box-shadow: none !important; }
+
+.btn.btn-switch:focus, .wpcf7 input.btn-switch[type=submit]:focus { box-shadow: none !important; }
 
 .btn-primary:hover { background: #57c3f0; border-color: #57c3f0; }
 
 .btn-success { color: #fff !important; }
 
 .btn-success:hover { background: #3ecf8e; border-color: #3ecf8e; }
+
+.wp-social-login-connect-with { color: #fff; margin-bottom: 20px; }
+
+.wp-social-login-provider-list { padding: 0px; }
+
+.wp-social-login-provider img { display: none; }
+
+a.wp-social-login-provider { width: 167px; height: 50px; display: inline-block; }
+
+a.wp-social-login-provider-facebook { background: #3b5998; margin-right: 10px; color: #fff; transition: ease-in-out .35s; box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); position: relative; }
+
+a.wp-social-login-provider-facebook:before { content: "\f09a"; font-family: FontAwesome; font-style: normal; font-weight: normal; text-decoration: inherit; color: #white; font-size: 18px; position: absolute; top: 13px; left: 23px; }
+
+a.wp-social-login-provider-facebook:after { position: absolute; content: "Facebook"; top: 13px; width: 160px; left: 55px; }
+
+a.wp-social-login-provider-facebook:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; text-decoration: none; }
+
+a.wp-social-login-provider-google { background: #d34837; margin-right: 0px; color: #fff; transition: ease-in-out .35s; box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); position: relative; }
+
+a.wp-social-login-provider-google:before { content: "\f0d5"; font-family: FontAwesome; font-style: normal; font-weight: normal; text-decoration: inherit; color: #white; font-size: 18px; padding-right: 0.5em; position: absolute; top: 13px; left: 23px; }
+
+a.wp-social-login-provider-google:after { position: absolute; content: "Google"; top: 13px; width: 160px; left: 65px; }
+
+a.wp-social-login-provider-google:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; text-decoration: none; }
+
+a.wp-social-login-provider-twitter { display: none; }
+
+#loginmodal .wp-social-login-widget { margin: 2.25rem 2.25rem 0 2.25rem; }
 
 .page-template-fullwidthpage .card-body h1, .page-template-fullwidthpage .card-body h2, .page-template-fullwidthpage .card-body h3, .page-template-fullwidthpage .card-body h4, .page-template-fullwidthpage .card-body h5, .page-template-fullwidthpage .card-body h6 { color: #495057; }
 
@@ -4615,6 +4801,34 @@ p { font-family: "Raleway", sans-serif; }
 
 .groups .sub-nav ul .selected a span { color: #111; background-color: #f8f9fa; }
 
+.login-modal { /* FF 4-18 */ /* FF 19+ */ /* IE 10+ */ }
+
+.login-modal .auth_form { background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: #1b60d8; background-image: -webkit-linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%); background-image: -moz-linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%); background-image: -o-linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%); background-image: linear-gradient(55deg, #1b60d8 -20%, #2AF598 100%); }
+
+.login-modal .input-group-addon { padding: 0rem 0rem; margin-bottom: 0; font-size: 1rem; font-weight: normal; line-height: 1.25; color: #495057; text-align: center; background-color: transparent; border: 0px solid rgba(0, 0, 0, 0.15); border-radius: 0rem; margin-left: 15px; padding-right: 10px; }
+
+.login-modal .input-group { border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+.login-modal .form-control, .login-modal .wpcf7 input[type=text], .wpcf7 .login-modal input[type=text], .login-modal .wpcf7 input[type=search], .wpcf7 .login-modal input[type=search], .login-modal .wpcf7 input[type=url], .wpcf7 .login-modal input[type=url], .login-modal .wpcf7 input[type=tel], .wpcf7 .login-modal input[type=tel], .login-modal .wpcf7 input[type=number], .wpcf7 .login-modal input[type=number], .login-modal .wpcf7 input[type=range], .wpcf7 .login-modal input[type=range], .login-modal .wpcf7 input[type=date], .wpcf7 .login-modal input[type=date], .login-modal .wpcf7 input[type=month], .wpcf7 .login-modal input[type=month], .login-modal .wpcf7 input[type=week], .wpcf7 .login-modal input[type=week], .login-modal .wpcf7 input[type=time], .wpcf7 .login-modal input[type=time], .login-modal .wpcf7 input[type=datetime], .wpcf7 .login-modal input[type=datetime], .login-modal .wpcf7 input[type=datetime-local], .wpcf7 .login-modal input[type=datetime-local], .login-modal .wpcf7 input[type=color], .wpcf7 .login-modal input[type=color], .login-modal .wpcf7 input[type=email], .wpcf7 .login-modal input[type=email], .login-modal .wpcf7 input[type=file], .wpcf7 .login-modal input[type=file], .login-modal .wpcf7 input[type=submit], .wpcf7 .login-modal input[type=submit], .login-modal .wpcf7 select, .wpcf7 .login-modal select, .login-modal .wpcf7 textarea, .wpcf7 .login-modal textarea, .login-modal .wpcf7 .wpcf7-validation-errors, .wpcf7 .login-modal .wpcf7-validation-errors { background: transparent; border: 0px; color: #fff; font-size: 1em; letter-spacing: 1px; }
+
+.login-modal .form-control::placeholder, .login-modal .wpcf7 input[type=text]::placeholder, .wpcf7 .login-modal input[type=text]::placeholder, .login-modal .wpcf7 input[type=search]::placeholder, .wpcf7 .login-modal input[type=search]::placeholder, .login-modal .wpcf7 input[type=url]::placeholder, .wpcf7 .login-modal input[type=url]::placeholder, .login-modal .wpcf7 input[type=tel]::placeholder, .wpcf7 .login-modal input[type=tel]::placeholder, .login-modal .wpcf7 input[type=number]::placeholder, .wpcf7 .login-modal input[type=number]::placeholder, .login-modal .wpcf7 input[type=range]::placeholder, .wpcf7 .login-modal input[type=range]::placeholder, .login-modal .wpcf7 input[type=date]::placeholder, .wpcf7 .login-modal input[type=date]::placeholder, .login-modal .wpcf7 input[type=month]::placeholder, .wpcf7 .login-modal input[type=month]::placeholder, .login-modal .wpcf7 input[type=week]::placeholder, .wpcf7 .login-modal input[type=week]::placeholder, .login-modal .wpcf7 input[type=time]::placeholder, .wpcf7 .login-modal input[type=time]::placeholder, .login-modal .wpcf7 input[type=datetime]::placeholder, .wpcf7 .login-modal input[type=datetime]::placeholder, .login-modal .wpcf7 input[type=datetime-local]::placeholder, .wpcf7 .login-modal input[type=datetime-local]::placeholder, .login-modal .wpcf7 input[type=color]::placeholder, .wpcf7 .login-modal input[type=color]::placeholder, .login-modal .wpcf7 input[type=email]::placeholder, .wpcf7 .login-modal input[type=email]::placeholder, .login-modal .wpcf7 input[type=file]::placeholder, .wpcf7 .login-modal input[type=file]::placeholder, .login-modal .wpcf7 input[type=submit]::placeholder, .wpcf7 .login-modal input[type=submit]::placeholder, .login-modal .wpcf7 select::placeholder, .wpcf7 .login-modal select::placeholder, .login-modal .wpcf7 textarea::placeholder, .wpcf7 .login-modal textarea::placeholder, .login-modal .wpcf7 .wpcf7-validation-errors::placeholder, .wpcf7 .login-modal .wpcf7-validation-errors::placeholder { color: #fff; opacity: .5; }
+
+.login-modal .fa { color: rgba(255, 255, 255, 0.3); }
+
+.login-modal .navbar-brand { color: #fff; font-size: 28px; text-align: center; padding-left: 35px; }
+
+.login-modal a:focus, .login-modal button:focus, .login-modal input:focus::-webkit-input-placeholder, .login-modal input:focus:-moz-placeholder, .login-modal input:focus::-moz-placeholder, .login-modal input:focus:-ms-input-placeholder, .login-modal input:focus, .login-modal textarea:focus { outline: none !important; transition: color ease-in-out .35s; }
+
+.login-modal input:focus::-webkit-input-placeholder { color: transparent; }
+
+.login-modal input:focus:-moz-placeholder { color: transparent; }
+
+.login-modal input:focus::-moz-placeholder { color: transparent; }
+
+.login-modal input:focus:-ms-input-placeholder { color: transparent; }
+
+.login-modal .modal-header { display: none; align-items: center; justify-content: space-between; padding: 15px; border-bottom: 0px solid #e9ecef; }
+
 .register { /* FF 4-18 */ /* FF 19+ */ /* IE 10+ */ }
 
 .register .page-title { display: none; }
@@ -4657,21 +4871,21 @@ p { font-family: "Raleway", sans-serif; }
 
 .register a.wp-social-login-provider { width: 167px; height: 50px; display: inline-block; }
 
-.register a.wp-social-login-provider-facebook { background: #3b5998; margin-right: 10px; color: #fff; transition: ease-in-out .35s; opacity: 1; position: relative; }
+.register a.wp-social-login-provider-facebook { background: #3b5998; margin-right: 10px; color: #fff; transition: ease-in-out .35s; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); position: relative; }
 
 .register a.wp-social-login-provider-facebook:before { content: "\f09a"; font-family: FontAwesome; font-style: normal; font-weight: normal; text-decoration: inherit; color: #white; font-size: 18px; position: absolute; top: 13px; left: 23px; }
 
 .register a.wp-social-login-provider-facebook:after { position: absolute; content: "Facebook"; top: 13px; width: 160px; left: 55px; }
 
-.register a.wp-social-login-provider-facebook:hover { opacity: .7; text-decoration: none; }
+.register a.wp-social-login-provider-facebook:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; text-decoration: none; }
 
-.register a.wp-social-login-provider-google { background: #d34837; margin-right: 0px; color: #fff; transition: ease-in-out .35s; opacity: 1; position: relative; }
+.register a.wp-social-login-provider-google { background: #d34837; margin-right: 0px; color: #fff; transition: ease-in-out .35s; box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); position: relative; }
 
 .register a.wp-social-login-provider-google:before { content: "\f0d5"; font-family: FontAwesome; font-style: normal; font-weight: normal; text-decoration: inherit; color: #white; font-size: 18px; padding-right: 0.5em; position: absolute; top: 13px; left: 23px; }
 
 .register a.wp-social-login-provider-google:after { position: absolute; content: "Google"; top: 13px; width: 160px; left: 65px; }
 
-.register a.wp-social-login-provider-google:hover { opacity: .7; text-decoration: none; }
+.register a.wp-social-login-provider-google:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; text-decoration: none; }
 
 .register a.wp-social-login-provider-twitter { display: none; }
 

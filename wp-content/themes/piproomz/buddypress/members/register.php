@@ -36,7 +36,8 @@ do_action( 'bp_before_register_page' ); ?>
 				<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
 					<?php
 					/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
-					do_action( 'template_notices' ); ?>
+					do_action( 'template_notices' ); 
+					?>
 					<?php
 									/**
 									 * Fires before the display of the registration disabled message.
@@ -63,7 +64,9 @@ do_action( 'bp_before_register_page' ); ?>
 									 *
 									 * @since 1.1.0
 									 */
-									do_action( 'bp_before_account_details_fields' ); ?>
+									do_action( 'bp_before_account_details_fields' ); 
+ 									do_action( 'wordpress_social_login' );
+									?>
 									<div class="register-section" id="basic-details-section">
 										<?php /***** Basic Account Details ******/ ?>
 										<div class="input-group input-group-lg mt-3 py-2">
@@ -247,7 +250,7 @@ do_action( 'bp_before_register_page' ); ?>
 								 * @since 1.1.0
 								 */
 								do_action( 'bp_before_registration_submit_buttons' ); ?>
-								<div class="submit pt-3">
+								<div class="submit pt-3 mt-3">
 									<input class="btn btn-lg btn-success btn-block rounded-0 p-2 " type="submit" name="signup_submit" id="signup_submit" value="<?php esc_attr_e( 'Get Started', 'buddypress' ); ?>" />
 								</div>
 								<?php

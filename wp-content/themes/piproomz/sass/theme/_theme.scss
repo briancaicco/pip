@@ -5,6 +5,10 @@
 	box-shadow: none !important;
 }
 
+.modal-backdrop{
+	z-index: 10000300;
+}
+
 
 @mixin blue-grad {
 	background-color: #1b60d8;
@@ -82,6 +86,15 @@
 	z-index: 99999;
 }
 
+body{
+&:focus,
+  &.focus {
+    &,
+    &.active {
+      outline: none;
+    }
+  }
+}
 // Typography
 /////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
@@ -90,7 +103,7 @@
 $btn-font: "Raleway", Helvetica, Arial, sans-serif;
 $h-font: 'Nunito', sans-serif;
 $p-font: 'Raleway', sans-serif;
-$default-font: 'Raleway', sans-serif;
+$default-font: 'Montserrat', 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Calibri, Arial, sans-serif;
 
 body{
 	font-family: $default-font;
@@ -171,6 +184,32 @@ p{
 	-webkit-appearance: none;
 }
 
+
+	.mp_wrapper #mepr_loginform textarea, .mp_wrapper #mepr_loginform select, .mp_wrapper #mepr_loginform input[type=text], .mp_wrapper #mepr_loginform input[type=url], .mp_wrapper #mepr_loginform input[type=email], .mp_wrapper #mepr_loginform input[type=tel], .mp_wrapper #mepr_loginform input[type=number], .mp_wrapper #mepr_loginform input[type=password] {
+		display: block;
+		width: 100%;
+		padding: .5rem .75rem;
+		font-size: 1rem;
+		line-height: 1.25;
+		color: #495057;
+		background-color: transparent;
+		background-image: none;
+		background-clip: padding-box;
+		border: 0px solid rgba(0,0,0,.15) !important;
+		border-radius: 0rem;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		box-shadow: none;
+	}
+
+.home-page{
+	.mepr-login-actions a{
+		color: $white !important;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+
 // Buttons
 /////////////////////////////////////////////////////////////////////////
 
@@ -181,6 +220,7 @@ p{
 	font-family: $btn-font;
 	font-weight: $font-weight-bold;
 	letter-spacing: .16rem;
+	border-radius: 0px;
 	&:hover{
 		box-shadow: $el-3;
 		transform: translateY(-1px);
@@ -189,6 +229,18 @@ p{
 	}
 }
 
+.btn.btn-switch{
+	box-shadow: none !important;
+	&:active{
+		box-shadow: none !important;
+	}
+	&:hover{
+		box-shadow: none !important;
+	}
+	&:focus{
+		box-shadow: none !important;
+	}
+}
 
 .btn-primary:hover{
 	background: $blue;
@@ -205,6 +257,105 @@ p{
 	border-color: $green;
 }
 
+
+.wp-social-login-connect-with{
+	color: $white;
+	margin-bottom: 20px;
+}
+.wp-social-login-provider-list{
+	padding: 0px;
+}
+.wp-social-login-provider{
+	img{
+		display: none;
+	}
+}
+a.wp-social-login-provider{
+	width: 167px;
+	height: 50px;
+	display: inline-block;
+
+}
+a.wp-social-login-provider-facebook{
+	background: #3b5998;
+	margin-right: 10px;
+	color: $white;
+	transition: ease-in-out .35s;
+	box-shadow: $el-1;
+	position: relative;
+	&:before{
+		content: "\f09a";
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		color: #white;
+		font-size: 18px;
+		position: absolute;
+		top: 13px;
+		left: 23px;
+	}
+	&:after{
+		position: absolute;
+		content: "Facebook";
+		top: 13px;
+		width: 160px;
+		left: 55px;
+	}
+
+	&:hover{
+		box-shadow: $el-3;
+		transform: translateY(-1px);
+		transition: $transition-base;
+		cursor: pointer;
+		text-decoration: none;
+	}
+}
+a.wp-social-login-provider-google{
+	background: #d34837;
+	margin-right: 0px;
+	color: $white;
+	transition: ease-in-out .35s;
+	box-shadow: $el-1;
+	position: relative;
+	&:before{
+		content: "\f0d5";
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		color: #white;
+		font-size: 18px;
+		padding-right: 0.5em;
+		position: absolute;
+		top: 13px;
+		left: 23px;
+	}
+	&:after{
+		position: absolute;
+		content: "Google";
+		top: 13px;
+		width: 160px;
+		left: 65px;
+	}
+	&:hover{
+		box-shadow: $el-3;
+		transform: translateY(-1px);
+		transition: $transition-base;
+		cursor: pointer;
+		text-decoration: none;
+	}
+}
+
+a.wp-social-login-provider-twitter{
+	display: none;
+}
+
+#loginmodal{
+	.wp-social-login-widget{
+		margin: 2.25rem 2.25rem 0 2.25rem
+	}
+}
 
 // Page Templates
 /////////////////////////////////////////////////////////////////////////
@@ -806,8 +957,83 @@ display:none;
 	}
 }
 
-// Register Page
+// Register Page & Login Modal
 /////////////////////////////////////////////////////////////////////////
+
+// Login Modal
+.login-modal{
+	.auth_form{
+		background-position: center center;
+		background-repeat:  no-repeat;
+		background-attachment: fixed;
+		background-size:  cover;
+		@include blue-grad-hor;
+	}
+	.input-group-addon {
+	    padding: 0rem 0rem;
+	    margin-bottom: 0;
+	    font-size: 1rem;
+	    font-weight: normal;
+	    line-height: 1.25;
+	    color: #495057;
+	    text-align: center;
+	    background-color: transparent;
+	    border: 0px solid rgba(0, 0, 0, 0.15);
+	    border-radius: 0rem;
+	    margin-left: 15px;
+	    padding-right: 10px;
+	}
+	.input-group{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
+	.form-control{
+		background: transparent;
+		border: 0px;
+		color: $white;
+		font-size: 1em;
+		letter-spacing: 1px;
+		&::placeholder {
+			color:$white;
+			opacity: .5;
+		}
+	}
+	.fa{
+		color: rgba(255, 255, 255, 0.3)
+	}
+	.navbar-brand {
+		color: $white;
+		font-size: 28px;
+		text-align: center;
+		padding-left: 35px;
+	}
+	a:focus,
+	button:focus,
+	input:focus::-webkit-input-placeholder,
+	input:focus:-moz-placeholder,
+	input:focus::-moz-placeholder,
+	input:focus:-ms-input-placeholder,
+	input:focus,
+	textarea:focus {
+		outline: none !important;
+		transition: color ease-in-out .35s;		
+
+	}
+	input:focus::-webkit-input-placeholder { color:transparent; }
+	input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+	input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+	input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+
+	.modal-header {
+	    display: none;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 15px;
+	    border-bottom: 0px solid #e9ecef;
+	}
+}
+
+// Register
 .register{
 	.page-title{
 		display: none;
@@ -926,7 +1152,7 @@ display:none;
 		margin-right: 10px;
 		color: $white;
 		transition: ease-in-out .35s;
-		opacity: 1;
+		box-shadow: $el-3;
 		position: relative;
 		&:before{
 			content: "\f09a";
@@ -948,7 +1174,10 @@ display:none;
 			left: 55px;
 		}
 		&:hover{
-			opacity: .7;
+			box-shadow: $el-3;
+			transform: translateY(-1px);
+			transition: $transition-base;
+			cursor: pointer;
 			text-decoration: none;
 		}
 	}
@@ -957,7 +1186,7 @@ display:none;
 		margin-right: 0px;
 		color: $white;
 		transition: ease-in-out .35s;
-		opacity: 1;
+		box-shadow: $el-1;
 		position: relative;
 		&:before{
 			content: "\f0d5";
@@ -980,7 +1209,10 @@ display:none;
 			left: 65px;
 		}
 		&:hover{
-			opacity: .7;
+			box-shadow: $el-3;
+			transform: translateY(-1px);
+			transition: $transition-base;
+			cursor: pointer;
 			text-decoration: none;
 		}
 	}

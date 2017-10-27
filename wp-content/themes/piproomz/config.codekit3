@@ -879,6 +879,12 @@
 		"oAP": "\/author.php",
 		"oF": 0
 		},
+	"\/bootstrap_toggle_example.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/bootstrap_toggle_example.html",
+		"oF": 0
+		},
 	"\/bower.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -2326,6 +2332,12 @@
 		"oAP": "\/page.php",
 		"oF": 0
 		},
+	"\/partials\/form-login.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/form-login.php",
+		"oF": 0
+		},
 	"\/partials\/form-register.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -2406,6 +2418,19 @@
 		"oAP": "\/css\/theme.min.css",
 		"oF": 2,
 		"oS": 2,
+		"uL": 1
+		},
+	"\/sass\/theme\/_bootstrap_toggle.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/theme\/_bootstrap_toggle.css",
+		"oF": 0,
+		"oS": 0,
 		"uL": 1
 		},
 	"\/sass\/theme\/_contact-form7.scss": {
