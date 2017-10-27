@@ -24,7 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<h1 class="h2 mb-3">The community where traders learn from other traders.</h1>
 					<p>Piproomz is helping traders of any experience level connect with other traders, resources, and tools so they can dominate the markets.</p>
-					<a href="<?php echo home_url (); ?>/register" class="btn btn-lg btn-success mt-3">Request Invitation</a>
+					<a href="<?php echo home_url (); ?>/register" class="btn btn-lg btn-success mt-3">Join for Free</a>
 
 				</div>
 				<div class="col-12 col-md-5 card-wrap">

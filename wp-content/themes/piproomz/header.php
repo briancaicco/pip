@@ -51,6 +51,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						    </button>
 
 						    <div class="navbar-collapse collapse justify-content-stretch" id="navbarNavDropdown">
+
 						        
 						    	<?php 
 						    	wp_nav_menu(
@@ -110,31 +111,33 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<?php endif; ?>
 					
 					<?php } ?>
-					
+
 						<?php 
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'primary',
-								'container_class' => 'collapse navbar-collapse',
-								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
-								'fallback_cb'     => '',
-								'menu_id'         => 'main-menu',
-								'walker'          => new WP_Bootstrap_Navwalker(),
-							)
-						); 
+						// wp_nav_menu(
+						// 	array(
+						// 		'theme_location'  => 'primary',
+						// 		'container_class' => 'collapse navbar-collapse',
+						// 		'container_id'    => 'navbarNavDropdown',
+						// 		'menu_class'      => 'navbar-nav ml-auto',
+						// 		'fallback_cb'     => '',
+						// 		'menu_id'         => 'main-menu',
+						// 		'walker'          => new WP_Bootstrap_Navwalker(),
+						// 	)
+						// ); 
 
 						?>
 
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<!-- Button trigger modal -->
+						<a href="<?php echo home_url (); ?>/register" type="" class="btn btn-outline-success ml-auto mr-2 mr-sm-3" style="text-decoration: none !important;" >
+						  <small>Join for Free</small>
+						</a>
+						<a href="#" type="" class="text-white" data-toggle="modal" data-target="#loginmodal" style="text-decoration: none !important;" >
+						  <small>Login</small>
+						</a>
+
+<!-- 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<i class="fa fa-bars" aria-hidden="true"></i>
-					</button>
-
-
-					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginmodal">
-					  Login
-					</button>
+					</button> -->
 
 						<?php } ?>
 				</div>
