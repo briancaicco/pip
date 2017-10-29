@@ -80,7 +80,7 @@ msgstr ""
 #: bp-activity/bp-activity-actions.php:476 bp-groups/bp-groups-actions.php:585
 #. translators: Personal activity RSS title - "[Site Name] | [User Display
 #. Name] | Activity"
-#. translators: Group activity RSS title - "[Site Name] | [Group Name] |
+#. translators: Room activity RSS title - "[Site Name] | [Group Name] |
 #. Activity"
 msgid "%1$s | %2$s | Activity"
 msgstr ""
@@ -100,13 +100,13 @@ msgid "Activity feed for %s's friends."
 msgstr ""
 
 #: bp-activity/bp-activity-actions.php:532
-#. translators: Member groups activity RSS title - "[Site Name] | [User Display
-#. Name] | Groups Activity"
-msgid "%1$s | %2$s | Group Activity"
+#. translators: Member rooms activity RSS title - "[Site Name] | [User Display
+#. Name] | Rooms Activity"
+msgid "%1$s | %2$s | Room Activity"
 msgstr ""
 
 #: bp-activity/bp-activity-actions.php:535
-msgid "Public group activity feed of which %s is a member."
+msgid "Public room activity feed of which %s is a member."
 msgstr ""
 
 #: bp-activity/bp-activity-actions.php:566
@@ -194,8 +194,8 @@ msgstr ""
 #: bp-activity/bp-activity-admin.php:236
 msgid ""
 "<strong>Type</strong> - Each distinct kind of activity has its own type. "
-"For example, <code>created_group</code> is used when a group is created and "
-"<code>joined_group</code> is used when a user joins a group."
+"For example, <code>created_group</code> is used when a room is created and "
+"<code>joined_group</code> is used when a user joins a room."
 msgstr ""
 
 #: bp-activity/bp-activity-admin.php:237
@@ -1362,7 +1362,7 @@ msgid ""
 ">Managing Profile Fields</a>"
 msgstr ""
 
-#: bp-core/admin/bp-core-admin-functions.php:575 
+#: bp-core/admin/bp-core-admin-functions.php:575
 msgid ""
 "By default, all but four of the BuddyPress components are enabled. You can "
 "selectively enable or disable any of the components by using the form "
@@ -1391,7 +1391,7 @@ msgid ""
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-functions.php:587
-msgid "Note: Any fields in the first group will appear on the signup page."
+msgid "Note: Any fields in the first room will appear on the signup page."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -1506,19 +1506,19 @@ msgid "Allow registered members to upload cover images"
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-settings.php:220
-msgid "Enable group creation for all users"
+msgid "Enable room creation for all users"
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-settings.php:221
-msgid "Administrators can always create groups, regardless of this setting."
+msgid "Administrators can always create rooms, regardless of this setting."
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-settings.php:234
-msgid "Allow customizable avatars for groups"
+msgid "Allow customizable avatars for rooms"
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-settings.php:246
-msgid "Allow customizable cover images for groups"
+msgid "Allow customizable cover images for rooms"
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-settings.php:275
@@ -1574,7 +1574,7 @@ msgstr ""
 
 #: bp-core/admin/bp-core-admin-tools.php:24
 msgid ""
-"BuddyPress keeps track of various relationships between members, groups, "
+"BuddyPress keeps track of various relationships between members, rooms, "
 "and activity items. Occasionally these relationships become out of sync, "
 "most often after an import, update, or migration."
 msgstr ""
@@ -1610,7 +1610,7 @@ msgid "Repair total friends count for each member."
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-tools.php:127
-msgid "Repair total groups count for each member."
+msgid "Repair total rooms count for each member."
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-tools.php:137
@@ -1640,7 +1640,7 @@ msgid "Complete!"
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-tools.php:234
-msgid "Counting the number of groups for each user&hellip; %s"
+msgid "Counting the number of rooms for each user&hellip; %s"
 msgstr ""
 
 #: bp-core/admin/bp-core-admin-tools.php:277
@@ -1663,7 +1663,7 @@ msgstr ""
 
 #: bp-core/admin/bp-core-admin-tools.php:409
 msgid ""
-"BuddyPress keeps track of various relationships between users, groups, and "
+"BuddyPress keeps track of various relationships between users, rooms, and "
 "activity items. Occasionally these relationships become out of sync, most "
 "often after an import, update, or migration."
 msgstr ""
@@ -2091,13 +2091,13 @@ msgstr ""
 
 #: bp-core/bp-core-functions.php:2491
 msgid ""
-"Global, personal, and group activity streams with threaded commenting, "
+"Global, personal, and room activity streams with threaded commenting, "
 "direct posting, favoriting, and @mentions, all with full RSS feed and email "
 "notification support."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:2498
-msgid "User Groups"
+msgid "User Rooms"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:2499
@@ -2229,7 +2229,7 @@ msgstr ""
 #: bp-core/bp-core-functions.php:3383
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"{{poster.name}} mentioned you in the group \"{{group.name}}\":\n"
+"{{poster.name}} mentioned you in the room \"{{group.name}}\":\n"
 "\n"
 "<blockquote>&quot;{{usermessage}}&quot;</blockquote>\n"
 "\n"
@@ -2240,7 +2240,7 @@ msgstr ""
 #: bp-core/bp-core-functions.php:3385
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"{{poster.name}} mentioned you in the group \"{{group.name}}\":\n"
+"{{poster.name}} mentioned you in the room \"{{group.name}}\":\n"
 "\n"
 "\"{{usermessage}}\"\n"
 "\n"
@@ -2347,13 +2347,13 @@ msgstr ""
 
 #: bp-core/bp-core-functions.php:3421
 #. translators: do not remove {} brackets or translate its contents.
-msgid "[{{{site.name}}}] Group details updated"
+msgid "[{{{site.name}}}] Room details updated"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3423
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"Group details for the group &quot;<a "
+"Group details for the room &quot;<a "
 "href=\"{{{group.url}}}\">{{group.name}}</a>&quot; were updated:\n"
 "<blockquote>{{changed_text}}</blockquote>"
 msgstr ""
@@ -2361,68 +2361,68 @@ msgstr ""
 #: bp-core/bp-core-functions.php:3425
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"Group details for the group \"{{group.name}}\" were updated:\n"
+"Group details for the room \"{{group.name}}\" were updated:\n"
 "\n"
 "{{changed_text}}\n"
 "\n"
-"To view the group, visit: {{{group.url}}}"
+"To view the room, visit: {{{group.url}}}"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3429
 #. translators: do not remove {} brackets or translate its contents.
-msgid "[{{{site.name}}}] You have an invitation to the group: \"{{group.name}}\""
+msgid "[{{{site.name}}}] You have an invitation to the room: \"{{group.name}}\""
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3431
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
 "<a href=\"{{{inviter.url}}}\">{{inviter.name}}</a> has invited you to join "
-"the group: &quot;{{group.name}}&quot;.\n"
+"the room: &quot;{{group.name}}&quot;.\n"
 "<a href=\"{{{invites.url}}}\">Go here to accept your invitation</a> or <a "
-"href=\"{{{group.url}}}\">visit the group</a> to learn more."
+"href=\"{{{group.url}}}\">visit the room</a> to learn more."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3433
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"{{inviter.name}} has invited you to join the group: \"{{group.name}}\".\n"
+"{{inviter.name}} has invited you to join the room: \"{{group.name}}\".\n"
 "\n"
 "To accept your invitation, visit: {{{invites.url}}}\n"
 "\n"
-"To learn more about the group, visit: {{{group.url}}}.\n"
+"To learn more about the room, visit: {{{group.url}}}.\n"
 "To view {{inviter.name}}'s profile, visit: {{{inviter.url}}}"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3437
 #. translators: do not remove {} brackets or translate its contents.
-msgid "[{{{site.name}}}] You have been promoted in the group: \"{{group.name}}\""
+msgid "[{{{site.name}}}] You have been promoted in the room: \"{{group.name}}\""
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3439
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"You have been promoted to <b>{{promoted_to}}</b> in the group &quot;<a "
+"You have been promoted to <b>{{promoted_to}}</b> in the room &quot;<a "
 "href=\"{{{group.url}}}\">{{group.name}}</a>&quot;."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3441
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"You have been promoted to {{promoted_to}} in the group: \"{{group.name}}\".\n"
+"You have been promoted to {{promoted_to}} in the room: \"{{group.name}}\".\n"
 "\n"
-"To visit the group, go to: {{{group.url}}}"
+"To visit the room, go to: {{{group.url}}}"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3445
 #. translators: do not remove {} brackets or translate its contents.
-msgid "[{{{site.name}}}] Membership request for group: {{group.name}}"
+msgid "[{{{site.name}}}] Membership request for room: {{group.name}}"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3447
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
 "<a href=\"{{{profile.url}}}\">{{requesting-user.name}}</a> wants to join "
-"the group &quot;{{group.name}}&quot;. As you are an administrator of this "
+"the room &quot;{{group.name}}&quot;. As you are an administrator of this "
 "group, you must either accept or reject the membership request.\n"
 "\n"
 "<a href=\"{{{group-requests.url}}}\">Go here to manage this</a> and all "
@@ -2432,8 +2432,8 @@ msgstr ""
 #: bp-core/bp-core-functions.php:3449
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"{{requesting-user.name}} wants to join the group \"{{group.name}}\". As you "
-"are the administrator of this group, you must either accept or reject the "
+"{{requesting-user.name}} wants to join the room \"{{group.name}}\". As you "
+"are the administrator of this room, you must either accept or reject the "
 "membership request.\n"
 "\n"
 "To manage this and all other pending requests, visit: "
@@ -2498,40 +2498,40 @@ msgstr ""
 
 #: bp-core/bp-core-functions.php:3469
 #. translators: do not remove {} brackets or translate its contents.
-msgid "[{{{site.name}}}] Membership request for group \"{{group.name}}\" accepted"
+msgid "[{{{site.name}}}] Membership request for room \"{{group.name}}\" accepted"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3471
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"Your membership request for the group &quot;<a "
+"Your membership request for the room &quot;<a "
 "href=\"{{{group.url}}}\">{{group.name}}</a>&quot; has been accepted."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3473
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"Your membership request for the group \"{{group.name}}\" has been accepted.\n"
+"Your membership request for the room \"{{group.name}}\" has been accepted.\n"
 "\n"
-"To view the group, visit: {{{group.url}}}"
+"To view the room, visit: {{{group.url}}}"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3477
 #. translators: do not remove {} brackets or translate its contents.
-msgid "[{{{site.name}}}] Membership request for group \"{{group.name}}\" rejected"
+msgid "[{{{site.name}}}] Membership request for room \"{{group.name}}\" rejected"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3479
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"Your membership request for the group &quot;<a "
+"Your membership request for the room &quot;<a "
 "href=\"{{{group.url}}}\">{{group.name}}</a>&quot; has been rejected."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3481
 #. translators: do not remove {} brackets or translate its contents.
 msgid ""
-"Your membership request for the group \"{{group.name}}\" has been rejected.\n"
+"Your membership request for the room \"{{group.name}}\" has been rejected.\n"
 "\n"
 "To request membership again, visit: {{{group.url}}}"
 msgstr ""
@@ -2561,7 +2561,7 @@ msgid "You will no longer receive emails when someone mentions you in an update.
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3530
-msgid "Recipient was mentioned in a group activity update."
+msgid "Recipient was mentioned in a room activity update."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3538
@@ -2591,37 +2591,37 @@ msgid ""
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3564 bp-core/bp-core-functions.php:3572
-msgid "A group's details were updated."
+msgid "A room's details were updated."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3567 bp-core/bp-core-functions.php:3575
-msgid "You will no longer receive emails when one of your groups is updated."
+msgid "You will no longer receive emails when one of your rooms is updated."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3580
-msgid "A member has sent a group invitation to the recipient."
+msgid "A member has sent a room invitation to the recipient."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3583
-msgid "You will no longer receive emails when you are invited to join a group."
+msgid "You will no longer receive emails when you are invited to join a room."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3588 bp-core/bp-core-functions.php:3596
-msgid "Recipient's status within a group has changed."
+msgid "Recipient's status within a room has changed."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3591 bp-core/bp-core-functions.php:3599
-msgid "You will no longer receive emails when you have been promoted in a group."
+msgid "You will no longer receive emails when you have been promoted in a room."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3604
-msgid "A member has requested permission to join a group."
+msgid "A member has requested permission to join a room."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3607
 msgid ""
 "You will no longer receive emails when someone requests to be a member of "
-"your group."
+"your room."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3612
@@ -2637,17 +2637,17 @@ msgid "Recipient has changed their email address."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3625
-msgid "Recipient had requested to join a group, which was accepted."
+msgid "Recipient had requested to join a room, which was accepted."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3628 bp-core/bp-core-functions.php:3636
 msgid ""
-"You will no longer receive emails when your request to join a group has "
+"You will no longer receive emails when your request to join a room has "
 "been accepted or denied."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3633
-msgid "Recipient had requested to join a group, which was rejected."
+msgid "Recipient had requested to join a room, which was rejected."
 msgstr ""
 
 #: bp-core/bp-core-functions.php:3681 bp-core/bp-core-functions.php:3687
@@ -2712,7 +2712,7 @@ msgid "Activate Your Account"
 msgstr ""
 
 #: bp-core/bp-core-template.php:3202 bp-groups/bp-groups-template.php:3615
-msgid "Create a Group"
+msgid "Create a Room"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:202
@@ -2795,7 +2795,7 @@ msgid "Group Cover Image Uploads"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:451
-msgid "Legacy Group Forums"
+msgid "Legacy Room Forums"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:454
@@ -2875,7 +2875,7 @@ msgid "Moderate Activity Streams"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:598
-msgid "Manage Groups"
+msgid "Manage Rooms"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:600
@@ -2904,12 +2904,12 @@ msgid "For Developers &amp; Site Builders"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:621
-msgid "Edit Group Slug"
+msgid "Edit Room Slug"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:622
 msgid ""
-"Allow administrators to change group names and permalinks. Navigate to the "
+"Allow administrators to change room names and permalinks. Navigate to the "
 "Groups screen in the wp-admin dashboard, click on the Edit link under the "
 "Group name, and adjust as needed."
 msgstr ""
@@ -2920,18 +2920,18 @@ msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:628
 msgid ""
-"Related form fields are grouped together in fieldsets and all interactive "
+"Related form fields are roomed together in fieldsets and all interactive "
 "form controls are associated with necessary ARIA states and properties."
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:633
-msgid "Send group invitation only once per user"
+msgid "Send room invitation only once per user"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:634
 msgid ""
-"Prevent duplicate group invitations from being sent to a user by "
-"double-checking if a group invitation has already been sent to that user."
+"Prevent duplicate room invitations from being sent to a user by "
+"double-checking if a room invitation has already been sent to that user."
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:639
@@ -2965,7 +2965,7 @@ msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:657
 msgid ""
-"Removed issues with BuddyPress-generated content being hidden in the Groups "
+"Removed issues with BuddyPress-generated content being hidden in the Rooms "
 "loop and Activity comments in Bootstrap themes."
 msgstr ""
 
@@ -3004,7 +3004,7 @@ msgid "New template function %s"
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:686
-msgid "Output a group name as a text hyperlink where appropriate."
+msgid "Output a room name as a text hyperlink where appropriate."
 msgstr ""
 
 #: bp-core/classes/class-bp-admin.php:720
@@ -3122,22 +3122,22 @@ msgstr ""
 
 #: bp-core/classes/class-bp-attachment-avatar.php:396
 #: bp-groups/bp-groups-screens.php:1055
-msgid "There was a problem cropping the group profile photo."
+msgid "There was a problem cropping the room profile photo."
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment-avatar.php:397
 #: bp-groups/bp-groups-actions.php:388
-msgid "The group profile photo was uploaded successfully."
+msgid "The room profile photo was uploaded successfully."
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment-avatar.php:398
 #: bp-groups/bp-groups-screens.php:1012
-msgid "There was a problem deleting the group profile photo. Please try again."
+msgid "There was a problem deleting the room profile photo. Please try again."
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment-avatar.php:399
 #: bp-groups/bp-groups-screens.php:1010
-msgid "The group profile photo was deleted successfully!"
+msgid "The room profile photo was deleted successfully!"
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment-cover-image.php:40
@@ -3157,15 +3157,15 @@ msgid "Your cover image was deleted successfully!"
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment-cover-image.php:261
-msgid "The group cover image was uploaded successfully."
+msgid "The room cover image was uploaded successfully."
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment-cover-image.php:262
-msgid "There was a problem deleting the group cover image. Please try again."
+msgid "There was a problem deleting the room cover image. Please try again."
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment-cover-image.php:263
-msgid "The group cover image was deleted successfully!"
+msgid "The room cover image was deleted successfully!"
 msgstr ""
 
 #: bp-core/classes/class-bp-attachment.php:160
@@ -3271,8 +3271,8 @@ msgstr ""
 
 #: bp-core/classes/class-bp-core-user.php:191
 #: bp-groups/classes/class-bp-groups-invite-template.php:244
-msgid "%d group"
-msgid_plural "%d groups"
+msgid "%d room"
+msgid_plural "%d rooms"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -3315,12 +3315,12 @@ msgid "Yahoo Messenger"
 msgstr ""
 
 #: bp-core/deprecated/1.5.php:358
-msgid "%1$s mentioned you in the group \"%2$s\""
+msgid "%1$s mentioned you in the room \"%2$s\""
 msgstr ""
 
 #: bp-core/deprecated/1.5.php:360
 msgid ""
-"%1$s mentioned you in the group \"%2$s\":\n"
+"%1$s mentioned you in the room \"%2$s\":\n"
 "\n"
 "\"%3$s\"\n"
 "\n"
@@ -3389,7 +3389,7 @@ msgid "Random Member"
 msgstr ""
 
 #: bp-core/deprecated/2.1.php:298
-msgid "Random Group"
+msgid "Random Room"
 msgstr ""
 
 #: bp-core/deprecated/2.1.php:304
@@ -3431,7 +3431,7 @@ msgstr ""
 #: bp-core/deprecated/2.1.php:391 bp-groups/bp-groups-admin.php:1024
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/delete-group.php:11
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/delete-group.php:38
-msgid "Delete Group"
+msgid "Delete Room"
 msgstr ""
 
 #: bp-core/deprecated/2.1.php:442
@@ -3522,7 +3522,7 @@ msgid "The topic was created successfully"
 msgstr ""
 
 #: bp-forums/bp-forums-screens.php:76 bp-forums/bp-forums-screens.php:81
-msgid "Please pick the group forum where you would like to post this topic."
+msgid "Please pick the room forum where you would like to post this topic."
 msgstr ""
 
 #: bp-forums/bp-forums-screens.php:301 bp-groups/bp-groups-template.php:3429
@@ -3613,12 +3613,12 @@ msgid "(Installed)"
 msgstr ""
 
 #: bp-forums/deprecated/1.6.php:65 bp-forums/deprecated/1.6.php:215
-msgid "Forums for Groups"
+msgid "Forums for Rooms"
 msgstr ""
 
 #: bp-forums/deprecated/1.6.php:67 bp-forums/deprecated/1.6.php:217
 msgid ""
-"Give each individual group its own discussion forum. Choose this if you'd "
+"Give each individual room its own discussion forum. Choose this if you'd "
 "like to keep your members' conversations separated into distinct areas."
 msgstr ""
 
@@ -3649,7 +3649,7 @@ msgid "@ Mention Integration"
 msgstr ""
 
 #: bp-forums/deprecated/1.6.php:80
-msgid "Uninstall Group Forums"
+msgid "Uninstall Room Forums"
 msgstr ""
 
 #: bp-forums/deprecated/1.6.php:85 bp-forums/deprecated/1.6.php:236
@@ -3698,7 +3698,7 @@ msgstr ""
 
 #: bp-forums/deprecated/1.6.php:100 bp-forums/deprecated/1.6.php:251
 msgid ""
-"If you decide to use bbPress, you will need to deactivate the legacy group "
+"If you decide to use bbPress, you will need to deactivate the legacy room "
 "forum component.  For more info, <a href=\"%s\">read this codex article</a>."
 msgstr ""
 
@@ -3773,7 +3773,7 @@ msgid ""
 msgstr ""
 
 #: bp-forums/deprecated/1.6.php:230
-msgid "Install Group Forums"
+msgid "Install Room Forums"
 msgstr ""
 
 #: bp-forums/deprecated/1.6.php:231
@@ -3999,24 +3999,24 @@ msgid "Friends %s"
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:54
-msgid "You do not have access to this group."
+msgid "You do not have access to this room."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:65
-msgid "You are not an admin of this group."
+msgid "You are not an admin of this room."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:125
-msgid "Sorry, you are not allowed to create groups."
+msgid "Sorry, you are not allowed to create rooms."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:150 bp-groups/bp-groups-actions.php:184
 #: bp-groups/bp-groups-actions.php:208
-msgid "There was an error saving group details. Please try again."
+msgid "There was an error saving room details. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:164
-msgid "Only the group creator may continue editing this group."
+msgid "Only the room creator may continue editing this room."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:177
@@ -4033,44 +4033,44 @@ msgstr ""
 
 #: bp-groups/bp-groups-actions.php:375
 msgid ""
-"There was an error saving the group profile photo, please try uploading "
+"There was an error saving the room profile photo, please try uploading "
 "again."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:428 bp-groups/bp-groups-actions.php:435
-msgid "There was an error joining the group."
+msgid "There was an error joining the room."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:437
-msgid "You joined the group!"
+msgid "You joined the room!"
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:484 bp-groups/bp-groups-screens.php:1181
-msgid "This group must have at least one admin"
+msgid "This room must have at least one admin"
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:486
-msgid "There was an error leaving the group."
+msgid "There was an error leaving the room."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:488 bp-groups/bp-groups-functions.php:524
-msgid "You successfully left the group."
+msgid "You successfully left the room."
 msgstr ""
 
 #: bp-groups/bp-groups-actions.php:588
-msgid "Activity feed for the group, %s."
+msgid "Activity feed for the room, %s."
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:33
-msgid "Created a group"
+msgid "Created a room"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:35
-msgid "New Groups"
+msgid "New Rooms"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:42
-msgid "Joined a group"
+msgid "Joined a room"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:44
@@ -4086,7 +4086,7 @@ msgid "Group Updates"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:64
-msgid "New group forum topic"
+msgid "New room forum topic"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:66
@@ -4094,7 +4094,7 @@ msgid "Forum Topics"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:73
-msgid "New group forum post"
+msgid "New room forum post"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:75
@@ -4102,37 +4102,37 @@ msgid "Forum Replies"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:104
-msgid "%1$s created the group %2$s"
+msgid "%1$s created the room %2$s"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:132 bp-groups/bp-groups-activity.php:438
-msgid "%1$s joined the group %2$s"
+msgid "%1$s joined the room %2$s"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:179
-msgid "%1$s updated details for the group %2$s"
+msgid "%1$s updated details for the room %2$s"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:183
-msgid "%1$s changed the name and description of the group %2$s"
+msgid "%1$s changed the name and description of the room %2$s"
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:187
-msgid "%1$s changed the name of the group %2$s from \"%3$s\" to \"%4$s\""
+msgid "%1$s changed the name of the room %2$s from \"%3$s\" to \"%4$s\""
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:191
-msgid "%1$s changed the description of the group %2$s from \"%3$s\" to \"%4$s\""
+msgid "%1$s changed the description of the room %2$s from \"%3$s\" to \"%4$s\""
 msgstr ""
 
 #: bp-groups/bp-groups-activity.php:194
-msgid "%1$s changed the permalink of the group %2$s."
+msgid "%1$s changed the permalink of the room %2$s."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:117
 msgid ""
 "This page is a convenient way to edit the details associated with one of "
-"your groups."
+"your rooms."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:118
@@ -4149,9 +4149,9 @@ msgstr ""
 
 #: bp-groups/bp-groups-admin.php:170
 msgid ""
-"You can manage groups much like you can manage comments and other content. "
+"You can manage rooms much like you can manage comments and other content. "
 "This screen is customizable in the same ways as other management screens, "
-"and you can act on groups by using the on-hover action links or the Bulk "
+"and you can act on rooms by using the on-hover action links or the Bulk "
 "Actions."
 msgstr ""
 
@@ -4161,23 +4161,23 @@ msgstr ""
 
 #: bp-groups/bp-groups-admin.php:177
 msgid ""
-"Clicking \"Visit\" will take you to the group&#8217;s public page. Use this "
-"link to see what the group looks like on the front end of your site."
+"Clicking \"Visit\" will take you to the room&#8217;s public page. Use this "
+"link to see what the room looks like on the front end of your site."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:178
 msgid ""
 "Clicking \"Edit\" will take you to a Dashboard panel where you can manage "
-"various details about the group, such as its name and description, its "
+"various details about the room, such as its name and description, its "
 "members, and other settings."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:179
 msgid ""
-"If you click \"Delete\" under a specific group, or select a number of "
+"If you click \"Delete\" under a specific room, or select a number of "
 "groups and then choose Delete from the Bulk Actions menu, you will be led "
 "to a page where you&#8217;ll be asked to confirm the permanent deletion of "
-"the group(s)."
+"the room(s)."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:192
@@ -4192,11 +4192,11 @@ msgstr ""
 #: bp-groups/bp-groups-admin.php:203
 msgid ""
 "If you leave this page, you will lose any unsaved changes you have made to "
-"the group."
+"the room."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:527
-msgid "You cannot remove all administrators from a group."
+msgid "You cannot remove all administrators from a room."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:532
@@ -4204,19 +4204,19 @@ msgid "Group name, slug, and description are all required fields."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:534
-msgid "An error occurred when trying to update your group details."
+msgid "An error occurred when trying to update your room details."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:538
-msgid "The group has been updated successfully."
+msgid "The room has been updated successfully."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:542
-msgid "The following users could not be added to the group: %s"
+msgid "The following users could not be added to the room: %s"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:546
-msgid "The following users were successfully added to the group: %s"
+msgid "The following users were successfully added to the room: %s"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:551
@@ -4228,7 +4228,7 @@ msgid "The following members were successfully modified: %s"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:583 bp-groups/bp-groups-adminbar.php:45
-msgid "Edit Group"
+msgid "Edit Room"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:586 bp-groups/bp-groups-admin.php:759
@@ -4249,7 +4249,7 @@ msgid "Permalink:"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:617
-msgid "Visit Group"
+msgid "Visit Room"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:622
@@ -4258,15 +4258,15 @@ msgid "Group Description"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:651
-msgid "No group found with this ID."
+msgid "No room found with this ID."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:698
-msgid "Delete Groups"
+msgid "Delete Rooms"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:699
-msgid "You are about to delete the following groups:"
+msgid "You are about to delete the following rooms:"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:707
@@ -4275,8 +4275,8 @@ msgid "This action cannot be undone."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:736
-msgid "%s group has been permanently deleted."
-msgid_plural "%s groups have been permanently deleted."
+msgid "%s room has been permanently deleted."
+msgid_plural "%s rooms have been permanently deleted."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -4287,7 +4287,7 @@ msgid "Groups"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:776
-msgid "Search all Groups"
+msgid "Search all Rooms"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:799
@@ -4316,13 +4316,13 @@ msgid "Hidden"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:815
-msgid "Who can invite others to this group?"
+msgid "Who can invite others to this room?"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:817
 #: bp-templates/bp-legacy/buddypress/groups/create.php:182
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:104
-msgid "All group members"
+msgid "All room members"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:818
@@ -4371,7 +4371,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-admin.php:943
 #. translators: accessibility text
-msgid "Select group role for member"
+msgid "Select room role for member"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:946
@@ -4428,7 +4428,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-admin.php:1058
 #. translators: accessibility text
-msgid "Select group type"
+msgid "Select room type"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:1068
@@ -4454,7 +4454,7 @@ msgid "%1$s (%2$s)"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:1335
-msgid "There was an error while changing group type. Please try again."
+msgid "There was an error while changing room type. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:1338
@@ -4462,15 +4462,15 @@ msgid "Group type was changed successfully."
 msgstr ""
 
 #: bp-groups/bp-groups-forums.php:148 bp-groups/bp-groups-forums.php:444
-msgid "%1$s replied to the forum topic %2$s in the group %3$s"
+msgid "%1$s replied to the forum topic %2$s in the room %3$s"
 msgstr ""
 
 #: bp-groups/bp-groups-forums.php:275
-msgid "%1$s started the forum topic %2$s in the group %3$s"
+msgid "%1$s started the forum topic %2$s in the room %3$s"
 msgstr ""
 
 #: bp-groups/bp-groups-forums.php:373
-msgid "%1$s edited the forum topic %2$s in the group %3$s"
+msgid "%1$s edited the forum topic %2$s in the room %3$s"
 msgstr ""
 
 #: bp-groups/bp-groups-functions.php:170
@@ -4479,11 +4479,11 @@ msgid "Group Admin"
 msgstr ""
 
 #: bp-groups/bp-groups-functions.php:515
-msgid "As the only admin, you cannot leave the group."
+msgid "As the only admin, you cannot leave the room."
 msgstr ""
 
 #: bp-groups/bp-groups-functions.php:1287
-msgid "%1$s posted an update in the group %2$s"
+msgid "%1$s posted an update in the room %2$s"
 msgstr ""
 
 #: bp-groups/bp-groups-functions.php:2242
@@ -4491,7 +4491,7 @@ msgid "Group type already exists."
 msgstr ""
 
 #: bp-groups/bp-groups-functions.php:2269
-msgid "You may not register a group type with this name."
+msgid "You may not register a room type with this name."
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:244
@@ -4503,51 +4503,51 @@ msgid "a moderator"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:375
-msgid "%1$d new membership requests for the group \"%2$s\""
+msgid "%1$d new membership requests for the room \"%2$s\""
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:421
-msgid "%s requests group membership"
+msgid "%s requests room membership"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:476
-msgid "%d accepted group membership requests"
+msgid "%d accepted room membership requests"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:515
-msgid "Membership for group \"%s\" accepted"
+msgid "Membership for room \"%s\" accepted"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:565
-msgid "%d rejected group membership requests"
+msgid "%d rejected room membership requests"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:604
-msgid "Membership for group \"%s\" rejected"
+msgid "Membership for room \"%s\" rejected"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:653
-msgid "You were promoted to an admin in %d groups"
+msgid "You were promoted to an admin in %d rooms"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:688
-msgid "You were promoted to an admin in the group \"%s\""
+msgid "You were promoted to an admin in the room \"%s\""
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:735
-msgid "You were promoted to a mod in %d groups"
+msgid "You were promoted to a mod in %d rooms"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:770
-msgid "You were promoted to a mod in the group \"%s\""
+msgid "You were promoted to a mod in the room \"%s\""
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:818
-msgid "You have %d new group invitations"
+msgid "You have %d new room invitations"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:852
-msgid "You have an invitation to the group: %s"
+msgid "You have an invitation to the room: %s"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:83
@@ -4643,11 +4643,11 @@ msgid "The post was edited successfully"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:492 bp-groups/bp-groups-screens.php:518
-msgid "You have been banned from this group."
+msgid "You have been banned from this room."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:532
-msgid "This group does not have a forum setup yet."
+msgid "This room does not have a forum setup yet."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:631
@@ -4659,7 +4659,7 @@ msgid "You are not allowed to send or remove invites"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:690
-msgid "The member requested to join the group"
+msgid "The member requested to join the room"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:720
@@ -4667,17 +4667,17 @@ msgid "Group invite accepted"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:722
-msgid "There was an error accepting the group invitation. Please try again."
+msgid "There was an error accepting the room invitation. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:734
-msgid "There was an error sending your group membership request. Please try again."
+msgid "There was an error sending your room membership request. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:736
 msgid ""
-"Your membership request was sent to the group administrator successfully. "
-"You will be notified when the group administrator responds to your request."
+"Your membership request was sent to the room administrator successfully. "
+"You will be notified when the room administrator responds to your request."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:844
@@ -4685,7 +4685,7 @@ msgid "Groups must have a name and a description. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:852
-msgid "There was an error updating group details. Please try again."
+msgid "There was an error updating room details. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:854
@@ -4693,7 +4693,7 @@ msgid "Group details were successfully updated."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:950
-msgid "There was an error updating group settings. Please try again."
+msgid "There was an error updating room settings. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:952
@@ -4701,7 +4701,7 @@ msgid "Group settings were successfully updated."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1067
-msgid "The new group profile photo was uploaded successfully."
+msgid "The new room profile photo was uploaded successfully."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1152
@@ -4737,7 +4737,7 @@ msgid "User ban removed successfully"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1263
-msgid "There was an error removing that user from the group. Please try again."
+msgid "There was an error removing that user from the room. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1265
@@ -4761,11 +4761,11 @@ msgid "Group membership request rejected"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1411
-msgid "There was an error deleting the group. Please try again."
+msgid "There was an error deleting the room. Please try again."
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1413
-msgid "The group was deleted successfully."
+msgid "The room was deleted successfully."
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:235
@@ -4773,15 +4773,15 @@ msgid "Group Types:"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:686
-msgid "Public Group"
+msgid "Public Room"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:688
-msgid "Hidden Group"
+msgid "Hidden Room"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:690
-msgid "Private Group"
+msgid "Private Room"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:692
@@ -4805,16 +4805,16 @@ msgid "No Mods"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:1816
-msgid "Filter Groups"
+msgid "Filter Rooms"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:1916
-msgid "Viewing 1 group"
+msgid "Viewing 1 room"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:1918
-msgid "Viewing %1$s - %2$s of %3$s group"
-msgid_plural "Viewing %1$s - %2$s of %3$s groups"
+msgid "Viewing %1$s - %2$s of %3$s room"
+msgid_plural "Viewing %1$s - %2$s of %3$s rooms"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -4848,7 +4848,7 @@ msgid "joined %s"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:2477
-msgid "This group has no administrators"
+msgid "This room has no administrators"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:2516
@@ -4858,24 +4858,24 @@ msgid "Promote to Admin"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:2550
-msgid "This group has no moderators"
+msgid "This room has no moderators"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:2911
 msgid ""
-"This action should not be used directly. Please use the BuddyPress Group "
+"This action should not be used directly. Please use the BuddyPress Room "
 "Extension API to generate Manage tabs."
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3498
 #: bp-templates/bp-legacy/buddypress-functions.php:1501
 #: bp-templates/bp-legacy/buddypress-functions.php:1514
-msgid "Leave Group"
+msgid "Leave Room"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3519
 #: bp-templates/bp-legacy/buddypress-functions.php:1535
-msgid "Join Group"
+msgid "Join Room"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3537
@@ -4893,7 +4893,7 @@ msgid "Request Membership"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3712
-msgid "This group is not currently accessible."
+msgid "This room is not currently accessible."
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3723
@@ -4904,24 +4904,24 @@ msgstr ""
 
 #: bp-groups/bp-groups-template.php:3725
 msgid ""
-"This is a private group and you must request group membership in order to "
+"This is a private room and you must request room membership in order to "
 "join."
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3728
 msgid ""
-"This is a private group. To join you must be a registered site member and "
-"request group membership."
+"This is a private room. To join you must be a registered site member and "
+"request room membership."
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3731
 msgid ""
-"This is a private group. Your membership request is awaiting approval from "
-"the group administrator."
+"This is a private room. Your membership request is awaiting approval from "
+"the room administrator."
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:3739
-msgid "This is a hidden group and only invited members can join."
+msgid "This is a hidden room and only invited members can join."
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:4410 bp-members/bp-members-template.php:502
@@ -4992,7 +4992,7 @@ msgid "Moderator Of"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:5368
-msgid "Viewing groups of the type: %s"
+msgid "Viewing rooms of the type: %s"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:5452
@@ -5028,8 +5028,8 @@ msgid "Group Activity RSS Feed"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:6360
-msgid "%s group"
-msgid_plural "%s groups"
+msgid "%s room"
+msgid_plural "%s rooms"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -5039,7 +5039,7 @@ msgid "created %s"
 msgstr ""
 
 #: bp-groups/bp-groups-widgets.php:84
-msgid "No groups matched the current filter."
+msgid "No rooms matched the current filter."
 msgstr ""
 
 #: bp-groups/classes/class-bp-group-extension.php:858
@@ -5075,11 +5075,11 @@ msgid "Requests"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:834
-msgid "No Group Profile Photo"
+msgid "No Room Profile Photo"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:227
-msgid "No groups found."
+msgid "No rooms found."
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:240
@@ -5089,7 +5089,7 @@ msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:330
 #. translators: accessibility text
-msgid "Filter groups list"
+msgid "Filter rooms list"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:335
@@ -5112,16 +5112,16 @@ msgstr[1] ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:470
 #. translators: accessibility text
-msgid "Select group %1$d"
+msgid "Select room %1$d"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:773
 #: bp-groups/classes/class-bp-groups-list-table.php:775
-msgid "Change group type to&hellip;"
+msgid "Change room type to&hellip;"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:783
-msgid "No Group Type"
+msgid "No Room Type"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:788
@@ -5135,23 +5135,23 @@ msgid "Group Mod"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-widget.php:27
-msgid "A dynamic list of recently active, popular, newest, or alphabetical groups"
+msgid "A dynamic list of recently active, popular, newest, or alphabetical rooms"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-widget.php:163
-msgid "There are no groups to display."
+msgid "There are no rooms to display."
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-widget.php:219
-msgid "Link widget title to Groups directory"
+msgid "Link widget title to Rooms directory"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-widget.php:221
-msgid "Max groups to show:"
+msgid "Max rooms to show:"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-widget.php:224
-msgid "Default groups to show:"
+msgid "Default rooms to show:"
 msgstr ""
 
 #: bp-loader.php:62
@@ -6403,7 +6403,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/activity/index.php:94
 #: bp-templates/bp-legacy/buddypress/groups/index.php:64
-msgid "My Groups %s"
+msgid "My Rooms %s"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/activity/index.php:111
@@ -6500,13 +6500,13 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/avatars/index.php:40
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-avatar.php:29
 msgid ""
-"If you'd like to remove the existing group profile photo but not upload a "
-"new one, please use the delete group profile photo button."
+"If you'd like to remove the existing room profile photo but not upload a "
+"new one, please use the delete room profile photo button."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/avatars/index.php:41
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-avatar.php:31
-msgid "Delete Group Profile Photo"
+msgid "Delete Room Profile Photo"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/cover-images/index.php:26
@@ -6521,12 +6521,12 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/cover-images/index.php:29
 msgid ""
-"If you'd like to remove the existing group cover image but not upload a new "
-"one, please use the delete group cover image button."
+"If you'd like to remove the existing room cover image but not upload a new "
+"one, please use the delete room cover image button."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/cover-images/index.php:30
-msgid "Delete Group Cover Image"
+msgid "Delete Room Cover Image"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/uploader.php:16
@@ -6657,7 +6657,7 @@ msgid "Tags (comma separated):"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/forums/index.php:188
-msgid "Post In Group Forum:"
+msgid "Post In Room Forum:"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/forums/index.php:215
@@ -6667,11 +6667,11 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/forums/index.php:227
 msgid ""
-"You are not a member of any groups so you don't have any group forums you "
-"can post in. To start posting, first find a group that matches the topic "
-"subject you'd like to start. If this group does not exist, why not <a "
-"href='%s'>create a new group</a>? Once you have joined or created the group "
-"you can post your topic in that group's forum."
+"You are not a member of any rooms so you don't have any room forums you "
+"can post in. To start posting, first find a room that matches the topic "
+"subject you'd like to start. If this room does not exist, why not <a "
+"href='%s'>create a new room</a>? Once you have joined or created the room "
+"you can post your topic in that room's forum."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:61
@@ -6696,19 +6696,19 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:120
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:42
-msgid "This is a public group"
+msgid "This is a public room"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:123
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:45
-msgid "Any site member can join this group."
+msgid "Any site member can join this room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:124
 #: bp-templates/bp-legacy/buddypress/groups/create.php:132
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:46
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:54
-msgid "This group will be listed in the groups directory and in search results."
+msgid "This room will be listed in the rooms directory and in search results."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:125
@@ -6718,34 +6718,34 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:128
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:50
-msgid "This is a private group"
+msgid "This is a private room"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:131
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:53
-msgid "Only users who request membership and are accepted can join the group."
+msgid "Only users who request membership and are accepted can join the room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:133
 #: bp-templates/bp-legacy/buddypress/groups/create.php:141
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:55
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:63
-msgid "Group content and activity will only be visible to members of the group."
+msgid "Group content and activity will only be visible to members of the room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:136
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:58
-msgid "This is a hidden group"
+msgid "This is a hidden room"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:139
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:61
-msgid "Only users who are invited can join the group."
+msgid "Only users who are invited can join the room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:140
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:62
-msgid "This group will not be listed in the groups directory or search results."
+msgid "This room will not be listed in the rooms directory or search results."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:152
@@ -6755,12 +6755,12 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:154
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:76
-msgid "Select the types this group should be a part of."
+msgid "Select the types this room should be a part of."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:162
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:84
-#. translators: Group type description shown when creating a group.
+#. translators: Room type description shown when creating a room.
 msgid "&ndash; %s"
 msgstr ""
 
@@ -6771,16 +6771,16 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:178
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:100
-msgid "Which members of this group are allowed to invite others?"
+msgid "Which members of this room are allowed to invite others?"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:198
-msgid "Should this group have a forum?"
+msgid "Should this room have a forum?"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:205
 msgid ""
-"<strong>Attention Site Admin:</strong> Group forums require the <a "
+"<strong>Attention Site Admin:</strong> Room forums require the <a "
 "href=\"%s\">correct setup and configuration</a> of a bbPress installation."
 msgstr ""
 
@@ -6793,8 +6793,8 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/create.php:250
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-avatar.php:15
 msgid ""
-"Upload an image to use as a profile photo for this group. The image will be "
-"shown on the main group page, and in search results."
+"Upload an image to use as a profile photo for this room. The image will be "
+"shown on the main room page, and in search results."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:255
@@ -6812,12 +6812,12 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:262
 msgid ""
-"To skip the group profile photo upload process, hit the \"Next Step\" "
+"To skip the room profile photo upload process, hit the \"Next Step\" "
 "button."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:277
-msgid "Crop Group Profile Photo"
+msgid "Crop Room Profile Photo"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:279
@@ -6834,7 +6834,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:328
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-cover-image.php:22
-msgid "The Cover Image will be used to customize the header of your group."
+msgid "The Cover Image will be used to customize the header of your room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:350
@@ -6855,7 +6855,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/create.php:414
 msgid ""
 "Once you have built up friend connections you will be able to invite others "
-"to your group."
+"to your room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:459
@@ -6867,7 +6867,7 @@ msgid "Next Step"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:473
-msgid "Create Group and Continue"
+msgid "Create Room and Continue"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:480
@@ -6875,7 +6875,7 @@ msgid "Finish"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/groups-loop.php:135
-msgid "There were no groups found."
+msgid "There were no rooms found."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/index.php:59
@@ -6883,7 +6883,7 @@ msgid "Groups directory main navigation"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/index.php:61
-msgid "All Groups %s"
+msgid "All Rooms %s"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/index.php:79
@@ -6907,20 +6907,20 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/delete-group.php:23
 msgid ""
-"WARNING: Deleting this group will completely remove ALL content associated "
+"WARNING: Deleting this room will completely remove ALL content associated "
 "with it. There is no way back, please be careful with this option."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/delete-group.php:26
-msgid "I understand the consequences of deleting this group."
+msgid "I understand the consequences of deleting this room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/edit-details.php:11
-msgid "Manage Group Details"
+msgid "Manage Room Details"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/edit-details.php:39
-msgid "Notify group members of these changes via email"
+msgid "Notify room members of these changes via email"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-avatar.php:49
@@ -6928,15 +6928,15 @@ msgid "Crop Profile Photo"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:11
-msgid "Manage Group Settings"
+msgid "Manage Room Settings"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:111
-msgid "No group administrators were found."
+msgid "No room administrators were found."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:206
-msgid "No group moderators were found."
+msgid "No room moderators were found."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:247
@@ -6956,11 +6956,11 @@ msgid "Promote to Mod"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:280
-msgid "Remove from group"
+msgid "Remove from room"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:317
-msgid "No group members were found."
+msgid "No room members were found."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/membership-requests.php:11
@@ -7017,7 +7017,7 @@ msgid "There are no posts for this topic."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/forum/topic.php:175
-msgid "You will auto join this group when you reply to this topic."
+msgid "You will auto join this room when you reply to this topic."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/forum/topic.php:187
@@ -7033,7 +7033,7 @@ msgid "This topic is closed, replies are no longer accepted."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/forum.php:100
-msgid "You will auto join this group when you start a new topic."
+msgid "You will auto join this room when you start a new topic."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/forum.php:104
@@ -7058,7 +7058,7 @@ msgid "Request form"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/request-membership.php:22
-msgid "You are requesting to become a member of the group '%s'."
+msgid "You are requesting to become a member of the room '%s'."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/request-membership.php:25
@@ -7100,11 +7100,11 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/single/send-invites.php:46
 msgid ""
 "Once you've made some friendships, you'll be able to invite those members "
-"to this group."
+"to this room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/send-invites.php:54
-msgid "All of your friends already belong to this group."
+msgid "All of your friends already belong to this room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/activate.php:44
@@ -7283,17 +7283,17 @@ msgid "Group invitations"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/groups/invites.php:71
-msgid "You have no outstanding group invites."
+msgid "You have no outstanding room invites."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/groups.php:60
 #. translators: accessibility text
-msgid "My groups"
+msgid "My rooms"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/groups.php:65
 #. translators: accessibility text
-msgid "Member's groups"
+msgid "Member's rooms"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/home.php:38
@@ -7487,11 +7487,11 @@ msgid "Your Cover Image will be used to customize the header of your profile."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/edit.php:26
-msgid "Editing '%s' Profile Group"
+msgid "Editing '%s' Profile Room"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/edit.php:29
-msgid "Profile field groups"
+msgid "Profile field rooms"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/members/single/profile/profile-wp.php:28
@@ -7577,7 +7577,7 @@ msgid "comments"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:296
-msgid "Are you sure you want to leave this group?"
+msgid "Are you sure you want to leave this room?"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:298
@@ -7617,8 +7617,8 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:1354
 msgid ""
-"%s has previously requested to join this group. Sending an invitation will "
-"automatically add the member to the group."
+"%s has previously requested to join this room. Sending an invitation will "
+"automatically add the member to the room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:1410
@@ -7642,7 +7642,7 @@ msgid "There was a problem rejecting that request. Please try again."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:1499
-msgid "Error joining group"
+msgid "Error joining room"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:1512
@@ -7651,7 +7651,7 @@ msgid "Error requesting membership"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:1533
-msgid "Error leaving group"
+msgid "Error leaving room"
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:1559
@@ -7689,7 +7689,7 @@ msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:139
 #: bp-xprofile/classes/class-bp-xprofile-group.php:721
-msgid "Add New Field Group"
+msgid "Add New Field Room"
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:171 bp-xprofile/bp-xprofile-admin.php:638
@@ -7703,23 +7703,23 @@ msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:232
 #. translators: accessibility text
-msgid "Fields for \"%s\" Group"
+msgid "Fields for \"%s\" Room"
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:258
-msgid "There are no fields in this group."
+msgid "There are no fields in this room."
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:266
-msgid "* Fields in this group appear on the signup page."
+msgid "* Fields in this room appear on the signup page."
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:320
-msgid "There was an error saving the group. Please try again."
+msgid "There was an error saving the room. Please try again."
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:325
-msgid "The group was saved successfully."
+msgid "The room was saved successfully."
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:439
@@ -8079,19 +8079,19 @@ msgid "Type"
 msgstr ""
 
 #: bp-xprofile/classes/class-bp-xprofile-group.php:589
-msgid "Please make sure you give the group a name."
+msgid "Please make sure you give the room a name."
 msgstr ""
 
 #: bp-xprofile/classes/class-bp-xprofile-group.php:727
-msgid "Edit Field Group"
+msgid "Edit Field Room"
 msgstr ""
 
 #: bp-xprofile/classes/class-bp-xprofile-group.php:750
-msgid "Field Group Name (required)"
+msgid "Field Room Name (required)"
 msgstr ""
 
 #: bp-xprofile/classes/class-bp-xprofile-group.php:755
-msgid "Field Group Description"
+msgid "Field Room Description"
 msgstr ""
 
 #: bp-xprofile/classes/class-bp-xprofile-user-admin.php:473
@@ -8314,7 +8314,7 @@ msgstr ""
 
 #: bp-groups/classes/class-bp-groups-widget.php:31
 msgctxt "widget name"
-msgid "(BuddyPress) Groups"
+msgid "(BuddyPress) Rooms"
 msgstr ""
 
 #: bp-members/classes/class-bp-core-members-widget.php:28
@@ -8427,7 +8427,7 @@ msgid "Activity"
 msgstr ""
 
 #: bp-core/bp-core-functions.php:739
-msgctxt "Page title for the Groups directory."
+msgctxt "Page title for the Rooms directory."
 msgid "Groups"
 msgstr ""
 
@@ -8855,12 +8855,12 @@ msgid "Friendships"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:32
-msgctxt "Admin Groups page title"
+msgctxt "Admin Rooms page title"
 msgid "Groups"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:33
-msgctxt "Admin Groups menu"
+msgctxt "Admin Rooms menu"
 msgid "Groups"
 msgstr ""
 
@@ -8895,22 +8895,22 @@ msgid "Groups"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:918
-msgctxt "Group member user_id in group admin"
+msgctxt "Group member user_id in room admin"
 msgid "ID"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:919
-msgctxt "Group member name in group admin"
+msgctxt "Group member name in room admin"
 msgid "Name"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:920
-msgctxt "Group member role in group admin"
+msgctxt "Group member role in room admin"
 msgid "Group Role"
 msgstr ""
 
 #: bp-groups/bp-groups-admin.php:1173
-msgctxt "Group members pagination in group admin"
+msgctxt "Group members pagination in room admin"
 msgid "Viewing %1$s - %2$s of %3$s member"
 msgid_plural "Viewing %1$s - %2$s of %3$s members"
 msgstr[0] ""
@@ -8918,12 +8918,12 @@ msgstr[1] ""
 
 #: bp-groups/bp-groups-adminbar.php:67
 msgctxt "Group WP Admin Bar manage links"
-msgid "Edit Group %s"
+msgid "Edit Room %s"
 msgstr ""
 
 #: bp-groups/bp-groups-adminbar.php:71
 msgctxt "Group WP Admin Bar delete link"
-msgid "%s Group"
+msgid "%s Room"
 msgstr ""
 
 #: bp-groups/bp-groups-notifications.php:34
@@ -8948,7 +8948,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1487
 msgctxt "group settings on notification settings page"
-msgid "A member invites you to join a group"
+msgid "A member invites you to join a room"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1499
@@ -8958,17 +8958,17 @@ msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1511
 msgctxt "group settings on notification settings page"
-msgid "You are promoted to a group administrator or moderator"
+msgid "You are promoted to a room administrator or moderator"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1523
 msgctxt "group settings on notification settings page"
-msgid "A member requests to join a private group for which you are an admin"
+msgid "A member requests to join a private room for which you are an admin"
 msgstr ""
 
 #: bp-groups/bp-groups-screens.php:1535
 msgctxt "group settings on notification settings page"
-msgid "Your request to join a group has been approved or denied"
+msgid "Your request to join a room has been approved or denied"
 msgstr ""
 
 #: bp-groups/bp-groups-template.php:94
@@ -8978,12 +8978,12 @@ msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:105
 msgctxt "Group screen page <title>"
-msgid "User Groups"
+msgid "User Rooms"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:189
 msgctxt "Component directory search"
-msgid "Search Groups..."
+msgid "Search Rooms..."
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:319
@@ -9017,7 +9017,7 @@ msgid "Request Membership"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:461
-#. translators: %s: Group count for the current user
+#. translators: %s: Room count for the current user
 msgctxt "Group screen nav with counter"
 msgid "Groups %s"
 msgstr ""
@@ -9033,74 +9033,74 @@ msgid "Home"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:567
-msgctxt "My Group screen nav"
+msgctxt "My Room screen nav"
 msgid "Forum"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:584
-msgctxt "My Group screen nav"
+msgctxt "My Room screen nav"
 msgid "Activity"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:600
-msgctxt "My Group screen nav"
+msgctxt "My Room screen nav"
 msgid "Members %s"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:614
-msgctxt "My Group screen nav"
+msgctxt "My Room screen nav"
 msgid "Send Invites"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:629
-msgctxt "My Group screen nav"
+msgctxt "My Room screen nav"
 msgid "Manage"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:742
-msgctxt "My Account Groups"
+msgctxt "My Account Rooms"
 msgid "Groups"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:743
-msgctxt "My Account Groups sub nav"
+msgctxt "My Account Rooms sub nav"
 msgid "No Pending Invites"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:754
-#. translators: %s: Group invitation count for the current user
-msgctxt "My Account Groups sub nav"
+#. translators: %s: Room invitation count for the current user
+msgctxt "My Account Rooms sub nav"
 msgid "Pending Invites %s"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:771
-msgctxt "My Account Groups sub nav"
+msgctxt "My Account Rooms sub nav"
 msgid "Memberships"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:790
-msgctxt "My Account Groups sub nav"
-msgid "Create a Group"
+msgctxt "My Account Rooms sub nav"
+msgid "Create a Room"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:748
-#. translators: %s: Group invitation count for the current user
-msgctxt "My Account Groups nav"
+#. translators: %s: Room invitation count for the current user
+msgctxt "My Account Rooms nav"
 msgid "Groups %s"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:811
-msgctxt "My Groups page <title>"
+msgctxt "My Rooms page <title>"
 msgid "Memberships"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:395
-msgctxt "Groups admin Group Name column header"
+msgctxt "Groups admin Room Name column header"
 msgid "Name"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:396
-msgctxt "Groups admin Group Description column header"
+msgctxt "Groups admin Room Description column header"
 msgid "Description"
 msgstr ""
 
@@ -9120,7 +9120,7 @@ msgid "Last Active"
 msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:699
-msgctxt "Label for the WP groups table group type column"
+msgctxt "Label for the WP rooms table room type column"
 msgid "Group Type"
 msgstr ""
 
@@ -9414,33 +9414,33 @@ msgid "Profile Fields"
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:194
-msgctxt "Edit Profile Fields Group"
-msgid "Edit Group"
+msgctxt "Edit Profile Fields Room"
+msgid "Edit Room"
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:199
-msgctxt "Delete Profile Fields Group"
-msgid "Delete Group"
+msgctxt "Delete Profile Fields Room"
+msgid "Delete Room"
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:274
-msgctxt "You have no profile fields groups."
-msgid "You have no groups."
+msgctxt "You have no profile fields rooms."
+msgid "You have no rooms."
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:275
-msgctxt "Add New Profile Fields Group"
-msgid "Add New Group"
+msgctxt "Add New Profile Fields Room"
+msgid "Add New Room"
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:368
-msgctxt "Error when deleting profile fields group"
-msgid "There was an error deleting the group. Please try again."
+msgctxt "Error when deleting profile fields room"
+msgid "There was an error deleting the room. Please try again."
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:371
-msgctxt "Profile fields group was deleted successfully"
-msgid "The group was deleted successfully."
+msgctxt "Profile fields room was deleted successfully"
+msgid "The room was deleted successfully."
 msgstr ""
 
 #: bp-xprofile/bp-xprofile-admin.php:684

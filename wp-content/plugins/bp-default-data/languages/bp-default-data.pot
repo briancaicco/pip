@@ -1,0 +1,167 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-28 20:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: bp-default-data.php:38
+msgid "Import Data"
+msgstr ""
+
+#. Name of the plugin
+#: bp-default-data.php:69 bp-default-data.php:98
+msgid "BuddyPress Default Data"
+msgstr ""
+
+#: bp-default-data.php:70
+msgid "BP Default Data"
+msgstr ""
+
+#: bp-default-data.php:103
+msgid "Everything was deleted"
+msgstr ""
+
+#: bp-default-data.php:118
+#, php-format
+msgid "%s new users"
+msgstr ""
+
+#: bp-default-data.php:124
+#, php-format
+msgid "%s profile entries"
+msgstr ""
+
+#: bp-default-data.php:130
+#, php-format
+msgid "%s friends connections"
+msgstr ""
+
+#: bp-default-data.php:136
+#, php-format
+msgid "%s private messages"
+msgstr ""
+
+#: bp-default-data.php:142
+#, php-format
+msgid "%s personal activity items"
+msgstr ""
+
+#: bp-default-data.php:149
+#, php-format
+msgid "%s new groups"
+msgstr ""
+
+#: bp-default-data.php:154
+#, php-format
+msgid "%s groups members (1 user can be in several groups)"
+msgstr ""
+
+#: bp-default-data.php:166
+#, php-format
+msgid "%s groups activity items"
+msgstr ""
+
+#: bp-default-data.php:174
+msgid "Data was successfully imported"
+msgstr ""
+
+#: bp-default-data.php:212
+msgid ""
+"Are you sure you want to delete all *imported* content - users, groups, "
+"messages, activities, forum topics etc? Content, that was created by you and "
+"others, and not by this plugin, will not be deleted."
+msgstr ""
+
+#: bp-default-data.php:221
+msgid ""
+"Please do not mess importing users and their data with groups on a slow "
+"server (or shared hosting). Importing is rather heavy process, so please "
+"finish with members first and then work with groups."
+msgstr ""
+
+#: bp-default-data.php:223
+msgid "What do you want to import?"
+msgstr ""
+
+#: bp-default-data.php:229
+msgid "Users"
+msgstr ""
+
+#: bp-default-data.php:238
+msgid "Profile data (profile groups and fields with values)"
+msgstr ""
+
+#: bp-default-data.php:248
+msgid "Friends connections"
+msgstr ""
+
+#: bp-default-data.php:258 bp-default-data.php:297
+msgid "Activity posts"
+msgstr ""
+
+#: bp-default-data.php:268
+msgid "Private messages"
+msgstr ""
+
+#: bp-default-data.php:281
+msgid "Groups"
+msgstr ""
+
+#: bp-default-data.php:288
+msgid "Members"
+msgstr ""
+
+#: bp-default-data.php:307
+msgid "Forum topics and posts"
+msgstr ""
+
+#: bp-default-data.php:313
+msgid ""
+"You can't import anything forums-related, because Forum Component is not "
+"installed correctly. Please recheck your settings."
+msgstr ""
+
+#: bp-default-data.php:326
+msgid "Import Selected Data"
+msgstr ""
+
+#: bp-default-data.php:328
+msgid "Clear BuddyPress Data"
+msgstr ""
+
+#: bp-default-data.php:332
+msgid "Important Information"
+msgstr ""
+
+#: bp-default-data.php:333
+msgid "All imported users have the same password: <code>1234567890</code>"
+msgstr ""
+
+#: bp-default-data.php:334
+msgid "xProfile data importing doesn't produce activity records."
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Create lots of users, groups, activity items, messages, profile data - "
+"useful for BuddyPress testing purpose."
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://ovirium.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "slaFFik"
+msgstr ""

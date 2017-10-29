@@ -58,4 +58,3 @@ function pip_remove_bp_core_render_message() {
 }
 add_action( 'bp_actions', 'pip_remove_bp_core_render_message', 6 );
 
-?>

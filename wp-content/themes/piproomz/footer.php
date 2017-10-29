@@ -10,31 +10,36 @@
 $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-<footer>
+<section class="footer py-4 mt-5 bg-dark">
 <!-- ******************* The Footer Area ******************* -->
 <?php get_sidebar( 'footerfull' ); ?>
 
-	<div class="<?php echo esc_attr( $container ); ?> footer">
+	<div class="<?php echo esc_attr( $container ); ?>">
 
 		<div class="row">
 
-			<div class="col-md-12">
-
-				<footer class="site-footer" id="colophon">
-
-					<div class="site-info">
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
+			<div class="col-md-3">
+        <a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
 			</div><!--col end -->
+      <div class="col-md-3">
+        <nav class="nav flex-column">
+          <a class="nav-link active" href="/privacy-policy">Privacy Policy</a>
+          <a class="nav-link" href="/terms-of-use">Terms of Use</a>
+          <a class="nav-link" href="/risk-warning">Risk Warning</a>
+        </nav>
+      </div><!--col end -->
+      <div class="col-md-3">
+
+      </div><!--col end -->
+      <div class="col-md-3">
+
+      </div><!--col end -->
 
 		</div><!-- row end -->
 
 	</div><!-- container end -->
 
-</footer>
+</section>
 
 
 
