@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-  $('.glossary-index li a#glossary-menu').on('click', function(event) {
+  $('.glossary-index li a.glossary-menu').on('click', function(event) {
     var item = $(this).data('name');
     if ( item == 'all' ) {
       $('.glossary-items').show();
