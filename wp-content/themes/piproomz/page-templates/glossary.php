@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-12" id="primary">
 				<div class="card">
 					<div class="card-body p-4 p-md-5">
-						<input id="glossary-search" type="text" class="form-control input-lg mb-4" placeholder="Feed me your words!">
+						<input id="glossary-search" type="text" class="form-control form-control-lg p-3 h4 mb-4" placeholder="Feed me your words!">
 						<div class="col-12 mb-4">
 							<nav>
 								<ul class="glossary-index pagination pagination-sm row justify-content-center">
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</ul>
 							</nav>
 						</div>
-						<div class="glossary-alert small" style="display:none"><p>Is that even a word? Give it another go.</p></div>
+						<div class="glossary-alert small" style="display: none;" ><p>Is that even a word? Give it another go.</p></div>
 						<div class="glossary-list">
 							<div id="glossary-A" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4">A</h2>
