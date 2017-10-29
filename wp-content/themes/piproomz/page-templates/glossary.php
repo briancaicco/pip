@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-12" id="primary">
 				<div class="card">
 					<div class="card-body p-5">
-						<input id="glossary-search" type="text" class="form-control input-lg mb-4" placeholder="Search glossary ...">
+						<input id="glossary-search" type="text" class="form-control input-lg mb-4" placeholder="Feed me your words!">
 						<div class="col-12 mb-4">
 							<nav>
 								<ul class="glossary-index pagination pagination-sm row justify-content-center">
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</ul>
 							</nav>
 						</div>
-						<div class="glossary-alert small" style="display:none"><p>No Terms Found</p></div>
+						<div class="glossary-alert small" style="display:none"><p>Is that even a word? Give it another go.</p></div>
 						<div class="glossary-list">
 							<div id="glossary-A" class="glossary-items" >
 								<h2 class="glossary-title">A</h2>
@@ -3247,9 +3247,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</div>
 							</div>
 						</div>
-						<div class="col-12 mb-4">
+						<div class="col-12 my-4">
 							<nav>
-								<ul class="glossary-index pagination pagination-sm">
+								<ul class="glossary-index pagination pagination-sm row justify-content-center">
 									<li class="page-item"><a class="page-link glossary-menu" data-name="all" href="javascript:void(0)">All</a></li>
 									<li class="page-item"><a class="page-link glossary-menu" data-name="A" href="javascript:void(0)">A</a></li>
 									<li class="page-item"><a class="page-link glossary-menu" data-name="B" href="javascript:void(0)">B</a></li>
