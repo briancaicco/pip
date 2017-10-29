@@ -54,7 +54,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-A" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4">A</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Accrual</dt>
 										<dd class="definition">
 											<p>
@@ -62,7 +62,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Adjustment</dt>
 										<dd class="definition">
 											<p>
@@ -70,7 +70,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Aggressive</dt>
 										<dd class="definition">
 											<p>
@@ -78,7 +78,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Analyst</dt>
 										<dd class="definition">
 											<p>
@@ -86,7 +86,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Appreciation</dt>
 										<dd class="definition">
 											<p>
@@ -94,7 +94,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Arbitrage</dt>
 										<dd class="definition">
 											<p>
@@ -102,7 +102,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Asian central banks</dt>
 										<dd class="definition">
 											<p>
@@ -110,7 +110,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Asian session</dt>
 										<dd class="definition">
 											<p>
@@ -118,7 +118,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Ask (offer) price</dt>
 										<dd class="definition">
 											<p>
@@ -128,7 +128,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">At best</dt>
 										<dd class="definition">
 											<p>
@@ -136,7 +136,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">At or better</dt>
 										<dd class="definition">
 											<p>
@@ -144,7 +144,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">AUS 200</dt>
 										<dd class="definition">
 											<p>
@@ -152,7 +152,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Aussie</dt>
 										<dd class="definition">
 											<p>
@@ -165,7 +165,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-B" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">B</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Balance of trade</dt>
 										<dd class="definition">
 											<p>
@@ -173,7 +173,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bar chart</dt>
 										<dd class="definition">
 											<p>
@@ -181,7 +181,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Barrier level</dt>
 										<dd class="definition">
 											<p>
@@ -189,7 +189,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Barrier option</dt>
 										<dd class="definition">
 											<p>
@@ -197,7 +197,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Base currency</dt>
 										<dd class="definition">
 											<p>
@@ -205,7 +205,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Base rate</dt>
 										<dd class="definition">
 											<p>
@@ -213,7 +213,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Basing</dt>
 										<dd class="definition">
 											<p>
@@ -221,7 +221,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Basis point</dt>
 										<dd class="definition">
 											<p>
@@ -229,7 +229,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bearish/Bear market</dt>
 										<dd class="definition">
 											<p>
@@ -237,7 +237,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bears</dt>
 										<dd class="definition">
 											<p>
@@ -245,7 +245,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bid/ask spread</dt>
 										<dd class="definition">
 											<p>
@@ -253,7 +253,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bid price</dt>
 										<dd class="definition">
 											<p>
@@ -263,7 +263,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Big figure</dt>
 										<dd class="definition">
 											<p>
@@ -271,7 +271,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">BIS</dt>
 										<dd class="definition">
 											<p>
@@ -279,7 +279,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Black box</dt>
 										<dd class="definition">
 											<p>
@@ -287,7 +287,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Blow off</dt>
 										<dd class="definition">
 											<p>
@@ -295,7 +295,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">BOC</dt>
 										<dd class="definition">
 											<p>
@@ -303,7 +303,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">BOE</dt>
 										<dd class="definition">
 											<p>
@@ -311,7 +311,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">BOJ</dt>
 										<dd class="definition">
 											<p>
@@ -319,7 +319,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bollinger bands</dt>
 										<dd class="definition">
 											<p>
@@ -327,7 +327,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bond</dt>
 										<dd class="definition">
 											<p>
@@ -335,7 +335,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Book</dt>
 										<dd class="definition">
 											<p>
@@ -343,7 +343,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">British Retail Consortium (BRC) shop price index</dt>
 										<dd class="definition">
 											<p>
@@ -351,7 +351,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Broker</dt>
 										<dd class="definition">
 											<p>
@@ -359,7 +359,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Buck</dt>
 										<dd class="definition">
 											<p>
@@ -367,7 +367,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bullish/Bull market</dt>
 										<dd class="definition">
 											<p>
@@ -375,7 +375,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bulls</dt>
 										<dd class="definition">
 											<p>
@@ -383,7 +383,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Bundesbank</dt>
 										<dd class="definition">
 											<p>
@@ -391,7 +391,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Buy</dt>
 										<dd class="definition">
 											<p>
@@ -399,7 +399,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Buy dips</dt>
 										<dd class="definition">
 											<p>
@@ -412,7 +412,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-C" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">C</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Cable</dt>
 										<dd class="definition">
 											<p>
@@ -420,7 +420,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">CAD</dt>
 										<dd class="definition">
 											<p>
@@ -428,7 +428,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Call option</dt>
 										<dd class="definition">
 											<p>
@@ -436,7 +436,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Canadian Ivey Purchasing Managers (CIPM) index</dt>
 										<dd class="definition">
 											<p>
@@ -444,7 +444,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Candivestick crow flex-md-wrap hart</dt>
 										<dd class="definition">
 											<p>
@@ -452,7 +452,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Capitulation</dt>
 										<dd class="definition">
 											<p>
@@ -460,7 +460,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Carry trade</dt>
 										<dd class="definition">
 											<p>
@@ -468,7 +468,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Cash market</dt>
 										<dd class="definition">
 											<p>
@@ -476,7 +476,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Cash price</dt>
 										<dd class="definition">
 											<p>
@@ -484,7 +484,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">CBs</dt>
 										<dd class="definition">
 											<p>
@@ -492,7 +492,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Central bank</dt>
 										<dd class="definition">
 											<p>
@@ -500,7 +500,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">CFDs*</dt>
 										<dd class="definition">
 											<p>
@@ -508,7 +508,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Chartist</dt>
 										<dd class="definition">
 											<p>
@@ -516,7 +516,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Choppy</dt>
 										<dd class="definition">
 											<p>
@@ -524,7 +524,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Cleared funds</dt>
 										<dd class="definition">
 											<p>
@@ -532,7 +532,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Clearing</dt>
 										<dd class="definition">
 											<p>
@@ -540,7 +540,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Closed position</dt>
 										<dd class="definition">
 											<p>
@@ -548,7 +548,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Closing</dt>
 										<dd class="definition">
 											<p>
@@ -556,7 +556,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Closing price</dt>
 										<dd class="definition">
 											<p>
@@ -564,7 +564,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Collateral</dt>
 										<dd class="definition">
 											<p>
@@ -572,7 +572,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Commission</dt>
 										<dd class="definition">
 											<p>
@@ -580,7 +580,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Commodity currencies</dt>
 										<dd class="definition">
 											<p>
@@ -588,7 +588,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Components</dt>
 										<dd class="definition">
 											<p>
@@ -596,7 +596,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">COMPX</dt>
 										<dd class="definition">
 											<p>
@@ -604,7 +604,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Confirmation</dt>
 										<dd class="definition">
 											<p>
@@ -612,7 +612,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Consolidation</dt>
 										<dd class="definition">
 											<p>
@@ -620,7 +620,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Construction spending</dt>
 										<dd class="definition">
 											<p>
@@ -628,7 +628,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Contagion</dt>
 										<dd class="definition">
 											<p>
@@ -636,7 +636,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Contract</dt>
 										<dd class="definition">
 											<p>
@@ -644,7 +644,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Contract note</dt>
 										<dd class="definition">
 											<p>
@@ -652,7 +652,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Contract size</dt>
 										<dd class="definition">
 											<p>
@@ -660,7 +660,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Controlled risk</dt>
 										<dd class="definition">
 											<p>
@@ -668,7 +668,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Convergence of MAs</dt>
 										<dd class="definition">
 											<p>
@@ -676,7 +676,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Corporate action</dt>
 										<dd class="definition">
 											<p>
@@ -684,7 +684,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Corporates</dt>
 										<dd class="definition">
 											<p>
@@ -692,7 +692,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Counter currency</dt>
 										<dd class="definition">
 											<p>
@@ -700,7 +700,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Counterparty</dt>
 										<dd class="definition">
 											<p>
@@ -708,7 +708,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Country risk</dt>
 										<dd class="definition">
 											<p>
@@ -716,7 +716,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">CPI</dt>
 										<dd class="definition">
 											<p>
@@ -724,7 +724,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Crater</dt>
 										<dd class="definition">
 											<p>
@@ -732,7 +732,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Cross</dt>
 										<dd class="definition">
 											<p>
@@ -740,7 +740,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Crown currencies</dt>
 										<dd class="definition">
 											<p>
@@ -748,7 +748,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">CTAs</dt>
 										<dd class="definition">
 											<p>
@@ -756,7 +756,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Currency</dt>
 										<dd class="definition">
 											<p>
@@ -764,7 +764,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Currency pair</dt>
 										<dd class="definition">
 											<p>
@@ -772,7 +772,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Currency risk</dt>
 										<dd class="definition">
 											<p>
@@ -780,7 +780,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Currency symbols</dt>
 										<dd class="definition">
 											<p>
@@ -788,7 +788,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Current account</dt>
 										<dd class="definition">
 											<p>
@@ -801,7 +801,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-D" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">D</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Day trader</dt>
 										<dd class="definition">
 											<p>
@@ -809,7 +809,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Day trading</dt>
 										<dd class="definition">
 											<p>
@@ -817,7 +817,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Deal</dt>
 										<dd class="definition">
 											<p>
@@ -825,7 +825,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Dealer</dt>
 										<dd class="definition">
 											<p>
@@ -833,7 +833,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Dealing spread</dt>
 										<dd class="definition">
 											<p>
@@ -841,7 +841,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Defend a level</dt>
 										<dd class="definition">
 											<p>
@@ -849,7 +849,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Deficit</dt>
 										<dd class="definition">
 											<p>
@@ -857,7 +857,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Delisting</dt>
 										<dd class="definition">
 											<p>
@@ -865,7 +865,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Delivery</dt>
 										<dd class="definition">
 											<p>
@@ -873,7 +873,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Delta</dt>
 										<dd class="definition">
 											<p>
@@ -881,7 +881,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Department of Communities and Local Government (DCLG) UK house prices</dt>
 										<dd class="definition">
 											<p>
@@ -889,7 +889,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Depreciation</dt>
 										<dd class="definition">
 											<p>
@@ -897,7 +897,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Derivative</dt>
 										<dd class="definition">
 											<p>
@@ -905,7 +905,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Devaluation</dt>
 										<dd class="definition">
 											<p>
@@ -913,7 +913,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Discount rate</dt>
 										<dd class="definition">
 											<p>
@@ -921,7 +921,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Divergence</dt>
 										<dd class="definition">
 											<p>
@@ -929,7 +929,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Divergence of MAs</dt>
 										<dd class="definition">
 											<p>
@@ -937,7 +937,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Dividend</dt>
 										<dd class="definition">
 											<p>
@@ -945,7 +945,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">DJIA or Dow</dt>
 										<dd class="definition">
 											<p>
@@ -953,7 +953,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Dove</dt>
 										<dd class="definition">
 											<p>
@@ -961,7 +961,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Downtrend</dt>
 										<dd class="definition">
 											<p>
@@ -969,7 +969,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">DXY$Y</dt>
 										<dd class="definition">
 											<p>
@@ -982,7 +982,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-E" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">E</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">ECB</dt>
 										<dd class="definition">
 											<p>
@@ -990,7 +990,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Economic indicator</dt>
 										<dd class="definition">
 											<p>
@@ -998,7 +998,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">End of day order (EOD)</dt>
 										<dd class="definition">
 											<p>
@@ -1006,7 +1006,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">EST/EDT</dt>
 										<dd class="definition">
 											<p>
@@ -1014,7 +1014,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">ESTX50</dt>
 										<dd class="definition">
 											<p>
@@ -1022,7 +1022,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Euro</dt>
 										<dd class="definition">
 											<p>
@@ -1030,7 +1030,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">European Monetary Union (EMU)</dt>
 										<dd class="definition">
 											<p>
@@ -1038,7 +1038,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">European session</dt>
 										<dd class="definition">
 											<p>
@@ -1046,7 +1046,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Eurozone labor cost index</dt>
 										<dd class="definition">
 											<p>
@@ -1054,7 +1054,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Eurozone Organization for Economic Co-operation and Development (OECD) leading indicator</dt>
 										<dd class="definition">
 											<p>
@@ -1062,7 +1062,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">EX-dividend</dt>
 										<dd class="definition">
 											<p>
@@ -1070,7 +1070,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Expiry date/price</dt>
 										<dd class="definition">
 											<p>
@@ -1078,7 +1078,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Exporters</dt>
 										<dd class="definition">
 											<p>
@@ -1086,7 +1086,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Extended</dt>
 										<dd class="definition">
 											<p>
@@ -1099,7 +1099,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-F" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">F</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Factory orders</dt>
 										<dd class="definition">
 											<p>
@@ -1107,7 +1107,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Fed</dt>
 										<dd class="definition">
 											<p>
@@ -1115,7 +1115,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Fed officials</dt>
 										<dd class="definition">
 											<p>
@@ -1123,7 +1123,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Figure/the figure</dt>
 										<dd class="definition">
 											<p>
@@ -1131,7 +1131,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Fill</dt>
 										<dd class="definition">
 											<p>
@@ -1139,7 +1139,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Fill or kill</dt>
 										<dd class="definition">
 											<p>
@@ -1147,7 +1147,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">First in first out (FIFO)</dt>
 										<dd class="definition">
 											<p>
@@ -1155,7 +1155,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Fix</dt>
 										<dd class="definition">
 											<p>
@@ -1170,7 +1170,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Flat or flat reading</dt>
 										<dd class="definition">
 											<p>
@@ -1178,7 +1178,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Flat/square</dt>
 										<dd class="definition">
 											<p>
@@ -1186,7 +1186,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Follow-through</dt>
 										<dd class="definition">
 											<p>
@@ -1194,7 +1194,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">FOMC</dt>
 										<dd class="definition">
 											<p>
@@ -1202,7 +1202,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">FOMC minutes</dt>
 										<dd class="definition">
 											<p>
@@ -1210,7 +1210,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Foreign exchange/forex/FX</dt>
 										<dd class="definition">
 											<p>
@@ -1218,7 +1218,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Forward</dt>
 										<dd class="definition">
 											<p>
@@ -1226,7 +1226,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Forward points</dt>
 										<dd class="definition">
 											<p>
@@ -1234,7 +1234,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">FRA40</dt>
 										<dd class="definition">
 											<p>
@@ -1242,7 +1242,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">FTSE 100</dt>
 										<dd class="definition">
 											<p>
@@ -1250,7 +1250,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Fundamental analysis</dt>
 										<dd class="definition">
 											<p>
@@ -1258,7 +1258,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Funds</dt>
 										<dd class="definition">
 											<p>
@@ -1266,7 +1266,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Future</dt>
 										<dd class="definition">
 											<p>
@@ -1274,7 +1274,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Futures contract</dt>
 										<dd class="definition">
 											<p>
@@ -1287,7 +1287,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-G" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">G</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">G7</dt>
 										<dd class="definition">
 											<p>
@@ -1295,7 +1295,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">G8</dt>
 										<dd class="definition">
 											<p>
@@ -1303,7 +1303,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gap/gapping</dt>
 										<dd class="definition">
 											<p>
@@ -1311,7 +1311,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gearing (also known as leverage)</dt>
 										<dd class="definition">
 											<p>
@@ -1319,7 +1319,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">GER30</dt>
 										<dd class="definition">
 											<p>
@@ -1327,7 +1327,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Given</dt>
 										<dd class="definition">
 											<p>
@@ -1335,7 +1335,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Giving it up</dt>
 										<dd class="definition">
 											<p>
@@ -1343,7 +1343,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">GMT (Greenwich Mean Time)</dt>
 										<dd class="definition">
 											<p>
@@ -1351,7 +1351,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Going long</dt>
 										<dd class="definition">
 											<p>
@@ -1359,7 +1359,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Going short</dt>
 										<dd class="definition">
 											<p>
@@ -1367,7 +1367,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gold (gold's relationship)</dt>
 										<dd class="definition">
 											<p>
@@ -1375,7 +1375,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gold certificate</dt>
 										<dd class="definition">
 											<p>
@@ -1383,7 +1383,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gold contract</dt>
 										<dd class="definition">
 											<p>
@@ -1391,7 +1391,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Good for day</dt>
 										<dd class="definition">
 											<p>
@@ -1399,7 +1399,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Good 'til cancelled order (GTC)</dt>
 										<dd class="definition">
 											<p>
@@ -1407,7 +1407,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Good 'til date</dt>
 										<dd class="definition">
 											<p>
@@ -1415,7 +1415,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Greenback</dt>
 										<dd class="definition">
 											<p>
@@ -1423,7 +1423,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gross domestic product (GDP)</dt>
 										<dd class="definition">
 											<p>
@@ -1431,7 +1431,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gross national product</dt>
 										<dd class="definition">
 											<p>
@@ -1439,7 +1439,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Guaranteed order</dt>
 										<dd class="definition">
 											<p>
@@ -1447,7 +1447,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Guaranteed stop</dt>
 										<dd class="definition">
 											<p>
@@ -1455,7 +1455,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Gunning/gunned</dt>
 										<dd class="definition">
 											<p>
@@ -1468,7 +1468,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-H" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">H</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Handive</dt>
 										<dd class="definition">
 											<p>
@@ -1476,7 +1476,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Hawk/hawkish</dt>
 										<dd class="definition">
 											<p>
@@ -1484,7 +1484,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Hedge</dt>
 										<dd class="definition">
 											<p>
@@ -1492,7 +1492,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Hit the bid</dt>
 										<dd class="definition">
 											<p>
@@ -1500,7 +1500,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">HK50/HKHI</dt>
 										<dd class="definition">
 											<p>
@@ -1513,7 +1513,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-I" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">I</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Illiquid</dt>
 										<dd class="definition">
 											<p>
@@ -1521,7 +1521,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Illiquid</dt>
 										<dd class="definition">
 											<p>
@@ -1530,7 +1530,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">IMM</dt>
 										<dd class="definition">
 											<p>
@@ -1538,7 +1538,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">IMM futures</dt>
 										<dd class="definition">
 											<p>
@@ -1546,7 +1546,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">IMM session</dt>
 										<dd class="definition">
 											<p>
@@ -1554,7 +1554,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">INDU</dt>
 										<dd class="definition">
 											<p>
@@ -1562,7 +1562,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Industrial production</dt>
 										<dd class="definition">
 											<p>
@@ -1570,7 +1570,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Inflation</dt>
 										<dd class="definition">
 											<p>
@@ -1578,7 +1578,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Initial margin requirement</dt>
 										<dd class="definition">
 											<p>
@@ -1586,7 +1586,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Interbank rates</dt>
 										<dd class="definition">
 											<p>
@@ -1594,7 +1594,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Interest</dt>
 										<dd class="definition">
 											<p>
@@ -1602,7 +1602,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Intervention</dt>
 										<dd class="definition">
 											<p>
@@ -1610,7 +1610,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Introducing broker</dt>
 										<dd class="definition">
 											<p>
@@ -1618,7 +1618,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">INX</dt>
 										<dd class="definition">
 											<p>
@@ -1626,7 +1626,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">IPO</dt>
 										<dd class="definition">
 											<p>
@@ -1634,7 +1634,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">ISM manufacturing index</dt>
 										<dd class="definition">
 											<p>
@@ -1642,7 +1642,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">ISM non-manufacturing</dt>
 										<dd class="definition">
 											<p>
@@ -1655,7 +1655,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-J" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">J</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Japanese economy watchers survey</dt>
 										<dd class="definition">
 											<p>
@@ -1663,7 +1663,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Japanese machine tool orders</dt>
 										<dd class="definition">
 											<p>
@@ -1671,7 +1671,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">JPN225</dt>
 										<dd class="definition">
 											<p>
@@ -1684,7 +1684,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-K" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">K</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Keep the powder dry</dt>
 										<dd class="definition">
 											<p>
@@ -1692,7 +1692,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Kiwi</dt>
 										<dd class="definition">
 											<p>
@@ -1700,7 +1700,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Knock-ins</dt>
 										<dd class="definition">
 											<p>
@@ -1708,7 +1708,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Knock-outs</dt>
 										<dd class="definition">
 											<p>
@@ -1721,7 +1721,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-L" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">L</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Last dealing day</dt>
 										<dd class="definition">
 											<p>
@@ -1729,7 +1729,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Last dealing time</dt>
 										<dd class="definition">
 											<p>
@@ -1737,7 +1737,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Leading indicators</dt>
 										<dd class="definition">
 											<p>
@@ -1745,7 +1745,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Level</dt>
 										<dd class="definition">
 											<p>
@@ -1753,7 +1753,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Leverage</dt>
 										<dd class="definition">
 											<p>
@@ -1761,7 +1761,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Leveraged names</dt>
 										<dd class="definition">
 											<p>
@@ -1769,7 +1769,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Liability</dt>
 										<dd class="definition">
 											<p>
@@ -1777,7 +1777,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">LIBOR</dt>
 										<dd class="definition">
 											<p>
@@ -1785,7 +1785,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Limits/limit order</dt>
 										<dd class="definition">
 											<p>
@@ -1793,7 +1793,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Liquid market</dt>
 										<dd class="definition">
 											<p>
@@ -1801,7 +1801,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Liquidation</dt>
 										<dd class="definition">
 											<p>
@@ -1809,7 +1809,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">London session</dt>
 										<dd class="definition">
 											<p>
@@ -1817,7 +1817,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Long position</dt>
 										<dd class="definition">
 											<p>
@@ -1825,7 +1825,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Longs</dt>
 										<dd class="definition">
 											<p>
@@ -1833,7 +1833,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Loonie</dt>
 										<dd class="definition">
 											<p>
@@ -1841,7 +1841,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Lot</dt>
 										<dd class="definition">
 											<p>
@@ -1854,7 +1854,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-M" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">M</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Macro</dt>
 										<dd class="definition">
 											<p>
@@ -1862,7 +1862,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Manufacturing production</dt>
 										<dd class="definition">
 											<p>
@@ -1870,7 +1870,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Margin call</dt>
 										<dd class="definition">
 											<p>
@@ -1878,7 +1878,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Market maker</dt>
 										<dd class="definition">
 											<p>
@@ -1886,7 +1886,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Market order</dt>
 										<dd class="definition">
 											<p>
@@ -1894,7 +1894,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Market-to-market</dt>
 										<dd class="definition">
 											<p>
@@ -1902,7 +1902,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Maturity</dt>
 										<dd class="definition">
 											<p>
@@ -1910,7 +1910,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Medivey reporrow flex-md-wrap t</dt>
 										<dd class="definition">
 											<p>
@@ -1918,7 +1918,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Models</dt>
 										<dd class="definition">
 											<p>
@@ -1926,7 +1926,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">MoM</dt>
 										<dd class="definition">
 											<p>
@@ -1934,7 +1934,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Momentum</dt>
 										<dd class="definition">
 											<p>
@@ -1942,7 +1942,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Momentum players</dt>
 										<dd class="definition">
 											<p>
@@ -1955,7 +1955,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-N" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">N</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">NAS100</dt>
 										<dd class="definition">
 											<p>
@@ -1963,7 +1963,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Net position</dt>
 										<dd class="definition">
 											<p>
@@ -1971,7 +1971,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">New York session</dt>
 										<dd class="definition">
 											<p>
@@ -1979,7 +1979,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">No touch</dt>
 										<dd class="definition">
 											<p>
@@ -1987,7 +1987,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">NYA.X</dt>
 										<dd class="definition">
 											<p>
@@ -2000,7 +2000,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-O" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">O</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Offer/ask price</dt>
 										<dd class="definition">
 											<p>
@@ -2011,7 +2011,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Offered</dt>
 										<dd class="definition">
 											<p>
@@ -2019,7 +2019,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Offsetting transaction</dt>
 										<dd class="definition">
 											<p>
@@ -2027,7 +2027,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">On top</dt>
 										<dd class="definition">
 											<p>
@@ -2035,7 +2035,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">One cancels the other order (OCO)</dt>
 										<dd class="definition">
 											<p>
@@ -2043,7 +2043,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">One touch</dt>
 										<dd class="definition">
 											<p>
@@ -2051,7 +2051,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Open order</dt>
 										<dd class="definition">
 											<p>
@@ -2059,7 +2059,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Open position</dt>
 										<dd class="definition">
 											<p>
@@ -2067,7 +2067,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Option</dt>
 										<dd class="definition">
 											<p>
@@ -2075,7 +2075,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Order</dt>
 										<dd class="definition">
 											<p>
@@ -2083,7 +2083,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Order book</dt>
 										<dd class="definition">
 											<p>
@@ -2091,7 +2091,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Over the counter (OTC)</dt>
 										<dd class="definition">
 											<p>
@@ -2099,7 +2099,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Overnight position</dt>
 										<dd class="definition">
 											<p>
@@ -2112,7 +2112,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-P" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">P</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Paid</dt>
 										<dd class="definition">
 											<p>
@@ -2120,7 +2120,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Pair</dt>
 										<dd class="definition">
 											<p>
@@ -2128,7 +2128,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Paneled</dt>
 										<dd class="definition">
 											<p>
@@ -2136,7 +2136,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Parabolic</dt>
 										<dd class="definition">
 											<p>
@@ -2144,7 +2144,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Partial fill</dt>
 										<dd class="definition">
 											<p>
@@ -2152,7 +2152,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Patient</dt>
 										<dd class="definition">
 											<p>
@@ -2160,7 +2160,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Personal income</dt>
 										<dd class="definition">
 											<p>
@@ -2168,7 +2168,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Pips</dt>
 										<dd class="definition">
 											<p>
@@ -2176,7 +2176,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Political risk</dt>
 										<dd class="definition">
 											<p>
@@ -2184,7 +2184,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Portfolio</dt>
 										<dd class="definition">
 											<p>
@@ -2192,7 +2192,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Position</dt>
 										<dd class="definition">
 											<p>
@@ -2200,7 +2200,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Premium</dt>
 										<dd class="definition">
 											<p>
@@ -2208,7 +2208,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Price transparency</dt>
 										<dd class="definition">
 											<p>
@@ -2216,7 +2216,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Profit</dt>
 										<dd class="definition">
 											<p>
@@ -2224,7 +2224,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Pullback</dt>
 										<dd class="definition">
 											<p>
@@ -2232,7 +2232,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Purchasing managers index (PMI)</dt>
 										<dd class="definition">
 											<p>
@@ -2240,7 +2240,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Purchasing managers index services (France, Germany, Eurozone, UK)</dt>
 										<dd class="definition">
 											<p>
@@ -2248,7 +2248,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Put option</dt>
 										<dd class="definition">
 											<p>
@@ -2261,7 +2261,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-Q" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">Q</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Quantitative easing</dt>
 										<dd class="definition">
 											<p>
@@ -2269,7 +2269,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Quarterly CFDs</dt>
 										<dd class="definition">
 											<p>
@@ -2277,7 +2277,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Quote</dt>
 										<dd class="definition">
 											<p>
@@ -2290,7 +2290,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-R" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">R</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Rally</dt>
 										<dd class="definition">
 											<p>
@@ -2298,7 +2298,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Range</dt>
 										<dd class="definition">
 											<p>
@@ -2306,7 +2306,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Rate</dt>
 										<dd class="definition">
 											<p>
@@ -2314,7 +2314,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">RBA</dt>
 										<dd class="definition">
 											<p>
@@ -2322,7 +2322,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">RBNZ</dt>
 										<dd class="definition">
 											<p>
@@ -2330,7 +2330,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Real money</dt>
 										<dd class="definition">
 											<p>
@@ -2338,7 +2338,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Realized profit/loss</dt>
 										<dd class="definition">
 											<p>
@@ -2346,7 +2346,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Resistence level</dt>
 										<dd class="definition">
 											<p>
@@ -2354,7 +2354,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Retail investor</dt>
 										<dd class="definition">
 											<p>
@@ -2362,7 +2362,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Retail sales</dt>
 										<dd class="definition">
 											<p>
@@ -2370,7 +2370,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Revaluation</dt>
 										<dd class="definition">
 											<p>
@@ -2378,7 +2378,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Rights issue</dt>
 										<dd class="definition">
 											<p>
@@ -2386,7 +2386,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Risk</dt>
 										<dd class="definition">
 											<p>
@@ -2394,7 +2394,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Risk management</dt>
 										<dd class="definition">
 											<p>
@@ -2402,7 +2402,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Rollover</dt>
 										<dd class="definition">
 											<p>
@@ -2412,7 +2412,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Round trip</dt>
 										<dd class="definition">
 											<p>
@@ -2420,7 +2420,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Running profit/loss</dt>
 										<dd class="definition">
 											<p>
@@ -2428,7 +2428,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">RUT</dt>
 										<dd class="definition">
 											<p>
@@ -2441,7 +2441,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-S" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">S</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">SEC</dt>
 										<dd class="definition">
 											<p>
@@ -2449,7 +2449,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Sector</dt>
 										<dd class="definition">
 											<p>
@@ -2457,7 +2457,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Sell</dt>
 										<dd class="definition">
 											<p>
@@ -2465,7 +2465,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Settlement</dt>
 										<dd class="definition">
 											<p>
@@ -2473,7 +2473,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">SHGA.X</dt>
 										<dd class="definition">
 											<p>
@@ -2481,7 +2481,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Short-covering</dt>
 										<dd class="definition">
 											<p>
@@ -2489,7 +2489,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Short position</dt>
 										<dd class="definition">
 											<p>
@@ -2497,7 +2497,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Short squeeze</dt>
 										<dd class="definition">
 											<p>
@@ -2505,7 +2505,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Shorts</dt>
 										<dd class="definition">
 											<p>
@@ -2513,7 +2513,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Sidelines, sit on hands</dt>
 										<dd class="definition">
 											<p>
@@ -2521,7 +2521,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Simple moving average SMA</dt>
 										<dd class="definition">
 											<p>
@@ -2529,7 +2529,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Slippage</dt>
 										<dd class="definition">
 											<p>
@@ -2537,7 +2537,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Slippery</dt>
 										<dd class="definition">
 											<p>
@@ -2545,7 +2545,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Sloppy</dt>
 										<dd class="definition">
 											<p>
@@ -2553,7 +2553,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">SNB</dt>
 										<dd class="definition">
 											<p>
@@ -2561,7 +2561,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Sovereign names</dt>
 										<dd class="definition">
 											<p>
@@ -2569,7 +2569,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Spot market</dt>
 										<dd class="definition">
 											<p>
@@ -2577,7 +2577,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Spot price</dt>
 										<dd class="definition">
 											<p>
@@ -2585,7 +2585,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Spot trade</dt>
 										<dd class="definition">
 											<p>
@@ -2593,7 +2593,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Spread</dt>
 										<dd class="definition">
 											<p>
@@ -2601,7 +2601,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">SPX500</dt>
 										<dd class="definition">
 											<p>
@@ -2609,7 +2609,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Square</dt>
 										<dd class="definition">
 											<p>
@@ -2617,7 +2617,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Sterling</dt>
 										<dd class="definition">
 											<p>
@@ -2625,7 +2625,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Stock exchange</dt>
 										<dd class="definition">
 											<p>
@@ -2633,7 +2633,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Stock index</dt>
 										<dd class="definition">
 											<p>
@@ -2641,7 +2641,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Stop entry order</dt>
 										<dd class="definition">
 											<p>
@@ -2649,7 +2649,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Stop-loss hunting</dt>
 										<dd class="definition">
 											<p>
@@ -2657,7 +2657,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Stop loss order</dt>
 										<dd class="definition">
 											<p>
@@ -2665,7 +2665,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Stop order</dt>
 										<dd class="definition">
 											<p>
@@ -2673,7 +2673,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Stops building</dt>
 										<dd class="definition">
 											<p>
@@ -2681,7 +2681,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Strike price</dt>
 										<dd class="definition">
 											<p>
@@ -2689,7 +2689,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Support</dt>
 										<dd class="definition">
 											<p>
@@ -2697,7 +2697,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Support levels</dt>
 										<dd class="definition">
 											<p>
@@ -2705,7 +2705,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Suspended trading</dt>
 										<dd class="definition">
 											<p>
@@ -2713,7 +2713,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Swap</dt>
 										<dd class="definition">
 											<p>
@@ -2721,7 +2721,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Swissie</dt>
 										<dd class="definition">
 											<p>
@@ -2734,7 +2734,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-T" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">T</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Takeover</dt>
 										<dd class="definition">
 											<p>
@@ -2742,7 +2742,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Technical analysis</dt>
 										<dd class="definition">
 											<p>
@@ -2750,7 +2750,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Technicians/Techs</dt>
 										<dd class="definition">
 											<p>
@@ -2758,7 +2758,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Ten (10) yr</dt>
 										<dd class="definition">
 											<p>
@@ -2766,7 +2766,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Thin</dt>
 										<dd class="definition">
 											<p>
@@ -2774,7 +2774,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Thirty (30) yr</dt>
 										<dd class="definition">
 											<p>
@@ -2782,7 +2782,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Tick (size)</dt>
 										<dd class="definition">
 											<p>
@@ -2790,7 +2790,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Time to maturity</dt>
 										<dd class="definition">
 											<p>
@@ -2798,7 +2798,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Tokyo session</dt>
 										<dd class="definition">
 											<p>
@@ -2806,7 +2806,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Tomorrow next (tom/next)</dt>
 										<dd class="definition">
 											<p>
@@ -2814,7 +2814,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">T/P</dt>
 										<dd class="definition">
 											<p>
@@ -2822,7 +2822,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trade balance</dt>
 										<dd class="definition">
 											<p>
@@ -2830,7 +2830,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trade size</dt>
 										<dd class="definition">
 											<p>
@@ -2838,7 +2838,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trading bid</dt>
 										<dd class="definition">
 											<p>
@@ -2846,7 +2846,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trading halt</dt>
 										<dd class="definition">
 											<p>
@@ -2854,7 +2854,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trading heavy</dt>
 										<dd class="definition">
 											<p>
@@ -2862,7 +2862,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trading offered</dt>
 										<dd class="definition">
 											<p>
@@ -2870,7 +2870,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trading range</dt>
 										<dd class="definition">
 											<p>
@@ -2878,7 +2878,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trailing stop</dt>
 										<dd class="definition">
 											<p>
@@ -2886,7 +2886,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Transaction cost</dt>
 										<dd class="definition">
 											<p>
@@ -2894,7 +2894,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Transaction date</dt>
 										<dd class="definition">
 											<p>
@@ -2902,7 +2902,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Trend</dt>
 										<dd class="definition">
 											<p>
@@ -2910,7 +2910,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Turnover</dt>
 										<dd class="definition">
 											<p>
@@ -2918,7 +2918,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Two-way price</dt>
 										<dd class="definition">
 											<p>
@@ -2926,7 +2926,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">TYO10</dt>
 										<dd class="definition">
 											<p>
@@ -2939,7 +2939,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-U" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">U</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Ugly</dt>
 										<dd class="definition">
 											<p>
@@ -2947,7 +2947,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK average earnings including bonus/excluding bonus</dt>
 										<dd class="definition">
 											<p>
@@ -2955,7 +2955,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK claimant count rate</dt>
 										<dd class="definition">
 											<p>
@@ -2963,7 +2963,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK HBOS house price index</dt>
 										<dd class="definition">
 											<p>
@@ -2971,7 +2971,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK jobless claims change</dt>
 										<dd class="definition">
 											<p>
@@ -2979,7 +2979,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK manual unit wage loss</dt>
 										<dd class="definition">
 											<p>
@@ -2987,7 +2987,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK OIL*</dt>
 										<dd class="definition">
 											<p>
@@ -2995,7 +2995,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK producers price index input</dt>
 										<dd class="definition">
 											<p>
@@ -3003,7 +3003,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK producers price index output</dt>
 										<dd class="definition">
 											<p>
@@ -3011,7 +3011,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">UK100</dt>
 										<dd class="definition">
 											<p>
@@ -3019,7 +3019,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Underlying</dt>
 										<dd class="definition">
 											<p>
@@ -3027,7 +3027,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Unemployment rate</dt>
 										<dd class="definition">
 											<p>
@@ -3035,7 +3035,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">University of Michigan's consumer sentiment index</dt>
 										<dd class="definition">
 											<p>
@@ -3043,7 +3043,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Unrealized gain/loss</dt>
 										<dd class="definition">
 											<p>
@@ -3051,7 +3051,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Uptick</dt>
 										<dd class="definition">
 											<p>
@@ -3059,7 +3059,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Uptick rule</dt>
 										<dd class="definition">
 											<p>
@@ -3067,7 +3067,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">US OIL</dt>
 										<dd class="definition">
 											<p>
@@ -3075,7 +3075,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">US prime rate</dt>
 										<dd class="definition">
 											<p>
@@ -3083,7 +3083,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">US30</dt>
 										<dd class="definition">
 											<p>
@@ -3096,7 +3096,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-V" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">V</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Value date</dt>
 										<dd class="definition">
 											<p>
@@ -3104,7 +3104,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Variation margin</dt>
 										<dd class="definition">
 											<p>
@@ -3112,7 +3112,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">VIX or volatility index</dt>
 										<dd class="definition">
 											<p>
@@ -3120,7 +3120,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Volatility</dt>
 										<dd class="definition">
 											<p>
@@ -3133,7 +3133,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-W" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">W</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Wedge chart pattern</dt>
 										<dd class="definition">
 											<p>
@@ -3141,7 +3141,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Whipsaw</dt>
 										<dd class="definition">
 											<p>
@@ -3149,7 +3149,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Wholesale prices</dt>
 										<dd class="definition">
 											<p>
@@ -3157,7 +3157,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Working order</dt>
 										<dd class="definition">
 											<p>
@@ -3165,7 +3165,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">WSJ</dt>
 										<dd class="definition">
 											<p>
@@ -3178,7 +3178,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-X" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">X</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">XAG/USD</dt>
 										<dd class="definition">
 											<p>
@@ -3186,7 +3186,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">XAU/USD</dt>
 										<dd class="definition">
 											<p>
@@ -3194,7 +3194,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">XAX.X</dt>
 										<dd class="definition">
 											<p>
@@ -3207,7 +3207,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div id="glossary-Y" class="glossary-items" >
 								<h2 class="glossary-title border border-secondary border-top-0 border-left-0 border-right-0 border-bottom-1 pb-1 pl-2 mb-4 display-4 ">Y</h2>
 								<div class="row flex-md-wrap">
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Yard</dt>
 										<dd class="definition">
 											<p>
@@ -3215,7 +3215,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Yield</dt>
 										<dd class="definition">
 											<p>
@@ -3223,7 +3223,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">YoY</dt>
 										<dd class="definition">
 											<p>
@@ -3231,7 +3231,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</p>
 										</dd>
 									</div>
-									<div class="glossary-item col-12 col-lg-8 mb-4 bg-light p-3">
+									<div class="glossary-item col-12 mb-4 bg-light p-3">
 										<dt class="term h5">Yuan</dt>
 										<dd class="definition">
 											<p>
