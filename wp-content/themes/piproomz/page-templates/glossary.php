@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="col-12" id="primary">
 				<div class="card">
 					<div class="card-body p-4 p-md-5">
-						<input id="glossary-search" type="text" class="form-control form-control-lg p-3 h4 mb-4" placeholder="Feed me your words!">
+						<input id="glossary-search" type="text" class="form-control form-control-lg p-3 h4 mb-4" placeholder="  Feed me your words!">
 						<div class="col-12 mb-4">
 							<nav>
 								<ul class="glossary-index pagination pagination-sm row justify-content-center">
