@@ -4871,12 +4871,12 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress-functions.php:1501
 #: bp-templates/bp-legacy/buddypress-functions.php:1514
 msgid "Leave Group"
-msgstr ""
+msgstr "Leave Room"
 
 #: bp-groups/bp-groups-template.php:3519
 #: bp-templates/bp-legacy/buddypress-functions.php:1535
 msgid "Join Group"
-msgstr ""
+msgstr "Join Room"
 
 #: bp-groups/bp-groups-template.php:3537
 msgid "Accept Invitation"
@@ -4894,35 +4894,43 @@ msgstr ""
 
 #: bp-groups/bp-groups-template.php:3712
 msgid "This group is not currently accessible."
-msgstr ""
+msgstr "This room is not currently accessible."
 
 #: bp-groups/bp-groups-template.php:3723
 msgid ""
 "You must accept your pending invitation before you can access this private "
 "group."
 msgstr ""
+"You must accept your pending invitation before you can access this private "
+"room."
 
 #: bp-groups/bp-groups-template.php:3725
 msgid ""
 "This is a private group and you must request group membership in order to "
 "join."
 msgstr ""
+"This is a private room and you must request room membership in order to "
+"join."
 
 #: bp-groups/bp-groups-template.php:3728
 msgid ""
 "This is a private group. To join you must be a registered site member and "
 "request group membership."
 msgstr ""
+"This is a private room. To join you must be a registered site member and "
+"request room membership."
 
 #: bp-groups/bp-groups-template.php:3731
 msgid ""
 "This is a private group. Your membership request is awaiting approval from "
 "the group administrator."
 msgstr ""
+"This is a private room. Your membership request is awaiting approval from "
+"the room administrator."
 
 #: bp-groups/bp-groups-template.php:3739
 msgid "This is a hidden group and only invited members can join."
-msgstr ""
+msgstr "This is a hidden room and only invited members can join."
 
 #: bp-groups/bp-groups-template.php:4410 bp-members/bp-members-template.php:502
 msgid "Viewing %1$s - %2$s of %3$s member"
@@ -4935,7 +4943,7 @@ msgstr[1] ""
 #: bp-templates/bp-legacy/buddypress/groups/single/admin.php:10
 #: bp-templates/bp-legacy/buddypress/groups/single/forum.php:24
 msgid "Group secondary navigation"
-msgstr ""
+msgstr "Room secondary navigation"
 
 #: bp-groups/bp-groups-template.php:4580
 #: bp-notifications/bp-notifications-template.php:1000
@@ -4957,7 +4965,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-template.php:4586
 msgid "Group Activity"
-msgstr ""
+msgstr "Room Activity"
 
 #: bp-groups/bp-groups-template.php:4589
 #: bp-groups/classes/class-bp-groups-widget.php:127
@@ -4973,7 +4981,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-template.php:5011
 msgid "Group photo"
-msgstr ""
+msgstr "Room photo"
 
 #: bp-groups/bp-groups-template.php:5307 bp-groups/bp-groups-template.php:5332
 msgid "Recently Joined"
@@ -4997,7 +5005,7 @@ msgstr ""
 
 #: bp-groups/bp-groups-template.php:5452
 msgid "Group avatar"
-msgstr ""
+msgstr "Room avatar"
 
 #: bp-groups/bp-groups-template.php:5715
 msgid "requested %s"
@@ -5025,7 +5033,7 @@ msgstr[1] ""
 
 #: bp-groups/bp-groups-template.php:6078
 msgid "Group Activity RSS Feed"
-msgstr ""
+msgstr "Room Activity RSS Feed"
 
 #: bp-groups/bp-groups-template.php:6360
 msgid "%s group"
@@ -5076,21 +5084,21 @@ msgstr ""
 
 #: bp-groups/classes/class-bp-groups-component.php:834
 msgid "No Group Profile Photo"
-msgstr ""
+msgstr "No Room Profile Photo"
 
 #: bp-groups/classes/class-bp-groups-list-table.php:227
 msgid "No groups found."
-msgstr ""
+msgstr "No rooms found."
 
 #: bp-groups/classes/class-bp-groups-list-table.php:240
 #. translators: accessibility text
 msgid "Groups list"
-msgstr ""
+msgstr "Rooms list"
 
 #: bp-groups/classes/class-bp-groups-list-table.php:330
 #. translators: accessibility text
 msgid "Filter groups list"
-msgstr ""
+msgstr "Filter rooms list"
 
 #: bp-groups/classes/class-bp-groups-list-table.php:335
 msgid "Public <span class=\"count\">(%s)</span>"
@@ -5122,7 +5130,7 @@ msgstr ""
 
 #: bp-groups/classes/class-bp-groups-list-table.php:783
 msgid "No Group Type"
-msgstr ""
+msgstr "No Room Type"
 
 #: bp-groups/classes/class-bp-groups-list-table.php:788
 #: bp-members/classes/class-bp-members-admin.php:2182
@@ -5132,7 +5140,7 @@ msgstr ""
 
 #: bp-groups/classes/class-bp-groups-member.php:341
 msgid "Group Mod"
-msgstr ""
+msgstr "Room Mod"
 
 #: bp-groups/classes/class-bp-groups-widget.php:27
 msgid "A dynamic list of recently active, popular, newest, or alphabetical groups"
@@ -5140,11 +5148,11 @@ msgstr ""
 
 #: bp-groups/classes/class-bp-groups-widget.php:163
 msgid "There are no groups to display."
-msgstr ""
+msgstr "There are no rooms to display"
 
 #: bp-groups/classes/class-bp-groups-widget.php:219
 msgid "Link widget title to Groups directory"
-msgstr ""
+msgstr "Link widget title to Rooms directory"
 
 #: bp-groups/classes/class-bp-groups-widget.php:221
 msgid "Max groups to show:"
@@ -6404,7 +6412,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/activity/index.php:94
 #: bp-templates/bp-legacy/buddypress/groups/index.php:64
 msgid "My Groups %s"
-msgstr ""
+msgstr "My Rooms %s"
 
 #: bp-templates/bp-legacy/buddypress/activity/index.php:111
 msgid "My Favorites %s"
@@ -6507,7 +6515,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/avatars/index.php:41
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-avatar.php:31
 msgid "Delete Group Profile Photo"
-msgstr ""
+msgstr "Delete Room Profile Photo"
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/cover-images/index.php:26
 msgid ""
@@ -6527,7 +6535,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/cover-images/index.php:30
 msgid "Delete Group Cover Image"
-msgstr ""
+msgstr "Delete Group Cover Image"
 
 #: bp-templates/bp-legacy/buddypress/assets/_attachments/uploader.php:16
 msgid "The web browser on your device cannot be used to upload files."
@@ -6658,7 +6666,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/forums/index.php:188
 msgid "Post In Group Forum:"
-msgstr ""
+msgstr "Post In Room Forum"
 
 #: bp-templates/bp-legacy/buddypress/forums/index.php:215
 #: bp-templates/bp-legacy/buddypress/groups/single/forum.php:125
@@ -6673,21 +6681,26 @@ msgid ""
 "href='%s'>create a new group</a>? Once you have joined or created the group "
 "you can post your topic in that group's forum."
 msgstr ""
+"You are not a member of any rooms so you don't have any room forums you "
+"can post in. To start posting, first find a room that matches the topic "
+"subject you'd like to start. If this room does not exist, why not <a "
+"href='%s'>create a new room</a>? Once you have joined or created the room "
+"you can post your topic in that room's forum.""
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:61
 #. translators: accessibility text
 msgid "Group Details"
-msgstr ""
+msgstr "Room Details"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:74
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/edit-details.php:22
 msgid "Group Name (required)"
-msgstr ""
+msgstr "Room Name (required)"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:79
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/edit-details.php:25
 msgid "Group Description (required)"
-msgstr ""
+msgstr "Room Description (required)"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:116
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:38
@@ -6697,46 +6710,46 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/create.php:120
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:42
 msgid "This is a public group"
-msgstr ""
+msgstr "This is a public room"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:123
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:45
 msgid "Any site member can join this group."
-msgstr ""
+msgstr "Any site member can join this room."
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:124
 #: bp-templates/bp-legacy/buddypress/groups/create.php:132
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:46
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:54
 msgid "This group will be listed in the groups directory and in search results."
-msgstr ""
+msgstr "This room will be listed in the rooms directory and in search results."
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:125
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:47
 msgid "Group content and activity will be visible to any site member."
-msgstr ""
+msgstr "Room content and activity will be visible to any site member."
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:128
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:50
 msgid "This is a private group"
-msgstr ""
+msgstr "This is a private room"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:131
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:53
 msgid "Only users who request membership and are accepted can join the group."
-msgstr ""
+msgstr "nly users who request membership and are accepted can join the room."
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:133
 #: bp-templates/bp-legacy/buddypress/groups/create.php:141
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:55
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:63
 msgid "Group content and activity will only be visible to members of the group."
-msgstr ""
+msgstr "Room content and activity will only be visible to members of the room."
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:136
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:58
 msgid "This is a hidden group"
-msgstr ""
+msgstr "This is a hidden room"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:139
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/group-settings.php:61
@@ -6840,7 +6853,7 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/create.php:350
 #. translators: accessibility text
 msgid "Group Invites"
-msgstr ""
+msgstr "Room Invites"
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:379
 msgid "Select people to invite from your friends list."
@@ -6857,6 +6870,8 @@ msgid ""
 "Once you have built up friend connections you will be able to invite others "
 "to your group."
 msgstr ""
+"Once you have built up friend connections you will be able to invite others "
+"to your room."
 
 #: bp-templates/bp-legacy/buddypress/groups/create.php:459
 msgid "Back to Previous Step"
@@ -6876,19 +6891,19 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/groups-loop.php:135
 msgid "There were no groups found."
-msgstr ""
+msgstr "There were no rooms found."
 
 #: bp-templates/bp-legacy/buddypress/groups/index.php:59
 msgid "Groups directory main navigation"
-msgstr ""
+msgstr "Rooms directory main navigation"
 
 #: bp-templates/bp-legacy/buddypress/groups/index.php:61
 msgid "All Groups %s"
-msgstr ""
+msgstr "All Rooms %s"
 
 #: bp-templates/bp-legacy/buddypress/groups/index.php:79
 msgid "Groups directory secondary navigation"
-msgstr ""
+msgstr "Rooms directory secondary navigation"
 
 #: bp-templates/bp-legacy/buddypress/groups/index.php:96
 #: bp-templates/bp-legacy/buddypress/members/single/groups.php:22
@@ -6903,17 +6918,19 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/index.php:115
 #. translators: accessibility text
 msgid "Groups directory"
-msgstr ""
+msgstr "Rooms directory"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/delete-group.php:23
 msgid ""
 "WARNING: Deleting this group will completely remove ALL content associated "
 "with it. There is no way back, please be careful with this option."
 msgstr ""
+"WARNING: Deleting this room will completely remove ALL content associated "
+"with it. There is no way back, please be careful with this option."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/delete-group.php:26
 msgid "I understand the consequences of deleting this group."
-msgstr ""
+msgstr "I understand the consequences of deleting this room."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/edit-details.php:11
 msgid "Manage Group Details"
@@ -6933,11 +6950,11 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:111
 msgid "No group administrators were found."
-msgstr ""
+msgstr "No room administrators were found."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:206
 msgid "No group moderators were found."
-msgstr ""
+msgstr "No room moderators were found."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:247
 msgid "(banned)"
@@ -6961,7 +6978,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/manage-members.php:317
 msgid "No group members were found."
-msgstr ""
+msgstr "No room members were found."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/admin/membership-requests.php:11
 msgid "Manage Membership Requests"
@@ -6970,12 +6987,12 @@ msgstr ""
 #: bp-templates/bp-legacy/buddypress/groups/single/cover-image-header.php:74
 #: bp-templates/bp-legacy/buddypress/groups/single/group-header.php:22
 msgid "Group Admins"
-msgstr ""
+msgstr "Room Admins"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/cover-image-header.php:94
 #: bp-templates/bp-legacy/buddypress/groups/single/group-header.php:42
 msgid "Group Mods"
-msgstr ""
+msgstr "Room Mods"
 
 #: bp-templates/bp-legacy/buddypress/groups/single/forum/edit.php:29
 #: bp-templates/bp-legacy/buddypress/groups/single/forum/topic.php:30
@@ -7059,7 +7076,7 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/request-membership.php:22
 msgid "You are requesting to become a member of the group '%s'."
-msgstr ""
+msgstr "You are requesting to become a member of the room '%s'."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/request-membership.php:25
 msgid "Comments (optional)"
@@ -7095,17 +7112,19 @@ msgstr ""
 
 #: bp-templates/bp-legacy/buddypress/groups/single/send-invites.php:45
 msgid "Group invitations can only be extended to friends."
-msgstr ""
+msgstr "Room invitations can only be extended to friends."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/send-invites.php:46
 msgid ""
 "Once you've made some friendships, you'll be able to invite those members "
 "to this group."
 msgstr ""
+"Once you've made some friendships, you'll be able to invite those members "
+"to this room."
 
 #: bp-templates/bp-legacy/buddypress/groups/single/send-invites.php:54
 msgid "All of your friends already belong to this group."
-msgstr ""
+msgstr "All of your friends already belong to this room."
 
 #: bp-templates/bp-legacy/buddypress/members/activate.php:44
 msgid ""
@@ -7619,6 +7638,8 @@ msgstr ""
 msgid ""
 "%s has previously requested to join this group. Sending an invitation will "
 "automatically add the member to the group."
+"%s has previously requested to join this room. Sending an invitation will "
+"automatically add the member to the room."
 msgstr ""
 
 #: bp-templates/bp-legacy/buddypress-functions.php:1410

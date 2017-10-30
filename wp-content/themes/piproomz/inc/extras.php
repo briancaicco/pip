@@ -296,3 +296,8 @@ endif;
 	
 	add_filter( 'bp_registration_needs_activation', 'fix_signup_form_validation_text' );
 
+
+	// Hide the wordpress toolbar for all users
+	//////////////////////////////////////////////////////////////////////
+	show_admin_bar(false);
+
