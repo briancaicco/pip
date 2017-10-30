@@ -9,16 +9,16 @@
 ?>
 <script type="text/javascript">
 	// Google Recaptcha  function & callback
-	var onSubmit = function(token) {
-		console.log('success!');
-	};
+	// var onSubmit = function(token) {
+	// 	console.log('success!');
+	// };
 
-	var onloadCallback = function() {
-	  grecaptcha.render('signup_submit', {
-	    'sitekey' : '6Le0JDYUAAAAAMiPzvG-Y1kBjpz4mUWCWiCXvNP_',
-	    'callback' : onSubmit
-	  });
-	};
+	// var onloadCallback = function() {
+	//   grecaptcha.render('signup_submit', {
+	//     'sitekey' : '6Le0JDYUAAAAAMiPzvG-Y1kBjpz4mUWCWiCXvNP_',
+	//     'callback' : onSubmit
+	//   });
+	// };
 </script>
 
 <div id="buddypress">
@@ -299,6 +299,6 @@
 	 */
 	do_action( 'bp_after_register_page' ); ?>
 
-	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-
+<!-- 	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+ -->
 </div><!-- #buddypress -->
