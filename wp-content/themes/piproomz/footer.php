@@ -26,6 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
           <a class="nav-link active" href="/privacy-policy">Privacy Policy</a>
           <a class="nav-link" href="/terms-of-use">Terms of Use</a>
           <a class="nav-link" href="/risk-warning">Risk Warning</a>
+          <a class="nav-link" href="/faq">Frequently Asked Questions</a>
         </nav>
       </div><!--col end -->
       <div class="col-md-3">

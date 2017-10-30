@@ -74,11 +74,11 @@ do_action( 'bp_before_activity_entry' ); ?>
 
 							<?php if ( !bp_get_activity_is_favorite() ) : ?>
 
-								<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action"><?php _e( 'Favorite', 'buddypress' ); ?></a>
+								<a href="<?php bp_activity_favorite_link(); ?>" class="button fav bp-secondary-action"><?php _e( '\f087', 'buddypress' ); ?></a>
 
 							<?php else : ?>
 
-								<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action"><?php _e( 'Remove Favorite', 'buddypress' ); ?></a>
+								<a href="<?php bp_activity_unfavorite_link(); ?>" class="button unfav bp-secondary-action"><?php _e( '\f164', 'buddypress' ); ?></a>
 
 							<?php endif; ?>
 

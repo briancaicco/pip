@@ -4683,6 +4683,8 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .directory.activity #buddypress div.activity-comments form .ac-textarea { border: none; }
 
+.fav, .unfav { font-family: FontAwesome; }
+
 .bp-user #buddypress ul.item-list li img.avatar, .bp-user #buddypress div.ac-reply-avatar img, .bp-user #activity-stream img.avatar { width: 40px; height: 40px; border-radius: 50% !important; }
 
 .bp-user #profile-primary-nav { min-height: 50px !important; }
