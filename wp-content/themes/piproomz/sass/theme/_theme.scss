@@ -211,6 +211,47 @@ p{
 }
 
 
+#buddypress .standard-form#signup_form div div.error {
+    background: transparent;
+    color: #a00;
+    margin: 0 0 10px;
+    padding: 7px;
+    width: 100%;
+    display: block;
+    float: left;
+    top: 64px;
+    position: absolute;
+    font-size: .80em;
+    border-top: 1px solid #a00;
+}
+
+#buddypress #pass-strength-result{
+	margin: 0px;
+	width: 35%;
+	border: 0px;
+}
+
+#buddypress #pass-strength-result.strong{
+	color: #5f8e33;
+}
+
+
+#buddypress #pass-strength-result.good{
+	color: #94833a;
+}
+
+#buddypress #pass-strength-result.bad{
+	color: #d46d30;
+}
+
+
+#buddypress #pass-strength-result.short{
+	color: #cc5e5e;
+}
+
+
+
+
 // Buttons
 /////////////////////////////////////////////////////////////////////////
 

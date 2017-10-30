@@ -4567,6 +4567,18 @@ p { font-family: "Raleway", sans-serif; }
 
 .home-page .mepr-login-actions a:hover { text-decoration: none; }
 
+#buddypress .standard-form#signup_form div div.error { background: transparent; color: #a00; margin: 0 0 10px; padding: 7px; width: 100%; display: block; float: left; top: 64px; position: absolute; font-size: .80em; border-top: 1px solid #a00; }
+
+#buddypress #pass-strength-result { margin: 0px; width: 35%; border: 0px; }
+
+#buddypress #pass-strength-result.strong { color: #5f8e33; }
+
+#buddypress #pass-strength-result.good { color: #94833a; }
+
+#buddypress #pass-strength-result.bad { color: #d46d30; }
+
+#buddypress #pass-strength-result.short { color: #cc5e5e; }
+
 .btn, .wpcf7 input[type=submit] { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.875rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; border-radius: 0px; }
 
 .btn:hover, .wpcf7 input[type=submit]:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; }
