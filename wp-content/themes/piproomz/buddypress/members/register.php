@@ -40,13 +40,18 @@
 				
 				<div class="col-12 col-lg-6 col-md-8 auth_form blue-grad pt-5 pb-4 px-md-3">
 					
-					<div class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+					<div class="pl-4">
 
-						<?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small>
-
+						<a class="navbar-brand mb-3" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+							<?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small>
+						</a>
+						
+						<?php do_action( 'wordpress_social_login' ); ?>
+					
 					</div>
 
-					<form action="" name="signup_form" id="signup_form" class="standard-form p-4" method="post" enctype="multipart/form-data">
+					
+					<form action="" name="signup_form" id="signup_form" class="standard-form p-4 pt-0" method="post" enctype="multipart/form-data">
 
 						<?php if ( 'registration-disabled' == bp_get_current_signup_step() ) : ?>
 
@@ -89,8 +94,8 @@
 
 						</div>
 
-						<p><?php _e( 'Registering for this site is easy. Just fill in the fields below, and we\'ll get a new account set up for you in no time.', 'buddypress' ); ?></p>
-
+<!-- 						<p><?php _e( 'Registering for this site is easy. Just fill in the fields below, and we\'ll get a new account set up for you in no time.', 'buddypress' ); ?></p>
+ -->
 						<?php
 
 						/**
@@ -100,7 +105,7 @@
 						 */
 						do_action( 'bp_before_account_details_fields' ); 
 						
-						do_action( 'wordpress_social_login' ); ?>
+						 ?>
 						
 
 						<style type="text/css"> #basic-details-section label{ display: none; } </style>

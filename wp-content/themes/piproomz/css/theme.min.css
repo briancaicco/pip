@@ -4863,7 +4863,7 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .register .fa { color: rgba(255, 255, 255, 0.3); }
 
-.register .navbar-brand { color: #fff; font-size: 28px; text-align: center; padding-left: 35px; }
+.register .navbar-brand { color: #fff; font-size: 28px; }
 
 .register a:focus, .register button:focus, .register input:focus::-webkit-input-placeholder, .register input:focus:-moz-placeholder, .register input:focus::-moz-placeholder, .register input:focus:-ms-input-placeholder, .register input:focus, .register textarea:focus { outline: none !important; transition: color ease-in-out .35s; }
 
