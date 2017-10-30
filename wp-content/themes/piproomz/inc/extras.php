@@ -278,31 +278,21 @@ endif;
 
 
 
-	// if login fails re-direct them back from where they came from.
+	// Disable activation and all activation emails. 
 	//////////////////////////////////////////////////////////////////////
-	// add_action( 'wp_login_failed', 'sos_front_end_login_fail' );  // hook failed login
+	// Change the text on the signup page
+	add_filter( 'bp_registration_needs_activation', '__return_false' );
 
-	// function sos_front_end_login_fail( $username ) {
-	//    $referrer = $_SERVER['HTTP_REFERER'];  // where did the post submission come from?
-	//    // if there's a valid referrer, and it's not the default log-in screen
-	//    if ( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
-	//       wp_redirect( $referrer . '?login=failed' );  // let's append some information (login=failed) to the URL for the theme to use
-	//       exit;
-	//    }
-	// }
+	function disable_validation( $user_id ) {
+		global $wpdb;
+		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->users SET user_status = 0 WHERE ID = %d", $user_id ) );
+	}
 
-
-
-	// /**
-	// * Redirect buddypress pages to registration page for non logged in users
-	// */
-	// function pip_page_template_redirect()
-	// {
-	//     //if not logged in and on a bp page except registration or activation
-	//     if( ! is_user_logged_in() && ! bp_is_blog_page() && ! bp_is_activation_page() && ! bp_is_register_page() ) {
-	//         wp_redirect( home_url( '/register/' ) );
-	//         exit();
-	//     }
-	// }
-	// add_action( 'template_redirect', 'pip_page_template_redirect' );
+	add_action( 'bp_core_signup_user', 'disable_validation' );
+	
+	function fix_signup_form_validation_text() {
+		return false;
+	}
+	
+	add_filter( 'bp_registration_needs_activation', 'fix_signup_form_validation_text' );
 

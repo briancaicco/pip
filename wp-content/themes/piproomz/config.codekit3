@@ -1988,6 +1988,30 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/languages\/buddypress-en_BP-backup-201710300130360.po~": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/languages\/buddypress-en_BP-backup-201710300130360.po~",
+		"oF": 0
+		},
+	"\/languages\/buddypress-en_BP.mo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/languages\/buddypress-en_BP.mo",
+		"oF": 0
+		},
+	"\/languages\/buddypress-en_BP.po": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/languages\/buddypress-en_BP.po",
+		"oF": 0
+		},
+	"\/languages\/buddypress-en_BP.pot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/languages\/buddypress-en_BP.pot",
+		"oF": 0
+		},
 	"\/languages\/de_DE.mo": {
 		"ft": 8192,
 		"oA": 2,
