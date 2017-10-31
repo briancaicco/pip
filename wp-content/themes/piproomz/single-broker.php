@@ -25,7 +25,7 @@
 
  						<h1 class="mb-4"><?php the_title(); ?></h1>
 
- 						<?php get_field('broker_review'); ?>
+ 						<?php get_field('broker_editors_review'); ?>
 
  						<?php
  						// If comments are open or we have at least one comment, load up the comment template.
