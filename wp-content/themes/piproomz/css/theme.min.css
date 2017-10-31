@@ -4781,7 +4781,7 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .broker-page .collapsed [aria-expanded="false"] .fa-minus-square-o { display: none; }
 
-.broker-page .collapsed [aria-expanded="ture"] .fa-plus-square-o { display: none; }
+.broker-page .collapsed [aria-expanded="true"] .fa-plus-square-o { display: none; }
 
 .widget_bp_groups_widget .item-options a.selected { font-weight: bold; }
 
