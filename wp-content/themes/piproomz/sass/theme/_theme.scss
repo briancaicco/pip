@@ -885,6 +885,23 @@ display:none;
 }
 
 
+// Broker Page
+/////////////////////////////////////////////////////////////////////////
+.broker-page{
+	.collapsed{
+		[aria-expanded="false"]{
+			.fa-minus-square-o{
+				display: none;
+			}
+		}
+		[aria-expanded="ture"]{
+			.fa-plus-square-o{
+				display: none;
+			}
+		}
+	}
+}
+
 // Widgets
 /////////////////////////////////////////////////////////////////////////
 .widget_bp_groups_widget{
