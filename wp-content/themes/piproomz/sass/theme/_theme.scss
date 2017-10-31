@@ -887,17 +887,29 @@ display:none;
 
 // Broker Page
 /////////////////////////////////////////////////////////////////////////
-.broker-page{
-	.collapsed{
-		[aria-expanded="false"]{
-			.fa-minus-square-o{
-				display: none;
-			}
+.page-template-brokerpage{
+	a{
+		text-decoration: none;
+
+	}
+	.fa-minus-square-o, .fa-plus-square-o{
+		opacity: .4;
+	}
+	.toggle{
+		background: $gray-100;
+		&:hover{
+			cursor: pointer;
+			background: $gray-200;
 		}
-		[aria-expanded="true"]{
-			.fa-plus-square-o{
-				display: none;
-			}
+	}
+	[aria-expanded="false"]{
+		.fa-minus-square-o{
+			display: none;
+		}
+	}
+	[aria-expanded="true"]{
+		.fa-plus-square-o{
+			display: none;
 		}
 	}
 }

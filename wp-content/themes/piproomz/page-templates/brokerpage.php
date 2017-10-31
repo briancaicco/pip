@@ -13,7 +13,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 $posts = get_posts(array(
 	'posts_per_page'	=> -1,
-	'post_type'			=> 'broker'
+	'post_type'			=> 'broker',
+	'orderby'			=> 'title', 
+	'order'				=> 'ASC'
 ));
 ?>
 
@@ -27,46 +29,55 @@ $posts = get_posts(array(
 
 				<div class="card-body">
 
+					<h1 class="mb-4"><?php the_title(); ?></h1>
 
-						<? if( $posts ): ?>
+					<? if( $posts ): ?>
 
-								
-							<?php foreach( $posts as $post ): 
-								
+						<div id="brokers" data-children=".broker">
+
+							<?php 
+
+							$i=0;
+							foreach( $posts as $post ): 
+
 								setup_postdata( $post );
-								
+
 								?>
-								<div class="card el-3">
-									<div class="card-body">
-										<div class="row d-flex justify-content-between toggle collapsed " data-toggle="collapse" data-target="#broker_info" aria-expanded="false" aria-controls="broker_info">
-											<div class="col-10">
-												<h3><?php the_title(); ?></h3>
-											</div>
-											<div class="col-2">
-												<div class="toggle">
-													<i class="fa fa-plus-square-o" aria-hidden="true"></i>
-													<i class="fa fa-minus-square-o" aria-hidden="true"></i>
-												</div>
-											</div>
+
+								<div class="broker card el-1 mb-3">
+
+									<div class="p-3 toggle" data-toggle="collapse" data-parent="#brokers" href="#brokerItem<?php echo $i; ?>" aria-expanded="false" aria-controls="brokerItem<?php echo $i; ?>">
+
+										<div class="d-flex justify-content-between" >
+											<span class="h4 mb-0 text-secondary">
+												<?php the_title(); ?>
+											</span>
+											<span class="h3 mb-0 text-secondary">
+												<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+												<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+											</span>
 										</div>
-										<div class="collapse" id="broker_info">
-											<div class="row">
-												<div class="col-12">
-													<?php the_field('broker_editors_review'); ?>
-												</div>
-											</div>
-										</div>
+
 									</div>
+
+									<div id="brokerItem<?php echo $i; ?>" class="collapse p-3" role="tabpanel">
+										<?php if ( the_field('broker_editors_review') ){ the_field('broker_editors_review'); } else { the_content(); } ?>	
+									</div>
+
 								</div>
-							
-							<?php endforeach; ?>
-							
-							
-							<?php wp_reset_postdata(); ?>
+
+
+								<?php 
+
+								$i++;
+
+								endforeach; ?>
+
+						</div>
+
+								<?php wp_reset_postdata(); ?> 
 
 						<?php endif; ?>
-
-
 
 				</div>
 
@@ -77,3 +88,4 @@ $posts = get_posts(array(
 	</div>
 
 </div><!-- Container end -->
+<?php get_footer(); ?>

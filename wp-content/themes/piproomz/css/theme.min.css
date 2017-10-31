@@ -4779,9 +4779,17 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .home-page .gradient-bg { width: 100%; height: 120%; left: 0px; top: 0px; overflow: hidden; transform: skewY(-8deg); transform-origin: 0; position: absolute; z-index: 0; background-color: #1b60d8; background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); }
 
-.broker-page .collapsed [aria-expanded="false"] .fa-minus-square-o { display: none; }
+.page-template-brokerpage a { text-decoration: none; }
 
-.broker-page .collapsed [aria-expanded="true"] .fa-plus-square-o { display: none; }
+.page-template-brokerpage .fa-minus-square-o, .page-template-brokerpage .fa-plus-square-o { opacity: .4; }
+
+.page-template-brokerpage .toggle { background: #f8f9fa; }
+
+.page-template-brokerpage .toggle:hover { cursor: pointer; background: #e9ecef; }
+
+.page-template-brokerpage [aria-expanded="false"] .fa-minus-square-o { display: none; }
+
+.page-template-brokerpage [aria-expanded="true"] .fa-plus-square-o { display: none; }
 
 .widget_bp_groups_widget .item-options a.selected { font-weight: bold; }
 
