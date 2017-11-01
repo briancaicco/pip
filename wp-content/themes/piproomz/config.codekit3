@@ -2320,10 +2320,10 @@
 		"oAP": "\/page-templates\/both-sidebarspage.php",
 		"oF": 0
 		},
-	"\/page-templates\/broker.php": {
+	"\/page-templates\/brokers.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/page-templates\/broker.php",
+		"oAP": "\/page-templates\/brokers.php",
 		"oF": 0
 		},
 	"\/page-templates\/dashboard.php": {

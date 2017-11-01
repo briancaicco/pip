@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Broker Page
+ * Template Name: Brokers Page
  *
  * Template for displaying a list of brokers the full-width of the page.
  *

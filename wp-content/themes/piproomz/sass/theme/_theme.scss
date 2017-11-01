@@ -887,7 +887,7 @@ display:none;
 
 // Broker Page
 /////////////////////////////////////////////////////////////////////////
-.page-template-brokerpage{
+.page-template-brokers{
 	a{
 		text-decoration: none;
 
@@ -903,13 +903,13 @@ display:none;
 		}
 	}
 	[aria-expanded="false"]{
-		.fa-minus-square-o{
-			display: none;
+		.fa.fa-minus-square-o{
+			display: none !important;
 		}
 	}
 	[aria-expanded="true"]{
-		.fa-plus-square-o{
-			display: none;
+		.fa.fa-plus-square-o{
+			display: none !important;
 		}
 	}
 }
