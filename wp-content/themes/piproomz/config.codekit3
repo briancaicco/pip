@@ -1554,6 +1554,12 @@
 		"oAP": "\/css\/theme.min.css.map",
 		"oF": 0
 		},
+	"\/favicon.ico": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/favicon.ico",
+		"oF": 0
+		},
 	"\/fonts\/fontawesome-webfont.eot": {
 		"ft": 8192,
 		"oA": 2,
@@ -1693,6 +1699,12 @@
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
+		},
+	"\/img\/favicon.ico": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/img\/favicon.ico",
+		"oF": 0
 		},
 	"\/img\/header.jpg": {
 		"ft": 16384,

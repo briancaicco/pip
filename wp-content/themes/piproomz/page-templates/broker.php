@@ -1,5 +1,4 @@
 <?php 
-
 /**
  * Template Name: Broker Page
  *
@@ -31,13 +30,14 @@ $posts = get_posts(array(
 
 					<h1 class="mb-4"><?php the_title(); ?></h1>
 
-					<? if( $posts ): ?>
+					<?php if( $posts ): ?>
 
 						<div id="brokers" data-children=".broker">
 
 							<?php 
 
 							$i=0;
+
 							foreach( $posts as $post ): 
 
 								setup_postdata( $post );
