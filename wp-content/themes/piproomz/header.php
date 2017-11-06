@@ -50,7 +50,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						        <span class="navbar-toggler-icon"></span>
 						    </button>
 
-						    <div class="navbar-collapse collapse justify-content-stretch" id="navbarNavDropdown">
+						    <div class="navbar-collapse collapse d-flex justify-content-stretch" id="navbarNavDropdown">
 
 						        
 						    	<?php 

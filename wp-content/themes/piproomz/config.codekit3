@@ -7,879 +7,1025 @@
 		"uuidString": "34AAE08E-CA7A-43DE-A270-18AAE52CF2A5"
 		}
 	],
-"creatorBuild": "25849",
+"creatorBuild": "26097",
 "files": {
 	"\/404.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/404.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/about\/1-2-4.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/about\/1-2-4.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/about\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/about\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/coupons\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/coupons\/form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/coupons\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/coupons\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/db\/upgrade_error.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/db\/upgrade_error.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/db\/upgrade_needed.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/db\/upgrade_needed.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/db\/upgrade_not_needed.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/db\/upgrade_not_needed.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/db\/upgrade_success.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/db\/upgrade_success.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/emails\/options.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/emails\/options.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/errors.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/errors.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/groups\/custom_page_template_form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/groups\/custom_page_template_form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/groups\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/groups\/form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/help\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/help\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/help\/ui.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/help\/ui.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/members\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/members\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/members\/list.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/members\/list.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/members\/member_profile.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/members\/member_profile.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/members\/new_member.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/members\/new_member.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/members\/row.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/members\/row.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/members\/search_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/members\/search_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/members\/trans_form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/members\/trans_form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/must_configure.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/must_configure.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/options\/custom_fields_row.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/options\/custom_fields_row.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/options\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/options\/form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/options\/gateway.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/options\/gateway.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/options\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/options\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/options\/options_saved.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/options\/options_saved.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/popups\/senddata.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/popups\/senddata.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/advanced.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/advanced.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/custom_page_template_form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/custom_page_template_form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/permissions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/permissions.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/price_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/price_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/product_options_meta_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/product_options_meta_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/products\/registration.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/products\/registration.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reminders\/emails.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reminders\/emails.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reminders\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reminders\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reminders\/trigger.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reminders\/trigger.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reports\/all_time_info_blocks.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reports\/all_time_info_blocks.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reports\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reports\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reports\/main.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reports\/main.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reports\/month_info_blocks.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reports\/month_info_blocks.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reports\/month_table.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reports\/month_table.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reports\/year_info_blocks.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reports\/year_info_blocks.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/reports\/year_table.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/reports\/year_table.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/rules\/drip_form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/rules\/drip_form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/rules\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/rules\/form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/rules\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/rules\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/rules\/rules_meta_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/rules\/rules_meta_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/rules\/unauth_meta_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/rules\/unauth_meta_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/subscriptions\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/subscriptions\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/subscriptions\/list.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/subscriptions\/list.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/subscriptions\/row.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/subscriptions\/row.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/subscriptions\/search.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/subscriptions\/search.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/subscriptions\/search_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/subscriptions\/search_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/subscriptions\/tabs.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/subscriptions\/tabs.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/table_controls.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/table_controls.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/table_footer.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/table_footer.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/taxes\/avalara_options.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/taxes\/avalara_options.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/taxes\/options.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/taxes\/options.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/taxes\/vat_options.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/taxes\/vat_options.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/taxes\/vat_profile_fields.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/taxes\/vat_profile_fields.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/transactions\/edit_trans.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/transactions\/edit_trans.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/transactions\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/transactions\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/transactions\/list.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/transactions\/list.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/transactions\/new_trans.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/transactions\/new_trans.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/transactions\/row.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/transactions\/row.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/transactions\/search_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/transactions\/search_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/transactions\/trans_form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/transactions\/trans_form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/unauthorized_meta_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/unauthorized_meta_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/update\/activation_warning.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/update\/activation_warning.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/update\/addon_popup.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/update\/addon_popup.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/update\/addons.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/update\/addons.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/update\/edge_updates.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/update\/edge_updates.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/update\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/update\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/update\/license.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/update\/license.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/update\/ui.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/update\/ui.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/usage\/option.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/usage\/option.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/users\/extra_profile_fields.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/users\/extra_profile_fields.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/users\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/users\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/users\/login_page_meta_box.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/users\/login_page_meta_box.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/users\/search.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/users\/search.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/widgets\/admin_stats_widget.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/widgets\/admin_stats_widget.php",
 		"oF": 0
 		},
 	"\/___memberpress\/admin\/widgets\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/admin\/widgets\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/checkout\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/checkout\/form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/checkout\/ga_ecommerce_tracking.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/checkout\/ga_ecommerce_tracking.php",
 		"oF": 0
 		},
 	"\/___memberpress\/checkout\/invoice.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/checkout\/invoice.php",
 		"oF": 0
 		},
 	"\/___memberpress\/checkout\/signup_row.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/checkout\/signup_row.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_cancelled_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_cancelled_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_cc_expires_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_cc_expires_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_cc_expiring.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_cc_expiring.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_downgraded_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_downgraded_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_failed_txn.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_failed_txn.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_member_signup_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_member_signup_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_new_one_off.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_new_one_off.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_new_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_new_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_receipt.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_receipt.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_refunded_txn.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_refunded_txn.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_resumed_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_resumed_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_signup.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_signup.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_signup_abandoned_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_signup_abandoned_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_sub_expires_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_sub_expires_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_sub_renews_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_sub_renews_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_suspended_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_suspended_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/admin_upgraded_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/admin_upgraded_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/template.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/template.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_cancelled_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_cancelled_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_cc_expires_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_cc_expires_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_cc_expiring.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_cc_expiring.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_downgraded_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_downgraded_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_failed_txn.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_failed_txn.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_member_signup_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_member_signup_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_product_welcome.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_product_welcome.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_receipt.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_receipt.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_refunded_txn.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_refunded_txn.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_resumed_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_resumed_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_signup_abandoned_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_signup_abandoned_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_sub_expires_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_sub_expires_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_sub_renews_reminder.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_sub_renews_reminder.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_suspended_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_suspended_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_upgraded_sub.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_upgraded_sub.php",
 		"oF": 0
 		},
 	"\/___memberpress\/emails\/user_welcome.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/emails\/user_welcome.php",
 		"oF": 0
 		},
 	"\/___memberpress\/groups\/front_groups_page.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/groups\/front_groups_page.php",
 		"oF": 0
 		},
 	"\/___memberpress\/groups\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/groups\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/login\/already_logged_in.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/login\/already_logged_in.php",
 		"oF": 0
 		},
 	"\/___memberpress\/login\/forgot_password.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/login\/forgot_password.php",
 		"oF": 0
 		},
 	"\/___memberpress\/login\/forgot_password_requested.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/login\/forgot_password_requested.php",
 		"oF": 0
 		},
 	"\/___memberpress\/login\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/login\/form.php",
 		"oF": 0
 		},
 	"\/___memberpress\/login\/reset_password.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/login\/reset_password.php",
 		"oF": 0
 		},
 	"\/___memberpress\/login\/reset_password_thankyou.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/login\/reset_password_thankyou.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shared\/errors.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shared\/errors.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shared\/has_errors.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shared\/has_errors.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shared\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shared\/index.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shared\/unauthorized.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shared\/unauthorized.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shared\/unauthorized_comments.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shared\/unauthorized_comments.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shared\/unauthorized_message.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shared\/unauthorized_message.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shared\/unknown_error.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shared\/unknown_error.php",
 		"oF": 0
 		},
 	"\/___memberpress\/shortcodes\/list_users_subscriptions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/shortcodes\/list_users_subscriptions.php",
 		"oF": 0
 		},
 	"\/___memberpress\/taxes\/vat_signup.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/___memberpress\/taxes\/vat_signup.php",
 		"oF": 0
 		},
 	"\/archive.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/archive.php",
 		"oF": 0
 		},
 	"\/author.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/author.php",
 		"oF": 0
 		},
 	"\/bootstrap_toggle_example.html": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/bootstrap_toggle_example.html",
@@ -894,126 +1040,147 @@
 		"oS": 1
 		},
 	"\/buddypress\/activity\/activity-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/activity\/activity-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/activity\/comment.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/activity\/comment.php",
 		"oF": 0
 		},
 	"\/buddypress\/activity\/entry.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/activity\/entry.php",
 		"oF": 0
 		},
 	"\/buddypress\/activity\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/activity\/index.php",
 		"oF": 0
 		},
 	"\/buddypress\/activity\/post-form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/activity\/post-form.php",
 		"oF": 0
 		},
 	"\/buddypress\/activity\/single\/home.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/activity\/single\/home.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/_attachments\/avatars\/camera.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/_attachments\/avatars\/camera.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/_attachments\/avatars\/crop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/_attachments\/avatars\/crop.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/_attachments\/avatars\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/_attachments\/avatars\/index.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/_attachments\/cover-images\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/_attachments\/cover-images\/index.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/_attachments\/uploader.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/_attachments\/uploader.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/emails\/single-bp-email.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/emails\/single-bp-email.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/embeds\/activity.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/embeds\/activity.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/embeds\/footer.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/embeds\/footer.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/embeds\/header-activity.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/embeds\/header-activity.php",
 		"oF": 0
 		},
 	"\/buddypress\/assets\/embeds\/header.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/assets\/embeds\/header.php",
 		"oF": 0
 		},
 	"\/buddypress\/blogs\/blogs-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/blogs\/blogs-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/blogs\/create.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/blogs\/create.php",
 		"oF": 0
 		},
 	"\/buddypress\/blogs\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/blogs\/index.php",
 		"oF": 0
 		},
 	"\/buddypress\/buddypress-functions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/buddypress-functions.php",
 		"oF": 0
 		},
 	"\/buddypress\/common\/search\/dir-search-form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/common\/search\/dir-search-form.php",
@@ -1040,156 +1207,182 @@
 		"oS": 3
 		},
 	"\/buddypress\/forums\/forums-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/forums\/forums-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/forums\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/forums\/index.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/create.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/create.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/groups-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/groups-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/index.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/activity.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/activity.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin\/delete-group.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin\/delete-group.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin\/edit-details.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin\/edit-details.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin\/group-avatar.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin\/group-avatar.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin\/group-cover-image.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin\/group-cover-image.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin\/group-settings.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin\/group-settings.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin\/manage-members.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin\/manage-members.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/admin\/membership-requests.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/admin\/membership-requests.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/cover-image-header.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/cover-image-header.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/forum.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/forum.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/forum\/edit.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/forum\/edit.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/forum\/topic.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/forum\/topic.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/group-header.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/group-header.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/home.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/home.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/invites-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/invites-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/members.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/members.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/plugins.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/plugins.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/request-membership.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/request-membership.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/requests-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/requests-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/groups\/single\/send-invites.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/groups\/single\/send-invites.php",
@@ -1197,6 +1390,7 @@
 		},
 	"\/buddypress\/js\/buddypress-min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/buddypress\/js\/buddypress-min-min.js",
@@ -1206,6 +1400,7 @@
 		},
 	"\/buddypress\/js\/buddypress.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/buddypress\/js\/buddypress-min.js",
@@ -1215,6 +1410,7 @@
 		},
 	"\/buddypress\/js\/buddypress.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/buddypress\/js\/buddypress.min-min.js",
@@ -1224,6 +1420,7 @@
 		},
 	"\/buddypress\/js\/password-verify.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/buddypress\/js\/password-verify-min.js",
@@ -1233,6 +1430,7 @@
 		},
 	"\/buddypress\/js\/password-verify.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/buddypress\/js\/password-verify.min-min.js",
@@ -1241,250 +1439,290 @@
 		"tS": 0
 		},
 	"\/buddypress\/members\/activate.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/activate.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/broken-registration.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/broken-registration.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/members-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/members-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/register.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/register.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/activity.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/activity.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/blogs.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/blogs.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/cover-image-header.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/cover-image-header.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/forums.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/forums.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/forums\/topics.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/forums\/topics.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/friends.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/friends.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/friends\/requests.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/friends\/requests.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/groups.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/groups.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/groups\/invites.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/groups\/invites.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/home.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/home.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/member-header.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/member-header.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/messages.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/messages.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/messages\/compose.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/messages\/compose.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/messages\/message.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/messages\/message.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/messages\/messages-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/messages\/messages-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/messages\/notices-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/messages\/notices-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/messages\/single.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/messages\/single.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/notifications.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/notifications.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/notifications\/feedback-no-notifications.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/notifications\/feedback-no-notifications.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/notifications\/notifications-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/notifications\/notifications-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/notifications\/read.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/notifications\/read.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/notifications\/unread.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/notifications\/unread.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/plugins.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/plugins.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/profile.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/profile.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/profile\/change-avatar.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/profile\/change-avatar.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/profile\/change-cover-image.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/profile\/change-cover-image.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/profile\/edit.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/profile\/edit.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/profile\/profile-loop.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/profile\/profile-loop.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/profile\/profile-wp.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/profile\/profile-wp.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/settings.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/settings.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/settings\/capabilities.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/settings\/capabilities.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/settings\/delete-account.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/settings\/delete-account.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/settings\/general.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/settings\/general.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/settings\/notifications.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/settings\/notifications.php",
 		"oF": 0
 		},
 	"\/buddypress\/members\/single\/settings\/profile.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/members\/single\/settings\/profile.php",
 		"oF": 0
 		},
 	"\/buddypress\/page.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/buddypress\/page.php",
 		"oF": 0
 		},
 	"\/CHANGELOG.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -1499,12 +1737,14 @@
 		"uCM": 0
 		},
 	"\/codesniffer.ruleset.xml": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/codesniffer.ruleset.xml",
 		"oF": 0
 		},
 	"\/comments.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/comments.php",
@@ -1549,18 +1789,21 @@
 		"oS": 3
 		},
 	"\/css\/theme.min.css.map": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/css\/theme.min.css.map",
 		"oF": 0
 		},
 	"\/favicon.ico": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/favicon.ico",
 		"oF": 0
 		},
 	"\/fonts\/fontawesome-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/fontawesome-webfont.eot",
@@ -1577,30 +1820,35 @@
 		"prP": 0
 		},
 	"\/fonts\/fontawesome-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/fontawesome-webfont.ttf",
 		"oF": 0
 		},
 	"\/fonts\/fontawesome-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/fontawesome-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/fontawesome-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/fontawesome-webfont.woff2",
 		"oF": 0
 		},
 	"\/fonts\/FontAwesome.otf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/FontAwesome.otf",
 		"oF": 0
 		},
 	"\/fonts\/glyphicons-halflings-regular.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/glyphicons-halflings-regular.eot",
@@ -1617,48 +1865,56 @@
 		"prP": 0
 		},
 	"\/fonts\/glyphicons-halflings-regular.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/glyphicons-halflings-regular.ttf",
 		"oF": 0
 		},
 	"\/fonts\/glyphicons-halflings-regular.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/glyphicons-halflings-regular.woff",
 		"oF": 0
 		},
 	"\/fonts\/glyphicons-halflings-regular.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/fonts\/glyphicons-halflings-regular.woff2",
 		"oF": 0
 		},
 	"\/footer.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/footer.php",
 		"oF": 0
 		},
 	"\/functions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/functions.php",
 		"oF": 0
 		},
 	"\/global-templates\/hero.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/global-templates\/hero.php",
 		"oF": 0
 		},
 	"\/global-templates\/left-sidebar-check.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/global-templates\/left-sidebar-check.php",
 		"oF": 0
 		},
 	"\/global-templates\/pagination.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/global-templates\/pagination.php",
@@ -1666,6 +1922,7 @@
 		},
 	"\/gulpfile.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/gulpfile-min.js",
@@ -1674,6 +1931,7 @@
 		"tS": 0
 		},
 	"\/header.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/header.php",
@@ -1701,6 +1959,7 @@
 		"prP": 0
 		},
 	"\/img\/favicon.ico": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/img\/favicon.ico",
@@ -1777,6 +2036,7 @@
 		"q": 100
 		},
 	"\/inc\/ajax-login-register\/ajax-login-register.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/ajax-login-register\/ajax-login-register.php",
@@ -1794,6 +2054,7 @@
 		},
 	"\/inc\/ajax-login-register\/user-login.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/inc\/ajax-login-register\/user-login-min.js",
@@ -1802,72 +2063,84 @@
 		"tS": 0
 		},
 	"\/inc\/bootstrap-wp-navwalker.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/bootstrap-wp-navwalker.php",
 		"oF": 0
 		},
 	"\/inc\/custom-comments.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/custom-comments.php",
 		"oF": 0
 		},
 	"\/inc\/custom-header.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/custom-header.php",
 		"oF": 0
 		},
 	"\/inc\/custom-post-types.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/custom-post-types.php",
 		"oF": 0
 		},
 	"\/inc\/customizer.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/customizer.php",
 		"oF": 0
 		},
 	"\/inc\/editor.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/editor.php",
 		"oF": 0
 		},
 	"\/inc\/enqueue.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/enqueue.php",
 		"oF": 0
 		},
 	"\/inc\/extras.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/extras.php",
 		"oF": 0
 		},
 	"\/inc\/jetpack.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/jetpack.php",
 		"oF": 0
 		},
 	"\/inc\/pagination.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/pagination.php",
 		"oF": 0
 		},
 	"\/inc\/security.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/security.php",
 		"oF": 0
 		},
 	"\/inc\/setup.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/setup.php",
@@ -1884,36 +2157,42 @@
 		"oS": 3
 		},
 	"\/inc\/template-tags.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/template-tags.php",
 		"oF": 0
 		},
 	"\/inc\/theme-settings.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/theme-settings.php",
 		"oF": 0
 		},
 	"\/inc\/widgets.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/widgets.php",
 		"oF": 0
 		},
 	"\/inc\/woocommerce.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/woocommerce.php",
 		"oF": 0
 		},
 	"\/inc\/wpcom.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/inc\/wpcom.php",
 		"oF": 0
 		},
 	"\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/index.php",
@@ -1921,6 +2200,7 @@
 		},
 	"\/js\/customizer.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/customizer-min.js",
@@ -1930,6 +2210,7 @@
 		},
 	"\/js\/glossary-min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/glossary-min-min.js",
@@ -1939,6 +2220,7 @@
 		},
 	"\/js\/glossary.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/glossary-min.js",
@@ -1948,6 +2230,7 @@
 		},
 	"\/js\/init-min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/init-min-min.js",
@@ -1957,6 +2240,7 @@
 		},
 	"\/js\/init.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/init-min.js",
@@ -1966,6 +2250,7 @@
 		},
 	"\/js\/popper.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/popper-min.js",
@@ -1975,6 +2260,7 @@
 		},
 	"\/js\/popper.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/popper.min-min.js",
@@ -1984,6 +2270,7 @@
 		},
 	"\/js\/theme.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/theme-min.js",
@@ -1993,6 +2280,7 @@
 		},
 	"\/js\/theme.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/theme.min-min.js",
@@ -2001,300 +2289,350 @@
 		"tS": 0
 		},
 	"\/languages\/de_DE.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/de_DE.mo",
 		"oF": 0
 		},
 	"\/languages\/de_DE.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/de_DE.po",
 		"oF": 0
 		},
 	"\/languages\/el_GR.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/el_GR.mo",
 		"oF": 0
 		},
 	"\/languages\/el_GR.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/el_GR.po",
 		"oF": 0
 		},
 	"\/languages\/es_ES.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/es_ES.mo",
 		"oF": 0
 		},
 	"\/languages\/es_ES.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/es_ES.po",
 		"oF": 0
 		},
 	"\/languages\/fr_FR.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/fr_FR.mo",
 		"oF": 0
 		},
 	"\/languages\/fr_FR.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/fr_FR.po",
 		"oF": 0
 		},
 	"\/languages\/it_IT.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/it_IT.mo",
 		"oF": 0
 		},
 	"\/languages\/it_IT.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/it_IT.po",
 		"oF": 0
 		},
 	"\/languages\/ko_KR.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/ko_KR.mo",
 		"oF": 0
 		},
 	"\/languages\/ko_KR.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/ko_KR.po",
 		"oF": 0
 		},
 	"\/languages\/nb_NO.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/nb_NO.mo",
 		"oF": 0
 		},
 	"\/languages\/nb_NO.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/nb_NO.po",
 		"oF": 0
 		},
 	"\/languages\/nl_NL.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/nl_NL.mo",
 		"oF": 0
 		},
 	"\/languages\/nl_NL.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/nl_NL.po",
 		"oF": 0
 		},
 	"\/languages\/nn_NO.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/nn_NO.mo",
 		"oF": 0
 		},
 	"\/languages\/nn_NO.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/nn_NO.po",
 		"oF": 0
 		},
 	"\/languages\/pt_BR.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/pt_BR.mo",
 		"oF": 0
 		},
 	"\/languages\/pt_BR.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/pt_BR.po",
 		"oF": 0
 		},
 	"\/languages\/pt_PT.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/pt_PT.mo",
 		"oF": 0
 		},
 	"\/languages\/pt_PT.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/pt_PT.po",
 		"oF": 0
 		},
 	"\/languages\/ru_RU.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/ru_RU.mo",
 		"oF": 0
 		},
 	"\/languages\/ru_RU.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/ru_RU.po",
 		"oF": 0
 		},
 	"\/languages\/sv_SE.mo": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/sv_SE.mo",
 		"oF": 0
 		},
 	"\/languages\/sv_SE.po": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/sv_SE.po",
 		"oF": 0
 		},
 	"\/languages\/understrap.pot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/languages\/understrap.pot",
 		"oF": 0
 		},
 	"\/loop-templates\/content-blank.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/loop-templates\/content-blank.php",
 		"oF": 0
 		},
 	"\/loop-templates\/content-empty.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/loop-templates\/content-empty.php",
 		"oF": 0
 		},
 	"\/loop-templates\/content-none.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/loop-templates\/content-none.php",
 		"oF": 0
 		},
 	"\/loop-templates\/content-page.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/loop-templates\/content-page.php",
 		"oF": 0
 		},
 	"\/loop-templates\/content-search.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/loop-templates\/content-search.php",
 		"oF": 0
 		},
 	"\/loop-templates\/content-single.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/loop-templates\/content-single.php",
 		"oF": 0
 		},
 	"\/loop-templates\/content.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/loop-templates\/content.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/home.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/home.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/index.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/index.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/logged_in_template.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/logged_in_template.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/logged_in_widget.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/logged_in_widget.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/logged_out_template.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/logged_out_template.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/logged_out_widget.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/logged_out_widget.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/nav.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/nav.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/password.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/password.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/payments.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/payments.php",
 		"oF": 0
 		},
 	"\/memberpress\/account\/subscriptions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/account\/subscriptions.php",
 		"oF": 0
 		},
 	"\/memberpress\/login\/already_logged_in.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/login\/already_logged_in.php",
 		"oF": 0
 		},
 	"\/memberpress\/login\/forgot_password.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/login\/forgot_password.php",
 		"oF": 0
 		},
 	"\/memberpress\/login\/forgot_password_requested.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/login\/forgot_password_requested.php",
 		"oF": 0
 		},
 	"\/memberpress\/login\/form.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/login\/form.php",
 		"oF": 0
 		},
 	"\/memberpress\/login\/reset_password.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/login\/reset_password.php",
 		"oF": 0
 		},
 	"\/memberpress\/login\/reset_password_thankyou.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/memberpress\/login\/reset_password_thankyou.php",
@@ -2309,88 +2647,101 @@
 		"oS": 1
 		},
 	"\/page-templates\/blank.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/blank.php",
 		"oF": 0
 		},
 	"\/page-templates\/both-sidebarspage.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/both-sidebarspage.php",
 		"oF": 0
 		},
 	"\/page-templates\/brokers.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/brokers.php",
 		"oF": 0
 		},
 	"\/page-templates\/dashboard.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/dashboard.php",
 		"oF": 0
 		},
 	"\/page-templates\/empty.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/empty.php",
 		"oF": 0
 		},
 	"\/page-templates\/fullwidthpage.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/fullwidthpage.php",
 		"oF": 0
 		},
 	"\/page-templates\/glossary.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/glossary.php",
 		"oF": 0
 		},
 	"\/page-templates\/home.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/home.php",
 		"oF": 0
 		},
 	"\/page-templates\/left-sidebarpage.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/left-sidebarpage.php",
 		"oF": 0
 		},
 	"\/page-templates\/right-sidebarpage.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/right-sidebarpage.php",
 		"oF": 0
 		},
 	"\/page.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page.php",
 		"oF": 0
 		},
 	"\/partials\/form-login.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/form-login.php",
 		"oF": 0
 		},
 	"\/partials\/form-register.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/form-register.php",
 		"oF": 0
 		},
 	"\/README.md": {
+		"cB": 0,
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
-		"eLB": 0,
 		"ema": 1,
 		"eSQ": 1,
 		"ft": 4096,
@@ -2405,6 +2756,7 @@
 		"uCM": 0
 		},
 	"\/readme.txt": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/readme.txt",
@@ -2539,60 +2891,70 @@
 		"q": 100
 		},
 	"\/search.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/search.php",
 		"oF": 0
 		},
 	"\/searchform.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/searchform.php",
 		"oF": 0
 		},
 	"\/sidebar-footerfull.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/sidebar-footerfull.php",
 		"oF": 0
 		},
 	"\/sidebar-hero.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/sidebar-hero.php",
 		"oF": 0
 		},
 	"\/sidebar-left.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/sidebar-left.php",
 		"oF": 0
 		},
 	"\/sidebar-right.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/sidebar-right.php",
 		"oF": 0
 		},
 	"\/sidebar-statichero.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/sidebar-statichero.php",
 		"oF": 0
 		},
 	"\/sidebar.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/sidebar.php",
 		"oF": 0
 		},
 	"\/single-broker.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/single-broker.php",
 		"oF": 0
 		},
 	"\/single.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/single.php",
@@ -2600,6 +2962,7 @@
 		},
 	"\/src\/js\/bootstrap4\/bootstrap.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/bootstrap4\/bootstrap-min.js",
@@ -2609,6 +2972,7 @@
 		},
 	"\/src\/js\/bootstrap4\/bootstrap.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/bootstrap4\/bootstrap.min-min.js",
@@ -2618,6 +2982,7 @@
 		},
 	"\/src\/js\/core.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/core-min.js",
@@ -2627,6 +2992,7 @@
 		},
 	"\/src\/js\/customizer.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/customizer-min.js",
@@ -2636,6 +3002,7 @@
 		},
 	"\/src\/js\/jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/jquery-min.js",
@@ -2645,6 +3012,7 @@
 		},
 	"\/src\/js\/jquery.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/jquery.min-min.js",
@@ -2654,6 +3022,7 @@
 		},
 	"\/src\/js\/jquery.slim.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/jquery.slim-min.js",
@@ -2663,6 +3032,7 @@
 		},
 	"\/src\/js\/jquery.slim.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/jquery.slim.min-min.js",
@@ -2672,6 +3042,7 @@
 		},
 	"\/src\/js\/navigation.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/navigation-min.js",
@@ -2681,6 +3052,7 @@
 		},
 	"\/src\/js\/skip-link-focus-fix.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/skip-link-focus-fix-min.js",
@@ -4762,6 +5134,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -4769,6 +5145,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -4866,6 +5246,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -4882,9 +5266,17 @@
 			"active": 0,
 			"optionString": "'expression'"
 			},
+		"function-paren-newline": {
+			"active": 0,
+			"optionString": "'multiline'"
+			},
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -4942,9 +5334,9 @@
 			"active": 0,
 			"optionString": "{'beforeBlockComment': true}"
 			},
-		"lines-around-directive": {
+		"lines-between-class-members": {
 			"active": 0,
-			"optionString": "{'before': 'always', 'after': 'always'}"
+			"optionString": "'always', {exceptAfterSingleLine: false}"
 			},
 		"max-depth": {
 			"active": 0,
@@ -4974,6 +5366,10 @@
 			"active": 0,
 			"optionString": "{'max': 1}"
 			},
+		"multiline-comment-style": {
+			"active": 0,
+			"optionString": "'starred-block'"
+			},
 		"multiline-ternary": {
 			"active": 0,
 			"optionString": "'always'"
@@ -4983,14 +5379,6 @@
 			"optionString": "{'newIsCap': true, 'capIsNew': true, 'newIsCapExceptions': [], 'capIsNewExceptions': ['Array', 'Boolean', 'Date', 'Error', 'Function', 'Number', 'Object', 'RegExp', 'String', 'Symbol'], 'properties': true}"
 			},
 		"new-parens": {
-			"active": 0,
-			"optionString": ""
-			},
-		"newline-after-var": {
-			"active": 0,
-			"optionString": "'always'"
-			},
-		"newline-before-return": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -5013,6 +5401,10 @@
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -5558,6 +5950,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -5626,6 +6022,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -5665,6 +6065,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -6078,7 +6482,8 @@
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 1,
+		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {
 		"autoOutputAction": 0,
@@ -6111,6 +6516,7 @@
 		"noEscapeInAttributes": 0,
 		"outputFormat": 2,
 		"outputStyle": 0,
+		"shouldRunCacheBuster": 0,
 		"useCDATA": 0,
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
@@ -6152,7 +6558,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "kit",
 		"autoOutputPathReplace2": "html",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsLESS": {
 		"allowInsecureImports": 0,
@@ -6184,13 +6591,13 @@
 		"enableFootnotes": 1,
 		"enableLabels": 1,
 		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
 		"maskEmailAddresses": 1,
 		"outputFormat": 0,
 		"outputStyle": 0,
 		"parseMetadata": 1,
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
+		"shouldRunCacheBuster": 0,
 		"useCompatibilityMode": 0
 		},
 	"languageDefaultsOTHER": {
@@ -6199,7 +6606,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsPNG": {
 		"autoOutputAction": 0,
@@ -6219,7 +6627,8 @@
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"compileDebug": 1,
-		"outputStyle": 0
+		"outputStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
@@ -6247,7 +6656,8 @@
 		"logicless": 0,
 		"outputFormat": 0,
 		"outputStyle": 1,
-		"railsCompatible": 0
+		"railsCompatible": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSTYLUS": {
 		"autoOutputAction": 0,
@@ -6298,6 +6708,7 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {

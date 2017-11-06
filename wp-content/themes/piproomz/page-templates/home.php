@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="gradient-bg"></div>
 				<div class="col-12 col-md-7 py-3 py-md-5 mb-md-3">
 
-					<h1 class="h2 mb-3">The community where traders learn from other traders.</h1>
+					<h1 class="h1 mb-3">Learn to be an expert trader.</h1>
 					<p>Piproomz is helping traders of any experience level connect with other traders, resources, and tools so they can dominate the markets.</p>
 					<a href="<?php echo home_url (); ?>/register" class="btn btn-lg btn-success mt-3">Join for Free</a>
 
