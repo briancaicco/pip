@@ -930,6 +930,7 @@ display:none;
 	}
 	.toggle{
 		background: $gray-100;
+		transition: ease-in-out .35s;
 		&:hover{
 			cursor: pointer;
 			background: $gray-200;
@@ -969,6 +970,35 @@ display:none;
 	.table thead th {
 	    vertical-align: bottom;
 	    border-bottom: 2px solid #e9ecef;
+	}
+
+	.recommended{
+		box-shadow: $el-4;
+		transform: scale(1);
+		transition: all .35s linear;
+	.toggle{
+		background: #00c6ff;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		
+		.h4, .h3{
+			color: $white !important;
+		}
+
+		.fa-minus-square-o, .fa-plus-square-o{
+			opacity: .8;
+		}	
+	}
+		&:hover{
+			box-shadow: $el-7;
+			transform: scale(1.002);
+			-webkit-transition: -webkit-transform .35s ease-in-out;
+			    -moz-transition: -moz-transform .35s ease-in-out;
+			      -o-transition: -o-transform .35s ease-in-out;
+			         transition: all .35s ease-in-out;
+		}
+
 	}
 
 }

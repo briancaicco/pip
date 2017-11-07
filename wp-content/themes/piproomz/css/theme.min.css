@@ -4787,7 +4787,7 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .page-template-brokers .fa-minus-square-o, .page-template-brokers .fa-plus-square-o { opacity: .4; }
 
-.page-template-brokers .toggle { background: #f8f9fa; }
+.page-template-brokers .toggle { background: #f8f9fa; transition: ease-in-out .35s; }
 
 .page-template-brokers .toggle:hover { cursor: pointer; background: #e9ecef; }
 
@@ -4802,6 +4802,16 @@ a.wp-social-login-provider-twitter { display: none; }
 .page-template-brokers .table .thead-light th { color: #495057; background-color: #e9ecef; border-color: #e9ecef; }
 
 .page-template-brokers .table thead th { vertical-align: bottom; border-bottom: 2px solid #e9ecef; }
+
+.page-template-brokers .recommended { box-shadow: 0 0 4px rgba(22, 22, 34, 0.14), 0 4px 8px rgba(22, 22, 34, 0.28); transform: scale(1); transition: all .35s linear; }
+
+.page-template-brokers .recommended .toggle { background: #00c6ff; /* fallback for old browsers */ background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+.page-template-brokers .recommended .toggle .h4, .page-template-brokers .recommended .toggle .h3 { color: #fff !important; }
+
+.page-template-brokers .recommended .toggle .fa-minus-square-o, .page-template-brokers .recommended .toggle .fa-plus-square-o { opacity: .8; }
+
+.page-template-brokers .recommended:hover { box-shadow: 0 0 7px rgba(22, 22, 34, 0.17), 0 7px 14px rgba(22, 22, 34, 0.34); transform: scale(1.002); -webkit-transition: -webkit-transform .35s ease-in-out; -moz-transition: -moz-transform .35s ease-in-out; -o-transition: -o-transform .35s ease-in-out; transition: all .35s ease-in-out; }
 
 .widget_bp_groups_widget .item-options a.selected { font-weight: bold; }
 
