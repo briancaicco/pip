@@ -62,7 +62,7 @@ $posts = get_posts(array(
 
 									<div id="brokerItem<?php echo $i; ?>" class="collapse p-3" role="tabpanel">
 
-										<?php if ( the_field('broker_editors_review') ); ?>
+										<?php // if ( the_field('broker_editors_review') ); ?>
 
 										<h5>Broker Information</h5>
 										<table class="table table-responsive">
