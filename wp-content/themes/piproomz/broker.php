@@ -28,13 +28,13 @@ $args2 = array(
 	'post_type'			=> 'broker',
 	'orderby'			=> 'title', 
 	'order'				=> 'ASC',
-	// 'meta_query' 		=> array(
-	// 	array(
-	// 		'key' 		=> 'broker_staff_pick',
-	// 		'value'		=> '1',
-	// 		'compare' 	=> '!='
-	// 	)
-	// )
+	'meta_query' 		=> array(
+		array(
+			'key' 		=> 'broker_staff_pick',
+			'value'		=> '1',
+			'compare' 	=> '!='
+		)
+	)
 );
 
 

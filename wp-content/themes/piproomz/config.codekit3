@@ -1039,6 +1039,13 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/broker.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/broker.php",
+		"oF": 0
+		},
 	"\/buddypress\/activity\/activity-loop.php": {
 		"cB": 0,
 		"ft": 8192,
