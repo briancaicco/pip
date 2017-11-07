@@ -61,14 +61,15 @@ $posts = get_posts(array(
 									</div>
 
 									<div id="brokerItem<?php echo $i; ?>" class="collapse p-3" role="tabpanel">
-										<?php if ( the_field('broker_editors_review') ); ?>
-										<div class="row broker-attributes">
-											<div class="col-md-6">
-												<table class="table table-responsive">
+												
+												<?php if ( the_field('broker_editors_review') ); ?>
+
+
+												<table class="table table-responsive mt-5">
 												  <thead class="thead-light">
 												    <tr>
 												      <th scope="col">Broker Information</th>
-												      <!-- <th scope="col"></th> -->
+												      <th scope="col"></th>
 												    </tr>
 												  </thead>
 												  <tbody>
@@ -88,14 +89,12 @@ $posts = get_posts(array(
 												    </tr>
 												  </tbody>
 												</table>
-											</div>
 
-											<div class="col-md-6">
 												<table class="table table-responsive">
 												  <thead class="thead-light">
 												    <tr>
 												      <th scope="col">Trading Insturments</th>
-												      <!-- <th scope="col"></th> -->
+												      <th scope="col"></th>
 												    </tr>
 												  </thead>
 												  <tbody>
@@ -113,15 +112,13 @@ $posts = get_posts(array(
 												    </tr>
 												  </tbody>
 												</table>
-											</div>
-										</div>
-										<div class="row broker-attributes">
-											<div class="col-md-6">
+
+
 												<table class="table table-responsive">
 												  <thead class="thead-light">
 												    <tr>
 												      <th scope="col">Trading Conditions</th>
-												      <!-- <th scope="col"></th> -->
+												      <th scope="col"></th>
 												    </tr>
 												  </thead>
 												  <tbody>
@@ -143,14 +140,12 @@ $posts = get_posts(array(
 												    </tr>
 												  </tbody>
 												</table>
-											</div>
 
-											<div class="col-md-6">
 												<table class="table table-responsive">
 												  <thead class="thead-light">
 												    <tr>
 												      <th scope="col">Trading Tools</th>
-												      <!-- <th scope="col"></th> -->
+												      <th scope="col"></th>
 												    </tr>
 												  </thead>
 												  <tbody>
@@ -176,15 +171,12 @@ $posts = get_posts(array(
 												    </tr>
 												  </tbody>
 												</table>
-											</div>
-										</div>
-										<div class="row broker-attributes">
-											<div class="col-md-6">
+
 												<table class="table table-responsive">
 												  <thead class="thead-light">
 												    <tr>
 												      <th scope="col">Account Specifications</th>
-												      <!-- <th scope="col"></th> -->
+												      <th scope="col"></th>
 												    </tr>
 												  </thead>
 												  <tbody>
@@ -211,9 +203,7 @@ $posts = get_posts(array(
 												    </tr>
 												  </tbody>
 												</table>
-											</div>
 
-											<div class="col-md-6">
 												<table class="table table-responsive">
 												  <thead class="thead-light">
 												    <tr>
@@ -244,8 +234,7 @@ $posts = get_posts(array(
 												    </tr>
 												  </tbody>
 												</table>
-											</div>
-										</div>
+
 									</div>
 								</div>
 
