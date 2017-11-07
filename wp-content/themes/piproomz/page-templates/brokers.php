@@ -61,179 +61,158 @@ $posts = get_posts(array(
 									</div>
 
 									<div id="brokerItem<?php echo $i; ?>" class="collapse p-3" role="tabpanel">
-												
-												<?php if ( the_field('broker_editors_review') ); ?>
 
+										<?php if ( the_field('broker_editors_review') ); ?>
 
-												<table class="table table-responsive mt-5">
-												  <thead class="thead-light">
-												    <tr>
-												      <th scope="col">Broker Information</th>
-												      <th scope="col"></th>
-												    </tr>
-												  </thead>
-												  <tbody>
-												    <tr>
-												      <td>Type</td>
-												      <td>Country</td>
-												      <td>Regulators</td>
-												      <td>US Clients</td>
-												      <td>Additional Info</td>
-												    </tr>
-												    <tr>
-												      <td><?php the_field('broker_type'); ?></td>
-												      <td><?php the_field('broker_country'); ?></td>
-												      <td><?php the_field('broker_regulators'); ?></td>
-												      <td><?php the_field('broker_us_clients'); ?></td>
-												      <td><?php the_field('broker_additional_info'); ?></td>
-												    </tr>
-												  </tbody>
-												</table>
+										<h5>Broker Information</h5>
+										<table class="table table-responsive">
+											<thead class="thead-light">
+												<tr>
+													<th scope="col">Type</th>
+													<th scope="col">Country</th>
+													<th scope="col">Regulators</th>
+													<th scope="col">US Clients</th>
+													<th scope="col">Additional Info</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><?php the_field('broker_type'); ?></td>
+													<td><?php the_field('broker_country'); ?></td>
+													<td><?php the_field('broker_regulators'); ?></td>
+													<td><?php $var1 = get_field('broker_us_clients'); if ($var1 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php the_field('broker_additional_info'); ?></td>
+												</tr>
+											</tbody>
+										</table>
 
-												<table class="table table-responsive">
-												  <thead class="thead-light">
-												    <tr>
-												      <th scope="col">Trading Insturments</th>
-												      <th scope="col"></th>
-												    </tr>
-												  </thead>
-												  <tbody>
-												    <tr>
-												      <td>Total Currency Pairs</td>
-												      <td>Gold &amp; Silver</td>
-												      <td>CDFs</td>
-												      <td>Other Insturments</td>
-												    </tr>
-												    <tr>
-												      <td><?php the_field('broker_total_currency_pairs'); ?></td>
-												      <td><?php the_field('broker_gold_silver_trading'); ?></td>
-												      <td><?php the_field('broker_cdf_trading'); ?></td>
-												      <td><?php the_field('broker_other_trading_instruments'); ?></td>
-												    </tr>
-												  </tbody>
-												</table>
+										<h5>Trading Insturments</h5>
+										<table class="table table-responsive">
+											<thead class="thead-light">
+												<tr>
+													<th scope="col">Total Currency Pairs</th>
+													<th scope="col">Gold &amp; Silver</th>
+													<th scope="col">CDFs</th>
+													<th scope="col">Other Insturments</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><?php the_field('broker_total_currency_pairs'); ?></td>
+													<td><?php the_field('broker_gold_silver_trading'); ?></td>
+													<td><?php the_field('broker_cdf_trading'); ?></td>
+													<td><?php the_field('broker_other_trading_instruments'); ?></td>
+												</tr>
+											</tbody>
+										</table>
 
+										<h5>Trading Conditions</h5>
+										<table class="table table-responsive">
+											<thead class="thead-light">
+												<tr>
+													<th scope="col">Commission Fee</th>
+													<th scope="col">Spread Type</th>
+													<th scope="col">Lowest Spreads</th>
+													<th scope="col">Premium Trading</th>
+													<th scope="col">Scalping</th>
+													<th scope="col">Hedging</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><?php $var2 = get_field('broker_fee_commission'); if ($var2 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php the_field('broker_spread_type'); ?></td>
+													<td><?php the_field('broker_lowest_spreads'); ?></td>
+													<td><?php the_field('broker_premium_trading'); ?></td>
+													<td><?php the_field('broker_scalping'); ?></td>
+													<td><?php the_field('broker_hedging'); ?></td>
+												</tr>
+											</tbody>
+										</table>
+										<h5>Trading Tools</h5>
+										<table class="table table-responsive">
+											<thead class="thead-light">
+												<tr>
+													<th scope="col">Supported Platforms</th>
+													<th scope="col">Platform Time Zone</th>
+													<th scope="col">Trailing Stops</th>
+													<th scope="col">OCO Orders</th>
+													<th scope="col">One Click Execution</th>
+													<th scope="col">Mobile Trading</th>
+													<th scope="col">Web Based Trading</th>
+													<th scope="col">API Solutions</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><?php the_field('broker_supported_platforms'); ?></td>
+													<td><?php the_field('broker_platform_timezone'); ?></td>
+													<td><?php $var3 = get_field('broker_trailing_stops'); if ($var3 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var4 = get_field('broker_oco_orders'); if ($var4 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var5 = get_field('broker_one_click_execution'); if ($var5 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var6 = get_field('broker_mobile_trading'); if ($var6 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var7 = get_field('broker_web_trading'); if ($var7 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php the_field('broker_api_solutions'); ?></td>
+												</tr>
+											</tbody>
+										</table>
 
-												<table class="table table-responsive">
-												  <thead class="thead-light">
-												    <tr>
-												      <th scope="col">Trading Conditions</th>
-												      <th scope="col"></th>
-												    </tr>
-												  </thead>
-												  <tbody>
-												    <tr>
-												      <td>Commission Fee</td>
-												      <td>Spread Type</td>
-												      <td>Lowest Spreads</td>
-												      <td>Premium Trading</td>
-												      <td>Scalping</td>
-												      <td>Hedging</td>
-												    </tr>
-												    <tr>
-												      <td><?php the_field('broker_fee_commission'); ?></td>
-												      <td><?php the_field('broker_spread_type'); ?></td>
-												      <td><?php the_field('broker_lowest_spreads'); ?></td>
-												      <td><?php the_field('broker_premium_trading'); ?></td>
-												      <td><?php the_field('broker_scalping'); ?></td>
-												      <td><?php the_field('broker_hedging'); ?></td>
-												    </tr>
-												  </tbody>
-												</table>
+										<h5>Account Specifications</h5>
+										<table class="table table-responsive">
+											<thead class="thead-light">
+												<tr>
+													<th scope="col">Mini Account</th>
+													<th scope="col">Standard Account</th>
+													<th scope="col">ECN Account</th>
+													<th scope="col">Account Currency</th>
+													<th scope="col">Maximum Leverage</th>
+													<th scope="col">Minimal Lot Size</th>
+													<th scope="col">Funding Methods</th>
+													<th scope="col">Withdrawal Methods</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><?php the_field('broker_mini_account'); ?></td>
+													<td><?php the_field('broker_standard_account'); ?></td>
+													<td><?php the_field('broker_ecn_account'); ?></td>
+													<td><?php the_field('broker_account_currency'); ?></td>
+													<td><?php the_field('broker_max_leverage'); ?></td>
+													<td><?php the_field('broker_minimal_lot_size'); ?></td>
+													<td><?php the_field('broker_deposit_methods'); ?></td>
+													<td><?php the_field('broker_withdrawal_methods'); ?></td>
+												</tr>
+											</tbody>
+										</table>
+										<h5>Account Options</h5>
+										<table class="table table-responsive">
+											<thead class="thead-light">
+												<tr>
+													<th scope="col">MAM/PAMM Accounts</th>
+													<th scope="col">Managed Accounts</th>
+													<th scope="col">Swap-free Accounts</th>
+													<th scope="col">OCO Orders</th>
+													<th scope="col">Segregated Accounts</th>
+													<th scope="col">Interest on Margin</th>
+													<th scope="col">Bonuses &amp; Rewards</th>
+													<th scope="col">Trading Contests</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><?php the_field('broker_mam_accounts'); ?></td>
 
-												<table class="table table-responsive">
-												  <thead class="thead-light">
-												    <tr>
-												      <th scope="col">Trading Tools</th>
-												      <th scope="col"></th>
-												    </tr>
-												  </thead>
-												  <tbody>
-												    <tr>
-												      <td>Supported Platforms</td>
-												      <td>Platform Time Zone</td>
-												      <td>Trailing Stops</td>
-												      <td>OCO Orders</td>
-												      <td>One Click Execution</td>
-												      <td>Mobile Trading</td>
-												      <td>Web Based Trading</td>
-												      <td>API Solutions</td>
-												    </tr>
-												    <tr>
-												      <td><?php the_field('broker_supported_platforms'); ?></td>
-												      <td><?php the_field('broker_platform_timezone'); ?></td>
-												      <td><?php the_field('broker_trailing_stops'); ?></td>
-												      <td><?php the_field('broker_oco_orders'); ?></td>
-												      <td><?php the_field('broker_one_click_execution'); ?></td>
-												      <td><?php the_field('broker_mobile_trading'); ?></td>
-												      <td><?php the_field('broker_web_trading'); ?></td>
-												      <td><?php the_field('broker_api_solutions'); ?></td>
-												    </tr>
-												  </tbody>
-												</table>
+													<td><?php $var8 = get_field('broker_managed_accounts'); if ($var8 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var9 = get_field('broker_swap_free_accounts'); if ($var9 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var10 = get_field('broker_oco_orders'); if ($var10 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var11 = get_field('broker_segregated_accounts'); if ($var11 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var12 = get_field('broker_interest_on_margin'); if ($var12 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var13 = get_field('broker_bonuses'); if ($var13 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
+													<td><?php $var14 = get_field('broker_trading_contests'); if ($var14 == 1){ echo 'Yes'; } else { echo 'No'; } ?></td>
 
-												<table class="table table-responsive">
-												  <thead class="thead-light">
-												    <tr>
-												      <th scope="col">Account Specifications</th>
-												      <th scope="col"></th>
-												    </tr>
-												  </thead>
-												  <tbody>
-												    <tr>
-												      <td>Mini Account</td>
-												      <td>Standard Account</td>
-												      <td>ECN Account</td>
-												      <td>Account Currency</td>
-												      <td>Maximum Leverage</td>
-												      <td>Minimal Lot Size</td>
-												      <td>Funding Methods</td>
-												      <td>Withdrawal Methods</td>
-
-												    </tr>
-												    <tr>
-												      <td><?php the_field('broker_mini_account'); ?></td>
-												      <td><?php the_field('broker_standard_account'); ?></td>
-												      <td><?php the_field('broker_ecn_account'); ?></td>
-												      <td><?php the_field('broker_account_currency'); ?></td>
-												      <td><?php the_field('broker_max_leverage'); ?></td>
-												      <td><?php the_field('broker_minimal_lot_size'); ?></td>
-												      <td><?php the_field('broker_deposit_methods'); ?></td>
-												      <td><?php the_field('broker_withdrawal_methods'); ?></td>
-												    </tr>
-												  </tbody>
-												</table>
-
-												<table class="table table-responsive">
-												  <thead class="thead-light">
-												    <tr>
-												      <th scope="col">Account Options</th>
-												      <!-- <th scope="col"></th> -->
-												    </tr>
-												  </thead>
-												  <tbody>
-												    <tr>
-												      <td>MAM/PAMM Accounts</td>
-												      <td>Managed Accounts</td>
-												      <td>Swap-free Accounts</td>
-												      <td>OCO Orders</td>
-												      <td>Segregated Accounts</td>
-												      <td>Interest on Margin</td>
-												      <td>Bonuses &amp; Rewards</td>
-												      <td>Trading Contests</td>
-												    </tr>
-												    <tr>
-												      <td><?php the_field('broker_mam_accounts'); ?></td>
-												      <td><?php the_field('broker_managed_accounts'); ?></td>
-												      <td><?php the_field('broker_swap_free_accounts'); ?></td>
-												      <td><?php the_field('broker_oco_orders'); ?></td>
-												      <td><?php the_field('broker_segregated_accounts'); ?></td>
-												      <td><?php the_field('broker_interest_on_margin'); ?></td>
-												      <td><?php the_field('broker_bonuses'); ?></td>
-												      <td><?php the_field('broker_trading_contests'); ?></td>
-												    </tr>
-												  </tbody>
-												</table>
+												</tr>
+											</tbody>
+										</table>
 
 									</div>
 								</div>
@@ -244,21 +223,21 @@ $posts = get_posts(array(
 
 								endforeach; ?>
 
-						</div>
+							</div>
 
-								<?php wp_reset_postdata(); ?> 
+							<?php wp_reset_postdata(); ?> 
 
 						<?php endif; ?>
 
 						<!-- The pagination component -->
 						<?php understrap_pagination(); ?>
+					</div>
+
 				</div>
 
 			</div>
 
 		</div>
 
-	</div>
-
-</div><!-- Container end -->
-<?php get_footer(); ?>
+	</div><!-- Container end -->
+	<?php get_footer(); ?>

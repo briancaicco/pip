@@ -4795,6 +4795,14 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .page-template-brokers [aria-expanded="true"] .fa.fa-plus-square-o { display: none !important; }
 
+.page-template-brokers .table thead th { font-size: 12px; font-weight: normal; }
+
+.page-template-brokers .table th, .page-template-brokers .table td { font-size: 11px; padding: .75rem; vertical-align: top; border-top: 1px solid #e9ecef; font-weight: 200; }
+
+.page-template-brokers .table .thead-light th { color: #495057; background-color: #e9ecef; border-color: #e9ecef; }
+
+.page-template-brokers .table thead th { vertical-align: bottom; border-bottom: 2px solid #e9ecef; }
+
 .widget_bp_groups_widget .item-options a.selected { font-weight: bold; }
 
 .widget_bp_groups_widget .item-avatar { display: none; }
