@@ -26,6 +26,7 @@ $staff_pick_brokers = new WP_query( $args );
 
 $args2 = array(
 	'post_type'			=> 'broker',
+	'posts_per_page'    =>  -1, 
 	'orderby'			=> 'title', 
 	'order'				=> 'ASC',
 	// 'meta_query' 		=> array(
