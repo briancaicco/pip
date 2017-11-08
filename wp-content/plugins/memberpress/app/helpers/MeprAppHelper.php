@@ -49,6 +49,10 @@ class MeprAppHelper {
     return $rstr;
   }
 
+  public static function auto_add_page($page_name) {
+    return wp_insert_post(array('post_title' => $page_name, 'post_type' => 'page', 'post_status' => 'publish', 'comment_status' => 'closed'));
+  }
+
   public static function format_number($number, $show_decimals = false, $truncate_zeroes = false) {
     global $wp_locale;
 
@@ -438,4 +442,3 @@ class MeprAppHelper {
     <?php
   }
 } //End class
-

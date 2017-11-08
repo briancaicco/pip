@@ -1055,7 +1055,7 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       //Did the IPN already beat us here?
       if(strpos($txn->trans_num, 'mp-txn') === false) {
         $sanitized_title = sanitize_title($product->post_title);
-        MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}"));
+        MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
       }
 
       //If $sub let's set this up as a confirmation txn until the IPN comes in later so the user can have access now
@@ -1088,7 +1088,7 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       $this->email_status("Paypal Transaction \$txn:\n".MeprUtils::object_to_string($txn, true)."\n", $this->settings->debug);
 
       $sanitized_title = sanitize_title($product->post_title);
-      MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}"));
+      MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
     }
 
     //Handle free trial periods here YO
@@ -1100,7 +1100,7 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       //Did the IPN already beat us here?
       if(strpos($free_trial_txn->trans_num, 'mp-txn') === false) {
         $sanitized_title = sanitize_title($product->post_title);
-        MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$free_trial_txn->trans_num}"));
+        MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$free_trial_txn->trans_num}&membership_id={$product->ID}"));
       }
 
       //confirmation txn so the user can have access right away, instead of waiting for the IPN
@@ -1118,7 +1118,7 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       $this->email_status("Paypal Transaction \$free_trial_txn:\n".MeprUtils::object_to_string($free_trial_txn, true)."\n", $this->settings->debug);
 
       $sanitized_title = sanitize_title($product->post_title);
-      MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$free_trial_txn->trans_num}"));
+      MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$free_trial_txn->trans_num}&membership_id={$product->ID}"));
     }
 
     //If all else fails, just send them to their account page

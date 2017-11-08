@@ -702,7 +702,7 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
     MeprEvent::record('non-recurring-transaction-completed', $txn); //Delete this if we use $free_gateway->send_transaction_receipt_notices later
 
     $sanitized_title = sanitize_title($product->post_title);
-    MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}"));
+    MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
   }
 
   public function is_upgrade() {

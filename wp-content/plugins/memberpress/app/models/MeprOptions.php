@@ -484,19 +484,19 @@ class MeprOptions {
     // Page Settings
     if(!is_numeric($params[$this->account_page_id_str]) and
        preg_match("#^__auto_page:(.*?)$#",$params[$this->account_page_id_str],$matches))
-      $this->account_page_id = $_POST[$this->account_page_id_str] = $this->auto_add_page($matches[1]);
+      $this->account_page_id = $_POST[$this->account_page_id_str] = MeprAppHelper::auto_add_page($matches[1]);
     else
       $this->account_page_id = (int)$params[$this->account_page_id_str];
 
     if(!is_numeric($params[$this->login_page_id_str]) and
        preg_match("#^__auto_page:(.*?)$#",$params[$this->login_page_id_str],$matches))
-      $this->login_page_id = $_POST[$this->login_page_id_str] = $this->auto_add_page($matches[1]);
+      $this->login_page_id = $_POST[$this->login_page_id_str] = MeprAppHelper::auto_add_page($matches[1]);
     else
       $this->login_page_id = (int)$params[$this->login_page_id_str];
 
     if(!is_numeric($params[$this->thankyou_page_id_str]) and
        preg_match("#^__auto_page:(.*?)$#",$params[$this->thankyou_page_id_str],$matches))
-      $this->thankyou_page_id = $_POST[$this->thankyou_page_id_str] = $this->auto_add_page($matches[1]);
+      $this->thankyou_page_id = $_POST[$this->thankyou_page_id_str] = MeprAppHelper::auto_add_page($matches[1]);
     else
       $this->thankyou_page_id = (int)$params[$this->thankyou_page_id_str];
 
@@ -770,10 +770,6 @@ class MeprOptions {
     return count($this->integrations);
   }
 
-  public function auto_add_page($page_name) {
-    return wp_insert_post(array('post_title' => $page_name, 'post_type' => 'page', 'post_status' => 'publish', 'comment_status' => 'closed'));
-  }
-
   public function account_page_url($args = '') {
     $link = home_url();
 
@@ -808,10 +804,24 @@ class MeprOptions {
   }
 
   public function thankyou_page_url($args = '') {
-    if( isset($this->thankyou_page_id) and
-        is_numeric($this->thankyou_page_id) and
-        (int)$this->thankyou_page_id > 0 ) {
-      $link = MeprUtils::get_permalink($this->thankyou_page_id);
+    $thank_you_page_id = 0;
+    $args_array = wp_parse_args($args);
+    if(isset($args_array['membership_id'])) {
+      $product = new MeprProduct($args_array['membership_id']);
+      if($product->thank_you_page_enabled && $product->thank_you_page_type == 'page') {
+        // Returns the custom thank you page for the product
+        $thank_you_page_id = $product->thank_you_page_id;
+      }
+      elseif(isset($this->thankyou_page_id)) {
+        // Returns the default thank you page from the options
+        $thank_you_page_id = $this->thankyou_page_id;
+      }
+    }
+    if(isset($thank_you_page_id) &&
+      is_numeric($thank_you_page_id) &&
+      (int)$thank_you_page_id > 0 ) {
+      $thank_you_page_id = (int)$thank_you_page_id;
+      $link = MeprUtils::get_permalink($thank_you_page_id);
 
       if(!empty($args)) {
         return $link.MeprAppCtrl::get_param_delimiter_char($link).$args;

@@ -174,6 +174,22 @@ class MeprProductsCtrl extends MeprCptCtrl {
       $product->register_price = (isset($_mepr_register_price))?sanitize_text_field($_mepr_register_price):$product->attrs['register_price'];
       $product->thank_you_page_enabled = isset($_mepr_thank_you_page_enabled);
       $product->thank_you_message = (isset($meprproductthankyoumessage) && !empty($meprproductthankyoumessage))?wp_kses_post(wp_unslash($meprproductthankyoumessage)):$product->attrs['thank_you_message'];
+      $product->thank_you_page_type = (isset($_mepr_thank_you_page_type)?sanitize_text_field($_mepr_thank_you_page_type):$product->attrs['thank_you_page_type']);
+      $product->thank_you_page_id = (isset($_mepr_product_thank_you_page_id) && is_numeric($_mepr_product_thank_you_page_id) && (int)$_mepr_product_thank_you_page_id > 0)?(int)$_mepr_product_thank_you_page_id:$product->attrs['thank_you_page_id'];
+
+      /**
+      * Sets thank_you_page_id to the id from the POST or Adds the new page.
+      */
+      if($product->thank_you_page_type == 'page' && isset($_mepr_product_thank_you_page_id)) {
+        if(is_numeric($_mepr_product_thank_you_page_id) && (int)$_mepr_product_thank_you_page_id > 0) {
+          $product->thank_you_page_id = (int)$_mepr_product_thank_you_page_id;
+        } elseif(preg_match("#^__auto_page:(.*?)$#", $_mepr_product_thank_you_page_id, $matches)) {
+          $product->thank_you_page_id = MeprAppHelper::auto_add_page($matches[1]);
+        } else {
+          $product->thank_you_page_id = $product->attrs['thank_you_page_id'];
+        }
+      }
+
       $product->simultaneous_subscriptions = isset($_mepr_allow_simultaneous_subscriptions);
       $product->use_custom_template = isset($_mepr_use_custom_template);
       $product->custom_template = isset($_mepr_custom_template)?sanitize_text_field($_mepr_custom_template):$product->attrs['custom_template'];
@@ -596,6 +612,11 @@ class MeprProductsCtrl extends MeprCptCtrl {
     $product = $txn->product();
 
     if($product->ID === null || !$product->thank_you_page_enabled || empty($product->thank_you_message)) {
+      return '';
+    }
+
+    // Backwards compatibility check
+    if(isset($product->thank_you_page_type) && $product->thank_you_page_type != 'message') {
       return '';
     }
 

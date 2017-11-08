@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the MemberPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: MemberPress 1.3.18a7\n"
+"Project-Id-Version: MemberPress 1.3.19a2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/memberpress\n"
-"POT-Creation-Date: 2017-10-26 22:12:59+00:00\n"
+"POT-Creation-Date: 2017-11-06 23:58:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -149,7 +149,7 @@ msgstr[1] ""
 msgid "Click here to view"
 msgstr ""
 
-#. #-#-#-#-#  memberpress.pot (MemberPress 1.3.18a7)  #-#-#-#-#
+#. #-#-#-#-#  memberpress.pot (MemberPress 1.3.19a2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: app/controllers/MeprAppCtrl.php:302
 msgid "MemberPress"
@@ -924,28 +924,28 @@ msgstr ""
 msgid "Membership Options"
 msgstr ""
 
-#: app/controllers/MeprProductsCtrl.php:428
-#: app/controllers/MeprProductsCtrl.php:496
+#: app/controllers/MeprProductsCtrl.php:444
+#: app/controllers/MeprProductsCtrl.php:512
 msgid ""
 "There was a problem with our payment system. Please come back soon and try "
 "again."
 msgstr ""
 
-#: app/controllers/MeprProductsCtrl.php:459
+#: app/controllers/MeprProductsCtrl.php:475
 msgid ""
 "%1$sYou have already subscribed to this item. %2$sClick here to access it%3$s"
 msgstr ""
 
-#: app/controllers/MeprProductsCtrl.php:530
+#: app/controllers/MeprProductsCtrl.php:546
 #: app/helpers/MeprProductsHelper.php:38 app/helpers/MeprProductsHelper.php:49
 msgid "Remove Benefit"
 msgstr ""
 
-#: app/controllers/MeprProductsCtrl.php:671
+#: app/controllers/MeprProductsCtrl.php:692
 msgid "An unknown error has occurred"
 msgstr ""
 
-#: app/controllers/MeprProductsCtrl.php:677
+#: app/controllers/MeprProductsCtrl.php:698
 msgid "Please save membership first to see the Price here."
 msgstr ""
 
@@ -1018,8 +1018,8 @@ msgstr ""
 
 #: app/controllers/MeprReportsCtrl.php:78
 #: app/controllers/MeprReportsCtrl.php:174
-#: app/controllers/MeprReportsCtrl.php:239 app/helpers/MeprAppHelper.php:120
-#: app/helpers/MeprAppHelper.php:134 app/helpers/MeprTransactionsHelper.php:331
+#: app/controllers/MeprReportsCtrl.php:239 app/helpers/MeprAppHelper.php:124
+#: app/helpers/MeprAppHelper.php:138 app/helpers/MeprTransactionsHelper.php:331
 #: app/views/admin/members/row.php:106
 #: app/views/admin/reports/month_table.php:7
 #: app/views/admin/reports/year_table.php:7
@@ -1033,7 +1033,7 @@ msgstr ""
 
 #: app/controllers/MeprReportsCtrl.php:80
 #: app/controllers/MeprReportsCtrl.php:176
-#: app/controllers/MeprReportsCtrl.php:241 app/helpers/MeprAppHelper.php:122
+#: app/controllers/MeprReportsCtrl.php:241 app/helpers/MeprAppHelper.php:126
 #: app/helpers/MeprTransactionsHelper.php:332
 #: app/views/admin/reports/month_table.php:8
 #: app/views/admin/reports/year_table.php:8
@@ -1045,7 +1045,7 @@ msgstr ""
 
 #: app/controllers/MeprReportsCtrl.php:82
 #: app/controllers/MeprReportsCtrl.php:178
-#: app/controllers/MeprReportsCtrl.php:243 app/helpers/MeprAppHelper.php:126
+#: app/controllers/MeprReportsCtrl.php:243 app/helpers/MeprAppHelper.php:130
 #: app/helpers/MeprTransactionsHelper.php:333
 #: app/views/admin/reports/month_table.php:10
 #: app/views/admin/reports/month_table.php:12
@@ -1186,7 +1186,7 @@ msgid "The Subscription was successfully cancelled."
 msgstr ""
 
 #: app/controllers/MeprSubscriptionsCtrl.php:69
-#: app/helpers/MeprAppHelper.php:138 app/views/admin/members/row.php:105
+#: app/helpers/MeprAppHelper.php:142 app/views/admin/members/row.php:105
 msgid "Stopped"
 msgstr ""
 
@@ -1209,7 +1209,7 @@ msgid "The Subscription was successfully paused."
 msgstr ""
 
 #: app/controllers/MeprSubscriptionsCtrl.php:73
-#: app/helpers/MeprAppHelper.php:140 app/views/admin/members/row.php:107
+#: app/helpers/MeprAppHelper.php:144 app/views/admin/members/row.php:107
 #: app/views/admin/subscriptions/row.php:223
 #: app/views/admin/subscriptions/search_box.php:15
 msgid "Paused"
@@ -1233,7 +1233,7 @@ msgid "The Subscription was successfully resumed."
 msgstr ""
 
 #: app/controllers/MeprSubscriptionsCtrl.php:77
-#: app/helpers/MeprAppHelper.php:136 app/views/admin/members/row.php:104
+#: app/helpers/MeprAppHelper.php:140 app/views/admin/members/row.php:104
 #: app/views/admin/subscriptions/row.php:222
 #: app/views/admin/subscriptions/search_box.php:14
 msgid "Enabled"
@@ -1506,9 +1506,9 @@ msgstr ""
 msgid "# Logins"
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:340 app/helpers/MeprAppHelper.php:79
-#: app/helpers/MeprAppHelper.php:91 app/helpers/MeprAppHelper.php:128
-#: app/helpers/MeprAppHelper.php:142 app/helpers/MeprTransactionsHelper.php:105
+#: app/controllers/MeprUsersCtrl.php:340 app/helpers/MeprAppHelper.php:83
+#: app/helpers/MeprAppHelper.php:95 app/helpers/MeprAppHelper.php:132
+#: app/helpers/MeprAppHelper.php:146 app/helpers/MeprTransactionsHelper.php:105
 #: app/lib/MeprUtils.php:883 app/models/MeprSubscription.php:393
 #: app/models/MeprSubscription.php:617 app/models/MeprTransaction.php:422
 #: app/views/admin/subscriptions/row.php:134
@@ -2126,7 +2126,8 @@ msgid "Submit"
 msgstr ""
 
 #: app/gateways/MeprArtificialGateway.php:345
-#: app/gateways/MeprStripeGateway.php:966
+#: app/gateways/MeprStripeGateway.php:944
+#: app/gateways/MeprStripeGateway.php:1163
 msgid ""
 "Javascript is disabled in your browser. You will not be able to complete "
 "your purchase until you either enable JavaScript in your browser, or switch "
@@ -2201,13 +2202,11 @@ msgstr ""
 #: app/gateways/MeprAuthorizeGateway.php:1166
 #: app/gateways/MeprPayPalProGateway.php:828
 #: app/gateways/MeprPayPalProGateway.php:1046
-#: app/gateways/MeprStripeGateway.php:1172
 msgid "Credit Card Number"
 msgstr ""
 
 #: app/gateways/MeprAuthorizeGateway.php:942
 #: app/gateways/MeprPayPalProGateway.php:829
-#: app/gateways/MeprStripeGateway.php:1173
 msgid "Invalid Credit Card Number"
 msgstr ""
 
@@ -2215,7 +2214,6 @@ msgstr ""
 #: app/gateways/MeprAuthorizeGateway.php:1183
 #: app/gateways/MeprPayPalProGateway.php:847
 #: app/gateways/MeprPayPalProGateway.php:1063
-#: app/gateways/MeprStripeGateway.php:1182
 msgid "Expiration"
 msgstr ""
 
@@ -2223,7 +2221,6 @@ msgstr ""
 #: app/gateways/MeprAuthorizeGateway.php:1184
 #: app/gateways/MeprPayPalProGateway.php:848
 #: app/gateways/MeprPayPalProGateway.php:1064
-#: app/gateways/MeprStripeGateway.php:1183
 msgid "Invalid Expiration"
 msgstr ""
 
@@ -2231,7 +2228,6 @@ msgstr ""
 #: app/gateways/MeprAuthorizeGateway.php:1202
 #: app/gateways/MeprPayPalProGateway.php:866
 #: app/gateways/MeprPayPalProGateway.php:1082
-#: app/gateways/MeprStripeGateway.php:1190
 msgid "CVC"
 msgstr ""
 
@@ -2239,7 +2235,6 @@ msgstr ""
 #: app/gateways/MeprAuthorizeGateway.php:1203
 #: app/gateways/MeprPayPalProGateway.php:867
 #: app/gateways/MeprPayPalProGateway.php:1083
-#: app/gateways/MeprStripeGateway.php:1191
 msgid "Invalid CVC Code"
 msgstr ""
 
@@ -2300,7 +2295,7 @@ msgstr ""
 
 #: app/gateways/MeprAuthorizeGateway.php:1086
 #: app/gateways/MeprPayPalProGateway.php:986
-#: app/gateways/MeprStripeGateway.php:1038
+#: app/gateways/MeprStripeGateway.php:1016
 msgid "Force SSL"
 msgstr ""
 
@@ -2345,13 +2340,12 @@ msgstr ""
 
 #: app/gateways/MeprAuthorizeGateway.php:1163
 #: app/gateways/MeprPayPalProGateway.php:1043
-#: app/gateways/MeprStripeGateway.php:1165
+#: app/gateways/MeprStripeGateway.php:1145
 msgid "Update your Credit Card information below"
 msgstr ""
 
 #: app/gateways/MeprAuthorizeGateway.php:1211
 #: app/gateways/MeprPayPalProGateway.php:1091
-#: app/gateways/MeprStripeGateway.php:1198
 msgid "Update Credit Card"
 msgstr ""
 
@@ -2454,7 +2448,7 @@ msgstr ""
 #: app/gateways/MeprPayPalGateway.php:986
 #: app/gateways/MeprPayPalProGateway.php:1166
 #: app/gateways/MeprPayPalStandardGateway.php:1017
-#: app/gateways/MeprStripeGateway.php:1481
+#: app/gateways/MeprStripeGateway.php:1444
 msgid "You had an HTTP error connecting to %s"
 msgstr ""
 
@@ -2637,7 +2631,8 @@ msgid ""
 msgstr ""
 
 #: app/gateways/MeprStripeGateway.php:896
-#: app/gateways/MeprStripeGateway.php:962
+#: app/gateways/MeprStripeGateway.php:941
+#: app/gateways/MeprStripeGateway.php:1160
 msgctxt "ui"
 msgid "Submit"
 msgstr ""
@@ -2647,129 +2642,95 @@ msgctxt "ui"
 msgid "Pay Now"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:932 app/views/checkout/payment_form.php:6
+#: app/gateways/MeprStripeGateway.php:930
+#: app/gateways/MeprStripeGateway.php:1151
 msgctxt "ui"
-msgid "Credit Card Number"
+msgid "Credit Card"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:933 app/views/checkout/payment_form.php:7
-msgctxt "ui"
-msgid "Invalid Credit Card Number"
-msgstr ""
-
-#: app/gateways/MeprStripeGateway.php:942
-#: app/views/checkout/payment_form.php:14
-msgctxt "ui"
-msgid "Expiration"
-msgstr ""
-
-#: app/gateways/MeprStripeGateway.php:943
-#: app/views/checkout/payment_form.php:15
-msgctxt "ui"
-msgid "Invalid Expiration"
-msgstr ""
-
-#: app/gateways/MeprStripeGateway.php:945
-#: app/views/checkout/payment_form.php:17
-msgctxt "ui"
-msgid "mm/yy"
-msgstr ""
-
-#: app/gateways/MeprStripeGateway.php:952
-#: app/views/checkout/payment_form.php:21
-msgctxt "ui"
-msgid "CVC"
-msgstr ""
-
-#: app/gateways/MeprStripeGateway.php:953
-#: app/views/checkout/payment_form.php:22
-msgctxt "ui"
-msgid "Invalid CVC Code"
-msgstr ""
-
-#: app/gateways/MeprStripeGateway.php:1006
+#: app/gateways/MeprStripeGateway.php:984
 msgid "Test Secret Key*:"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1010
+#: app/gateways/MeprStripeGateway.php:988
 msgid "Test Publishable Key*:"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1018
+#: app/gateways/MeprStripeGateway.php:996
 msgid "Live Secret Key*:"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1022
+#: app/gateways/MeprStripeGateway.php:1000
 msgid "Live Publishable Key*:"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1030
+#: app/gateways/MeprStripeGateway.php:1008
 msgid "Use Stripe Checkout (Beta)"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1034
+#: app/gateways/MeprStripeGateway.php:1012
 msgid "Test Mode"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1042
+#: app/gateways/MeprStripeGateway.php:1020
 msgid "Send Debug Emails"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1046
+#: app/gateways/MeprStripeGateway.php:1024
 msgid "Stripe Webhook URL:"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1051
-#: app/gateways/MeprStripeGateway.php:1053
+#: app/gateways/MeprStripeGateway.php:1029
+#: app/gateways/MeprStripeGateway.php:1031
 msgid "Enable Churn Buster"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1054
+#: app/gateways/MeprStripeGateway.php:1032
 msgid ""
 "Churn Buster is a 3rd party service that allows you to automatically respond "
 "to failed payments in Stripe with email campaigns, card update pages, and "
 "real-time insights to reduce churn by up to 50%."
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1065
+#: app/gateways/MeprStripeGateway.php:1043
 msgid "Recover failed payments with Churn Buster"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1070
-#: app/gateways/MeprStripeGateway.php:1072
+#: app/gateways/MeprStripeGateway.php:1048
+#: app/gateways/MeprStripeGateway.php:1050
 msgid "Churn Buster Account ID"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1073
+#: app/gateways/MeprStripeGateway.php:1051
 msgid ""
 "This is the account id that is linked to your Churn Buster account. If you "
 "don't have a Churn Buster account yet, click the 'Create a Churn Buster "
 "Account' link below."
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1078
+#: app/gateways/MeprStripeGateway.php:1056
 msgid "Use this link to start with a free trial month >>"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1085
+#: app/gateways/MeprStripeGateway.php:1063
 msgid "Update Billing URL:"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1087
+#: app/gateways/MeprStripeGateway.php:1065
 msgid "Update Billing URL"
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1088
+#: app/gateways/MeprStripeGateway.php:1066
 msgid ""
 "You'll give this URL to Churn Buster to use in dunning emails so that your "
 "customers can update their billing information."
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1112
+#: app/gateways/MeprStripeGateway.php:1090
 msgid "All Stripe keys must be filled in."
 msgstr ""
 
-#: app/gateways/MeprStripeGateway.php:1492
+#: app/gateways/MeprStripeGateway.php:1455
 msgid "There was an issue with the credit card processor. Try again later."
 msgstr ""
 
@@ -2802,13 +2763,13 @@ msgstr ""
 msgid "Change Plan"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:46 app/helpers/MeprAppHelper.php:197
+#: app/helpers/MeprAppHelper.php:46 app/helpers/MeprAppHelper.php:201
 #: app/models/MeprOptions.php:756 app/models/MeprOptions.php:757
 #: app/models/MeprTransaction.php:688
 msgid "Free"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:124 app/helpers/MeprTransactionsHelper.php:330
+#: app/helpers/MeprAppHelper.php:128 app/helpers/MeprTransactionsHelper.php:330
 #: app/views/admin/members/row.php:133
 #: app/views/admin/reports/month_table.php:9
 #: app/views/admin/reports/year_table.php:9
@@ -2818,73 +2779,73 @@ msgstr ""
 msgid "Complete"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:194
+#: app/helpers/MeprAppHelper.php:198
 msgid "Free forever"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:200
+#: app/helpers/MeprAppHelper.php:204
 msgid "Free for a %1$s"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:203
+#: app/helpers/MeprAppHelper.php:207
 msgid "Free for %1$d %2$s"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:225 app/views/admin/subscriptions/row.php:148
+#: app/helpers/MeprAppHelper.php:229 app/views/admin/subscriptions/row.php:148
 msgid " (prorated)"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:236
+#: app/helpers/MeprAppHelper.php:240
 msgid "free"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:245 app/helpers/MeprAppHelper.php:252
+#: app/helpers/MeprAppHelper.php:249 app/helpers/MeprAppHelper.php:256
 msgid " (proration)"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:266
+#: app/helpers/MeprAppHelper.php:270
 msgid "%1$s %2$s for %3$s%4$s then "
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:270
+#: app/helpers/MeprAppHelper.php:274
 msgid "%1$s%2$s once and "
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:281 app/helpers/MeprAppHelper.php:303
+#: app/helpers/MeprAppHelper.php:285 app/helpers/MeprAppHelper.php:307
 msgid " for %1$d %2$s"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:285
+#: app/helpers/MeprAppHelper.php:289
 msgid "%1$d payment of "
 msgid_plural "%1$d payments of "
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/helpers/MeprAppHelper.php:292
+#: app/helpers/MeprAppHelper.php:296
 msgid "%1$s / %2$s"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:295
+#: app/helpers/MeprAppHelper.php:299
 msgid "%1$s / %2$d %3$s"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:319
+#: app/helpers/MeprAppHelper.php:323
 msgid " for access until %s"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:324
+#: app/helpers/MeprAppHelper.php:328
 msgid " with coupon %s"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:370
+#: app/helpers/MeprAppHelper.php:374
 msgid "-- Select Country --"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:424
+#: app/helpers/MeprAppHelper.php:428
 msgid "Export table as CSV (%s records)"
 msgstr ""
 
-#: app/helpers/MeprAppHelper.php:427
+#: app/helpers/MeprAppHelper.php:431
 msgid "Export all as CSV (%s records)"
 msgstr ""
 
@@ -3752,41 +3713,41 @@ msgctxt "ui"
 msgid "I have read and agree to the Terms of Service"
 msgstr ""
 
-#: app/models/MeprOptions.php:837
+#: app/models/MeprOptions.php:847
 msgctxt "ui"
 msgid "Address Line 1"
 msgstr ""
 
-#: app/models/MeprOptions.php:838
+#: app/models/MeprOptions.php:848
 msgctxt "ui"
 msgid "Address Line 2"
 msgstr ""
 
-#: app/models/MeprOptions.php:839
+#: app/models/MeprOptions.php:849
 msgctxt "ui"
 msgid "City"
 msgstr ""
 
-#: app/models/MeprOptions.php:840
+#: app/models/MeprOptions.php:850
 msgctxt "ui"
 msgid "Country"
 msgstr ""
 
-#: app/models/MeprOptions.php:841
+#: app/models/MeprOptions.php:851
 msgctxt "ui"
 msgid "State/Province"
 msgstr ""
 
-#: app/models/MeprOptions.php:842
+#: app/models/MeprOptions.php:852
 msgctxt "ui"
 msgid "Zip/Postal Code"
 msgstr ""
 
-#: app/models/MeprProduct.php:69 app/views/admin/products/price_box.php:69
+#: app/models/MeprProduct.php:71 app/views/admin/products/price_box.php:69
 msgid "Sign Up"
 msgstr ""
 
-#: app/models/MeprProduct.php:116
+#: app/models/MeprProduct.php:120
 msgctxt "ui"
 msgid "You don't have access to purchase this item."
 msgstr ""
@@ -4941,6 +4902,7 @@ msgid "MemberPress Thank You Page"
 msgstr ""
 
 #: app/views/admin/options/form.php:30
+#: app/views/admin/products/registration.php:51
 msgid "Thank You"
 msgstr ""
 
@@ -5963,48 +5925,77 @@ msgid "Enable custom thank you page message"
 msgstr ""
 
 #: app/views/admin/products/registration.php:25
-msgid "Enable Custom Thank You Page Message"
+msgid "Enable Custom Thank You"
 msgstr ""
 
 #: app/views/admin/products/registration.php:26
+msgid ""
+"Enabling this option will reveal additional options you can use to provide a "
+"custom Thank You message or page to show after a member purchases this "
+"membership."
+msgstr ""
+
+#: app/views/admin/products/registration.php:32
+msgid "Enable custom thank you message"
+msgstr ""
+
+#: app/views/admin/products/registration.php:35
+msgid "Enable Custom Thank You Message"
+msgstr ""
+
+#: app/views/admin/products/registration.php:36
 msgid ""
 "Enabling this option will reveal a new Compose form which you can use to "
 "provide a custom message to show on the Thank You page after a member "
 "purchases this membership."
 msgstr ""
 
-#: app/views/admin/products/registration.php:40
-#: app/views/admin/products/registration.php:43
+#: app/views/admin/products/registration.php:44
+msgid "Enable custom thank you page"
+msgstr ""
+
+#: app/views/admin/products/registration.php:47
+msgid "Enable Custom Thank You Page"
+msgstr ""
+
+#: app/views/admin/products/registration.php:48
+msgid ""
+"Enabling this option will reveal a dropdown which you can use to provide a "
+"custom Thank You page to show after a member purchases this membership."
+msgstr ""
+
+#: app/views/admin/products/registration.php:63
+#: app/views/admin/products/registration.php:66
 msgid "Customize Payment Methods"
 msgstr ""
 
-#: app/views/admin/products/registration.php:44
+#: app/views/admin/products/registration.php:67
 msgid ""
 "Enabling this option will reveal a drag and drop list of the available "
 "payment methods. You can use this to re-order or even hide payment methods "
 "from the dropdown on this membership registration page."
 msgstr ""
 
-#: app/views/admin/products/registration.php:47
+#: app/views/admin/products/registration.php:70
 msgid "Active Payment Methods"
 msgstr ""
 
-#: app/views/admin/products/registration.php:56
+#: app/views/admin/products/registration.php:79
 msgid ""
 "No Payment Methods were found. Please go to the options page to configure "
 "some."
 msgstr ""
 
-#: app/views/admin/products/registration.php:75
+#: app/views/admin/products/registration.php:98
 msgid "Inactive Payment Methods"
 msgstr ""
 
-#: app/views/admin/products/registration.php:95
-#: app/views/admin/products/registration.php:98
+#: app/views/admin/products/registration.php:118
+#: app/views/admin/products/registration.php:121
 msgid "Customize User Information Fields"
 msgstr ""
 
-#: app/views/admin/products/registration.php:99
+#: app/views/admin/products/registration.php:122
 msgid ""
 "Enabling this option will reveal a drag and drop list of the available "
 "Custom User Information Fields you defined in the MemberPress Options. You "
@@ -6012,58 +6003,58 @@ msgid ""
 "form."
 msgstr ""
 
-#: app/views/admin/products/registration.php:102
+#: app/views/admin/products/registration.php:125
 msgid "Active Fields"
 msgstr ""
 
-#: app/views/admin/products/registration.php:108
+#: app/views/admin/products/registration.php:131
 msgid "No fields were found. Please go to the options page to configure some."
 msgstr ""
 
-#: app/views/admin/products/registration.php:131
+#: app/views/admin/products/registration.php:154
 msgid "Inactive Fields"
 msgstr ""
 
-#: app/views/admin/products/registration.php:152
-#: app/views/admin/products/registration.php:155
+#: app/views/admin/products/registration.php:175
+#: app/views/admin/products/registration.php:178
 msgid "Disable Address Fields"
 msgstr ""
 
-#: app/views/admin/products/registration.php:156
+#: app/views/admin/products/registration.php:179
 msgid ""
 "When Addresses are enabled and required, you can disable this option only on "
 "free memberships."
 msgstr ""
 
-#: app/views/admin/products/registration.php:165
+#: app/views/admin/products/registration.php:188
 msgid "Membership Shortcodes"
 msgstr ""
 
-#: app/views/admin/products/registration.php:167
+#: app/views/admin/products/registration.php:190
 msgid ""
 "You can use this shortcode anywhere on your site to quickly display a link "
 "to this membership page. If the text inbetween the shortcode is not present, "
 "MemberPress will use the membership title as the link text instead."
 msgstr ""
 
-#: app/views/admin/products/registration.php:168
-#: app/views/admin/products/registration.php:171
+#: app/views/admin/products/registration.php:191
+#: app/views/admin/products/registration.php:194
 msgid "Optional link label here..."
 msgstr ""
 
-#: app/views/admin/products/registration.php:170
+#: app/views/admin/products/registration.php:193
 msgid ""
 "This shortcode can be used to show a link to the Membership Access URL set "
 "in the Advanced tab."
 msgstr ""
 
-#: app/views/admin/products/registration.php:173
+#: app/views/admin/products/registration.php:196
 msgid ""
 "Shortcode to be used on this membership page to manually place the "
 "registration form."
 msgstr ""
 
-#: app/views/admin/products/registration.php:175
+#: app/views/admin/products/registration.php:198
 msgid ""
 "Shortcode which can be used on any other WordPress page, post or custom post "
 "type to manually place the registration form for this membership."
@@ -7173,6 +7164,41 @@ msgstr ""
 #: app/views/checkout/invoice.php:45
 msgctxt "ui"
 msgid "Sub-Total"
+msgstr ""
+
+#: app/views/checkout/payment_form.php:6
+msgctxt "ui"
+msgid "Credit Card Number"
+msgstr ""
+
+#: app/views/checkout/payment_form.php:7
+msgctxt "ui"
+msgid "Invalid Credit Card Number"
+msgstr ""
+
+#: app/views/checkout/payment_form.php:14
+msgctxt "ui"
+msgid "Expiration"
+msgstr ""
+
+#: app/views/checkout/payment_form.php:15
+msgctxt "ui"
+msgid "Invalid Expiration"
+msgstr ""
+
+#: app/views/checkout/payment_form.php:17
+msgctxt "ui"
+msgid "mm/yy"
+msgstr ""
+
+#: app/views/checkout/payment_form.php:21
+msgctxt "ui"
+msgid "CVC"
+msgstr ""
+
+#: app/views/checkout/payment_form.php:22
+msgctxt "ui"
+msgid "Invalid CVC Code"
 msgstr ""
 
 #: app/views/checkout/signup_row.php:7

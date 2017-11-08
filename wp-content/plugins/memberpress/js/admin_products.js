@@ -215,12 +215,22 @@
 
   //Custom thank you message checkbox
     if($('#_mepr_thank_you_page_enabled').is(":checked")) {
+      $('#_mepr_thank_you_page_type_message:checked, #_mepr_thank_you_page_type_page:checked').nextAll('div:first').show();
       $('div#mepr-product-thank-you-area').show();
     } else {
       $('div#mepr-product-thank-you-area').hide();
     }
     $('#_mepr_thank_you_page_enabled').click(function() {
+      $('#_mepr_thank_you_page_type_message:checked, #_mepr_thank_you_page_type_page:checked').nextAll('div:first').show();
       $('div#mepr-product-thank-you-area').slideToggle();
+    });
+    $('#_mepr_thank_you_page_type_message').on('click', function() {
+      $('#mepr-product-thank-you-page-id').hide();
+      $('#mepr-product-thank-you-message').show();
+    });
+    $('#_mepr_thank_you_page_type_page').on('click', function() {
+      $('#mepr-product-thank-you-message').hide();
+      $('#mepr-product-thank-you-page-id').show();
     });
 
 /*****************************************************************************/

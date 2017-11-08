@@ -840,7 +840,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     * scripts for use on the page containing the payment form
     */
   public function enqueue_payment_form_scripts() {
-    wp_enqueue_script('stripe-js', 'https://js.stripe.com/v1/', array(), MEPR_VERSION);
+    wp_enqueue_script('stripe-js', 'https://js.stripe.com/v3/', array(), MEPR_VERSION);
     wp_enqueue_script('stripe-create-token', MEPR_GATEWAYS_URL . '/stripe/create_token.js', array('stripe-js', 'mepr-checkout-js', 'jquery.payment'), MEPR_VERSION);
     wp_localize_script('stripe-create-token', 'MeprStripeGateway', array( 'public_key' => $this->settings->public_key ));
   }
@@ -866,11 +866,11 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     ?>
       <div class="mp_wrapper mp_payment_form_wrapper">
         <?php
-          if(!$this->settings->use_stripe_checkout) {
-            $this->display_on_site_form($txn);
+          if($this->settings->use_stripe_checkout) {
+            $this->display_stripe_checkout_form($txn);
           }
           else {
-            $this->display_stripe_checkout_form($txn);
+            $this->display_on_site_form($txn);
           }
         ?>
       </div>
@@ -910,58 +910,36 @@ class MeprStripeGateway extends MeprBaseRealGateway {
     $mepr_options = MeprOptions::fetch();
     $user         = $txn->user();
     ?>
-      <form action="" method="post" id="payment-form" class="mepr-checkout-form mepr-form mepr-card-form" novalidate>
+      <form action="" method="post" id="mepr-stripe-payment-form">
         <input type="hidden" name="mepr_process_payment_form" value="Y" />
         <input type="hidden" name="mepr_transaction_id" value="<?php echo $txn->id; ?>" />
-        <input type="hidden" class="card-name" value="<?php echo $user->get_full_name(); ?>" />
+        <input type="hidden" name="card-name" value="<?php echo $user->get_full_name(); ?>" />
+        <input type="hidden" name="address_required" value="<?php echo $mepr_options->show_address_fields && $mepr_options->require_address_fields ? 1 : 0 ?>" />
 
         <?php if($mepr_options->show_address_fields && $mepr_options->require_address_fields): ?>
-          <input type="hidden" class="card-address-1" value="<?php echo get_user_meta($user->ID, 'mepr-address-one', true); ?>" />
-          <input type="hidden" class="card-address-2" value="<?php echo get_user_meta($user->ID, 'mepr-address-two', true); ?>" />
-          <input type="hidden" class="card-city" value="<?php echo get_user_meta($user->ID, 'mepr-address-city', true); ?>" />
-          <input type="hidden" class="card-state" value="<?php echo get_user_meta($user->ID, 'mepr-address-state', true); ?>" />
-          <input type="hidden" class="card-zip" value="<?php echo get_user_meta($user->ID, 'mepr-address-zip', true); ?>" />
-          <input type="hidden" class="card-country" value="<?php echo get_user_meta($user->ID, 'mepr-address-country', true); ?>" />
+          <input type="hidden" name="card-address-1" value="<?php echo get_user_meta($user->ID, 'mepr-address-one', true); ?>" />
+          <input type="hidden" name="card-address-2" value="<?php echo get_user_meta($user->ID, 'mepr-address-two', true); ?>" />
+          <input type="hidden" name="card-city" value="<?php echo get_user_meta($user->ID, 'mepr-address-city', true); ?>" />
+          <input type="hidden" name="card-state" value="<?php echo get_user_meta($user->ID, 'mepr-address-state', true); ?>" />
+          <input type="hidden" name="card-zip" value="<?php echo get_user_meta($user->ID, 'mepr-address-zip', true); ?>" />
+          <input type="hidden" name="card-country" value="<?php echo get_user_meta($user->ID, 'mepr-address-country', true); ?>" />
         <?php endif; ?>
 
-        <div class="mepr-stripe-errors"></div>
-        <?php MeprView::render('/shared/errors', get_defined_vars()); ?>
-
         <div class="mp-form-row">
           <div class="mp-form-label">
-            <label><?php _ex('Credit Card Number', 'ui', 'memberpress'); ?></label>
-            <span class="cc-error"><?php _ex('Invalid Credit Card Number', 'ui', 'memberpress'); ?></span>
+            <label><?php _ex('Credit Card', 'ui', 'memberpress'); ?></label>
+            <span id="card-errors" role="alert" class="stripe_element_error"></span>
           </div>
-          <input type="tel" class="mepr-form-input card-number cc-number validation" pattern="\d*" autocomplete="cc-number" required>
-        </div>
-
-        <input type="hidden" name="mepr-cc-type" class="cc-type" value="" />
-
-        <div class="mp-form-row">
-          <div class="mp-form-label">
-            <label><?php _ex('Expiration', 'ui', 'memberpress'); ?></label>
-            <span class="cc-error"><?php _ex('Invalid Expiration', 'ui', 'memberpress'); ?></span>
+          <div id="card-element" class="stripe_element_input">
+            <!-- a Stripe Element will be inserted here. -->
           </div>
-          <input type="tel" class="mepr-form-input cc-exp validation" pattern="\d*" autocomplete="cc-exp" placeholder="<?php _ex('mm/yy', 'ui', 'memberpress'); ?>" required>
-          <?php //$this->months_dropdown('','card-expiry-month',isset($_REQUEST['card-expiry-month'])?$_REQUEST['card-expiry-month']:'',true); ?>
-          <?php //$this->years_dropdown('','card-expiry-year',isset($_REQUEST['card-expiry-year'])?$_REQUEST['card-expiry-year']:''); ?>
-        </div>
-
-        <div class="mp-form-row">
-          <div class="mp-form-label">
-            <label><?php _ex('CVC', 'ui', 'memberpress'); ?></label>
-            <span class="cc-error"><?php _ex('Invalid CVC Code', 'ui', 'memberpress'); ?></span>
-          </div>
-          <input type="tel" class="mepr-form-input card-cvc cc-cvc validation" pattern="\d*" autocomplete="off" required>
         </div>
 
         <?php MeprHooks::do_action('mepr-stripe-payment-form', $txn); ?>
 
         <div class="mepr_spacer">&nbsp;</div>
-
         <input type="submit" class="mepr-submit" value="<?php _ex('Submit', 'ui', 'memberpress'); ?>" />
         <img src="<?php echo admin_url('images/loading.gif'); ?>" style="display: none;" class="mepr-loading-gif" />
-        <?php MeprView::render('/shared/has_errors', get_defined_vars()); ?>
 
         <noscript><p class="mepr_nojs"><?php _e('Javascript is disabled in your browser. You will not be able to complete your purchase until you either enable JavaScript in your browser, or switch to a browser that supports it.', 'memberpress'); ?></p></noscript>
       </form>
@@ -1121,86 +1099,71 @@ class MeprStripeGateway extends MeprBaseRealGateway {
   public function enqueue_user_account_scripts() {
     $sub = (isset($_GET['action']) && $_GET['action'] == 'update' && isset($_GET['sub'])) ? new MeprSubscription((int)$_GET['sub']) : false;
     if($sub !== false && $sub->gateway == $this->id) {
-      wp_enqueue_script('stripe-js', 'https://js.stripe.com/v1/', array(), MEPR_VERSION);
-      wp_enqueue_script('stripe-create-token', MEPR_GATEWAYS_URL . '/stripe/create_token.js', array('stripe-js', 'mepr-checkout-js', 'jquery.payment'), MEPR_VERSION);
+      wp_enqueue_script('stripe-js', 'https://js.stripe.com/v3/', array(), MEPR_VERSION . time());
+      wp_enqueue_script('stripe-create-token', MEPR_GATEWAYS_URL . '/stripe/create_token.js', array('stripe-js'), MEPR_VERSION . time());
       wp_localize_script('stripe-create-token', 'MeprStripeGateway', array( 'public_key' => $this->settings->public_key ));
     }
   }
 
   /** Displays the update account form on the subscription account page **/
-  public function display_update_account_form($sub_id, $errors=array(), $message='') {
+  public function   display_update_account_form($sub_id, $errors=array(), $message='') {
     $mepr_options = MeprOptions::fetch();
     $customer = $this->stripe_customer($sub_id);
     $sub = new MeprSubscription($sub_id);
-    $usr = $sub->user();
+    $user = $sub->user();
 
     $cc_exp_month = isset($_REQUEST['card-expiry-month'])?$_REQUEST['card-expiry-month']:$sub->cc_exp_month;
     $cc_exp_year = isset($_REQUEST['card-expiry-year'])?$_REQUEST['card-expiry-year']:$sub->cc_exp_year;
 
     if( $card = $this->get_default_card($customer) ) {
       $card_num = MeprUtils::cc_num($card['last4']);
-      $card_name = ( isset($card['name']) and $card['name']!='undefined' ) ? $card['name'] : $usr->get_full_name();
+      $card_name = ( isset($card['name']) and $card['name']!='undefined' ) ? $card['name'] : $user->get_full_name();
     }
     else {
       $card_num = $sub->cc_num();
-      $card_name = $usr->get_full_name();
+      $card_name = $user->get_full_name();
     }
 
     ?>
-    <div class="mp_wrapper">
-      <form action="" method="post" id="payment-form" class="mepr-checkout-form mepr-form" novalidate>
-        <input type="hidden" name="_mepr_nonce" value="<?php echo wp_create_nonce('mepr_process_update_account_form'); ?>" />
-        <input type="hidden" class="card-name" value="<?php echo $card_name; ?>" />
+      <div class="mp_wrapper">
+        <form action="" method="post" id="mepr-stripe-payment-form">
+          <input type="hidden" name="_mepr_nonce" value="<?php echo wp_create_nonce('mepr_process_update_account_form'); ?>" />
+          <input type="hidden" name="card-name" value="<?php echo $card_name; ?>" />
+          <input type="hidden" name="address_required" value="<?php echo $mepr_options->show_address_fields && $mepr_options->require_address_fields ? 1 : 0 ?>" />
 
-        <?php if($mepr_options->show_address_fields && $mepr_options->require_address_fields): ?>
-          <input type="hidden" class="card-address-1" value="<?php echo get_user_meta($usr->ID, 'mepr-address-one', true); ?>" />
-          <input type="hidden" class="card-address-2" value="<?php echo get_user_meta($usr->ID, 'mepr-address-two', true); ?>" />
-          <input type="hidden" class="card-city" value="<?php echo get_user_meta($usr->ID, 'mepr-address-city', true); ?>" />
-          <input type="hidden" class="card-state" value="<?php echo get_user_meta($usr->ID, 'mepr-address-state', true); ?>" />
-          <input type="hidden" class="card-zip" value="<?php echo get_user_meta($usr->ID, 'mepr-address-zip', true); ?>" />
-          <input type="hidden" class="card-country" value="<?php echo get_user_meta($usr->ID, 'mepr-address-country', true); ?>" />
-        <?php endif; ?>
+          <?php if($mepr_options->show_address_fields && $mepr_options->require_address_fields): ?>
+            <input type="hidden" name="card-address-1" value="<?php echo get_user_meta($user->ID, 'mepr-address-one', true); ?>" />
+            <input type="hidden" name="card-address-2" value="<?php echo get_user_meta($user->ID, 'mepr-address-two', true); ?>" />
+            <input type="hidden" name="card-city" value="<?php echo get_user_meta($user->ID, 'mepr-address-city', true); ?>" />
+            <input type="hidden" name="card-state" value="<?php echo get_user_meta($user->ID, 'mepr-address-state', true); ?>" />
+            <input type="hidden" name="card-zip" value="<?php echo get_user_meta($user->ID, 'mepr-address-zip', true); ?>" />
+            <input type="hidden" name="card-country" value="<?php echo get_user_meta($user->ID, 'mepr-address-country', true); ?>" />
+          <?php endif; ?>
 
-        <div class="mepr_update_account_table">
-          <div><strong><?php _e('Update your Credit Card information below', 'memberpress'); ?></strong></div><br/>
 
-          <div class="mepr-stripe-errors"></div>
-          <?php MeprView::render('/shared/errors', get_defined_vars()); ?>
+          <div class="mepr_update_account_table">
+            <div><strong><?php _e('Update your Credit Card information below', 'memberpress'); ?></strong></div><br/>
+            <div class="mepr-stripe-errors"></div>
+            <?php MeprView::render('/shared/errors', get_defined_vars()); ?>
 
-          <div class="mp-form-row">
-            <div class="mp-form-label">
-              <label><?php _e('Credit Card Number', 'memberpress'); ?></label>
-              <span class="cc-error"><?php _e('Invalid Credit Card Number', 'memberpress'); ?></span>
+            <div class="mp-form-row">
+              <div class="mp-form-label">
+                <label><?php _ex('Credit Card', 'ui', 'memberpress'); ?></label>
+                <span id="card-errors" role="alert" class="stripe_element_error"></span>
+              </div>
+              <div id="card-element" class="stripe_element_input">
+                <!-- a Stripe Element will be inserted here. -->
+              </div>
             </div>
-            <input type="text" class="mepr-form-input card-number cc-number validation" pattern="\d*" autocomplete="cc-number" placeholder="<?php echo $card_num; ?>" required>
+
+            <div class="mepr_spacer">&nbsp;</div>
+            <input type="submit" class="mepr-submit" value="<?php _ex('Submit', 'ui', 'memberpress'); ?>" />
+            <img src="<?php echo admin_url('images/loading.gif'); ?>" style="display: none;" class="mepr-loading-gif" />
+
+            <noscript><p class="mepr_nojs"><?php _e('Javascript is disabled in your browser. You will not be able to complete your purchase until you either enable JavaScript in your browser, or switch to a browser that supports it.', 'memberpress'); ?></p></noscript>
           </div>
-
-          <input type="hidden" name="mepr-cc-type" class="cc-type" value="" />
-
-          <div class="mp-form-row">
-            <div class="mp-form-label">
-              <label><?php _e('Expiration', 'memberpress'); ?></label>
-              <span class="cc-error"><?php _e('Invalid Expiration', 'memberpress'); ?></span>
-            </div>
-            <input type="text" class="mepr-form-input cc-exp validation" pattern="\d*" autocomplete="cc-exp" placeholder="mm/yy" required>
-          </div>
-
-          <div class="mp-form-row">
-            <div class="mp-form-label">
-              <label><?php _e('CVC', 'memberpress'); ?></label>
-              <span class="cc-error"><?php _e('Invalid CVC Code', 'memberpress'); ?></span>
-            </div>
-            <input type="text" class="mepr-form-input card-cvc cc-cvc validation" pattern="\d*" autocomplete="off" required>
-          </div>
-
-          <div class="mepr_spacer">&nbsp;</div>
-
-          <input type="submit" class="mepr-submit" value="<?php _e('Update Credit Card', 'memberpress'); ?>" />
-          <img src="<?php echo admin_url('images/loading.gif'); ?>" style="display: none;" class="mepr-loading-gif" />
-          <?php MeprView::render('/shared/has_errors', get_defined_vars()); ?>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
     <?php
   }
 

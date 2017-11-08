@@ -278,6 +278,7 @@ class MeprReminder extends MeprCptModel {
                   FROM {$mepr_db->transactions} AS txn2
                  WHERE txn2.user_id = txn.user_id
                    AND txn2.status IN (%s,%s)
+                   ".$this->get_query_products('txn2.product_id')."
                    AND txn2.created_at < txn.created_at
                  LIMIT 1
               ) IS NULL " .
@@ -359,6 +360,7 @@ class MeprReminder extends MeprCptModel {
                  WHERE txn2.user_id = txn.user_id
                    AND txn2.product_id = txn.product_id
                    AND txn2.status IN (%s,%s)
+                   ".$this->get_query_products('txn2.product_id')."
                    AND txn2.created_at > txn.created_at
                  LIMIT 1
               ) IS NULL " .

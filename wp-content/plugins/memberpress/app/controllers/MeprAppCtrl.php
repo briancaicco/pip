@@ -521,10 +521,10 @@ class MeprAppCtrl extends MeprBaseCtrl {
 
         //Some crazy trickery here to prevent from having to completely rewrite a lot of crap
         //This is a fix for https://github.com/Caseproof/memberpress/issues/609
-        if(!$manual_login_form) {
+        if(!$manual_login_form || ($action && $action == 'bpnoaccess')) { //BuddyPress fix
           $content .= ob_get_clean();
         }
-        elseif(isset($_GET['action']) && !empty($_GET['action'])) {
+        elseif($action) {
           $match_str = '#' . preg_quote('<!-- mp-login-form-start -->') . '.*' . preg_quote('<!-- mp-login-form-end -->') . '#s';
           $content = preg_replace($match_str, ob_get_clean(), $content);
         }
@@ -559,7 +559,7 @@ class MeprAppCtrl extends MeprBaseCtrl {
     MeprHooks::do_action('mepr_enqueue_scripts', $is_product_page, $is_group_page, $is_account_page);
 
     // Yeah we enqueue this globally all the time so the login form will work on any page
-    wp_enqueue_style('mp-theme', MEPR_CSS_URL . '/ui/theme.css', null);
+    wp_enqueue_style('mp-theme', MEPR_CSS_URL . '/ui/theme.css', null, MEPR_VERSION);
 
     if($global_styles || $is_account_page) {
       wp_enqueue_style('mp-account-css', MEPR_CSS_URL.'/ui/account.css', null, MEPR_VERSION);

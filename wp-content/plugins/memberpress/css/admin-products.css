@@ -170,6 +170,11 @@ div#mepr-product-thank-you-area {
   padding:15px;
 }
 
+div#mepr-product-thank-you-page-id,
+div#mepr-product-thank-you-message {
+  display: none;
+}
+
 #mepr-product-manually-place-form,
 #mepr-custom-login-redirect-urls,
 #mepr-product-payment-methods-wrap,
@@ -293,4 +298,3 @@ span.mepr-price-box-price-loading {
 #mepr-custom-pricing-display {
   display: none;
 }
-

@@ -67,9 +67,9 @@ global $post;
 						
 						<p>A handful of them are excellent, some are good and many can't be trusted.</p> 
 
-						<p>We encourage you to do your own research but also to take advantage of the work we've done.<br/> Learn from our mistakes and avoid losing money by making the wrong choice.</p>
+						<p>We encourage you to do your own research but also to take advantage of the work we've done.<br/> Learn from our mistakes and avoid losing money by making the right choice.</p>
 
-						<p>Below, in the Staff Recommended Brokers section you will find the brokers that we've trusted with thousands of dollars.<br/> These brokers are outstanding in many areas such as account verification time, customer service, fair terms, fast payout times and low fees.</p> 
+						<p>Below, in the Staff Recommended Brokers section you will find the brokers that we've trusted with thousands of dollars. These brokers are outstanding in many areas such as account verification time, customer service, fair terms, fast payout times and low fees.</p> 
 						
 						<p>If you have any questions regarding brokers in this directory please don't hesitate to contact us at <a href="mailto:support@piproomz.com">support@piproomz.com</a></p>
 

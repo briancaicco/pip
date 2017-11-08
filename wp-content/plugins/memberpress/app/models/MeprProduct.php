@@ -29,7 +29,9 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
   public static $register_price_action_str      = '_mepr_register_price_action';
   public static $register_price_str             = '_mepr_register_price';
   public static $thank_you_page_enabled_str     = '_mepr_thank_you_page_enabled';
+  public static $thank_you_page_type_str        = '_mepr_thank_you_page_type';
   public static $thank_you_message_str          = '_mepr_product_thank_you_message';
+  public static $thank_you_page_id_str          = '_mepr_product_thank_you_page_id';
   public static $simultaneous_subscriptions_str = '_mepr_allow_simultaneous_subscriptions';
   public static $use_custom_template_str        = '_mepr_use_custom_template';
   public static $custom_template_str            = '_mepr_custom_template';
@@ -92,7 +94,9 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
         'register_price_action' => 'default',
         'register_price' => '',
         'thank_you_page_enabled' => false,
+        'thank_you_page_type' => '',
         'thank_you_message' => '',
+        'thank_you_page_id' => 0,
         'custom_login_urls_enabled' => false,
         'custom_login_urls_default' => '',
         //An array of objects ->url and ->count
@@ -235,7 +239,9 @@ class MeprProduct extends MeprCptModel implements MeprProductInterface {
     update_post_meta($id, self::$register_price_action_str, $this->register_price_action);
     update_post_meta($id, self::$register_price_str, $this->register_price);
     update_post_meta($id, self::$thank_you_page_enabled_str, $this->thank_you_page_enabled);
+    update_post_meta($id, self::$thank_you_page_type_str, $this->thank_you_page_type);
     update_post_meta($id, self::$thank_you_message_str, $this->thank_you_message);
+    update_post_meta($id, self::$thank_you_page_id_str, $this->thank_you_page_id);
     update_post_meta($id, self::$custom_login_urls_enabled_str, $this->custom_login_urls_enabled);
     update_post_meta($id, self::$custom_login_urls_default_str, $this->custom_login_urls_default);
     update_post_meta($id, self::$custom_login_urls_str, $this->custom_login_urls);

@@ -346,7 +346,7 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
             $txn = new MeprTransaction($txn->id);
             $product = new MeprProduct($txn->product_id);
             $sanitized_title = sanitize_title($product->post_title);
-            MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}"));
+            MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
           }
           else {
             // Artificially set the payment method params so we can use them downstream

@@ -415,6 +415,13 @@ class MeprRemindersCtrl extends MeprCptCtrl {
           $aclass = 'MeprAdminSubRenewsReminderEmail';
           break;
         case 'signup-abandoned':
+          //Make sure the user is not active on another membership
+          $active_subs = $usr->active_product_subscriptions('ids');
+
+          if(!empty($active_subs)) {
+            $disable_email = true;
+          }
+
           $uclass = 'MeprUserSignupAbandonedReminderEmail';
           $aclass = 'MeprAdminSignupAbandonedReminderEmail';
           break;

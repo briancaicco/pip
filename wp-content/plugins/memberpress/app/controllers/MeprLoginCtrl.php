@@ -54,6 +54,7 @@ class MeprLoginCtrl extends MeprBaseCtrl {
     //BEGIN TEMP WPML FIX
     if( $shortcode && isset($_REQUEST['action']) &&
         $_REQUEST['action'] != 'mepr_unauthorized' &&
+        $_REQUEST['action'] != 'bpnoaccess' && //BuddyPress fix
         !defined('DOING_AJAX') ) { //Don't do this if it's an ajax request. Probably loading up the form shortcode via AJAX
       //Need to check for this POST first
       if($_REQUEST['action'] == 'mepr_process_reset_password_form') {
