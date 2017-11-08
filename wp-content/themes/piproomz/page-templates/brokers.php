@@ -23,6 +23,7 @@ $args = array(
 );
 $staff_pick_brokers = new WP_query( $args );
 
+$post_count = wp_count_posts( 'broker' )->publish;
 
 $args2 = array(
 	'post_type'			=> 'broker',
@@ -57,13 +58,25 @@ global $post;
 
 				<div class="card-body">
 
-					<h1 class="mb-4">Brokers</h1>
+					<h1 class="mb-4"><?php the_title(); ?></h1>
+					<h4 class="text-uppercase">Please read carefully</h4>
+					<p class="h5">There are <span class="badge badge-secondary"><?php echo $post_count; ?></span> brokers in this directory. <strong>Not all of them are credible!</strong> <a class="text-danger text-uppercase small" data-toggle="collapse" data-parent="#brokers" href="#warning" aria-expanded="false" aria-controls="warning" >Learn More</a></p>
+					
+					<div class="collapse p-3" id="warning" role="tabpanel">
+						<p>We've spent years researching and doing trials with various brokers in this directory.<br/> (In one case losing $20,000 from making the wrong choice.)</p>
+						
+						<p>A handful of them are excellent, some are good and many can't be trusted.</p> 
 
+						<p>We encourage you to do your own research but also to take advantage of the work we've done.<br/> Learn from our mistakes and avoid losing money by making the wrong choice.</p>
 
-					<h5>Staff Recommended Brokers</h5>
-					<p>On this page you will a list over 400 brokers. We're providing this list so you can do your due diligence when choosing a broker.</p>
-					<p>We've spent years researching these brokers in some cases losing tens of thousands of dollars to uncover the best ones. At the top of this page under the Staff Recommended Brokers title you will find our favorite brokers to work with.</p> 
-					<p>These brokers have an outstanding reputation for transparency, customer service, fair terms, payout times and fees. If you're not using one of the Staff Recommended Brokers we strongly encourage you to open and fund an account with them to see for fourself.</p>
+						<p>Below, in the Staff Recommended Brokers section you will find the brokers that we've trusted with thousands of dollars.<br/> These brokers are outstanding in many areas such as account verification time, customer service, fair terms, fast payout times and low fees.</p> 
+						
+						<p>If you have any questions regarding brokers in this directory please don't hesitate to contact us at <a href="mailto:support@piproomz.com">support@piproomz.com</a></p>
+
+						<p>Happy trading!</p>
+					</div>
+
+					<h5 class="mt-4">Staff Recommended Brokers</h5>
 					<br/>
 
 					<?php while( $staff_pick_brokers->have_posts() ) { 
@@ -73,37 +86,20 @@ global $post;
 
 							<div class="p-3 toggle rounded-top" data-toggle="collapse" data-parent="#brokers" href="#brokerItem<?php echo $post->ID; ?>" aria-expanded="false" aria-controls="brokerItem<?php echo $post->ID; ?>">
 
-								<div class="d-flex justify-content-between" >
+								<div class="d-flex justify-content-between align-content-middle" >
+									<?php if( get_field('broker_logo') ): ?> <a href="<?php the_field('broker_url'); ?>" class="broker-logo d-table" ><img class="" src="<?php the_field('broker_logo'); ?>" /></a> <?php endif; ?>
 									<span class="h4 mb-0 text-secondary">
 										<?php the_title(); ?>
 									</span>
 									<span class="h3 mb-0 text-secondary">
-										<i class="fa fa-plus-square-o" aria-hidden="true"></i>
-										<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+										<i class="fa fa-plus-square-o" aria-hidden="true"><span class="text-uppercase" style="font-size: 11px; position: absolute; top: 32px; right: 54px; ">More Info </span></i>
+										<i class="fa fa-minus-square-o" aria-hidden="true"><span class="text-uppercase" style="font-size: 11px; position: absolute; top: 32px; right: 54px; ">Less Info </span></i>
 									</span>
 								</div>
 
 							</div>
 
 							<div id="brokerItem<?php echo $post->ID; ?>" class="collapse p-3" role="tabpanel">
-
-								<?php $review = get_field('broker_editors_review'); if ( $review = '' ){ ?>
-								<div class="row pt-3 pb-4">
-									<div class="col-6">
-										<a class="btn btn-lg d-block btn-outline-secondary" href="<?php the_permalink($id); ?>">Read In-Depth Review</a>
-									</div>
-									<div class="col-6">
-										<a class="btn btn-lg d-block btn-success" href="<?php the_field('broker_url'); ?>">Setup Your Account</a>
-									</div>
-								</div>
-								<?php } else{ ?>
-								<div class="row pt-3 pb-4 justify-content-center">
-									<div class="col-5">
-										<a class="btn btn-lg d-block btn-success" href="<?php the_field('broker_url'); ?>">Setup Your Account</a>
-									</div>
-								</div>
-
-								<?php } ?>
 
 								<h5>Broker Information</h5>
 								<table class="table table-responsive">
@@ -257,23 +253,15 @@ global $post;
 
 							</div>
 
-							<?php  $review = get_field('broker_editors_review'); if (!$review == ''){ ?>
-							<div class="row p-3">
-								<div class="col-6">
-									<a class="btn btn-lg d-block btn-outline-secondary" href="<?php the_permalink(); ?>">Read In-Depth Review</a>
-								</div>
-								<div class="col-6">
-									<a class="btn btn-lg d-block btn-success" href="<?php the_field('broker_url'); ?>">Setup Your Account</a>
-								</div>
-							</div>
-							<?php } else{ ?>
+
 							<div class="row pt-3 pb-4 justify-content-center">
-								<div class="col-5">
+								<div class="col-5 text-center">
 									<a class="btn btn-lg d-block btn-success" href="<?php the_field('broker_url'); ?>">Setup Your Account</a>
+									<?php  $review = get_field('broker_editors_review'); if (!$review == ''){ ?><a href="<?php the_permalink($id); ?>" class="text-secondary d-block mt-1" style="font-size: 12px; opacity: .7; font-weight: 300;">or Read In-Depth Review</a><?php } ?>
 								</div>
 							</div>
 
-							<?php } ?>
+
 
 						</div>
 
@@ -307,8 +295,8 @@ global $post;
 											<?php the_title(); ?>
 										</span>
 										<span class="h3 mb-0 text-secondary">
-											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
-											<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+											<i class="fa fa-plus-square-o" aria-hidden="true"><span class="text-uppercase" style="font-size: 11px; position: absolute; top: 32px; right: 54px; ">More Info </span></i>
+											<i class="fa fa-minus-square-o" aria-hidden="true"><span class="text-uppercase" style="font-size: 11px; position: absolute; top: 32px; right: 54px; ">Less Info </span></i>
 										</span>
 									</div>
 

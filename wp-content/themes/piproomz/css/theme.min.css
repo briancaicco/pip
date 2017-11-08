@@ -4807,11 +4807,17 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .page-template-brokers .recommended .toggle { background: #00c6ff; /* fallback for old browsers */ background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Chrome 10-25, Safari 5.1-6 */ background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
+.page-template-brokers .recommended .toggle .h4 { margin-left: 180px; }
+
 .page-template-brokers .recommended .toggle .h4, .page-template-brokers .recommended .toggle .h3 { color: #fff !important; }
 
 .page-template-brokers .recommended .toggle .fa-minus-square-o, .page-template-brokers .recommended .toggle .fa-plus-square-o { opacity: .8; }
 
 .page-template-brokers .recommended:hover { box-shadow: 0 0 7px rgba(22, 22, 34, 0.17), 0 7px 14px rgba(22, 22, 34, 0.34); transform: scale(1.002); -webkit-transition: -webkit-transform .35s ease-in-out; -moz-transition: -moz-transform .35s ease-in-out; -o-transition: -o-transform .35s ease-in-out; transition: all .35s ease-in-out; }
+
+.page-template-brokers .broker-logo { background: #fff; min-width: 180px; min-height: 78px; position: absolute; left: 0px; top: 0px; text-align: center; display: block; padding: 17px 0px; }
+
+.page-template-brokers .broker-logo img { max-width: 140px; max-height: 45px; }
 
 .widget_bp_groups_widget .item-options a.selected { font-weight: bold; }
 
