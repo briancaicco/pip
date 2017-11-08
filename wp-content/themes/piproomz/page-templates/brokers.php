@@ -59,7 +59,7 @@ global $post;
 				<div class="card-body">
 
 					<h1 class="mb-4"><?php the_title(); ?></h1>
-					<h4 class="text-uppercase">Please read carefully</h4>
+					<!-- <h4 class="text-uppercase">Please read carefully</h4> -->
 					<p class="h5">There are <span class="badge badge-secondary"><?php echo $post_count; ?></span> brokers in this directory. <strong>Not all of them are credible!</strong> <a class="text-danger text-uppercase small" data-toggle="collapse" data-parent="#brokers" href="#warning" aria-expanded="false" aria-controls="warning" >Learn More</a></p>
 					
 					<div class="collapse p-3" id="warning" role="tabpanel">
