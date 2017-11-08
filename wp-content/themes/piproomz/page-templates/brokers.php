@@ -88,7 +88,7 @@ global $post;
 
 								<div class="d-flex justify-content-between align-content-middle" >
 									<?php if( get_field('broker_logo') ): ?> <a href="<?php the_field('broker_url'); ?>" class="broker-logo d-table" ><img class="" src="<?php the_field('broker_logo'); ?>" /></a> <?php endif; ?>
-									<span class="h4 mb-0 text-secondary">
+									<span class="h4 mb-0 text-secondary" <?php if( get_field('broker_logo') ): ?>style="margin-left: 180px;"<?php endif; ?>>
 										<?php the_title(); ?>
 									</span>
 									<span class="h3 mb-0 text-secondary">
