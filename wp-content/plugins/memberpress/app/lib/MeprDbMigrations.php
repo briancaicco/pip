@@ -84,6 +84,16 @@ class MeprDbMigrations {
             'message'   => false,
           )
         )
+      ),
+      '1.3.19' => array(
+        'show_ui' => false,
+        'migrations' => array(
+          array(
+            'migration' => 'migrate_access_rules_007',
+            'check'     => false,
+            'message'   => false,
+          )
+        )
       )
     );
   }
@@ -276,5 +286,44 @@ class MeprDbMigrations {
         $wpdb->update($mepr_db->transactions, array('expires_at' => $expires_at), array('id' => $transaction->id));
       }
     }
+  }
+
+  public function migrate_access_rules_007() {
+    global $wpdb;
+    $mepr_db = MeprDb::fetch();
+
+    $post_rules = get_posts(
+      array(
+        'post_type' => 'memberpressrule',
+        'posts_per_page' => -1,
+        'post_status' => 'publish'
+      )
+    );
+
+    $rules_count = sizeof($post_rules);
+    MeprUtils::debug_log("Found {$rules_count} rules to migrate!");
+
+    foreach ($post_rules as $post) {
+      // No longer a mepr_access attribute on the rule
+      // model so we do it the old fashioned way here
+      $access_rules = get_post_meta($post->ID, '_mepr_rules_access');
+
+      foreach ($access_rules as $ids) {
+        if(!is_array($ids)) { $ids = array($ids); }
+        $ids = array_unique($ids);
+
+        foreach ($ids as $id) {
+          MeprUtils::debug_log("Adding Rule Access POST:{$post->ID} => MEMBERSHIP:{$id}");
+          $rule_access_condition = new MeprRuleAccessCondition();
+          $rule_access_condition->rule_id = $post->ID;
+          $rule_access_condition->access_type = 'membership';
+          $rule_access_condition->access_operator = 'is';
+          $rule_access_condition->access_condition = $id;
+          $rule_access_condition->store();
+        }
+      }
+    }
+
+    MeprUtils::debug_log('All done migrating access rules');
   }
 }

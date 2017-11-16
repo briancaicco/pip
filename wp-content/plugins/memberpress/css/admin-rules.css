@@ -19,6 +19,10 @@
   }
 }
 
+.form-error {
+  color: rgb(185, 74, 72);
+}
+
 #mepr-rules-drip-area,
 #mepr-rules-expires-area {
   padding:15px;
@@ -65,9 +69,15 @@ div#partial_content_codes_hidden {
 }
 
 #mepr-rules-drip-area input,
-#mepr-rules-drip-area select ,
+#mepr-rules-drip-area select,
 #mepr-rules-expires-area input,
 #mepr-rules-expires-area select {
   vertical-align:middle;
   height:30px;
 }
+
+.mepr-access-row div {
+  line-height: 2rem !important;
+  vertical-align: bottom !important;
+}
+

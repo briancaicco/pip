@@ -223,6 +223,37 @@ class MeprUser extends MeprBaseModel {
     return $this->is_already_subscribed_to($id);
   }
 
+  /**
+  * Used to check if a condition exists for user or the users memberships
+  * Returns: true/false
+  */
+  public function has_access_from_rule($rule_id) {
+    global $wpdb;
+    $mepr_db = new MeprDb();
+
+    $where_clause = $wpdb->prepare("
+      WHERE rule_id=%d
+      AND ((access_type='member' AND access_operator='is' AND access_condition=%s)
+      ",
+      $rule_id,
+      $this->user_login
+    );
+    $active_subscriptions = $this->active_product_subscriptions();
+    if(!empty($active_subscriptions)) {
+      $where_clause .= $wpdb->prepare(" OR (access_type='membership' AND access_operator='is' AND access_condition IN (".implode(',', array_fill(0, count($active_subscriptions), '%d'))."))", $active_subscriptions);
+    }
+    $where_clause .= ')';
+
+    $query = "
+      SELECT 1
+      FROM {$mepr_db->rule_access_conditions}
+      {$where_clause}
+      LIMIT 1
+    ";
+
+    return (1 === $wpdb->query($query));
+  }
+
   // Retrieves the current subscription within a group (with upgrade paths enabled)
   public function subscription_in_group($group_id, $look_for_lapsed = false) {
     if($group_id instanceof MeprGroup && isset($group_id->ID) && $group_id->ID) {

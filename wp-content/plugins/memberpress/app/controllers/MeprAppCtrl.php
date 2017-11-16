@@ -98,22 +98,28 @@ class MeprAppCtrl extends MeprBaseCtrl {
   public static function custom_columns($column, $post_id) {
     $post = get_post($post_id);
     if( $column=="mepr-access" ) {
-      $product_ids = MeprRule::get_access_list($post);
-      if(empty($product_ids)) {
+      $access_list = MeprRule::get_access_list($post);
+      if(empty($access_list)) {
         ?><div class="mepr-active"><?php _e("Public", 'memberpress'); ?></div><?php
       }
       else {
-        $access_list = array();
-        foreach( $product_ids as $product_id ) {
-          $product = new MeprProduct($product_id);
-          if(!is_null($product->ID))  {
-            $access_list[] = stripslashes($product->post_title);
+        $display_access_list = array();
+        foreach( $access_list as $access_key => $access_values ) {
+          if($access_key == 'membership') {
+            foreach($access_values as $product_id) {
+              $product = new MeprProduct($product_id);
+              if(!is_null($product->ID))  {
+                $display_access_list[] = stripslashes($product->post_title);
+              }
+            }
+          }
+          else {
+            $display_access_list = array_merge($display_access_list, $access_values);
           }
         }
-
         ?>
         <div class="mepr-inactive">
-          <?php echo implode(', ', $access_list); ?>
+          <?php echo implode(', ', $display_access_list); ?>
         </div>
         <?php
       }
@@ -149,7 +155,9 @@ class MeprAppCtrl extends MeprBaseCtrl {
     global $post;
 
     $rules = MeprRule::get_rules($post);
-    $product_ids = MeprRule::get_access_list($post);
+    $access_list = MeprRule::get_access_list($post);
+    $product_ids = $access_list['membership'];
+    $members = $access_list['member'];
 
     MeprView::render('/admin/rules/rules_meta_box', get_defined_vars());
   }
@@ -299,7 +307,7 @@ class MeprAppCtrl extends MeprBaseCtrl {
     $txn_ctrl = new MeprTransactionsCtrl();
     $sub_ctrl = new MeprSubscriptionsCtrl();
 
-    add_menu_page(__('MemberPress', 'memberpress'), __('MemberPress', 'memberpress'), $capability, 'memberpress', 'MeprAppCtrl::toplevel_menu_route', MEPR_IMAGES_URL."/memberpress-16@2x.png", 775677);
+    add_menu_page('MemberPress', 'MemberPress', $capability, 'memberpress', 'MeprAppCtrl::toplevel_menu_route', MEPR_IMAGES_URL."/memberpress-16@2x.png", 775677);
 
     //if (MeprUpdateCtrl::is_activated()) {
       add_submenu_page('memberpress', __('Members', 'memberpress'), __('Members', 'memberpress'), $capability, 'memberpress-members', array($mbr_ctrl,'listing'));
@@ -487,7 +495,7 @@ class MeprAppCtrl extends MeprBaseCtrl {
             $message = '';
 
             if($action and $action == 'mepr_unauthorized') {
-              $resource = isset($_REQUEST['redirect_to']) ? $_REQUEST['redirect_to'] : __('the requested resource.','memberpress');
+              $resource = isset($_REQUEST['redirect_to']) ? urldecode($_REQUEST['redirect_to']) : __('the requested resource.','memberpress');
               $unauth_message = wpautop(MeprHooks::apply_filters('mepr-unauthorized-message', do_shortcode($mepr_options->unauthorized_message), $current_post));
 
               //Maybe override the message if a page id is set

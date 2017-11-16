@@ -90,7 +90,7 @@ class MeprLoginCtrl extends MeprBaseCtrl {
 
     // if redirect_to isset then set it to the query param
     if(isset($_REQUEST['redirect_to']) && !empty($_REQUEST['redirect_to'])) {
-      $redirect_to = $_REQUEST['redirect_to'];
+      $redirect_to = urldecode($_REQUEST['redirect_to']);
     }
 
     // if we're on a page other than the login page and we're in a shortcode
@@ -125,6 +125,7 @@ class MeprLoginCtrl extends MeprBaseCtrl {
 
       //Need to override $redirect_to here if a per-membership login redirect URL is set (but do not track a login event)
       $redirect_to = MeprProductsCtrl::track_and_override_login_redirect_mepr($redirect_to, $wp_user, true, false);
+      $redirect_to = urlencode($redirect_to);
 
       MeprView::render('/login/form', get_defined_vars());
       return;
@@ -143,14 +144,14 @@ class MeprLoginCtrl extends MeprBaseCtrl {
     $mepr_options = MeprOptions::fetch();
 
     $errors = MeprHooks::apply_filters( 'mepr-validate-login',
-      MeprUser::validate_login($_POST, array())
+      MeprUser::validate_login($_REQUEST, array())
     );
 
-    if(is_email($_POST['log'])) {
-      $user = get_user_by('email', $_POST['log']);
+    if(is_email($_REQUEST['log'])) {
+      $user = get_user_by('email', $_REQUEST['log']);
 
       if($user !== false) {
-        $_POST['log'] = $user->user_login;
+        $_REQUEST['log'] = $user->user_login;
       }
     }
 
@@ -165,9 +166,9 @@ class MeprLoginCtrl extends MeprBaseCtrl {
 
     $wp_user = wp_signon(
       array(
-        'user_login' => $_POST['log'],
-        'user_password' => $_POST['pwd'],
-        'remember' => isset($_POST['rememberme'])
+        'user_login' => $_REQUEST['log'],
+        'user_password' => $_REQUEST['pwd'],
+        'remember' => isset($_REQUEST['rememberme'])
       ),
       MeprUtils::is_ssl() //May help with the users getting logged out when going between http and https
     );
@@ -177,8 +178,9 @@ class MeprLoginCtrl extends MeprBaseCtrl {
       return;
     }
 
-    $redirect_to = MeprHooks::apply_filters( 'mepr-process-login-redirect-url',
-      (isset($_POST['redirect_to'])?$_POST['redirect_to']:$mepr_options->login_redirect_url),
+    $redirect_to = MeprHooks::apply_filters(
+      'mepr-process-login-redirect-url',
+      (isset($_REQUEST['redirect_to'])?urldecode($_REQUEST['redirect_to']):$mepr_options->login_redirect_url),
       $wp_user
     );
 
@@ -196,15 +198,16 @@ class MeprLoginCtrl extends MeprBaseCtrl {
   }
 
   // Override the default wordpress login url
-  public function override_wp_login_url($url, $redirect) {
+  public function override_wp_login_url($url, $redirect_to) {
     $mepr_options = MeprOptions::fetch();
+    $redirect_to = urldecode($redirect_to); // might not be urlencoded, but let's do this just in case before we call urlencode below
 
     if(is_admin() || !$mepr_options->force_login_page_url || strpos($_SERVER['REQUEST_URI'], 'wp-login.php') !== false) {
       return $url;
     }
 
-    if(!empty($redirect)) {
-      $new_login_url = $mepr_options->login_page_url('redirect_to=' . $redirect);
+    if(!empty($redirect_to)) {
+      $new_login_url = $mepr_options->login_page_url('redirect_to=' . urlencode($redirect_to));
     }
     else {
       $new_login_url = $mepr_options->login_page_url();

@@ -410,7 +410,7 @@ class MeprAppHelper {
     }
 
     ?>
-      <select name="<?php echo $field_name; ?>[]" id="<?php echo $field_name; ?>[]" class="mepr-multi-select <?php echo $classes; ?>">
+      <select name="<?php echo $field_name; ?>" class="<?php echo $classes; ?>">
       <?php
         foreach($contents as $curr_type => $curr_label) {
           ?><option value="<?php echo $curr_type; ?>" <?php selected(in_array($curr_type, $memberships)); ?>><?php echo $curr_label; ?>&nbsp;</option><?php

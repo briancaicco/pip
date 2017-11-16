@@ -270,7 +270,7 @@ class MeprSubscriptionsCtrl extends MeprBaseCtrl
     $cols = array(
       $prefix.'id' => __('Id', 'memberpress'),
       $prefix.'subscr_id' => __('Subscription', 'memberpress'),
-      // $prefix.'active' => __('Active', 'memberpress'),
+      $prefix.'active' => __('Active', 'memberpress'),
       $prefix.'status' => __('Auto Rebill', 'memberpress'),
       $prefix.'product' => __('Membership', 'memberpress'),
       $prefix.'product_meta' => __('Terms', 'memberpress'),

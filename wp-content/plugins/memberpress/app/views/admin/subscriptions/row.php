@@ -192,7 +192,7 @@ if(!empty($records))
             $sub = new MeprSubscription($rec->id);
             $txn = $sub->latest_txn();
 
-            if($txn == false || !($txn instanceof MeprSubscription) || $txn->id <= 0) {
+            if($txn == false || !($txn instanceof MeprTransaction) || $txn->id <= 0) {
               $default = __('Unknown','memberpress');
             }
             else if(trim($txn->expires_at) == MeprUtils::db_lifetime() || empty($txn->expires_at)) {
@@ -271,4 +271,3 @@ if(!empty($records))
     <?php
   } //End foreach
 } //End if
-

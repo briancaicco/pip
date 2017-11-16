@@ -616,7 +616,7 @@ class MeprProductsCtrl extends MeprCptCtrl {
     }
 
     // Backwards compatibility check
-    if(isset($product->thank_you_page_type) && $product->thank_you_page_type != 'message') {
+    if(!empty($product->thank_you_page_type) && $product->thank_you_page_type != 'message') {
       return '';
     }
 

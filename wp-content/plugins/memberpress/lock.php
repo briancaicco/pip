@@ -50,16 +50,16 @@ if(MeprRule::is_uri_locked($mepr_uri)) {
   $delim = MeprAppCtrl::get_param_delimiter_char($mepr_options->unauthorized_redirect_url);
 
   if($mepr_options->redirect_on_unauthorized) { //Send to unauth page
-    $redirect_to = $mepr_options->unauthorized_redirect_url . $delim . "action=mepr_unauthorized&redirect_to=" . urlencode($mepr_full_uri);
+    $redirect_url = $mepr_options->unauthorized_redirect_url . $delim . "action=mepr_unauthorized&redirect_to=" . urlencode($mepr_full_uri);
   }
   else { //Send to login page
-    $redirect_to = $mepr_options->login_page_url('action=mepr_unauthorized&redirect_to=' . urlencode($mepr_full_uri));
+    $redirect_url = $mepr_options->login_page_url('action=mepr_unauthorized&redirect_to=' . urlencode($mepr_full_uri));
   }
 
   //Handle SSL
-  $redirect_to = ($is_ssl ? str_replace('http:', 'https:', $redirect_to) : $redirect_to);
+  $redirect_url = ($is_ssl ? str_replace('http:', 'https:', $redirect_url) : $redirect_url);
 
-  MeprUtils::wp_redirect($redirect_to);
+  MeprUtils::wp_redirect($redirect_url);
   exit;
 }
 

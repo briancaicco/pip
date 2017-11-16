@@ -262,6 +262,10 @@ class MeprUsersCtrl extends MeprBaseCtrl {
       if($is_signup && $line->required && !$line->show_on_signup) {
         $line->required = false;
       }
+      elseif(!$is_signup && !is_admin() && isset($line->show_in_account) && !$line->show_in_account) {
+        //Account page shouldn't show errors if the fields have been hidden from the account page
+        $line->required = false;
+      }
 
       if((!isset($_POST[$line->field_key]) || (empty($_POST[$line->field_key]) && $_POST[$line->field_key] != '0')) && $line->required) {
         $errs[] = sprintf(__('%s is required.', 'memberpress'), stripslashes($line->field_name));

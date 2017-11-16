@@ -28,7 +28,9 @@ class MeprRulesCtrl extends MeprCptCtrl {
     add_action('manage_posts_custom_column', 'MeprRulesCtrl::custom_columns', 10, 2);
     add_filter('manage_edit-memberpressrule_columns', 'MeprRulesCtrl::columns');
     add_action('save_post', 'MeprRulesCtrl::save_postdata');
+    add_action('delete_post', 'MeprRulesCtrl::delete_access_rules', 10);
     add_action('wp_ajax_mepr_show_content_dropdown', 'MeprRulesCtrl::display_content_dropdown');
+    add_action('wp_ajax_mepr_remove_access_condition', 'MeprRulesCtrl::remove_access_condition');
     add_action('wp_ajax_mepr_rule_content_search', 'MeprRulesCtrl::ajax_content_search');
     add_filter('default_title', 'MeprRulesCtrl::get_page_title_code');
 
@@ -93,7 +95,7 @@ class MeprRulesCtrl extends MeprCptCtrl {
       "title" => __("Title", 'memberpress'),
       "rule-type" => __("Type", 'memberpress'),
       "rule-content" => __("Content", 'memberpress'),
-      "rule-products" => __("Memberships", 'memberpress')
+      "rule-products" => __("Access", 'memberpress')
     );
 
     return $columns;
@@ -168,15 +170,15 @@ class MeprRulesCtrl extends MeprCptCtrl {
     // This is here to perform an unauthorized redirection based on the uri
     if(MeprRule::is_uri_locked($uri)) {
       if($mepr_options->redirect_on_unauthorized) { //Send to unauth page
-        $redirect_to = "{$mepr_options->unauthorized_redirect_url}{$delim}action=mepr_unauthorized&redirect_to={$uri}";
+        $redirect_url = "{$mepr_options->unauthorized_redirect_url}{$delim}action=mepr_unauthorized&redirect_to=".urlencode($uri);
       }
       else { //Send to login page
-        $redirect_to = $mepr_options->login_page_url("action=mepr_unauthorized&redirect_to=".urlencode($uri));
+        $redirect_url = $mepr_options->login_page_url("action=mepr_unauthorized&redirect_to=".urlencode($uri));
       }
 
       //Handle SSL
-      $redirect_to = ($is_ssl)?str_replace('http:', 'https:', $redirect_to):$redirect_to;
-      MeprUtils::wp_redirect($redirect_to);
+      $redirect_url = ($is_ssl)?str_replace('http:', 'https:', $redirect_url):$redirect_url;
+      MeprUtils::wp_redirect($redirect_url);
       exit;
     }
 
@@ -187,11 +189,11 @@ class MeprRulesCtrl extends MeprCptCtrl {
       if( (!is_singular() && $do_redirect) ||
           ($do_redirect && isset($post) && MeprRule::is_locked($post)) ||
           (!is_user_logged_in() && isset($post) && $post->ID == $mepr_options->account_page_id) ) {
-        $redirect_to = "{$mepr_options->unauthorized_redirect_url}{$delim}mepr-unauth-page={$post->ID}&redirect_to={$uri}";
+        $redirect_url = "{$mepr_options->unauthorized_redirect_url}{$delim}mepr-unauth-page={$post->ID}&redirect_to=".urlencode($uri);
 
         //Handle SSL
-        $redirect_to = ($is_ssl)?str_replace('http:', 'https:', $redirect_to):$redirect_to;
-        MeprUtils::wp_redirect($redirect_to);
+        $redirect_url = ($is_ssl)?str_replace('http:', 'https:', $redirect_url):$redirect_url;
+        MeprUtils::wp_redirect($redirect_url);
         exit;
       }
     }
@@ -206,15 +208,15 @@ class MeprRulesCtrl extends MeprCptCtrl {
     // This performs an unauthorized redirection based on the uri
     if(MeprRule::is_uri_locked($uri)) {
       if($mepr_options->redirect_on_unauthorized) { //Send to unauth page
-        $redirect_to = "{$mepr_options->unauthorized_redirect_url}{$delim}action=mepr_unauthorized&redirect_to={$uri}";
+        $redirect_url = "{$mepr_options->unauthorized_redirect_url}{$delim}action=mepr_unauthorized&redirect_to=".urlencode($uri);
       }
       else { //Send to login page
-        $redirect_to = $mepr_options->login_page_url("action=mepr_unauthorized&redirect_to=".urlencode($uri));
+        $redirect_url = $mepr_options->login_page_url("action=mepr_unauthorized&redirect_to=".urlencode($uri));
       }
 
       //Handle SSL
-      $redirect_to = (MeprUtils::is_ssl())?str_replace('http:', 'https:', $redirect_to):$redirect_to;
-      MeprUtils::wp_redirect($redirect_to);
+      $redirect_url = (MeprUtils::is_ssl())?str_replace('http:', 'https:', $redirect_url):$redirect_url;
+      MeprUtils::wp_redirect($redirect_url);
       exit;
     }
   }
@@ -339,7 +341,7 @@ class MeprRulesCtrl extends MeprCptCtrl {
   }
 
   public static function add_meta_boxes() {
-    add_meta_box("memberpress-rule-meta", __("Rule Options", "memberpress"), "MeprRulesCtrl::rule_meta_box", MeprRule::$cpt, "normal", "high");
+    add_meta_box("memberpress-rule-meta", __("Content & Access", "memberpress"), "MeprRulesCtrl::rule_meta_box", MeprRule::$cpt, "normal", "high");
     add_meta_box("memberpress-rule-drip", __("Drip / Expiration", "memberpress"), "MeprRulesCtrl::rule_drip_meta_box", MeprRule::$cpt, "normal", "high");
     add_meta_box("memberpress-rule-unauth", __("Unauthorized Access", "memberpress"), "MeprRulesCtrl::rule_unauth_meta_box", MeprRule::$cpt, "normal", "high");
   }
@@ -359,7 +361,6 @@ class MeprRulesCtrl extends MeprCptCtrl {
       $rule = new MeprRule($post_id);
       $rule->mepr_type           = sanitize_text_field($_POST[MeprRule::$mepr_type_str]);
       $rule->mepr_content        = (('partial' != $_POST[MeprRule::$mepr_type_str] && isset($_POST[MeprRule::$mepr_content_str])) ? sanitize_text_field($_POST[MeprRule::$mepr_content_str]) : '');
-      $rule->mepr_access         = array_map('sanitize_text_field', $_POST[MeprRule::$mepr_access_str]);
       $rule->drip_enabled        = isset($_POST[MeprRule::$drip_enabled_str]);
       $rule->drip_amount         = sanitize_text_field($_POST[MeprRule::$drip_amount_str]);
       $rule->drip_unit           = sanitize_text_field($_POST[MeprRule::$drip_unit_str]);
@@ -381,10 +382,26 @@ class MeprRulesCtrl extends MeprCptCtrl {
 
       $rule->store_meta();
 
-      // Ensure that the rewrite rules are flushed & in place
-      // No longer needed -- killing as of 1.1.4 due to a timing issue with other plugins not having added their rules yet
-      // MeprUtils::flush_rewrite_rules();
+      // Delete rules first then add them back below
+      MeprRuleAccessCondition::delete_all_by_rule($post_id);
+
+      // Let's store the access rules
+      if(isset($_POST['mepr_access_row']) && !empty($_POST['mepr_access_row'])) {
+        foreach($_POST['mepr_access_row']['type'] as $index => $access_type) {
+          $rule_access_condition = new MeprRuleAccessCondition($_POST['mepr_access_row']['rule_access_condition_id'][$index]);
+          $rule_access_condition->rule_id = $post_id;
+          $rule_access_condition->access_type = sanitize_text_field($access_type);
+          $rule_access_condition->access_operator = sanitize_text_field($_POST['mepr_access_row']['operator'][$index]);
+          $rule_access_condition->access_condition = sanitize_text_field($_POST['mepr_access_row']['condition'][$index]);
+          $rule_access_condition->store();
+        }
+      }
     }
+  }
+
+  public static function delete_access_rules($post_id) {
+    $rule = new MeprRule($post_id);
+    $rule->delete_access_conditions();
   }
 
   public static function rule_meta_box() {
@@ -392,6 +409,7 @@ class MeprRulesCtrl extends MeprCptCtrl {
     $mepr_options = MeprOptions::fetch();
 
     $rule = new MeprRule($post_id);
+    $rule_access_conditions = $rule->access_conditions();
     $server = strtolower($_SERVER['SERVER_SOFTWARE']);
 
     //If mod rewrite rules are disabled, then we don't care
@@ -441,6 +459,19 @@ class MeprRulesCtrl extends MeprCptCtrl {
     die();
   }
 
+  public static function remove_access_condition() {
+    if(!isset($_POST['rule_access_condition_id'])) {
+      wp_die(__('Error', 'memberpress'));
+    }
+
+    if(MeprUtils::is_logged_in_and_an_admin()) {
+      $rule_access_condition = new MeprRuleAccessCondition($_POST['rule_access_condition_id']);
+      $rule_access_condition->destroy();
+    }
+
+    wp_die();
+  }
+
   public static function disable_row($actions, $post) {
     global $current_screen;
 
@@ -467,17 +498,43 @@ class MeprRulesCtrl extends MeprCptCtrl {
     $url = "//ajax.googleapis.com/ajax/libs/jqueryui/{$ui->ver}/themes/smoothness/jquery-ui.css";
 
     if($current_screen->post_type == MeprRule::$cpt) {
-      $rules_json = array( 'mepr_no_products_message' => __('Please select at least one Membership before saving.', 'memberpress'),
-                           'types' => MeprRule::get_types() );
+      $rules_json = array(
+        'mepr_no_products_message' => __('Please select at least one Membership before saving.', 'memberpress'),
+        'types' => MeprRule::get_types(),
+        'access_row' => array(
+          'membership' => array(
+            'row_tpl' => MeprRulesHelper::access_row_string(new MeprRuleAccessCondition(array('access_type' => 'membership')),1),
+            'types_tpl' => MeprRulesHelper::access_types_dropdown_string('membership'),
+            'operator_tpl' => MeprRulesHelper::access_operators_dropdown_string('membership'),
+            'condition_tpl' => MeprRulesHelper::access_conditions_dropdown_string('membership')
+          ),
+          'member' => array(
+            'row_tpl' => MeprRulesHelper::access_row_string(new MeprRuleAccessCondition(array('access_type' => 'member')),1),
+            'types_tpl' => MeprRulesHelper::access_types_dropdown_string('member'),
+            'operator_tpl' => MeprRulesHelper::access_operators_dropdown_string('member'),
+            'condition_tpl' => MeprRulesHelper::access_conditions_dropdown_string('member')
+          ),
+          'blank' => array(
+            'row_tpl' => MeprRulesHelper::access_row_string(new MeprRuleAccessCondition(),1),
+            'types_tpl' => MeprRulesHelper::access_types_dropdown_string(),
+            'operator_tpl' => MeprRulesHelper::access_operators_dropdown_string(),
+            'condition_tpl' => MeprRulesHelper::access_conditions_dropdown_string()
+          )
+        )
+      );
+
       wp_register_style('mepr-jquery-ui-smoothness', $url);
       wp_enqueue_style('jquery-ui-timepicker-addon', MEPR_CSS_URL.'/jquery-ui-timepicker-addon.css', array('mepr-jquery-ui-smoothness'));
       wp_register_script('mepr-timepicker-js', MEPR_JS_URL.'/jquery-ui-timepicker-addon.js', array('jquery-ui-datepicker'));
       wp_register_script('mepr-date-picker-js', MEPR_JS_URL.'/date_picker.js', array('mepr-timepicker-js'), MEPR_VERSION);
+      wp_register_script('rule-form-validator', '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js', array('jquery'), '2.3.26');
       wp_dequeue_script('autosave'); //Disable auto-saving
       //Need mepr-rules-js to load in the footer since this script doesn't fully use document.ready()
-      wp_enqueue_script('mepr-rules-js', MEPR_JS_URL.'/admin_rules.js', array('jquery','jquery-ui-autocomplete','mepr-date-picker-js'), MEPR_VERSION, true);
-      wp_enqueue_style('mepr-rules-css', MEPR_CSS_URL.'/admin-rules.css', array(), MEPR_VERSION);
+      wp_enqueue_script('mepr-rules-js', MEPR_JS_URL.'/admin_rules.js', array('jquery','jquery-ui-autocomplete','mepr-date-picker-js','rule-form-validator'), MEPR_VERSION.time(), true);
+      wp_register_style('mepr-simplegrid', MEPR_CSS_URL.'/vendor/simplegrid.css', array(), MEPR_VERSION);
+      wp_enqueue_style('mepr-rules-css', MEPR_CSS_URL.'/admin-rules.css', array('mepr-simplegrid'), MEPR_VERSION);
       wp_localize_script('mepr-rules-js', 'MeprRule', $rules_json);
+      wp_enqueue_script('mepr-helpers', MEPR_JS_URL . '/mphelpers.js', array('suggest'), MEPR_VERSION);
     }
   }
 
@@ -712,13 +769,10 @@ class MeprRulesCtrl extends MeprCptCtrl {
             foreach($rule_ids as $rule_id) {
               $rule = new MeprRule($rule_id);
               if($rule->ID <= 0 || !$rule->has_dripped() || $rule->has_expired()) { continue; }
-              $product_ids = array_merge($product_ids, $rule->mepr_access);
-            }
-
-            if(!empty($product_ids) &&
-               ($intersect = array_intersect($product_ids, $ids)) &&
-               !empty($intersect)) {
-              $caps[$active_str] = 1;
+              if($user->has_access_from_rule($rule_id)) {
+                $caps[$active_str] = 1;
+                break;
+              }
             }
           }
         }

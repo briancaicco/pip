@@ -95,9 +95,9 @@ if(!empty($subscriptions)) {
                     else {
                       if($prd->register_price_action == 'custom' && !empty($prd->register_price)) {
                         //Add coupon in if one was used eh
+                        $coupon_str = '';
                         if($is_sub) {
                           $subscr = new MeprSubscription($s->id);
-                          $coupon_str = '';
 
                           if($subscr->coupon_id && ($coupon = new MeprCoupon($subscr->coupon_id)) && isset($coupon->ID) && $coupon->ID) {
                             $coupon_str = ' ' . _x('with coupon', 'ui', 'memberpress') . ' ' . $coupon->post_title;

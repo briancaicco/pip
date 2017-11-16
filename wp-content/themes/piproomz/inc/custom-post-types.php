@@ -65,6 +65,74 @@ function pip_create_broker_cpt() {
 add_action( 'init', 'pip_create_broker_cpt', 0 );
 
 
+
+/**
+ * Custom Post Types
+ *
+ * @package piproomz
+ */
+
+// Register Custom Post Type Signal
+// Post Type Key: Signal
+function pip_create_Signal_cpt() {
+
+	$labels = array(
+		'name' => __( 'Signals', 'Post Type General Name', 'text_domain' ),
+		'singular_name' => __( 'Signal', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name' => __( 'Signals', 'text_domain' ),
+		'name_admin_bar' => __( 'Signal', 'text_domain' ),
+		'archives' => __( 'Signal Archives', 'text_domain' ),
+		'attributes' => __( 'Signal Attributes', 'text_domain' ),
+		'parent_item_colon' => __( 'Parent Signal:', 'text_domain' ),
+		'all_items' => __( 'All Signals', 'text_domain' ),
+		'add_new_item' => __( 'Add New Signal', 'text_domain' ),
+		'add_new' => __( 'Add New', 'text_domain' ),
+		'new_item' => __( 'New Signal', 'text_domain' ),
+		'edit_item' => __( 'Edit Signal', 'text_domain' ),
+		'update_item' => __( 'Update Signal', 'text_domain' ),
+		'view_item' => __( 'View Signal', 'text_domain' ),
+		'view_items' => __( 'View Signals', 'text_domain' ),
+		'search_items' => __( 'Search Signal', 'text_domain' ),
+		'not_found' => __( 'Not found', 'text_domain' ),
+		'not_found_in_trash' => __( 'Not found in Trash', 'text_domain' ),
+		'featured_image' => __( 'Featured Image', 'text_domain' ),
+		'set_featured_image' => __( 'Set featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+		'use_featured_image' => __( 'Use as featured image', 'text_domain' ),
+		'insert_into_item' => __( 'Insert into Signal', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Signal', 'text_domain' ),
+		'items_list' => __( 'Signals list', 'text_domain' ),
+		'items_list_navigation' => __( 'Signals list navigation', 'text_domain' ),
+		'filter_items_list' => __( 'Filter Signals list', 'text_domain' ),
+	);
+	$args = array(
+		'label' => __( 'Signal', 'text_domain' ),
+		'description' => __( '', 'text_domain' ),
+		'labels' => $labels,
+		'menu_icon' => 'dashicons-chart-area',
+		'supports' => array('custom-fields'),
+		'taxonomies' => array(),
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'menu_position' => 5,
+		'show_in_admin_bar' => true,
+		'show_in_nav_menus' => true,
+		'can_export' => true,
+		'has_archive' => true,
+		'hierarchical' => false,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type( 'signal', $args );
+
+}
+add_action( 'init', 'pip_create_Signal_cpt', 0 );
+
+
+
 // Register Taxonomy Category
 // Taxonomy Key: category
 function create_category_tax() {
@@ -96,7 +164,7 @@ function create_category_tax() {
 		'show_in_quick_edit' => true,
 		'show_admin_column' => false,
 	);
-	register_taxonomy( 'category', array('broker', ), $args );
+	register_taxonomy( 'category', array('broker','Signal' ), $args );
 
 }
 add_action( 'init', 'create_category_tax' );

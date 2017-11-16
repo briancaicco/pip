@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the MemberPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: MemberPress 1.3.19a2\n"
+"Project-Id-Version: MemberPress 1.3.20a2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/memberpress\n"
-"POT-Creation-Date: 2017-11-06 23:58:08+00:00\n"
+"POT-Creation-Date: 2017-11-15 22:31:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -135,40 +135,34 @@ msgstr ""
 msgid "Public"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:143
+#: app/controllers/MeprAppCtrl.php:149 app/controllers/MeprRulesCtrl.php:98
 msgid "Access"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:170
+#: app/controllers/MeprAppCtrl.php:178
 msgid "This Content is Protected by %s MemberPress Access Rule"
 msgid_plural "This Content is Protected by %s MemberPress Access Rules"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/controllers/MeprAppCtrl.php:174
+#: app/controllers/MeprAppCtrl.php:182
 msgid "Click here to view"
 msgstr ""
 
-#. #-#-#-#-#  memberpress.pot (MemberPress 1.3.19a2)  #-#-#-#-#
-#. Plugin Name of the plugin/theme
-#: app/controllers/MeprAppCtrl.php:302
-msgid "MemberPress"
-msgstr ""
-
-#: app/controllers/MeprAppCtrl.php:305 app/controllers/MeprDbCtrl.php:217
+#: app/controllers/MeprAppCtrl.php:313 app/controllers/MeprDbCtrl.php:217
 #: app/controllers/MeprMembersCtrl.php:224
 #: app/helpers/MeprProductsHelper.php:115 app/views/admin/members/list.php:4
 msgid "Members"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:306 app/controllers/MeprAppCtrl.php:308
+#: app/controllers/MeprAppCtrl.php:314 app/controllers/MeprAppCtrl.php:316
 #: app/controllers/MeprDbCtrl.php:218 app/controllers/MeprMembersCtrl.php:113
 #: app/controllers/MeprSubscriptionsCtrl.php:304
 #: app/views/admin/subscriptions/list.php:8
 msgid "Subscriptions"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:309 app/controllers/MeprMembersCtrl.php:114
+#: app/controllers/MeprAppCtrl.php:317 app/controllers/MeprMembersCtrl.php:114
 #: app/controllers/MeprReportsCtrl.php:121
 #: app/controllers/MeprTransactionsCtrl.php:577
 #: app/views/admin/reports/main.php:81 app/views/admin/reports/main.php:119
@@ -176,70 +170,69 @@ msgstr ""
 msgid "Transactions"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:310 app/views/admin/help/ui.php:40
+#: app/controllers/MeprAppCtrl.php:318 app/views/admin/help/ui.php:40
 #: app/views/admin/reports/main.php:5
 msgid "Reports"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:311 app/views/admin/options/form.php:5
+#: app/controllers/MeprAppCtrl.php:319 app/views/admin/options/form.php:5
 msgid "Options"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:313
+#: app/controllers/MeprAppCtrl.php:321
 msgid "Help"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:319
+#: app/controllers/MeprAppCtrl.php:327
 msgid "Activate"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:400 app/controllers/MeprMembersCtrl.php:124
+#: app/controllers/MeprAppCtrl.php:408 app/controllers/MeprMembersCtrl.php:124
 #: app/controllers/MeprProductsCtrl.php:40
-#: app/controllers/MeprRemindersCtrl.php:94
-#: app/controllers/MeprRulesCtrl.php:96 app/views/admin/groups/form.php:50
+#: app/controllers/MeprRemindersCtrl.php:94 app/views/admin/groups/form.php:50
 #: app/views/admin/help/ui.php:31
 msgid "Memberships"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:402 app/controllers/MeprGroupsCtrl.php:26
+#: app/controllers/MeprAppCtrl.php:410 app/controllers/MeprGroupsCtrl.php:26
 msgid "Groups"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:404 app/controllers/MeprRulesCtrl.php:54
+#: app/controllers/MeprAppCtrl.php:412 app/controllers/MeprRulesCtrl.php:56
 #: app/views/admin/help/ui.php:34
 msgid "Rules"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:406 app/controllers/MeprCouponsCtrl.php:31
+#: app/controllers/MeprAppCtrl.php:414 app/controllers/MeprCouponsCtrl.php:31
 #: app/views/admin/help/ui.php:37
 msgid "Coupons"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:459
+#: app/controllers/MeprAppCtrl.php:467
 msgid ""
 "We can't display your account form right now. Please come back soon and try "
 "again."
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:490
+#: app/controllers/MeprAppCtrl.php:498
 msgid "the requested resource."
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:500
+#: app/controllers/MeprAppCtrl.php:508
 msgid "Unauthorized for"
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:517
+#: app/controllers/MeprAppCtrl.php:525
 msgid ""
 "There was a problem with our system. Please come back soon and try again."
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:733
+#: app/controllers/MeprAppCtrl.php:741
 msgid ""
 "There was a problem with our system: %s. Please come back soon and try again."
 msgstr ""
 
-#: app/controllers/MeprAppCtrl.php:816
+#: app/controllers/MeprAppCtrl.php:824
 msgid "MemberPress Account Links"
 msgstr ""
 
@@ -338,8 +331,8 @@ msgstr ""
 msgid "%"
 msgstr ""
 
-#: app/controllers/MeprCouponsCtrl.php:85 app/controllers/MeprUsersCtrl.php:358
-#: app/controllers/MeprUsersCtrl.php:361
+#: app/controllers/MeprCouponsCtrl.php:85 app/controllers/MeprUsersCtrl.php:362
+#: app/controllers/MeprUsersCtrl.php:365
 #: app/helpers/MeprSubscriptionsHelper.php:61
 #: app/helpers/MeprTransactionsHelper.php:108
 #: app/helpers/MeprTransactionsHelper.php:200
@@ -364,7 +357,7 @@ msgid "%1$s days for %2$s"
 msgstr ""
 
 #: app/controllers/MeprCouponsCtrl.php:107
-#: app/controllers/MeprUsersCtrl.php:350
+#: app/controllers/MeprUsersCtrl.php:354
 #: app/gateways/MeprAuthorizeGateway.php:1092
 #: app/helpers/MeprOptionsHelper.php:12 app/models/MeprSubscription.php:653
 #: app/models/MeprTransaction.php:442 app/views/admin/members/row.php:74
@@ -378,7 +371,7 @@ msgid "Coupon Options"
 msgstr ""
 
 #: app/controllers/MeprCouponsCtrl.php:232
-#: app/controllers/MeprRulesCtrl.php:470
+#: app/controllers/MeprRulesCtrl.php:502
 msgid "Please select at least one Membership before saving."
 msgstr ""
 
@@ -530,7 +523,7 @@ msgid "Parent Group:"
 msgstr ""
 
 #: app/controllers/MeprGroupsCtrl.php:104
-#: app/controllers/MeprProductsCtrl.php:67 app/controllers/MeprRulesCtrl.php:92
+#: app/controllers/MeprProductsCtrl.php:67 app/controllers/MeprRulesCtrl.php:94
 msgid "ID"
 msgstr ""
 
@@ -610,8 +603,8 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: app/controllers/MeprLoginCtrl.php:36 app/controllers/MeprRulesCtrl.php:330
-#: app/controllers/MeprRulesCtrl.php:584 app/lib/MeprLoginWidget.php:88
+#: app/controllers/MeprLoginCtrl.php:36 app/controllers/MeprRulesCtrl.php:332
+#: app/controllers/MeprRulesCtrl.php:641 app/lib/MeprLoginWidget.php:88
 #: app/views/admin/options/form.php:38
 msgid "Login"
 msgstr ""
@@ -655,7 +648,7 @@ msgid "Name"
 msgstr ""
 
 #: app/controllers/MeprMembersCtrl.php:125
-#: app/controllers/MeprUsersCtrl.php:302
+#: app/controllers/MeprUsersCtrl.php:306
 msgid "Last Login"
 msgstr ""
 
@@ -668,7 +661,7 @@ msgid "Value"
 msgstr ""
 
 #: app/controllers/MeprMembersCtrl.php:128
-#: app/controllers/MeprUsersCtrl.php:301
+#: app/controllers/MeprUsersCtrl.php:305
 msgid "Registered"
 msgstr ""
 
@@ -869,7 +862,7 @@ msgstr ""
 #: app/controllers/MeprProductsCtrl.php:41
 #: app/controllers/MeprReportsCtrl.php:120
 #: app/controllers/MeprSubscriptionsCtrl.php:275
-#: app/controllers/MeprTransactionsCtrl.php:465
+#: app/controllers/MeprTransactionsCtrl.php:465 app/models/MeprRule.php:35
 #: app/views/admin/members/new_member.php:69
 msgid "Membership"
 msgstr ""
@@ -1085,75 +1078,75 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:55
+#: app/controllers/MeprRulesCtrl.php:57
 msgid "Rule"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:56
+#: app/controllers/MeprRulesCtrl.php:58
 msgid "Add New Rule"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:57
+#: app/controllers/MeprRulesCtrl.php:59
 msgid "Edit Rule"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:58
+#: app/controllers/MeprRulesCtrl.php:60
 msgid "New Rule"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:59
+#: app/controllers/MeprRulesCtrl.php:61
 msgid "View Rule"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:60
+#: app/controllers/MeprRulesCtrl.php:62
 msgid "Search Rules"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:61
+#: app/controllers/MeprRulesCtrl.php:63
 msgid "No Rules found"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:62
+#: app/controllers/MeprRulesCtrl.php:64
 msgid "No Rules found in Trash"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:63
+#: app/controllers/MeprRulesCtrl.php:65
 msgid "Parent Rule:"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:82
+#: app/controllers/MeprRulesCtrl.php:84
 msgid "All Content: "
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:93
+#: app/controllers/MeprRulesCtrl.php:95
 msgid "Title"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:94
+#: app/controllers/MeprRulesCtrl.php:96
 msgid "Type"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:95
+#: app/controllers/MeprRulesCtrl.php:97
 msgid "Content"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:126 app/helpers/MeprRulesHelper.php:68
+#: app/controllers/MeprRulesCtrl.php:128 app/helpers/MeprRulesHelper.php:172
 msgid "Except"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:342
-msgid "Rule Options"
+#: app/controllers/MeprRulesCtrl.php:344
+msgid "Content & Access"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:343
+#: app/controllers/MeprRulesCtrl.php:345
 msgid "Drip / Expiration"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:344 app/views/admin/options/form.php:66
+#: app/controllers/MeprRulesCtrl.php:346 app/views/admin/options/form.php:66
 msgid "Unauthorized Access"
 msgstr ""
 
-#: app/controllers/MeprRulesCtrl.php:434
+#: app/controllers/MeprRulesCtrl.php:452 app/controllers/MeprRulesCtrl.php:464
 msgid "Error"
 msgstr ""
 
@@ -1266,6 +1259,11 @@ msgstr ""
 #: app/controllers/MeprTransactionsCtrl.php:463
 #: app/lib/MeprSubscriptionsTable.php:45 app/lib/MeprTransactionsTable.php:30
 msgid "Subscription"
+msgstr ""
+
+#: app/controllers/MeprSubscriptionsCtrl.php:273
+#: app/views/admin/members/row.php:68
+msgid "Active"
 msgstr ""
 
 #: app/controllers/MeprSubscriptionsCtrl.php:274
@@ -1494,19 +1492,19 @@ msgstr ""
 msgid "Cannot resend message"
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:267 app/controllers/MeprUsersCtrl.php:271
+#: app/controllers/MeprUsersCtrl.php:271 app/controllers/MeprUsersCtrl.php:275
 msgid "%s is required."
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:300
+#: app/controllers/MeprUsersCtrl.php:304
 msgid "Active Memberships"
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:303
+#: app/controllers/MeprUsersCtrl.php:307
 msgid "# Logins"
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:340 app/helpers/MeprAppHelper.php:83
+#: app/controllers/MeprUsersCtrl.php:344 app/helpers/MeprAppHelper.php:83
 #: app/helpers/MeprAppHelper.php:95 app/helpers/MeprAppHelper.php:132
 #: app/helpers/MeprAppHelper.php:146 app/helpers/MeprTransactionsHelper.php:105
 #: app/lib/MeprUtils.php:883 app/models/MeprSubscription.php:393
@@ -1523,24 +1521,24 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:389
+#: app/controllers/MeprUsersCtrl.php:393
 msgid ""
 "You cannot register with this form. Please use the registration page found "
 "on the website instead."
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:407
+#: app/controllers/MeprUsersCtrl.php:411
 msgid "MemberPress Settings"
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:462 app/views/account/payments.php:38
+#: app/controllers/MeprUsersCtrl.php:466 app/views/account/payments.php:38
 #: app/views/account/subscriptions.php:41
 #: app/views/account/subscriptions.php:47
 msgctxt "ui"
 msgid "Unknown"
 msgstr ""
 
-#: app/controllers/MeprUsersCtrl.php:466 app/views/account/subscriptions.php:31
+#: app/controllers/MeprUsersCtrl.php:470 app/views/account/subscriptions.php:31
 #: app/views/account/subscriptions.php:44
 msgctxt "ui"
 msgid "Never"
@@ -2918,6 +2916,7 @@ msgstr ""
 #: app/views/admin/emails/options.php:17 app/views/admin/members/row.php:53
 #: app/views/admin/rules/rules_meta_box.php:13
 #: app/views/admin/rules/rules_meta_box.php:30
+#: app/views/admin/rules/rules_meta_box.php:46
 #: app/views/admin/transactions/row.php:77
 msgid "Edit"
 msgstr ""
@@ -3107,7 +3106,6 @@ msgid "Sign Up Abandoned %d %s ago"
 msgstr ""
 
 #: app/helpers/MeprRemindersHelper.php:129 app/views/admin/coupons/form.php:66
-#: app/views/admin/rules/form.php:24
 msgid ""
 "Hold the Control Key (Command Key on the Mac) in order to select or deselect "
 "multiple memberships"
@@ -3183,57 +3181,73 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:57
+#: app/helpers/MeprRulesHelper.php:36
+msgid "Rule Type cannot be blank"
+msgstr ""
+
+#: app/helpers/MeprRulesHelper.php:37
+msgid "- Select Type -"
+msgstr ""
+
+#: app/helpers/MeprRulesHelper.php:110
+msgid "Begin Typing Name"
+msgstr ""
+
+#: app/helpers/MeprRulesHelper.php:112
+msgid "Member Name must be between 1-100 characters"
+msgstr ""
+
+#: app/helpers/MeprRulesHelper.php:161
 msgid "Regular Expression"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:70
+#: app/helpers/MeprRulesHelper.php:174
 msgid "All Except IDs"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:71
+#: app/helpers/MeprRulesHelper.php:175
 msgid ""
 "If you want to exclude all except some Pages or Posts, list their IDs here "
 "in a comma separated list. Example: 102, 32, 546"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:84
+#: app/helpers/MeprRulesHelper.php:188
 msgid "There is not yet any content to select for this rule type."
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:98
+#: app/helpers/MeprRulesHelper.php:202
 msgid "Begin Typing Title"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:136
+#: app/helpers/MeprRulesHelper.php:240
 msgid "day(s)"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:137
+#: app/helpers/MeprRulesHelper.php:241
 msgid "week(s)"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:138
+#: app/helpers/MeprRulesHelper.php:242
 msgid "month(s)"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:139
+#: app/helpers/MeprRulesHelper.php:243
 msgid "year(s)"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:160
+#: app/helpers/MeprRulesHelper.php:264
 msgid "member registers"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:161
+#: app/helpers/MeprRulesHelper.php:265
 msgid "fixed date"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:162
+#: app/helpers/MeprRulesHelper.php:266
 msgid "member purchases any product for this rule"
 msgstr ""
 
-#: app/helpers/MeprRulesHelper.php:165 app/helpers/MeprRulesHelper.php:169
+#: app/helpers/MeprRulesHelper.php:269 app/helpers/MeprRulesHelper.php:273
 msgid "member purchases"
 msgstr ""
 
@@ -3778,79 +3792,87 @@ msgstr ""
 msgid "All Memberships"
 msgstr ""
 
-#: app/models/MeprRule.php:118 test_legacy/old/tests/MeprRulesTest.php:136
+#: app/models/MeprRule.php:39
+msgid "Member"
+msgstr ""
+
+#: app/models/MeprRule.php:48
+msgid "Is"
+msgstr ""
+
+#: app/models/MeprRule.php:137 test_legacy/old/tests/MeprRulesTest.php:136
 msgid "All Posts"
 msgstr ""
 
-#: app/models/MeprRule.php:119 test_legacy/old/tests/MeprRulesTest.php:133
+#: app/models/MeprRule.php:138 test_legacy/old/tests/MeprRulesTest.php:133
 msgid "A Single Post"
 msgstr ""
 
-#: app/models/MeprRule.php:120
+#: app/models/MeprRule.php:139
 msgid "Posts Categorized"
 msgstr ""
 
-#: app/models/MeprRule.php:121 test_legacy/old/tests/MeprRulesTest.php:135
+#: app/models/MeprRule.php:140 test_legacy/old/tests/MeprRulesTest.php:135
 msgid "Posts Tagged"
 msgstr ""
 
-#: app/models/MeprRule.php:124 test_legacy/old/tests/MeprRulesTest.php:139
+#: app/models/MeprRule.php:143 test_legacy/old/tests/MeprRulesTest.php:139
 msgid "All Pages"
 msgstr ""
 
-#: app/models/MeprRule.php:125 test_legacy/old/tests/MeprRulesTest.php:137
+#: app/models/MeprRule.php:144 test_legacy/old/tests/MeprRulesTest.php:137
 msgid "A Single Page"
 msgstr ""
 
-#: app/models/MeprRule.php:126 test_legacy/old/tests/MeprRulesTest.php:138
+#: app/models/MeprRule.php:145 test_legacy/old/tests/MeprRulesTest.php:138
 msgid "Child Pages of"
 msgstr ""
 
-#: app/models/MeprRule.php:137
+#: app/models/MeprRule.php:156
 msgid "All %s"
 msgstr ""
 
-#: app/models/MeprRule.php:138
+#: app/models/MeprRule.php:157
 msgid "A Single %s"
 msgstr ""
 
-#: app/models/MeprRule.php:142
+#: app/models/MeprRule.php:161
 msgid "Child %s of"
 msgstr ""
 
-#: app/models/MeprRule.php:157
+#: app/models/MeprRule.php:176
 msgid "All Content Tagged"
 msgstr ""
 
-#: app/models/MeprRule.php:159
+#: app/models/MeprRule.php:178
 msgid "All Content Categorized"
 msgstr ""
 
-#: app/models/MeprRule.php:161
+#: app/models/MeprRule.php:180
 msgid "All Content with %1$s"
 msgstr ""
 
-#: app/models/MeprRule.php:172
+#: app/models/MeprRule.php:191
 msgid "%1$s Tagged"
 msgstr ""
 
-#: app/models/MeprRule.php:176
+#: app/models/MeprRule.php:195
 msgid "%1$s Categorized"
 msgstr ""
 
-#: app/models/MeprRule.php:179
+#: app/models/MeprRule.php:198
 msgid "%1$s with %2$s"
 msgstr ""
 
-#: app/models/MeprRule.php:183
+#: app/models/MeprRule.php:202
 msgid "All Content"
 msgstr ""
 
-#: app/models/MeprRule.php:188
+#: app/models/MeprRule.php:207
 msgid "Partial"
 msgstr ""
 
-#: app/models/MeprRule.php:189 test_legacy/old/tests/MeprRulesTest.php:140
+#: app/models/MeprRule.php:208 test_legacy/old/tests/MeprRulesTest.php:140
 msgid "Custom URI"
 msgstr ""
 
@@ -3858,25 +3880,25 @@ msgstr ""
 msgid "MemberPress database migration failed: %1$s %2$s"
 msgstr ""
 
-#: app/models/MeprUser.php:476
+#: app/models/MeprUser.php:507
 msgid "The user was unable to be saved: %s"
 msgstr ""
 
-#: app/models/MeprUser.php:508
+#: app/models/MeprUser.php:539
 msgid "This user was unable to be deleted."
 msgstr ""
 
 #. translators: In this string, %s is the Blog Name/Title
-#: app/models/MeprUser.php:537
+#: app/models/MeprUser.php:568
 msgid "[%s] Password Reset"
 msgstr ""
 
-#: app/models/MeprUser.php:541
+#: app/models/MeprUser.php:572
 msgctxt "ui"
 msgid "Someone requested to reset your password for %1$s on %2$s at %3$s"
 msgstr ""
 
-#: app/models/MeprUser.php:542
+#: app/models/MeprUser.php:573
 msgctxt "ui"
 msgid ""
 "To reset your password visit the following address, otherwise just ignore "
@@ -3884,128 +3906,128 @@ msgid ""
 msgstr ""
 
 #. translators: In this string, %s is the Blog Name/Title
-#: app/models/MeprUser.php:573
+#: app/models/MeprUser.php:604
 msgid "[%s] Password Lost/Changed"
 msgstr ""
 
 #. translators: In this string, %1$s is the user's username
-#: app/models/MeprUser.php:576
+#: app/models/MeprUser.php:607
 msgid "Password Lost and Changed for user: %1$s"
 msgstr ""
 
 #. translators: In this string, %s is the Blog Name/Title
-#: app/models/MeprUser.php:586
+#: app/models/MeprUser.php:617
 msgctxt "ui"
 msgid "[%s] Your new Password"
 msgstr ""
 
-#: app/models/MeprUser.php:594
+#: app/models/MeprUser.php:625
 msgctxt "ui"
 msgid "Your password was successfully reset on %1$s!"
 msgstr ""
 
-#: app/models/MeprUser.php:597
+#: app/models/MeprUser.php:628
 msgctxt "ui"
 msgid "Username: %1$s"
 msgstr ""
 
-#: app/models/MeprUser.php:599
+#: app/models/MeprUser.php:630
 msgctxt "ui"
 msgid "Password: *** Successfully Reset ***"
 msgstr ""
 
-#: app/models/MeprUser.php:601
+#: app/models/MeprUser.php:632
 msgctxt "ui"
 msgid "You can now login here: %1$s"
 msgstr ""
 
-#: app/models/MeprUser.php:619 app/models/MeprUser.php:685
+#: app/models/MeprUser.php:650 app/models/MeprUser.php:716
 msgid "You must enter both your First and Last name"
 msgstr ""
 
-#: app/models/MeprUser.php:623
+#: app/models/MeprUser.php:654
 msgid "You must enter a valid email address"
 msgstr ""
 
-#: app/models/MeprUser.php:629
+#: app/models/MeprUser.php:660
 msgid "This email is already in use by another member"
 msgstr ""
 
-#: app/models/MeprUser.php:647 app/models/MeprUser.php:738
+#: app/models/MeprUser.php:678 app/models/MeprUser.php:769
 msgid "Username must not be blank"
 msgstr ""
 
-#: app/models/MeprUser.php:650
+#: app/models/MeprUser.php:681
 msgid "Username must only contain letters, numbers and/or underscores"
 msgstr ""
 
-#: app/models/MeprUser.php:656
+#: app/models/MeprUser.php:687
 msgid ""
 "This username has already been taken. If you are an existing user, please "
 "%sLogin%s first to complete your purchase."
 msgstr ""
 
-#: app/models/MeprUser.php:660
+#: app/models/MeprUser.php:691
 msgid "Email must be a real and properly formatted email address"
 msgstr ""
 
-#: app/models/MeprUser.php:666
+#: app/models/MeprUser.php:697
 msgid ""
 "This email address has already been used. If you are an existing user, "
 "please %sLogin%s to complete your purchase."
 msgstr ""
 
-#: app/models/MeprUser.php:670 app/models/MeprUser.php:792
+#: app/models/MeprUser.php:701 app/models/MeprUser.php:823
 msgid "You must enter a Password."
 msgstr ""
 
-#: app/models/MeprUser.php:673 app/models/MeprUser.php:795
+#: app/models/MeprUser.php:704 app/models/MeprUser.php:826
 msgid "You must enter a Password Confirmation."
 msgstr ""
 
-#: app/models/MeprUser.php:676 app/models/MeprUser.php:798
+#: app/models/MeprUser.php:707 app/models/MeprUser.php:829
 msgid "Your Password and Password Confirmation don't match."
 msgstr ""
 
-#: app/models/MeprUser.php:680
+#: app/models/MeprUser.php:711
 msgid "Only humans are allowed to register."
 msgstr ""
 
-#: app/models/MeprUser.php:688
+#: app/models/MeprUser.php:719
 msgid "Your coupon code is invalid."
 msgstr ""
 
-#: app/models/MeprUser.php:691
+#: app/models/MeprUser.php:722
 msgid "You must agree to the Terms of Service"
 msgstr ""
 
-#: app/models/MeprUser.php:705
+#: app/models/MeprUser.php:736
 msgid ""
 "There are no active Payment Methods right now ... please contact the system "
 "administrator for help."
 msgstr ""
 
-#: app/models/MeprUser.php:721
+#: app/models/MeprUser.php:752
 msgid "Invalid Payment Method"
 msgstr ""
 
-#: app/models/MeprUser.php:754 app/models/MeprUser.php:760
+#: app/models/MeprUser.php:785 app/models/MeprUser.php:791
 msgid "Your username or password was incorrect"
 msgstr ""
 
-#: app/models/MeprUser.php:771
+#: app/models/MeprUser.php:802
 msgid "You must enter a Username or Email"
 msgstr ""
 
-#: app/models/MeprUser.php:777
+#: app/models/MeprUser.php:808
 msgid "That Username or Email wasn't found."
 msgstr ""
 
-#: app/models/MeprUser.php:788
+#: app/models/MeprUser.php:819
 msgid "Your password must meet the minimum strength requirement."
 msgstr ""
 
-#: app/models/MeprUser.php:1224
+#: app/models/MeprUser.php:1255
 msgid "<br/>%1$s<br/>%2$s, %3$s %4$s%5$s<br/>"
 msgstr ""
 
@@ -4814,10 +4836,6 @@ msgstr ""
 #: app/views/admin/members/row.php:55 app/views/admin/subscriptions/row.php:81
 #: app/views/admin/transactions/row.php:96
 msgid "Delete"
-msgstr ""
-
-#: app/views/admin/members/row.php:68
-msgid "Active"
 msgstr ""
 
 #: app/views/admin/members/search_box.php:2
@@ -6235,6 +6253,14 @@ msgstr ""
 msgid "Total Income"
 msgstr ""
 
+#: app/views/admin/rules/access_row.php:6
+msgid "OR"
+msgstr ""
+
+#: app/views/admin/rules/access_row.php:42
+msgid "Remove Access Rule"
+msgstr ""
+
 #: app/views/admin/rules/drip_form.php:7
 msgid "Enable Drip"
 msgstr ""
@@ -6257,11 +6283,23 @@ msgid "Expire this content"
 msgstr ""
 
 #: app/views/admin/rules/form.php:11 app/views/admin/rules/form.php:13
-#: app/views/admin/rules/form.php:15 app/views/admin/rules/form.php:17
+msgid "Protected Content"
+msgstr ""
+
+#: app/views/admin/rules/form.php:14
+msgid ""
+"This selects the content on your site that will be protected by this rule. "
+"If a piece of content is selected by this rule it will be protected from non-"
+"logged in visitors and from logged-in users who don't meet the conditions "
+"you specify in the 'Access Rules' section below."
+msgstr ""
+
+#: app/views/admin/rules/form.php:17 app/views/admin/rules/form.php:19
+#: app/views/admin/rules/form.php:21 app/views/admin/rules/form.php:23
 msgid "Note:"
 msgstr ""
 
-#: app/views/admin/rules/form.php:11
+#: app/views/admin/rules/form.php:17
 msgid ""
 "%1$s isn't writable so <strong>Custom URIs</strong> won't be able to be "
 "locked until you add some %2$scustom rules%3$s to your .htaccess file. If "
@@ -6269,7 +6307,7 @@ msgid ""
 "<strong>All other rules should work normally.</strong>"
 msgstr ""
 
-#: app/views/admin/rules/form.php:13
+#: app/views/admin/rules/form.php:19
 msgid ""
 "It appears that your website is running Nginx as it's webserver. In order "
 "for Custom URI rules to work you'll need to add some %1$scustom rules%2$s to "
@@ -6278,7 +6316,7 @@ msgid ""
 "strong>"
 msgstr ""
 
-#: app/views/admin/rules/form.php:15
+#: app/views/admin/rules/form.php:21
 msgid ""
 "MemberPress doesn't recognize the webserver you're using and until you add "
 "additional %1$scustom rules%2$s to your webserver's configuration Custom URI "
@@ -6287,7 +6325,7 @@ msgid ""
 "strong>"
 msgstr ""
 
-#: app/views/admin/rules/form.php:17
+#: app/views/admin/rules/form.php:23
 msgid ""
 "You have disabled the .htaccess rewrite rules in your MemberPress Options. "
 "This means you will not be able to protect static files from your local "
@@ -6296,49 +6334,62 @@ msgid ""
 "will not affect any of your other Rules."
 msgstr ""
 
-#: app/views/admin/rules/form.php:19
-msgid "Rule:"
+#: app/views/admin/rules/form.php:32 app/views/admin/rules/form.php:35
+msgid "Access Conditions"
 msgstr ""
 
-#: app/views/admin/rules/form.php:22
-msgid "Give Access to Members who have purchased:"
+#: app/views/admin/rules/form.php:36
+msgid ""
+"If %1$sany%2$s of these conditions match for a logged-in user then he / she "
+"will be granted access to the protected content for this rule -- otherwise "
+"he / she will be denied."
 msgstr ""
 
-#: app/views/admin/rules/form.php:27
+#: app/views/admin/rules/form.php:38
+msgid ""
+"Grant access to the protected content above if a logged-in user matches any "
+"of the following condtions:"
+msgstr ""
+
+#: app/views/admin/rules/form.php:53
+msgid "Add Access Rule"
+msgstr ""
+
+#: app/views/admin/rules/form.php:57
 msgid "Partial Content Codes"
 msgstr ""
 
-#: app/views/admin/rules/form.php:29 app/views/admin/rules/form.php:31
+#: app/views/admin/rules/form.php:60 app/views/admin/rules/form.php:62
 msgid "Shortcode:"
 msgstr ""
 
-#: app/views/admin/rules/form.php:29
+#: app/views/admin/rules/form.php:60
 msgid ""
 "This content is shown only to authorized members. It is hidden from everyone "
 "else."
 msgstr ""
 
-#: app/views/admin/rules/form.php:31
+#: app/views/admin/rules/form.php:62
 msgid "This content is shown to everyone except authorized members."
 msgstr ""
 
-#: app/views/admin/rules/form.php:33
+#: app/views/admin/rules/form.php:64
 msgid "PHP Snippet:"
 msgstr ""
 
-#: app/views/admin/rules/form.php:35
+#: app/views/admin/rules/form.php:66
 msgid "Content to protect goes inbetween."
 msgstr ""
 
-#: app/views/admin/rules/form.php:44 app/views/admin/rules/form.php:51
+#: app/views/admin/rules/form.php:76 app/views/admin/rules/form.php:83
 msgid "Save Rule"
 msgstr ""
 
-#: app/views/admin/rules/form.php:45 app/views/admin/rules/form.php:52
+#: app/views/admin/rules/form.php:77 app/views/admin/rules/form.php:84
 msgid "Rule Saved"
 msgstr ""
 
-#: app/views/admin/rules/form.php:49
+#: app/views/admin/rules/form.php:81
 msgid "You cannot create rules until you have added at least 1 Membership."
 msgstr ""
 
@@ -6359,6 +6410,16 @@ msgid ""
 "Members who are active on any of these memberships will be able to access "
 "this content. This list is calculated from the Rules that protect this "
 "content."
+msgstr ""
+
+#: app/views/admin/rules/rules_meta_box.php:38
+msgid "Members with Access:"
+msgstr ""
+
+#: app/views/admin/rules/rules_meta_box.php:39
+msgid ""
+"Members below will be able to access this content. This list is calculated "
+"from the Rules that protect this content."
 msgstr ""
 
 #: app/views/admin/rules/unauth_meta_box.php:2
@@ -13926,6 +13987,10 @@ msgstr ""
 
 #: test_legacy/old/tests/MeprRulesTest.php:134
 msgid "Posts Categorized As"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "MemberPress"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

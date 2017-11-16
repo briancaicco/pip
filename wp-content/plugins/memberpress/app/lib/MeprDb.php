@@ -28,6 +28,7 @@ class MeprDb {
         'tax_rates',
         'tax_rate_locations',
         'transactions',
+        'rule_access_conditions',
       )
     );
   }
@@ -345,6 +346,21 @@ class MeprDb {
       ";
 
       dbDelta($members);
+
+      $rule_access =
+        "CREATE TABLE {$this->rule_access_conditions} (
+          id bigint(20) NOT NULL auto_increment,
+          rule_id bigint(20) NOT NULL,
+          access_type varchar(20) NOT NULL,
+          access_operator varchar(20) NOT NULL,
+          access_condition varchar(60) NOT NULL,
+          PRIMARY KEY  (id),
+          KEY mp_access_rule_id (rule_id),
+          KEY mp_access_type (access_type),
+          KEY mp_access_condition (access_condition)
+        ) {$char_col};";
+
+      dbDelta($rule_access);
 
       try {
         $this->after_upgrade($old_db_version);

@@ -261,7 +261,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     else { //Look for lapsed subs here
       $sql = "
         SELECT {$fields}
-          FROM {$mepr_db->subscriptions}
+          FROM {$mepr_db->subscriptions} AS sub
           WHERE user_id = %d
             AND status IN (%s, %s)
         {$order}{$limit}
