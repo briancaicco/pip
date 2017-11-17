@@ -306,20 +306,20 @@ endif;
 	// Auto Generate Title and Slug for Signals
 	//////////////////////////////////////////////////////////////////////
 
-	function pip_update_acf_title( $value, $post_id, $field ) {
-		if ( get_post_type( $post_id ) == 'signal' ) {
+	function pip_signals_post_title_updater( $post_id ) {
 
-			$new_title = get_field('currency_pair', $post_id) . ' ' . $value;
-			$new_slug = sanitize_title( $new_title );
+	  $signal_post = array();
+	  $signal_post['ID'] = $post_id;
+	  $currency_pair = get_field('currency_pair');
 
-			// update post
-			wp_update_post( array(
-				'ID'         => $post_id,
-				'post_title' => $new_title,
-				'post_name'  => $new_slug,
-				) );
-		}
-		return $value;
+	  $signal_post['post_title'] = $currency_pair;
+	  $signal_post['post_name'] = sanitize_title( $currency_pair );
+
+	  // Update the post into the database
+	  wp_update_post( $signal_post );
+
 	}
-	add_filter( 'acf/save_post', 'pip_update_acf_title', 1 );
+	 
+	// run after ACF saves the $_POST['fields'] data
+	add_action('acf/save_post', 'pip_signals_post_title_updater', 20);
 
