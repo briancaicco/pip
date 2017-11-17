@@ -321,5 +321,5 @@ endif;
 		}
 		return $value;
 	}
-	add_filter( 'acf/save_post', 'acf_title', 10, 3 );
+	add_filter( 'acf/save_post', 'acf_title', 1 );
 
