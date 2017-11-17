@@ -301,3 +301,25 @@ endif;
 	//////////////////////////////////////////////////////////////////////
 	show_admin_bar(false);
 
+
+
+	// Auto Generate Title and Slug for Signals
+	//////////////////////////////////////////////////////////////////////
+
+	function acf_title( $value, $post_id, $field ) {
+		if ( get_post_type( $post_id ) == 'signal' ) {
+
+			$new_title = get_field('currency_pair', $post_id) . ' ' . $value;
+			$new_slug = sanitize_title( $new_title );
+
+			// update post
+			wp_update_post( array(
+				'ID'         => $post_id,
+				'post_title' => $new_title,
+				'post_name'  => $new_slug,
+				) );
+		}
+		return $value;
+	}
+	add_filter( 'acf/save_post', 'acf_title', 10, 3 );
+
