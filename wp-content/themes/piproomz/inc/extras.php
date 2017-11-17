@@ -306,7 +306,7 @@ endif;
 	// Auto Generate Title and Slug for Signals
 	//////////////////////////////////////////////////////////////////////
 
-	function acf_title( $value, $post_id, $field ) {
+	function pip_update_acf_title( $value, $post_id, $field ) {
 		if ( get_post_type( $post_id ) == 'signal' ) {
 
 			$new_title = get_field('currency_pair', $post_id) . ' ' . $value;
@@ -321,5 +321,5 @@ endif;
 		}
 		return $value;
 	}
-	add_filter( 'acf/save_post', 'acf_title', 1 );
+	add_filter( 'acf/save_post', 'pip_update_acf_title', 1 );
 
