@@ -132,6 +132,21 @@ function pip_create_Signal_cpt() {
 add_action( 'init', 'pip_create_Signal_cpt', 0 );
 
 
+function pip_add_support_glossary_cpt() {
+
+	$args = array(
+
+		'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+	);
+
+	add_post_type_support('glossary', $args);
+}
+
+add_action( 'init', 'pip_add_support_glossary_cpt', 0 );
+
 
 // Register Taxonomy Category
 // Taxonomy Key: category
