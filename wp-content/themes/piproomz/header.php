@@ -23,10 +23,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
  
-<body id="piproomz" <?php body_class('bg-grey-200'); ?> >
+<body id="piproomz" <?php body_class(); ?> >
 	<?php if( !is_page('login')) { ?>
 	<header> 
-			<nav class="primary-nav navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
+			<nav class="primary-nav navbar navbar-expand-md navbar-fixed-top ">
 				<div class="container">
 						
 					<?php if ( is_user_logged_in() ) { ?>
@@ -39,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									
 								<?php else : ?>
 
-									<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>activity/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
+									<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>dashboard/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></a>
 								
 								<?php endif; ?>
 							
@@ -128,11 +128,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 						?>
 
 						<!-- Button trigger modal -->
-						<a href="<?php echo home_url (); ?>/register" type="" class="btn btn-outline-success ml-auto mr-2 mr-sm-3" style="text-decoration: none !important;" >
-						  <small>Join for Free</small>
+						<a href="#" type="" data-toggle="modal" class="ml-auto mr-2 mr-sm-3" data-target="#loginmodal" style="text-decoration: none !important;" >
+						  Login
 						</a>
-						<a href="#" type="" class="text-white" data-toggle="modal" data-target="#loginmodal" style="text-decoration: none !important;" >
-						  <small>Login</small>
+						<a href="#" type="" data-target="#loginmodal" class="btn btn-success btn-el" style="text-decoration: none !important;" >
+						  Sign up
 						</a>
 
 <!-- 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

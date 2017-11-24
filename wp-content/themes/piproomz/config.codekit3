@@ -7,7 +7,7 @@
 		"uuidString": "34AAE08E-CA7A-43DE-A270-18AAE52CF2A5"
 		}
 	],
-"creatorBuild": "26142",
+"creatorBuild": "26148",
 "files": {
 	"\/404.php": {
 		"cB": 0,
@@ -1795,13 +1795,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/theme.min.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/css\/theme.min.css.map",
-		"oF": 0
-		},
 	"\/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
@@ -1965,12 +1958,52 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/img\/candles.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/candles.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/img\/dashboard.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/dashboard.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/img\/database.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/database.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/img\/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/img\/favicon.ico",
 		"oF": 0
+		},
+	"\/img\/header-bg.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/header-bg.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/img\/header.jpg": {
 		"ft": 16384,
@@ -1982,6 +2015,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/img\/signals.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/signals.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/img\/src\/header.jpg": {
 		"ft": 16384,
 		"iS": 253143,
@@ -1991,6 +2034,16 @@
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/img\/tools.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/tools.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/img\/trader-bg.jpg": {
 		"ft": 16384,
@@ -2041,6 +2094,16 @@
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/img\/trading-rooms.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/trading-rooms.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/inc\/ajax-login-register\/ajax-login-register.php": {
 		"cB": 0,
@@ -2688,6 +2751,13 @@
 		"oAP": "\/page-templates\/empty.php",
 		"oF": 0
 		},
+	"\/page-templates\/forex-ticker.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/forex-ticker.php",
+		"oF": 0
+		},
 	"\/page-templates\/fullwidthpage.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2856,7 +2926,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/sass\/theme\/_theme.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		},
@@ -4741,7 +4811,7 @@
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -6127,7 +6197,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http:\/\/localhost:8888\/piproomz-web\/",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
@@ -6711,7 +6781,7 @@
 		},
 	"languageDefaultsUserDefined": [
 		],
-	"overrideExternalServerCSS": 0,
+	"overrideExternalServerCSS": 1,
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",

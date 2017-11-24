@@ -1,6 +1,5 @@
 // Global
 /////////////////////////////////////////////////////////////////////////
-
 .modal-content{
 	box-shadow: none !important;
 }
@@ -34,6 +33,24 @@
 	background-image: -o-linear-gradient(55deg, rgba(27, 96, 216, 0.5) 20%, rgba(42, 245, 152, 0.5) 100%);
 	background-image: linear-gradient(55deg, rgba(27, 96, 216, 0.5) 20%, rgba(42, 245, 152, 0.5) 100%);
 }
+
+
+@mixin buy-gradient {
+	background-color: #61b9a8;
+	background-image: -webkit-linear-gradient(0deg, #61b9a8 0%, #78e297 100%);
+	background-image: -moz-linear-gradient(0deg, #61b9a8 0%, #78e297 100%);
+	background-image: -o-linear-gradient(0deg, #61b9a8 0%, #78e297 100%);
+	background-image: linear-gradient(0deg, #61b9a8 0%, #78e297 100%);
+}
+
+@mixin sell-gradient {
+	background-color: #e26e6e;
+	background-image: -webkit-linear-gradient(90deg, #e26e6e 0%, #ffa47f 55%);
+	background-image: -moz-linear-gradient(90deg, #e26e6e 0%, #ffa47f 55%);
+	background-image: -o-linear-gradient(90deg, #e26e6e 0%, #ffa47f 55%);
+	background-image: linear-gradient(90deg, #e26e6e 0%, #ffa47f 55%);
+}
+
 
 .bp-screen-reader-text{
 	display: none !important;
@@ -95,6 +112,7 @@ body{
     }
   }
 }
+
 // Typography
 /////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
@@ -107,7 +125,7 @@ $default-font: 'Montserrat', 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, C
 
 body{
 	font-family: $default-font;
-	background: #fff;
+	background: $whisper;
 }
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
@@ -123,17 +141,16 @@ p{
 // Navigation
 /////////////////////////////////////////////////////////////////////////
 .nav-pills .nav-item.selected, .show>.nav-pills .nav-item{
-	background: $gray-600;
+	background: $white;
 	border-radius: .25rem;
 	font-weight: 700;
 	a{
 		color: $white;
 	}
 }
-
 .selected{
 	.badge-secondary{
-		color: #111;
+		color: #111; 
 		background-color: #f8f9fa;
 	}
 }
@@ -148,7 +165,7 @@ p{
 
 
 .navbar-light .navbar-toggler-icon, .navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://ww…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAABkCAMAAACCTv/3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFAAAA5ubmSUUG+gAAAAJ0Uk5T/wDltzBKAAAAPklEQVR42uzYQQ0AAAgDseHfNC4IyVoD912WAACUm3uampqampqamq+aAAD+IVtTU1NTU1NT0z8EAFBsBRgAX+kR+Qam138AAAAASUVORK5CYII=");
 }
 
 .navbar-toggler-icon {
@@ -159,6 +176,21 @@ p{
     content: "";
     background: no-repeat center center;
     background-size: 100% 100%;
+}
+
+header{
+	.navbar-brand, a{
+		color: $gray-700;
+		transition: $transition-base;
+	}
+	a{
+		&:hover{
+			color: $gray-700;
+		}
+	}
+	.btn{
+		font-weight: bold;
+	}
 }
 
 
@@ -258,11 +290,12 @@ p{
 .btn{
 	box-shadow: $el-1;
 	text-transform: uppercase;
-	font-size: $font-size-sm;
+	font-size: $font-size-xs;
 	font-family: $btn-font;
 	font-weight: $font-weight-bold;
 	letter-spacing: .16rem;
-	border-radius: 0px;
+	border-radius: 40px;
+	padding: 15px 35px;
 	&:hover{
 		box-shadow: $el-3;
 		transform: translateY(-1px);
@@ -295,7 +328,7 @@ p{
 }
 
 .btn-success:hover{
-	background: $green;
+	background: darken($green, 5%);
 	border-color: $green;
 }
 
@@ -476,7 +509,7 @@ a.wp-social-login-provider-twitter{
 // Primary Nav
 /////////////////////////////////////////////////////////////////////////
 .primary-nav.navbar{
-	background: $white;
+	background: transparent;
 	z-index: 999;
 
 	.avatar{
@@ -885,12 +918,16 @@ display:none;
 /////////////////////////////////////////////////////////////////////////
 
 .home-page {
+	h1, h2, .lead{
+		color: $blue-gray !important;
+	}
 	.jumbotron{
 		position: relative;
-		color: $white;
 		border-radius: 0px;
 		z-index: 1;
-		background: transparent;
+		background-size: cover;
+		background-position: -50px 0;
+	
 	}
 	.card-wrap{
 		position: relative;
@@ -904,16 +941,25 @@ display:none;
 		}
 	}
 	.gradient-bg{
-		width: 100%;
-		height: 120%;
+		width: 1440px;
+		height: 732px;
 		left: 0px;
-		top: 0px;
+		top: -75px;
 		overflow: hidden;
-		transform: skewY(-8deg);
-		transform-origin: 0;
 		position: absolute;
 		z-index: 0;
-		@include blue-grad;
+		background-repeat: no-repeat;
+		background-image: url('../img/header-bg.svg');
+
+	}
+	#hero{	
+		.display-4{
+			color: $blue-gray;
+			font-size: 3em;
+		}
+		p{
+			color: $blue-gray;
+		}
 	}
 }
 

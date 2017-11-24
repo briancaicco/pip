@@ -62,6 +62,8 @@ $yellow:  #fdd761 !default;
 $green:   #3ecf8e !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
+$whisper: #EAECEF !default;
+$blue-gray: #677897 !default;
 
 $colors: (
   blue: $blue,
@@ -158,6 +160,13 @@ $el-9: 0 0 18px rgba(22,22,34,.17),0 18px 32px rgba(22,22,34,.07);
 .el-8{box-shadow: $el-8;}
 .el-9{box-shadow: $el-9;}
 
+.btn-el{
+    box-shadow: 0 0 20px rgba(48, 195, 129, 0.4196078431372549), 0 7px 25px rgba(48, 195, 129, 0.4509803) !important;
+  &:hover{
+      box-shadow: 0 0 20px rgba(48, 195, 129, 0.4196078431372549), 0 15px 25px rgba(48, 195, 129, 0.4509803) !important;
+  }
+}
+
 // Body
 //
 // Settings for the `<body>` element.
@@ -217,6 +226,7 @@ $font-family-base:       $font-family-sans-serif !default;
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem !default;
 $font-size-sm:   .875rem !default;
+$font-size-xs:   .755rem !default;
 
 $font-weight-light: 300 !default;
 $font-weight-normal: normal !default;
