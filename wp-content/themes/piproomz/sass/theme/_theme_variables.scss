@@ -64,6 +64,9 @@ $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 $whisper: #EAECEF !default;
 $blue-gray: #677897 !default;
+$border-gray: #dfe2ec !default;
+$medium-blue-gray: #c0c5d0 !default;
+$dark-blue-gray: #1a2239 !default;
 
 $colors: (
   blue: $blue,
@@ -166,6 +169,16 @@ $el-9: 0 0 18px rgba(22,22,34,.17),0 18px 32px rgba(22,22,34,.07);
       box-shadow: 0 0 20px rgba(48, 195, 129, 0.4196078431372549), 0 15px 25px rgba(48, 195, 129, 0.4509803) !important;
   }
 }
+
+.super-el{
+  &:hover{
+    box-shadow: 0 0 20px rgba(22,22,34,.1), 0 15px 25px rgba(22,22,34,.12) !important;
+  }
+}
+
+$super-el: 0 0 20px rgba(22,22,34,.15), 0 15px 25px rgba(22,22,34,.15) !important;
+
+
 
 // Body
 //

@@ -41,6 +41,8 @@
 
 .btn-el:hover { box-shadow: 0 0 20px rgba(48, 195, 129, 0.419608), 0 15px 25px rgba(48, 195, 129, 0.45098) !important; }
 
+.super-el:hover { box-shadow: 0 0 20px rgba(22, 22, 34, 0.1), 0 15px 25px rgba(22, 22, 34, 0.12) !important; }
+
 /*! Bootstrap v4.0.0-beta (https://getbootstrap.com) Copyright 2011-2017 The Bootstrap Authors Copyright 2011-2017 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
 @media print { *, *::before, *::after { text-shadow: none !important; box-shadow: none !important; }
   a, a:visited { text-decoration: underline; }
@@ -4539,6 +4541,8 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .alert { position: fixed; top: 20px; right: 20px; width: 360px; z-index: 99999; }
 
+body { overflow-x: hidden; }
+
 body:focus, body:focus.active, body.focus, body.focus.active { outline: none; }
 
 body { font-family: "Montserrat", "Lato", "Open Sans", "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif; background: #EAECEF; }
@@ -4546,6 +4550,8 @@ body { font-family: "Montserrat", "Lato", "Open Sans", "Helvetica Neue", Helveti
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sans-serif; font-weight: 300; }
 
 p { font-family: "Raleway", sans-serif; }
+
+.navbar { padding: 0 !important; }
 
 .nav-pills .nav-item.selected, .show > .nav-pills .nav-item { background: #fff; border-radius: .25rem; font-weight: 700; }
 
@@ -4566,6 +4572,106 @@ header .navbar-brand, header a { color: #495057; transition: all 0.2s ease-in-ou
 header a:hover { color: #495057; }
 
 header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] { font-weight: bold; }
+
+.primary-nav.navbar.dashboard { background: #fff; padding: 0px; }
+
+.primary-nav.navbar.dashboard .nav-item { position: relative; }
+
+.primary-nav.navbar.dashboard .nav-item a { padding: 20px 25px; display: block; }
+
+.primary-nav.navbar.dashboard .nav-item a i { color: #c0c5d0; font-size: 18px; }
+
+.primary-nav.navbar.dashboard #page-name { padding-top: 23px; padding-left: 20px; font-size: 18px; }
+
+.primary-nav.navbar.dashboard .notifications { position: absolute; right: 60px; top: -12px; z-index: 9999; }
+
+.primary-nav.navbar.dashboard .user-settings { padding-left: 50px; border-left: 1px solid #dfe2ec; }
+
+.primary-nav.navbar.dashboard .navbar-expand-md .navbar-nav .nav-link { padding: 0px !important; }
+
+.primary-nav.navbar.dashboard .dropdown-menu { border-radius: 0 0 7px 7px; top: 62px; right: 1px; box-shadow: none; border: 2px solid #dfe2ec !important; border-top: 0px !important; min-width: 200px; }
+
+.primary-nav.navbar.dashboard .dropdown-menu .dropdown-item { padding: 15px; margin: 0px; color: #677897; }
+
+.primary-nav.navbar.dashboard .dropdown-menu .show { transition: all 0.2s ease-in-out; }
+
+.primary-nav.navbar.dashboard .dropdown-toggle:hover { cursor: pointer; }
+
+.primary-nav.navbar.dashboard .dropdown-toggle::after { vertical-align: 0.2em; }
+
+.primary-nav.navbar.dashboard .avatar { position: absolute; border-radius: 5px; width: 30px; height: 30px; right: 50px; }
+
+.menu { position: fixed; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 9999; }
+
+.menu--visible { pointer-events: auto; }
+
+.app-menu { background-color: #fff; color: #fff; position: relative; max-width: 400px; width: 90%; height: 100%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); -webkit-transform: translateX(-103%); transform: translateX(-103%); display: flex; flex-direction: column; will-change: transform; z-index: 160; pointer-events: auto; }
+
+.menu--visible .app-menu { -webkit-transform: none; transform: none; }
+
+.menu--animatable .app-menu { transition: all 130ms ease-in; }
+
+.menu--visible.menu--animatable .app-menu { transition: all 330ms ease-out; }
+
+.menu:after { content: ''; display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); opacity: 0; will-change: opacity; pointer-events: none; transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1); }
+
+.menu--visible.menu:after { opacity: 1; pointer-events: auto; }
+
+.page-template-dashboard h1, .page-template-dashboard h2, .page-template-dashboard h3, .page-template-dashboard h4, .page-template-dashboard h5, .page-template-dashboard h6, .page-template-dashboard .h1, .page-template-dashboard .h2, .page-template-dashboard .h3, .page-template-dashboard .h4, .page-template-dashboard .h5, .page-template-dashboard .h6 { color: #1a2239 !important; }
+
+.page-template-dashboard .footer { display: none; }
+
+.page-template-dashboard .active-rooms { position: relative; padding-top: 30px; }
+
+.page-template-dashboard .active-rooms #groups-list-options { position: absolute; right: 0px; top: 4px; padding: 0px; }
+
+.page-template-dashboard .active-rooms #groups-list-options .bp-separator { display: none; }
+
+.page-template-dashboard .active-rooms #groups-list-options a { margin-left: 15px; opacity: .6; transition: all .35s ease-in-out; }
+
+.page-template-dashboard .active-rooms #groups-list-options a:hover { text-decoration: none; opacity: .8; }
+
+.page-template-dashboard .active-rooms #groups-list-options a.selected { opacity: 1 !important; }
+
+.page-template-dashboard .active-rooms #groups-list { display: flex !important; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; align-content: flex-start; }
+
+.page-template-dashboard .active-rooms #groups-list li { border: 2px solid #dfe2ec; border-radius: 5px; padding: 20px; text-align: center; margin-bottom: 20px; max-width: 160px; }
+
+.page-template-dashboard .active-rooms #groups-list li .item .item-title a { color: #677897 !important; font-size: 22px; opacity: .8; transition: all .2s ease-in-out; }
+
+.page-template-dashboard .active-rooms #groups-list li .item .item-title a:hover { text-decoration: none; opacity: 1; }
+
+.page-template-dashboard .active-rooms #groups-list li .item .item-meta span { opacity: .5; font-size: 10px; }
+
+.page-template-dashboard .forex-ticker .col-headings { color: #677897; }
+
+.page-template-dashboard .forex-ticker .bid, .page-template-dashboard .forex-ticker .ask, .page-template-dashboard .forex-ticker .price { margin-bottom: 0px; opacity: .6; }
+
+.page-template-dashboard .bid, .page-template-dashboard .ask, .page-template-dashboard .price { margin-bottom: 0px; opacity: .6; color: #677897; transition: all .2s ease-in-out; }
+
+.page-template-dashboard .bid.up, .page-template-dashboard .ask.up, .page-template-dashboard .price.up { color: #3ecf8e; opacity: .8; }
+
+.page-template-dashboard .bid.down, .page-template-dashboard .ask.down, .page-template-dashboard .price.down { color: #c23d4b; opacity: .8; }
+
+.page-template-dashboard .ticker-pair { transition: all .2s ease-in-out; }
+
+.page-template-dashboard .ticker-pair:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
+
+.signal { transition: all .2s ease-in-out; }
+
+.signal .currency-pair { font-weight: bold; }
+
+.signal .action.buy { color: #3ecf8e !important; }
+
+.signal .action.sell { color: #c23d4b !important; }
+
+.signal .signal-meta { font-size: 11px; opacity: .5; color: #677897; }
+
+.signal .date-posted { padding-right: 30px; opacity: 1; }
+
+.signal .date-posted p { color: #677897 !important; margin-bottom: 0px; font-size: 12px; line-height: 14px; }
+
+.signal:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
 
 .form-control, .wpcf7 input[type=text], .wpcf7 input[type=search], .wpcf7 input[type=url], .wpcf7 input[type=tel], .wpcf7 input[type=number], .wpcf7 input[type=range], .wpcf7 input[type=date], .wpcf7 input[type=month], .wpcf7 input[type=week], .wpcf7 input[type=time], .wpcf7 input[type=datetime], .wpcf7 input[type=datetime-local], .wpcf7 input[type=color], .wpcf7 input[type=email], .wpcf7 input[type=file], .wpcf7 input[type=submit], .wpcf7 select, .wpcf7 textarea, .wpcf7 .wpcf7-validation-errors { display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #495057; background-color: #fff; background-image: none; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 0rem; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; box-shadow: none; }
 
@@ -4643,29 +4749,13 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .page-template-fullwidthpage .card-body p { color: #868e96; }
 
-.card { border: none; }
+.card { border: none; border-radius: 5px; border: 2px solid #dfe2ec; }
 
 .card-title { color: #495057; }
 
-.card-body h1, .card-body h2, .card-body h3, .card-body h4, .card-body h5, .card-body h6 { color: #495057 !important; }
-
-.card-body p { color: #868e96 !important; }
-
-.card-body .current { font-weight: bold; }
+.card-body { color: #677897; padding: 35px; }
 
 #groups-list .card { min-height: 200px !important; }
-
-.primary-nav.navbar { background: transparent; z-index: 999; }
-
-.primary-nav.navbar .avatar { border-radius: 40px; display: inline-block; }
-
-.primary-nav.navbar .nav-item { position: relative; }
-
-.primary-nav.navbar .dropdown-menu { border-radius: 0px; top: 121%; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); }
-
-.primary-nav.navbar .dropdown-toggle:hover { cursor: pointer; }
-
-.primary-nav.navbar .dropdown-toggle::after { vertical-align: 0.2em; }
 
 #activity-stream img.avatar { border-radius: 60px; width: 45px; }
 
@@ -4959,15 +5049,24 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .register .side_panel .filter { position: relative; z-index: 2; width: 100%; height: 100%; display: block; background-color: rgba(0, 23, 60, 0.4); }
 
+a { color: #677897; }
+
+a:hover { color: #526079; }
+
+section.footer .container { border-top: 1px solid #c2c9d5; }
+
 @media (min-width: 576px) { .trader-view { height: 500px; margin-top: -75px !important; } }
 
 @media (min-width: 768px) { .bp_friends_widget { margin-top: 0px; }
   .bp-user .content { padding-top: 0; }
+  .navbar-expand-md .navbar-nav .nav-link { padding: 0px; }
   #buddypress #item-header-cover-image, #buddypress #header-cover-image { height: 315px; } }
 
 @media (max-width: 575px) { #buddypress #item-header-content { z-index: 1; margin-top: -89px; padding-top: 113px !important; } }
 
-@media (max-width: 767px) { .trader-view { height: 400px; margin-top: 0px !important; } }
+@media (max-width: 767px) { .active-rooms #groups-list-options { position: relative !important; padding-top: 0px !important; }
+  .active-rooms #groups-list-options a { margin-right: 20px !important; margin-left: 0px !important; }
+  .trader-view { height: 400px; margin-top: 0px !important; } }
 
 /* Use existing Bootstrap 4 classes and variables to extend - override CF7 style Useful CF7 classes: .wpcf7 the wrapper element .wpcf7-form .wpcf7-form-control .wpcf7-text .wpcf7-email .wpcf7-textarea .wpcf7-submit */
 .wpcf7 { max-width: 600px; margin: 0 auto !important; }

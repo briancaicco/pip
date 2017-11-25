@@ -99,6 +99,27 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		    'after_title'    => '</h3>', 
 		) );
 
+		register_sidebar( array(
+			'name'          => __( 'Dashboard Rooms', 'understrap' ),
+			'id'            => 'dash-rooms',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="active-rooms %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<p class="h5 mb-3">',
+			'after_title'   => '</p>',
+		) );
+
+
+		register_sidebar( array(
+			'name'          => __( 'Dashboard Rooms', 'understrap' ),
+			'id'            => 'dash-rooms',
+			'description'   => '',
+			'before_widget' => '<div id="%1$s" class="active-rooms %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<p class="h5 mb-3">',
+			'after_title'   => '</p>',
+		) );
+
 	}
 } // endif function_exists( 'understrap_widgets_init' ).
 add_action( 'widgets_init', 'understrap_widgets_init' );

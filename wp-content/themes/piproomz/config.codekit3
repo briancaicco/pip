@@ -2268,6 +2268,26 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
+	"\/js\/angular-scripts-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/angular-scripts-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/angular-scripts.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/angular-scripts-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/customizer.js": {
 		"ft": 64,
 		"ma": 0,
@@ -2708,6 +2728,12 @@
 		"oAP": "\/memberpress\/login\/reset_password_thankyou.php",
 		"oF": 0
 		},
+	"\/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "\/build\/node_modules",
+		"oF": 0
+		},
 	"\/package.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -2798,6 +2824,62 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page.php",
+		"oF": 0
+		},
+	"\/partials\/dash-broker.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-broker.php",
+		"oF": 0
+		},
+	"\/partials\/dash-brokers.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-brokers.php",
+		"oF": 0
+		},
+	"\/partials\/dash-main.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-main.php",
+		"oF": 0
+		},
+	"\/partials\/dash-menu.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-menu.php",
+		"oF": 0
+		},
+	"\/partials\/dash-rooms.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-rooms.php",
+		"oF": 0
+		},
+	"\/partials\/dash-signals.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-signals.php",
+		"oF": 0
+		},
+	"\/partials\/dash-ticker.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-ticker.php",
+		"oF": 0
+		},
+	"\/partials\/dash-topbar.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-topbar.php",
 		"oF": 0
 		},
 	"\/partials\/form-login.php": {

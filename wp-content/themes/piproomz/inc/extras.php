@@ -323,3 +323,9 @@ endif;
 	// run after ACF saves the $_POST['fields'] data
 	add_action('acf/save_post', 'pip_signals_post_title_updater', 20);
 
+
+
+
+
+
+
