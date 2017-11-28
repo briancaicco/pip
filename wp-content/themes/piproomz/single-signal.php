@@ -19,7 +19,7 @@
 
  					<?php while ( have_posts() ) : the_post(); ?>
  						<div class="navbar-brand text-center my-5" style="display: inherit;" rel="home" href="" title="Piproomz">Piproomz<small style="vertical-align: super; font-size: 9px;"> beta</small></div>
-						<div class="card mb-2 signal border-0 super-el">
+						<div class="card mb-2 signal border-0 super-el el-7">
 							<div class="card-body">
 								<div class="d-flex justify-content-between">
 									<p class="currency-pair mr-auto"><?php the_title(); ?></p>
@@ -37,8 +37,18 @@
  			</div>
 
  		</div>
-
+ 		<div class="row justify-content-center">
+ 			<div class="col-12 text-center mt-3">
+ 				<div class="addthis_inline_share_toolbox"></div>
+ 			</div>
+ 		</div>
+ 		<div class="row justify-content-center">
+ 			<div class="col-5 text-center mt-3">
+ 				<input class="form-control form-control-lg" type="text" value="<?php the_permalink(); ?>" />
+ 			</div>
+ 		</div> 			
  	</div><!-- Container end -->
 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1d8fa815ad4299"></script>
 
  <?php get_footer(); ?>
