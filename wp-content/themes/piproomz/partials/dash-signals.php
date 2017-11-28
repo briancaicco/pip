@@ -1,4 +1,3 @@
-
 <p class="h5 mb-3">Latest Signals</p>
 <?php 
 $query = new WP_Query( array( 'post_type' => 'signal', 'posts_per_page' => '5') );
