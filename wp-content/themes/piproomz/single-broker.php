@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Single Broker
+ * 
  * @package piproomz
  */
 

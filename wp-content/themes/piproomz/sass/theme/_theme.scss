@@ -142,7 +142,8 @@ p{
 // Navigation
 /////////////////////////////////////////////////////////////////////////
 .navbar{
-	padding: 0 !important;
+	padding: 10px 0 !important;
+	z-index: 2;
 }
 
 .nav-pills .nav-item.selected, .show>.nav-pills .nav-item{

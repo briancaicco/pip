@@ -5,6 +5,12 @@
  * @package piproomz
  */
 
+
+/**
+ * Load composer packages
+ */
+require get_template_directory() . '/vendor/autoload.php';
+
 /**
  * Theme setup and custom theme supports.
  */

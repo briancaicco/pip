@@ -89,20 +89,20 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
 			return;
 		}
 		?>
-				<nav class="container navigation post-navigation">
-					<h2 class="sr-only"><?php _e( 'Post navigation', 'understrap' ); ?></h2>
-					<div class="row nav-links justify-content-between">
-						<?php
+		<nav class="container navigation post-navigation">
+			<h2 class="sr-only"><?php _e( 'Post navigation', 'understrap' ); ?></h2>
+			<div class="row nav-links justify-content-between">
+				<?php
 
-							if ( get_previous_post_link() ) {
-								previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'understrap' ) );
-							}
-							if ( get_next_post_link() ) {
-								next_post_link( '<span class="nav-next">%link</span>',     _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap' ) );
-							}
-						?>
-					</div><!-- .nav-links -->
-				</nav><!-- .navigation -->
+				if ( get_previous_post_link() ) {
+					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'understrap' ) );
+				}
+				if ( get_next_post_link() ) {
+					next_post_link( '<span class="nav-next">%link</span>',     _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap' ) );
+				}
+				?>
+			</div><!-- .nav-links -->
+		</nav><!-- .navigation -->
 
 		<?php
 	}
@@ -112,52 +112,52 @@ endif;
 
 	// Allow SVG Upload
 	//////////////////////////////////////////////////////////////////////
-	function cc_mime_types($mimes) {
-	  $mimes["svg"] = "image/svg+xml";
-	  return $mimes;
-	}
-	add_filter("upload_mimes", "cc_mime_types");
+function cc_mime_types($mimes) {
+	$mimes["svg"] = "image/svg+xml";
+	return $mimes;
+}
+add_filter("upload_mimes", "cc_mime_types");
 
 
 	// Remove Auto-Complete from login page password field
 	//////////////////////////////////////////////////////////////////////
-	add_action('login_init', 'acme_autocomplete_login_init');
-	function acme_autocomplete_login_init()
-	{
-	    ob_start();
-	}
+add_action('login_init', 'acme_autocomplete_login_init');
+function acme_autocomplete_login_init()
+{
+	ob_start();
+}
 
-	add_action('login_form', 'acme_autocomplete_login_form');
-	function acme_autocomplete_login_form()
-	{
-	    $content = ob_get_contents();
-	    ob_end_clean();
-	    $content = str_replace('id="user_pass"', 'id="user_pass" autocomplete="off"', $content);
-	    echo $content;
-	}
+add_action('login_form', 'acme_autocomplete_login_form');
+function acme_autocomplete_login_form()
+{
+	$content = ob_get_contents();
+	ob_end_clean();
+	$content = str_replace('id="user_pass"', 'id="user_pass" autocomplete="off"', $content);
+	echo $content;
+}
 
 
 	// Remove CSS version Parameter (messes with cacheing in chrome)
 	//////////////////////////////////////////////////////////////////////
-	function remove_cssjs_ver( $src ) {
-	    if( strpos( $src, '?ver=' ) )
-	        $src = remove_query_arg( 'ver', $src );
-	    return $src;
-	}
-	add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
-	add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
+function remove_cssjs_ver( $src ) {
+	if( strpos( $src, '?ver=' ) )
+		$src = remove_query_arg( 'ver', $src );
+	return $src;
+}
+add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
+add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
 
 
 
 	// Buddypress global notifications
 	//////////////////////////////////////////////////////////////////////
 
-	function bp_get_notifcation_count( ) {
-		
+function bp_get_notifcation_count( ) {
+
 		//do not change if the user is not logged in
-		if( ! is_user_logged_in() ) 
-			return;
-		
+	if( ! is_user_logged_in() ) 
+		return;
+
 		$user_id = get_current_user_id();//logged in user's id
 		
 		$count = bp_notifications_get_unread_notification_count( $user_id );
@@ -166,9 +166,9 @@ endif;
 		if( $count > 0 ) {
 
 			$count = sprintf( "<span class='badge badge-danger'>%d</span>", $count );
-		
-		return $count;
-		
+
+			return $count;
+
 		} else {};
 		
 	}
@@ -179,49 +179,49 @@ endif;
 	//////////////////////////////////////////////////////////////////////
 
 	function bpcodex_rename_profile_tabs() {
-	  
+
 	      //buddypress()->members->nav->edit_nav( array( 'name' => __( 'My Buddy Forums', 'textdomain' ) ), 'forums' );
-	      buddypress()->members->nav->edit_nav( array( 'name' => __( 'Rooms', 'textdomain' ) ), 'groups' );
-	  
+		buddypress()->members->nav->edit_nav( array( 'name' => __( 'Rooms', 'textdomain' ) ), 'groups' );
+
 	}
 	add_action( 'bp_actions', 'bpcodex_rename_profile_tabs' );
 
 
 	function bpcodex_rename_group_tabs() {
-	 
-	    if ( ! bp_is_group() ) {
-	        return;
-	    }
-	    
-	    buddypress()->groups->nav->edit_nav( array( 'name' => __( 'Room Discussion', 'buddypress' ) ), 'forum', bp_current_item() );
+
+		if ( ! bp_is_group() ) {
+			return;
+		}
+
+		buddypress()->groups->nav->edit_nav( array( 'name' => __( 'Room Discussion', 'buddypress' ) ), 'forum', bp_current_item() );
 	}
 	add_action( 'bp_actions', 'bpcodex_rename_group_tabs' );
 
 
 
 	function pip_edit_profile_nav_items() {
-	
-		  $bp = buddypress();
 
-		  foreach ( $bp->members->nav->get_primary() as $user_nav_item ) {
-		    if ( empty( $user_nav_item->show_for_displayed_user ) && ! bp_is_my_profile() ) {
-		      continue;
-		    }
+		$bp = buddypress();
 
-		    $selected = '';
-		    if ( bp_is_current_component( $user_nav_item->slug ) ) {
-		      $selected = ' class="current selected active"';
-		    }
+		foreach ( $bp->members->nav->get_primary() as $user_nav_item ) {
+			if ( empty( $user_nav_item->show_for_displayed_user ) && ! bp_is_my_profile() ) {
+				continue;
+			}
 
-		    if ( bp_loggedin_user_domain() ) {
-		      $link = str_replace( bp_loggedin_user_domain(), bp_displayed_user_domain(), $user_nav_item->link );
-		    } else {
-		      $link = trailingslashit( bp_displayed_user_domain() . $user_nav_item->link );
-		    }
+			$selected = '';
+			if ( bp_is_current_component( $user_nav_item->slug ) ) {
+				$selected = ' class="current selected active"';
+			}
 
-		    echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item->css_id, array( '<a class="btn btn-secondary br-0 w-100 py-3 mt-0 small" id="' . $user_nav_item->css_id . '-personal-li" ' . $selected . ' user-' . $user_nav_item->css_id . '" href="' . $link . '">' . $user_nav_item->name . '</a></button>', &$user_nav_item ) );
-		  }
-	
+			if ( bp_loggedin_user_domain() ) {
+				$link = str_replace( bp_loggedin_user_domain(), bp_displayed_user_domain(), $user_nav_item->link );
+			} else {
+				$link = trailingslashit( bp_displayed_user_domain() . $user_nav_item->link );
+			}
+
+			echo apply_filters_ref_array( 'bp_get_displayed_user_nav_' . $user_nav_item->css_id, array( '<a class="btn btn-secondary br-0 w-100 py-3 mt-0 small" id="' . $user_nav_item->css_id . '-personal-li" ' . $selected . ' user-' . $user_nav_item->css_id . '" href="' . $link . '">' . $user_nav_item->name . '</a></button>', &$user_nav_item ) );
+		}
+
 	}
 
 
@@ -232,21 +232,21 @@ endif;
 
 
 	function pip_theme_cover_image_callback( $params = array() ) {
-	    if ( empty( $params ) ) {
-	        return;
-	    }
-	 
-	    return '
-	        /* Cover image - Do not forget this part */
+		if ( empty( $params ) ) {
+			return;
+		}
+
+		return '
+		/* Cover image - Do not forget this part */
 	        #buddypress #header-cover-image {
-	            height: ' . $params["height"] . 'px;
-	            background-image: url(' . $params['cover_image'] . ');
-	        }
-	    ';
+		height: ' . $params["height"] . 'px;
+		background-image: url(' . $params['cover_image'] . ');
 	}
+	';
+}
 
 
-	function pip_theme_cover_image_css( $settings = array() ) {
+function pip_theme_cover_image_css( $settings = array() ) {
 	    /**
 	     * If you are using a child theme, use bp-child-css
 	     * as the theme handel
@@ -260,7 +260,7 @@ endif;
 	     * Then you'll probably also need to use your own callback function
 	     * @see the previous snippet
 	     */
-	     $settings['callback'] = 'pip_theme_cover_image_callback';
+	    $settings['callback'] = 'pip_theme_cover_image_callback';
 
 	    return $settings;
 	}
@@ -303,29 +303,81 @@ endif;
 
 
 
-	// Auto Generate Title and Slug for Signals
+
+	use Twilio\Rest\Client;
+
+	// Signals post type functions
 	//////////////////////////////////////////////////////////////////////
 
-	function pip_signals_post_title_updater( $post_id ) {
+	function pip_signals_post_publish( $post_id ) {
 
-	  $signal_post = array();
-	  $signal_post['ID'] = $post_id;
-	  $currency_pair = get_field('currency_pair');
+	// Auto Generate Title and Slug for Signals
 
-	  $signal_post['post_title'] = $currency_pair;
-	  $signal_post['post_name'] = sanitize_title( $currency_pair );
+		$signal_post = array();
+		$signal_post['ID'] = $post_id;
+		$currency_pair = get_field('currency_pair');
 
-	  // Update the post into the database
-	  wp_update_post( $signal_post );
+		$signal_post['post_title'] = $currency_pair;
+		$signal_post['post_name'] = sanitize_title( $currency_pair );
+
+	// Update the post into the database
+		wp_update_post( $signal_post );
+
+
+	// Get the post data
+		$signal_pair = get_field('currency_pair', $post_id);
+		$signal_action = get_field('action', $post_id);
+		$signal_stop_loss = get_field('stop_loss', $post_id);
+		$signal_take_profit = get_field('take_profit', $post_id);
+		$signal_hold_length = get_field('hold_length', $post_id);
+		$signal_url = get_the_permalink( $post_id );
+
+	// Send SMS to members
+	// Setup Twilio Authentication
+		$sid = 'ACe89a3d593fb889b057173c9a86c8cca3';
+		$token = '75bb952b81a486d419d5f2a30b2a3a07';
+		$twilioClient = new Client($sid, $token);
+
+
+	// Query users based on membership level
+		$user_args = array(
+			'meta_query' => array(
+				array(
+					'key' => 'wp_capabilities',
+					'value' => '"bbp_participant"',
+					'compare' => 'LIKE'
+				),
+			)
+		);
+
+		$members = get_users($user_args);
+
+		foreach ($members as $member) {
+
+			$base_number = $member->mepr_phone_number;
+			$base_country_number = "+1" . $base_number;
+
+			$member_numbers = $base_country_number;
+		
+		// Twilio send SMS to each member number
+			$sms = $twilioClient->messages->create(
+				
+				$member_numbers,
+				array(
+		        	// A Twilio phone number you purchased at twilio.com/console
+					'from' => '+14378000211 ',
+		        	// the body of the text message you'd like to send
+					'body' => "Hey! New signal from piproomz.com for: $signal_pair. Check it out! $signal_url "
+				)
+			);
+
+
+		}
+
 
 	}
-	 
+
 	// run after ACF saves the $_POST['fields'] data
-	add_action('acf/save_post', 'pip_signals_post_title_updater', 20);
-
-
-
-
-
+	add_action('acf/save_post', 'pip_signals_post_publish', 10, 1);
 
 

@@ -12,7 +12,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 
-<?php if( !is_page('login')) { ?>
+<?php if( !is_page('login') && !is_singular( 'signal' ) ) { ?>
 <?php if ( !is_user_logged_in() || is_front_page() ) { ?>
 
 <section class="footer py-4 mt-5">
