@@ -323,23 +323,6 @@ function pip_theme_cover_image_css( $settings = array() ) {
 	// Update the post into the database
 		wp_update_post( $signal_post );
 
-
-	// Get the post data
-		$signal_pair = get_field('currency_pair', $post_id);
-		$signal_action = get_field('action', $post_id);
-		$signal_stop_loss = get_field('stop_loss', $post_id);
-		$signal_take_profit = get_field('take_profit', $post_id);
-		$signal_hold_length = get_field('hold_length', $post_id);
-		$signal_url = get_the_permalink( $post_id );
-
-	// Send SMS to members
-	// Setup Twilio Authentication
-		$sid = 'ACe89a3d593fb889b057173c9a86c8cca3';
-		$token = '75bb952b81a486d419d5f2a30b2a3a07';
-		$twilioClient = new Client($sid, $token);
-
-
-	// Query users based on membership level
 		$user_args = array(
 			'meta_query' => array(
 				array(
@@ -350,23 +333,26 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			)
 		);
 
+
 		$members = get_users($user_args);
+		$sid = 'ACe89a3d593fb889b057173c9a86c8cca3';
+		$token = '75bb952b81a486d419d5f2a30b2a3a07';
+		$twilioNumber = '+14378000211';
+
+		$client = new Client($sid, $token);
+
+		$signal_pair = get_field('currency_pair', $post_id);
+		$signal_url = get_the_permalink( $post_id );
+
 
 		foreach ($members as $member) {
+			
+			$phoneNumber = formatPhoneNumber($member->mepr_phone_number);
 
-			$base_number = $member->mepr_phone_number;
-			$base_country_number = "+1" . $base_number;
-
-			$member_numbers = $base_country_number;
-		
-		// Twilio send SMS to each member number
-			$sms = $twilioClient->messages->create(
-				
-				$member_numbers,
+			$client->messages->create(
+				$phoneNumber,
 				array(
-		        	// A Twilio phone number you purchased at twilio.com/console
-					'from' => '+14378000211 ',
-		        	// the body of the text message you'd like to send
+					'messagingServiceSid' => "MGde1360b17bf233497be010f7e2035f7e",
 					'body' => "Hey! New signal from piproomz.com for: $signal_pair. Check it out! $signal_url "
 				)
 			);
@@ -374,8 +360,36 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 		}
 
-
 	}
+
+	function formatPhoneNumber($phoneNumber) {
+		$phoneNumber = preg_replace('/[^0-9]/','',$phoneNumber);
+
+		if(strlen($phoneNumber) > 10) {
+			$countryCode = substr($phoneNumber, 0, strlen($phoneNumber)-10);
+			$areaCode = substr($phoneNumber, -10, 3);
+			$nextThree = substr($phoneNumber, -7, 3);
+			$lastFour = substr($phoneNumber, -4, 4);
+
+			$phoneNumber = '+'.$countryCode.' ('.$areaCode.') '.$nextThree.'-'.$lastFour;
+		}
+		else if(strlen($phoneNumber) == 10) {
+			$areaCode = substr($phoneNumber, 0, 3);
+			$nextThree = substr($phoneNumber, 3, 3);
+			$lastFour = substr($phoneNumber, 6, 4);
+
+			$phoneNumber = '('.$areaCode.') '.$nextThree.'-'.$lastFour;
+		}
+		else if(strlen($phoneNumber) == 7) {
+			$nextThree = substr($phoneNumber, 0, 3);
+			$lastFour = substr($phoneNumber, 3, 4);
+
+			$phoneNumber = $nextThree.'-'.$lastFour;
+		}
+
+		return $phoneNumber[];
+	}
+
 
 	// run after ACF saves the $_POST['fields'] data
 	add_action('acf/save_post', 'pip_signals_post_publish', 10, 1);
