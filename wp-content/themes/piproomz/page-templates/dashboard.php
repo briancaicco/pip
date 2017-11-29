@@ -10,10 +10,6 @@
 get_header()
 ?>
 
-<?php get_template_part( 'partials/dash', 'menu' ); ?>
-
-<?php get_template_part( 'partials/dash', 'topbar' ); ?>
-
 <div class="container-fluid px-3 px-md-5 mt-5">
 	<div class="row">
 		<div class="col-md-4">

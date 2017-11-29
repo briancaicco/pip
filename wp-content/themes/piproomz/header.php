@@ -67,4 +67,4 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 		</nav>
 	</header>	
-<?php } ?>
+<?php } elseif ( is_user_logged_in() && !is_front_page() ) { get_template_part( 'partials/dash', 'menu' ); get_template_part( 'partials/dash', 'topbar' );  }?>

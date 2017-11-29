@@ -186,14 +186,14 @@
 								direction = 'transition'; 
 							}
 
-							jquery_object.find(".p ." + field).removeClass('up down even transition').addClass(direction);
+							jquery_object.find("." + field).removeClass('up down even transition').addClass(direction);
 						}
 					}
 					if (when_done) { when_done(); }
 				});
 		};
 
-		new ForexTicker(100);
+		new ForexTicker(5000);
 
 	});
 

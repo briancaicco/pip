@@ -2,10 +2,10 @@
 <div class="menu">
 	<div class="app-menu dropdown">
         <nav class="nav flex-column">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
-            <a class="nav-link" href="/brokers">Brokers</a>
-            <a class="nav-link" href="/rooms">Rooms</a>
-            <a class="nav-link" href="/membership">Membership</a>
+            <a class="nav-link" href="<?php bloginfo('url');?>/dashboard">Dashboard</a>
+            <a class="nav-link" href="<?php bloginfo('url');?>/brokers">Brokers</a>
+            <a class="nav-link" href="<?php bloginfo('url');?>/rooms">Rooms</a>
+            <a class="nav-link" href="<?php bloginfo('url');?>/membership">Membership</a>
         </nav>
 	</div>
 </div>
