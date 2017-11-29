@@ -387,7 +387,7 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			$phoneNumber = $nextThree.'-'.$lastFour;
 		}
 
-		return $phoneNumber[];
+		return $phoneNumber;
 	}
 
 
