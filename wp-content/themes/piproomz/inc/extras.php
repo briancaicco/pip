@@ -395,3 +395,24 @@ function pip_theme_cover_image_css( $settings = array() ) {
 	add_action('acf/save_post', 'pip_signals_post_publish', 10, 1);
 
 
+
+//add page slug to body class, if on a page
+//////////////////////////////////////////////////////////////////////
+ 
+add_filter('body_class','smartestb_pages_bodyclass');
+function smartestb_pages_bodyclass($classes) {
+    if (is_page()) {
+        // get page slug
+        global $post;
+        $slug = get_post( $post )->post_name;
+ 
+        // add slug to $classes array
+        $classes[] = $slug;
+        // return the $classes array
+        return $classes;
+    } else { 
+        return $classes;
+    }
+}
+
+

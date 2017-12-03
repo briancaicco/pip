@@ -34,7 +34,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<!-- Button trigger modal -->
 				<a href="#" type="" data-toggle="modal" class="ml-auto mr-2 mr-sm-3" data-target="#loginmodal" style="text-decoration: none !important;" >
 					Login
 				</a>
@@ -56,7 +55,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<!-- Button trigger modal -->
 				<a href="<?php echo wp_logout_url( home_url() ); ?>" type="" data-toggle="modal" class="ml-auto mr-2 mr-sm-3" data-target="#loginmodal" style="text-decoration: none !important;" >
 					Logout
 				</a>

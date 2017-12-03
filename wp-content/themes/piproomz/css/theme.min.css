@@ -4675,6 +4675,52 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .signal:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
 
+.upgrade-modal-lg { margin: 0 auto; padding-top: 85px; }
+
+.upgrade-modal-lg .modal-content { background: transparent; border: none; }
+
+.upgrade-modal-lg .time-period { font-size: 14px; font-weight: 200; margin-left: 7px; }
+
+.upgrade-modal-lg .price { border-bottom: 1px solid #dfe2ec; color: #1a2239; }
+
+.upgrade-modal-lg .title { color: #1a2239; }
+
+.upgrade-modal-lg .fa.fa-check, .upgrade-modal-lg .fa.fa-minus { margin-right: 10px; }
+
+.upgrade-modal-lg .feature { font-size: 12px; }
+
+.upgrade-modal-lg .feature.restricted { opacity: .5; }
+
+.upgrade-modal-lg .purchase-btn { border-top: 1px solid #dfe2ec; }
+
+.upgrade-modal-lg span.popular-pill { position: absolute; top: -13px; left: 90px; }
+
+.upgrade-modal-lg span.popular-pill { color: #677897 !important; padding: 8px 32px !important; transform: scale(1.3); background-color: #dfe2ec; }
+
+.upgrade-modal-lg .popular { transform: scale(1.15); }
+
+.upgrade-modal-lg .card-body { position: relative; }
+
+.upgrade-modal-lg fieldset[disabled] .btn:hover, .upgrade-modal-lg fieldset[disabled] .wpcf7 input[type=submit]:hover, .wpcf7 .upgrade-modal-lg fieldset[disabled] input[type=submit]:hover { box-shadow: el-0; }
+
+.starter-membership .mp_wrapper .mepr_payment_method, .pro-membership .mp_wrapper .mepr_payment_method, .single-memberpressproduct .mp_wrapper .mepr_payment_method { background-color: #f8f9fa !important; padding: 35px !important; border-radius: 5px; color: #677897; font-weight: bold; }
+
+.starter-membership .mepr-payment-method-desc-text, .pro-membership .mepr-payment-method-desc-text, .single-memberpressproduct .mepr-payment-method-desc-text { font-weight: normal; }
+
+.starter-membership .mp_wrapper, .starter-membership .mp_wrapper.mp_invoice, .pro-membership .mp_wrapper, .pro-membership .mp_wrapper.mp_invoice, .single-memberpressproduct .mp_wrapper, .single-memberpressproduct .mp_wrapper.mp_invoice { position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box; border-radius: 5px; border: 2px solid #dfe2ec; padding: 35px; margin-top: 65px; color: #677897; }
+
+.starter-membership .mp_wrapper form .mp-form-label, .starter-membership .mp_wrapper.mp_invoice form .mp-form-label, .pro-membership .mp_wrapper form .mp-form-label, .pro-membership .mp_wrapper.mp_invoice form .mp-form-label, .single-memberpressproduct .mp_wrapper form .mp-form-label, .single-memberpressproduct .mp_wrapper.mp_invoice form .mp-form-label { padding-bottom: 10px; padding-top: 20px; color: #677897; font-weight: bold; }
+
+.starter-membership .mp_wrapper form input.mepr-form-input, .starter-membership .mp_wrapper.mp_invoice form input.mepr-form-input, .pro-membership .mp_wrapper form input.mepr-form-input, .pro-membership .mp_wrapper.mp_invoice form input.mepr-form-input, .single-memberpressproduct .mp_wrapper form input.mepr-form-input, .single-memberpressproduct .mp_wrapper.mp_invoice form input.mepr-form-input { border-radius: 5px; border: 2px solid #dfe2ec !important; background-color: #f8f9fa; color: #dfe2ec !important; }
+
+.starter-membership .mp_wrapper form .mepr-submit, .starter-membership .mp_wrapper form .stripe-button-el, .starter-membership .mp_wrapper.mp_invoice form .mepr-submit, .starter-membership .mp_wrapper.mp_invoice form .stripe-button-el, .pro-membership .mp_wrapper form .mepr-submit, .pro-membership .mp_wrapper form .stripe-button-el, .pro-membership .mp_wrapper.mp_invoice form .mepr-submit, .pro-membership .mp_wrapper.mp_invoice form .stripe-button-el, .single-memberpressproduct .mp_wrapper form .mepr-submit, .single-memberpressproduct .mp_wrapper form .stripe-button-el, .single-memberpressproduct .mp_wrapper.mp_invoice form .mepr-submit, .single-memberpressproduct .mp_wrapper.mp_invoice form .stripe-button-el { float: right; box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.755rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; border-radius: 40px; padding: 15px 35px; color: #fff !important; background-color: #3ecf8e; border-color: #3ecf8e; display: inline-block; text-align: center; white-space: nowrap; vertical-align: middle; background-image: none; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+
+.starter-membership .mp_wrapper form .mepr-submit span, .starter-membership .mp_wrapper form .stripe-button-el span, .starter-membership .mp_wrapper.mp_invoice form .mepr-submit span, .starter-membership .mp_wrapper.mp_invoice form .stripe-button-el span, .pro-membership .mp_wrapper form .mepr-submit span, .pro-membership .mp_wrapper form .stripe-button-el span, .pro-membership .mp_wrapper.mp_invoice form .mepr-submit span, .pro-membership .mp_wrapper.mp_invoice form .stripe-button-el span, .single-memberpressproduct .mp_wrapper form .mepr-submit span, .single-memberpressproduct .mp_wrapper form .stripe-button-el span, .single-memberpressproduct .mp_wrapper.mp_invoice form .mepr-submit span, .single-memberpressproduct .mp_wrapper.mp_invoice form .stripe-button-el span { background: transparent; -webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -moz-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -ms-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -o-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; }
+
+.starter-membership .mp_wrapper form .mepr-submit:hover, .starter-membership .mp_wrapper form .stripe-button-el:hover, .starter-membership .mp_wrapper.mp_invoice form .mepr-submit:hover, .starter-membership .mp_wrapper.mp_invoice form .stripe-button-el:hover, .pro-membership .mp_wrapper form .mepr-submit:hover, .pro-membership .mp_wrapper form .stripe-button-el:hover, .pro-membership .mp_wrapper.mp_invoice form .mepr-submit:hover, .pro-membership .mp_wrapper.mp_invoice form .stripe-button-el:hover, .single-memberpressproduct .mp_wrapper form .mepr-submit:hover, .single-memberpressproduct .mp_wrapper form .stripe-button-el:hover, .single-memberpressproduct .mp_wrapper.mp_invoice form .mepr-submit:hover, .single-memberpressproduct .mp_wrapper.mp_invoice form .stripe-button-el:hover { background: #30c381; border-color: #3ecf8e; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; }
+
+.starter-membership .mp_wrapper.mp_payment_form_wrapper, .pro-membership .mp_wrapper.mp_payment_form_wrapper, .single-memberpressproduct .mp_wrapper.mp_payment_form_wrapper { background: transparent !important; padding: 0px !important; border: 0px !important; }
+
 .form-control, .wpcf7 input[type=text], .wpcf7 input[type=search], .wpcf7 input[type=url], .wpcf7 input[type=tel], .wpcf7 input[type=number], .wpcf7 input[type=range], .wpcf7 input[type=date], .wpcf7 input[type=month], .wpcf7 input[type=week], .wpcf7 input[type=time], .wpcf7 input[type=datetime], .wpcf7 input[type=datetime-local], .wpcf7 input[type=color], .wpcf7 input[type=email], .wpcf7 input[type=file], .wpcf7 input[type=submit], .wpcf7 select, .wpcf7 textarea, .wpcf7 .wpcf7-validation-errors { display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #495057; background-color: #fff; background-image: none; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 0rem; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; box-shadow: none; }
 
 .custom-select { -webkit-appearance: none; }
@@ -5057,12 +5103,15 @@ a:hover { color: #526079; }
 
 section.footer .container { border-top: 1px solid #c2c9d5; }
 
-@media (min-width: 576px) { .trader-view { height: 500px; margin-top: -75px !important; } }
+@media (min-width: 576px) { .trader-view { height: 500px; margin-top: -75px !important; }
+  .modal-lg { max-width: 800px; margin: 10px auto; padding: 10px; } }
 
 @media (min-width: 768px) { .bp_friends_widget { margin-top: 0px; }
   .bp-user .content { padding-top: 0; }
   .navbar-expand-md .navbar-nav .nav-link { padding: 0px; }
   #buddypress #item-header-cover-image, #buddypress #header-cover-image { height: 315px; } }
+
+@media (min-width: 992px) { .modal-lg { max-width: 1100px; } }
 
 @media (max-width: 575px) { #buddypress #item-header-content { z-index: 1; margin-top: -89px; padding-top: 113px !important; } }
 

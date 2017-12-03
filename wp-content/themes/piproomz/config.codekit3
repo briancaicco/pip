@@ -2819,6 +2819,13 @@
 		"oAP": "\/page-templates\/left-sidebarpage.php",
 		"oF": 0
 		},
+	"\/page-templates\/pricing.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/pricing.php",
+		"oF": 0
+		},
 	"\/page-templates\/right-sidebarpage.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2887,6 +2894,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/dash-topbar.php",
+		"oF": 0
+		},
+	"\/partials\/dash-upgrade.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-upgrade.php",
 		"oF": 0
 		},
 	"\/partials\/form-login.php": {

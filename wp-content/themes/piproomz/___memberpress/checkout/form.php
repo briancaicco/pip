@@ -1,5 +1,4 @@
 <?php if(!defined('ABSPATH')) {die('You are not allowed to call this page directly.');} ?>
-
 <div class="mp_wrapper">
   <form class="mepr-signup-form mepr-form" method="post" action="<?php echo $_SERVER['REQUEST_URI'].'#mepr_errors'; ?>" novalidate>
     <input type="hidden" id="mepr_process_signup_form" name="mepr_process_signup_form" value="Y" />

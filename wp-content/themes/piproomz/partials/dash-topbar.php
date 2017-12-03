@@ -9,8 +9,9 @@
 						</li>
 						<li><h1 id="page-name"><?php the_title();?></h1></li>
 					</ul>
+						<div><a href="#" type="" data-toggle="modal" class="btn mr-3 py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a></div>
 
-					<ul class="navbar-nav user-settings">	
+					<ul class="navbar-nav user-settings">
 						<li class="nav-item dropdown">
 							<a href="<?php echo bp_loggedin_user_domain(); ?>notifications/" class="nav-link pr-2 notifications"><?php echo bp_get_notifcation_count(); ?></a>
 							<a class="nav-link dropdown-toggle mr-lg-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
