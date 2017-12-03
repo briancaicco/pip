@@ -103,6 +103,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div>
 
 
+<!-- Modal upgrade-->
+<div class="modal upgrade-modal-lg fade" id="upgrademodal" tabindex="-1" role="dialog" aria-labelledby="upgrademodalLabel" aria-hidden="true" style="z-index: 10000400">
+	<div class="modal-dialog modal-lg" role="document">
+			<?php get_template_part( 'partials/dash', 'upgrade' ); ?>
+	</div>
+</div>
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108382349-1"></script>
