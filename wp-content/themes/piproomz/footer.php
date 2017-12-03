@@ -87,7 +87,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 <!-- Modal Login-->
-<!-- <div class="modal login-modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodalLabel" aria-hidden="true" style="z-index: 10000400">
+<div class="modal login-modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodalLabel" aria-hidden="true" style="z-index: 10000400">
 	<div class="modal-dialog " role="document">
 		<div class="modal-content rounded-0 auth_form">
 			<div class="modal-header ">
@@ -100,7 +100,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 		</div>
 	</div>
-</div> -->
+</div>
 
 
 
