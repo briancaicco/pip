@@ -37,7 +37,7 @@
 									<p class="text-left feature"><i class="fa fa-check" aria-hidden="true"></i>Chat Rooms (Major/Exotic/Crypto Pairs)</p>
 									<p class="text-left feature"><i class="fa fa-check" aria-hidden="true"></i>Full Broker Database</p>
 									<p class="text-left feature"><i class="fa fa-check" aria-hidden="true"></i>Trading Tools/Calculators</p>
-									<p class="text-left feature"><i class=us a "fa fa-check" aria-hidden="true"></i>Realtime Currency Quotes</p>							
+									<p class="text-left feature"><i class="fa fa-check" aria-hidden="true"></i>Realtime Currency Quotes</p>							
 									<p class="text-left feature"><i class="fa fa-check" aria-hidden="true"></i><span class="text-success"><b>Trade Signals via SMS &amp; Email</b></span> <span class="badge badge-danger">New</span> </p>								
 									<!-- <p class="text-left feature"><i class="fa fa-check" aria-hidden="true"></i>Learning Portal</p> -->
 									<div class="purchase-btn mt-3 pt-3">
