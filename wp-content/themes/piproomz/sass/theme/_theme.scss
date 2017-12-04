@@ -672,16 +672,19 @@ header{
 #pp_standard_redirecting_message{
 	text-align: center !important;
 	margin-top: 85px !important;
+	color: $blue-gray !important;
 	img{
 		display: none !important;
 	}
 	&:before{
-		display: block !important;
-		content: ' ' !important;
-		background-image: url('../img/spinner.svg') !important;
-		background-size: 28px 28px !important;
-		height: 28px !important;
-		width: 28px !important;
+    display: block !important;
+    content: ' ' !important;
+    background-image: url(../img/spinner.svg) !important;
+    background-size: 48px 48px !important;
+    height: 48px !important;
+    width: 48px !important;
+    text-align: center;
+    margin: 0 auto;
 	}
 }
 
