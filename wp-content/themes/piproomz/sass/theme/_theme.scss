@@ -567,7 +567,18 @@ header{
 // Upgrade Membership Pages
 /////////////////////////////////////////////////////////////////////////
 .starter-membership, .pro-membership, .single-memberpressproduct{
-
+	.pp_standard_redirecting_message{
+		text-align: center;
+		margin-top: 85px;
+		&:before{
+			display: block;
+			content: ' ';
+			background-image: url('../img/spinner.svg');
+			background-size: 28px 28px;
+			height: 28px;
+			width: 28px;
+		}
+	}
 	.mp_wrapper .mepr_payment_method{
 		background-color: lighten(#EAECEF, 5%) !important;
 		padding: 35px !important;
@@ -595,6 +606,9 @@ header{
 		margin-top: 65px;
 		color: $blue-gray;
 
+	.mp-form-row.mepr_coupon{
+		width: 25% !important;
+	}
 
 		form{
 

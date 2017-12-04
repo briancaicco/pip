@@ -4703,11 +4703,17 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .upgrade-modal-lg fieldset[disabled] .btn:hover, .upgrade-modal-lg fieldset[disabled] .wpcf7 input[type=submit]:hover, .wpcf7 .upgrade-modal-lg fieldset[disabled] input[type=submit]:hover { box-shadow: el-0; }
 
+.starter-membership .pp_standard_redirecting_message, .pro-membership .pp_standard_redirecting_message, .single-memberpressproduct .pp_standard_redirecting_message { text-align: center; margin-top: 85px; }
+
+.starter-membership .pp_standard_redirecting_message:before, .pro-membership .pp_standard_redirecting_message:before, .single-memberpressproduct .pp_standard_redirecting_message:before { display: block; content: ' '; background-image: url("../img/spinner.svg"); background-size: 28px 28px; height: 28px; width: 28px; }
+
 .starter-membership .mp_wrapper .mepr_payment_method, .pro-membership .mp_wrapper .mepr_payment_method, .single-memberpressproduct .mp_wrapper .mepr_payment_method { background-color: #f8f9fa !important; padding: 35px !important; border-radius: 5px; color: #677897; font-weight: bold; }
 
 .starter-membership .mepr-payment-method-desc-text, .pro-membership .mepr-payment-method-desc-text, .single-memberpressproduct .mepr-payment-method-desc-text { font-weight: normal; }
 
 .starter-membership .mp_wrapper, .starter-membership .mp_wrapper.mp_invoice, .pro-membership .mp_wrapper, .pro-membership .mp_wrapper.mp_invoice, .single-memberpressproduct .mp_wrapper, .single-memberpressproduct .mp_wrapper.mp_invoice { position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box; border-radius: 5px; border: 2px solid #dfe2ec; padding: 35px; margin-top: 65px; color: #677897; }
+
+.starter-membership .mp_wrapper .mp-form-row.mepr_coupon, .starter-membership .mp_wrapper.mp_invoice .mp-form-row.mepr_coupon, .pro-membership .mp_wrapper .mp-form-row.mepr_coupon, .pro-membership .mp_wrapper.mp_invoice .mp-form-row.mepr_coupon, .single-memberpressproduct .mp_wrapper .mp-form-row.mepr_coupon, .single-memberpressproduct .mp_wrapper.mp_invoice .mp-form-row.mepr_coupon { width: 25% !important; }
 
 .starter-membership .mp_wrapper form .mp-form-label, .starter-membership .mp_wrapper.mp_invoice form .mp-form-label, .pro-membership .mp_wrapper form .mp-form-label, .pro-membership .mp_wrapper.mp_invoice form .mp-form-label, .single-memberpressproduct .mp_wrapper form .mp-form-label, .single-memberpressproduct .mp_wrapper.mp_invoice form .mp-form-label { padding-bottom: 10px; padding-top: 20px; color: #677897; font-weight: bold; }
 
