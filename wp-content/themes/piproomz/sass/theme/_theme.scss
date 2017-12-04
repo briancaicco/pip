@@ -670,18 +670,18 @@ header{
 }
 
 #pp_standard_redirecting_message{
-	text-align: center;
-	margin-top: 85px;
+	text-align: center !important;
+	margin-top: 85px !important;
 	img{
-		display: none;
+		display: none !important;
 	}
 	&:before{
-		display: block;
-		content: ' ';
-		background-image: url('../img/spinner.svg');
-		background-size: 28px 28px;
-		height: 28px;
-		width: 28px;
+		display: block !important;
+		content: ' ' !important;
+		background-image: url('../img/spinner.svg') !important;
+		background-size: 28px 28px !important;
+		height: 28px !important;
+		width: 28px !important;
 	}
 }
 
