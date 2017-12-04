@@ -570,6 +570,9 @@ header{
 	.pp_standard_redirecting_message{
 		text-align: center;
 		margin-top: 85px;
+		img{
+			display: none;
+		}
 		&:before{
 			display: block;
 			content: ' ';
