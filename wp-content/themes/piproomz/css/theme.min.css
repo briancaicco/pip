@@ -4703,11 +4703,11 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .upgrade-modal-lg fieldset[disabled] .btn:hover, .upgrade-modal-lg fieldset[disabled] .wpcf7 input[type=submit]:hover, .wpcf7 .upgrade-modal-lg fieldset[disabled] input[type=submit]:hover { box-shadow: el-0; }
 
-.starter-membership .pp_standard_redirecting_message, .pro-membership .pp_standard_redirecting_message, .single-memberpressproduct .pp_standard_redirecting_message { text-align: center; margin-top: 85px; }
+.starter-membership #pp_standard_redirecting_message, .pro-membership #pp_standard_redirecting_message, .single-memberpressproduct #pp_standard_redirecting_message { text-align: center; margin-top: 85px; }
 
-.starter-membership .pp_standard_redirecting_message img, .pro-membership .pp_standard_redirecting_message img, .single-memberpressproduct .pp_standard_redirecting_message img { display: none; }
+.starter-membership #pp_standard_redirecting_message img, .pro-membership #pp_standard_redirecting_message img, .single-memberpressproduct #pp_standard_redirecting_message img { display: none; }
 
-.starter-membership .pp_standard_redirecting_message:before, .pro-membership .pp_standard_redirecting_message:before, .single-memberpressproduct .pp_standard_redirecting_message:before { display: block; content: ' '; background-image: url("../img/spinner.svg"); background-size: 28px 28px; height: 28px; width: 28px; }
+.starter-membership #pp_standard_redirecting_message:before, .pro-membership #pp_standard_redirecting_message:before, .single-memberpressproduct #pp_standard_redirecting_message:before { display: block; content: ' '; background-image: url("../img/spinner.svg"); background-size: 28px 28px; height: 28px; width: 28px; }
 
 .starter-membership .mp_wrapper .mepr_payment_method, .pro-membership .mp_wrapper .mepr_payment_method, .single-memberpressproduct .mp_wrapper .mepr_payment_method { background-color: #f8f9fa !important; padding: 35px !important; border-radius: 5px; color: #677897; font-weight: bold; }
 

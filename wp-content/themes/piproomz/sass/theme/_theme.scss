@@ -567,7 +567,7 @@ header{
 // Upgrade Membership Pages
 /////////////////////////////////////////////////////////////////////////
 .starter-membership, .pro-membership, .single-memberpressproduct{
-	.pp_standard_redirecting_message{
+	#pp_standard_redirecting_message{
 		text-align: center;
 		margin-top: 85px;
 		img{
