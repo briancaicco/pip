@@ -9,7 +9,9 @@
 						</li>
 						<li><h1 id="page-name"><?php the_title();?></h1></li>
 					</ul>
-						<div><a href="#" type="" data-toggle="modal" class="btn mr-3 py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a></div>
+						<?php if(!current_user_can('mepr-active','rule: 4007, 204, 200, 4124')) { ?><div><a href="#" type="" data-toggle="modal" class="btn mr-3 py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a></div>
+						<?php } elseif(current_user_can('mepr-active','rule: 4124, 204')) { ?><div class="mr-3 badge badge-success text-light">Pro Member</div>  
+						<?php } else{ ?><div class="mr-3 py-2 badge badge-success text-light">Basic Member</div> <?}?>
 
 					<ul class="navbar-nav user-settings">
 						<li class="nav-item dropdown">

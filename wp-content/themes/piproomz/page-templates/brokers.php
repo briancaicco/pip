@@ -286,6 +286,9 @@ global $post;
 							<?php while( $all_brokers->have_posts() ) { 
 								$all_brokers->the_post(); ?>
 
+							<?php 
+							// Display for Basic and Pro Members
+							if(current_user_can('mepr-active','membership:4124,4007')): ?>
 							<div class="broker card el-1 mb-3">
 
 								<div class="p-3 toggle" data-toggle="collapse" data-parent="#brokers" href="#brokerItem<?php echo $post->ID; ?>" aria-expanded="false" aria-controls="brokerItem<?php echo $post->ID; ?>">
@@ -461,6 +464,7 @@ global $post;
 								</div>
 
 							</div>
+							<?php endif; ?>
 
 						<?php } ?>
 
