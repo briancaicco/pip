@@ -419,21 +419,21 @@ function smartestb_pages_bodyclass($classes) {
 
 //add page slug to body class, if on a page
 //////////////////////////////////////////////////////////////////////
-$result = add_role( 'basic_member', __( 'Basic Member', 'piproomz' ), array( 'read' => true, 'level_0' => true ));
+// $result = add_role( 'basic_member', __( 'Basic Member', 'piproomz' ), array( 'read' => true, 'level_0' => true ));
 
-if ( null !== $result ) {
-    echo "Success: {$result->name} user role created.";
-}
-else {
-    exit;
-}
+// if ( null !== $result ) {
+//     echo "Success: {$result->name} user role created.";
+// }
+// else {
+//     exit;
+// }
 
-$result2 = add_role( 'pro_member', __( 'Pro Member', 'piproomz' ), array( 'read' => true, 'level_0' => true ));
+// $result2 = add_role( 'pro_member', __( 'Pro Member', 'piproomz' ), array( 'read' => true, 'level_0' => true ));
 
-if ( null !== $result2 ) {
-    echo "Success: {$result2->name} user role created.";
-}
-else {
-    exit;
-}
+// if ( null !== $result2 ) {
+//     echo "Success: {$result2->name} user role created.";
+// }
+// else {
+//     exit;
+// }
 
