@@ -10,6 +10,15 @@
 						<li><h1 id="page-name"><?php the_title();?></h1></li>
 					</ul>
 
+					<?php if(current_user_can('mepr-active','memberships:4007,204')) { ?>
+						<div class="mr-3 badge badge-success text-white">Pro Member</div>  
+					<?php } elseif(current_user_can('mepr-active','memberships:4124,200')) { ?>
+						<div class="mr-3 badge badge-success text-white">Basic Member</div>  
+					<?php } else{ ?>
+						<div>
+							<a href="#" type="" data-toggle="modal" class="btn mr-3 py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a>
+						</div>
+					<? }?>
 
 					<ul class="navbar-nav user-settings">
 						<li class="nav-item dropdown">
