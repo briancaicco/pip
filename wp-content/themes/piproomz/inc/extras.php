@@ -419,6 +419,9 @@ function smartestb_pages_bodyclass($classes) {
 
 //add page slug to body class, if on a page
 //////////////////////////////////////////////////////////////////////
+// remove_role( "pip_basic_member" );
+// remove_role( "pip_pro_member" );
+
 // $result = add_role( 'basic_member', __( 'Basic Member', 'piproomz' ), array( 'read' => true, 'level_0' => true ));
 
 // if ( null !== $result ) {

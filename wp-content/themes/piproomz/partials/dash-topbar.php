@@ -18,7 +18,7 @@
 						<div>
 							<a href="#" type="" data-toggle="modal" class="btn mr-3 py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a>
 						</div>
-					<? }?>
+					<?php }?>
 
 					<ul class="navbar-nav user-settings">
 						<li class="nav-item dropdown">

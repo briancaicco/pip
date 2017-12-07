@@ -31,7 +31,7 @@
 				</div>
 			</div>
 		</div>
-		<?php if ( $i = "3" ){ ?>
+		<?php if ( $i == 3 ){ ?>
 		<div class="card mb-2 signal border-0 super-el">
 			<div class="card-body">
 				<p class="lead">Get these signals via text message!</p>
