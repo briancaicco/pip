@@ -10,9 +10,9 @@
 						<li><h1 id="page-name"><?php the_title();?></h1></li>
 					</ul>
 
-					<?php if(current_user_can('mepr-active','memberships:4007,204')) { ?>
+					<?php if( current_user_can('pro_member') ){ ?>
 						<div class="mr-3 badge badge-success text-white">Pro Member</div>  
-					<?php } elseif(current_user_can('mepr-active','memberships:4124,200')) { ?>
+					<?php } elseif(current_user_can('basic_member')) { ?>
 						<div class="mr-3 badge badge-success text-white">Basic Member</div>  
 					<?php } else{ ?>
 						<div>
@@ -36,7 +36,6 @@
 							</div>
 						</li>
 					</ul>
-
 				</nav>
 			</div>
 		</header>
