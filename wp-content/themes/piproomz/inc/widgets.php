@@ -111,12 +111,12 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 
 
 		register_sidebar( array(
-			'name'          => __( 'Dashboard Rooms', 'understrap' ),
-			'id'            => 'dash-rooms',
+			'name'          => __( 'Dashboard Members', 'understrap' ),
+			'id'            => 'dash-members',
 			'description'   => '',
-			'before_widget' => '<div id="%1$s" class="active-rooms %2$s">',
+			'before_widget' => '<div id="%1$s" class="active-members %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<p class="h5 mb-3">',
+			'before_title'  => '<p class="m-0">',
 			'after_title'   => '</p>',
 		) );
 

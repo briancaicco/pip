@@ -4,39 +4,81 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
   public function load_hooks() {
     add_action('wp_enqueue_scripts', array($this,'enqueue_scripts'));
     add_filter('mepr_signup_form_payment_description', array($this, 'maybe_render_payment_form'), 10, 3);
-    add_shortcode('mepr-ga-ecommerce-tracking', array($this, 'ga_ecommerce_tracking'));
+    add_shortcode('mepr-ecommerce-tracking', array($this, 'replace_tracking_codes'));
   }
 
-  public function ga_ecommerce_tracking($atts, $content="") {
-    if(isset($atts['account']) && isset($_GET['trans_num']) && !empty($_GET['trans_num'])) {
-      $ga_account = $atts['account'];
+  public function replace_tracking_codes($atts, $content='') {
+    $atts = shortcode_atts(
+      array(
+        'membership' => null,
+      ),
+      $atts,
+      'mepr-ecommerce-tracking'
+    );
 
-      $txn = MeprTransaction::get_one_by_trans_num($_GET['trans_num']);
+    // If the shortcode is tied to a specific membership then only show
+    // it when this is the thank you page for the specified membership
+    if( !is_null($atts['membership']) && isset($_REQUEST['membership_id']) &&
+        $_REQUEST['membership_id'] != $atts['membership'] ) {
+      return '';
+    }
 
-      if(!empty($txn) && is_object($txn) && $txn->id != 0) {
-        $txn = new MeprTransaction($txn->id);
-
-        // We'll use the subscription object instead if this is a subscription checkout
-        if(($txn->txn_type == MeprTransaction::$subscription_confirmation_str ||
-            $txn->txn_type == 'sub_account') &&
-           ($txn->status == MeprTransaction::$confirmed_str ||
-            $txn->status == MeprTransaction::$complete_str) &&
-           ($sub = $txn->subscription())) {
-          $txn = $sub;
+    $tracking_codes = array(
+      '%%subtotal%%'          => array('MeprTransaction' => 'subtotal'),
+      '%%tax_amount%%'        => array('MeprTransaction' => 'tax_amount'),
+      '%%tax_rate%%'          => array('MeprTransaction' => 'tax_rate'),
+      '%%total%%'             => array('MeprTransaction' => 'net_amount'),
+      '%%txn_num%%'           => array('MeprTransaction' => 'trans_num'),
+      '%%sub_id%%'            => array('MeprTransaction' => 'subscription_id'),
+      '%%txn_id%%'            => array('MeprTransaction' => 'id'),
+      '%%sub_num%%'           => array('MeprSubscription' => 'subscr_id'),
+      '%%membership_amount%%' => array('MeprSubscription' => 'price'),
+      '%%trial_days%%'        => array('MeprSubscription' => 'trial_days'),
+      '%%trial_amount%%'      => array('MeprSubscription' => 'trial_amount'),
+      '%%username%%'          => array('MeprUser' => 'user_login'),
+      '%%user_email%%'        => array('MeprUser' => 'user_email'),
+      '%%user_id%%'           => array('MeprUser' => 'ID'),
+      '%%membership_name%%'   => array('MeprProduct' => 'post_title'),
+      '%%membership_id%%'     => array('MeprProduct' => 'ID'),
+    );
+    foreach($tracking_codes as $code => $mapping) {
+      // Make sure the content has a code to replace
+      if(strpos($content, $code) !== false) {
+        foreach($mapping as $model => $attr) {
+          switch($model) {
+            case 'MeprTransaction':
+              // Only fetch the object once!
+              if(!isset($txn) && isset($_GET['trans_num']) && !empty($_GET['trans_num'])) {
+                $rec = $model::get_one_by_trans_num($_GET['trans_num']);
+                $txn = $obj = new MeprTransaction($rec->id);
+              }
+              break;
+            case 'MeprSubscription':
+              if(!isset($sub) && isset($_GET['subscr_id']) && !empty($_GET['subscr_id'])) {
+                $sub = $obj = $model::get_one_by_subscr_id($_GET['subscr_id']);
+              }
+              break;
+            case 'MeprUser':
+              if(!isset($user)) {
+                $user = $obj = MeprUtils::get_currentuserinfo();
+              }
+              break;
+            case 'MeprProduct':
+              if(!isset($prod) && isset($_GET['membership_id']) && !empty($_GET['membership_id'])) {
+                $prod = $obj = new $model($_GET['membership_id']);
+              }
+              break;
+            default:
+              unset($obj);
+          }
+          if(isset($obj) && ((int)$obj->id > 0 || (int)$obj->ID > 0)) {
+            $content = str_replace($code, $obj->$attr, $content);
+          }
         }
-
-        $user = new MeprUser($txn->user_id);
-        $product = new MeprProduct($txn->product_id);
-
-        ob_start();
-        MeprView::render("/checkout/ga_ecommerce_tracking", get_defined_vars());
-        $return_value = ob_get_clean();
-
-        return $return_value;
       }
     }
 
-    return '';
+    return $content;
   }
 
   /** Enqueue gateway specific js/css if required */
@@ -346,7 +388,12 @@ class MeprCheckoutCtrl extends MeprBaseCtrl {
             $txn = new MeprTransaction($txn->id);
             $product = new MeprProduct($txn->product_id);
             $sanitized_title = sanitize_title($product->post_title);
-            MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
+            $query_params = array('membership' => $sanitized_title, 'trans_num' => $txn->trans_num, 'membership_id' => $product->ID);
+            if($txn->subscription_id > 0) {
+              $sub = $txn->subscription();
+              $query_params = array_merge($query_params, array('subscr_id' => $sub->subscr_id));
+            }
+            MeprUtils::wp_redirect($mepr_options->thankyou_page_url(build_query($query_params)));
           }
           else {
             // Artificially set the payment method params so we can use them downstream

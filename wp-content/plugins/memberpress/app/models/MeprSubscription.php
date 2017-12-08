@@ -175,6 +175,16 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
     return array_keys((array)$this->rec);
   }
 
+  // Returns trial days based on trial
+  public function get_extend_trial_days($value) {
+    return $this->trial ? $value : 0;
+  }
+
+  // Returns trial amount based on trial
+  public function get_extend_trial_amount($value) {
+    return $this->trial ? $value : 0.00;
+  }
+
   // Check to see if an id for the given table exists
   public static function exists($id) {
     $mepr_db = MeprDb::fetch();
@@ -836,7 +846,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
       $txn = $this->latest_txn();
 
       if(!empty($txn) && $txn instanceof MeprTransaction) {
-        $txn->expires_at = 0; // Zero for lifetime expiration
+        $txn->expires_at = MeprUtils::db_lifetime(); // lifetime expiration
         $txn->store();
       }
     }
@@ -1144,9 +1154,7 @@ class MeprSubscription extends MeprBaseModel implements MeprProductInterface, Me
           break;
       case 'months':
           $renewal_date = strtotime($this->renewal_base_date);
-          if($this->trial) {
-            $renewal_date += MeprUtils::days($this->trial_days);
-          }
+          $renewal_date += MeprUtils::days($this->trial_days);
           $renewal_dom = date('j', $renewal_date);
           $expires_at += MeprUtils::months($period, $created_ts, false, $renewal_dom);
           //Fixes bug 1136 early/late renewals

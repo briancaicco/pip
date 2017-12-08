@@ -40,6 +40,7 @@ $("#menu-toggle").click(function() {
 });
 
 
+  $('[data-toggle="tooltip"]').tooltip();
 
 
 

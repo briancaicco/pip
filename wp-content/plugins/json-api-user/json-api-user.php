@@ -8,7 +8,7 @@
 
   Description: Extends the JSON API for RESTful user registration, authentication, password reset, Facebook Login, user meta and BuddyPress Profile related functions. A Pro version is also available.
 
-  Version: 2.5
+  Version: 2.6
 
   Author: Ali Qureshi
 
@@ -18,7 +18,7 @@
 
  */
 
-define('JAU_VERSION', '2.5');
+define('JAU_VERSION', '2.6');
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 

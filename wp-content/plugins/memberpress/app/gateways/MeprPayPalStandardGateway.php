@@ -717,7 +717,7 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
         'business'      => $this->settings->paypal_email,
         'lc'            => $mepr_options->language_code,
         'currency_code' => $mepr_options->currency_code,
-        'item_name'     => utf8_decode($prd->post_title),
+        'item_name'     => (function_exists('utf8_decode')) ? utf8_decode($prd->post_title) : $prd->post_title,
         'item_number'   => $txn->id,
         'amount'        => $this->format_currency($txn->total), //not used in subscriptions, may be unset below
         'tax_rate'      => MeprUtils::format_float(0.000, 3),
@@ -1055,7 +1055,12 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       //Did the IPN already beat us here?
       if(strpos($txn->trans_num, 'mp-txn') === false) {
         $sanitized_title = sanitize_title($product->post_title);
-        MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
+        $query_params = array('membership' => $sanitized_title, 'trans_num' => $txn->trans_num, 'membership_id' => $product->ID);
+        if($txn->subscription_id > 0) {
+          $sub = $txn->subscription();
+          $query_params = array_merge($query_params, array('subscr_id' => $sub->subscr_id));
+        }
+        MeprUtils::wp_redirect($mepr_options->thankyou_page_url(build_query($query_params)));
       }
 
       //If $sub let's set this up as a confirmation txn until the IPN comes in later so the user can have access now
@@ -1088,7 +1093,12 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       $this->email_status("Paypal Transaction \$txn:\n".MeprUtils::object_to_string($txn, true)."\n", $this->settings->debug);
 
       $sanitized_title = sanitize_title($product->post_title);
-      MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
+      $query_params = array('membership' => $sanitized_title, 'trans_num' => $txn->trans_num, 'membership_id' => $product->ID);
+      if($txn->subscription_id > 0) {
+        $sub = $txn->subscription();
+        $query_params = array_merge($query_params, array('subscr_id' => $sub->subscr_id));
+      }
+      MeprUtils::wp_redirect($mepr_options->thankyou_page_url(build_query($query_params)));
     }
 
     //Handle free trial periods here YO
@@ -1100,7 +1110,12 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       //Did the IPN already beat us here?
       if(strpos($free_trial_txn->trans_num, 'mp-txn') === false) {
         $sanitized_title = sanitize_title($product->post_title);
-        MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$free_trial_txn->trans_num}&membership_id={$product->ID}"));
+        $query_params = array('membership' => $sanitized_title, 'trans_num' => $free_trial_txn->trans_num, 'membership_id' => $product->ID);
+        if($free_trial_txn->subscription_id > 0) {
+          $sub = $free_trial_txn->subscription();
+          $query_params = array_merge($query_params, array('subscr_id' => $sub->subscr_id));
+        }
+        MeprUtils::wp_redirect($mepr_options->thankyou_page_url(build_query($query_params)));
       }
 
       //confirmation txn so the user can have access right away, instead of waiting for the IPN
@@ -1118,7 +1133,12 @@ class MeprPayPalStandardGateway extends MeprBasePayPalGateway {
       $this->email_status("Paypal Transaction \$free_trial_txn:\n".MeprUtils::object_to_string($free_trial_txn, true)."\n", $this->settings->debug);
 
       $sanitized_title = sanitize_title($product->post_title);
-      MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$free_trial_txn->trans_num}&membership_id={$product->ID}"));
+      $query_params = array('membership' => $sanitized_title, 'trans_num' => $free_trial_txn->trans_num, 'membership_id' => $product->ID);
+      if($free_trial_txn->subscription_id > 0) {
+        $sub = $free_trial_txn->subscription();
+        $query_params = array_merge($query_params, array('subscr_id' => $sub->subscr_id));
+      }
+      MeprUtils::wp_redirect($mepr_options->thankyou_page_url(build_query($query_params)));
     }
 
     //If all else fails, just send them to their account page

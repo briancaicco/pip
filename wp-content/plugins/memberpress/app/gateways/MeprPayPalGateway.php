@@ -1012,7 +1012,12 @@ class MeprPayPalGateway extends MeprBasePayPalGateway {
         $txn = new MeprTransaction($txn->id); //Grab the txn again, now that we've updated it
         $product = new MeprProduct($txn->product_id);
         $sanitized_title = sanitize_title($product->post_title);
-        MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
+        $query_params = array('membership' => $sanitized_title, 'trans_num' => $txn->trans_num, 'membership_id' => $product->ID);
+        if($txn->subscription_id > 0) {
+          $sub = $txn->subscription();
+          $query_params = array_merge($query_params, array('subscr_id' => $sub->subscr_id));
+        }
+        MeprUtils::wp_redirect($mepr_options->thankyou_page_url(build_query($query_params)));
       }
       catch( Exception $e ) {
         $prd = $txn->product();

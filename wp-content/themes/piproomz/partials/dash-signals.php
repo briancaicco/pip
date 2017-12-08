@@ -1,23 +1,22 @@
 <p class="h5 mb-3">Latest Signals</p>
 <?php 
 
- if( current_user_can('pro_member') ){
+ if(current_user_can('pro_member')) {
 
 	$query = new WP_Query( array( 'post_type' => 'signal', 'posts_per_page' => '5') );
+	$restrict = false;
 
 } else{
 	
 	$query = new WP_Query( array( 'post_type' => 'signal', 'posts_per_page' => '3') );
-	$i=0;
+	$restrict = true;
 }
-
-
+$i=0;
 ?>
-
 <?php if ( $query->have_posts() ) : ?>
 
 	<!-- the loop -->
-	<?php while ( $query->have_posts() ) : $query->the_post();  $i++; ?>
+	<?php while ( $query->have_posts() ) : $query->the_post(); $i++;?>
 
 		<div class="card mb-2 signal border-0 super-el">
 			<div class="card-body">
@@ -31,16 +30,15 @@
 				</div>
 			</div>
 		</div>
-		<?php if ( $i == 3 ){ ?>
-		<div class="card mb-2 signal border-0 super-el">
+		<?php if ( $restrict == true and $i == 3 ){ ?>
+		<div class="card mb-2 signal border-0 super-el buy-gradient">
 			<div class="card-body">
-				<p class="lead">Get these signals via text message!</p>
-				<a href="">Upgrade to a Pro Membership</a>
+				<p class="lead text-white font-weight-bold">Get signals via text message!</p>
+				<a href="<?php bloginfo( 'url' ) ?>/subscribe/pro/" class="btn btn-secondary" >Upgrade to Pro</a>
 			</div>
 		</div>
 
-		<?php } ?>
-	<?php endwhile; ?>
+	<?php } endwhile; ?>
 	<!-- end of the loop -->
 	<?php wp_reset_postdata(); ?>
 

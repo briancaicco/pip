@@ -157,7 +157,7 @@ class MeprAppCtrl extends MeprBaseCtrl {
     $rules = MeprRule::get_rules($post);
     $access_list = MeprRule::get_access_list($post);
     $product_ids = $access_list['membership'];
-    $members = $access_list['member'];
+    $members = (isset($access_list['member'])) ? $access_list['member'] : array();
 
     MeprView::render('/admin/rules/rules_meta_box', get_defined_vars());
   }

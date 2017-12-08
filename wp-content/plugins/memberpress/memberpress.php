@@ -3,7 +3,7 @@
 Plugin Name: MemberPress Plus
 Plugin URI: http://www.memberpress.com/
 Description: The membership plugin that makes it easy to accept payments for access to your content and digital products.
-Version: 1.3.20a2
+Version: 1.3.22a1
 Author: Caseproof, LLC
 Author URI: http://caseproof.com/
 Text Domain: memberpress

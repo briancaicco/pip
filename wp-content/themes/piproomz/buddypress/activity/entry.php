@@ -20,6 +20,10 @@ do_action( 'bp_before_activity_entry' ); ?>
 	<div class="card">
 		<div class="card-body">
 			<div class="activity-avatar">
+				<?php
+					$user_id = bp_get_member_user_id();
+					get_member_badge($user_id);
+				?>
 				<a href="<?php bp_activity_user_link(); ?>">
 
 					<?php bp_activity_avatar(); ?>

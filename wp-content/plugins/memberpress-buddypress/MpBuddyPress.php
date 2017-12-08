@@ -38,7 +38,40 @@ class MpBuddyPress {
 
       //Auto activate BP users when they signup via MemberPress
       add_action('mepr-signup',                       array($this, 'activate_bp_profile'));
+
+      //First and last as BP name
+      add_action('init',                              array($this, 'first_and_last_name'));
+      add_action('mepr-save-account',                 array($this, 'sync_name'));
     }
+  }
+
+  //Set name field to first and last name
+  function first_and_last_name($force_run = false) {
+    if(bp_is_active('xprofile')) {
+      $user = MeprUtils::get_currentuserinfo();
+
+      if($user && !empty($user->first_name)) {
+        $run = get_user_meta($user->ID, 'bp_flname_sync', true);
+        if(!$run || $force_run) {
+          //Update BP field
+          $name_data = new BP_XProfile_ProfileData(1, $user->ID); //ID 1 is the name field
+          $name_data->value = trim($user->first_name . ' ' . $user->last_name);
+          $name_data->save();
+
+          //Update WP fields
+          $user->display_name = trim($user->first_name . ' ' . $user->last_name);
+          $user->store();
+          update_user_meta($user->ID, 'nickname', $display_name); //might as well
+
+          //Make sure we don't do this every page load
+          update_user_meta($user->ID, 'bp_flname_sync', 1);
+        }
+      }
+    }
+  }
+
+  function sync_name($user) {
+    $this->first_and_last_name(true);
   }
 
 //MP OPTIONS PAGE

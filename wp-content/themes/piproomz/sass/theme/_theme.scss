@@ -51,6 +51,23 @@
 	background-image: linear-gradient(90deg, #e26e6e 0%, #ffa47f 55%);
 }
 
+.blue-grad{
+	@include blue-grad;
+}
+
+.blue-grad-hor{
+	@include blue-grad-hor;
+}
+
+.blue-grad-hor-trans{
+	@include blue-grad-hor-trans;
+}
+
+.buy-gradient {
+	@include buy-gradient;
+}
+
+
 
 .bp-screen-reader-text{
 	display: none !important;
@@ -148,7 +165,6 @@ p{
 
 .home{
 	.navbar{
-		padding: 15px 0 !important;
 		z-index: 2;
 	}
 }
@@ -361,10 +377,23 @@ header{
 		display: none;
 	}
 
-	.active-rooms{
+	.comment{
+		display: none !important;
+	}
+	.active-members{
+		.item-meta{
+			color: $medium-blue-gray;
+		}
+		.item-title a{
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+	.active-rooms, .active-members{
 		position: relative;
 		padding-top: 30px;
-		#groups-list-options{
+		#groups-list-options, #members-list-options{
 			position: absolute;
 			right: 0px;
 			top: 4px;
@@ -384,6 +413,7 @@ header{
 				}
 			}
 			a.selected{
+				font-weight: bold;
 				opacity: 1 !important;
 			}
 		}
@@ -998,6 +1028,7 @@ a.wp-social-login-provider-twitter{
 
 // Activity Feeds
 /////////////////////////////////////////////////////////////////////////
+
 #activity-stream{
 	img.avatar{
 		border-radius: 60px;
@@ -1021,7 +1052,7 @@ a.wp-social-login-provider-twitter{
 	opacity: .7;
 }
 
-#buddypress #activity-stream p{
+#buddypress #activity-stream p, #buddypress #activity-stream{
 	margin: 0px !important;
 }
 
@@ -1120,9 +1151,6 @@ a.wp-social-login-provider-twitter{
 	}
 }
 
-.fav, .unfav{
-	font-family: FontAwesome;
-}
 
 // Profile Pages
 /////////////////////////////////////////////////////////////////////////
@@ -1420,7 +1448,7 @@ a.wp-social-login-provider-twitter{
 
 // Broker Page
 /////////////////////////////////////////////////////////////////////////
-.page-template-brokers{
+.page-template-brokers, .single-broker{
 	a{
 		text-decoration: none;
 
@@ -1445,6 +1473,16 @@ a.wp-social-login-provider-twitter{
 		.fa.fa-plus-square-o{
 			display: none !important;
 		}
+	}
+
+	.single-broker-logo{
+		width: 300px;
+		height: auto;
+		padding: 0px !important;
+	}
+
+	.single-broker-link{
+		float: right;
 	}
 
 	// Tables

@@ -10,10 +10,10 @@
 						<li><h1 id="page-name"><?php the_title();?></h1></li>
 					</ul>
 
-					<?php if( current_user_can('pro_member') ){ ?>
-						<div class="mr-3 badge badge-success text-white">Pro Member</div>  
+					<?php  if(current_user_can('pro_member')) { ?>
+						<div class="mr-3 badge badge-success text-white member-lvl">Pro</div>  
 					<?php } elseif(current_user_can('basic_member')) { ?>
-						<div class="mr-3 badge badge-success text-white">Basic Member</div>  
+						<div class="mr-3 badge badge-warning text-white member-lvl"><a href="<?php bloginfo( 'url' ) ?>/subscribe/pro/">Basic</a></div>  
 					<?php } else{ ?>
 						<div>
 							<a href="#" type="" data-toggle="modal" class="btn mr-3 py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a>

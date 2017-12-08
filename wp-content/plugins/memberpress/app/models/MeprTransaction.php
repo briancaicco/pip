@@ -702,7 +702,12 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
     MeprEvent::record('non-recurring-transaction-completed', $txn); //Delete this if we use $free_gateway->send_transaction_receipt_notices later
 
     $sanitized_title = sanitize_title($product->post_title);
-    MeprUtils::wp_redirect($mepr_options->thankyou_page_url("membership={$sanitized_title}&trans_num={$txn->trans_num}&membership_id={$product->ID}"));
+    $query_params = array('membership' => $sanitized_title, 'trans_num' => $txn->trans_num, 'membership_id' => $product->ID);
+    if($txn->subscription_id > 0) {
+      $sub = $txn->subscription();
+      $query_params = array_merge($query_params, array('subscr_id' => $sub->subscr_id));
+    }
+    MeprUtils::wp_redirect($mepr_options->thankyou_page_url(build_query($query_params)));
   }
 
   public function is_upgrade() {
@@ -993,4 +998,30 @@ class MeprTransaction extends MeprBaseModel implements MeprProductInterface, Mep
     return false;
   }
 
+  /***** MAGIC METHOD HANDLERS *****/
+  protected function mgm_subtotal($mgm, $val = '') {
+    switch($mgm) {
+      case 'get':
+        if($this->rec->txn_type == MeprTransaction::$subscription_confirmation_str) {
+          $sub = new MeprSubscription($this->rec->subscription_id);
+          return $sub->price;
+        }
+        else {
+          return $this->rec->amount;
+        }
+    }
+  }
+
+  protected function mgm_net_amount($mgm, $val = '') {
+    switch($mgm) {
+      case 'get':
+        if($this->rec->txn_type == MeprTransaction::$subscription_confirmation_str) {
+          $sub = new MeprSubscription($this->rec->subscription_id);
+          return $sub->price + $this->rec->tax_amount;
+        }
+        else {
+          return $this->rec->total;
+        }
+    }
+  }
 } //End class

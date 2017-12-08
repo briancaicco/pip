@@ -82,7 +82,7 @@ global $post;
 					<?php while( $staff_pick_brokers->have_posts() ) { 
 						$staff_pick_brokers->the_post(); ?>
 
-						<div class="broker recommended card mb-3">
+						<div class="broker recommended card mb-3 border-0">
 
 							<div class="p-3 toggle rounded-top" data-toggle="collapse" data-parent="#brokers" href="#brokerItem<?php echo $post->ID; ?>" aria-expanded="false" aria-controls="brokerItem<?php echo $post->ID; ?>">
 

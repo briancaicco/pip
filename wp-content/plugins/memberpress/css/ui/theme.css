@@ -170,6 +170,7 @@ table.mp-table .mp-currency-cell {
 .mepr_error, .mepr_updated {
   padding: 5px 5px 5px 15px !important;
   margin-bottom: 25px !important;
+  box-sizing: border-box !important;
   width: 100%;
 }
 

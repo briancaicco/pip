@@ -6,11 +6,11 @@ Tags: json api, RESTful user registration, authentication, RESTful Facebook Logi
 
 Contributors: parorrey
 
-Stable tag: 2.5
+Stable tag: 2.6
 
 Requires at least: 3.0.1
 
-Tested up to: 4.6.1
+Tested up to: 4.9
 
 License: GPLv2 or later
 
@@ -91,6 +91,9 @@ To install JSON API User just follow these steps:
 
 
 ==Changelog==
+
+= 2.6 =
+* Updated for WordPress version 4.9.
 
 = 2.5 =
 * Updated 'register' endpoint to follow WordPress Settings to enable/disable user registration.

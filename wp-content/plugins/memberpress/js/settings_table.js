@@ -7,10 +7,16 @@ var meprSetPage = function (hash) {
 
   if(!hash) { hash = window.location.hash; }
 
+  //Fix for non-mepr hashes on other parts of the site
+  if(String(hash).indexOf('mepr') === -1) {
+    hash = '';
+  }
+
   var url = window.location.href.replace(/#.*$/,'');
 
   // Open correct page based on the hash
   var trypage = 'table.mepr-settings-table td.mepr-settings-table-pages .mepr-page' + hash;
+
   if ((hash != '') && ($(trypage).length > 0)) {
     page = trypage;
     nav = 'table.mepr-settings-table td.mepr-settings-table-nav ul li a#mepr-nav-' + hash.replace(/\#/,'');

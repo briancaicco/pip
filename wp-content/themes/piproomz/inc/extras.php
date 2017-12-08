@@ -315,6 +315,12 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 		$signal_post = array();
 		$signal_post['ID'] = $post_id;
+
+		$post_type = get_post_type( $signal_post );
+		if ($post_type != 'signal') {
+			return;
+		}
+		
 		$currency_pair = get_field('currency_pair');
 
 		$signal_post['post_title'] = $currency_pair;
@@ -327,13 +333,16 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			'meta_query' => array(
 				array(
 					'key' => 'wp_capabilities',
-					'value' => '"bbp_participant"',
+					'value' => '"pro_member"',
+					'compare' => 'LIKE'
+				),
+				array(
+					'key' => 'wp_capabilities',
+					'value' => '"basic_member"',
 					'compare' => 'LIKE'
 				),
 			)
 		);
-
-
 		$members = get_users($user_args);
 		$sid = 'ACe89a3d593fb889b057173c9a86c8cca3';
 		$token = '75bb952b81a486d419d5f2a30b2a3a07';
@@ -388,8 +397,9 @@ function pip_theme_cover_image_css( $settings = array() ) {
 		}
 
 		return $phoneNumber;
-	}
 
+
+	}
 
 	// run after ACF saves the $_POST['fields'] data
 	add_action('acf/save_post', 'pip_signals_post_publish', 10, 1);
@@ -398,23 +408,34 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 //add page slug to body class, if on a page
 //////////////////////////////////////////////////////////////////////
- 
-add_filter('body_class','smartestb_pages_bodyclass');
-function smartestb_pages_bodyclass($classes) {
-    if (is_page()) {
-        // get page slug
-        global $post;
-        $slug = get_post( $post )->post_name;
- 
-        // add slug to $classes array
-        $classes[] = $slug;
-        // return the $classes array
-        return $classes;
-    } else { 
-        return $classes;
-    }
-}
 
+	add_filter('body_class','smartestb_pages_bodyclass');
+	function smartestb_pages_bodyclass($classes) {
+		if (is_page()) {
+        // get page slug
+			global $post;
+			$slug = get_post( $post )->post_name;
+
+        // add slug to $classes array
+			$classes[] = $slug;
+        // return the $classes array
+			return $classes;
+		} else { 
+			return $classes;
+		}
+	}
+
+
+//Get current user role
+//////////////////////////////////////////////////////////////////////
+	function get_member_badge($id) {
+		$user = get_user_by('id', $id); 
+		if(user_can('$user', 'pro_member')) { 
+			echo '<div class="mr-3 badge badge-success text-white member-lvl">Pro</div>';
+		} elseif(user_can('$user', 'basic_member')) { 
+			echo '<div class="mr-3 badge badge-warning text-white member-lvl"><a href="'. bloginfo( 'url' ) .'/subscribe/pro/">Basic</a></div>';
+		} else{}
+	}
 
 
 //add page slug to body class, if on a page

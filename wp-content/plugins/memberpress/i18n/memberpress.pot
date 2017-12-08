@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the MemberPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: MemberPress 1.3.20a2\n"
+"Project-Id-Version: MemberPress 1.3.22a1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/memberpress\n"
-"POT-Creation-Date: 2017-11-15 22:31:56+00:00\n"
+"POT-Creation-Date: 2017-11-27 22:38:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -244,20 +244,20 @@ msgstr ""
 msgid "Tax"
 msgstr ""
 
-#: app/controllers/MeprCheckoutCtrl.php:173
-#: app/controllers/MeprCheckoutCtrl.php:174
+#: app/controllers/MeprCheckoutCtrl.php:215
+#: app/controllers/MeprCheckoutCtrl.php:216
 msgid "The user was unable to be saved."
 msgstr ""
 
-#: app/controllers/MeprCheckoutCtrl.php:245
+#: app/controllers/MeprCheckoutCtrl.php:287
 msgid "Invalid payment method"
 msgstr ""
 
-#: app/controllers/MeprCheckoutCtrl.php:256
+#: app/controllers/MeprCheckoutCtrl.php:298
 msgid "Sorry, we were unable to create a transaction."
 msgstr ""
 
-#: app/controllers/MeprCheckoutCtrl.php:369
+#: app/controllers/MeprCheckoutCtrl.php:416
 msgid "Sorry, an unknown error occurred."
 msgstr ""
 
@@ -359,7 +359,7 @@ msgstr ""
 #: app/controllers/MeprCouponsCtrl.php:107
 #: app/controllers/MeprUsersCtrl.php:354
 #: app/gateways/MeprAuthorizeGateway.php:1092
-#: app/helpers/MeprOptionsHelper.php:12 app/models/MeprSubscription.php:653
+#: app/helpers/MeprOptionsHelper.php:12 app/models/MeprSubscription.php:663
 #: app/models/MeprTransaction.php:442 app/views/admin/members/row.php:74
 #: app/views/admin/products/price_box.php:37
 #: app/views/admin/transactions/row.php:108
@@ -1507,8 +1507,8 @@ msgstr ""
 #: app/controllers/MeprUsersCtrl.php:344 app/helpers/MeprAppHelper.php:83
 #: app/helpers/MeprAppHelper.php:95 app/helpers/MeprAppHelper.php:132
 #: app/helpers/MeprAppHelper.php:146 app/helpers/MeprTransactionsHelper.php:105
-#: app/lib/MeprUtils.php:883 app/models/MeprSubscription.php:393
-#: app/models/MeprSubscription.php:617 app/models/MeprTransaction.php:422
+#: app/lib/MeprUtils.php:883 app/models/MeprSubscription.php:403
+#: app/models/MeprSubscription.php:627 app/models/MeprTransaction.php:422
 #: app/views/admin/subscriptions/row.php:134
 #: app/views/admin/subscriptions/row.php:196
 #: app/views/admin/subscriptions/row.php:202
@@ -2450,24 +2450,24 @@ msgstr ""
 msgid "You had an HTTP error connecting to %s"
 msgstr ""
 
-#: app/gateways/MeprPayPalGateway.php:1054
-#: app/gateways/MeprPayPalProGateway.php:1240
-#: app/gateways/MeprPayPalStandardGateway.php:1157
+#: app/gateways/MeprPayPalGateway.php:1059
+#: app/gateways/MeprPayPalProGateway.php:1245
+#: app/gateways/MeprPayPalStandardGateway.php:1177
 msgid "Your payment at PayPal was cancelled."
 msgstr ""
 
-#: app/gateways/MeprPayPalGateway.php:1055
-#: app/gateways/MeprPayPalProGateway.php:1241
-#: app/gateways/MeprPayPalStandardGateway.php:1158
+#: app/gateways/MeprPayPalGateway.php:1060
+#: app/gateways/MeprPayPalProGateway.php:1246
+#: app/gateways/MeprPayPalStandardGateway.php:1178
 msgid "You can retry your purchase by %1$sclicking here%2$s."
 msgstr ""
 
-#: app/gateways/MeprPayPalGateway.php:1071
-#: app/gateways/MeprPayPalProGateway.php:1257
+#: app/gateways/MeprPayPalGateway.php:1076
+#: app/gateways/MeprPayPalProGateway.php:1262
 msgid "** PayPal Payment ERROR on %s"
 msgstr ""
 
-#: app/gateways/MeprPayPalGateway.php:1072
+#: app/gateways/MeprPayPalGateway.php:1077
 msgid ""
 "Your PayPal account isn't set up to sell Digital Goods.\n"
 "\n"
@@ -2491,7 +2491,7 @@ msgid ""
 "The MemberPress Team\n"
 msgstr ""
 
-#: app/gateways/MeprPayPalGateway.php:1118
+#: app/gateways/MeprPayPalGateway.php:1123
 #: app/gateways/MeprPayPalStandardGateway.php:1039
 msgid ""
 "There was a problem cancelling, try logging in directly at PayPal to update "
@@ -2518,7 +2518,7 @@ msgstr ""
 msgid "Updating the Credit Card was unsuccessful. %s"
 msgstr ""
 
-#: app/gateways/MeprPayPalProGateway.php:1258
+#: app/gateways/MeprPayPalProGateway.php:1263
 msgid ""
 "Your PayPal account isn't setup to sell Digital Goods.\n"
 "\n"
@@ -2540,7 +2540,7 @@ msgid ""
 "The MemberPress Team\n"
 msgstr ""
 
-#: app/gateways/MeprPayPalProGateway.php:1305
+#: app/gateways/MeprPayPalProGateway.php:1310
 msgid "There was a problem cancelling. %s"
 msgstr ""
 
@@ -2595,7 +2595,7 @@ msgstr ""
 msgid "Primary PayPal Email field can't be blank."
 msgstr ""
 
-#: app/gateways/MeprPayPalStandardGateway.php:1079
+#: app/gateways/MeprPayPalStandardGateway.php:1084
 msgctxt "ui"
 msgid ""
 "Your payment amount was lower than expected. Please contact us for "
@@ -3343,14 +3343,14 @@ msgstr ""
 msgid "Are you sure you want to cancel this subscription?"
 msgstr ""
 
-#: app/lib/MeprBaseGateway.php:402 app/models/MeprSubscription.php:424
-#: app/models/MeprSubscription.php:431 app/models/MeprSubscription.php:432
-#: app/models/MeprSubscription.php:669
+#: app/lib/MeprBaseGateway.php:402 app/models/MeprSubscription.php:434
+#: app/models/MeprSubscription.php:441 app/models/MeprSubscription.php:442
+#: app/models/MeprSubscription.php:679
 msgid "Yes"
 msgstr ""
 
-#: app/lib/MeprBaseGateway.php:403 app/models/MeprSubscription.php:426
-#: app/models/MeprSubscription.php:670
+#: app/lib/MeprBaseGateway.php:403 app/models/MeprSubscription.php:436
+#: app/models/MeprSubscription.php:680
 msgid "No"
 msgstr ""
 
@@ -3876,7 +3876,7 @@ msgstr ""
 msgid "Custom URI"
 msgstr ""
 
-#: app/models/MeprSubscription.php:1836
+#: app/models/MeprSubscription.php:1844
 msgid "MemberPress database migration failed: %1$s %2$s"
 msgstr ""
 
@@ -4096,7 +4096,7 @@ msgctxt "ui"
 msgid "Home"
 msgstr ""
 
-#: app/views/account/nav.php:9
+#: app/views/account/nav.php:9 app/views/account/nav.php:21
 msgctxt "ui"
 msgid "Subscriptions"
 msgstr ""
@@ -4106,12 +4106,11 @@ msgctxt "ui"
 msgid "Payments"
 msgstr ""
 
-#: app/views/account/nav.php:22
+#: app/views/account/nav.php:23
 msgctxt "ui"
 msgid ""
-"You have a problem with one or more of your subscriptions. To prevent any "
-"lapses in your subscriptions please visit your %sSubscriptions%s page to "
-"update them."
+"You have a problem with one or more of your %1$s. To prevent any lapses in "
+"your %1$s please visit your %2$s%3$s%4$s page to update them."
 msgstr ""
 
 #: app/views/account/password.php:12

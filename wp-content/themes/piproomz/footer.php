@@ -28,10 +28,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div><!--col end -->
 			<div class="col-md-3">
 				<nav class="nav flex-column">
-					<a class="nav-link active" href="/privacy-policy">Privacy Policy</a>
-					<a class="nav-link" href="/terms-of-use">Terms of Use</a>
-					<a class="nav-link" href="/risk-warning">Risk Warning</a>
-					<a class="nav-link" href="/faq">Frequently Asked Questions</a>
+					<a class="nav-link active" href="<?php bloginfo( 'url' ) ?>/privacy-policy">Privacy Policy</a>
+					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/terms-of-use">Terms of Use</a>
+					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/risk-warning">Risk Warning</a>
+					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/faq">Frequently Asked Questions</a>
 				</nav>
 			</div><!--col end -->
 			<div class="col-md-3">
@@ -63,17 +63,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div><!--col end -->
 			<div class="col-md-3">
 				<nav class="nav flex-column">
-					<a class="nav-link active" href="/privacy-policy">Privacy Policy</a>
-					<a class="nav-link" href="/terms-of-use">Terms of Use</a>
-					<a class="nav-link" href="/risk-warning">Risk Warning</a>
-					<a class="nav-link" href="/faq">Frequently Asked Questions</a>
+					<a class="nav-link active" href="<?php bloginfo( 'url' ) ?>/privacy-policy">Privacy Policy</a>
+					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/terms-of-use">Terms of Use</a>
+					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/risk-warning">Risk Warning</a>
+					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/faq">Frequently Asked Questions</a>
 				</nav>
 			</div><!--col end -->
 			<div class="col-md-3">
 
 			</div><!--col end -->
 			<div class="col-md-3">
-
 			</div><!--col end -->
 
 		</div><!-- row end -->
@@ -120,7 +119,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	gtag('config', 'UA-108382349-1');
 </script>
-<script>
+<!-- <script>
 	Userback = window.Userback || {};
 	Userback.access_token = '1415|1815|AucXF44wut1BvzBB3AnGKGQ7tbnqAGsbaF8QJcmeGoQbXrN11b';
 
@@ -132,7 +131,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		var parent_node = document.head || document.body;
 		parent_node.appendChild(s);
 	})('userback-sdk');
-</script>
+</script> -->
 
 <?php wp_footer(); ?>
 

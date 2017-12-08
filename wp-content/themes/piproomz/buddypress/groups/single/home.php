@@ -40,10 +40,10 @@
 			<?php } ?>
 		</div>
 	</div>	
-<div class="container mt-4">
+<div class="container-fluid mt-4">
 	<div class="row">
-		<div class="col-12">
-			<div class="col-12 mb-3">
+		<div class="col-md-9">
+			<div class="col mb-3">
 				<h1><?php echo esc_attr( bp_get_group_name() ); ?></h1>
 			</div>
 			<?php
@@ -91,6 +91,9 @@
 					</div>
 				</div><!-- #item-nav -->
 			</nav>
+		</div>
+		<div class="col-md-3">
+			<div data-room-id="0" data-height="100%" data-width="100%" class="iflychat-embed"></div>
 		</div>
 	</div>
 
