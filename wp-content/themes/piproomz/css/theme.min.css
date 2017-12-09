@@ -4565,6 +4565,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sa
 
 p { font-family: "Raleway", sans-serif; }
 
+.badge a { color: #fff !important; }
+
+.badge ahover { text-decoration: none; }
+
 .avatar_pro_member_ring { border: 2px solid #3ecf8e; border-radius: 50%; }
 
 .avatar_basic_member_ring { border: 2px solid #fdd761; border-radius: 50%; }

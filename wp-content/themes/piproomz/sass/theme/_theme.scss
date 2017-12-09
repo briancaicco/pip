@@ -197,6 +197,13 @@ p{
 // Membership Identifiers and Badges
 /////////////////////////////////////////////////////////////////////////
 
+.badge a{
+	color: #fff !important;
+	&hover{
+		text-decoration: none;
+	}
+}
+
 .avatar_pro_member_ring{
 	border: 2px solid #3ecf8e;
 	border-radius: 50%;
