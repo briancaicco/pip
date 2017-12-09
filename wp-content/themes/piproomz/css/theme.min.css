@@ -4535,6 +4535,8 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 .avatar { border-radius: 200px; width: 45px; }
 
+#content { margin-top: 4.5rem; }
+
 #buddypress div#message p, #sitewide-notice p { border: 0px !important; background: 0px !important; padding: 0px !important; margin: 0px !important; color: rgba(0, 0, 0, 0.7) !important; margin-top: 0px !important; }
 
 #buddypress div#message { padding-bottom: 0px; }
@@ -4553,13 +4555,25 @@ body { overflow-x: hidden; }
 
 body:focus, body:focus.active, body.focus, body.focus.active { outline: none; }
 
+.generic-button a { position: relative; color: #fff; background-color: #3ecf8e; border: none; margin-left: -1px; display: inline-block; font-weight: 400; text-align: center; white-space: nowrap; vertical-align: middle; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; border: 1px solid transparent; padding: .375rem .75rem; font-size: .8rem; line-height: 1.5; border-radius: .25rem; transition: all .35s ease-in-out; box-shadow: none; }
+
+.generic-button a:hover { text-decoration: none; color: #fff; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; background-color: #30c381; }
+
 body { font-family: "Montserrat", "Lato", "Open Sans", "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif; background: #EAECEF; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Nunito", sans-serif; font-weight: 300; }
 
 p { font-family: "Raleway", sans-serif; }
 
-.navbar { padding: 0 !important; z-index: 2; }
+.avatar_pro_member_ring { border: 2px solid #3ecf8e; border-radius: 50%; }
+
+.avatar_basic_member_ring { border: 2px solid #fdd761; border-radius: 50%; }
+
+.navbar { padding: 0 !important; z-index: 3; position: fixed; top: 0px; width: 100%; }
+
+.navbar-nav { flex-direction: row !important; }
+
+.sub-nav { position: relative !important; z-index: 0; }
 
 .home .navbar { z-index: 2; }
 
@@ -4587,11 +4601,11 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .primary-nav.navbar.dashboard .nav-item { position: relative; }
 
-.primary-nav.navbar.dashboard .nav-item a { padding: 20px 25px; display: block; }
+.primary-nav.navbar.dashboard .nav-item a { padding: 24px 25px; display: block; }
 
 .primary-nav.navbar.dashboard .nav-item a i { color: #c0c5d0; font-size: 18px; }
 
-.primary-nav.navbar.dashboard #page-name { padding-top: 23px; padding-left: 20px; font-size: 18px; }
+.primary-nav.navbar.dashboard #page-name { padding-top: 27px; padding-left: 20px; font-size: 18px; margin-bottom: 0px; }
 
 .primary-nav.navbar.dashboard .notifications { position: absolute; right: 60px; top: -12px; z-index: 9999; }
 
@@ -4632,6 +4646,10 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 .page-template-dashboard .footer { display: none; }
 
 .page-template-dashboard .comment { display: none !important; }
+
+.page-template-dashboard .broker-box { height: 138px; }
+
+.page-template-dashboard .dash-pro-signals { height: 264px; }
 
 .page-template-dashboard .active-members .item-meta { color: #c0c5d0; }
 
@@ -4895,7 +4913,9 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .bp-avatar-nav ul.avatar-nav-items li.current { border-bottom-color: #e9ecef; }
 
-#buddypress #item-header-avatar, #buddypress #item-header-content { top: 75px; max-width: 240px; }
+#buddypress #item-header-content { top: 2px; padding-right: 25px !important; }
+
+#buddypress #item-header-avatar { top: 75px; max-width: 240px; }
 
 #notifications-personal-li, #messages-personal-li, #settings-personal-li, #activity-personal-li, #mepr-bp-info-personal-li, #forums-personal-li { display: none; }
 
@@ -4903,7 +4923,11 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .bp-user #subnav ul li a { border-radius: .25rem; display: block; padding: .3rem .6rem; font-size: .9em; }
 
-.bp-user #subnav ul li.current a { color: #fff; background-color: #007bff; }
+.bp-user #subnav ul li a:hover { text-decoration: none; }
+
+.bp-user #subnav ul li.current a { color: #fff; background-color: #3ecf8e; font-size: .8rem; transition: all .35s ease-in-out; }
+
+.bp-user #subnav ul li.current a:hover { text-decoration: none; color: #fff; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; background-color: #30c381; }
 
 #buddypress div.item-list-tabs#subnav { margin-left: 0px !important; padding-left: 0px !important; }
 
@@ -5125,7 +5149,7 @@ a { color: #677897; }
 
 a:hover { color: #526079; }
 
-section.footer .container { border-top: 1px solid #c2c9d5; }
+section.footer .content { border-top: 1px solid #c2c9d5; }
 
 @media (min-width: 576px) { .trader-view { height: 500px; margin-top: -75px !important; }
   .modal-lg { max-width: 800px; margin: 10px auto; padding: 10px; } }
@@ -5137,7 +5161,8 @@ section.footer .container { border-top: 1px solid #c2c9d5; }
 
 @media (min-width: 992px) { .modal-lg { max-width: 1100px; } }
 
-@media (max-width: 575px) { #buddypress #item-header-content { z-index: 1; margin-top: -89px; padding-top: 113px !important; } }
+@media (max-width: 575px) { #buddypress #item-header-content { z-index: 1; margin-top: 0px; padding-top: 85px !important; top: 10px; }
+  #buddypress div#item-header div.generic-button { float: none; display: inline-block; } }
 
 @media (max-width: 767px) { .active-rooms #groups-list-options { position: relative !important; padding-top: 0px !important; }
   .active-rooms #groups-list-options a { margin-right: 20px !important; margin-left: 0px !important; }

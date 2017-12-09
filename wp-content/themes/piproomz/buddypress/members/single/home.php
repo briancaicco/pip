@@ -34,7 +34,7 @@
 
 	</div><!-- #item-header -->
 
-	<div id="item-nav" class="mt-md-0">
+	<div id="item-nav" class="mt-1 mt-md-0">
 		<div class="container px-0">
 			<div class="item-list-tabs nav-justified no-ajax" id="object-nav" aria-label="<?php esc_attr_e( 'Member primary navigation', 'buddypress' ); ?>" role="navigation">
 

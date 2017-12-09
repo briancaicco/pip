@@ -17,7 +17,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
 
-<section class="bg-grey-200 content pt-md-5">
+<section class="bg-grey-200 content pt-md-4" id="content">
 
 
 

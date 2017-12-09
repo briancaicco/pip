@@ -19,11 +19,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 <div class=" mb-3 <?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">
 	<div class="card">
 		<div class="card-body">
-			<div class="activity-avatar">
-				<?php
-					$user_id = bp_get_member_user_id();
-					get_member_badge($user_id);
-				?>
+			<div class="activity-avatar <?php get_activity_avatar_user_badge() ?>">
 				<a href="<?php bp_activity_user_link(); ?>">
 
 					<?php bp_activity_avatar(); ?>

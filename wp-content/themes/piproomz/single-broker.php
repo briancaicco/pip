@@ -17,7 +17,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="col">
 
-			<div class="card my-3 my-sm-5 p-3 p-md-4 p-lg-5">
+			<div class="card my-4 my-sm-5 p-3 p-md-4 p-lg-5">
 
 				<div class="card-body">
 

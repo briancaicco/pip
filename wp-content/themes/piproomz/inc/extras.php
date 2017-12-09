@@ -303,7 +303,6 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 
 
-
 	use Twilio\Rest\Client;
 
 	// Signals post type functions
@@ -333,12 +332,12 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			'meta_query' => array(
 				array(
 					'key' => 'wp_capabilities',
-					'value' => '"pro_member"',
+					'value' => 'pro_member',
 					'compare' => 'LIKE'
 				),
 				array(
 					'key' => 'wp_capabilities',
-					'value' => '"basic_member"',
+					'value' => 'basic_member',
 					'compare' => 'LIKE'
 				),
 			)
@@ -426,16 +425,38 @@ function pip_theme_cover_image_css( $settings = array() ) {
 	}
 
 
-//Get current user role
+// User Badges
 //////////////////////////////////////////////////////////////////////
-	function get_member_badge($id) {
-		$user = get_user_by('id', $id); 
-		if(user_can('$user', 'pro_member')) { 
-			echo '<div class="mr-3 badge badge-success text-white member-lvl">Pro</div>';
-		} elseif(user_can('$user', 'basic_member')) { 
-			echo '<div class="mr-3 badge badge-warning text-white member-lvl"><a href="'. bloginfo( 'url' ) .'/subscribe/pro/">Basic</a></div>';
-		} else{}
+
+
+	function get_user_badge() {
+		$user_id = bp_displayed_user_id();
+		$user = new WP_User( $user_id );
+
+			if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
+		    	echo '<div class="badge badge-success text-white member-lvl">Pro</div>';
+			} elseif ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'basic_member', $user->roles ) ){
+				echo '<div class="badge badge-warning text-white member-lvl">Basic</div>';
+			}
 	}
+
+// User Badges
+//////////////////////////////////////////////////////////////////////
+
+	function get_activity_avatar_user_badge() {
+		
+		$user_id = bp_get_activity_user_id();
+		$user = new WP_User( $user_id );
+
+			if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
+		    	echo 'avatar_pro_member_ring';
+			} elseif ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'basic_member', $user->roles ) ){
+				echo 'avatar_basic_member_ring';
+			}
+	}
+
+
+
 
 
 //add page slug to body class, if on a page

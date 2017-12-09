@@ -31,9 +31,12 @@ $i=0;
 			</div>
 		</div>
 		<?php if ( $restrict == true and $i == 3 ){ ?>
-		<div class="card mb-2 signal border-0 super-el buy-gradient">
-			<div class="card-body">
-				<p class="lead text-white font-weight-bold">Get signals via text message!</p>
+		<div class="card mb-2 signal border-0 super-el buy-gradient dash-pro-signals">
+			<div class="card-body pb-0">
+				<p class="lead text-white font-weight-bold">Trade signals via SMS!</p>
+				<p>Maximize your trades! Get the latest signals to your phone.</p>
+			</div>
+			<div class="card-footer text-center">
 				<a href="<?php bloginfo( 'url' ) ?>/subscribe/pro/" class="btn btn-secondary" >Upgrade to Pro</a>
 			</div>
 		</div>

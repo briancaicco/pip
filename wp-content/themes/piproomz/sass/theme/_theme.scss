@@ -80,6 +80,10 @@
 	
 }
 
+#content{
+	margin-top: 4.5rem;
+}
+
 
 // Alerts
 #buddypress div#message p, #sitewide-notice p{
@@ -131,6 +135,40 @@ body{
 	}
 }
 
+
+.generic-button a, {
+		position: relative;
+		color: #fff;
+		background-color: $green;
+		border: none;
+		margin-left: -1px;
+		display: inline-block;
+		font-weight: 400;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		border: 1px solid transparent;
+		padding: .375rem .75rem;
+		font-size: .8rem;
+		line-height: 1.5;
+		border-radius: .25rem;
+		transition: all .35s ease-in-out;
+		box-shadow: none;
+		&:hover{
+			text-decoration: none;
+			color: $white;
+			box-shadow: $el-3;
+			transform: translateY(-1px);
+			transition: $transition-base;
+			cursor: pointer;
+			background-color: darken($green, 5%);
+		}
+}
+
 // Typography
 /////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700');
@@ -156,11 +194,37 @@ p{
 }
 
 
+// Membership Identifiers and Badges
+/////////////////////////////////////////////////////////////////////////
+
+.avatar_pro_member_ring{
+	border: 2px solid #3ecf8e;
+	border-radius: 50%;
+}
+
+.avatar_basic_member_ring{
+	border: 2px solid #fdd761;
+	border-radius: 50%;
+}
+
+
 // Navigation
 /////////////////////////////////////////////////////////////////////////
 .navbar{
 	padding: 0 !important;
-	z-index: 2;
+	z-index: 3;
+	position: fixed;
+	top: 0px;
+	width: 100%
+}
+
+.navbar-nav {
+	flex-direction: row !important;
+}
+
+.sub-nav{
+	position:relative !important;
+	z-index: 0;
 }
 
 .home{
@@ -231,7 +295,7 @@ header{
 	.nav-item{
 		position: relative;
 		a{
-			padding: 20px 25px;
+			padding: 24px 25px;
 			display: block;
 			i{
 				color: $medium-blue-gray;
@@ -240,9 +304,10 @@ header{
 		}
 	}
 	#page-name{
-		padding-top: 23px;
+		padding-top: 27px;
 		padding-left: 20px;
 		font-size: 18px;
+		margin-bottom: 0px;
 	}
 	.notifications{
 		position: absolute;
@@ -379,6 +444,12 @@ header{
 
 	.comment{
 		display: none !important;
+	}
+	.broker-box{
+		height: 138px;
+	}
+	.dash-pro-signals{
+		height: 264px;
 	}
 	.active-members{
 		.item-meta{
@@ -1210,7 +1281,11 @@ a.wp-social-login-provider-twitter{
 	border-bottom-color: $gray-200;
 }
 
-#buddypress #item-header-avatar, #buddypress #item-header-content{
+#buddypress #item-header-content{
+	top: 2px;
+	padding-right: 25px !important;
+}
+#buddypress #item-header-avatar{
 	top: 75px;
 	max-width: 240px;
 }
@@ -1231,17 +1306,36 @@ a.wp-social-login-provider-twitter{
 					display: block;
 					padding: .3rem .6rem;
 					font-size: .9em;
+					&:hover{
+						text-decoration: none;
+					}
 				}
 			}
 			li.current{
 				a{
 					color: #fff;
-					background-color: #007bff;
+					background-color: $green;
+					font-size: .8rem;
+					transition: all .35s ease-in-out;
+					&:hover{
+						text-decoration: none;
+						color: $white;
+						box-shadow: $el-3;
+						transform: translateY(-1px);
+						transition: $transition-base;
+						cursor: pointer;
+						background-color: darken($green, 5%);
+					}
 				}
 			}
 		}
 	}
 }
+
+
+
+
+
 
 
 #buddypress div.item-list-tabs#subnav {
@@ -1261,6 +1355,7 @@ a.wp-social-login-provider-twitter{
 #buddypress #item-header-avatar{
 	z-index: 3;
 }
+
 
 
 // Edit Profile
@@ -1951,7 +2046,7 @@ a{
 	}
 }
 
-section.footer .container{
+section.footer .content{
 	border-top: 1px solid lighten($blue-gray, 30%);
 }
 
@@ -2018,8 +2113,14 @@ section.footer .container{
 
 		#buddypress #item-header-content{
 			z-index: 1;
-			margin-top: -89px;
-			padding-top: 113px !important;
+			margin-top: 0px;
+			padding-top: 85px !important;
+			top: 10px;
+		}
+
+		#buddypress div#item-header div.generic-button{
+			float: none;
+			display: inline-block;
 		}
 
 	}

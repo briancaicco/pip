@@ -33,7 +33,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 	 */
 	do_action( 'bp_before_directory_groups_content' ); ?>
 
-	<div class="container">
+	<div class="container" id="content">
 		<?php /* Backward compatibility for inline search form. Use template part instead. */ ?>
 		<?php if ( has_filter( 'bp_directory_groups_search_form' ) ) : ?>
 
