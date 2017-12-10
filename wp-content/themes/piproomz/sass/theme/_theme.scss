@@ -108,9 +108,9 @@
 	padding: 0px !important;
 }
 
-.alert-updated{
-	background-color: #d4edda;
-	border-color: #c3e6cb;
+.alert-updated, .alert-error, .alert-success, .alert-warning, .alert-primary, .alert-secondary, .alert-light, .alert-dark{
+	background-color: $medium-blue-gray;
+	border: 2px solid $border-gray;
 	p{
 		color: #155724;
 	}
@@ -333,8 +333,8 @@ header{
 
 	.dropdown-menu{
 		border-radius: 0 0 7px 7px;
-		top: 62px;
-		right: 1px;
+		top: 70px;
+		right: 20px;
 		box-shadow: none;
 		border: 2px solid $border-gray !important;
 		border-top: 0px !important;
@@ -1087,7 +1087,7 @@ a.wp-social-login-provider-twitter{
 .card{
 	border: none;
 	border-radius: 5px;
-	border: 2px solid $border-gray;
+	border: 2px solid $border-gray !important;
 }
 
 .card-title{
@@ -1277,10 +1277,6 @@ a.wp-social-login-provider-twitter{
 	
 	.content{
 		padding-top: 0px !important;
-	}
-
-	.card{
-		border: none;
 	}
 }
 

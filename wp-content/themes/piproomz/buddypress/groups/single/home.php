@@ -41,9 +41,9 @@
 			<?php } ?>
 		</div>
 	</div>	
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="col-md-8 mt-4">
+			<div class="col-md-8 pt-5">
 				<div class="col mb-3">
 					<h1><?php echo esc_attr( bp_get_group_name() ); ?></h1>
 				</div>
@@ -171,7 +171,7 @@
 					<?php endwhile; endif; ?>
 			</div>
 			<div class="col-md-4 pr-0 ">
-				<div class="sticky-top">
+				<div class="sticky-top pt-5">
 					<div data-room-id="0" data-height="600px" data-width="100%" class="iflychat-embed"></div>
 				</div>
 			</div>

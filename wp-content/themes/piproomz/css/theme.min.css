@@ -4545,9 +4545,9 @@ a.skip-link { position: fixed; z-index: 1000; top: 0px; right: 0px; }
 
 #buddypress div#message p, #sitewide-notice p { padding: 0px !important; }
 
-.alert-updated { background-color: #d4edda; border-color: #c3e6cb; }
+.alert-updated, .alert-error, .alert-success, .alert-warning, .alert-primary, .alert-secondary, .alert-light, .alert-dark { background-color: #c0c5d0; border: 2px solid #dfe2ec; }
 
-.alert-updated p { color: #155724; }
+.alert-updated p, .alert-error p, .alert-success p, .alert-warning p, .alert-primary p, .alert-secondary p, .alert-light p, .alert-dark p { color: #155724; }
 
 .alert { position: fixed; top: 20px; right: 20px; width: 360px; z-index: 99999; }
 
@@ -4617,7 +4617,7 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .primary-nav.navbar.dashboard .navbar-expand-md .navbar-nav .nav-link { padding: 0px !important; }
 
-.primary-nav.navbar.dashboard .dropdown-menu { border-radius: 0 0 7px 7px; top: 62px; right: 1px; box-shadow: none; border: 2px solid #dfe2ec !important; border-top: 0px !important; min-width: 200px; }
+.primary-nav.navbar.dashboard .dropdown-menu { border-radius: 0 0 7px 7px; top: 70px; right: 20px; box-shadow: none; border: 2px solid #dfe2ec !important; border-top: 0px !important; min-width: 200px; }
 
 .primary-nav.navbar.dashboard .dropdown-menu .dropdown-item { padding: 15px; margin: 0px; color: #677897; }
 
@@ -4841,7 +4841,7 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .page-template-fullwidthpage .card-body p { color: #868e96; }
 
-.card { border: none; border-radius: 5px; border: 2px solid #dfe2ec; }
+.card { border: none; border-radius: 5px; border: 2px solid #dfe2ec !important; }
 
 .card-title { color: #495057; }
 
@@ -4912,8 +4912,6 @@ a.wp-social-login-provider-twitter { display: none; }
 .bp-user #buddypress #item-nav { margin-top: 75px; }
 
 .bp-user .content { padding-top: 0px !important; }
-
-.bp-user .card { border: none; }
 
 .bp-avatar-nav ul.avatar-nav-items li.current { border-bottom-color: #e9ecef; }
 

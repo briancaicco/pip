@@ -66,7 +66,7 @@ switch ( bp_current_action() ) :
 			?></h2>
 		<?php endif; ?>
 
-		<div class="groups mygroups">
+		<div class="groups mygroups mt-5">
 
 			<?php bp_get_template_part( 'groups/groups-loop' ); ?>
 
