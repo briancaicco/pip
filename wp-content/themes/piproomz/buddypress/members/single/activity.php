@@ -9,30 +9,28 @@
 ?>
 
 <div class="item-list-tabs no-ajax" id="subnav" aria-label="<?php esc_attr_e( 'Member secondary navigation', 'buddypress' ); ?>" role="navigation">
-	
-<div class="container px-0">	<ul>
-		<?php bp_get_options_nav(); ?>
+	<div class="container px-0">	
+		<ul>
+			<?php bp_get_options_nav(); ?>
+			<li id="activity-filter-select" class="last text-center">
+				<select id="activity-filter-by" class="custom-select  mx-auto">
+					<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 
-		<li id="activity-filter-select" class="last text-center">
-			<select id="activity-filter-by" class="custom-select  mx-auto">
-				<option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
+					<?php bp_activity_show_filters(); ?>
 
-				<?php bp_activity_show_filters(); ?>
+					<?php
 
-				<?php
+					/**
+					 * Fires inside the select input for member activity filter options.
+					 *
+					 * @since 1.2.0
+					 */
+					do_action( 'bp_member_activity_filter_options' ); ?>
 
-				/**
-				 * Fires inside the select input for member activity filter options.
-				 *
-				 * @since 1.2.0
-				 */
-				do_action( 'bp_member_activity_filter_options' ); ?>
-
-			</select>
-		</li>
-	</ul></div>
-
-
+				</select>
+			</li>
+		</ul>
+	</div>
 </div><!-- .item-list-tabs -->
 
 

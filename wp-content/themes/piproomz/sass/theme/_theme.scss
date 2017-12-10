@@ -199,8 +199,8 @@ p{
 
 .badge a{
 	color: #fff !important;
-	&hover{
-		text-decoration: none;
+	&:hover{
+		text-decoration: none !important;
 	}
 }
 
@@ -1711,13 +1711,10 @@ a.wp-social-login-provider-twitter{
 }
 
 #groups-list  .group-button{
-	position: absolute;
 	z-index: 2;
-	width: 100%;
 	bottom: 20px;
 	margin: 0 auto;
 	display: block;
-	text-align: center;
 }
 
 
@@ -2053,7 +2050,7 @@ a{
 	}
 }
 
-section.footer .content{
+section.footer .container{
 	border-top: 1px solid lighten($blue-gray, 30%);
 }
 
@@ -2065,7 +2062,11 @@ section.footer .content{
 
 	.trader-view{
 		height: 500px;
-		margin-top: -75px !important;
+		margin-top: -36px !important;
+		background-image: url(../img/spinner.svg) !important;
+		background-size: 48px 48px !important;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 
 	.modal-lg {

@@ -4567,7 +4567,7 @@ p { font-family: "Raleway", sans-serif; }
 
 .badge a { color: #fff !important; }
 
-.badge ahover { text-decoration: none; }
+.badge a:hover { text-decoration: none !important; }
 
 .avatar_pro_member_ring { border: 2px solid #3ecf8e; border-radius: 50%; }
 
@@ -5041,7 +5041,7 @@ a.wp-social-login-provider-twitter { display: none; }
 
 #groups-list .card-link { position: absolute; display: block; height: 100%; width: 100%; }
 
-#groups-list .group-button { position: absolute; z-index: 2; width: 100%; bottom: 20px; margin: 0 auto; display: block; text-align: center; }
+#groups-list .group-button { z-index: 2; bottom: 20px; margin: 0 auto; display: block; }
 
 .groups #whats-new-avatar img { width: 45px; }
 
@@ -5153,9 +5153,9 @@ a { color: #677897; }
 
 a:hover { color: #526079; }
 
-section.footer .content { border-top: 1px solid #c2c9d5; }
+section.footer .container { border-top: 1px solid #c2c9d5; }
 
-@media (min-width: 576px) { .trader-view { height: 500px; margin-top: -75px !important; }
+@media (min-width: 576px) { .trader-view { height: 500px; margin-top: -36px !important; background-image: url(../img/spinner.svg) !important; background-size: 48px 48px !important; background-repeat: no-repeat; background-position: center; }
   .modal-lg { max-width: 800px; margin: 10px auto; padding: 10px; } }
 
 @media (min-width: 768px) { .bp_friends_widget { margin-top: 0px; }

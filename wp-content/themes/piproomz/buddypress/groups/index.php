@@ -64,7 +64,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 
 				<div class="col-12 mb-3 px-0">
 
-					<nav class="sub-nav navbar bg-light mb-3">
+					<nav class="sub-nav navbar mb-3">
 						<div class="item-list-tabs nav-justified"" aria-label="<?php esc_attr_e( 'Groups directory main navigation', 'buddypress' ); ?>">
 							<ul class="nav nav-pills">
 								<li class="selected nav-item" id="groups-all"><a class="nav-link" href="<?php bp_groups_directory_permalink(); ?>"><?php printf( __( 'All Rooms %s', 'buddypress' ), '<span class="badge badge-secondary">' . bp_get_total_group_count() . '</span>' ); ?></a></li>
