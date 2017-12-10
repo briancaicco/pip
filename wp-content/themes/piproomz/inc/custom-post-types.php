@@ -65,16 +65,6 @@ function pip_create_broker_cpt() {
 add_action( 'init', 'pip_create_broker_cpt', 0 );
 
 
-add_action('wp', 'pip_redirect_archive');
-function pip_redirect_archive() {
-    global $post;
-    if( is_post_type_archive( 'broker' ) ){
-        wp_redirect( home_url('/') );
-		  exit;
-    }
-    
-}
-
 
 /**
  * Custom Post Types

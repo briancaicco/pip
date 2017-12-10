@@ -4743,7 +4743,7 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .starter-membership .mepr-payment-method-desc-text, .pro-membership .mepr-payment-method-desc-text, .single-memberpressproduct .mepr-payment-method-desc-text { font-weight: normal; }
 
-.starter-membership .mp_wrapper, .starter-membership .mp_wrapper.mp_invoice, .pro-membership .mp_wrapper, .pro-membership .mp_wrapper.mp_invoice, .single-memberpressproduct .mp_wrapper, .single-memberpressproduct .mp_wrapper.mp_invoice { position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box; border-radius: 5px; border: 2px solid #dfe2ec; padding: 35px; margin-top: 65px; color: #677897; }
+.starter-membership .mp_wrapper, .starter-membership .mp_wrapper.mp_invoice, .pro-membership .mp_wrapper, .pro-membership .mp_wrapper.mp_invoice, .single-memberpressproduct .mp_wrapper, .single-memberpressproduct .mp_wrapper.mp_invoice { position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box; border-radius: 5px; border: 2px solid #dfe2ec; padding: 35px; margin-top: 145px !important; color: #677897; }
 
 .starter-membership .mp_wrapper .mp-form-row.mepr_coupon, .starter-membership .mp_wrapper.mp_invoice .mp-form-row.mepr_coupon, .pro-membership .mp_wrapper .mp-form-row.mepr_coupon, .pro-membership .mp_wrapper.mp_invoice .mp-form-row.mepr_coupon, .single-memberpressproduct .mp_wrapper .mp-form-row.mepr_coupon, .single-memberpressproduct .mp_wrapper.mp_invoice .mp-form-row.mepr_coupon { width: 25% !important; }
 
