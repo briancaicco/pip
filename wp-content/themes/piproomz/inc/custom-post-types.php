@@ -56,7 +56,7 @@ function pip_create_broker_cpt() {
 		'hierarchical' => false,
 		'exclude_from_search' => false,
 		'show_in_rest' => true,
-		'publicly_queryable' => true,
+		'publicly_queryable' => true, 
 		'capability_type' => 'post',
 	);
 	register_post_type( 'broker', $args );
@@ -129,7 +129,7 @@ function pip_create_Signal_cpt() {
 		'show_in_admin_bar' => true,
 		'show_in_nav_menus' => true,
 		'can_export' => true,
-		'has_archive' => false,
+		'has_archive' => true,
 		'hierarchical' => false,
 		'exclude_from_search' => false,
 		'show_in_rest' => true,
