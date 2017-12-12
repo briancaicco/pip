@@ -172,7 +172,36 @@
 			</div>
 			<div class="col-md-4 pr-0 ">
 				<div class="sticky-top pt-5">
-					<div data-room-id="0" data-height="600px" data-width="100%" class="iflychat-embed"></div>
+					<?php
+
+						$groupName = bp_group_name();
+
+						if( $groupName = 'XPTUSD') : $chatRoomId = '1';
+						elseif( $groupName = 'NZDUSD') : $chatRoomId = '2';
+						elseif( $groupName = 'XRPUSD') : $chatRoomId = '3';
+						elseif( $groupName = 'GBPNZD') : $chatRoomId = '4';
+						elseif( $groupName = 'CHFJPY') : $chatRoomId = '5';
+						elseif( $groupName = 'EURGBP') : $chatRoomId = '6';
+						elseif( $groupName = 'GBPCHF') : $chatRoomId = '7';
+						elseif( $groupName = 'GBPCAD') : $chatRoomId = '8';
+						elseif( $groupName = 'USDCAD') : $chatRoomId = '9';
+						elseif( $groupName = 'EURAUD') : $chatRoomId = '10';
+						elseif( $groupName = 'NZDJPY') : $chatRoomId = '11';
+						elseif( $groupName = 'GOLD')   : $chatRoomId = '12';
+						elseif( $groupName = 'EURNZD') : $chatRoomId = '13';
+						elseif( $groupName = 'EURJPY') : $chatRoomId = '14';
+						elseif( $groupName = 'AUDUSD') : $chatRoomId = '15';
+						elseif( $groupName = 'BTCUSD') : $chatRoomId = '16';
+						elseif( $groupName = 'GBPJPY') : $chatRoomId = '17';
+						elseif( $groupName = 'GBPUSD') : $chatRoomId = '18';
+						elseif( $groupName = 'EURTRY') : $chatRoomId = '19';
+						elseif( $groupName = 'EURUSD') : $chatRoomId = '20';
+						elseif( $groupName = 'ETHUSD') : $chatRoomId = '21';
+						elseif( $groupName = 'USDJPY') : $chatRoomId = '22';
+						endif;
+					?>
+
+					<div data-room-id="<?php echo $chatRoomId; ?>" data-height="600px" data-width="100%" class="iflychat-embed"></div>
 				</div>
 			</div>
 		</div>
