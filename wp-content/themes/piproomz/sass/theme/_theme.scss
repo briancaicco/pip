@@ -137,36 +137,44 @@ body{
 
 
 .generic-button a, {
-		position: relative;
-		color: #fff;
-		background-color: $green;
-		border: none;
-		margin-left: -1px;
-		display: inline-block;
-		font-weight: 400;
-		text-align: center;
-		white-space: nowrap;
-		vertical-align: middle;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		border: 1px solid transparent;
-		padding: .375rem .75rem;
-		font-size: .8rem;
-		line-height: 1.5;
-		border-radius: .25rem;
-		transition: all .35s ease-in-out;
-		box-shadow: none;
-		&:hover{
-			text-decoration: none;
-			color: $white;
-			box-shadow: $el-3;
-			transform: translateY(-1px);
-			transition: $transition-base;
-			cursor: pointer;
-			background-color: darken($green, 5%);
-		}
+	position: relative;
+	color: #fff;
+	background-color: $green;
+	border: none;
+	margin-left: -1px;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: .8rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	transition: all .35s ease-in-out;
+	box-shadow: none;
+	&:hover{
+		text-decoration: none;
+		color: $white;
+		box-shadow: $el-3;
+		transform: translateY(-1px);
+		transition: $transition-base;
+		cursor: pointer;
+		background-color: darken($green, 5%);
+	}
+}
+
+
+.loader{
+	background-image: url(../img/spinner.svg) !important;
+	background-size: 48px 48px !important;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 // Typography
@@ -237,6 +245,9 @@ p{
 .home{
 	.navbar{
 		z-index: 2;
+		background: $white;
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
 	}
 }
 
@@ -702,9 +713,20 @@ header{
 		margin-top: 145px !important;
 		color: $blue-gray;
 
-	.mp-form-row.mepr_coupon{
-		width: 25% !important;
-	}
+		.mp-form-row.mepr_coupon{
+			width: 25% !important;
+		}
+
+		.mepr-form input.invalid,
+		.mepr-form select.invalid,
+		.mepr-form textarea.invalid,
+		.mepr-form label.mepr-checkbox-field.invalid,
+		.mepr-form div.mepr-checkboxes-field.invalid,
+		.mepr-form div.mepr-radios-field.invalid {
+			border: 2px solid $red !important;
+			//background-color: #FF6666 !important;
+			background-color: lighten(#EAECEF, 5%) !important;
+		}
 
 		form{
 
@@ -718,8 +740,8 @@ header{
 			input.mepr-form-input{
 				border-radius: 5px;
 				border: 2px solid $border-gray !important;
-				background-color: lighten(#EAECEF, 5%);
-				color: $border-gray !important;
+				background-color: lighten(#EAECEF, 5%) !important;
+				color: $blue-gray !important;
 			}
 
 			.mepr-submit, .stripe-button-el{
@@ -744,14 +766,14 @@ header{
 				span{
 					background: transparent;
 					-webkit-box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
-				-moz-box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
-				-ms-box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
-				-o-box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
-				box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
-				-webkit-border-radius: 4px;
-				-moz-border-radius: 4px;
-				-ms-border-radius: 4px;
-				-o-border-radius: 4px;
+					-moz-box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
+					-ms-box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
+					-o-box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
+					box-shadow: inset 0 0 0 rgba(255,255,255,0.25);
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+					-ms-border-radius: 4px;
+					-o-border-radius: 4px;
 				}
 
 
@@ -785,14 +807,14 @@ header{
 		display: none !important;
 	}
 	&:before{
-    display: block !important;
-    content: ' ' !important;
-    background-image: url(../img/spinner.svg) !important;
-    background-size: 48px 48px !important;
-    height: 48px !important;
-    width: 48px !important;
-    text-align: center;
-    margin: 0 auto;
+		display: block !important;
+		content: ' ' !important;
+		background-image: url(../img/spinner.svg) !important;
+		background-size: 48px 48px !important;
+		height: 48px !important;
+		width: 48px !important;
+		text-align: center;
+		margin: 0 auto;
 	}
 }
 
@@ -819,22 +841,61 @@ header{
 	-webkit-appearance: none;
 }
 
-
-.mp_wrapper #mepr_loginform textarea, .mp_wrapper #mepr_loginform select, .mp_wrapper #mepr_loginform input[type=text], .mp_wrapper #mepr_loginform input[type=url], .mp_wrapper #mepr_loginform input[type=email], .mp_wrapper #mepr_loginform input[type=tel], .mp_wrapper #mepr_loginform input[type=number], .mp_wrapper #mepr_loginform input[type=password] {
-	display: block;
-	width: 100%;
-	padding: .5rem .75rem;
-	font-size: 1rem;
-	line-height: 1.25;
-	color: #495057;
-	background-color: transparent;
-	background-image: none;
-	background-clip: padding-box;
-	border: 0px solid rgba(0,0,0,.15) !important;
-	border-radius: 0rem;
-	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-	box-shadow: none;
+.register-login-switch p a{
+	color: $green;
+	&:hover{
+		text-decoration: none;
+	}
 }
+
+.register-accept-tos p{
+	font-size: 12px;
+	color: $medium-blue-gray;
+	a{
+		color: $green;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+
+.register-login-divider{
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	&:before{
+		border-top: 1px solid $border-gray;
+		content: "";
+		margin: 0 auto;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: -1;
+	}
+	span{
+		font-size: 12px;
+		padding: 0 9px;
+		color: $border-gray;
+		text-align: center;
+		background: #fff;
+	}
+}
+
+.mepr-form input.invalid,
+.mepr-form select.invalid,
+.mepr-form textarea.invalid,
+.mepr-form label.mepr-checkbox-field.invalid,
+.mepr-form div.mepr-checkboxes-field.invalid,
+.mepr-form div.mepr-radios-field.invalid {
+	border: 2px solid $red !important;
+	//background-color: #FF6666 !important;
+	background-color: lighten(#EAECEF, 5%) !important;
+}
+
+
 
 .home-page{
 	.mepr-login-actions a{
@@ -907,6 +968,14 @@ header{
 	}
 }
 
+
+.btn-sm{
+	border-radius: 20px;
+	&:hover{
+		text-decoration: none !important;
+	}
+}
+
 .btn.btn-switch{
 	box-shadow: none !important;
 	&:active{
@@ -935,6 +1004,9 @@ header{
 	border-color: $green;
 }
 
+.wp-social-login-widget{
+	text-align: center;
+}
 
 .wp-social-login-connect-with{
 	color: $white;
@@ -977,7 +1049,7 @@ a.wp-social-login-provider-facebook{
 		position: absolute;
 		content: "Facebook";
 		top: 13px;
-		width: 160px;
+		//width: 160px;
 		left: 55px;
 	}
 
@@ -987,6 +1059,7 @@ a.wp-social-login-provider-facebook{
 		transition: $transition-base;
 		cursor: pointer;
 		text-decoration: none;
+		color: $white;
 	}
 }
 a.wp-social-login-provider-google{
@@ -1013,7 +1086,7 @@ a.wp-social-login-provider-google{
 		position: absolute;
 		content: "Google";
 		top: 13px;
-		width: 160px;
+		//width: 160px;
 		left: 65px;
 	}
 	&:hover{
@@ -1022,6 +1095,7 @@ a.wp-social-login-provider-google{
 		transition: $transition-base;
 		cursor: pointer;
 		text-decoration: none;
+		color: $white;
 	}
 }
 
@@ -1769,273 +1843,6 @@ a.wp-social-login-provider-twitter{
 	}
 }
 
-// Register Page & Login Modal
-/////////////////////////////////////////////////////////////////////////
-
-// Login Modal
-.login-modal{
-	.auth_form{
-		background-position: center center;
-		background-repeat:  no-repeat;
-		background-attachment: fixed;
-		background-size:  cover;
-		@include blue-grad-hor;
-	}
-	.input-group-addon {
-		padding: 0rem 0rem;
-		margin-bottom: 0;
-		font-size: 1rem;
-		font-weight: normal;
-		line-height: 1.25;
-		color: #495057;
-		text-align: center;
-		background-color: transparent;
-		border: 0px solid rgba(0, 0, 0, 0.15);
-		border-radius: 0rem;
-		margin-left: 15px;
-		padding-right: 10px;
-	}
-	.input-group{
-		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-	}
-	.form-control{
-		background: transparent;
-		border: 0px;
-		color: $white;
-		font-size: 1em;
-		letter-spacing: 1px;
-		&::placeholder {
-			color:$white;
-			opacity: .5;
-		}
-	}
-	.fa{
-		color: rgba(255, 255, 255, 0.3)
-	}
-	.navbar-brand {
-		color: $white;
-		font-size: 28px;
-		text-align: center;
-		padding-left: 35px;
-	}
-	a:focus,
-	button:focus,
-	input:focus::-webkit-input-placeholder,
-	input:focus:-moz-placeholder,
-	input:focus::-moz-placeholder,
-	input:focus:-ms-input-placeholder,
-	input:focus,
-	textarea:focus {
-		outline: none !important;
-		transition: color ease-in-out .35s;		
-
-	}
-	input:focus::-webkit-input-placeholder { color:transparent; }
-	input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-	input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-	input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
-
-
-	.modal-header {
-		display: none;
-		align-items: center;
-		justify-content: space-between;
-		padding: 15px;
-		border-bottom: 0px solid #e9ecef;
-	}
-}
-
-// Register
-.register{
-	.page-title{
-		display: none;
-	}
-	.primary-nav {
-		display: none !important;
-	}
-	#profile-details-section{
-		//display: none !important;
-	}
-	.content{
-
-	}
-	.auth_form{
-		background-position: center center;
-		background-repeat:  no-repeat;
-		background-attachment: fixed;
-		background-size:  cover;
-		@include blue-grad-hor;
-	}
-	.input-group-addon {
-		padding: 0rem 0rem;
-		margin-bottom: 0;
-		font-size: 1rem;
-		font-weight: normal;
-		line-height: 1.25;
-		color: #495057;
-		text-align: center;
-		background-color: transparent;
-		border: 0px solid rgba(0, 0, 0, 0.15);
-		border-radius: 0rem;
-		margin-left: 15px;
-		padding-right: 10px;
-	}
-	.input-group{
-		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-	}
-	.form-control{
-		background: transparent;
-		border: 0px;
-		color: $white;
-		font-size: 1em;
-		letter-spacing: 1px;
-		&::placeholder {
-			color:$white;
-			opacity: .5;
-		}
-	}
-	footer{
-		display: none;
-	}
-
-	.fa{
-		color: rgba(255, 255, 255, 0.3)
-	}
-	.navbar-brand{
-		color: $white;
-		font-size: 28px;
-	}
-	a:focus,
-	button:focus,
-	input:focus::-webkit-input-placeholder,
-	input:focus:-moz-placeholder,
-	input:focus::-moz-placeholder,
-	input:focus:-ms-input-placeholder,
-	input:focus,
-	textarea:focus {
-		outline: none !important;
-		transition: color ease-in-out .35s;		
-
-	}
-	input:focus::-webkit-input-placeholder { color:transparent; }
-	input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-	input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-	input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
-
-
-	.wp-social-login-connect-with{
-		color: $white;
-		margin-bottom: 20px;
-	}
-	.wp-social-login-provider-list{
-		padding: 0px;
-	}
-	.wp-social-login-provider{
-		img{
-			display: none;
-		}
-	}
-	a.wp-social-login-provider{
-		width: 167px;
-		height: 50px;
-		display: inline-block;
-
-	}
-	a.wp-social-login-provider-facebook{
-		background: #3b5998;
-		margin-right: 10px;
-		color: $white;
-		transition: ease-in-out .35s;
-		box-shadow: $el-3;
-		position: relative;
-		&:before{
-			content: "\f09a";
-			font-family: FontAwesome;
-			font-style: normal;
-			font-weight: normal;
-			text-decoration: inherit;
-			color: #white;
-			font-size: 18px;
-			position: absolute;
-			top: 13px;
-			left: 23px;
-		}
-		&:after{
-			position: absolute;
-			content: "Facebook";
-			top: 13px;
-			width: 160px;
-			left: 55px;
-		}
-		&:hover{
-			box-shadow: $el-3;
-			transform: translateY(-1px);
-			transition: $transition-base;
-			cursor: pointer;
-			text-decoration: none;
-		}
-	}
-	a.wp-social-login-provider-google{
-		background: #d34837;
-		margin-right: 0px;
-		color: $white;
-		transition: ease-in-out .35s;
-		box-shadow: $el-1;
-		position: relative;
-		&:before{
-			content: "\f0d5";
-			font-family: FontAwesome;
-			font-style: normal;
-			font-weight: normal;
-			text-decoration: inherit;
-			color: #white;
-			font-size: 18px;
-			padding-right: 0.5em;
-			position: absolute;
-			top: 13px;
-			left: 23px;
-		}
-		&:after{
-			position: absolute;
-			content: "Google";
-			top: 13px;
-			width: 160px;
-			left: 65px;
-		}
-		&:hover{
-			box-shadow: $el-3;
-			transform: translateY(-1px);
-			transition: $transition-base;
-			cursor: pointer;
-			text-decoration: none;
-		}
-	}
-
-	a.wp-social-login-provider-twitter{
-		display: none;
-	}
-
-	.side_panel{
-		position: relative;
-		z-index: 1;
-		background-position: center center;
-		background-repeat:  no-repeat;
-		background-size:  cover;
-		opacity: .9;
-		background-image: url('../img/trader-bg5.jpg');
-		.filter{
-			position: relative;
-			z-index: 2;
-			width: 100%;
-			height: 100%;
-			display: block;
-			background-color: rgba(0, 23, 60, 0.4);
-			//@include blue-grad-hor-trans;
-		}
-	}
-
-}
-
 
 // Footer
 /////////////////////////////////////////////////////////////////////////
@@ -2069,6 +1876,10 @@ section.footer .container{
 		max-width: 800px;
 		margin: 10px auto;
 		padding: 10px;
+	}
+
+	.form-inline .form-group{
+		width: 50%;
 	}
 
 

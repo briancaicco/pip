@@ -23,6 +23,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
 
+<?php if( is_user_logged_in() && is_front_page() ) { ?>
+	<script type="text/javascript">
+		window.location.href="<?php bloginfo( 'url' ); ?>/dashboard";
+	</script>
+<?php } ?>
+
+
 <body id="piproomz" <?php body_class(); ?> >
 	<?php if ( !is_user_logged_in() && is_front_page() ) { ?>
 	<header> 
@@ -34,11 +41,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<a href="#" type="" data-toggle="modal" class="ml-auto mr-2 mr-sm-3" data-target="#loginmodal" style="text-decoration: none !important;" >
-					Login
-				</a>
-				<a href="#" type="" data-target="#loginmodal" class="btn btn-success btn-el" style="text-decoration: none !important;" >
-					Sign up
+				<a href="<?php bloginfo( 'url' );?>/login" class="btn-sm btn-success ml-auto mr-2 mr-sm-3"  >
+					Join or log in
 				</a>
 
 			</div>
@@ -55,9 +59,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<a href="<?php echo wp_logout_url( home_url() ); ?>" type="" data-toggle="modal" class="ml-auto mr-2 mr-sm-3" data-target="#loginmodal" style="text-decoration: none !important;" >
-					Logout
-				</a>
+				<?php do_shortcode( '[mepr-login-link]' ); ?>
+
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>/dashboard" type="" class="btn btn-success btn-el" style="text-decoration: none !important;" >
 					Dashboard
 				</a>

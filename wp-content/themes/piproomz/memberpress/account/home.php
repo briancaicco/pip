@@ -53,7 +53,7 @@
 
 		<div class="mepr_spacer">&nbsp;</div>
 
-		<input type="submit" name="mepr-account-form" value="<?php _ex('Save Profile', 'ui', 'memberpress'); ?>" class="mepr-submit mepr-share-button" />
+		<input type="submit" name="mepr-account-form" value="<?php _ex('Save Profile', 'ui', 'memberpress'); ?>" class="mepr-submit mepr-share-button btn btn-success" />
 		<img src="<?php echo admin_url('images/loading.gif'); ?>" style="display: none;" class="mepr-loading-gif" />
 		<?php MeprView::render('/shared/has_errors', get_defined_vars()); ?>
 	</form>

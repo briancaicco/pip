@@ -2703,6 +2703,20 @@
 		"oAP": "\/memberpress\/account\/subscriptions.php",
 		"oF": 0
 		},
+	"\/memberpress\/checkout\/form.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/checkout\/form.php",
+		"oF": 0
+		},
+	"\/memberpress\/checkout\/signup_row.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/memberpress\/checkout\/signup_row.php",
+		"oF": 0
+		},
 	"\/memberpress\/login\/already_logged_in.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2829,11 +2843,25 @@
 		"oAP": "\/page-templates\/left-sidebarpage.php",
 		"oF": 0
 		},
+	"\/page-templates\/login.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/login.php",
+		"oF": 0
+		},
 	"\/page-templates\/pricing.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/pricing.php",
+		"oF": 0
+		},
+	"\/page-templates\/register.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/register.php",
 		"oF": 0
 		},
 	"\/page-templates\/right-sidebarpage.php": {
@@ -3026,6 +3054,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/sass\/theme\/_contact-form7.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/theme\/_memberpress.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/theme\/_memberpress.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

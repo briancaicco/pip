@@ -95,7 +95,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</button>
 			</div>
 			<div class="modal-body">
-				<?php echo do_shortcode( '[mepr-login-form]' ); ?>
+				<?php //echo do_shortcode( '[mepr-login-form]' ); ?>
+				 <?php echo do_shortcode( '[mepr-membership-registration-form id="0"]'); ?>
 			</div>
 		</div>
 	</div>
