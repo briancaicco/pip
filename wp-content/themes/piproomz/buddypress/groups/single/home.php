@@ -174,7 +174,7 @@
 				<div class="sticky-top pt-5">
 					<?php
 
-						$groupName = get_bp_group_name();
+						$groupName = bp_get_group_name();
 
 						if( $groupName = 'XPTUSD') : $chatRoomId = 1;
 						elseif( $groupName = 'NZDUSD') : $chatRoomId = 2;
