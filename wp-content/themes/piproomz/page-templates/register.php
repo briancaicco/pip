@@ -7,7 +7,11 @@
  */
 get_header();
 ?>
-
+<?php if( is_user_logged_in() ) { ?>
+	<script type="text/javascript">
+		window.location.href="<?php bloginfo( 'url' ); ?>/dashboard";
+	</script>
+<?php } ?>
 <div class="container mt-3 mt-xl-5">
 	<div class="row justify-content-center">
 		<div class="col-sm-12 col-xl-5">

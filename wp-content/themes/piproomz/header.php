@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
 
-<?php if( is_user_logged_in() && is_front_page() ) { ?>
+<?php if( is_user_logged_in() && is_front_page()  ) { ?>
 	<script type="text/javascript">
 		window.location.href="<?php bloginfo( 'url' ); ?>/dashboard";
 	</script>

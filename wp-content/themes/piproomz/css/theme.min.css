@@ -4736,7 +4736,7 @@ p { font-family: "Raleway", sans-serif; }
 
 .sub-nav { position: relative !important; z-index: 0; }
 
-.home .navbar { z-index: 2; background: #fff; padding-top: 15px !important; padding-bottom: 15px !important; }
+.page-template-home .navbar { z-index: 2; background: #fff; padding-top: 15px !important; padding-bottom: 15px !important; }
 
 .nav-pills .nav-item.selected, .show > .nav-pills .nav-item { background: #fff; border-radius: .25rem; font-weight: 700; }
 
