@@ -40,13 +40,17 @@ $("#menu-toggle").click(function() {
 });
 
 
-  $('[data-toggle="tooltip"]').tooltip();
-
-
+  //$('[data-toggle="tooltip"]').tooltip();
 
   // Menu Toggle
 
-  function toggleClassMenu() {
+
+});
+
+
+window.onload = function(){ 
+
+	  function toggleClassMenu() {
   	myMenu.classList.add("menu--animatable"); 
   	if(!myMenu.classList.contains("menu--visible")) {   
   		myMenu.classList.add("menu--visible");
@@ -55,21 +59,9 @@ $("#menu-toggle").click(function() {
   	} 
   }
 
-  function OnTransitionEnd() {
-  	myMenu.classList.remove("menu--animatable");
-  }
-
   var myMenu = document.querySelector(".menu");
   var oppMenu = document.querySelector(".menu-icon");
-  myMenu.addEventListener("transitionend", OnTransitionEnd, false);
   oppMenu.addEventListener("click", toggleClassMenu, false);
   myMenu.addEventListener("click", toggleClassMenu, false);
 
-
-
-
-});
-
-
-
-
+};

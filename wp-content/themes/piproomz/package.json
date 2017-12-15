@@ -27,10 +27,13 @@
   },
   "homepage": "https://understrap.com",
   "dependencies": {
+    "awesome-phonenumber": "^2.2.3",
     "bootstrap": "4.0.0-beta",
     "browser-sync": "^2.18.12",
+    "cleave.js": "^1.0.7",
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
+    "google-libphonenumber": "^3.0.9",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.7.0",
     "gulp-clone": "^1.0.0",

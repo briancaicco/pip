@@ -6,7 +6,8 @@
     "minimum-stability": "stable",
     "require": {
         "twilio/sdk": "^5.16",
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "giggsey/libphonenumber-for-php": "^8.8"
     },
     "keywords": ["wordpress","theme","bootstrap"],
     "homepage": "https://github.com/holger1411/understrap"

@@ -4924,7 +4924,17 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 #pp_standard_redirecting_message:before { display: block !important; content: ' ' !important; background-image: url(../img/spinner.svg) !important; background-size: 48px 48px !important; height: 48px !important; width: 48px !important; text-align: center; margin: 0 auto; }
 
+.page-template-register .mepr-submit { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.755rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; border-radius: 40px; padding: 15px 35px; margin-bottom: 40px; width: 100%; color: #fff !important; background-color: #3ecf8e; border-color: #3ecf8e; display: inline-block; text-align: center; white-space: nowrap; vertical-align: middle; background-image: none; transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+
+.page-template-register .mepr-submit span { background: transparent; -webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -moz-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -ms-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -o-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25); -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; }
+
+.page-template-register .mepr-submit:hover { background: #30c381; border-color: #3ecf8e; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; }
+
+.page-template-register .mepr-submit { text-align: center; }
+
 .form-control, .wpcf7 input[type=text], .wpcf7 input[type=search], .wpcf7 input[type=url], .wpcf7 input[type=tel], .wpcf7 input[type=number], .wpcf7 input[type=range], .wpcf7 input[type=date], .wpcf7 input[type=month], .wpcf7 input[type=week], .wpcf7 input[type=time], .wpcf7 input[type=datetime], .wpcf7 input[type=datetime-local], .wpcf7 input[type=color], .wpcf7 input[type=email], .wpcf7 input[type=file], .wpcf7 input[type=submit], .wpcf7 select, .wpcf7 textarea, .wpcf7 .wpcf7-validation-errors { display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #495057; background-color: #fff; background-image: none; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 0rem; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; box-shadow: none; }
+
+.mepr_price { display: none; }
 
 .custom-select { -webkit-appearance: none; }
 

@@ -18,6 +18,10 @@ class ComposerStaticInit9ea0eb8511e0d523d5ee41688902c1d3
         array (
             'phpseclib\\' => 10,
         ),
+        'l' => 
+        array (
+            'libphonenumber\\' => 15,
+        ),
         'T' => 
         array (
             'Twilio\\' => 7,
@@ -38,6 +42,7 @@ class ComposerStaticInit9ea0eb8511e0d523d5ee41688902c1d3
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'Google\\Auth\\' => 12,
+            'Giggsey\\Locale\\' => 15,
         ),
         'F' => 
         array (
@@ -49,6 +54,10 @@ class ComposerStaticInit9ea0eb8511e0d523d5ee41688902c1d3
         'phpseclib\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
+        'libphonenumber\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src',
         ),
         'Twilio\\' => 
         array (
@@ -85,6 +94,10 @@ class ComposerStaticInit9ea0eb8511e0d523d5ee41688902c1d3
         'Google\\Auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/auth/src',
+        ),
+        'Giggsey\\Locale\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/locale/src',
         ),
         'Firebase\\JWT\\' => 
         array (

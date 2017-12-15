@@ -176,7 +176,6 @@
 
 						$getGroupName = bp_get_group_name();
 						$groupName = strtoupper($getGroupName);
-						print_r($groupName);
 
 						if( $groupName == 'XPTUSD') : $chatRoomId = '1';
 						elseif( $groupName == 'NZDUSD') : $chatRoomId = '2';

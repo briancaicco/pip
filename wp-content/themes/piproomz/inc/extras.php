@@ -316,87 +316,41 @@ function pip_theme_cover_image_css( $settings = array() ) {
 		$signal_post['ID'] = $post_id;
 
 		$post_type = get_post_type( $signal_post );
-		if ($post_type != 'signal') {
-			return;
-		}
-		
-		$currency_pair = get_field('currency_pair');
+		if ($post_type = 'signal') {
 
-		$signal_post['post_title'] = $currency_pair;
-		$signal_post['post_name'] = sanitize_title( $currency_pair );
+			$currency_pair = get_field('currency_pair');
+
+			$signal_post['post_title'] = $currency_pair;
+			$signal_post['post_name'] = sanitize_title( $currency_pair );
 
 	// Update the post into the database
-		wp_update_post( $signal_post );
+			wp_update_post( $signal_post );
 
-		$user_args = array(
-			'meta_query' => array(
-				array(
-					'key' => 'wp_capabilities',
-					'value' => 'pro_member',
-					'compare' => 'LIKE'
-				),
-				array(
-					'key' => 'wp_capabilities',
-					'value' => 'basic_member',
-					'compare' => 'LIKE'
-				),
-			)
-		);
-		$members = get_users($user_args);
-		$sid = 'ACe89a3d593fb889b057173c9a86c8cca3';
-		$token = '75bb952b81a486d419d5f2a30b2a3a07';
-		$twilioNumber = '+14378000211';
-
-		$client = new Client($sid, $token);
-
-		$signal_pair = get_field('currency_pair', $post_id);
-		$signal_url = get_the_permalink( $post_id );
-
-
-		foreach ($members as $member) {
-			
-			$phoneNumber = formatPhoneNumber($member->mepr_phone_number);
-
-			$client->messages->create(
-				$phoneNumber,
-				array(
-					'messagingServiceSid' => "MGde1360b17bf233497be010f7e2035f7e",
-					'body' => "Hey! New signal from piproomz.com for: $signal_pair. Check it out! $signal_url "
-				)
+	// WP_User_Query arguments
+			$args = array(
+				'role' => 'pro_member'
 			);
 
+	// The User Query
+			$wp_user_query = new WP_User_Query( $args );
+
+			$members = $wp_user_query->get_results();
+
+			foreach ($members as $member) {
+
+				$user_id = $member->ID;
+				$user_info = get_userdata( $user_id );
+				$user_phone = $user_info->mepr_phone_number;
+
+				$twilioArgs = array( 
+					'number_to' => $user_phone,
+					'message' => 'Hello Programmer!',
+				); 
+				twl_send_sms( $twilioArgs );
+
+			}
 
 		}
-
-	}
-
-	function formatPhoneNumber($phoneNumber) {
-		$phoneNumber = preg_replace('/[^0-9]/','',$phoneNumber);
-
-		if(strlen($phoneNumber) > 10) {
-			$countryCode = substr($phoneNumber, 0, strlen($phoneNumber)-10);
-			$areaCode = substr($phoneNumber, -10, 3);
-			$nextThree = substr($phoneNumber, -7, 3);
-			$lastFour = substr($phoneNumber, -4, 4);
-
-			$phoneNumber = '+'.$countryCode.' ('.$areaCode.') '.$nextThree.'-'.$lastFour;
-		}
-		else if(strlen($phoneNumber) == 10) {
-			$areaCode = substr($phoneNumber, 0, 3);
-			$nextThree = substr($phoneNumber, 3, 3);
-			$lastFour = substr($phoneNumber, 6, 4);
-
-			$phoneNumber = '('.$areaCode.') '.$nextThree.'-'.$lastFour;
-		}
-		else if(strlen($phoneNumber) == 7) {
-			$nextThree = substr($phoneNumber, 0, 3);
-			$lastFour = substr($phoneNumber, 3, 4);
-
-			$phoneNumber = $nextThree.'-'.$lastFour;
-		}
-
-		return $phoneNumber;
-
 
 	}
 
@@ -433,11 +387,11 @@ function pip_theme_cover_image_css( $settings = array() ) {
 		$user_id = bp_displayed_user_id();
 		$user = new WP_User( $user_id );
 
-			if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
-		    	echo '<div class="badge badge-success text-white member-lvl">Pro</div>';
-			} elseif ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'basic_member', $user->roles ) ){
-				echo '<div class="badge badge-warning text-white member-lvl">Basic</div>';
-			}
+		if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
+			echo '<div class="badge badge-success text-white member-lvl">Pro</div>';
+		} elseif ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'basic_member', $user->roles ) ){
+			echo '<div class="badge badge-warning text-white member-lvl">Basic</div>';
+		}
 	}
 
 // User Badges
@@ -448,11 +402,11 @@ function pip_theme_cover_image_css( $settings = array() ) {
 		$user_id = bp_get_activity_user_id();
 		$user = new WP_User( $user_id );
 
-			if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
-		    	echo 'avatar_pro_member_ring';
-			} elseif ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'basic_member', $user->roles ) ){
-				echo 'avatar_basic_member_ring';
-			}
+		if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
+			echo 'avatar_pro_member_ring';
+		} elseif ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'basic_member', $user->roles ) ){
+			echo 'avatar_basic_member_ring';
+		}
 	}
 
 
