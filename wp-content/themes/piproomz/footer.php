@@ -94,7 +94,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 <?php 
-if( is_page( array( '4007', '204'))){ ?>
+if( is_single( array( '4007', '204'))){ ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/node_modules/cleave.js/dist/cleave.js" /></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/node_modules/cleave.js/dist/addons/cleave-phone.i18n.js" /></script>
 	<script type="text/javascript">
