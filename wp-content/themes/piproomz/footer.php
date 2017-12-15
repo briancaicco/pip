@@ -85,24 +85,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php } ?>
 
 
-<!-- Modal Login-->
-<div class="modal login-modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodalLabel" aria-hidden="true" style="z-index: 10000400">
-	<div class="modal-dialog " role="document">
-		<div class="modal-content rounded-0 auth_form">
-			<div class="modal-header ">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<?php //echo do_shortcode( '[mepr-login-form]' ); ?>
-				 <?php echo do_shortcode( '[mepr-membership-registration-form id="0"]'); ?>
-			</div>
-		</div>
-	</div>
-</div>
-
-
 <!-- Modal upgrade-->
 <div class="modal upgrade-modal-lg fade" id="upgrademodal" tabindex="-1" role="dialog" aria-labelledby="upgrademodalLabel" aria-hidden="true" style="z-index: 10000400">
 	<div class="modal-dialog modal-lg" role="document">
@@ -110,6 +92,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div>
 </div>
 
+
+<?php 
+if( is_page( array( '4007', '204'))){ ?>
+	<script src="<?php echo get_template_directory_uri(); ?>/node_modules/cleave.js/dist/cleave.js" /></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/node_modules/cleave.js/dist/addons/cleave-phone.i18n.js" /></script>
+	<script type="text/javascript">
+		var cleavePhone = new Cleave('#mepr_phone_number', {
+		    phone: true,
+		    phoneRegionCode: 'US'
+		});
+	</script>
+<?php } ?>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108382349-1"></script>
