@@ -336,6 +336,9 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 			$members = $wp_user_query->get_results();
 
+			$signal_pair = get_field('currency_pair', $post_id);
+			$signal_url = get_the_permalink( $post_id );
+
 			foreach ($members as $member) {
 
 				$user_id = $member->ID;
@@ -344,7 +347,7 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 				$twilioArgs = array( 
 					'number_to' => $user_phone,
-					'message' => 'Hello Programmer!',
+					'message' => "Hey! New signal from piproomz.com for: $signal_pair. Check it out! $signal_url "
 				); 
 				twl_send_sms( $twilioArgs );
 
