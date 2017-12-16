@@ -3,7 +3,7 @@
 
  if(current_user_can('pro_member')) {
 
-	$query = new WP_Query( array( 'post_type' => 'signal', 'posts_per_page' => '5') );
+	$query = new WP_Query( array( 'post_type' => 'signal', 'posts_per_page' => '4') );
 	$restrict = false;
 
 } else{
