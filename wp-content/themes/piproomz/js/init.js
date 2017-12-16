@@ -43,14 +43,7 @@ $("#menu-toggle").click(function() {
   //$('[data-toggle="tooltip"]').tooltip();
 
   // Menu Toggle
-
-
-});
-
-
-window.onload = function(){ 
-
-	  function toggleClassMenu() {
+  	  function toggleClassMenu() {
   	myMenu.classList.add("menu--animatable"); 
   	if(!myMenu.classList.contains("menu--visible")) {   
   		myMenu.classList.add("menu--visible");
@@ -63,5 +56,13 @@ window.onload = function(){
   var oppMenu = document.querySelector(".menu-icon");
   oppMenu.addEventListener("click", toggleClassMenu, false);
   myMenu.addEventListener("click", toggleClassMenu, false);
+
+
+});
+
+
+window.onload = function(){ 
+
+
 
 };
