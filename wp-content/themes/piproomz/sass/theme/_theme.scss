@@ -590,10 +590,10 @@ header{
 	.currency-pair{
 		font-weight: bold;
 	}
-	.action.buy{
+	.action.buy, .action.buy-stop, .action.buy-limit{
 		color: $green !important;
 	}
-	.action.sell{
+	.action.sell, .action.sell-stop, .action.sell-limit{
 		color: $red !important;
 	}
 	.signal-meta{
