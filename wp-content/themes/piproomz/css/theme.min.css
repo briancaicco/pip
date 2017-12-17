@@ -4856,9 +4856,9 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .signal .currency-pair { font-weight: bold; }
 
-.signal .action.buy, .signal .action.buy-stop, .signal .action.buy-limit { color: #3ecf8e !important; }
+.signal .action.buy, .signal .action.buy_stop, .signal .action.buy_limit { color: #3ecf8e !important; }
 
-.signal .action.sell, .signal .action.sell-stop, .signal .action.sell-limit { color: #c23d4b !important; }
+.signal .action.sell, .signal .action.sell_stop, .signal .action.sell_limit { color: #c23d4b !important; }
 
 .signal .signal-meta { font-size: 11px; opacity: .5; color: #677897; }
 
