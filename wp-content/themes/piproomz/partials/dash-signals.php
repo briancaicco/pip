@@ -22,7 +22,7 @@ $i=0;
 			<div class="card-body">
 				<div class="d-flex justify-content-between">
 					<p class="currency-pair mr-auto"><?php the_title(); ?> - <?php the_field('entry_price'); ?></p>
-					<p class="action font-weight-bold <?php $action = get_field('action'); $action = strtolower($action); echo $action; ?>"><?php the_field('action'); ?></p>
+					<p class="action font-weight-bold <?php $action = get_field('action'); echo $action['value']; ?>"><?php echo $action['label']; ?></p>
 				</div>
 				<div class="">
 					<div class="signal-meta"><b>Entry Time:</b> <?php the_field('entry_time'); ?></div> 
@@ -31,7 +31,7 @@ $i=0;
 				</div>
 				<div class="d-flex justify-content-between">
 					<div class="signal-meta"><b>SL:</b> <?php the_field('stop_loss'); ?> / <b>TP:</b> <?php the_field('take_profit'); ?> / <b>Hold:</b> <?php the_field('hold_length'); ?></div>
-					<div class="signal-meta"><b>Posted:</b> <?php the_time( 'g:i a' ) ?></div>
+					<!-- <div class="signal-meta"><b>Posted:</b> <?php the_time( 'g:i a' ) ?></div> -->
 				</div>
 			</div>
 		</div>
