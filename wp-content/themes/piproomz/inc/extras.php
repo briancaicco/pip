@@ -344,9 +344,11 @@ function pip_theme_cover_image_css( $settings = array() ) {
 				$user_id = $member->ID;
 				$user_info = get_userdata( $user_id );
 				$user_phone = $user_info->mepr_phone_number;
+				$user_phone_alt = $user_info->mepr_phone;
+
 
 				$twilioArgs = array( 
-					'number_to' => $user_phone,
+					'number_to' => array( " . $user_phone . ", " . $user_phone_alt . " ),
 					'message' => "Hey! New signal from piproomz.com for: $signal_pair. Check it out! $signal_url "
 				); 
 				twl_send_sms( $twilioArgs );
