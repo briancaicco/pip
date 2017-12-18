@@ -98,7 +98,7 @@ if( is_single( array( '4007', '204'))){ ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/node_modules/cleave.js/dist/cleave.js" /></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/node_modules/cleave.js/dist/addons/cleave-phone.i18n.js" /></script>
 	<script type="text/javascript">
-		var cleavePhone = new Cleave('#mepr_phone', {
+		var cleavePhone = new Cleave(array( '#mepr_phone_number','#mepr_phone' ) {
 		    phone: true,
 		    phoneRegionCode: 'US'
 		});
