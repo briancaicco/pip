@@ -345,7 +345,7 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			foreach ($members as $member) {
 				$user_id = $member->ID;
 				$user_info = get_userdata( $user_id );
-				$user_phone = $user_info->mepr_phone_number;
+				$user_phone = $user_info->mepr_phone;
 				$memberNumbers[$i] = $user_phone;
 				$i++;
 			}
