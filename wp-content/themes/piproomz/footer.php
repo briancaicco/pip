@@ -13,45 +13,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 <?php if( !is_page('login') && !is_singular( 'signal' ) ) { ?>
-<?php if ( !is_user_logged_in() || is_front_page() ) { ?>
 
-<section class="footer py-4 mt-5">
-	<!-- ******************* The Footer Area ******************* -->
-	<?php get_sidebar( 'footerfull' ); ?>
-
-	<div class="<?php echo esc_attr( $container ); ?> pt-3">
-
-		<div class="row">
-
-			<div class="col-md-3">
-				<span class="navbar-brand" rel="home" href="" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></span>
-			</div><!--col end -->
-			<div class="col-md-3">
-				<nav class="nav flex-column">
-					<a class="nav-link active" href="<?php bloginfo( 'url' ) ?>/privacy-policy">Privacy Policy</a>
-					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/terms-of-use">Terms of Use</a>
-					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/risk-warning">Risk Warning</a>
-					<a class="nav-link" href="<?php bloginfo( 'url' ) ?>/faq">Frequently Asked Questions</a>
-				</nav>
-			</div><!--col end -->
-			<div class="col-md-3">
-
-			</div><!--col end -->
-			<div class="col-md-3">
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- container end -->
-</section>
-<?php } elseif ( is_page('dashboard') ) { ?>
+<?php if ( is_page(array( '31', '2', 'dashboard'))) { ?>
 
 
 
 <?php } else { ?>
-<section class="footer py-4 mt-5">
-	<!-- ******************* The Footer Area ******************* -->
+<section class="footer py-4 mt-5 hiden">
+	<!-- ******************* The Footer Area  -->
 	<?php get_sidebar( 'footerfull' ); ?>
 
 	<div class="<?php echo esc_attr( $container ); ?> pt-3">

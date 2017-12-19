@@ -16,13 +16,6 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
 		wp_enqueue_script( 'understrap-scripts', get_template_directory_uri() . '/js/theme.min.js', array(), $the_theme->get( 'Version' ), true );
-		
-		// if ( is_page_template( 'page-templates/register.php' ) ) {
-		// 	// Phone number field validator
-		// 	wp_enqueue_script( 'cleave', get_template_directory_uri() . '/node_modules/cleave.js/dist/cleave.js', array(), $the_theme->get( 'Version' ), false );
-		// 	wp_enqueue_script( 'cleave-phone', get_template_directory_uri() . '/node_modules/cleave.js/dist/addons/cleave-phone.i18n.js', array(), $the_theme->get( 'Version' ), false );
-		// 	wp_enqueue_script( 'cleave-init', get_template_directory_uri() . '/js/cleave-init.js', array(), $the_theme->get( 'Version' ), false );
-		// }
 
 		// Initiate JS functions
 		wp_enqueue_script( 'pip-init', get_template_directory_uri() . '/js/init.js', array(), false);

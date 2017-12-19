@@ -2233,6 +2233,13 @@
 		"oAP": "\/inc\/setup.php",
 		"oF": 0
 		},
+	"\/inc\/signals-sms.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/signals-sms.php",
+		"oF": 0
+		},
 	"\/inc\/style-wpcom.css": {
 		"aP": 1,
 		"bl": 0,
@@ -3256,6 +3263,16 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/src\/js\/jquery.history.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/src\/js\/jquery.history-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/src\/js\/jquery.js": {
 		"ft": 64,
 		"ma": 0,
@@ -3312,6 +3329,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/src\/js\/skip-link-focus-fix-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/src\/js\/slippy.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/src\/js\/slippy-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -4547,6 +4574,19 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/src\/sass\/fontawesome\/font-awesome.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/slippy\/_slippy.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/slippy\/_slippy.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

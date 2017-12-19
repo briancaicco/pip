@@ -309,13 +309,14 @@ function pip_theme_cover_image_css( $settings = array() ) {
 	//////////////////////////////////////////////////////////////////////
 
 	function pip_signals_post_publish( $post_id ) {
-
+		
 	// Auto Generate Title and Slug for Signals
 
 		$signal_post = array();
 		$signal_post['ID'] = $post_id;
 
 		$post_type = get_post_type( $signal_post );
+		
 		if ($post_type = 'signal') {
 
 			$currency_pair = get_field('currency_pair');
@@ -346,6 +347,7 @@ function pip_theme_cover_image_css( $settings = array() ) {
 				$user_id = $member->ID;
 				$user_info = get_userdata( $user_id );
 				$user_phone = $user_info->mepr_phone;
+	// Loop through users and all their numbers to the array using a counter.
 				$memberNumbers[$i] = $user_phone;
 				$i++;
 			}
@@ -361,6 +363,7 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			}
 
 		}
+
 
 	}
 
