@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 	});
 
 
-// Dashboard Nav
+// Dashboard Nav 
 $("#menu-toggle").click(function() {
 	$("#wrapper").toggleClass("toggled");
 });
