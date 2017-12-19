@@ -339,16 +339,21 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			$signal_pair = get_field('currency_pair', $post_id);
 			$signal_url = get_the_permalink( $post_id );
 
-			foreach ($members as $member) {
+			$i = 0;
 
+	// Build Array of User Numbers
+			foreach ($members as $member) {
 				$user_id = $member->ID;
 				$user_info = get_userdata( $user_id );
 				$user_phone = $user_info->mepr_phone_number;
-				$user_phone_alt = $user_info->mepr_phone;
+				$memberNumbers[$i] = $user_phone;
+				$i++;
+			}
 
+			foreach ($memberNumbers as $memberNumber) {
 
 				$twilioArgs = array( 
-					'number_to' => array( " . $user_phone . ", " . $user_phone_alt . " ),
+					'number_to' => $memberNumber,
 					'message' => "Hey! New signal from piproomz.com for: $signal_pair. Check it out! $signal_url "
 				); 
 				twl_send_sms( $twilioArgs );
