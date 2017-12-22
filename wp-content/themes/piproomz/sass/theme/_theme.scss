@@ -2,6 +2,10 @@
 /////////////////////////////////////////////////////////////////////////
 .modal-content{
 	box-shadow: none !important;
+	.close{
+		float: right;
+
+	}
 }
 
 .modal-backdrop{
@@ -175,6 +179,13 @@ body{
 	background-size: 48px 48px !important;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+.page-loader{
+	background-image: url(../img/spinner.svg) !important;
+	background-size: 48px 48px !important;
+	background-repeat: no-repeat;
+	background-position: 50% 20%;
 }
 
 // Typography
@@ -446,6 +457,35 @@ header{
 	pointer-events: auto;
 }
 
+
+// Welcome Modal
+/////////////////////////////////////////////////////////////////////////
+.welcome-modal-lg{
+	.close{
+		float: right;
+	    font-weight: bold;
+	    line-height: 1.2;
+	    color: #fff;
+	    text-shadow: none;
+	    opacity: 1;
+	    background: $dark-blue-gray;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		float: right;
+		top: -20px;
+		right: -20px;
+		position: absolute;
+
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	.close span{
+		position: relative;
+    	top: -2px;
+	}
+}
 
 // Dashboard
 /////////////////////////////////////////////////////////////////////////

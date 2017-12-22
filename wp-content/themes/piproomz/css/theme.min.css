@@ -4676,6 +4676,8 @@ div#mepr-account-nav { margin-bottom: 25px; width: auto !important; }
 
 .modal-content { box-shadow: none !important; }
 
+.modal-content .close { float: right; }
+
 .modal-backdrop { z-index: 10000300; }
 
 .blue-grad { background-color: #1b60d8; background-image: -webkit-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -moz-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: -o-linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); background-image: linear-gradient(135deg, #1b60d8 20%, #2AF598 100%); }
@@ -4715,6 +4717,8 @@ body:focus, body:focus.active, body.focus, body.focus.active { outline: none; }
 .generic-button a:hover { text-decoration: none; color: #fff; box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; background-color: #30c381; }
 
 .loader { background-image: url(../img/spinner.svg) !important; background-size: 48px 48px !important; background-repeat: no-repeat; background-position: center; }
+
+.page-loader { background-image: url(../img/spinner.svg) !important; background-size: 48px 48px !important; background-repeat: no-repeat; background-position: 50% 20%; }
 
 body { font-family: "Montserrat", "Lato", "Open Sans", "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif; background: #EAECEF; }
 
@@ -4801,6 +4805,12 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 .menu:after { content: ''; display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); opacity: 0; will-change: opacity; pointer-events: none; transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1); }
 
 .menu--visible.menu:after { opacity: 1; pointer-events: auto; }
+
+.welcome-modal-lg .close { float: right; font-weight: bold; line-height: 1.2; color: #fff; text-shadow: none; opacity: 1; background: #1a2239; width: 40px; height: 40px; border-radius: 50%; float: right; top: -20px; right: -20px; position: absolute; }
+
+.welcome-modal-lg .close:hover { cursor: pointer; }
+
+.welcome-modal-lg .close span { position: relative; top: -2px; }
 
 .page-template-dashboard h1, .page-template-dashboard h2, .page-template-dashboard h3, .page-template-dashboard h4, .page-template-dashboard h5, .page-template-dashboard h6, .page-template-dashboard .h1, .page-template-dashboard .h2, .page-template-dashboard .h3, .page-template-dashboard .h4, .page-template-dashboard .h5, .page-template-dashboard .h6 { color: #1a2239 !important; }
 

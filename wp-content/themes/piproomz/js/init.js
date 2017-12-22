@@ -34,36 +34,43 @@ jQuery(document).ready(function($) {
 	});
 
 
-// Dashboard Nav 
-$("#menu-toggle").click(function() {
-	$("#wrapper").toggleClass("toggled");
+	// Don't Autoplay carousel
+	//$('.carousel').carousel('pause');
+
+
+	$welcomeCookie = Cookies.get('hide_welcome');
+
+	if ( $welcomeCookie !== 'yes'){
+	    // Show welcome modal
+		$('#welcomemodal').modal('show');
+	}
+
+	// If user closed welcome modal set cookie and don't sow it again.
+	$('#welcomemodal .close span').on('click', function () {
+		Cookies.set('hide_welcome', 'yes', { expires: 2800 });
+	});
+
+	// Main navigation display functions
+
+	// Enable Menu slide animation
+	$('.menu').addClass('menu--animatable');
+
+	// Activate on icon click
+	$('.menu-icon').on('click', function(){
+		$('.menu').toggleClass('menu--visible');
+
+	});
+
+	// hide menu if visible and click 
+	$('.menu--animatable').on('click', function(){
+		$('.menu').removeClass('menu--visible');
+
+	});
+
+	// fade out the content on link click
+	$('.menu--animatable .nav-link').on('click', function(){
+		$('body').fadeOut();
+	});
+
+
 });
-
-
-
-  //$('[data-toggle="tooltip"]').tooltip();
-
-  // Menu Toggle
-  	  function toggleClassMenu() {
-  	myMenu.classList.add("menu--animatable"); 
-  	if(!myMenu.classList.contains("menu--visible")) {   
-  		myMenu.classList.add("menu--visible");
-  	} else {
-  		myMenu.classList.remove('menu--visible');   
-  	} 
-  }
-
-  var myMenu = document.querySelector(".menu");
-  var oppMenu = document.querySelector(".menu-icon");
-  oppMenu.addEventListener("click", toggleClassMenu, false);
-  myMenu.addEventListener("click", toggleClassMenu, false);
-
-
-});
-
-
-window.onload = function(){ 
-
-
-
-};
