@@ -1449,6 +1449,12 @@ a.wp-social-login-provider-twitter{
 	.content{
 		padding-top: 0px !important;
 	}
+
+	
+	#orders-personal-li{
+		display: none !important;
+	}
+
 }
 
 .bp-avatar-nav ul.avatar-nav-items li.current {
@@ -1505,11 +1511,6 @@ a.wp-social-login-provider-twitter{
 		}
 	}
 }
-
-
-
-
-
 
 
 #buddypress div.item-list-tabs#subnav {

@@ -5114,6 +5114,8 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .bp-user .content { padding-top: 0px !important; }
 
+.bp-user #orders-personal-li { display: none !important; }
+
 .bp-avatar-nav ul.avatar-nav-items li.current { border-bottom-color: #e9ecef; }
 
 #buddypress #item-header-content { top: 2px; padding-right: 25px !important; }
