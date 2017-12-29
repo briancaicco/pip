@@ -2826,6 +2826,13 @@
 		"oAP": "\/page-templates\/dashboard.php",
 		"oF": 0
 		},
+	"\/page-templates\/dashboard_v2.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/dashboard_v2.php",
+		"oF": 0
+		},
 	"\/page-templates\/empty.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2915,6 +2922,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/dash-brokers.php",
+		"oF": 0
+		},
+	"\/partials\/dash-currFilter.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/dash-currFilter.php",
 		"oF": 0
 		},
 	"\/partials\/dash-main.php": {

@@ -2062,6 +2062,50 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover{
 }
 
 
+// LearnPress
+/////////////////////////////////////////////////////////////////////////
+
+#course-curriculum-popup{
+	#popup-main {
+		#popup-header{
+			background: $green;
+    		border-bottom: 1px solid $green;
+    		
+    		.popup-title{
+    			font-size: 18px;
+    		}
+    		
+    		.popup-close:hover{
+    			background: darken($green, 5%);
+    		}
+    	}
+    	#popup-content{
+    		top: 65px;
+    	}
+	}
+}
+
+.learn-press-breadcrumb{
+	display: none;
+}
+
+.lp-single-course, .lp-archive-courses{
+	margin-top: 120px;
+}
+
+.learn-press-courses li.course .course-thumbnail {
+    padding: 50px;
+
+}
+
+.learn-press-courses li.course h3{
+	font-size: 14px;
+}
+
+.learn-press-courses li.course .course-info{
+	display: none;
+}
+
 // Footer
 /////////////////////////////////////////////////////////////////////////
 a{

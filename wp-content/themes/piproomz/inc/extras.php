@@ -425,6 +425,83 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 
 
+///////////////////// Add all Currencies Dynamically to ACF /////////////////////
+
+function pip_load_currency_select_field_choices( $field ) {
+
+    $field['choices'] = array();
+
+    $all_currencies = get_posts(array(
+        'posts_per_page'    =>  -1,
+        'post_type'         =>  'currencies',
+        'post_status'       =>  'publish'
+    ));
+
+    if( is_array($all_currencies) ) {
+        foreach( $all_currencies as $currency_pair ) {
+            $field['choices'][ $currency_pair->ID ] = $currency_pair->post_title;
+        }
+    }
+
+    // return the field
+    return $field;
+
+}
+add_filter('acf/load_field/name=currency_pair', 'pip_load_currency_select_field_choices');
+
+
+
+///////////////////// Roomz filter function /////////////////////
+function pip_roomz_filter_function(){ 
+	
+	$show_currencies = $_POST['currency'];
+
+	if( isset( $_POST['currency'] ) ){
+		$args = array(
+			'post_type' => 'currency',
+			'include' => $show_currencies,
+		);
+	} else{
+
+		return;
+	}
+
+	$response = array();
+	$query = new WP_Query($args);
+
+    if ( ! $query->have_posts() ) {
+        $response->status = false;
+
+        // remember to send an information about why it failed, always.
+        $response->message = esc_attr__( 'No posts were found' );
+    } else {
+        $response->status = true;
+
+        // We will return the whole query to allow any customization on the front end
+        $response->query = $query; 
+    }
+
+    // Never forget to exit or die on the end of a WordPress AJAX action!
+    exit( json_encode( $response ) ); 
+
+}
+
+add_action('wp_ajax_roomz_filter', 'pip_roomz_filter_function'); 
+add_action('wp_ajax_nopriv_roomz_filter', 'pip_roomz_filter_function');
+
+
+
+///////////////////// Insert currency posts ///////////////////// 
+// Helper function, only needed to be run one time on theme setup //
+
+
+// $currencies = array('GOLD','EURJPY','JPYUSD','USDCAD','GBPUSD','USDCHF','BTCUSD','CHFJPY','NZDJPY','AUDUSD','NZDUSD','GBPCHF','GBPJPY','EURGBP','EURAUD','GBPCAD','GBPNZD','EURCAD','BTCUSD','ETHUSD');
+
+// foreach ($currencies as $currency_pair) {
+// 	wp_insert_post( 
+// 		array( 'post_title' => $currency_pair, 'post_type'=>'currency', 'post_content'=>'')
+// 	);
+// }
 
 //add page slug to body class, if on a page
 //////////////////////////////////////////////////////////////////////

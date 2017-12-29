@@ -5296,6 +5296,24 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover { background: #3ecf8e
 
 .groups .sub-nav ul .selected a span { color: #111; background-color: #f8f9fa; }
 
+#course-curriculum-popup #popup-main #popup-header { background: #3ecf8e; border-bottom: 1px solid #3ecf8e; }
+
+#course-curriculum-popup #popup-main #popup-header .popup-title { font-size: 18px; }
+
+#course-curriculum-popup #popup-main #popup-header .popup-close:hover { background: #30c381; }
+
+#course-curriculum-popup #popup-main #popup-content { top: 65px; }
+
+.learn-press-breadcrumb { display: none; }
+
+.lp-single-course, .lp-archive-courses { margin-top: 120px; }
+
+.learn-press-courses li.course .course-thumbnail { padding: 50px; }
+
+.learn-press-courses li.course h3 { font-size: 14px; }
+
+.learn-press-courses li.course .course-info { display: none; }
+
 a { color: #677897; }
 
 a:hover { color: #526079; }
