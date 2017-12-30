@@ -2601,6 +2601,146 @@
 		"oAP": "\/languages\/understrap.pot",
 		"oF": 0
 		},
+	"\/learnpress\/content-archive-course.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/content-archive-course.php",
+		"oF": 0
+		},
+	"\/learnpress\/content-course.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/content-course.php",
+		"oF": 0
+		},
+	"\/learnpress\/content-single-course.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/content-single-course.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/index.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/instructor.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/instructor.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/introduce.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/introduce.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/loop-begin.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/loop-begin.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/loop-end.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/loop-end.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/meta-begin.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/meta-begin.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/meta-end.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/meta-end.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/pagination.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/pagination.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/price.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/price.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/students.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/students.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/thumbnail.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/thumbnail.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/course\/title.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/course\/title.php",
+		"oF": 0
+		},
+	"\/learnpress\/loop\/index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/loop\/index.php",
+		"oF": 0
+		},
+	"\/learnpress\/search-form.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/search-form.php",
+		"oF": 0
+		},
+	"\/learnpress\/single-course\/buttons.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/single-course\/buttons.php",
+		"oF": 0
+		},
+	"\/learnpress\/single-course\/tabs\/curriculum.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/single-course\/tabs\/curriculum.php",
+		"oF": 0
+		},
+	"\/learnpress\/single-course\/tabs\/tabs.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/learnpress\/single-course\/tabs\/tabs.php",
+		"oF": 0
+		},
 	"\/loop-templates\/content-blank.php": {
 		"cB": 0,
 		"ft": 8192,

@@ -5038,6 +5038,14 @@ a.wp-social-login-provider-twitter { display: none; }
 
 .activity-permalink .bp-user .btn:hover, .activity-permalink .bp-user .wpcf7 input[type=submit]:hover, .wpcf7 .activity-permalink .bp-user input[type=submit]:hover { transform: translateY(0px); }
 
+.search-course-input { border-radius: 5px; border: 2px solid #dfe2ec !important; margin-right: -2px !important; }
+
+.input-group-append { z-index: 2; }
+
+.input-group-append .btn, .input-group-append .wpcf7 input[type=submit], .wpcf7 .input-group-append input[type=submit] { border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; box-shadow: none !important; border: 2px solid #dfe2ec !important; }
+
+.input-group-append .btn-success:hover { transform: none; transition: all 0.2s ease-in-out; }
+
 .page-template-fullwidthpage .card-body h1, .page-template-fullwidthpage .card-body h2, .page-template-fullwidthpage .card-body h3, .page-template-fullwidthpage .card-body h4, .page-template-fullwidthpage .card-body h5, .page-template-fullwidthpage .card-body h6 { color: #495057; }
 
 .page-template-fullwidthpage .card-body p { color: #868e96; }
@@ -5296,13 +5304,49 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover { background: #3ecf8e
 
 .groups .sub-nav ul .selected a span { color: #111; background-color: #f8f9fa; }
 
-#course-curriculum-popup #popup-main #popup-header { background: #3ecf8e; border-bottom: 1px solid #3ecf8e; }
+#course-curriculum-popup a:hover { text-decoration: none !important; }
+
+#course-curriculum-popup #popup-main #popup-header { background: #3ecf8e !important; border-bottom: none !important; }
 
 #course-curriculum-popup #popup-main #popup-header .popup-title { font-size: 18px; }
 
-#course-curriculum-popup #popup-main #popup-header .popup-close:hover { background: #30c381; }
+#course-curriculum-popup #popup-main #popup-header .popup-close { height: 60px !important; width: 60px !important; }
+
+#course-curriculum-popup #popup-main #popup-header .popup-close:hover { background: #218659 !important; }
+
+#course-curriculum-popup #popup-main #popup-header .popup-menu { border-right: 1px solid #269a66 !important; }
+
+#course-curriculum-popup #popup-main #popup-header .sidebar-hide-btn, #course-curriculum-popup #popup-main #popup-header .sidebar-show-btn { height: 60px !important; width: 60px !important; }
+
+#course-curriculum-popup #popup-main #popup-header .sidebar-hide-btn:hover, #course-curriculum-popup #popup-main #popup-header .sidebar-show-btn:hover { background: #218659 !important; }
 
 #course-curriculum-popup #popup-main #popup-content { top: 65px; }
+
+.learn-press-tabs .learn-press-nav-tabs .learn-press-nav-tab.active { border-bottom: 4px solid #3ecf8e !important; }
+
+.learn-press-tabs .learn-press-nav-tabs .learn-press-nav-tab.active a { color: #3ecf8e !important; }
+
+.learn-press-tabs .learn-press-nav-tabs .learn-press-nav-tab.active a:hover { color: #30c381 !important; text-decoration: none !important; border-color: #30c381 !important; }
+
+.learn-press-tabs .learn-press-nav-tabs .learn-press-nav-tab.active:after { border: none !important; }
+
+.learn-press-content-item-title { border-bottom: 3px solid #dfe2ec !important; }
+
+.course-item-navigation { border-top: 4px solid #dfe2ec !important; }
+
+#learn-press-course-curriculum .course-item .item-status { color: #3ecf8e !important; }
+
+#learn-press-course-curriculum .section-header { background: #868e96 !important; color: #fff; padding: 20px !important; border: none !important; }
+
+#learn-press-course-curriculum .section-header:hover { cursor: pointer; }
+
+#learn-press-course-curriculum .course-item-title:hover { text-decoration: none !important; }
+
+#learn-press-course-curriculum .course-item.item-current:before { background: #3ecf8e !important; }
+
+#learn-press-course-curriculum .course-item.viewable:hover { background: #cdf3e2 !important; }
+
+.learn-press-courses { margin: 0 !important; }
 
 .learn-press-breadcrumb { display: none; }
 
@@ -5310,9 +5354,15 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover { background: #3ecf8e
 
 .learn-press-courses li.course .course-thumbnail { padding: 50px; }
 
-.learn-press-courses li.course h3 { font-size: 14px; }
+.learn-press-courses li.course h3 { font-size: 14px !important; }
 
 .learn-press-courses li.course .course-info { display: none; }
+
+.course-meta { display: none !important; }
+
+#learn-press-course-curriculum .section-header .meta .collapse { background: #7bdeb2 !important; }
+
+#learn-press-course-curriculum .course-item .item-status { background: transparent !important; }
 
 a { color: #677897; }
 

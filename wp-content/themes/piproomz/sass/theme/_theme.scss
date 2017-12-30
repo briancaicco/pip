@@ -1238,6 +1238,29 @@ a.wp-social-login-provider-twitter{
 	}
 }
 
+.search-course-input{
+	border-radius: 5px;
+    border: 2px solid #dfe2ec !important;
+    margin-right: -2px !important;
+}
+
+.input-group-append {
+	z-index: 2;
+	.btn{ 
+		border-top-left-radius: 0px !important;
+		border-bottom-left-radius: 0px !important;
+		box-shadow: none !important;
+    	border: 2px solid #dfe2ec !important;
+	}
+
+	.btn-success{
+		&:hover{
+			transform: none;
+   			transition: all 0.2s ease-in-out;
+		}
+	}
+}
+
 // Page Templates
 /////////////////////////////////////////////////////////////////////////
 
@@ -2066,23 +2089,105 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover{
 /////////////////////////////////////////////////////////////////////////
 
 #course-curriculum-popup{
+	a{
+		&:hover{
+			text-decoration: none !important;
+		}
+	}
 	#popup-main {
 		#popup-header{
-			background: $green;
-    		border-bottom: 1px solid $green;
-    		
+			background: $green !important;
+    		border-bottom: none !important;
+
     		.popup-title{
     			font-size: 18px;
     		}
     		
-    		.popup-close:hover{
-    			background: darken($green, 5%);
+    		.popup-close{
+    			height: 60px !important;
+    			width: 60px !important;
+    			&:hover{
+    				background: darken($green, 20%) !important;
+    			}
     		}
+
+    		.popup-menu{
+    			border-right: 1px solid darken($green, 15%) !important;
+    		}
+
+    		.sidebar-hide-btn, .sidebar-show-btn{
+    			height: 60px !important;
+    			width: 60px !important;
+    			&:hover{
+    				background: darken($green, 20%) !important;
+    			}
+       		}
+
     	}
     	#popup-content{
     		top: 65px;
     	}
 	}
+}
+
+.learn-press-tabs{
+	.learn-press-nav-tabs{
+		.learn-press-nav-tab.active{
+			border-bottom: 4px solid $green !important;
+			a{
+				color: $green !important;
+				&:hover{
+					color: darken($green, 5%) !important;
+					text-decoration: none !important;
+					border-color: darken($green, 5%) !important;
+				}
+			}
+			&:after{
+				border: none !important;
+			}
+		}
+	}
+}
+
+.learn-press-content-item-title{
+	border-bottom: 3px solid $border-gray !important;	
+}
+.course-item-navigation{
+	border-top: 4px solid $border-gray !important;
+}
+
+
+#learn-press-course-curriculum {
+	.course-item .item-status{
+		color: $green !important;
+	}
+	.section-header{
+	background: $gray-600 !important;
+	color: $white;
+	padding: 20px !important;
+	border: none !important;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+	.course-item-title{
+		&:hover{
+			text-decoration: none !important;
+		}
+	}
+
+	.course-item.item-current:before{
+		background: $green !important;
+	}
+
+	.course-item.viewable:hover{
+		background: lighten($green, 35%) !important;
+	}
+}
+
+.learn-press-courses{
+	margin: 0 !important;
 }
 
 .learn-press-breadcrumb{
@@ -2099,11 +2204,23 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover{
 }
 
 .learn-press-courses li.course h3{
-	font-size: 14px;
+	font-size: 14px !important;
 }
 
 .learn-press-courses li.course .course-info{
 	display: none;
+}
+
+.course-meta{
+	display: none !important;
+}
+
+#learn-press-course-curriculum .section-header .meta .collapse {
+	background: lighten($green, 15%) !important;
+}
+
+#learn-press-course-curriculum .course-item .item-status {
+	background: transparent !important;
 }
 
 // Footer
