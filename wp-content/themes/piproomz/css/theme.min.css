@@ -5338,6 +5338,8 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover { background: #3ecf8e
 
 #learn-press-course-curriculum .section-header { background: #868e96 !important; color: #fff; padding: 20px !important; border: none !important; }
 
+#learn-press-course-curriculum .section-header h4 { font-size: 1.15rem !important; }
+
 #learn-press-course-curriculum .section-header:hover { cursor: pointer; }
 
 #learn-press-course-curriculum .course-item-title:hover { text-decoration: none !important; }

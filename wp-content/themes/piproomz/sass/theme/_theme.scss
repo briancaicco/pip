@@ -2166,6 +2166,9 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover{
 	color: $white;
 	padding: 20px !important;
 	border: none !important;
+		h4{
+			font-size: 1.15rem !important;
+		}
 		&:hover{
 			cursor: pointer;
 		}
