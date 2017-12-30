@@ -5364,6 +5364,10 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover { background: #3ecf8e
 
 #learn-press-course-curriculum .course-item .item-status { background: transparent !important; }
 
+#learn-press-block-content:before { border: 2px solid #ced4da !important; }
+
+#learn-press-block-content span:before { border: 6px solid #3ecf8e !important; }
+
 a { color: #677897; }
 
 a:hover { color: #526079; }

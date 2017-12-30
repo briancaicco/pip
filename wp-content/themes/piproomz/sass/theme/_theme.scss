@@ -2223,6 +2223,13 @@ input.bpfb_primary_button, input.bpfb_primary_button:hover{
 	background: transparent !important;
 }
 
+#learn-press-block-content:before{
+	border: 2px solid $gray-400 !important;
+}
+#learn-press-block-content span:before {
+	border: 6px solid $green !important;
+}
+
 // Footer
 /////////////////////////////////////////////////////////////////////////
 a{
