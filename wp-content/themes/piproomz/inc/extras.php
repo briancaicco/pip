@@ -193,7 +193,7 @@ function bp_get_notifcation_count( ) {
 			return;
 		}
 
-		buddypress()->groups->nav->edit_nav( array( 'name' => __( 'Room Discussion', 'buddypress' ) ), 'forum', bp_current_item() );
+		//buddypress()->groups->nav->edit_nav( array( 'name' => __( 'Room Discussion', 'buddypress' ) ), 'forum', bp_current_item() );
 	}
 	add_action( 'bp_actions', 'bpcodex_rename_group_tabs' );
 
@@ -427,67 +427,122 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 ///////////////////// Add all Currencies Dynamically to ACF /////////////////////
 
-function pip_load_currency_select_field_choices( $field ) {
+	function pip_load_currency_select_field_choices( $field ) {
 
-    $field['choices'] = array();
+		$field['choices'] = array();
 
-    $all_currencies = get_posts(array(
-        'posts_per_page'    =>  -1,
-        'post_type'         =>  'currencies',
-        'post_status'       =>  'publish'
-    ));
+		$all_currencies = get_posts(array(
+			'posts_per_page'    =>  -1,
+			'post_type'         =>  'currency',
+			'post_status'       =>  'publish'
+		));
 
-    if( is_array($all_currencies) ) {
-        foreach( $all_currencies as $currency_pair ) {
-            $field['choices'][ $currency_pair->ID ] = $currency_pair->post_title;
-        }
-    }
+		if( is_array($all_currencies) ) {
+			foreach( $all_currencies as $currency_pair ) {
+				$field['choices'][ $currency_pair->post_title ] = $currency_pair->post_title;
+			}
+		}
 
     // return the field
-    return $field;
+		return $field;
 
-}
-add_filter('acf/load_field/name=currency_pair', 'pip_load_currency_select_field_choices');
+	}
+	add_filter('acf/load_field/name=currency_pair', 'pip_load_currency_select_field_choices');
 
+
+
+///////////////////// Roomz -> get room members from room ID /////////////////////
+	function pip_roomz_get_group_members($group_id){
+		global $wpdb;
+
+		if ($group_id != 0 ) {
+
+		// Check for query transient in database
+		if ( false === ( $group_members = get_transient( 'group_members' ) ) ) {
+
+					$group_members = $wpdb->get_results( 
+						"
+						SELECT group_id, user_id 
+						FROM wp_bp_groups_members
+						WHERE group_id = $group_id
+						"
+					);
+			// Save query results to database as transient
+			set_transient( 'group_members', $group_members, 12 * HOUR_IN_SECONDS );
+		}
+
+		// Loop through query results
+		if ($group_members != 0) {
+				foreach ( $group_members as $group_member ){
+
+					$user_info = get_userdata( $group_member->user_id );
+					echo $user_info->user_login;
+					$user_avatar = apply_filters( 'bp_group_request_user_avatar_thumb', bp_core_fetch_avatar( array( 'item_id' => $group_member->user_id, 'type' => 'thumb' ) ) );
+					echo $user_avatar;
+					echo "<br/>";
+
+				}
+			}
+		}
+
+	}
 
 
 ///////////////////// Roomz filter function /////////////////////
-function pip_roomz_filter_function(){ 
-	
-	$show_currencies = $_POST['currency'];
+	function pip_roomz_filter_function(){ 
 
-	if( isset( $_POST['currency'] ) ){
-		$args = array(
-			'post_type' => 'currency',
-			'include' => $show_currencies,
-		);
-	} else{
+		$show_currencies = $_POST['currency'];
 
-		return;
-	}
+		if( isset( $_POST['currency'] ) ){
+			$args = array(
+				'post_type' => 'currency',
+				'post__in' => $show_currencies,
+			);
+		} else{
 
-	$response = array();
-	$query = new WP_Query($args);
+			return;
+		}
 
-    if ( ! $query->have_posts() ) {
-        $response->status = false;
+		// Check for query transient in database
+		if ( false === ( $roomz = get_transient( 'roomz' ) ) ) {
+			
+			$roomz = get_posts( $args );
+			
+			set_transient( 'roomz', $roomz, 7 * DAY_IN_SECONDS );
+		}
 
-        // remember to send an information about why it failed, always.
-        $response->message = esc_attr__( 'No posts were found' );
-    } else {
-        $response->status = true;
+		if ( $roomz != 0 ){ 
 
-        // We will return the whole query to allow any customization on the front end
-        $response->query = $query; 
-    }
+			foreach ($roomz as $room ){ ?>
 
-    // Never forget to exit or die on the end of a WordPress AJAX action!
-    exit( json_encode( $response ) ); 
+
+			<div class="col-12">
+				<h4><?php echo $room->post_title; ?></h4>
+					<iframe src="https://www.tradingview.com/widgetembed/?symbol=<?php echo $room->post_title; ?>&interval=30&hidetoptoolbar=1&hidesidetoolbar=1&saveimage=0&hidevolume=true&padding=0&studies=[]&hideideas=1&theme=Light&style=1&timezone=Etc/UTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en" height="410px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+
+
+				<?php
+					
+					$group_id = groups_get_id( $room->post_title );
+					pip_roomz_get_group_members($group_id);
+
+				?>
+
+			</div>
+
+			<?php
+		}
+
+	} 
+
+	wp_die();
 
 }
 
 add_action('wp_ajax_roomz_filter', 'pip_roomz_filter_function'); 
 add_action('wp_ajax_nopriv_roomz_filter', 'pip_roomz_filter_function');
+
+
 
 
 

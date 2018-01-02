@@ -624,6 +624,15 @@ header{
 	}
 }	
 
+.page-template-dashboard_v2{
+	iframe { 
+		min-width:100%;
+		width:100%;
+		padding:0;
+		border:0;
+		height:400px;
+	}
+}
 // Signals List
 .signal{
 	transition: all .2s ease-in-out;

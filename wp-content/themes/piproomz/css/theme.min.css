@@ -4862,6 +4862,8 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .page-template-dashboard .ticker-pair:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
 
+.page-template-dashboard_v2 iframe { min-width: 100%; width: 100%; padding: 0; border: 0; height: 400px; }
+
 .signal { transition: all .2s ease-in-out; }
 
 .signal .currency-pair { font-weight: bold; }
