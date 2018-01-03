@@ -333,10 +333,16 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			);
 
 	// The User Query
+		// Check for query transient in database
+		if ( false === ( $wp_user_query = get_transient( 'pip_query_users' ) ) ) {
+				
 			$wp_user_query = new WP_User_Query( $args );
 
 			$members = $wp_user_query->get_results();
 
+			// Save query results to database as transient
+			set_transient( 'pip_query_users', $wp_user_query, 4 * HOUR_IN_SECONDS );
+		}
 			$signal_pair = get_field('currency_pair', $post_id);
 			$signal_url = get_the_permalink( $post_id );
 
@@ -398,7 +404,15 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 	function get_user_badge() {
 		$user_id = bp_displayed_user_id();
-		$user = new WP_User( $user_id );
+
+			// Check for query transient in database
+		if ( false === ( $user = get_transient( 'pip_query_users_id' ) ) ) {	
+			
+			$user = new WP_User( $user_id );
+			
+			// Save query results to database as transient
+			set_transient( 'pip_query_users_id', $user, 12 * HOUR_IN_SECONDS );
+		}
 
 		if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
 			echo '<div class="badge badge-success text-white member-lvl">Pro</div>';
@@ -413,7 +427,15 @@ function pip_theme_cover_image_css( $settings = array() ) {
 	function get_activity_avatar_user_badge() {
 		
 		$user_id = bp_get_activity_user_id();
-		$user = new WP_User( $user_id );
+
+					// Check for query transient in database
+		if ( false === ( $user = get_transient( 'pip_query_users_id_2' ) ) ) {	
+			
+			$user = new WP_User( $user_id );
+			
+			// Save query results to database as transient
+			set_transient( 'pip_query_users_id_2', $user, 12 * HOUR_IN_SECONDS );
+		}
 
 		if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'pro_member', $user->roles ) ) {
 			echo 'avatar_pro_member_ring';
@@ -488,6 +510,40 @@ function pip_theme_cover_image_css( $settings = array() ) {
 	}
 
 
+
+///////////////////// Return Ifly Chat foreach group name /////////////////////
+	function pip_get_ifly_chat_rooms( $groupName ){ 
+
+		if( $groupName == 'XPTUSD') : $chatRoomId = '1';
+		elseif( $groupName == 'NZDUSD') : $chatRoomId = '2';
+		elseif( $groupName == 'XRPUSD') : $chatRoomId = '3';
+		elseif( $groupName == 'GBPNZD') : $chatRoomId = '4';
+		elseif( $groupName == 'CHFJPY') : $chatRoomId = '5';
+		elseif( $groupName == 'EURGBP') : $chatRoomId = '6';
+		elseif( $groupName == 'GBPCHF') : $chatRoomId = '7';
+		elseif( $groupName == 'GBPCAD') : $chatRoomId = '8';
+		elseif( $groupName == 'USDCAD') : $chatRoomId = '9';
+		elseif( $groupName == 'EURAUD') : $chatRoomId = '10';
+		elseif( $groupName == 'NZDJPY') : $chatRoomId = '11';
+		elseif( $groupName == 'GOLD')   : $chatRoomId = '12';
+		elseif( $groupName == 'EURNZD') : $chatRoomId = '13';
+		elseif( $groupName == 'EURJPY') : $chatRoomId = '14';
+		elseif( $groupName == 'AUDUSD') : $chatRoomId = '15';
+		elseif( $groupName == 'BTCUSD') : $chatRoomId = '16';
+		elseif( $groupName == 'GBPJPY') : $chatRoomId = '17';
+		elseif( $groupName == 'GBPUSD') : $chatRoomId = '18';
+		elseif( $groupName == 'EURTRY') : $chatRoomId = '19';
+		elseif( $groupName == 'EURUSD') : $chatRoomId = '20';
+		elseif( $groupName == 'ETHUSD') : $chatRoomId = '21';
+		elseif( $groupName == 'USDJPY') : $chatRoomId = '22';
+		else: $chatRoomId = '0';
+		endif;
+
+	//echo '<div data-room-id=' . $chatRoomId . ' data-height="100%" data-width="100%" class="iflychat-embed"></div>';
+	$url = site_url();
+	echo '<iframe src="'. $url . '/ifly-chat-frame?room_id=' . $chatRoomId . '" />';
+}
+
 ///////////////////// Roomz filter function /////////////////////
 	function pip_roomz_filter_function(){ 
 
@@ -503,32 +559,29 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			return;
 		}
 
-		// Check for query transient in database
-		if ( false === ( $roomz = get_transient( 'roomz' ) ) ) {
+		$roomz = get_posts( $args );
 			
-			$roomz = get_posts( $args );
-			
-			set_transient( 'roomz', $roomz, 7 * DAY_IN_SECONDS );
-		}
-
 		if ( $roomz != 0 ){ 
 
 			foreach ($roomz as $room ){ ?>
 
+				<div class="row">
+					<div class="col-9">
+						<!-- <h4><?php echo $room->post_title; ?></h4> -->
+							<iframe src="https://www.tradingview.com/widgetembed/?symbol=<?php echo $room->post_title; ?>&interval=30&hidetoptoolbar=1&hidesidetoolbar=1&saveimage=0&hidevolume=true&padding=0&studies=[]&hideideas=1&theme=Light&style=1&timezone=Etc/UTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en" height="410px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
 
-			<div class="col-12">
-				<h4><?php echo $room->post_title; ?></h4>
-					<iframe src="https://www.tradingview.com/widgetembed/?symbol=<?php echo $room->post_title; ?>&interval=30&hidetoptoolbar=1&hidesidetoolbar=1&saveimage=0&hidevolume=true&padding=0&studies=[]&hideideas=1&theme=Light&style=1&timezone=Etc/UTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en" height="410px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+						<?php
+							
+							$group_id = groups_get_id( $room->post_title );
+							pip_roomz_get_group_members($group_id);
 
+						?>
 
-				<?php
-					
-					$group_id = groups_get_id( $room->post_title );
-					pip_roomz_get_group_members($group_id);
-
-				?>
-
-			</div>
+					</div>
+					<div class="col-3">
+						<?php pip_get_ifly_chat_rooms($room->post_title); ?>
+					</div>
+				</div>
 
 			<?php
 		}

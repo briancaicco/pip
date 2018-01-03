@@ -170,7 +170,7 @@ function pip_create_currency_cpt() {
 		'description' => __( '', 'text_domain' ),
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-money',
-		'supports' => array('custom-fields'),
+		'supports' => array('custom-fields', 'title'),
 		'taxonomies' => array(),
 		'public' => true,
 		'show_ui' => true,

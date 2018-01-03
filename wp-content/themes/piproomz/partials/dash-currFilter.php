@@ -53,7 +53,7 @@
 </div>
 <!-- 	<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
  -->	
-<div id="response" class="row mt-4">
+<div id="response" class="mt-4">
 </div>
 
 
