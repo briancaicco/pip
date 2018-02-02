@@ -514,6 +514,7 @@ function pip_theme_cover_image_css( $settings = array() ) {
 ///////////////////// Return Ifly Chat foreach group name /////////////////////
 	function pip_get_ifly_chat_rooms( $groupName ){ 
 
+
 		if( $groupName == 'XPTUSD') : $chatRoomId = '1';
 		elseif( $groupName == 'NZDUSD') : $chatRoomId = '2';
 		elseif( $groupName == 'XRPUSD') : $chatRoomId = '3';
@@ -541,7 +542,7 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 	//echo '<div data-room-id=' . $chatRoomId . ' data-height="100%" data-width="100%" class="iflychat-embed"></div>';
 	$url = site_url();
-	echo '<iframe src="'. $url . '/ifly-chat-frame?room_id=' . $chatRoomId . '" />';
+	echo '<iframe class="ifly-frame" src="'. $url . '/ifly-chat-frame?room_id=' . $chatRoomId . '" ></iframe>';
 }
 
 ///////////////////// Roomz filter function /////////////////////
@@ -561,32 +562,45 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 		$roomz = get_posts( $args );
 			
-		if ( $roomz != 0 ){ 
+		if ( $roomz != 0 ){ ?> 
 
+		<div class="row"> 
+			<?php
 			foreach ($roomz as $room ){ ?>
 
-				<div class="row">
-					<div class="col-9">
-						<!-- <h4><?php echo $room->post_title; ?></h4> -->
-							<iframe src="https://www.tradingview.com/widgetembed/?symbol=<?php echo $room->post_title; ?>&interval=30&hidetoptoolbar=1&hidesidetoolbar=1&saveimage=0&hidevolume=true&padding=0&studies=[]&hideideas=1&theme=Light&style=1&timezone=Etc/UTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en" height="410px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
 
-						<?php
-							
-							$group_id = groups_get_id( $room->post_title );
-							pip_roomz_get_group_members($group_id);
 
-						?>
 
-					</div>
-					<div class="col-3">
-						<?php pip_get_ifly_chat_rooms($room->post_title); ?>
-					</div>
+
+		<div class="col-12 col-md-6">
+			<div class="card p-4 mb-4">
+				<iframe src="https://www.tradingview.com/mediumwidgetembed/?symbols=<?php echo $room->post_title; ?>|1d&timezone=Etc/UTC&locale=en" height="210px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+
+	  			<button class="btn btn-success mt-3" type="button" data-toggle="collapse" data-target="#collapse<?php echo $room->post_title; ?>" aria-expanded="false" aria-controls="collapse<?php echo $room->post_title; ?>">
+	  				Chat 
+	  			</button>
+				
+				<div class="collapse" id="collapse<?php echo $room->post_title; ?>">
+					<?php pip_get_ifly_chat_rooms( $room->post_title ); ?>
 				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
 
 			<?php
-		}
-
-	} 
+			} ?>
+		</div>
+<?php } 
 
 	wp_die();
 

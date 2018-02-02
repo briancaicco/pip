@@ -1,5 +1,9 @@
 // Global
 /////////////////////////////////////////////////////////////////////////
+
+.iflyframe{
+	margin: -7px;
+}
 .modal-content{
 	box-shadow: none !important;
 	.close{
@@ -630,7 +634,7 @@ header{
 		width:100%;
 		padding:0;
 		border:0;
-		height:400px;
+		height:320px;
 	}
 }
 // Signals List
@@ -667,6 +671,12 @@ header{
 		position: relative;
 		z-index: 99;
 	}
+}
+
+
+.content-placeholder{
+	width: 100%;
+	height: 100%;
 }
 
 // Upgrade Modal

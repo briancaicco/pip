@@ -4534,6 +4534,14 @@ div#mepr-account-nav { margin-bottom: 25px; width: auto !important; }
 
 .gallery-caption { display: block; }
 
+@-webkit-keyframes placeHolderShimmer { 0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; } }
+
+@keyframes placeHolderShimmer { 0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; } }
+
+.content-placeholder { display: inline-block; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; -webkit-animation-name: placeHolderShimmer; animation-name: placeHolderShimmer; -webkit-animation-timing-function: linear; animation-timing-function: linear; background: #f6f7f8; background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eee), color-stop(18%, #ddd), color-stop(33%, #eee)); background: -webkit-linear-gradient(left, #eee 8%, #ddd 18%, #eee 33%); background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 33%); -webkit-background-size: 800px 104px; background-size: 800px 104px; height: inherit; position: relative; }
+
 .btn-switch { margin: 0 4rem; padding: 0; position: relative; border: none; height: 1.5rem; width: 3rem; border-radius: 1.5rem; color: #6b7381; background: #bdc1c8; }
 
 .btn-switch:focus, .btn-switch.focus, .btn-switch:focus.active, .btn-switch.focus.active { outline: none; }
@@ -4673,6 +4681,8 @@ div#mepr-account-nav { margin-bottom: 25px; width: auto !important; }
 .btn-switch.btn-secondary.active { background-color: #ff8300; }
 
 .btn-switch.btn:hover, .wpcf7 input.btn-switch[type=submit]:hover { box-shadow: 0 0 0px rgba(22, 22, 34, 0.13), 0 0px 0px rgba(22, 22, 34, 0.26); transform: translateY(0px); cursor: pointer; }
+
+.iflyframe { margin: -7px; }
 
 .modal-content { box-shadow: none !important; }
 
@@ -4862,7 +4872,7 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 
 .page-template-dashboard .ticker-pair:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
 
-.page-template-dashboard_v2 iframe { min-width: 100%; width: 100%; padding: 0; border: 0; height: 400px; }
+.page-template-dashboard_v2 iframe { min-width: 100%; width: 100%; padding: 0; border: 0; height: 320px; }
 
 .signal { transition: all .2s ease-in-out; }
 
@@ -4879,6 +4889,8 @@ header .btn, header .wpcf7 input[type=submit], .wpcf7 header input[type=submit] 
 .signal .date-posted p { color: #677897 !important; margin-bottom: 0px; font-size: 12px; line-height: 14px; }
 
 .signal:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
+
+.content-placeholder { width: 100%; height: 100%; }
 
 .upgrade-modal-lg { margin: 0 auto; padding-top: 85px; }
 
