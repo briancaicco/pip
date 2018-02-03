@@ -1,14 +1,20 @@
 		<header> 
-			<div class="container-fluid p-0">
-				<nav class="primary-nav navbar navbar-expand-md navbar-fixed-top dashboard ">
+
+
+
+
+				<nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top bg-light">
+
+
+					<a href="#menu-toggle" class="menu-icon mr-auto" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
 					<!-- Menu Toggle -->
-					<ul class="navbar-nav mr-auto align-items-stretch">
+<!-- 					<ul class="navbar-nav mr-auto align-items-stretch">
 						<li class="nav-item " style="border-right: 1px solid #dfe2ec;">
-							<a href="#menu-toggle" class="menu-icon" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
 						</li>
-						<li><h1 id="page-name"><?php the_title();?></h1></li>
-					</ul>
+						<li><p id="page-name"><?php the_title();?></p></li>
+					</ul> -->
+
 
 					<?php  if(current_user_can('pro_member')) { ?>
 						<div class="mr-3 badge badge-success text-white member-lvl">Pro</div>  
@@ -16,17 +22,19 @@
 						<div class="mr-3 badge badge-warning text-white member-lvl"><a href="<?php bloginfo( 'url' ) ?>/subscribe/pro/">Basic</a></div>  
 					<?php } else{ ?>
 						<div>
-							<a href="#" type="" data-toggle="modal" class="btn mr-3 py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a>
+							<a href="#" type="" data-toggle="modal" class="btn py-2 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a>
 						</div>
 					<?php }?>
 
 					<ul class="navbar-nav user-settings">
 						<li class="nav-item dropdown">
+
 							<a href="<?php echo bp_loggedin_user_domain(); ?>notifications/" class="nav-link pr-2 notifications"><?php echo bp_get_notifcation_count(); ?></a>
-							<a class="nav-link dropdown-toggle mr-lg-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<?php bp_loggedin_user_avatar( 'width=20&height=20' ); ?>
+							<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<?php bp_loggedin_user_avatar( 'width=50&height=50' ); ?>
 							</a>
-							<div class="dropdown-menu dropdown-menu-right fade" aria-labelledby="navbarDropdownMenuLink">
+
+							<div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
 								<a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>messages/">Messages</a>
 								<a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>">Profile</a>
 								<a class="dropdown-item" href="<?php echo bp_loggedin_user_domain(); ?>friends/">Friends</a>
@@ -36,6 +44,7 @@
 							</div>
 						</li>
 					</ul>
+
 				</nav>
-			</div>
+
 		</header>

@@ -9,4 +9,4 @@
 			<a href="#" type="" data-toggle="modal" class="btn m-4 btn-success" data-target="#upgrademodal" style="text-decoration: none !important;" >Upgrade</a>
         </nav>
 	</div>
-</div>
+</div> 
