@@ -1,15 +1,24 @@
-<!-- Default Rooms -->
+<div class="row">
+	<div class="col-12">
+		<p class="h5 mb-3">Latest Signals</p>
+	</div>
+</div>
+<div class="row mb-4">
+	<?php get_template_part( 'partials/dash', 'signals' ); ?>
+</div>
 
+<div class="row">
+	<div class="col-12">
+		<p class="h5 mb-3">Trade Rooms</p>
+	</div>
+</div>
+<div class="row"> 
 <?php 
 
 $rooms = array("EURUSD","USDJPY","GBPUSD","AUDUSD");
 $arrlength=count($rooms);
 
-?>
-
-<h2 class="mb-2">Free Rooms</h2>
-<div class="row"> 
-<?php for ($x=0;$x<$arrlength;$x++) { ?>
+for ($x=0;$x<$arrlength;$x++) { ?>
 		<?php //echo $rooms[$x]; ?>
 		<div class="col-12 col-md-6">
 			<div class="card p-4 mb-4">
@@ -31,11 +40,11 @@ $arrlength=count($rooms);
 
 <!-- Fiilter Rooms -->
 
-<h2 class="mt-4">Members Only Rooms</h2>
+<h2 class="mt-4">Members Only Trade Rooms</h2>
 <div class="col-12  text-center">
 	<?php if(current_user_can('mepr-active','memberships:4007,4124,200,204')){ ?>
 		<button class="btn my-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-			Select Premium Rooms To Display
+			Select Rooms To Display
 		</button>
 	<?php }else { ?>
 		<div class="row">
