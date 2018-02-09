@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home Page
+ * Template Name: Home Page Depracated
  *
  * Template for displaying the full-width home page.
  *

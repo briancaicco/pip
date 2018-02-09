@@ -1782,23 +1782,23 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/theme.css": {
+	"\/css\/dashboard.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/theme-min.css",
+		"oAP": "\/css\/dashboard.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/theme.min.css": {
+	"\/css\/front-page.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/theme.min-min.css",
+		"oAP": "\/css\/front-page.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1807,6 +1807,44 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/favicon.ico",
+		"oF": 0
+		},
+	"\/fonts\/fa-regular-400.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/fa-regular-400.eot",
+		"oF": 0
+		},
+	"\/fonts\/fa-regular-400.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/fonts\/fa-regular-400.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/fonts\/fa-regular-400.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/fa-regular-400.ttf",
+		"oF": 0
+		},
+	"\/fonts\/fa-regular-400.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/fa-regular-400.woff",
+		"oF": 0
+		},
+	"\/fonts\/fa-regular-400.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/fa-regular-400.woff2",
 		"oF": 0
 		},
 	"\/fonts\/fontawesome-webfont.eot": {
@@ -1892,6 +1930,51 @@
 		"oAP": "\/fonts\/glyphicons-halflings-regular.woff2",
 		"oF": 0
 		},
+	"\/fonts\/ionicons.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/ionicons.ttf",
+		"oF": 0
+		},
+	"\/fonts\/Linearicons-Free.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/Linearicons-Free.eot",
+		"oF": 0
+		},
+	"\/fonts\/Linearicons-Free.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/fonts\/Linearicons-Free.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/fonts\/Linearicons-Free.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/Linearicons-Free.ttf",
+		"oF": 0
+		},
+	"\/fonts\/Linearicons-Free.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/Linearicons-Free.woff",
+		"oF": 0
+		},
+	"\/fonts\/Linearicons-Free.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/Linearicons-Free.woff2",
+		"oF": 0
+		},
 	"\/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1944,57 +2027,6 @@
 		"oAP": "\/header.php",
 		"oF": 0
 		},
-	"\/img\/app-mockup.png": {
-		"ft": 32768,
-		"iS": 422001,
-		"oA": 0,
-		"oAP": "\/img\/app-mockup.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/img\/app-mockup.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/img\/app-mockup.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/img\/candles.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/img\/candles.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/img\/dashboard.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/img\/dashboard.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/img\/database.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/img\/database.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
 	"\/img\/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
@@ -2002,31 +2034,397 @@
 		"oAP": "\/img\/favicon.ico",
 		"oF": 0
 		},
-	"\/img\/header-bg.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/img\/header-bg.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/img\/header.jpg": {
+	"\/img\/front-page\/1(1).jpg": {
 		"ft": 16384,
-		"iS": 207482,
+		"iS": 20658,
 		"oA": 0,
-		"oAP": "\/img\/header.jpg",
+		"oAP": "\/img\/front-page\/1(1).jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/signals.svg": {
+	"\/img\/front-page\/1(2).jpg": {
+		"ft": 16384,
+		"iS": 13246,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/1(2).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/1(3).jpg": {
+		"ft": 16384,
+		"iS": 19814,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/1(3).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/1.jpg": {
+		"ft": 16384,
+		"iS": 20549,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/1.png": {
+		"ft": 32768,
+		"iS": 71003,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/2(1).jpg": {
+		"ft": 16384,
+		"iS": 13202,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/2(1).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/2(2).jpg": {
+		"ft": 16384,
+		"iS": 18087,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/2(2).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/2(3).jpg": {
+		"ft": 16384,
+		"iS": 32173,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/2(3).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/2.jpg": {
+		"ft": 16384,
+		"iS": 20671,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/2.png": {
+		"ft": 32768,
+		"iS": 98679,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/3(1).jpg": {
+		"ft": 16384,
+		"iS": 13246,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/3(1).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/3(2).jpg": {
+		"ft": 16384,
+		"iS": 15299,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/3(2).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/3.jpg": {
+		"ft": 16384,
+		"iS": 21967,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/3.png": {
+		"ft": 32768,
+		"iS": 80943,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/4(1).jpg": {
+		"ft": 16384,
+		"iS": 18087,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/4(1).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/4.jpg": {
+		"ft": 16384,
+		"iS": 36958,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/5.jpg": {
+		"ft": 16384,
+		"iS": 16346,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/app-store-nobg.png": {
+		"ft": 32768,
+		"iS": 2125,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/app-store-nobg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/bg-1.jpg": {
+		"ft": 16384,
+		"iS": 96844,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/bg-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/faq-aside.jpg": {
+		"ft": 16384,
+		"iS": 150398,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/faq-aside.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/google_white5_hdpi.png": {
+		"ft": 32768,
+		"iS": 3399,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/google_white5_hdpi.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/header-img-1.png": {
+		"ft": 32768,
+		"iS": 54126,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/header-img-1.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/header-img-2.png": {
+		"ft": 32768,
+		"iS": 114685,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/header-img-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/home-img-1-bw.jpg": {
+		"ft": 16384,
+		"iS": 93443,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/home-img-1-bw.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/home-img-1.jpg": {
+		"ft": 16384,
+		"iS": 2781439,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/home-img-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/home-img-2-alt.jpg": {
+		"ft": 16384,
+		"iS": 913838,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/home-img-2-alt.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/home-img-2.jpg": {
+		"ft": 16384,
+		"iS": 3062490,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/home-img-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/front-page\/img.png": {
+		"ft": 32768,
+		"iS": 257989,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/img.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/logo-faded-blue.png": {
+		"ft": 32768,
+		"iS": 1857,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/logo-faded-blue.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/logo-faded.png": {
+		"ft": 32768,
+		"iS": 1441,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/logo-faded.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/mapcnt6.png": {
+		"ft": 32768,
+		"iS": 2259,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/mapcnt6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/mockup-tab.png": {
+		"ft": 32768,
+		"iS": 352898,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/mockup-tab.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/phone-lines.png": {
+		"ft": 32768,
+		"iS": 128810,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/phone-lines.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/play-store-nobg.png": {
+		"ft": 32768,
+		"iS": 3454,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/play-store-nobg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/sv9.png": {
+		"ft": 32768,
+		"iS": 9431,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/sv9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/front-page\/tmapctrl_hdpi.png": {
+		"ft": 32768,
+		"iS": 2482,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/tmapctrl_hdpi.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/pip_logo.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/signals.svg",
+		"oAP": "\/img\/pip_logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/img\/pip_logo_white.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/pip_logo_white.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -2037,86 +2435,6 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/img\/spinner.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/img\/src\/header.jpg": {
-		"ft": 16384,
-		"iS": 253143,
-		"oA": 0,
-		"oAP": "\/img\/src\/header.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/img\/tools.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/img\/tools.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/img\/trader-bg.jpg": {
-		"ft": 16384,
-		"iS": 86976,
-		"oA": 0,
-		"oAP": "\/img\/trader-bg.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/img\/trader-bg2.jpg": {
-		"ft": 16384,
-		"iS": 126756,
-		"oA": 0,
-		"oAP": "\/img\/trader-bg2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/img\/trader-bg3.jpg": {
-		"ft": 16384,
-		"iS": 118503,
-		"oA": 0,
-		"oAP": "\/img\/trader-bg3.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/img\/trader-bg4.jpg": {
-		"ft": 16384,
-		"iS": 154893,
-		"oA": 0,
-		"oAP": "\/img\/trader-bg4.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/img\/trader-bg5.jpg": {
-		"ft": 16384,
-		"iS": 134802,
-		"oA": 0,
-		"oAP": "\/img\/trader-bg5.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/img\/trading-rooms.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/img\/trading-rooms.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -2342,6 +2660,166 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/dashboard.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/dashboard.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/front-page-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/js\/front-page-min.js",
+		"oF": 2,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/bootstrap.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/bootstrap.min-min.js",
+		"oF": 1,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/common.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/common-min.js",
+		"oF": 1,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/controls.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/controls-min.js",
+		"oF": 1,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/custom-animations.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/custom-animations-min.js",
+		"oF": 1,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/jquery.magnific-popup.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/jquery.magnific-popup.min-min.js",
+		"oF": 1,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/jquery.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/jquery.min-min.js",
+		"oF": 1,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/jquery.waypoints.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/jquery.waypoints.min-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/onion.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/onion-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/owl.carousel.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/owl.carousel.min-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/plugins.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/plugins-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/stats.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/stats-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/theme.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/theme-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/front-page\/util.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/util-min.js",
+		"oF": 3,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/glossary-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -2408,16 +2886,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/theme-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/js\/theme.min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/theme.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -2997,11 +3465,740 @@
 		"oAP": "\/page-templates\/empty.php",
 		"oF": 0
 		},
+	"\/page-templates\/Faded-Landing Page\/Blog Detail _ Faded _ App Landing Page.htm": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Blog Detail _ Faded _ App Landing Page.htm",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page.html",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1(1).jpg": {
+		"ft": 16384,
+		"iS": 20658,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1(1).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1(2).jpg": {
+		"ft": 16384,
+		"iS": 13246,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1(2).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1(3).jpg": {
+		"ft": 16384,
+		"iS": 19814,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1(3).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1.jpg": {
+		"ft": 16384,
+		"iS": 20549,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1.png": {
+		"ft": 32768,
+		"iS": 71003,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2(1).jpg": {
+		"ft": 16384,
+		"iS": 13202,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2(1).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2(2).jpg": {
+		"ft": 16384,
+		"iS": 18087,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2(2).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2(3).jpg": {
+		"ft": 16384,
+		"iS": 32173,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2(3).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2.jpg": {
+		"ft": 16384,
+		"iS": 20671,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2.png": {
+		"ft": 32768,
+		"iS": 98679,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3(1).jpg": {
+		"ft": 16384,
+		"iS": 13246,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3(1).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3(2).jpg": {
+		"ft": 16384,
+		"iS": 15299,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3(2).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3.jpg": {
+		"ft": 16384,
+		"iS": 21967,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3.png": {
+		"ft": 32768,
+		"iS": 80943,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/4(1).jpg": {
+		"ft": 16384,
+		"iS": 18087,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/4(1).jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/4.jpg": {
+		"ft": 16384,
+		"iS": 36958,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/5.jpg": {
+		"ft": 16384,
+		"iS": 16346,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/5.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/app-store-nobg.png": {
+		"ft": 32768,
+		"iS": 2125,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/app-store-nobg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/bg-1.jpg": {
+		"ft": 16384,
+		"iS": 96844,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/bg-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/bootstrap.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/bootstrap.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/bootstrap.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/bootstrap.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/color-0.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/color-0-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/color0.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/color0-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/common.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/common-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/controls.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/controls-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/css": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/css",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/custom-animations.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/custom-animations-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/font-awesome.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/font-awesome.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/gmap.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/gmap-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/google_white5_hdpi.png": {
+		"ft": 32768,
+		"iS": 3399,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/google_white5_hdpi.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/header-img-1.png": {
+		"ft": 32768,
+		"iS": 54126,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/header-img-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/header-img-2.png": {
+		"ft": 32768,
+		"iS": 114685,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/header-img-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/img.png": {
+		"ft": 32768,
+		"iS": 257989,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/img.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/ionicons.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/ionicons.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/jquery.magnific-popup.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/jquery.magnific-popup.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/jquery.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/jquery.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/jquery.waypoints.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/jquery.waypoints.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/js": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/js",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/linearicons.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/linearicons-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/logo-faded-blue.png": {
+		"ft": 32768,
+		"iS": 1857,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/logo-faded-blue.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/logo-faded.png": {
+		"ft": 32768,
+		"iS": 1441,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/logo-faded.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/magnific-popup.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/magnific-popup-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/map.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/map-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/mapcnt6.png": {
+		"ft": 32768,
+		"iS": 2259,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/mapcnt6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/marker.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/marker-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/mockup-tab.png": {
+		"ft": 32768,
+		"iS": 352898,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/mockup-tab.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/onion.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/onion-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/owl.carousel.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/owl.carousel-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/owl.carousel.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/owl.carousel.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/phone-lines.png": {
+		"ft": 32768,
+		"iS": 128810,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/phone-lines.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/play-store-nobg.png": {
+		"ft": 32768,
+		"iS": 3454,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/play-store-nobg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/plugins.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/plugins-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/preset.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/preset-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/scroll-animation.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/scroll-animation-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/stats.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/stats-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/sv9.png": {
+		"ft": 32768,
+		"iS": 9431,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/sv9.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/theme.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/theme-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/tmapctrl_hdpi.png": {
+		"ft": 32768,
+		"iS": 2482,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/tmapctrl_hdpi.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/util.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/util-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(1)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(1)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(10)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(10)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(11)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(11)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(2)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(2)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(3)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(3)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(4)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(4)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(5)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(5)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(6)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(6)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(7)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(7)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(8)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(8)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(9)": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded _ App Landing Page_files\/vt(9)",
+		"oF": 0
+		},
+	"\/page-templates\/Faded-Landing Page\/Faded_landing_page_safari.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/Faded-Landing Page\/Faded_landing_page_safari.html",
+		"oF": 0
+		},
 	"\/page-templates\/forex-ticker.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-templates\/forex-ticker.php",
+		"oF": 0
+		},
+	"\/page-templates\/front-page.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/front-page.php",
+		"oF": 0
+		},
+	"\/page-templates\/front-page_all-content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/front-page_all-content.php",
 		"oF": 0
 		},
 	"\/page-templates\/fullwidthpage.php": {
@@ -3236,7 +4433,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/sass\/theme.scss": {
+	"\/sass\/dashboard.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -3247,6 +4444,201 @@
 		"oAP": "\/css\/theme.min.css",
 		"oF": 2,
 		"oS": 2,
+		"uL": 1
+		},
+	"\/sass\/front-page.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/front-page.min.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_bootstrap.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_bootstrap.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_color-0.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_color-0.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_color0.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_color0.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_fa-regular.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_fa-regular.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_fa-solid.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_fa-solid.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_font-awesome.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_font-awesome.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_fontawesome.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_fontawesome.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_ionicons.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_ionicons.min.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_linearicons.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_linearicons.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_magnific-popup.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_magnific-popup.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_owl.carousel.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_owl.carousel.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_preset.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_preset.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_scroll-animation.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_scroll-animation.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/front-page\/_styles.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/front-page\/_styles.css",
+		"oF": 1,
+		"oS": 0,
 		"uL": 1
 		},
 	"\/sass\/theme\/_bootstrap_toggle.scss": {
@@ -74151,11 +75543,117 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/webfonts\/fa-regular-400.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-regular-400.eot",
+		"oF": 0
+		},
+	"\/webfonts\/fa-regular-400.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-regular-400.ttf",
+		"oF": 0
+		},
+	"\/webfonts\/fa-regular-400.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-regular-400.woff",
+		"oF": 0
+		},
+	"\/webfonts\/fa-regular-400.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-regular-400.woff2",
+		"oF": 0
+		},
+	"\/webfonts\/fa-solid-900.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-solid-900.eot",
+		"oF": 0
+		},
+	"\/webfonts\/fa-solid-900.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-solid-900.ttf",
+		"oF": 0
+		},
+	"\/webfonts\/fa-solid-900.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-solid-900.woff",
+		"oF": 0
+		},
+	"\/webfonts\/fa-solid-900.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/webfonts\/fa-solid-900.woff2",
+		"oF": 0
 		}
 	},
 "hooks": [
 	],
 "manualImportLinks": {
+	"\/js\/front-page.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/jquery.min.js",
+			"position": 0,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/bootstrap.min.js",
+			"position": 1,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/jquery.waypoints.min.js",
+			"position": 2,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/jquery.magnific-popup.min.js",
+			"position": 3,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/owl.carousel.min.js",
+			"position": 4,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/plugins.js",
+			"position": 5,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/custom-animations.js",
+			"position": 6,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/front-page\/theme.js",
+			"position": 7,
+			"type": 1
+			}
+		]
 	},
 "projectAttributes": {
 	"creationDate": 529693421,

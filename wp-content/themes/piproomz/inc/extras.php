@@ -612,6 +612,99 @@ add_action('wp_ajax_nopriv_roomz_filter', 'pip_roomz_filter_function');
 
 
 
+///////////////////// Remove Plugin Scripts and Styles on Home Page /////////////////////
+
+	if ( is_page_template( '/page-templates/front-page.php' )){
+
+		function pm_remove_all_scripts() {
+		    global $wp_scripts;
+		    $wp_scripts->queue = array();
+		}
+		add_action('wp_print_scripts', 'pm_remove_all_scripts', 10);
+		function pm_remove_all_styles() {
+		    global $wp_styles;
+		    $wp_styles->queue = array();
+		}
+		add_action('wp_print_styles', 'pm_remove_all_styles', 10);
+	} else{
+
+
+	}
+
+
+// function pip_dequeue_styles(){
+
+// 	#wp_deregister_style($handle);
+// 	#wp_dequeue_style($handle);
+
+// 	if ( !( is_page( 'home' ) || is_page( 'front-page' )) ){
+
+// 		$styles = array(
+// 			'mp-theme',
+// 			'mp-account-css',			
+// 			'mepr-jquery-ui-smoothness',
+// 			'jquery-ui-timepicker-addon',		
+// 			'mp-signup',
+// 			'mp-plans-css',
+// 			'bp-show-friends-css',
+// 			'bp-parent-css',
+// 			'wsl-widget',
+// 			'learn-press-jalerts',
+// 			'learn-press-style',
+// 			'tooltip',										
+// 		);
+
+// 		foreach ($styles as $style) {
+// 			//wp_deregister_script($script);
+// 			wp_dequeue_style($script);
+// 		}
+// 	}
+// }
+
+// add_action( 'wp_enqueue_scripts', 'pip_dequeue_styles', 1 );
+
+
+// function pip_dequeue_scripts(){
+// 	#wp_deregister_script($handle);
+// 	#wp_dequeue_script($handle);
+
+// 	if ( !( is_page( 'home' ) || is_page( 'front-page' )) ){
+
+// 		$scripts = array(
+// 			'iflychat-ajax',
+// 			'mp-signup',			
+// 			'bp-confirm',
+// 			'bp-show-friends-js',		
+// 			'bp-parent-js',
+// 			'comment-reply',
+// 			'bp-widget-members',
+// 			'groups_widget_groups_list-js',
+// 			'tooltip-js',
+// 			'wsl-widget',
+// 			'learn-press-jalerts',
+// 			'learn-press-global',
+// 			'learn-press-js',
+// 			'learn-press-become-teacher',
+// 			'toc-front',
+// 			'bbpress-editor',
+// 			'devicepx',
+// 			'codebox',											
+// 		);
+
+// 		foreach ($scripts as $script) {
+// 			//wp_deregister_script($script);
+// 			wp_dequeue_script($script);
+// 		}
+
+// 	}
+
+// }
+
+// add_action( 'wp_enqueue_scripts', 'pip_dequeue_scripts', 0 );
+
+
+
+
 
 ///////////////////// Insert currency posts ///////////////////// 
 // Helper function, only needed to be run one time on theme setup //
