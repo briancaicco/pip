@@ -9,12 +9,12 @@
         }
     }).scroll();
     // Nav Scroll Click
-    if ($(".smoothscroll > li > a, .btn-getnow").length > 0) {
-        $(".smoothscroll > li > a, .btn-getnow").on("click", function (e) {
-            e.preventDefault();
-            $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top + "px"}, 1600, "swing");
-        });
-    }
+    // if ($(".smoothscroll > li > a, .btn-getnow").length > 0) {
+    //     $(".smoothscroll > li > a, .btn-getnow").on("click", function (e) {
+    //         e.preventDefault();
+    //         $("html, body").animate({scrollTop: $($(this).attr("href")).offset().top + "px"}, 1600, "swing");
+    //     });
+    // }
     // Color Preset
     if ($(".faded_switcher_zone").length > 0)
     {
