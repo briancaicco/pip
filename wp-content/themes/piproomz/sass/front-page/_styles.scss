@@ -3641,12 +3641,19 @@ Styles for smaller devices
   .sec-blog-post .row {
     margin: 0px -30px;
   }
+
+    .phone-lines{
+    width: 750px;
+  }
 }
 
 @media (max-width: 1600px) {
   .sec-get-app .get-app-mockup {
     top: 20px;
     width: 920px;
+  }
+  .phone-lines{
+    width: 750px;
   }
 }
 

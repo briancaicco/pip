@@ -213,7 +213,7 @@
 								<p>Discuss market events <br>as they're happening <br>right beside the chart.</p>
 							</div>
 						</div>
-						<img class='img-responsive' src="<?php echo get_template_directory_uri(); ?>/img/front-page/phone-lines-2.png" alt='featured'>
+						<img class='img-responsive phone-lines' src="<?php echo get_template_directory_uri(); ?>/img/front-page/phone-lines-2.png" alt='featured'>
 					</div>
 				</div>
 			</div>

@@ -2190,6 +2190,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/img\/front-page\/[resize + optimize] 3\/phone-lines-2.png": {
+		"ft": 32768,
+		"iS": 117522,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/[resize + optimize] 3\/phone-lines-2.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/img\/front-page\/bg-1.jpg": {
 		"ft": 16384,
 		"iS": 96844,
@@ -2237,17 +2248,6 @@
 		"iS": 255120,
 		"oA": 0,
 		"oAP": "\/img\/front-page\/header-img-3.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
-		"q": 100
-		},
-	"\/img\/front-page\/header-img-4.png": {
-		"ft": 32768,
-		"iS": 321411,
-		"oA": 0,
-		"oAP": "\/img\/front-page\/header-img-4.png",
 		"oF": 0,
 		"oIPL": 1,
 		"opt": 1,
