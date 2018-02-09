@@ -15,9 +15,9 @@ get_header();
 <div class="container mt-3 mt-xl-5">
 	<div class="row justify-content-center">
 		<div class="col-sm-12 col-xl-5">
-			<div class="row">
-				<div class="col text-center mb-4">
-					<span class="navbar-brand" rel="home" href="" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?><small style="vertical-align: super; font-size: 9px;"> beta</small></span>
+			<div class="row justify-content-center">
+				<div class="col-6 text-center mb-4 w-25">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/pip_logo.svg"  />
 				</div>
 			</div>
 			<div class="row">
