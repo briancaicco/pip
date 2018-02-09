@@ -417,15 +417,17 @@ header img {
 }
 
 header img.img-header-lg {
-  right: -56px;
-  top: 63px;
+  right: 15px;
+  top: 80px;
   z-index: 20;
+  width: 220px;
 }
 
 header img.img-header-sm {
-  right: 62px;
-  top: 251px;
+  right: 100px;
+  top: 220px;
   z-index: 20;
+  width: 180px;
 }
 
 header.blog-list,
@@ -584,6 +586,10 @@ footer,
 section {
   padding: 140px 0;
   text-align: center;
+}
+
+footer{
+  padding: 45px 0;
 }
 
 footer h2,
@@ -2135,7 +2141,7 @@ FAQ
 .sec-faq {
   overflow: hidden;
   text-align: left;
-  padding-top: 234px;
+  padding-top: 230px;
 }
 
 .sec-faq .hr {
@@ -3639,14 +3645,14 @@ Styles for smaller devices
 
 @media (max-width: 1600px) {
   .sec-get-app .get-app-mockup {
-    top: 50px;
-    width: 900px;
+    top: 20px;
+    width: 920px;
   }
 }
 
 @media (max-width: 1279px) {
   .sec-get-app .get-app-mockup {
-    width: 600px;
+    width: 920px;
   }
 }
 
@@ -3691,7 +3697,8 @@ Styles for smaller devices
   }
 
   .sec-faq {
-    padding-top: 140px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .sec-faq .subheader br {
@@ -3699,8 +3706,8 @@ Styles for smaller devices
   }
 
   .sec-faq .row .wrapper-img img {
-    width: 800px;
-    top: -115px;
+    width: 600px;
+    top: -80px;
     right: -278px;
   }
 
@@ -3863,9 +3870,9 @@ Styles for smaller devices
   }
 
   .sec-faq .row .wrapper-img img {
-    width: 600px;
+    width: 500px;
     top: -30px;
-    right: -200px;
+    right: -300px;
   }
 
   .sec-faq .row .faq-inner .panel-group .panel .panel-heading .panel-title .btn-accordion {
@@ -3921,6 +3928,14 @@ Styles for smaller devices
 @media (max-width: 767px) {
   nav .navbar-header .navbar-brand img.logo-blue {
     top: 15px;
+  }
+
+  .sec-faq .wrapper-img img{
+    display: none;
+  }
+
+.sec-get-app a{
+    font-size: 16px;
   }
 
   nav .navbar-collapse {
@@ -4172,7 +4187,11 @@ background-image: linear-gradient(45deg, #3a8c85 0%, #2df9ae 100%);
   }
 
   .sec-get-app .get-app-mockup {
-    width: 100%;
+    width: 150%;
+    position: relative;
+    top: 200px;
+    left: -100px;
+    margin-top: -170px;
   }
 
   .sec-blog-list {

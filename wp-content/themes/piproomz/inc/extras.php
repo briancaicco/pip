@@ -612,24 +612,6 @@ add_action('wp_ajax_nopriv_roomz_filter', 'pip_roomz_filter_function');
 
 
 
-///////////////////// Remove Plugin Scripts and Styles on Home Page /////////////////////
-
-	if ( is_page_template( '/page-templates/front-page.php' )){
-
-		function pm_remove_all_scripts() {
-		    global $wp_scripts;
-		    $wp_scripts->queue = array();
-		}
-		add_action('wp_print_scripts', 'pm_remove_all_scripts', 10);
-		function pm_remove_all_styles() {
-		    global $wp_styles;
-		    $wp_styles->queue = array();
-		}
-		add_action('wp_print_styles', 'pm_remove_all_styles', 10);
-	} else{
-
-
-	}
 
 
 // function pip_dequeue_styles(){

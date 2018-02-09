@@ -82,8 +82,8 @@
 						<!-- <a class="btn-transparent animate delay-c display-none" href="#">Discover more</a> -->
 					</div>
 					<div class="col-sm-5 col-md-offset-2 col-md-3 col-header-img right-padding">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/front-page/header-img-2.png" alt="header-img" class="img-header-lg animate delay-c display-none">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/front-page/header-img-1.png" alt="header-img" class="img-header-sm delay-a display-none">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/front-page/header-img-4.png" alt="header-img" class="img-header-lg animate delay-c display-none">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/front-page/header-img-3.png" alt="header-img" class="img-header-sm delay-a display-none">
 					</div>
 				</div>
 			</div>
@@ -213,7 +213,7 @@
 								<p>Discuss market events <br>as they're happening <br>right beside the chart.</p>
 							</div>
 						</div>
-						<img class='img-responsive' src="<?php echo get_template_directory_uri(); ?>/img/front-page/phone-lines.png" alt='featured'>
+						<img class='img-responsive' src="<?php echo get_template_directory_uri(); ?>/img/front-page/phone-lines-2.png" alt='featured'>
 					</div>
 				</div>
 			</div>
@@ -467,7 +467,7 @@
 						<p class="subheader">Whether you’re a beginner, intermediate or advanced trader, Pip Roomz will always have the best educational content in the industry.<br/>We take great pride in our education and helping traders of all levels reach goals that are unreachable without the right habits and knowledge.</p>
 						<a class="btn-transparent animate delay-b display-none" href="<?php bloginfo('url'); ?>/register">Join For Free</a>
 					</div>
-					<div class="col-sm-5"><img class="get-app-mockup animate delay-c" src="<?php echo get_template_directory_uri(); ?>/img/front-page/mockup-tab.png" alt="mockup"></div>
+					<div class="col-sm-5"><img class="get-app-mockup animate delay-c" src="<?php echo get_template_directory_uri(); ?>/img/front-page/mockup-tab-2.png" alt="mockup"></div>
 				</div>
 			</div>
 		</section>
