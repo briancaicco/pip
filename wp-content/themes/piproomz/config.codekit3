@@ -2027,6 +2027,50 @@
 		"oAP": "\/header.php",
 		"oF": 0
 		},
+	"\/img\/apple-touch-icon-144x144.png": {
+		"ft": 32768,
+		"iS": 9390,
+		"oA": 0,
+		"oAP": "\/img\/apple-touch-icon-144x144.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/apple-touch-icon-152x152.png": {
+		"ft": 32768,
+		"iS": 10451,
+		"oA": 0,
+		"oAP": "\/img\/apple-touch-icon-152x152.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/favicon-16x16.png": {
+		"ft": 32768,
+		"iS": 429,
+		"oA": 0,
+		"oAP": "\/img\/favicon-16x16.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/favicon-32x32.png": {
+		"ft": 32768,
+		"iS": 836,
+		"oA": 0,
+		"oAP": "\/img\/favicon-32x32.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/img\/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
@@ -2404,6 +2448,28 @@
 		"iS": 2482,
 		"oA": 0,
 		"oAP": "\/img\/front-page\/tmapctrl_hdpi.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/mstile-144x144.png": {
+		"ft": 32768,
+		"iS": 9390,
+		"oA": 0,
+		"oAP": "\/img\/mstile-144x144.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/pip_brand-mark.png": {
+		"ft": 32768,
+		"iS": 7696,
+		"oA": 0,
+		"oAP": "\/img\/pip_brand-mark.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
