@@ -573,7 +573,9 @@ function pip_theme_cover_image_css( $settings = array() ) {
 
 		<div class="col-12 col-md-6">
 			<div class="card p-4 mb-4">
-				<iframe src="https://www.tradingview.com/mediumwidgetembed/?symbols=<?php echo $room->post_title; ?>|1d&timezone=Etc/UTC&locale=en" height="210px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+				<iframe src="https://www.tradingview.com/widgetembed/?symbol=<?php echo $room->post_title; ?>&interval=D&hidetoptoolbar=1&hidesidetoolbar=1&symboledit=0&saveimage=1&toolbarbg=f1f3f6&studies=%5B%5D&hideideas=1&theme=Light&style=1&timezone=Etc%2FUTC&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=en
+" height="210px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
+				<!-- <iframe src="https://www.tradingview.com/mediumwidgetembed/?symbols=<?php echo $room->post_title; ?>|1d&timezone=Etc/UTC&locale=en" height="210px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe> -->
 
 	  			<button class="btn btn-success my-3" type="button" data-toggle="collapse" data-target="#collapse<?php echo $room->post_title; ?>" aria-expanded="false" aria-controls="collapse<?php echo $room->post_title; ?>">
 	  				Chat 
