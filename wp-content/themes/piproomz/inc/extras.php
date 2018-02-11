@@ -541,8 +541,10 @@ function pip_theme_cover_image_css( $settings = array() ) {
 		endif;
 
 	//echo '<div data-room-id=' . $chatRoomId . ' data-height="100%" data-width="100%" class="iflychat-embed"></div>';
-	$url = site_url();
-	echo '<iframe class="ifly-frame" src="'. $url . '/ifly-chat-frame?room_id=' . $chatRoomId . '" ></iframe>';
+	//$url = site_url();
+	//echo '<iframe class="ifly-frame" src="'. $url . '/ifly-chat-frame?room_id=' . $chatRoomId . '" ></iframe>';
+	echo '<div data-room-id="'. $chatRoomId . '" data-height="600px" data-width="100%" class="iflychat-embed"></div>';
+
 }
 
 ///////////////////// Roomz filter function /////////////////////
@@ -569,14 +571,11 @@ function pip_theme_cover_image_css( $settings = array() ) {
 			foreach ($roomz as $room ){ ?>
 
 
-
-
-
 		<div class="col-12 col-md-6">
 			<div class="card p-4 mb-4">
 				<iframe src="https://www.tradingview.com/mediumwidgetembed/?symbols=<?php echo $room->post_title; ?>|1d&timezone=Etc/UTC&locale=en" height="210px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
 
-	  			<button class="btn btn-success mt-3" type="button" data-toggle="collapse" data-target="#collapse<?php echo $room->post_title; ?>" aria-expanded="false" aria-controls="collapse<?php echo $room->post_title; ?>">
+	  			<button class="btn btn-success my-3" type="button" data-toggle="collapse" data-target="#collapse<?php echo $room->post_title; ?>" aria-expanded="false" aria-controls="collapse<?php echo $room->post_title; ?>">
 	  				Chat 
 	  			</button>
 				
@@ -585,15 +584,6 @@ function pip_theme_cover_image_css( $settings = array() ) {
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
 
 
 

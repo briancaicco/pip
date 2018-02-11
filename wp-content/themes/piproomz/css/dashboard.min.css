@@ -4842,7 +4842,7 @@ p { font-family: "Raleway", sans-serif; }
 
 .signal .action.sell, .signal .action.sell_stop, .signal .action.sell_limit { color: #c23d4b !important; }
 
-.signal .signal-meta { font-size: 11px; opacity: .5; color: #677897; }
+.signal .signal-meta { font-size: 14px; opacity: .5; color: #677897; }
 
 .signal .date-posted { padding-right: 30px; opacity: 1; }
 

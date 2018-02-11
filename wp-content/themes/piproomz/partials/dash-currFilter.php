@@ -24,7 +24,7 @@ for ($x=0;$x<$arrlength;$x++) { ?>
 			<div class="card p-4 mb-4">
 				<iframe src="https://www.tradingview.com/mediumwidgetembed/?symbols=<?php echo $rooms[$x]; ?>|1d&timezone=Etc/UTC&locale=en" height="210px" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>
 
-	  			<button class="btn btn-success mt-3" type="button" data-toggle="collapse" data-target="#collapse<?php echo $x; ?>" aria-expanded="false" aria-controls="collapse<?php echo $x; ?>">
+	  			<button class="btn btn-success my-3" type="button" data-toggle="collapse" data-target="#collapse<?php echo $x; ?>" aria-expanded="false" aria-controls="collapse<?php echo $x; ?>">
 	  				Chat 
 	  			</button>
 				

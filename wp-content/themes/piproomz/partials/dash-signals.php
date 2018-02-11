@@ -8,7 +8,7 @@
 
 ?>
 
-<?php if ( $query->have_posts() ) : ?>
+<?php $i=0; if ( $query->have_posts() ) : ?>
 
 	<!-- the loop -->
 	<?php while ( $query->have_posts() ) : $query->the_post(); $i++;?>
@@ -31,7 +31,7 @@
 			</div>
 		</div>
 	</div>
-		<?php // if ( $restrict == true and $i == 2 ){ ?>
+		<?php  // if ( $restrict == true and $i == 2 ){ ?>
 
 <!-- 	<div class="col-12 col-md-4">
 		<div class="card mb-3 signal border-0 super-el buy-gradient dash-pro-signals">

@@ -2254,6 +2254,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/img\/front-page\/header-img-4.png": {
+		"ft": 32768,
+		"iS": 141255,
+		"oA": 0,
+		"oAP": "\/img\/front-page\/header-img-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/img\/front-page\/home-img-1-bw.jpg": {
 		"ft": 16384,
 		"iS": 93443,
@@ -4446,7 +4457,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/theme.min.css",
+		"oAP": "\/css\/dashboard.min.css",
 		"oF": 2,
 		"oS": 2,
 		"uL": 1
