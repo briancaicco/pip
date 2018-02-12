@@ -34,6 +34,7 @@ for ($x=0;$x<$arrlength;$x++) { ?>
 				<div class="collapse" id="collapse<?php echo $x; ?>">
 					<?php pip_get_ifly_chat_rooms( $rooms[$x]); ?>
 				</div>
+				
 			</div>
 		</div>
 
