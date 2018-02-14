@@ -356,11 +356,10 @@
 					<div class="col-sm-4">
 						<div class="wrapper animate">
 							<h3>Free</h3>
-							<span class="pricing-img lnr lnr-star-empty"></span>
+							<h1>0</h1>
 							<hr>
 							<p>Basic Dashboard<br>Ad Supported<br>Weekly Live Stream Coaching<br>One-on-one coaching<br>Chat Rooms (Major Pairs Only)</p>
 							<!-- <p>Free Setup<br>Unlimited Bandwidth<br>50GB Storage<br>10 Email Accounts<br>100GB Disk Space</p> -->
-							<h1>0</h1>
 							<hr>
 							<a href="<?php bloginfo('url'); ?>/register/"><span>Join Now</span></a>
 						</div>
@@ -368,10 +367,9 @@
 					<div class="col-sm-4 highlighted">
 						<div class="wrapper animate delay-a">
 							<h3>Pro</h3>
-							<span class="pricing-img lnr lnr-star"></span>
+							<h1>98</h1>
 							<hr>
 							<p>Enhanced Dashboard<br>Ad Free<br>Weekly Live Stream Coaching<br>One-on-one Coaching (20% discount)<br>Chat Rooms (Major/Exotic/Crypto Pairs)<br>Full Broker Database<br>Trading Tools/Calculators<br>Realtime Currency Quotes<br>Trade Signals via SMS &amp; Email</p>
-							<h1>98</h1>
 							<hr>
 							<a href="<?php bloginfo('url'); ?>/subscribe/basic-membership/"><span>Order now</span></a>
 						</div>
@@ -379,10 +377,9 @@
 					<div class="col-sm-4">
 						<div class="wrapper animate delay-b">
 							<h3>Basic</h3>
-							<span class="pricing-img lnr lnr-star-half"></span>
+							<h1>74</h1>
 							<hr>
 							<p>Enhanced Dashboard<br>Ad Free<br>Weekly Live Stream Coaching<br>One-on-one coaching (15% discount)<br>Chat Rooms (Major/Exotic Pairs Only)<br>Full Broker Database</p>
-							<h1>74</h1>
 							<hr>
 							<a href="<?php bloginfo('url'); ?>/subscribe/basic-membership/"><span>Order now</span></a>
 						</div>
