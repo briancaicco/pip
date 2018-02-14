@@ -60,14 +60,14 @@ global $post;
 
 		</div>
 	</div>
-	<div class="row justify-content-between">
+	<div class="row">
 
 		<?php while( $staff_pick_brokers->have_posts() ) { 
 			$staff_pick_brokers->the_post(); ?>
 
-			<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch">
+			<div class="col-12 col-md-6 col-lg-4 ">
 
-				<div class="card mb-3 border-0 text-center">
+				<div class="card mb-3 border-0 bg-light text-center ">
 
 					<a href="<?php the_field('broker_url'); ?>">
 						<img class="card-img-top p-5 p-xl-4" src="<?php the_field('broker_logo'); ?>" />
@@ -80,7 +80,7 @@ global $post;
 								<?php the_title(); ?>
 							</div>
 							<a class="btn btn-large btn-success px-xl-3 mb-3" href="<?php the_field('broker_url'); ?>">Setup Your Account</a>
-							<p class="mb-0 small"><a href="<?php the_permalink();?>">Learn More</a></p>
+							<!-- <p class="mb-0 small"><a href="<?php // the_permalink();?>">Learn More</a></p> -->
 						</div>
 
 					</div>
