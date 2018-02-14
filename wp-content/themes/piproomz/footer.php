@@ -17,7 +17,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php if (is_user_logged_in()) { ?>
 
 	<!-- Modal Welcome Walkthrough-->
-	<div class="modal welcome-modal-lg fade mt-5" id="welcomemodal" tabindex="-1" role="dialog" aria-labelledby="welcomeemodalLabel" aria-hidden="true" style="z-index: 10000400">
+<!-- 	<div class="modal welcome-modal-lg fade mt-5" id="welcomemodal" tabindex="-1" role="dialog" aria-labelledby="welcomeemodalLabel" aria-hidden="true" style="z-index: 10000400">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content welcome-carousel">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -26,7 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php get_template_part( 'partials/dash', 'welcome' ); ?>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 <?php } else { ?>
 <section class="footer py-4 mt-5 hidden">
@@ -65,11 +65,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 <!-- Modal upgrade-->
-<div class="modal upgrade-modal-lg fade" id="upgrademodal" tabindex="-1" role="dialog" aria-labelledby="upgrademodalLabel" aria-hidden="true" style="z-index: 10000400">
+<!-- <div class="modal upgrade-modal-lg fade" id="upgrademodal" tabindex="-1" role="dialog" aria-labelledby="upgrademodalLabel" aria-hidden="true" style="z-index: 10000400">
 	<div class="modal-dialog modal-lg" role="document">
 			<?php get_template_part( 'partials/dash', 'upgrade' ); ?>
 	</div>
-</div>
+</div> -->
 
 
 
