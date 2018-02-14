@@ -5379,7 +5379,10 @@ section.footer .container { border-top: 1px solid #c2c9d5; }
 @media (min-width: 992px) { .modal-lg { max-width: 1100px; } }
 
 @media (max-width: 575px) { #buddypress #item-header-content { z-index: 1; margin-top: 0px; padding-top: 85px !important; top: 10px; }
-  #buddypress div#item-header div.generic-button { float: none; display: inline-block; } }
+  #buddypress div#item-header div.generic-button { float: none; display: inline-block; }
+  a.wp-social-login-provider { display: block; width: 100%; margin-bottom: 15px; }
+  .member-lvl { display: none; }
+  .eco-cal { height: 360px; } }
 
 @media (max-width: 767px) { .single-memberpressproduct #page-name { display: none; }
   .single-memberpressproduct header .btn { display: none; }

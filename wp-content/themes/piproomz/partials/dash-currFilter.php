@@ -36,7 +36,7 @@
 	</div>
 	<div class="col-12  text-center">
 		<?php if(current_user_can('mepr-active','memberships:4007,4124,200,204')){ ?>
-			<button class="btn my-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+			<button class="btn btn-success my-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 				Select Rooms To Display
 			</button>
 		<?php }else { ?>
@@ -77,7 +77,7 @@
 
 					<div class="col-3 col-sm-2">
 						<div class="form-check border-0 mt-2 text-md-left">
-							<label class="form-check-label">
+							<label class="form-check-label currency-filter">
 								<input type="checkbox" class="form-check-input mb-2 float-md-left" name="currency[]" post_id="<?php the_ID(); ?>" value="<?php the_ID(); ?>" autocomplete="off"/>
 								<p><?php the_title(); ?></p>
 							</label>
@@ -89,7 +89,7 @@
 					<?php } ?>
 				</div>
 				<input type="hidden" name="action" value="roomz_filter">
-				<button class="btn" id="applyFilter">Apply</button>
+				<button class="btn btn-success" id="applyFilter">Apply</button>
 			</form>
 		</div>
 	</div>

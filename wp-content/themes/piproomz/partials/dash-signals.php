@@ -11,7 +11,7 @@ if(current_user_can('pro_member')) {
 
 	<!-- the loop -->
 	<?php while ( $query->have_posts() ) : $query->the_post(); $i++;?>
-			<div class="col-12 col-md-6">
+			<div class="col-12 col-lg-6">
 				<div class="card mb-3 signal border-0 ">
 					<div class="card-body">
 						<!-- Signal Title -->
