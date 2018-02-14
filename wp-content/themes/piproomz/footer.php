@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          		<span aria-hidden="true">&times;</span>
 	        	</button>
-				<?php get_template_part( 'partials/dash', 'welcome' ); ?>
+				<?php // get_template_part( 'partials/dash', 'welcome' ); ?>
 			</div>
 		</div>
 	</div> -->
@@ -67,7 +67,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!-- Modal upgrade-->
 <!-- <div class="modal upgrade-modal-lg fade" id="upgrademodal" tabindex="-1" role="dialog" aria-labelledby="upgrademodalLabel" aria-hidden="true" style="z-index: 10000400">
 	<div class="modal-dialog modal-lg" role="document">
-			<?php get_template_part( 'partials/dash', 'upgrade' ); ?>
+			<?php // get_template_part( 'partials/dash', 'upgrade' ); ?>
 	</div>
 </div> -->
 
