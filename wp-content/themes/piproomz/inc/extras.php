@@ -601,9 +601,46 @@ function pip_theme_cover_image_css( $settings = array() ) {
 add_action('wp_ajax_roomz_filter', 'pip_roomz_filter_function'); 
 add_action('wp_ajax_nopriv_roomz_filter', 'pip_roomz_filter_function');
 
+function pip_signal_tp()
+{
 
 
+if( have_rows('take_profit') ): ?>
 
+	<ul class="positions list-unstyled">
+ 
+    <?php while( have_rows('take_profit') ): the_row(); ?>
+ 
+        <li><p><?php the_sub_field('tp_price'); ?><?php $tp_outcome = get_sub_field('tp_outcome'); if ($tp_outcome): echo " - " . $tp_outcome . " "; endif; ?><p></li>
+        
+    <?php endwhile; ?>
+ 	
+ 	</ul>
+ 
+<?php endif; 
+
+}
+
+
+function pip_signal_sl()
+{
+
+
+if( have_rows('stop_loss') ): ?>
+
+	<ul class="positions list-unstyled">
+ 
+    <?php while( have_rows('stop_loss') ): the_row(); ?>
+
+       <li><p><?php the_sub_field('sl_price'); ?><?php $sl_outcome = get_sub_field('sl_outcome'); if ($sl_outcome): echo " - " . $sl_outcome . " "; endif; ?><p></li>
+        
+    <?php endwhile; ?>
+ 	
+ 	</ul>
+ 
+<?php endif; 
+
+}
 
 
 // function pip_dequeue_styles(){

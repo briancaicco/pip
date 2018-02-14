@@ -4848,7 +4848,21 @@ p { font-family: "Raleway", sans-serif; }
 
 .signal .date-posted p { color: #677897 !important; margin-bottom: 0px; font-size: 12px; line-height: 14px; }
 
-.signal:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
+.signal:hover { box-shadow: 0 0 20px rgba(22, 22, 34, 0.15), 0 15px 25px rgba(22, 22, 34, 0.15) !important; position: relative; z-index: 99; }
+
+.signal p { font-family: "Nunito", sans-serif; }
+
+.position-wrapper { border: 1px solid #dfe2ec; border-radius: 4px; padding: 8px 12px; background: #fff; transition: all .2s ease-in-out; }
+
+.position-wrapper:hover { cursor: pointer; background: #f8f9fa; }
+
+.position-toggle { margin-bottom: 0px; font-weight: bold; }
+
+.position-toggle:after { content: ""; font-family: FontAwesome; font-style: normal; font-weight: normal; text-decoration: inherit; font-size: 18px; position: absolute; top: 0px; right: 18px; }
+
+.positions li p { font-size: 13px; }
+
+.progress { font-size: 0.5rem !important; }
 
 .content-placeholder { width: 100%; height: 100%; }
 
@@ -4956,13 +4970,17 @@ p { font-family: "Raleway", sans-serif; }
 
 #buddypress #pass-strength-result.short { color: #cc5e5e; }
 
-.btn { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.755rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; border-radius: 40px; padding: 15px 35px; }
+.btn { box-shadow: 0 0 1px rgba(22, 22, 34, 0.11), 0 1px 2px rgba(22, 22, 34, 0.22); text-transform: uppercase; font-size: 0.755rem; font-family: "Raleway", Helvetica, Arial, sans-serif; font-weight: bold; letter-spacing: .16rem; }
 
-.btn:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; }
+.btn:hover { box-shadow: 0 0 3px rgba(22, 22, 34, 0.13), 0 3px 6px rgba(22, 22, 34, 0.26); letter-spacing: .16rem; transform: translateY(-1px); transition: all 0.2s ease-in-out; cursor: pointer; }
 
-.btn-sm, .btn-group-sm > .btn { border-radius: 20px; }
+.btn-sm, .btn-group-sm > .btn { font-size: 0.755rem; letter-spacing: .10rem; font-weight: normal; }
 
-.btn-sm:hover, .btn-group-sm > .btn:hover { text-decoration: none !important; }
+.btn-sm:hover, .btn-group-sm > .btn:hover { text-decoration: none !important; transform: translateY(0px); }
+
+.btn-sm:focus, .btn-group-sm > .btn:focus { box-shadow: none; background: #727b84; }
+
+.btn-group-sm > .btn:active { box-shadow: none; background: #727b84; }
 
 .btn.btn-switch { box-shadow: none !important; }
 
@@ -4971,8 +4989,6 @@ p { font-family: "Raleway", sans-serif; }
 .btn.btn-switch:hover { box-shadow: none !important; }
 
 .btn.btn-switch:focus { box-shadow: none !important; }
-
-.btn-primary:hover { background: #57c3f0; border-color: #57c3f0; }
 
 .btn-success { color: #fff !important; }
 
