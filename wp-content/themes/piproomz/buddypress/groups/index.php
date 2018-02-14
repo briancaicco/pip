@@ -33,7 +33,7 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 	 */
 	do_action( 'bp_before_directory_groups_content' ); ?>
 
-	<div class="container" id="content">
+	<div class="container groups-page" id="content">
 		<?php /* Backward compatibility for inline search form. Use template part instead. */ ?>
 		<?php if ( has_filter( 'bp_directory_groups_search_form' ) ) : ?>
 
@@ -61,7 +61,6 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 
 
 			<div class="row">
-
 				<div class="col-12 mb-3 px-0">
 
 					<nav class="sub-nav navbar mb-3">
@@ -114,11 +113,9 @@ do_action( 'bp_before_directory_groups_page' ); ?>
 		</form>
 
 
-<div id="groups-dir-list" class="groups dir-list ">
-	<div class="row">
-		<?php bp_get_template_part( 'groups/groups-loop' ); ?>
-	</div>
-</div><!-- #groups-dir-list -->
+		<div id="groups-dir-list" class="groups dir-list ">
+			<?php bp_get_template_part( 'groups/groups-loop' ); ?>
+		</div><!-- #groups-dir-list -->
 
 
 	</div><!-- .Container -->

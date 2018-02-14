@@ -50,63 +50,64 @@ do_action( 'bp_before_groups_loop' ); ?>
 	 */
 	do_action( 'bp_before_directory_groups_list' ); ?>
 
-	<div id="groups-list" class="row item-list" aria-live="assertive" aria-atomic="true" aria-relevant="all">
+	<div id="groups-list" class="item-list d-flex flex-wrap" aria-live="assertive" aria-atomic="true" aria-relevant="all">
+		
+			<?php while ( bp_groups() ) : bp_the_group(); ?>
 
-		<?php while ( bp_groups() ) : bp_the_group(); ?>
+			<div class="col-12 col-md-3 mb-4">
+				
+				<div class="card el-2 text-white bg-dark item">
 
-		<div class="col-12 col-md-3 mb-4">
-			
-			<div class="card el-2 text-white bg-dark item">
+					<a href="<?php  bp_group_permalink(); ?>" class="card-link"></a>
 
-				<a href="<?php  bp_group_permalink(); ?>" class="card-link"></a>
+					<?php do_action( 'bp_directory_groups_actions' ); ?>
 
-				<?php do_action( 'bp_directory_groups_actions' ); ?>
+						<div <?php bp_group_class(); ?>>
 
-					<div <?php bp_group_class(); ?>>
+							<div class="card-body">
 
-						<div class="card-body">
+								<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
+									<div class="item-avatar">
+										<!-- <a href="<?php // bp_group_permalink(); ?>"><?php // bp_group_avatar( 'type=thumb&width=50&height=50' ); ?></a> -->
+									</div>
+								<?php endif; ?>
 
-							<?php if ( ! bp_disable_group_avatar_uploads() ) : ?>
-								<div class="item-avatar">
-									<!-- <a href="<?php // bp_group_permalink(); ?>"><?php // bp_group_avatar( 'type=thumb&width=50&height=50' ); ?></a> -->
+
+
+								<div class="item-title card-title text-center p-2 text-white h2">
+
+									<?php bp_group_link(); ?>
+
 								</div>
-							<?php endif; ?>
+
+								<!-- <div class="item-meta"><span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_group_last_active( 0, array( 'relative' => false ) ) ); ?>"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span></div> -->
+
+								<!-- <div class="item-desc"><?php bp_group_description_excerpt(); ?></div> -->
+
+								<?php
+
+								/**
+								 * Fires inside the listing of an individual group listing item.
+								 *
+								 * @since 1.1.0
+								 */
+								do_action( 'bp_directory_groups_item' ); ?>
 
 
+								<div class="action text-center">
 
-							<div class="item-title card-title text-center p-2 text-white h2">
+									<div class="meta mt-2">
 
-								<?php bp_group_link(); ?>
+										<?php // bp_group_type(); ?><?php bp_group_member_count(); ?>
 
-							</div>
-
-							<!-- <div class="item-meta"><span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_group_last_active( 0, array( 'relative' => false ) ) ); ?>"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span></div> -->
-
-							<!-- <div class="item-desc"><?php bp_group_description_excerpt(); ?></div> -->
-
-							<?php
-
-							/**
-							 * Fires inside the listing of an individual group listing item.
-							 *
-							 * @since 1.1.0
-							 */
-							do_action( 'bp_directory_groups_item' ); ?>
-
-
-							<div class="action text-center">
-
-								<div class="meta mt-2">
-
-									<?php // bp_group_type(); ?><?php bp_group_member_count(); ?>
-
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-		</div>
-		<?php endwhile; ?>
+			</div>
+
+			<?php endwhile; ?>
 	</div>
 <?php
 
