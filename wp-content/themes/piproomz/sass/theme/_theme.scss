@@ -89,7 +89,7 @@
 }
 
 #content{
-	margin-top: 4.5rem;
+	margin-top: 3.8rem;
 }
 
 
@@ -358,7 +358,7 @@ p{
 // 		font-size: 18px;
 // 		margin-bottom: 0px;
 // 	}
-	.notifications{
+	.notifications-nav{
 		position: absolute;
 		right: 52px;
 		top: -6px;
@@ -392,6 +392,13 @@ p{
 		}
 	}
 
+	.member-lvl{
+		position: absolute;
+		right: 80px;
+		top: 21px;
+		z-index: 9999;
+	}
+
 // 	.dropdown-toggle{
 // 		&:hover{
 // 			cursor: pointer;
@@ -421,6 +428,7 @@ p{
 	overflow: hidden;
 	pointer-events: none;
 	z-index: 9999;
+	margin-top: 3.9rem !important;
 }
 
 .menu--visible {
