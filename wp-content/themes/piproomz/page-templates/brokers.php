@@ -67,7 +67,7 @@ global $post;
 
 			<div class="col-12 col-md-6 col-lg-4 ">
 
-				<div class="card mb-3 border-0 bg-light text-center ">
+				<div class="card mb-3 border-0 text-center " style="background: #fff;">
 
 					<a href="<?php the_field('broker_url'); ?>">
 						<img class="card-img-top p-5 p-xl-4" src="<?php the_field('broker_logo'); ?>" />
@@ -84,7 +84,6 @@ global $post;
 						</div>
 
 					</div>
-
 
 				</div>
 
