@@ -5,7 +5,7 @@
 					<div class="brand-elements">
 					<a href="#menu-toggle" class="menu-icon" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
-					<a class="navbar-brand mb-0 ml-3" rel="home" href="<?php echo esc_url( home_url( '/dashboard' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">							<img class="logo-blue" src="<?php echo get_template_directory_uri(); ?>/img/pip_logo.svg" width="160px" alt="logo-blue"></a>
+					<a class="navbar-brand mb-0" rel="home" href="<?php echo esc_url( home_url( '/dashboard' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">							<img class="logo-blue" src="<?php echo get_template_directory_uri(); ?>/img/pip_logo.svg" width="160px" alt="logo-blue"></a>
 					</div>
 
 

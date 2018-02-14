@@ -4280,6 +4280,13 @@
 		"oAP": "\/page-templates\/right-sidebarpage.php",
 		"oF": 0
 		},
+	"\/page-templates\/upgrade.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-templates\/upgrade.php",
+		"oF": 0
+		},
 	"\/page.php": {
 		"cB": 0,
 		"ft": 8192,
