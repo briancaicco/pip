@@ -14,13 +14,7 @@ $args = array(
 	'post_type'			=> 'broker',
 	'orderby'			=> 'title', 
 	'order'				=> 'ASC',
-	'tax_query' => array(
-        array(
-            'taxonomy' => 'category',
-            'field' => 'slug', 
-            'terms' => 'forex-brokers'
-        )
-    )
+	'category_name' 	=> 'forex-brokers'
 );
 
 $forex = new WP_query( $args );
@@ -29,16 +23,9 @@ $post_count = wp_count_posts( 'broker' )->publish;
 
 $args2 = array(
 	'post_type'			=> 'broker',
-	'posts_per_page'    =>  -1, 
 	'orderby'			=> 'title', 
 	'order'				=> 'ASC',
-	'tax_query' => array(
-        array(
-            'taxonomy' => 'category',
-            'field' => 'slug', 
-            'terms' => 'cryptocurrency-exchanges'
-        )
-    )
+	'category_name' 	=> 'cryptocurrency-exchanges'
 );
 
 
