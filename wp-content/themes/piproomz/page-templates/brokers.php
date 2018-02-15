@@ -14,7 +14,13 @@ $args = array(
 	'post_type'			=> 'broker',
 	'orderby'			=> 'title', 
 	'order'				=> 'ASC',
-	'category_name' 	=> 'forex-brokers'
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'category',
+			'field'    => 'slug',
+			'terms'    => 'forex-brokers',
+		),
+	)
 );
 
 $forex = new WP_query( $args );
@@ -25,7 +31,13 @@ $args2 = array(
 	'post_type'			=> 'broker',
 	'orderby'			=> 'title', 
 	'order'				=> 'ASC',
-	'category_name' 	=> 'cryptocurrency-exchanges'
+		'tax_query' => array(
+		array(
+			'taxonomy' => 'category',
+			'field'    => 'slug',
+			'terms'    => 'cryptocurrency-exchanges',
+		),
+	)
 );
 
 
