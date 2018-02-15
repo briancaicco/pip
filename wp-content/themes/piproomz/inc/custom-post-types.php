@@ -231,7 +231,7 @@ function create_category_tax() {
 	$args = array(
 		'labels' => $labels,
 		'description' => __( '', 'text_domain' ),
-		'hierarchical' => false,
+		'hierarchical' => true,
 		'public' => true,
 		'publicly_queryable' => true,
 		'show_ui' => true,
