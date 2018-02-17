@@ -471,7 +471,7 @@
 		<!-- END GET APP -->
 		<!-- FOOTER -->
 		<footer>
-			<h5 class="footer small">Copyright &copy; Pip Roomz Inc. All right reserved.</h5>
+			<h5 class="footer small">Copyright &copy; Pip Roomz Ltd. All right reserved.</h5>
 			<ul class="list-inline">
 				<li class="list-inline-item" ><a class="nav-link" href="http://piproomz.com/privacy-policy">Privacy Policy</a></li>
 				<li class="list-inline-item" ><a class="nav-link" href="http://piproomz.com/terms-of-use">Terms of Use</a></li>
